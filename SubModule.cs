@@ -16,21 +16,26 @@ namespace UFO
     {
         private ISettings _settings;
 
+        private bool PatchesApplied = false;
+
         public override void OnGameInitializationFinished(Game game)
         {
-            base.OnGameInitializationFinished(game);
             Harmony patcher = new("UFO");
-            patcher.Unpatch(AccessTools.Method(typeof(Mission), "UpdateMomentumRemaining"), HarmonyPatchType.Postfix, "mod.bannerlord.shokuho");
-            patcher.PatchAll();
-            InformationManager.DisplayMessage(new InformationMessage("UFO's Mod Patch Applied", Colors.Green));
+            
+            if (!PatchesApplied)
+            {
+                PatchesApplied = true;
+                base.OnGameInitializationFinished(game);
+                patcher.Unpatch(AccessTools.Method(typeof(Mission), "UpdateMomentumRemaining"), HarmonyPatchType.Postfix, "mod.bannerlord.shokuho");
+                patcher.PatchAll();
+
+                //PatchInspector.DumpMissionUpdateMomentumRemainingPatches();
+            }
+
+            //PatchInspector.DumpMissionUpdateMomentumRemainingPatches();
+            //InformationManager.DisplayMessage(new InformationMessage("UFO's Mod Patch Applied", Colors.Green));
 
         }
-
-        //protected override void OnGameStart(Game game, IGameStarter starter)
-        //{
-        //    base.OnGameStart(game, starter);
-        //    PatchInspector.DumpMissionUpdateMomentumRemainingPatches();
-        //}
 
         protected override void OnBeforeInitialModuleScreenSetAsRoot()
         {

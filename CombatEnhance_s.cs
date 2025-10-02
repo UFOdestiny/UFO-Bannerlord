@@ -5,6 +5,7 @@ using Shokuho.CustomCampaign.CustomLocations.models;
 using Shokuho.ShokuhoCustomCampaign.Models;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Runtime;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.CharacterDevelopment;
@@ -19,11 +20,23 @@ using UFO;
 
 internal class CombatAttrEnhance_Shokuho
 {
+
     private static readonly ISettings settings = GlobalSettings<Settings>.Instance;
 
-    [HarmonyPatch(typeof(ShokuhoCustomAgentApplyDamageModel), "DecideCrushedThrough")]
+    //[HarmonyPatch(typeof(ShokuhoCustomAgentApplyDamageModel), "DecideCrushedThrough")]
+    [HarmonyPatch]
     internal class DecideCrushedThroughPostfixPatch_c
     {
+        private static bool Prepare()
+        {
+            return AccessTools.TypeByName("Shokuho.ShokuhoCustomCampaign.Models.ShokuhoCustomAgentApplyDamageModel") != null;
+        }
+        static MethodBase TargetMethod()
+        {
+            var type = AccessTools.TypeByName("Shokuho.ShokuhoCustomCampaign.Models.ShokuhoCustomAgentApplyDamageModel");
+            return AccessTools.Method(type, "DecideCrushedThrough");
+        }
+
         private static void Postfix(ref bool __result, Agent attackerAgent, Agent defenderAgent, float totalAttackEnergy, Agent.UsageDirection attackDirection, StrikeType strikeType, WeaponComponentData defendItem, bool isPassiveUsage)
         {
             if (settings.TestMode)
@@ -71,9 +84,19 @@ internal class CombatAttrEnhance_Shokuho
         }
     }
 
-    [HarmonyPatch(typeof(ShokuhoSandboxAgentApplyDamageModel), "DecideCrushedThrough")]
+    //[HarmonyPatch(typeof(ShokuhoSandboxAgentApplyDamageModel), "DecideCrushedThrough")]
+    [HarmonyPatch]
     internal class DecideCrushedThroughPostfixPatch_s
     {
+        private static bool Prepare()
+        {
+            return AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentApplyDamageModel") != null;
+        }
+        static MethodBase TargetMethod()
+        {
+            var type = AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentApplyDamageModel");
+            return AccessTools.Method(type, "DecideCrushedThrough");
+        }
         private static void Postfix(ref bool __result, Agent attackerAgent, Agent defenderAgent, float totalAttackEnergy, Agent.UsageDirection attackDirection, StrikeType strikeType, WeaponComponentData defendItem, bool isPassiveUsage)
         {
             if (settings.TestMode)
@@ -121,9 +144,22 @@ internal class CombatAttrEnhance_Shokuho
         }
     }
 
-    [HarmonyPatch(typeof(Mission), "UpdateMomentumRemaining")]
+    //[HarmonyPatch(typeof(Mission), "UpdateMomentumRemaining")]
+    [HarmonyPatch]
     internal class WeaponMultipleCutThroughGetMomentumRemainingPatch
     {
+
+        private static bool Prepare()
+        {
+            return AccessTools.TypeByName("Shokuho.ShokuhoCustomCampaign.Models.ShokuhoCustomAgentApplyDamageModel") != null;
+        }
+
+        private static MethodBase TargetMethod()
+        {
+            return AccessTools.Method(typeof(Mission), "UpdateMomentumRemaining");
+        }
+
+
         private static void Postfix(float __state, ref float momentumRemaining, Blow b, in AttackCollisionData collisionData, Agent attacker, Agent victim, in MissionWeapon attackerWeapon, bool isCrushThrough)
         {
             if (isCrushThrough || !collisionData.IsColliderAgent)
@@ -143,7 +179,5 @@ internal class CombatAttrEnhance_Shokuho
             momentumRemaining *= ((inflictedDamage <= 50) ? 0.4f : 0.85f);
         }
     }
-
-
 
 }

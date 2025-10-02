@@ -7,7 +7,7 @@ using MCM.Common;
 
 internal class Settings : AttributeGlobalSettings<Settings>, ISettings
 {
-    public override string Id => "EverYoung";
+    public override string Id => "UFO";
 
     public override string DisplayName => "UFO's Mod";
 
