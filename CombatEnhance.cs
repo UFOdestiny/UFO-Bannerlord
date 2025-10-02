@@ -1,9 +1,8 @@
-using UFO;
-using System;
-using System.Collections.Generic;
 using HarmonyLib;
 using MCM.Abstractions.Base.Global;
 using SandBox.GameComponents;
+using System;
+using System.Collections.Generic;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.CharacterDevelopment;
 using TaleWorlds.CampaignSystem.GameComponents;
@@ -12,9 +11,7 @@ using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
-using static TaleWorlds.MountAndBlade.Agent;
-using static TaleWorlds.CampaignSystem.CharacterDevelopment.DefaultPerks;
-
+using UFO;
 
 
 internal class CombatAttrEnhance
@@ -49,8 +46,8 @@ internal class CombatAttrEnhance
         }
     }
 
-    [HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "DecideCrushedThrough")]
-    internal class DecideCrushedThroughPostfixPatch
+    [HarmonyPatch(typeof(CustomAgentApplyDamageModel), "DecideCrushedThrough")]
+    internal class DecideCrushedThroughPostfixPatch_c
     {
         private static void Postfix(ref bool __result, Agent attackerAgent, Agent defenderAgent, float totalAttackEnergy, Agent.UsageDirection attackDirection, StrikeType strikeType, WeaponComponentData defendItem, bool isPassiveUsage)
         {
@@ -98,6 +95,57 @@ internal class CombatAttrEnhance
             }
         }
     }
+
+    [HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "DecideCrushedThrough")]
+    internal class DecideCrushedThroughPostfixPatch_s
+    {
+        private static void Postfix(ref bool __result, Agent attackerAgent, Agent defenderAgent, float totalAttackEnergy, Agent.UsageDirection attackDirection, StrikeType strikeType, WeaponComponentData defendItem, bool isPassiveUsage)
+        {
+            if (settings.TestMode)
+            {
+                return;
+            }
+            if (attackerAgent.IsPlayerControlled)
+            {
+                __result = true;
+                return;
+            }
+
+            float num = attackerAgent.CombatEnhanceRate();
+            float num2 = defenderAgent.CombatEnhanceRate();
+            if (num == 0f && num2 == 0f)
+            {
+                return;
+            }
+            int num3 = 0;
+            int num4 = 0;
+            if (num > 0f)
+            {
+                CharacterObject characterObject = attackerAgent.Character as CharacterObject;
+                Hero heroObject = characterObject.HeroObject;
+                num3 = (int)((float)heroObject.GetAttributeValue(DefaultCharacterAttributes.Vigor) * num);
+            }
+            if (num2 > 0f)
+            {
+                CharacterObject characterObject2 = defenderAgent.Character as CharacterObject;
+                Hero heroObject2 = characterObject2.HeroObject;
+                num4 = (int)((float)heroObject2.GetAttributeValue(DefaultCharacterAttributes.Vigor) * num2);
+            }
+            int num5 = num3 - num4;
+            if (num5 > 0 && !__result)
+            {
+                if (MBRandom.RandomInt(100) < num5 * settings.VigorCrushThroughPositive)
+                {
+                    __result = true;
+                }
+            }
+            else if (((num5 < 0) & __result) && MBRandom.RandomInt(100) < -num5 * settings.VigorCrushThroughNegative)
+            {
+                __result = false;
+            }
+        }
+    }
+
 
     [HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "DecideMissileWeaponFlags")]
     internal class DecideMissileWeaponFlagsPostfixPatch
