@@ -45,11 +45,6 @@ namespace UFO
 
             PATCH(patcher, ref PatchesApplied);
 
-            patcher.Unpatch(AccessTools.Method(typeof(Mission), "UpdateMomentumRemaining"), HarmonyPatchType.Postfix, "mod.bannerlord.shokuho");
-
-
-            //patcher.Unpatch(AccessTools.Method(typeof(Mission), "UpdateMomentumRemaining"), HarmonyPatchType.Postfix, "mod.bannerlord.shokuho");
-            //patcher.PatchAll();
             PatchInspector.PatchInformation();
 
             //InformationManager.DisplayMessage(new InformationMessage("UFO's Mod Patch Applied", Colors.Green));
@@ -85,12 +80,17 @@ namespace UFO
         {
             var methodsToUnpatch = new List<MethodBase>
             {
-                AccessTools.Method(typeof(Mission), "UpdateMomentumRemaining"),
+                AccessTools.Method(typeof(Mission), "DecideWeaponCollisionReaction"),
             };
 
             foreach (var method in methodsToUnpatch)
             {
                 patcher.Unpatch(method, HarmonyPatchType.Postfix, "mod.bannerlord.shokuho");
+            }
+
+            foreach (var method in methodsToUnpatch)
+            {
+                patcher.Unpatch(method, HarmonyPatchType.Prefix, "mod.bannerlord.shokuho");
             }
         }
 

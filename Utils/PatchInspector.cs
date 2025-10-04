@@ -11,7 +11,7 @@ public static class PatchInspector
 {
     public static void PatchInformation()
     {
-        MethodInfo target = AccessTools.Method(typeof(SandboxAgentApplyDamageModel), "CalculateDamage");
+        MethodInfo target = AccessTools.Method(typeof(Mission), "UpdateMomentumRemaining");
         if (target == null)
         {
             InformationManager.DisplayMessage(new InformationMessage("Method Mission.UpdateMomentumRemaining not found.", Colors.Red));

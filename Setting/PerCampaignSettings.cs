@@ -54,6 +54,10 @@ namespace UFO.Setting
         [LocalizedSettingPropertyBool("PlayerAlwaysCrush")]
         public bool PlayerAlwaysCrush { get; set; } = true;
 
+        [LocalizedSettingPropertyGroup("UFOs", GroupOrder = 0)]
+        [LocalizedSettingPropertyBool("InfiniteMomentum")]
+        public bool InfiniteMomentum { get; set; } = false;
+
 
 
         // Cheat

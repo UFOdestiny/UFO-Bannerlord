@@ -18,6 +18,7 @@ using TaleWorlds.MountAndBlade;
 using UFO.Extension;
 using UFO.Setting;
 
+namespace UFO.Patch.Shokuho.Combat;
 internal class CombatAttrEnhance_Shokuho
 {
 
@@ -75,43 +76,6 @@ internal class CombatAttrEnhance_Shokuho
             return true;
         }
 
-    }
-
-    [HarmonyPatch]
-    internal class WeaponMultipleCutThroughGetMomentumRemainingPatch
-    {
-        private static bool Prepare()
-        {
-            return AccessTools.TypeByName("Shokuho.ShokuhoCustomCampaign.Models.ShokuhoCustomAgentApplyDamageModel") != null;
-        }
-
-        private static MethodBase TargetMethod()
-        {
-            return AccessTools.Method(typeof(Mission), "UpdateMomentumRemaining");
-        }
-
-        private static void Postfix(float __state, ref float momentumRemaining, Blow b, in AttackCollisionData collisionData, Agent attacker, Agent victim, in MissionWeapon attackerWeapon, bool isCrushThrough)
-        {
-            if (isCrushThrough || !collisionData.IsColliderAgent)
-            {
-                return;
-            }
-            int inflictedDamage = b.InflictedDamage;
-            if (inflictedDamage <= 20)
-            {
-                if (attacker.IsPlayerControlled)
-                {
-                    return;
-                }
-                momentumRemaining = 0f;
-                return;
-            }
-            if (momentumRemaining <= 0f)
-            {
-                momentumRemaining = __state;
-            }
-            momentumRemaining *= ((inflictedDamage <= 50) ? 0.4f : 0.85f);
-        }
     }
 
 }

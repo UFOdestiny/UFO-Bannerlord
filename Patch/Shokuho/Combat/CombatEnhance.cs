@@ -1,8 +1,9 @@
-using HarmonyLib;
+﻿using HarmonyLib;
 using MCM.Abstractions.Base.Global;
 using SandBox.GameComponents;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.CharacterDevelopment;
 using TaleWorlds.CampaignSystem.GameComponents;
@@ -14,9 +15,7 @@ using TaleWorlds.MountAndBlade;
 using UFO.Extension;
 using UFO.Setting;
 
-
-namespace UFO.Patch.Combat;
-
+namespace UFO.Patch.Shokuho.Combat;
 internal class CombatAttrEnhance
 {
     private static readonly InformationMessage critStrikeMsg = new InformationMessage(new TextObject("{=he_crit_strike_msg}CritStrike!").ToString(), Colors.Red);
@@ -95,136 +94,6 @@ internal class CombatAttrEnhance
         return true;
     }
 
-
-    [HarmonyPatch(typeof(DefaultCharacterStatsModel), "MaxHitpoints")]
-    internal class MaxHitpointsPostfixPatch
-    {
-        private static void Postfix(ref ExplainedNumber __result, ref CharacterObject character, ref bool includeDescriptions)
-        {
-            float num = character.CombatEnhanceRate();
-            if (num != 0f)
-            {
-                Hero heroObject = character.HeroObject;
-                int attributeValue = heroObject.GetAttributeValue(DefaultCharacterAttributes.Endurance);
-                float value = (float)attributeValue * SettingsManager.EnduranceHpAddPercent.Value * num;
-                __result.AddFactor(value, DefaultCharacterAttributes.Endurance.Name);
-            }
-        }
-    }
-
-    [HarmonyPatch(typeof(DefaultPartyHealingModel), "GetHeroesEffectedHealingAmount")]
-    internal class GetHeroesEffectedHealingAmountPostfixPatch
-    {
-        private static void Postfix(ref int __result, ref Hero hero, ref float healingRate)
-        {
-            float num = hero.CombatEnhanceRate();
-            if (num != 0f)
-            {
-                int attributeValue = hero.GetAttributeValue(DefaultCharacterAttributes.Endurance);
-                __result = (int)((float)__result * (1f + (float)attributeValue * SettingsManager.EnduranceHealRate.Value * num));
-            }
-        }
-    }
-
-    [HarmonyPatch(typeof(CustomAgentApplyDamageModel), "DecideCrushedThrough")]
-    internal class DecideCrushedThroughPostfixPatch_c
-    {
-        private static void Postfix(ref bool __result, Agent attackerAgent, Agent defenderAgent, float totalAttackEnergy, Agent.UsageDirection attackDirection, StrikeType strikeType, WeaponComponentData defendItem, bool isPassiveUsage)
-        {
-            if (SettingsManager.TestMode.Value)
-            {
-                return;
-            }
-            if (SettingsManager.PlayerAlwaysCrush.Value && attackerAgent.IsPlayerControlled)
-            {
-                __result = true;
-                return;
-            }
-
-            float num = attackerAgent.CombatEnhanceRate();
-            float num2 = defenderAgent.CombatEnhanceRate();
-            if (num == 0f && num2 == 0f)
-            {
-                return;
-            }
-            int num3 = 0;
-            int num4 = 0;
-            if (num > 0f)
-            {
-                CharacterObject characterObject = attackerAgent.Character as CharacterObject;
-                Hero heroObject = characterObject.HeroObject;
-                num3 = (int)((float)heroObject.GetAttributeValue(DefaultCharacterAttributes.Vigor) * num);
-            }
-            if (num2 > 0f)
-            {
-                CharacterObject characterObject2 = defenderAgent.Character as CharacterObject;
-                Hero heroObject2 = characterObject2.HeroObject;
-                num4 = (int)((float)heroObject2.GetAttributeValue(DefaultCharacterAttributes.Vigor) * num2);
-            }
-            int num5 = num3 - num4;
-            if (num5 > 0 && !__result)
-            {
-                if (MBRandom.RandomInt(100) < num5 * SettingsManager.VigorCrushThroughPositive.Value)
-                {
-                    __result = true;
-                }
-            }
-            else if (((num5 < 0) & __result) && MBRandom.RandomInt(100) < -num5 * SettingsManager.VigorCrushThroughNegative.Value)
-            {
-                __result = false;
-            }
-        }
-    }
-
-    [HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "DecideCrushedThrough")]
-    internal class DecideCrushedThroughPostfixPatch_s
-    {
-        private static void Postfix(ref bool __result, Agent attackerAgent, Agent defenderAgent, float totalAttackEnergy, Agent.UsageDirection attackDirection, StrikeType strikeType, WeaponComponentData defendItem, bool isPassiveUsage)
-        {
-            if (SettingsManager.TestMode.Value)
-            {
-                return;
-            }
-            if (SettingsManager.PlayerAlwaysCrush.Value && attackerAgent.IsPlayerControlled)
-            {
-                __result = true;
-                return;
-            }
-
-            float num = attackerAgent.CombatEnhanceRate();
-            float num2 = defenderAgent.CombatEnhanceRate();
-            if (num == 0f && num2 == 0f)
-            {
-                return;
-            }
-            int num3 = 0;
-            int num4 = 0;
-            if (num > 0f)
-            {
-                CharacterObject characterObject = attackerAgent.Character as CharacterObject;
-                Hero heroObject = characterObject.HeroObject;
-                num3 = (int)((float)heroObject.GetAttributeValue(DefaultCharacterAttributes.Vigor) * num);
-            }
-            if (num2 > 0f)
-            {
-                CharacterObject characterObject2 = defenderAgent.Character as CharacterObject;
-                Hero heroObject2 = characterObject2.HeroObject;
-                num4 = (int)((float)heroObject2.GetAttributeValue(DefaultCharacterAttributes.Vigor) * num2);
-            }
-            int num5 = num3 - num4;
-            if (num5 > 0 && !__result)
-            {
-                if (MBRandom.RandomInt(100) < num5 * SettingsManager.VigorCrushThroughPositive.Value)
-                {
-                    __result = true;
-                }
-            }
-            else if (((num5 < 0) & __result) && MBRandom.RandomInt(100) < -num5 * SettingsManager.VigorCrushThroughNegative.Value)
-            {
-                __result = false;
-            }
-        }
-    }
 
     [HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "DecideMissileWeaponFlags")]
     internal class DecideMissileWeaponFlagsPostfixPatch
@@ -306,20 +175,32 @@ internal class CombatAttrEnhance
         }
     }
 
-    [HarmonyPatch(typeof(SandboxAgentStatCalculateModel), "SetPerkAndBannerEffectsOnAgent")]
+    [HarmonyPatch]
     internal class SetPerkAndBannerEffectsOnAgentPostfixPatch
     {
-        private static void Postfix(ref Agent agent, CharacterObject agentCharacter, ref AgentDrivenProperties agentDrivenProperties, ref WeaponComponentData equippedWeaponComponent)
+        private static bool Prepare()
         {
-            float num = agentCharacter.CombatEnhanceRate();
+            return AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentStatCalculateModel") != null;
+        }
+        static MethodBase TargetMethod()
+        {
+            var type = AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentStatCalculateModel");
+            return AccessTools.Method(type, "UpdateHumanStats");
+        }
+
+        private static void Postfix(ref Agent agent, ref AgentDrivenProperties agentDrivenProperties)
+        {
+            float num = agent.CombatEnhanceRate();
             if (num != 0f)
             {
-                Hero heroObject = agentCharacter.HeroObject;
+                CharacterObject characterObject = agent.Character as CharacterObject;
+                Hero heroObject = characterObject.HeroObject;
+
                 int attributeValue = heroObject.GetAttributeValue(DefaultCharacterAttributes.Vigor);
                 int attributeValue2 = heroObject.GetAttributeValue(DefaultCharacterAttributes.Control);
                 int attributeValue3 = heroObject.GetAttributeValue(DefaultCharacterAttributes.Endurance);
                 float num2 = 0f;
-                if (!agent.HasMount && agentCharacter.GetPerkValue(DefaultPerks.Athletics.IgnorePain))
+                if (!agent.HasMount && characterObject.GetPerkValue(DefaultPerks.Athletics.IgnorePain))
                 {
                     num2 += DefaultPerks.Athletics.IgnorePain.PrimaryBonus;
                 }

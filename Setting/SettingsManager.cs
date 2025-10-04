@@ -27,6 +27,8 @@ namespace UFO.Setting
             // UFO's
             public const bool PlayerAlwaysCrush = true;
 
+            public const bool InfiniteMomentum = false;
+
 
 
 
@@ -377,15 +379,15 @@ namespace UFO.Setting
 
             public const float CombatAttributeRatePlayer = 1f;
 
-            public const float CombatAttributeRateClanMember = 1f;
+            public const float CombatAttributeRateClanMember = 0.5f;
 
-            public const float CombatAttributeRateOther = 1f;
+            public const float CombatAttributeRateOther = 0f;
 
             public const float StrategyAttributeRatePlayer = 1f;
 
-            public const float StrategyAttributeRateClanMember = 1f;
+            public const float StrategyAttributeRateClanMember = 0.5f;
 
-            public const float StrategyAttributeRateOther = 1f;
+            public const float StrategyAttributeRateOther = 0f;
 
             public const bool TestMode = false;
 
@@ -631,6 +633,13 @@ namespace UFO.Setting
         public static CheatValue<AutoChoosePerk_Type> AutoChoosePerk => (IsPerCampaignInstanceLoaded && PerCampaignInstance.AutoChoosePerk.GetValue() != AutoChoosePerk_Type.Clan) ? new CheatValue<AutoChoosePerk_Type>(isChanged: true, PerCampaignInstance.AutoChoosePerk.GetValue()) : ((GlobalInstance.AutoChoosePerk.GetValue() != AutoChoosePerk_Type.Clan) ? new CheatValue<AutoChoosePerk_Type>(isChanged: true, GlobalInstance.AutoChoosePerk.GetValue()) : new CheatValue<AutoChoosePerk_Type>(isChanged: false, AutoChoosePerk_Type.Clan));
 
 
+
+        public static CheatValue<bool> InfiniteMomentum =>
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.InfiniteMomentum != true)
+? new CheatValue<bool>(isChanged: true, PerCampaignInstance.InfiniteMomentum)
+: ((GlobalInstance.InfiniteMomentum != true)
+? new CheatValue<bool>(isChanged: true, GlobalInstance.InfiniteMomentum)
+: new CheatValue<bool>(isChanged: false, true));
 
         public static CheatValue<bool> PlayerAlwaysCrush =>
 (IsPerCampaignInstanceLoaded && PerCampaignInstance.PlayerAlwaysCrush != true)

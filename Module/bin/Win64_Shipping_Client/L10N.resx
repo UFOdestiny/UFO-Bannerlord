@@ -123,7 +123,7 @@
       Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ModName" xml:space="preserve">
-    <value>Cheats内置修改器</value>
+    <value>UFO's Mod</value>
   </data>
   <data name="Combat_Player_GroupName" xml:space="preserve">
     <value>战斗 - 玩家</value>
@@ -1418,5 +1418,11 @@
     <value>只有玩家永远可以破格挡</value>
   </data>
 
+  <data name="InfiniteMomentum_Name" xml:space="preserve">
+    <value>玩家无限动量</value>
+  </data>
+  <data name="InfiniteMomentum_Desc" xml:space="preserve">
+    <value>玩家无限动量</value>
+  </data>
 
 </root>
