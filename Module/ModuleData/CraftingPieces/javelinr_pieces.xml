@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CraftingPieces>
+
+  <CraftingPiece id="super_spear_blade"
+    name="Super Spear Head"
+    tier="5"
+    piece_type="Blade"
+    mesh="spear_blade_27"
+    length="50.0"
+    weight="0.01"
+    excluded_item_usage_features="swing">
+    <BladeData stack_amount="30"
+      physics_material="wood_weapon"
+      body_name="bo_spear_b"
+      holster_mesh="throwing_spear_quiver_2"
+      holster_body_name="bo_throwing_spear_quiver_2"
+      holster_mesh_length="90.0">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+    </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanPenetrateShield" />
+      <!-- <Flag name="MultiplePenetration" /> -->
+      <Flag name="Civilian"
+        type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron5" count="2" />
+    </Materials>
+  </CraftingPiece>
+
+</CraftingPieces>

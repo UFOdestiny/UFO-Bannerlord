@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-16"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="简体中文" />
+  </tags>
+  <strings>
+    <!--weapon-->
+    <string id="loongspear" text="龙首槊" />
+    <string id="super_javelin" text="帝皇标枪" />
+
+    <!--pieces-->
+    <string id="loongspear_tou" text="龙首槊矛头" />
+    <string id="loongspear_gan" text="龙首槊杆" />
+    <string id="loongspear_wei" text="龙首槊枪尾" />
+
+    <string id="super_spear_blade" text="帝皇标枪头" />
+
+    <!--template-->
+    <string id="loongspear1" text="（锻造）龙首槊" />
+
+    <!--type-->
+    <string id="LSOneHandedPolearm" text="单手长杆" />
+    <string id="LSTwoHandedPolearm" text="双手长杆" />
+    <string id="LSTwoHandedPolearm_Bracing" text="架矛" />
+    <string id="LSTwoHandedPolearm_Couchable" text="骑枪冲刺" />
+    <string id="Javelin" text="帝皇标枪" />
+
+  </strings>
+</base> 

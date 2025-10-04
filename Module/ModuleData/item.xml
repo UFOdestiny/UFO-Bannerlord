@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <CraftedItem id="loongspear"
+    name="{=loongspear}Golden Loong Spear"
+    is_merchandise="false"
+    crafting_template="loongspear1"
+    culture="Culture.neutral_culture"
+    value="40000">
+    <Pieces>
+      <Piece id="loongspear_tou"
+        Type="Blade"
+        scale_factor="100" />
+      <Piece id="loongspear_gan"
+        Type="Handle"
+        scale_factor="100" />
+      <Piece id="loongspear_wei"
+        Type="Pommel"
+        scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+<!--   
+  <CraftedItem id="super_javelin"
+    name="{=super_javelin}Super Javelin"
+    crafting_template="Javelin"
+    culture="Culture.neutral_culture"
+    modifier_group="spear_dart_throwing">
+    <Pieces>
+      <Piece id="super_spear_blade"
+        Type="Blade"
+        scale_factor="50" />
+      <Piece id="default_polearm_guard"
+        Type="Guard"
+        scale_factor="50" />
+      <Piece id="spear_handle_10"
+        Type="Handle"
+        scale_factor="50" />
+      <Piece id="spear_pommel_12"
+        Type="Pommel"
+        scale_factor="50" />
+    </Pieces>
+  </CraftedItem> -->
+
+</Items>

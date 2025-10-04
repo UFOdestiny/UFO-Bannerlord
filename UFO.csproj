@@ -66,7 +66,7 @@
 			<HintPath>%(Identity)</HintPath>
 			<Private>False</Private>
 		</Reference>
-		
+
 		<!--Shokuho-->
 		<Reference Include="E:\SteamLibrary\steamapps\workshop\content\261550\3496296180\bin\Win64_Shipping_Client\*.dll">
 			<HintPath>%(Identity)</HintPath>
@@ -75,20 +75,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Module\bin\Win64_Shipping_Client\" />
-		<Folder Include="Module\Languages\" />
+	  <EmbeddedResource Include="Module\bin\Win64_Shipping_Client\L10N.resx" />
+	  <EmbeddedResource Include="Module\bin\Win64_Shipping_Client\L10N_EN.resx" />
 	</ItemGroup>
-
-	<!--<ItemGroup>
-		<None Include="Module/SubModule.xml" CopyToOutputDirectory="PreserveNewest" />
-	</ItemGroup>-->
 
 	<ItemGroup>
 		<PackageReference Include="Bannerlord.MCM" Version="5.10.2" />
 	</ItemGroup>
 
-	<Target Name="CopyDllToGame" AfterTargets="Build">
+	<Target Name="CopyOutputToModFolder" AfterTargets="Build">
 		<Copy SourceFiles="$(OutPutPath)\$(MSBuildProjectName).dll" DestinationFolder="$(GameFolder)\Modules\UFO\bin\Win64_Shipping_Client\" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="$(OutPutPath)\L10N.resx" DestinationFolder="$(GameFolder)\Modules\UFO\bin\Win64_Shipping_Client\" SkipUnchangedFiles="true" />
 	</Target>
 
 </Project>

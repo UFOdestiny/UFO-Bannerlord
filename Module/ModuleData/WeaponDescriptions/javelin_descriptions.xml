@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WeaponDescriptions>
+
+  <WeaponDescription id="Javelin"
+    weapon_class="Javelin"
+    item_usage_features="throwing:javelin"
+    rotated_in_hand="true"
+    use_center_of_mass_as_hand_base="true">
+    <WeaponFlags>
+      <WeaponFlag value="RangedWeapon" />
+      <WeaponFlag value="Consumable" />
+      <WeaponFlag value="AmmoSticksWhenShot" />
+      <WeaponFlag value="UseHandAsThrowBase" />
+      <WeaponFlag value="AutoReload" />
+      <WeaponFlag value="UnloadWhenSheathed" />
+    </WeaponFlags>
+    <AvailablePieces>
+      <AvailablePiece id="super_spear_blade" />
+      <AvailablePiece id="spear_blade_1" />
+      <AvailablePiece id="spear_blade_9" />
+      <AvailablePiece id="spear_blade_10" />
+      <AvailablePiece id="spear_blade_41" />
+      <AvailablePiece id="spear_blade_14" />
+      <AvailablePiece id="spear_blade_15" />
+      <AvailablePiece id="spear_blade_15_blunt" />
+      <AvailablePiece id="spear_blade_16" />
+      <AvailablePiece id="spear_blade_27" />
+      <AvailablePiece id="spear_blade_35" />
+      <AvailablePiece id="spear_blade_35_blunt" />
+      <AvailablePiece id="spear_blade_37" />
+      <AvailablePiece id="spear_blade_38" />
+      <AvailablePiece id="spear_blade_42" />
+      <AvailablePiece id="spear_handle_2" />
+      <AvailablePiece id="spear_handle_9" />
+      <AvailablePiece id="spear_handle_10" />
+      <AvailablePiece id="spear_handle_11" />
+      <AvailablePiece id="spear_handle_12" />
+      <AvailablePiece id="default_polearm_guard" />
+      <AvailablePiece id="spear_guard_15" />
+      <AvailablePiece id="spear_guard_7" />
+      <AvailablePiece id="mp_default_polearm_guard" />
+      <AvailablePiece id="mp_spear_guard_4" />
+      <AvailablePiece id="mp_spear_guard_7" />
+      <AvailablePiece id="mp_spear_guard_15" />
+      <AvailablePiece id="default_polearm_pommel" />
+      <AvailablePiece id="spear_pommel_5" />
+      <AvailablePiece id="spear_pommel_12" />
+      <AvailablePiece id="mp_default_polearm_pommel" />
+      <AvailablePiece id="mp_spear_pommel_12" />
+      <AvailablePiece id="mp_spear_pommel_8" />
+      <AvailablePiece id="mp_javelin_blade" />
+      <AvailablePiece id="mp_javelin_blade_captain" />
+      <AvailablePiece id="mp_javelin_handle" />
+      <AvailablePiece id="mp_javelin_blade_extraammo" />
+      <AvailablePiece id="mp_javelin_blade_extraammo_captain" />
+      <AvailablePiece id="mp_javelin_handle_extraammo" />
+      <AvailablePiece id="mp_light_javelin_blade" />
+      <AvailablePiece id="mp_light_javelin_handle" />
+      <AvailablePiece id="mp_pilum_blade" />
+      <AvailablePiece id="mp_pilum_blade_extraammo" />
+      <AvailablePiece id="mp_jereed_blade_captain" />
+      <AvailablePiece id="mp_jereed_blade_extra_captain" />
+      <AvailablePiece id="mp_jereed_blade" />
+      <AvailablePiece id="mp_jereed_blade_extra" />
+      <AvailablePiece id="mp_jereed_handle" />
+      <AvailablePiece id="mp_sturgia_harpoon_blade" />
+      <AvailablePiece id="mp_sturgia_harpoon_blade_extra" />
+      <AvailablePiece id="mp_sturgia_harpoon_blade_strong" />
+      <AvailablePiece id="mp_sturgia_harpoon_blade_captain" />
+      <AvailablePiece id="mp_sturgia_harpoon_blade_extra_captain" />
+      <AvailablePiece id="mp_sturgia_harpoon_blade_strong_captain" />
+      <AvailablePiece id="mp_sturgia_harpoon_handle" />
+      <AvailablePiece id="mp_battania_javelin_blade" />
+      <AvailablePiece id="mp_battania_javelin_blade_extra" />
+      <AvailablePiece id="mp_battania_javelin_blade_captain" />
+      <AvailablePiece id="mp_battania_javelin_blade_extra_captain" />
+      <AvailablePiece id="mp_battania_javelin_handle" />
+      <AvailablePiece id="mp_plumbata_blade" />
+      <AvailablePiece id="mp_plumbata_handle" />
+    </AvailablePieces>
+  </WeaponDescription>
+
+
+
+</WeaponDescriptions>

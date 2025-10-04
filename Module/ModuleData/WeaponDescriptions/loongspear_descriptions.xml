@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WeaponDescriptions>
+  <!--单手长杆-->
+  <WeaponDescription id="LSOneHandedPolearm"
+    weapon_class="OneHandedPolearm"
+    item_usage_features="onehanded_polearm:block:long:rshield:thrust">
+    <WeaponFlags>
+      <WeaponFlag value="MeleeWeapon" />
+      <WeaponFlag value="WideGrip" />
+    </WeaponFlags>
+    <AvailablePieces>
+      <AvailablePiece id="loongspear_tou" />
+      <AvailablePiece id="loongspear_gan" />
+      <AvailablePiece id="loongspear_wei" />
+    </AvailablePieces>
+  </WeaponDescription>
+  <!--双手长杆-->
+  <WeaponDescription id="LSTwoHandedPolearm"
+    weapon_class="TwoHandedPolearm"
+    item_usage_features="polearm:block:long:shield:swing:thrust">
+    <WeaponFlags>
+      <WeaponFlag value="MeleeWeapon" />
+      <WeaponFlag value="NotUsableWithOneHand" />
+      <WeaponFlag value="WideGrip" />
+      <WeaponFlag value="BonusAgainstShield" />
+      <WeaponFlag value="TwoHandIdleOnMount" />
+    </WeaponFlags>
+    <AvailablePieces>
+      <AvailablePiece id="loongspear_tou" />
+      <AvailablePiece id="loongspear_gan" />
+      <AvailablePiece id="loongspear_wei" />
+    </AvailablePieces>
+  </WeaponDescription>
+  <!--双手长杆骑枪冲刺-->
+  <WeaponDescription id="LSTwoHandedPolearm_Couchable"
+    weapon_class="TwoHandedPolearm"
+    item_usage_features="polearm:couch">
+    <WeaponFlags>
+      <WeaponFlag value="MeleeWeapon" />
+      <WeaponFlag value="WideGrip" />
+    </WeaponFlags>
+    <AvailablePieces>
+      <AvailablePiece id="loongspear_tou" />
+      <AvailablePiece id="loongspear_gan" />
+      <AvailablePiece id="loongspear_wei" />
+    </AvailablePieces>
+  </WeaponDescription>
+  <!--双手长杆架矛-->
+  <WeaponDescription id="LSTwoHandedPolearm_Bracing"
+    weapon_class="TwoHandedPolearm"
+    item_usage_features="polearm:bracing">
+    <WeaponFlags>
+      <WeaponFlag value="MeleeWeapon" />
+      <WeaponFlag value="NotUsableWithOneHand" />
+      <WeaponFlag value="WideGrip" />
+      <WeaponFlag value="TwoHandIdleOnMount" />
+    </WeaponFlags>
+    <AvailablePieces>
+      <AvailablePiece id="loongspear_tou" />
+      <AvailablePiece id="loongspear_gan" />
+      <AvailablePiece id="loongspear_wei" />
+    </AvailablePieces>
+  </WeaponDescription>
+
+
+
+</WeaponDescriptions>

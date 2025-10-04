@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Module xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/BUTR/Bannerlord.XmlSchemas/master/SubModule.xsd" >
-	<Id value="$moduleid$" />
-	<Name value="$modulename$" />
+	xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/BUTR/Bannerlord.XmlSchemas/master/SubModule.xsd">
+	<Id value="UFO" />
+	<Name value="UFO" />
 	<Version value="v1.0.0" />
 	<DefaultModule value="false" />
-	<ModuleCategory value="Singleplayer"/>
+	<ModuleCategory value="Singleplayer" />
 	<ModuleType value="Community" />
-	<Url value="$moduleurl$" />
+	<Url value="https://github.com/UFOdestiny/UFO-Bannerlord" />
 	<DependedModules>
-		<DependedModule Id="Bannerlord.Harmony"/>
-		<DependedModule Id="Bannerlord.ButterLib"/>
+		<DependedModule Id="Bannerlord.Harmony" />
+		<DependedModule Id="Bannerlord.ButterLib" />
 		<DependedModule Id="Bannerlord.UIExtenderEx" />
 		<DependedModule Id="Bannerlord.MBOptionScreen" />
 		<DependedModule Id="Native" />
@@ -19,26 +19,165 @@
 		<DependedModule Id="StoryMode" />
 		<DependedModule Id="CustomBattle" />
 	</DependedModules>
-	<!-- Community Dependency Metadata -->
-	<!-- https://github.com/BUTR/Bannerlord.BLSE#community-dependency-metadata -->
 	<DependedModuleMetadatas>
-		<DependedModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis"/>
-		<DependedModuleMetadata id="Bannerlord.ButterLib" order="LoadBeforeThis"/>
-		<DependedModuleMetadata id="Bannerlord.UIExtenderEx" order="LoadBeforeThis"/>
-		<DependedModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadBeforeThis"/>
+		<DependedModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis" />
+		<DependedModuleMetadata id="Bannerlord.ButterLib" order="LoadBeforeThis" />
+		<DependedModuleMetadata id="Bannerlord.UIExtenderEx" order="LoadBeforeThis" />
+		<DependedModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadBeforeThis" />
 		<DependedModuleMetadata id="Native" order="LoadBeforeThis" />
 		<DependedModuleMetadata id="SandBoxCore" order="LoadBeforeThis" />
 		<DependedModuleMetadata id="Sandbox" order="LoadBeforeThis" />
 		<DependedModuleMetadata id="StoryMode" order="LoadBeforeThis" />
 		<DependedModuleMetadata id="CustomBattle" order="LoadBeforeThis" />
 	</DependedModuleMetadatas>
-	<!-- Community Dependency Metadata -->
 	<SubModules>
 		<SubModule>
-			<Name value="$modulename$" />
-			<DLLName value="$modulename$.dll" />
-			<SubModuleClassType value="$modulename$.SubModule" />
-			<Tags />
+			<Name value="UFO" />
+			<DLLName value="UFO.dll" />
+			<SubModuleClassType value="UFO.SubModule" />
+			<Assemblies></Assemblies>
+			<Tags></Tags>
 		</SubModule>
 	</SubModules>
+	<Xmls>
+		
+		<XmlNode>
+			<XmlName id="GameText" path="module_strings" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode>
+
+		<XmlNode>
+			<XmlName id="Items" path="item" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="CraftingPieces" path="pieces" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="CraftingTemplates" path="templates" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="WeaponDescriptions" path="descriptions" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode>
+
+
+		<!-- <XmlNode>
+			<XmlName id="Items" path="Items/loongspear" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="CraftingPieces" path="CraftingPieces/loongspear_pieces" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="CraftingTemplates" path="CraftingTemplates/loongspear_templates" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="WeaponDescriptions" path="WeaponDescriptions/loongspear_descriptions" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode>
+
+
+
+		<XmlNode>
+			<XmlName id="Items" path="Items/javelin" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="CraftingPieces" path="CraftingPieces/javelin_pieces" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="CraftingTemplates" path="CraftingTemplates/javelin_templates" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="WeaponDescriptions" path="WeaponDescriptions/javelin_descriptions" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode> -->
+
+
+	</Xmls>
 </Module>
