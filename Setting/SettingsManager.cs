@@ -1,6 +1,5 @@
 using MCM.Abstractions.Base.Global;
 using MCM.Abstractions.Base.PerCampaign;
-using MCM.Common;
 using System;
 using UFO.Extension;
 

@@ -2,7 +2,6 @@ using MCM.Common;
 using System;
 using TaleWorlds.Core;
 using UFO.Localization;
-using UFO.Setting;
 
 namespace UFO.Extension
 {

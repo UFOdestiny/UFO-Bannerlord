@@ -6,7 +6,6 @@ using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.Siege;
 using TaleWorlds.Core;
-using UFO;
 using UFO.Extension;
 using UFO.Setting;
 namespace UFO.Patch;

@@ -9,7 +9,6 @@ using TaleWorlds.CampaignSystem.ViewModelCollection.WeaponCrafting.WeaponDesign;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
-using UFO;
 using UFO.Extension;
 using UFO.Setting;
 

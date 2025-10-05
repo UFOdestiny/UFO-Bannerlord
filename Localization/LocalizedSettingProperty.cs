@@ -1,5 +1,5 @@
-using System;
 using MCM.Abstractions;
+using System;
 
 namespace UFO.Localization
 {

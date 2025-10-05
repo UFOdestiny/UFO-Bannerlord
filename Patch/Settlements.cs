@@ -10,7 +10,6 @@ using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
-using UFO;
 using UFO.Extension;
 using UFO.Setting;
 namespace UFO.Patch;

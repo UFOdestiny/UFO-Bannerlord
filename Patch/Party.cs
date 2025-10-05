@@ -7,7 +7,6 @@ using TaleWorlds.CampaignSystem.CampaignBehaviors;
 using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.Localization;
-using UFO;
 using UFO.Extension;
 using UFO.Setting;
 

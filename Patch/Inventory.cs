@@ -10,7 +10,6 @@ using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
-using UFO;
 using UFO.Extension;
 using UFO.Setting;
 namespace UFO.Patch;

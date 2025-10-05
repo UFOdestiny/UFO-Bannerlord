@@ -1,21 +1,7 @@
 using HarmonyLib;
-using MCM.Abstractions.Base.Global;
-using SandBox.GameComponents;
-using Shokuho.CustomCampaign.CustomLocations.models;
-using Shokuho.ShokuhoCustomCampaign.Models;
-using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Runtime;
-using TaleWorlds.CampaignSystem;
-using TaleWorlds.CampaignSystem.CharacterDevelopment;
-using TaleWorlds.CampaignSystem.GameComponents;
-using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.Core;
-using TaleWorlds.Library;
-using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
-using UFO.Extension;
 using UFO.Setting;
 
 namespace UFO.Shokuho.Combat;

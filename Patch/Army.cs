@@ -3,7 +3,6 @@ using System;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.CampaignSystem.Party;
-using UFO;
 using UFO.Extension;
 using UFO.Setting;
 

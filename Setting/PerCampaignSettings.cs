@@ -1,9 +1,9 @@
-using System.Reflection;
-using System.Text.RegularExpressions;
-using UFO.Localization;
 using MCM.Abstractions.Base.PerCampaign;
 using MCM.Common;
+using System.Reflection;
+using System.Text.RegularExpressions;
 using TaleWorlds.CampaignSystem;
+using UFO.Localization;
 
 namespace UFO.Setting
 {

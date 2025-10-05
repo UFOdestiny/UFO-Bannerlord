@@ -1,11 +1,9 @@
+using HarmonyLib;
 using System.Collections.Generic;
 using System.Reflection;
-using HarmonyLib;
-using MCM.Abstractions.Base.Global;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.CampaignBehaviors;
 using TaleWorlds.CampaignSystem.CharacterDevelopment;
-using TaleWorlds.CampaignSystem.ComponentInterfaces;
 using TaleWorlds.CampaignSystem.Conversation.Persuasion;
 using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.CampaignSystem.MapEvents;
@@ -14,9 +12,6 @@ using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.CampaignSystem.Settlements.Workshops;
 using TaleWorlds.CampaignSystem.Siege;
 using TaleWorlds.Core;
-using TaleWorlds.Localization;
-using static TaleWorlds.CampaignSystem.CharacterDevelopment.DefaultPerks;
-using static TaleWorlds.CampaignSystem.Settlements.Workshops.WorkshopType;
 using UFO.Extension;
 using UFO.Setting;
 

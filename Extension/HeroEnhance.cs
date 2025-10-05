@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using HarmonyLib;
-using MCM.Abstractions.Base.Global;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.CharacterDevelopment;
 using TaleWorlds.Core;

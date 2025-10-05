@@ -13,7 +13,6 @@ using TaleWorlds.CampaignSystem.Siege;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
-using UFO;
 using UFO.Extension;
 using UFO.Setting;
 namespace UFO.Patch.Combat;

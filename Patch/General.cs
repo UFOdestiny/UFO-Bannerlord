@@ -18,10 +18,8 @@ using TaleWorlds.Core;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.ScreenSystem;
-using UFO;
-using UFO.Setting;
 using UFO.Extension;
-using UFO.Localization;
+using UFO.Setting;
 namespace UFO.Patch;
 
 

@@ -3,7 +3,6 @@ using JetBrains.Annotations;
 using System;
 using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.CampaignSystem.Settlements.Workshops;
-using UFO;
 using UFO.Extension;
 using UFO.Setting;
 

@@ -1,9 +1,6 @@
 ﻿using HarmonyLib;
-using MCM.Abstractions.Base.Global;
 using SandBox.GameComponents;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
