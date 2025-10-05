@@ -14,7 +14,6 @@ using UFO.Setting;
 namespace UFO.Patch;
 
 
-
 [HarmonyPatch(typeof(DefaultPartySpeedCalculatingModel), "CalculateFinalSpeed")]
 public static class MapSpeedMultiplier
 {
@@ -79,7 +78,6 @@ public static class NpcMapSpeedPercentage
         }
     }
 }
-
 
 
 [HarmonyPatch(typeof(MobileParty), "ShouldBeIgnored", MethodType.Getter)]

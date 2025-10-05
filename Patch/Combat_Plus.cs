@@ -1,8 +1,10 @@
 ﻿using HarmonyLib;
 using MCM.Abstractions.Base.Global;
+using SandBox.GameComponents;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime;
+using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.Library;
@@ -11,6 +13,114 @@ using UFO.Extension;
 using UFO.Setting;
 
 namespace UFO.Patch.Combat;
+
+
+// CRUSH THROUGH EVERYONE
+
+[HarmonyPatch(typeof(CustomAgentApplyDamageModel), "DecideCrushedThrough")]
+internal class DecideCrushedThroughPostfixPatch_c
+{
+    private static void Postfix(ref bool __result, Agent attackerAgent, Agent defenderAgent, float totalAttackEnergy, Agent.UsageDirection attackDirection, StrikeType strikeType, WeaponComponentData defendItem, bool isPassiveUsage)
+    {
+        if (SettingsManager.TestMode.Value)
+        {
+            return;
+        }
+        if (SettingsManager.PlayerAlwaysCrush.Value && attackerAgent.IsPlayer())
+        {
+            __result = true;
+            return;
+        }
+
+        float num = attackerAgent.CombatEnhanceRate();
+        float num2 = defenderAgent.CombatEnhanceRate();
+        if (num == 0f && num2 == 0f)
+        {
+            return;
+        }
+        int num3 = 0;
+        int num4 = 0;
+        if (num > 0f)
+        {
+            CharacterObject characterObject = attackerAgent.Character as CharacterObject;
+            Hero heroObject = characterObject.HeroObject;
+            num3 = (int)((float)heroObject.GetAttributeValue(DefaultCharacterAttributes.Vigor) * num);
+        }
+        if (num2 > 0f)
+        {
+            CharacterObject characterObject2 = defenderAgent.Character as CharacterObject;
+            Hero heroObject2 = characterObject2.HeroObject;
+            num4 = (int)((float)heroObject2.GetAttributeValue(DefaultCharacterAttributes.Vigor) * num2);
+        }
+        int num5 = num3 - num4;
+        if (num5 > 0 && !__result)
+        {
+            if (MBRandom.RandomInt(100) < num5 * SettingsManager.VigorCrushThroughPositive.Value)
+            {
+                __result = true;
+            }
+        }
+        else if (((num5 < 0) & __result) && MBRandom.RandomInt(100) < -num5 * SettingsManager.VigorCrushThroughNegative.Value)
+        {
+            __result = false;
+        }
+    }
+}
+
+[HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "DecideCrushedThrough")]
+internal class DecideCrushedThroughPostfixPatch_s
+{
+    private static void Postfix(ref bool __result, Agent attackerAgent, Agent defenderAgent, float totalAttackEnergy, Agent.UsageDirection attackDirection, StrikeType strikeType, WeaponComponentData defendItem, bool isPassiveUsage)
+    {
+        if (SettingsManager.TestMode.Value)
+        {
+            return;
+        }
+        if (SettingsManager.PlayerAlwaysCrush.Value && attackerAgent.IsPlayer())
+        {
+            __result = true;
+            return;
+        }
+
+        float num = attackerAgent.CombatEnhanceRate();
+        float num2 = defenderAgent.CombatEnhanceRate();
+        if (num == 0f && num2 == 0f)
+        {
+            return;
+        }
+        int num3 = 0;
+        int num4 = 0;
+        if (num > 0f)
+        {
+            CharacterObject characterObject = attackerAgent.Character as CharacterObject;
+            Hero heroObject = characterObject.HeroObject;
+            num3 = (int)((float)heroObject.GetAttributeValue(DefaultCharacterAttributes.Vigor) * num);
+        }
+        if (num2 > 0f)
+        {
+            CharacterObject characterObject2 = defenderAgent.Character as CharacterObject;
+            Hero heroObject2 = characterObject2.HeroObject;
+            num4 = (int)((float)heroObject2.GetAttributeValue(DefaultCharacterAttributes.Vigor) * num2);
+        }
+        int num5 = num3 - num4;
+        if (num5 > 0 && !__result)
+        {
+            if (MBRandom.RandomInt(100) < num5 * SettingsManager.VigorCrushThroughPositive.Value)
+            {
+                __result = true;
+            }
+        }
+        else if (((num5 < 0) & __result) && MBRandom.RandomInt(100) < -num5 * SettingsManager.VigorCrushThroughNegative.Value)
+        {
+            __result = false;
+        }
+    }
+}
+
+
+
+
+// CUT THROUGH EVERYONE
 public class CutThroughEveryoneLogic : MissionLogic
 {
     private struct SliceMetadatum
@@ -64,7 +174,7 @@ public class CutThroughEveryoneLogic : MissionLogic
     public static bool ShouldCutThrough(AttackCollisionData collisionData, Agent attacker, Agent victim)
     {
 
-        return attacker.IsPlayer();
+        return attacker.IsPlayer() && SettingsManager.PlayerAlwaysCrush.Value;
 
     }
 
@@ -109,7 +219,7 @@ internal static class CutThroughEveryonePatch
         if (num >= 1 && CutThroughEveryoneLogic.ShouldCutThrough(collisionData, attacker, victim))
         {
             float num2 = (float)collisionData.InflictedDamage / (float)num;
-            inOutMomentumRemaining = num2 ;
+            inOutMomentumRemaining = num2;
         }
     }
 }

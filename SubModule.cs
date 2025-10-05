@@ -45,7 +45,7 @@ namespace UFO
 
             PATCH(patcher, ref PatchesApplied);
 
-            PatchInspector.PatchInformation();
+            //PatchInspector.PatchInformation();
 
             //InformationManager.DisplayMessage(new InformationMessage("UFO's Mod Patch Applied", Colors.Green));
         }

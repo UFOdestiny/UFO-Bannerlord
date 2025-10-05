@@ -12,7 +12,7 @@ using TaleWorlds.CampaignSystem.Party;
 using UFO.Extension;
 using UFO.Setting;
 
-namespace UFO.Patch.Shokuho;
+namespace UFO.Shokuho;
 
 
 [HarmonyPatch]

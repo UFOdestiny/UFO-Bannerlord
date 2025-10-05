@@ -50,11 +50,11 @@ namespace UFO.Setting
 
 
         // UFO's
-        [LocalizedSettingPropertyGroup("UFOs", GroupOrder = 0)]
+        [LocalizedSettingPropertyGroup("Combat_Player", GroupOrder = 3)]
         [LocalizedSettingPropertyBool("PlayerAlwaysCrush")]
         public bool PlayerAlwaysCrush { get; set; } = true;
 
-        [LocalizedSettingPropertyGroup("UFOs", GroupOrder = 0)]
+        [LocalizedSettingPropertyGroup("Combat_Player", GroupOrder = 3)]
         [LocalizedSettingPropertyBool("InfiniteMomentum")]
         public bool InfiniteMomentum { get; set; } = false;
 
