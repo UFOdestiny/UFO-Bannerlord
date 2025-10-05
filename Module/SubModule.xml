@@ -40,61 +40,19 @@
 		</SubModule>
 	</SubModules>
 	<Xmls>
+
+		<XmlNode>
+			<XmlName id="Items" path="Items/arrow" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode>
 		
 		<XmlNode>
-			<XmlName id="GameText" path="module_strings" />
-			<IncludedGameTypes>
-				<GameType value="Campaign" />
-				<GameType value="CampaignStoryMode" />
-				<GameType value="CustomGame" />
-				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
-			</IncludedGameTypes>
-		</XmlNode>
-
-		<XmlNode>
-			<XmlName id="Items" path="item" />
-			<IncludedGameTypes>
-				<GameType value="Campaign" />
-				<GameType value="CampaignStoryMode" />
-				<GameType value="CustomGame" />
-				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
-			</IncludedGameTypes>
-		</XmlNode>
-		<XmlNode>
-			<XmlName id="CraftingPieces" path="pieces" />
-			<IncludedGameTypes>
-				<GameType value="Campaign" />
-				<GameType value="CampaignStoryMode" />
-				<GameType value="CustomGame" />
-				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
-			</IncludedGameTypes>
-		</XmlNode>
-		<XmlNode>
-			<XmlName id="CraftingTemplates" path="templates" />
-			<IncludedGameTypes>
-				<GameType value="Campaign" />
-				<GameType value="CampaignStoryMode" />
-				<GameType value="CustomGame" />
-				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
-			</IncludedGameTypes>
-		</XmlNode>
-		<XmlNode>
-			<XmlName id="WeaponDescriptions" path="descriptions" />
-			<IncludedGameTypes>
-				<GameType value="Campaign" />
-				<GameType value="CampaignStoryMode" />
-				<GameType value="CustomGame" />
-				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
-			</IncludedGameTypes>
-		</XmlNode>
-
-
-		<!-- <XmlNode>
 			<XmlName id="Items" path="Items/loongspear" />
 			<IncludedGameTypes>
 				<GameType value="Campaign" />
@@ -176,7 +134,7 @@
 				<GameType value="EditorGame" />
 				<GameType value="ShokuhoCampaign" />
 			</IncludedGameTypes>
-		</XmlNode> -->
+		</XmlNode>
 
 
 	</Xmls>

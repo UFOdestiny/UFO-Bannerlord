@@ -92,6 +92,54 @@ internal class CombatAttrEnhance
     }
 
 
+    [HarmonyPatch]
+    internal class SetPerkAndBannerEffectsOnAgentPostfixPatch
+    {
+        private static bool Prepare()
+        {
+            return AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentStatCalculateModel") != null;
+        }
+        static MethodBase TargetMethod()
+        {
+            var type = AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentStatCalculateModel");
+            return AccessTools.Method(type, "UpdateHumanStats");
+        }
+
+        private static void Postfix(ref Agent agent, ref AgentDrivenProperties agentDrivenProperties)
+        {
+            float num = agent.CombatEnhanceRate();
+            if (num != 0f)
+            {
+                CharacterObject characterObject = agent.Character as CharacterObject;
+                Hero heroObject = characterObject.HeroObject;
+
+                int attributeValue = heroObject.GetAttributeValue(DefaultCharacterAttributes.Vigor);
+                int attributeValue2 = heroObject.GetAttributeValue(DefaultCharacterAttributes.Control);
+                int attributeValue3 = heroObject.GetAttributeValue(DefaultCharacterAttributes.Endurance);
+                float num2 = 0f;
+                if (!agent.HasMount && characterObject.GetPerkValue(DefaultPerks.Athletics.IgnorePain))
+                {
+                    num2 += DefaultPerks.Athletics.IgnorePain.PrimaryBonus;
+                }
+                float num3 = 1f + 0.01f * num2;
+                float num4 = (float)attributeValue * SettingsManager.VigorArmorAdd.Value * num3 * num;
+                agentDrivenProperties.ArmorHead += num4;
+                agentDrivenProperties.ArmorTorso += num4;
+                agentDrivenProperties.ArmorArms += num4;
+                agentDrivenProperties.ArmorLegs += num4;
+                agentDrivenProperties.WeaponMaxMovementAccuracyPenalty *= 1f - (float)attributeValue2 * SettingsManager.ControlAimStabilityPercent.Value * num;
+                agentDrivenProperties.WeaponMaxUnsteadyAccuracyPenalty *= 1f - (float)attributeValue2 * SettingsManager.ControlAimStabilityPercent.Value * num;
+                agentDrivenProperties.WeaponUnsteadyBeginTime *= 1f + (float)attributeValue2 * SettingsManager.ControlAimStabilityPercent.Value * num;
+                agentDrivenProperties.WeaponUnsteadyEndTime *= 1f + (float)attributeValue2 * SettingsManager.ControlAimStabilityPercent.Value * num;
+                agentDrivenProperties.HandlingMultiplier *= 1f + (float)attributeValue2 * SettingsManager.ControlAimStabilityPercent.Value * num;
+                agentDrivenProperties.CombatMaxSpeedMultiplier *= 1f + (float)attributeValue3 * SettingsManager.EnduranceWalkSpeedPercent.Value * num;
+                agentDrivenProperties.MaxSpeedMultiplier *= 1f + (float)attributeValue3 * SettingsManager.EnduranceWalkSpeedPercent.Value * num;
+            }
+        }
+    }
+
+    /*
+
     [HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "DecideMissileWeaponFlags")]
     internal class DecideMissileWeaponFlagsPostfixPatch
     {
@@ -172,51 +220,7 @@ internal class CombatAttrEnhance
         }
     }
 
-    [HarmonyPatch]
-    internal class SetPerkAndBannerEffectsOnAgentPostfixPatch
-    {
-        private static bool Prepare()
-        {
-            return AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentStatCalculateModel") != null;
-        }
-        static MethodBase TargetMethod()
-        {
-            var type = AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentStatCalculateModel");
-            return AccessTools.Method(type, "UpdateHumanStats");
-        }
 
-        private static void Postfix(ref Agent agent, ref AgentDrivenProperties agentDrivenProperties)
-        {
-            float num = agent.CombatEnhanceRate();
-            if (num != 0f)
-            {
-                CharacterObject characterObject = agent.Character as CharacterObject;
-                Hero heroObject = characterObject.HeroObject;
-
-                int attributeValue = heroObject.GetAttributeValue(DefaultCharacterAttributes.Vigor);
-                int attributeValue2 = heroObject.GetAttributeValue(DefaultCharacterAttributes.Control);
-                int attributeValue3 = heroObject.GetAttributeValue(DefaultCharacterAttributes.Endurance);
-                float num2 = 0f;
-                if (!agent.HasMount && characterObject.GetPerkValue(DefaultPerks.Athletics.IgnorePain))
-                {
-                    num2 += DefaultPerks.Athletics.IgnorePain.PrimaryBonus;
-                }
-                float num3 = 1f + 0.01f * num2;
-                float num4 = (float)attributeValue * SettingsManager.VigorArmorAdd.Value * num3 * num;
-                agentDrivenProperties.ArmorHead += num4;
-                agentDrivenProperties.ArmorTorso += num4;
-                agentDrivenProperties.ArmorArms += num4;
-                agentDrivenProperties.ArmorLegs += num4;
-                agentDrivenProperties.WeaponMaxMovementAccuracyPenalty *= 1f - (float)attributeValue2 * SettingsManager.ControlAimStabilityPercent.Value * num;
-                agentDrivenProperties.WeaponMaxUnsteadyAccuracyPenalty *= 1f - (float)attributeValue2 * SettingsManager.ControlAimStabilityPercent.Value * num;
-                agentDrivenProperties.WeaponUnsteadyBeginTime *= 1f + (float)attributeValue2 * SettingsManager.ControlAimStabilityPercent.Value * num;
-                agentDrivenProperties.WeaponUnsteadyEndTime *= 1f + (float)attributeValue2 * SettingsManager.ControlAimStabilityPercent.Value * num;
-                agentDrivenProperties.HandlingMultiplier *= 1f + (float)attributeValue2 * SettingsManager.ControlAimStabilityPercent.Value * num;
-                agentDrivenProperties.CombatMaxSpeedMultiplier *= 1f + (float)attributeValue3 * SettingsManager.EnduranceWalkSpeedPercent.Value * num;
-                agentDrivenProperties.MaxSpeedMultiplier *= 1f + (float)attributeValue3 * SettingsManager.EnduranceWalkSpeedPercent.Value * num;
-            }
-        }
-    }
 
     [HarmonyPatch(typeof(SandboxAgentStatCalculateModel), "UpdateHorseStats")]
     internal class UpdateHorseStatsPostfixPatch
@@ -398,5 +402,5 @@ internal class CombatAttrEnhance
             return true;
         }
     }
-
+    */
 }

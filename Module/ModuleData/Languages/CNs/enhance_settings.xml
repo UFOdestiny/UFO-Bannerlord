@@ -11,10 +11,12 @@
   <string id="he_eysn_hint" text="家族成员的跑动+魅力如果大于或等于这个值将获得长生不老能力"/>
   <string id="he_acap" text="自动获得两个分支的技能"/>
   <string id="he_acap_hint" text="需要技能等级满足要求"/>
+  
   <string id="he_choice_a" text="所有英雄"/>
   <string id="he_choice_co" text="玩家家族成员"/>
   <string id="he_choice_po" text="玩家自己"/>
   <string id="he_choice_no" text="没有人"/>
+
   <string id="he_geed" text="开启英雄每天获得角色经验"/>
   <string id="he_geed_hint" text="具体为等级x智力x智力x2"/>
   <string id="he_carp" text="战斗增强系数-玩家"/>

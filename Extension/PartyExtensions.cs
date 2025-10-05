@@ -1,5 +1,3 @@
-// BannerlordCheats, Version=1.2.9.5, Culture=neutral, PublicKeyToken=null
-// BannerlordCheats.Extensions.PartyExtensions
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.Party;
 namespace UFO.Extension
