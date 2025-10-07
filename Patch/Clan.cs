@@ -9,6 +9,33 @@ using UFO.Setting;
 
 namespace UFO.Patch;
 
+
+[HarmonyPatch(typeof(DefaultMarriageModel), "GetClanAfterMarriage")]
+public static class KeepDaughter
+{
+    public static void Postfix(ref Clan __result, Hero firstHero, Hero secondHero)
+    {
+        if (firstHero.Clan?.Leader == firstHero || secondHero.Clan?.Leader == secondHero)
+            return;
+
+        if (firstHero.Clan != Hero.MainHero.Clan && secondHero.Clan != Hero.MainHero.Clan)
+            return;
+
+        if (firstHero.Clan == Hero.MainHero.Clan && secondHero.Clan == Hero.MainHero.Clan)
+            return;
+
+        Hero clanHero = firstHero.Clan == Hero.MainHero.Clan ? firstHero : secondHero;
+
+        if (clanHero.IsFemale && SettingsManager.KeepDaughter.Value)
+        {
+            __result = clanHero.Clan;
+        }
+
+        return;
+    }
+}
+
+
 [HarmonyPatch(typeof(DefaultClanTierModel), "GetPartyLimitForTier")]
 public static class ExtraClanPartyLimit
 {

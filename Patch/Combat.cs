@@ -1224,71 +1224,71 @@ public static class RenownRewardMultiplierTournament
     }
 }
 
-public static class SliceThroughEveryonePassive
-{
-    public static void DecidePassiveAttackCollisionReaction(Agent attacker, Agent defender, bool isFatalHit, ref MeleeCollisionReaction __result)
-    {
-        try
-        {
-            if (attacker.IsPlayer() && SettingsManager.SliceThroughEveryone.IsChanged)
-            {
-                __result = MeleeCollisionReaction.SlicedThrough;
-            }
-        }
-        catch (Exception e)
-        {
-            SubModule.LogError(e, typeof(SliceThroughEveryonePassive));
-        }
-    }
-}
+//public static class SliceThroughEveryonePassive
+//{
+//    public static void DecidePassiveAttackCollisionReaction(Agent attacker, Agent defender, bool isFatalHit, ref MeleeCollisionReaction __result)
+//    {
+//        try
+//        {
+//            if (attacker.IsPlayer() && SettingsManager.SliceThroughEveryone.IsChanged)
+//            {
+//                __result = MeleeCollisionReaction.SlicedThrough;
+//            }
+//        }
+//        catch (Exception e)
+//        {
+//            SubModule.LogError(e, typeof(SliceThroughEveryonePassive));
+//        }
+//    }
+//}
 
 
-[HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "DecidePassiveAttackCollisionReaction")]
-public static class SliceThroughEveryonePassive_Sandbox
-{
-    [UsedImplicitly]
-    [HarmonyPostfix]
-    public static void DecidePassiveAttackCollisionReaction(Agent attacker, Agent defender, bool isFatalHit, ref MeleeCollisionReaction __result)
-    {
-        SliceThroughEveryonePassive.DecidePassiveAttackCollisionReaction(attacker, defender, isFatalHit, ref __result);
-    }
-}
+//[HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "DecidePassiveAttackCollisionReaction")]
+//public static class SliceThroughEveryonePassive_Sandbox
+//{
+//    [UsedImplicitly]
+//    [HarmonyPostfix]
+//    public static void DecidePassiveAttackCollisionReaction(Agent attacker, Agent defender, bool isFatalHit, ref MeleeCollisionReaction __result)
+//    {
+//        SliceThroughEveryonePassive.DecidePassiveAttackCollisionReaction(attacker, defender, isFatalHit, ref __result);
+//    }
+//}
 
 
 
-[HarmonyPatch(typeof(Mission), "DecideWeaponCollisionReaction")]
-public static class SliceThroughEveryoneWeapon
-{
-    [UsedImplicitly]
-    [HarmonyPostfix]
-    public static void DecideWeaponCollisionReaction(Blow registeredBlow, AttackCollisionData collisionData, Agent attacker, Agent defender, MissionWeapon attackerWeapon, bool isFatalHit, bool isShruggedOff, ref MeleeCollisionReaction colReaction)
-    {
-        try
-        {
-            if (attacker.IsPlayer() && SettingsManager.SliceThroughEveryone.IsChanged)
-            {
-                colReaction = MeleeCollisionReaction.SlicedThrough;
-            }
-        }
-        catch (Exception e)
-        {
-            SubModule.LogError(e, typeof(SliceThroughEveryoneWeapon));
-        }
-    }
-}
+//[HarmonyPatch(typeof(Mission), "DecideWeaponCollisionReaction")]
+//public static class SliceThroughEveryoneWeapon
+//{
+//    [UsedImplicitly]
+//    [HarmonyPostfix]
+//    public static void DecideWeaponCollisionReaction(Blow registeredBlow, AttackCollisionData collisionData, Agent attacker, Agent defender, MissionWeapon attackerWeapon, bool isFatalHit, bool isShruggedOff, ref MeleeCollisionReaction colReaction)
+//    {
+//        try
+//        {
+//            if (attacker.IsPlayer() && SettingsManager.SliceThroughEveryone.IsChanged)
+//            {
+//                colReaction = MeleeCollisionReaction.SlicedThrough;
+//            }
+//        }
+//        catch (Exception e)
+//        {
+//            SubModule.LogError(e, typeof(SliceThroughEveryoneWeapon));
+//        }
+//    }
+//}
 
 
-[HarmonyPatch(typeof(Mission), "UpdateMomentumRemaining")]
-public static class SliceThroughEveryoneWeaponMomentum
-{
-    [UsedImplicitly]
-    [HarmonyPrefix]
-    public static bool UpdateMomentumRemaining(float momentumRemaining, Blow b, in AttackCollisionData collisionData, Agent attacker, Agent victim, in MissionWeapon attackerWeapon, bool isCrushThrough)
-    {
-        if (attacker.IsPlayer() && SettingsManager.SliceThroughEveryone.IsChanged)
-        {
-            return false;
-        }
-        return true;
-    }
-}
+//[HarmonyPatch(typeof(Mission), "UpdateMomentumRemaining")]
+//public static class SliceThroughEveryoneWeaponMomentum
+//{
+//    [UsedImplicitly]
+//    [HarmonyPrefix]
+//    public static bool UpdateMomentumRemaining(float momentumRemaining, Blow b, in AttackCollisionData collisionData, Agent attacker, Agent victim, in MissionWeapon attackerWeapon, bool isCrushThrough)
+//    {
+//        if (attacker.IsPlayer() && SettingsManager.SliceThroughEveryone.IsChanged)
+//        {
+//            return false;
+//        }
+//        return true;
+//    }
+//}

@@ -1,10 +1,8 @@
 ﻿using HarmonyLib;
-using SandBox.GameComponents;
-using System;
+using JetBrains.Annotations;
 using System.Reflection;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.CharacterDevelopment;
-using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
@@ -138,11 +136,21 @@ internal class CombatAttrEnhance
         }
     }
 
-    /*
 
-    [HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "DecideMissileWeaponFlags")]
+    [HarmonyPatch]
     internal class DecideMissileWeaponFlagsPostfixPatch
     {
+        private static bool Prepare()
+        {
+            return AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentApplyDamageModel") != null;
+        }
+        static MethodBase TargetMethod()
+        {
+            var type = AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentApplyDamageModel");
+            return AccessTools.Method(type, "DecideMissileWeaponFlags");
+        }
+
+
         private static void Postfix(ref Agent attackerAgent, MissionWeapon missileWeapon, ref WeaponFlags missileWeaponFlags)
         {
             float num = attackerAgent.CombatEnhanceRate();
@@ -160,50 +168,84 @@ internal class CombatAttrEnhance
         }
     }
 
-    [HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "CalculateDamage")]
+
+    [HarmonyPatch]
     internal class SandboxCalculateDamagePrefixPatch
     {
+        private static bool Prepare()
+        {
+            return AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentApplyDamageModel") != null;
+        }
+        static MethodBase TargetMethod()
+        {
+            var type = AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentApplyDamageModel");
+            return AccessTools.Method(type, "CalculateDamage");
+        }
+
         private static bool Prefix(ref AttackInformation attackInformation, ref AttackCollisionData collisionData, ref MissionWeapon weapon, ref float baseDamage)
         {
             return CalculateDamage(ref attackInformation, ref collisionData, ref weapon, ref baseDamage);
         }
     }
 
-    [HarmonyPatch(typeof(CustomAgentApplyDamageModel), "CalculateDamage")]
+
+    [HarmonyPatch]
     internal class CalculateDamagePrefixPatch
     {
+        private static bool Prepare()
+        {
+            return AccessTools.TypeByName("Shokuho.ShokuhoCustomCampaign.Models.ShokuhoCustomAgentApplyDamageModel") != null;
+        }
+        static MethodBase TargetMethod()
+        {
+            var type = AccessTools.TypeByName("Shokuho.ShokuhoCustomCampaign.Models.ShokuhoCustomAgentApplyDamageModel");
+            return AccessTools.Method(type, "CalculateDamage");
+        }
         private static bool Prefix(ref AttackInformation attackInformation, ref AttackCollisionData collisionData, ref MissionWeapon weapon, ref float baseDamage)
         {
             return CalculateDamage(ref attackInformation, ref collisionData, ref weapon, ref baseDamage);
         }
     }
 
-    [HarmonyPatch(typeof(Agent), "Health", MethodType.Setter)]
-    internal class SetHealthPrefixPatch
-    {
-        private static bool Prefix(ref float value)
-        {
-            if (!SettingsManager.TestMode.Value)
-            {
-                return true;
-            }
-            return false;
-        }
-    }
 
-    [HarmonyPatch(typeof(Agent), "Die")]
-    internal class setDiePrefixPatch
-    {
-        private static bool Prefix(Blow b, Agent.KillInfo overrideKillInfo = Agent.KillInfo.Invalid)
-        {
-            if (!SettingsManager.TestMode.Value)
-            {
-                return true;
-            }
-            return false;
-        }
-    }
 
+    //[HarmonyPatch(typeof(Agent), "Health", MethodType.Setter)]
+    //internal class SetHealthPrefixPatch
+    //{
+    //    private static bool Prepare()
+    //    {
+    //        return AccessTools.TypeByName("") != null;
+    //    }
+    //    static MethodBase TargetMethod()
+    //    {
+    //        var type = AccessTools.TypeByName("");
+    //        return AccessTools.Method(type, "");
+    //    }
+    //    private static bool Prefix(ref float value)
+    //    {
+    //        if (!SettingsManager.TestMode.Value)
+    //        {
+    //            return true;
+    //        }
+    //        return false;
+    //    }
+    //}
+    
+    //[HarmonyPatch(typeof(Agent), "Die")]
+    //internal class setDiePrefixPatch
+    //{
+    //    private static bool Prefix(Blow b, Agent.KillInfo overrideKillInfo = Agent.KillInfo.Invalid)
+    //    {
+    //        if (!SettingsManager.TestMode.Value)
+    //        {
+    //            return true;
+    //        }
+    //        return false;
+    //    }
+    //}
+
+
+    /*
     [HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "CalculateStaggerThresholdDamage")]
     internal class CalculateStaggerThresholdDamagePostfixPatch
     {

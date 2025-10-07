@@ -86,6 +86,7 @@
 	<Target Name="CopyOutputToModFolder" AfterTargets="Build">
 		<Copy SourceFiles="$(OutPutPath)\$(MSBuildProjectName).dll" DestinationFolder="$(GameFolder)\Modules\UFO\bin\Win64_Shipping_Client\" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="$(OutPutPath)\L10N.resx" DestinationFolder="$(GameFolder)\Modules\UFO\bin\Win64_Shipping_Client\" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="Module\SubModule.xml" DestinationFolder="$(GameFolder)\Modules\UFO\" SkipUnchangedFiles="true" />
 	</Target>
 
 </Project>

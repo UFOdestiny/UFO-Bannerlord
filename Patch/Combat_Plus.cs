@@ -171,14 +171,40 @@ public class CutThroughEveryoneLogic : MissionLogic
     public static bool ShouldCutThrough(AttackCollisionData collisionData, Agent attacker, Agent victim)
     {
 
-        return attacker.IsPlayer() && SettingsManager.PlayerAlwaysCrush.Value;
+        if (!SettingsManager.PlayerAlwaysCrush.Value || !attacker.IsPlayer())
+        {
+            return false;
+        }
 
+        if (!DoPreflightChecksPass(collisionData, attacker, victim))
+        {
+            return false;
+        }
+
+        //WeaponClass valueOrDefault = (attacker.WieldedWeapon.Item.Weapons?.FirstOrDefault()?.WeaponClass).GetValueOrDefault();
+
+        //if (!WeaponClassSliceMetadata.ContainsKey(valueOrDefault) || !WeaponClassSliceMetadata[valueOrDefault].SliceDirections.Contains(collisionData.AttackDirection))
+        //{
+        //    return false;
+        //}
+
+        //if (attacker.Team == victim.Team)
+        //{
+        //    return true;
+        //}
+
+        //int num = collisionData.InflictedDamage + collisionData.AbsorbedByArmor;
+
+        //return (double)((float)collisionData.InflictedDamage / (float)num) >= (double)0.01;
+
+        return true;
     }
+
 
     private static bool DoPreflightChecksPass(AttackCollisionData collisionData, Agent attacker, Agent victim)
     {
         bool result = false;
-        if (victim != null && attacker != null && attacker.WieldedWeapon.Item != null && ((int)victim.Health == 0) && (attacker.Team != victim.Team) && (attacker.IsMainAgent))
+        if (victim != null && attacker != null && attacker.WieldedWeapon.Item != null && attacker.IsPlayer())
         {
             result = true;
         }

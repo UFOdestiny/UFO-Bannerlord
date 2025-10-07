@@ -132,13 +132,13 @@ namespace UFO.Extension
             }
             if (heroObject == Hero.MainHero)
             {
-                return 2;
+                return 1;
             }
             if (heroObject.Clan == Clan.PlayerClan)
             {
-                return 1;
+                return 0;
             }
-            return 0;
+            return 2;
         }
 
         public static int EnhanceType(this Hero hero)
@@ -160,7 +160,7 @@ namespace UFO.Extension
 
         public static void AddBothBranchPerks(this Hero hero)
         {
-            if (!hero.IsAlive || (int)SettingsManager.AutoChoosePerk.Value > hero.EnhanceType())
+            if (!hero.IsAlive || (int)SettingsManager.AutoChoosePerk.Value != hero.EnhanceType())
             {
                 return;
             }

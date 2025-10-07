@@ -1,29 +1,28 @@
 ﻿using TaleWorlds.CampaignSystem;
 using TaleWorlds.Library;
 
-namespace UFO
+namespace UFO.Behavior;
+
+public class AddMoney : CampaignBehaviorBase
 {
-    public class AddMoney : CampaignBehaviorBase
+    private int gold = 0;
+
+    public override void RegisterEvents()
     {
-        private int gold = 0;
+        CampaignEvents.HourlyTickEvent.AddNonSerializedListener(this, DailyTick);
+    }
 
-        public override void RegisterEvents()
-        {
-            CampaignEvents.HourlyTickEvent.AddNonSerializedListener(this, DailyTick);
-        }
+    private void DailyTick()
+    {
+        gold += 1;
+        Hero.MainHero.ChangeHeroGold(gold);
+        InformationManager.DisplayMessage(
+            new InformationMessage($"You got {gold} gold!", new Color(1f, 0f, 0f, 1f))
+        );
+    }
 
-        private void DailyTick()
-        {
-            gold += 1;
-            Hero.MainHero.ChangeHeroGold(gold);
-            InformationManager.DisplayMessage(
-                new InformationMessage($"You got {gold} gold!", new Color(1f, 0f, 0f, 1f))
-            );
-        }
-
-        public override void SyncData(IDataStore dataStore)
-        {
-            dataStore.SyncData("gold", ref gold);
-        }
+    public override void SyncData(IDataStore dataStore)
+    {
+        dataStore.SyncData("gold", ref gold);
     }
 }
