@@ -169,43 +169,43 @@ internal class CombatAttrEnhance
     }
 
 
-    [HarmonyPatch]
-    internal class SandboxCalculateDamagePrefixPatch
-    {
-        private static bool Prepare()
-        {
-            return AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentApplyDamageModel") != null;
-        }
-        static MethodBase TargetMethod()
-        {
-            var type = AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentApplyDamageModel");
-            return AccessTools.Method(type, "CalculateDamage");
-        }
+    //[HarmonyPatch]
+    //internal class SandboxCalculateDamagePrefixPatch
+    //{
+    //    private static bool Prepare()
+    //    {
+    //        return AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentApplyDamageModel") != null;
+    //    }
+    //    static MethodBase TargetMethod()
+    //    {
+    //        var type = AccessTools.TypeByName("Shokuho.CustomCampaign.CustomLocations.models.ShokuhoSandboxAgentApplyDamageModel");
+    //        return AccessTools.Method(type, "CalculateDamage");
+    //    }
 
-        private static bool Prefix(ref AttackInformation attackInformation, ref AttackCollisionData collisionData, ref MissionWeapon weapon, ref float baseDamage)
-        {
-            return CalculateDamage(ref attackInformation, ref collisionData, ref weapon, ref baseDamage);
-        }
-    }
+    //    private static bool Prefix(ref AttackInformation attackInformation, ref AttackCollisionData collisionData, ref MissionWeapon weapon, ref float baseDamage)
+    //    {
+    //        return CalculateDamage(ref attackInformation, ref collisionData, ref weapon, ref baseDamage);
+    //    }
+    //}
 
 
-    [HarmonyPatch]
-    internal class CalculateDamagePrefixPatch
-    {
-        private static bool Prepare()
-        {
-            return AccessTools.TypeByName("Shokuho.ShokuhoCustomCampaign.Models.ShokuhoCustomAgentApplyDamageModel") != null;
-        }
-        static MethodBase TargetMethod()
-        {
-            var type = AccessTools.TypeByName("Shokuho.ShokuhoCustomCampaign.Models.ShokuhoCustomAgentApplyDamageModel");
-            return AccessTools.Method(type, "CalculateDamage");
-        }
-        private static bool Prefix(ref AttackInformation attackInformation, ref AttackCollisionData collisionData, ref MissionWeapon weapon, ref float baseDamage)
-        {
-            return CalculateDamage(ref attackInformation, ref collisionData, ref weapon, ref baseDamage);
-        }
-    }
+    //[HarmonyPatch]
+    //internal class CalculateDamagePrefixPatch
+    //{
+    //    private static bool Prepare()
+    //    {
+    //        return AccessTools.TypeByName("Shokuho.ShokuhoCustomCampaign.Models.ShokuhoCustomAgentApplyDamageModel") != null;
+    //    }
+    //    static MethodBase TargetMethod()
+    //    {
+    //        var type = AccessTools.TypeByName("Shokuho.ShokuhoCustomCampaign.Models.ShokuhoCustomAgentApplyDamageModel");
+    //        return AccessTools.Method(type, "CalculateDamage");
+    //    }
+    //    private static bool Prefix(ref AttackInformation attackInformation, ref AttackCollisionData collisionData, ref MissionWeapon weapon, ref float baseDamage)
+    //    {
+    //        return CalculateDamage(ref attackInformation, ref collisionData, ref weapon, ref baseDamage);
+    //    }
+    //}
 
 
 

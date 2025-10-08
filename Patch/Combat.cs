@@ -13,12 +13,13 @@ using TaleWorlds.CampaignSystem.Siege;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.ComponentInterfaces;
 using UFO.Extension;
 using UFO.Setting;
 namespace UFO.Patch.Combat;
 
 
-[HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "DecideAgentKnockedDownByBlow")]
+[HarmonyPatch(typeof(MissionCombatMechanicsHelper), "DecideAgentKnockedDownByBlow")]
 public static class AKD_S
 {
     public static void Postfix(Agent attackerAgent, Agent victimAgent, AttackCollisionData collisionData, WeaponComponentData attackerWeapon, ref Blow blow)
@@ -40,16 +41,31 @@ public static class AKD_S
 
 
 
+
 [HarmonyPatch(typeof(DefaultCombatSimulationModel), "SimulateHit")]
+[HarmonyPatch(new Type[] {
+    typeof(CharacterObject),
+    typeof(CharacterObject),
+    typeof(PartyBase),
+    typeof(PartyBase),
+    typeof(float),
+    typeof(MapEvent)
+})]
 public static class AWBS
 {
-    public static void Postfix(CharacterObject strikerTroop, CharacterObject struckTroop, PartyBase strikerParty, PartyBase struckParty, float strikerAdvantage, MapEvent battle, ref int __result)
+    public static void Postfix(CharacterObject strikerTroop,
+        CharacterObject struckTroop,
+        PartyBase strikerParty,
+        PartyBase struckParty,
+        float strikerAdvantage, 
+        MapEvent battle,
+        ref ExplainedNumber __result)
     {
         try
         {
             if (struckParty.IsPlayerParty() && SettingsManager.AlwaysWinBattleSimulation.IsChanged)
             {
-                __result = 0;
+                __result = new ExplainedNumber(0);
             }
         }
         catch (Exception e)
@@ -61,7 +77,7 @@ public static class AWBS
 
 
 
-[HarmonyPatch(typeof(DefaultBanditDensityModel), "GetPlayerMaximumTroopCountForHideoutMission")]
+[HarmonyPatch(typeof(DefaultBanditDensityModel), "GetMaximumTroopCountForHideoutMission")]
 public static class BHTL
 {
     public static void Postfix(MobileParty party, ref int __result)
@@ -200,10 +216,11 @@ public static class CZM
 
 
 
-[HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "CalculateDamage")]
+[HarmonyPatch(typeof(AgentApplyDamageModel), "CalculateDamage")]
 public static class DM_S
 {
-    public static void Postfix(AttackInformation attackInformation, AttackCollisionData collisionData, WeaponComponentData weapon, ref float __result)
+    public static void Postfix(AttackInformation attackInformation, AttackCollisionData collisionData,
+        ref float __result)
     {
         try
         {
@@ -220,12 +237,12 @@ public static class DM_S
 }
 
 
-[HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "CalculateDamage")]
+[HarmonyPatch(typeof(AgentApplyDamageModel), "CalculateDamage")]
 public static class DTP_S
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, WeaponComponentData weapon, ref float __result)
+    public static void Postfix(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
     {
         try
         {
@@ -244,10 +261,10 @@ public static class DTP_S
 }
 
 
-[HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "CalculateDamage")]
+[HarmonyPatch(typeof(AgentApplyDamageModel), "CalculateDamage")]
 public static class EDP_S
 {
-    public static void Postfix(AttackInformation attackInformation, AttackCollisionData collisionData, WeaponComponentData weapon, ref float __result)
+    public static void Postfix(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
     {
         try
         {
@@ -704,7 +721,7 @@ public static class NeverKnockedBackByAttacks_Sandbox
 
 public static class NoFriendlyFire
 {
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, WeaponComponentData weapon, ref float __result)
+    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
     {
         try
         {
@@ -721,14 +738,14 @@ public static class NoFriendlyFire
 }
 
 
-[HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "CalculateDamage")]
+[HarmonyPatch(typeof(AgentApplyDamageModel), "CalculateDamage")]
 public static class NoFriendlyFire_Sandbox
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, WeaponComponentData weapon, ref float __result)
+    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
     {
-        NoFriendlyFire.CalculateDamage(attackInformation, collisionData, weapon, ref __result);
+        NoFriendlyFire.CalculateDamage(attackInformation, collisionData, ref __result);
     }
 }
 
@@ -783,13 +800,13 @@ public static class NoTroopSacrificeBreakIn
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void GetLostTroopCountForBreakingInBesiegedSettlement(MobileParty party, SiegeEvent siegeEvent, ref int __result)
+    public static void GetLostTroopCountForBreakingInBesiegedSettlement(MobileParty party, SiegeEvent siegeEvent, ref ExplainedNumber __result)
     {
         try
         {
             if (party.IsPlayerParty() && SettingsManager.NoTroopSacrifice.IsChanged)
             {
-                __result = 0;
+                __result = new ExplainedNumber(0);
             }
         }
         catch (Exception e)
@@ -805,13 +822,13 @@ public static class NoTroopSacrificeBreakOut
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void GetLostTroopCountForBreakingOutOfBesiegedSettlement(MobileParty party, SiegeEvent siegeEvent, ref int __result)
+    public static void GetLostTroopCountForBreakingOutOfBesiegedSettlement(MobileParty party, SiegeEvent siegeEvent, ref ExplainedNumber __result)
     {
         try
         {
             if (party.IsPlayerParty() && SettingsManager.NoTroopSacrifice.IsChanged)
             {
-                __result = 0;
+                __result = new ExplainedNumber(0);
             }
         }
         catch (Exception e)
@@ -822,16 +839,17 @@ public static class NoTroopSacrificeBreakOut
 }
 
 
-[HarmonyPatch(typeof(DefaultTroopSacrificeModel), "GetNumberOfTroopsSacrificedForTryingToGetAway")]
+[HarmonyPatch(typeof(DefaultTroopSacrificeModel))]
+[HarmonyPatch(nameof(DefaultTroopSacrificeModel.GetNumberOfTroopsSacrificedForTryingToGetAway))]
+[HarmonyPatch(new Type[] { typeof(BattleSideEnum), typeof(MapEvent), })]
 public static class NoTroopSacrificeRunaway
 {
-    [UsedImplicitly]
     [HarmonyPostfix]
-    public static void GetNumberOfTroopsSacrificedForTryingToGetAway(BattleSideEnum battleSide, MapEvent mapEvent, ref int __result)
+    public static void Postfix(BattleSideEnum playerBattleSide, MapEvent mapEvent, ref int __result)
     {
         try
         {
-            if (mapEvent.IsPlayerMapEvent && battleSide == mapEvent.PlayerSide && SettingsManager.NoTroopSacrifice.IsChanged)
+            if (mapEvent.IsPlayerMapEvent && playerBattleSide == mapEvent.PlayerSide && SettingsManager.NoTroopSacrifice.IsChanged)
             {
                 __result = 0;
             }
@@ -846,7 +864,7 @@ public static class NoTroopSacrificeRunaway
 
 public static class OneHitKill
 {
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, WeaponComponentData weapon, ref float __result)
+    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
     {
         try
         {
@@ -862,21 +880,21 @@ public static class OneHitKill
     }
 }
 
-[HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "CalculateDamage")]
+[HarmonyPatch(typeof(AgentApplyDamageModel), "CalculateDamage")]
 public static class OneHitKill_Sandbox
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, WeaponComponentData weapon, ref float __result)
+    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
     {
-        OneHitKill.CalculateDamage(attackInformation, collisionData, weapon, ref __result);
+        OneHitKill.CalculateDamage(attackInformation, collisionData, ref __result);
     }
 }
 
 
 public static class PartyDamageMultiplier
 {
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, WeaponComponentData weapon, ref float __result)
+    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
     {
         try
         {
@@ -894,21 +912,21 @@ public static class PartyDamageMultiplier
 
 
 
-[HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "CalculateDamage")]
+[HarmonyPatch(typeof(AgentApplyDamageModel), "CalculateDamage")]
 public static class PartyDamageMultiplier_Sandbox
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, WeaponComponentData weapon, ref float __result)
+    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
     {
-        PartyDamageMultiplier.CalculateDamage(attackInformation, collisionData, weapon, ref __result);
+        PartyDamageMultiplier.CalculateDamage(attackInformation, collisionData, ref __result);
     }
 }
 
 
 public static class PartyDamageTakenPercentage
 {
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, WeaponComponentData weapon, ref float __result)
+    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
     {
         try
         {
@@ -931,9 +949,9 @@ public static class PartyDamageTakenPercentage_Default
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, WeaponComponentData weapon, ref float __result)
+    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
     {
-        PartyDamageTakenPercentage.CalculateDamage(attackInformation, collisionData, weapon, ref __result);
+        PartyDamageTakenPercentage.CalculateDamage(attackInformation, collisionData, ref __result);
     }
 }
 
@@ -942,9 +960,9 @@ public static class PartyDamageTakenPercentage_Sandbox
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, WeaponComponentData weapon, ref float __result)
+    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
     {
-        PartyDamageTakenPercentage.CalculateDamage(attackInformation, collisionData, weapon, ref __result);
+        PartyDamageTakenPercentage.CalculateDamage(attackInformation, collisionData, ref __result);
     }
 }
 
@@ -1128,7 +1146,7 @@ public static class PartyKnockoutOrKilled_StoryMode
 
 public static class PartyOneHitKill
 {
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, WeaponComponentData weapon, ref float __result)
+    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
     {
         try
         {
@@ -1145,14 +1163,14 @@ public static class PartyOneHitKill
 }
 
 
-[HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "CalculateDamage")]
+[HarmonyPatch(typeof(AgentApplyDamageModel), "CalculateDamage")]
 public static class PartyOneHitKill_Sandbox
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, WeaponComponentData weapon, ref float __result)
+    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
     {
-        PartyOneHitKill.CalculateDamage(attackInformation, collisionData, weapon, ref __result);
+        PartyOneHitKill.CalculateDamage(attackInformation, collisionData, ref __result);
     }
 }
 
@@ -1251,44 +1269,5 @@ public static class RenownRewardMultiplierTournament
 //    public static void DecidePassiveAttackCollisionReaction(Agent attacker, Agent defender, bool isFatalHit, ref MeleeCollisionReaction __result)
 //    {
 //        SliceThroughEveryonePassive.DecidePassiveAttackCollisionReaction(attacker, defender, isFatalHit, ref __result);
-//    }
-//}
-
-
-
-//[HarmonyPatch(typeof(Mission), "DecideWeaponCollisionReaction")]
-//public static class SliceThroughEveryoneWeapon
-//{
-//    [UsedImplicitly]
-//    [HarmonyPostfix]
-//    public static void DecideWeaponCollisionReaction(Blow registeredBlow, AttackCollisionData collisionData, Agent attacker, Agent defender, MissionWeapon attackerWeapon, bool isFatalHit, bool isShruggedOff, ref MeleeCollisionReaction colReaction)
-//    {
-//        try
-//        {
-//            if (attacker.IsPlayer() && SettingsManager.SliceThroughEveryone.IsChanged)
-//            {
-//                colReaction = MeleeCollisionReaction.SlicedThrough;
-//            }
-//        }
-//        catch (Exception e)
-//        {
-//            SubModule.LogError(e, typeof(SliceThroughEveryoneWeapon));
-//        }
-//    }
-//}
-
-
-//[HarmonyPatch(typeof(Mission), "UpdateMomentumRemaining")]
-//public static class SliceThroughEveryoneWeaponMomentum
-//{
-//    [UsedImplicitly]
-//    [HarmonyPrefix]
-//    public static bool UpdateMomentumRemaining(float momentumRemaining, Blow b, in AttackCollisionData collisionData, Agent attacker, Agent victim, in MissionWeapon attackerWeapon, bool isCrushThrough)
-//    {
-//        if (attacker.IsPlayer() && SettingsManager.SliceThroughEveryone.IsChanged)
-//        {
-//            return false;
-//        }
-//        return true;
 //    }
 //}

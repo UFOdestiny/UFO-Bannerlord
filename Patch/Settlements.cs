@@ -61,26 +61,26 @@ public static class DailyFoodBonus
 
 
 
-[HarmonyPatch(typeof(Town), "GarrisonChange", MethodType.Getter)]
-public static class DailyGarrisonBonus
-{
-    [UsedImplicitly]
-    [HarmonyPostfix]
-    public static void GarrisonChange(ref Town __instance, ref int __result)
-    {
-        try
-        {
-            if (__instance.IsPlayerTown() && SettingsManager.DailyGarrisonBonus.IsChanged)
-            {
-                __result += SettingsManager.DailyGarrisonBonus.Value;
-            }
-        }
-        catch (Exception e)
-        {
-            SubModule.LogError(e, typeof(DailyGarrisonBonus));
-        }
-    }
-}
+//[HarmonyPatch(typeof(Town), "GarrisonChange", MethodType.Getter)]
+//public static class DailyGarrisonBonus
+//{
+//    [UsedImplicitly]
+//    [HarmonyPostfix]
+//    public static void GarrisonChange(ref Town __instance, ref int __result)
+//    {
+//        try
+//        {
+//            if (__instance.IsPlayerTown() && SettingsManager.DailyGarrisonBonus.IsChanged)
+//            {
+//                __result += SettingsManager.DailyGarrisonBonus.Value;
+//            }
+//        }
+//        catch (Exception e)
+//        {
+//            SubModule.LogError(e, typeof(DailyGarrisonBonus));
+//        }
+//    }
+//}
 
 
 
@@ -246,13 +246,13 @@ public static class FreeTroopRecruitment
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void GetTroopRecruitmentCost(CharacterObject troop, Hero buyerHero, bool withoutItemCost, ref int __result)
+    public static void GetTroopRecruitmentCost(CharacterObject troop, Hero buyerHero, bool withoutItemCost, ref ExplainedNumber __result)
     {
         try
         {
             if (buyerHero.IsPlayer() && SettingsManager.FreeTroopRecruitment.IsChanged)
             {
-                __result = 1;
+                __result = new ExplainedNumber(1);
             }
         }
         catch (Exception e)

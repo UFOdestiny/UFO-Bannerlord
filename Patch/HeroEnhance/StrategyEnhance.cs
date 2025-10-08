@@ -1,5 +1,6 @@
 using HarmonyLib;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.CampaignBehaviors;
@@ -35,14 +36,15 @@ internal class StrategyAttrEnhance
     [HarmonyPatch(typeof(DefaultPrisonerRecruitmentCalculationModel), "GetConformityChangePerHour")]
     internal class GetConformityChangePerHourPostfixPatch
     {
-        private static void Postfix(ref int __result, PartyBase party, CharacterObject troopToBoost)
+        private static void Postfix(ref ExplainedNumber __result, PartyBase party, CharacterObject troopToBoost)
         {
             Hero leaderHero = party.LeaderHero;
             float num = leaderHero.StrategyEnhanceRate();
             if (num != 0f)
             {
                 int attributeValue = leaderHero.GetAttributeValue(DefaultCharacterAttributes.Cunning);
-                __result = (int)((float)__result * (1f + (float)attributeValue * SettingsManager.CunningPrisonerRecruitSpeedPercent.Value * num));
+                int result = (int)((float)__result.ResultNumber * (1f + (float)attributeValue * SettingsManager.CunningPrisonerRecruitSpeedPercent.Value * num));
+                __result = new ExplainedNumber(result);
             }
         }
     }
@@ -65,7 +67,7 @@ internal class StrategyAttrEnhance
     [HarmonyPatch(typeof(DefaultRaidModel), "CalculateHitDamage")]
     internal class CalculateHitDamagePostfixPatch
     {
-        private static void Postfix(ref float __result, MapEventSide attackerSide)
+        private static void Postfix(ref ExplainedNumber __result, MapEventSide attackerSide, float settlementHitPoints)
         {
             if (HeroEnhanceExtensions.StrategyEnhanceDisable())
             {
@@ -81,7 +83,8 @@ internal class StrategyAttrEnhance
                     if (num != 0f)
                     {
                         int attributeValue = leaderHero.GetAttributeValue(DefaultCharacterAttributes.Cunning);
-                        __result *= 1f + (float)attributeValue * SettingsManager.CunningRaidSpeedPercent.Value;
+                        float multiplier = 1f + (float)attributeValue * SettingsManager.CunningRaidSpeedPercent.Value;
+                        __result = new ExplainedNumber(__result.ResultNumber * multiplier);
                     }
                 }
             }
@@ -433,7 +436,13 @@ internal class StrategyAttrEnhance
     {
         private static bool Prefix(ref Hero __instance, ref SkillObject skill, ref float xpAmount)
         {
-            if (SettingsManager.TestMode.Value && (skill.CharacterAttribute == DefaultCharacterAttributes.Vigor || skill.CharacterAttribute == DefaultCharacterAttributes.Control || skill.CharacterAttribute == DefaultCharacterAttributes.Endurance))
+            if (SettingsManager.TestMode.Value && (
+                skill.Attributes != null && (
+                    skill.Attributes.Contains(DefaultCharacterAttributes.Vigor) ||
+                    skill.Attributes.Contains(DefaultCharacterAttributes.Control) ||
+                    skill.Attributes.Contains(DefaultCharacterAttributes.Endurance)
+                )
+            ))
             {
                 xpAmount = 0f;
             }
@@ -445,7 +454,11 @@ internal class StrategyAttrEnhance
             int attributeValue = __instance.GetAttributeValue(DefaultCharacterAttributes.Intelligence);
             float num2 = (float)attributeValue * SettingsManager.IntelligenceExpRate.Value * num;
             float num3 = 1f + num2;
-            if (skill.CharacterAttribute == DefaultCharacterAttributes.Cunning || skill.CharacterAttribute == DefaultCharacterAttributes.Social || skill.CharacterAttribute == DefaultCharacterAttributes.Intelligence)
+            if (skill.Attributes != null && (
+                skill.Attributes.Contains(DefaultCharacterAttributes.Cunning) ||
+                skill.Attributes.Contains(DefaultCharacterAttributes.Social) ||
+                skill.Attributes.Contains(DefaultCharacterAttributes.Intelligence)
+            ))
             {
                 num3 += num2;
             }

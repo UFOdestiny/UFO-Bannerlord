@@ -3,7 +3,7 @@ namespace UFO.Model;
 
 public class ModifiedCharacterDevelopmentModel : DefaultCharacterDevelopmentModel
 {
-    public override int MaxAttribute => 30;
+    public override int MaxAttribute => 20;
 }
 
 

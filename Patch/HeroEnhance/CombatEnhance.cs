@@ -9,6 +9,7 @@ using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.ComponentInterfaces;
 using UFO.Extension;
 using UFO.Setting;
 
@@ -25,7 +26,7 @@ internal class CombatAttrEnhance
 
     private static readonly InformationMessage beExemptedMsg = new InformationMessage(new TextObject("{=he_be_exempted_msg}Opponent exempt your damage!").ToString(), Colors.Magenta);
 
-    private static bool CalculateDamage(ref AttackInformation attackInformation, ref AttackCollisionData collisionData, ref MissionWeapon weapon, ref float baseDamage)
+    private static bool CalculateDamage(ref AttackInformation attackInformation, ref AttackCollisionData collisionData, ref float baseDamage)
     {
         CharacterObject characterObject = (attackInformation.IsAttackerAgentMount ? attackInformation.AttackerRiderAgentCharacter : attackInformation.AttackerAgentCharacter) as CharacterObject;
         CharacterObject characterObject2 = (attackInformation.IsVictimAgentMount ? attackInformation.VictimRiderAgentCharacter : attackInformation.VictimAgentCharacter) as CharacterObject;
@@ -143,23 +144,23 @@ internal class CombatAttrEnhance
         }
     }
 
-    [HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "CalculateDamage")]
+    [HarmonyPatch(typeof(AgentApplyDamageModel), "CalculateDamage")]
     internal class SandboxCalculateDamagePrefixPatch
     {
-        private static bool Prefix(ref AttackInformation attackInformation, ref AttackCollisionData collisionData, ref MissionWeapon weapon, ref float baseDamage)
+        private static bool Prefix(ref AttackInformation attackInformation, ref AttackCollisionData collisionData, ref float baseDamage)
         {
-            return CalculateDamage(ref attackInformation, ref collisionData, ref weapon, ref baseDamage);
+            return CalculateDamage(ref attackInformation, ref collisionData, ref baseDamage);
         }
     }
 
-    [HarmonyPatch(typeof(CustomAgentApplyDamageModel), "CalculateDamage")]
-    internal class CalculateDamagePrefixPatch
-    {
-        private static bool Prefix(ref AttackInformation attackInformation, ref AttackCollisionData collisionData, ref MissionWeapon weapon, ref float baseDamage)
-        {
-            return CalculateDamage(ref attackInformation, ref collisionData, ref weapon, ref baseDamage);
-        }
-    }
+    //[HarmonyPatch(typeof(AgentApplyDamageModel), "CalculateDamage")]
+    //internal class CalculateDamagePrefixPatch
+    //{
+    //    private static bool Prefix(ref AttackInformation attackInformation, ref AttackCollisionData collisionData, ref MissionWeapon weapon, ref float baseDamage)
+    //    {
+    //        return CalculateDamage(ref attackInformation, ref collisionData, ref weapon, ref baseDamage);
+    //    }
+    //}
 
     [HarmonyPatch(typeof(Agent), "Health", MethodType.Setter)]
     internal class SetHealthPrefixPatch

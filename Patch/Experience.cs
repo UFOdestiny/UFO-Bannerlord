@@ -10,6 +10,7 @@ using TaleWorlds.Core;
 using TaleWorlds.Localization;
 using UFO.Extension;
 using UFO.Setting;
+using static TaleWorlds.CampaignSystem.ComponentInterfaces.CombatXpModel;
 
 namespace UFO.Patch;
 
@@ -45,30 +46,39 @@ public static class CompanionExperienceMultiplier
 
 
 
-[HarmonyPatch(typeof(DefaultCharacterDevelopmentModel), "CalculateLearningRate", new Type[]
-{
-    typeof(Hero),
-    typeof(SkillObject)
-})]
-public static class CompanionLearningRateMultiplier
-{
-    [UsedImplicitly]
-    [HarmonyPostfix]
-    public static void CalculateLearningRate(Hero hero, SkillObject skill, ref float __result)
-    {
-        try
-        {
-            if (!hero.IsPlayer() && hero.IsPlayerCompanion() && SettingsManager.CompanionLearningRateMultiplier.IsChanged)
-            {
-                __result *= SettingsManager.CompanionLearningRateMultiplier.Value;
-            }
-        }
-        catch (Exception e)
-        {
-            SubModule.LogError(e, typeof(CompanionLearningRateMultiplier));
-        }
-    }
-}
+//[HarmonyPatch(typeof(DefaultCharacterDevelopmentModel), "CalculateLearningRate", new Type[]
+//{
+//    typeof(Hero),
+//    typeof(SkillObject)
+//})]
+//public static class CompanionLearningRateMultiplier
+//{
+//    [UsedImplicitly]
+//    [HarmonyPostfix]
+//    public static void CalculateLearningRate(IReadOnlyPropertyOwner<CharacterAttribute> characterAttributes,
+//        int focusValue,
+//        int skillValue,
+//        SkillObject skill,
+//        bool includeDescriptions,
+//        ref ExplainedNumber __result)
+//    {
+//        try
+//        {
+//            if (characterAttributes.GetPropertyValue())
+//            {
+
+//            }
+//            //if (!characterAttributes.IsPlayer() && hero.IsPlayerCompanion() && SettingsManager.CompanionLearningRateMultiplier.IsChanged)
+//            //{
+//            //    __result *= SettingsManager.CompanionLearningRateMultiplier.Value;
+//            //}
+//        }
+//        catch (Exception e)
+//        {
+//            SubModule.LogError(e, typeof(CompanionLearningRateMultiplier));
+//        }
+//    }
+//}
 
 
 [HarmonyPatch(typeof(HeroDeveloper), "AddSkillXp")]
@@ -110,51 +120,51 @@ public static class FreeFocusPointAssignment
 
 
 
-[HarmonyPatch(typeof(DefaultCharacterDevelopmentModel), "CalculateLearningLimit")]
-public static class LearningLimitMultiplier
-{
-    [UsedImplicitly]
-    [HarmonyPostfix]
-    public static void CalculateLearningLimit(int attributeValue, int focusValue, TextObject attributeName, bool includeDescriptions, ref ExplainedNumber __result)
-    {
-        try
-        {
-            if (SettingsManager.LearningLimitMultiplier.IsChanged)
-            {
-                __result.AddMultiplier(SettingsManager.LearningLimitMultiplier.Value);
-            }
-        }
-        catch (Exception e)
-        {
-            SubModule.LogError(e, typeof(LearningLimitMultiplier));
-        }
-    }
-}
+//[HarmonyPatch(typeof(DefaultCharacterDevelopmentModel), "CalculateLearningLimit")]
+//public static class LearningLimitMultiplier
+//{
+//    [UsedImplicitly]
+//    [HarmonyPostfix]
+//    public static void CalculateLearningLimit(int attributeValue, int focusValue, TextObject attributeName, bool includeDescriptions, ref ExplainedNumber __result)
+//    {
+//        try
+//        {
+//            if (SettingsManager.LearningLimitMultiplier.IsChanged)
+//            {
+//                __result.AddMultiplier(SettingsManager.LearningLimitMultiplier.Value);
+//            }
+//        }
+//        catch (Exception e)
+//        {
+//            SubModule.LogError(e, typeof(LearningLimitMultiplier));
+//        }
+//    }
+//}
 
-[HarmonyPatch(typeof(DefaultCharacterDevelopmentModel), "CalculateLearningRate", new Type[]
-{
-    typeof(Hero),
-    typeof(SkillObject)
-})]
-public static class LearningRateMultiplier
-{
-    [UsedImplicitly]
-    [HarmonyPostfix]
-    public static void CalculateLearningRate(Hero hero, SkillObject skill, ref float __result)
-    {
-        try
-        {
-            if (hero.IsPlayer() && SettingsManager.LearningRateMultiplier.IsChanged)
-            {
-                __result *= SettingsManager.LearningRateMultiplier.Value;
-            }
-        }
-        catch (Exception e)
-        {
-            SubModule.LogError(e, typeof(LearningRateMultiplier));
-        }
-    }
-}
+//[HarmonyPatch(typeof(DefaultCharacterDevelopmentModel), "CalculateLearningRate", new Type[]
+//{
+//    typeof(Hero),
+//    typeof(SkillObject)
+//})]
+//public static class LearningRateMultiplier
+//{
+//    [UsedImplicitly]
+//    [HarmonyPostfix]
+//    public static void CalculateLearningRate(Hero hero, SkillObject skill, ref float __result)
+//    {
+//        try
+//        {
+//            if (hero.IsPlayer() && SettingsManager.LearningRateMultiplier.IsChanged)
+//            {
+//                __result *= SettingsManager.LearningRateMultiplier.Value;
+//            }
+//        }
+//        catch (Exception e)
+//        {
+//            SubModule.LogError(e, typeof(LearningRateMultiplier));
+//        }
+//    }
+//}
 
 
 
@@ -163,13 +173,17 @@ public static class TroopExperienceMultiplier
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void GetXpFromHit(CharacterObject attackerTroop, CharacterObject captain, CharacterObject attackedTroop, PartyBase party, int damage, bool isFatal, CombatXpModel.MissionTypeEnum missionType, ref int xpAmount)
+    public static void Postfix(CharacterObject attackerTroop,
+        CharacterObject captain, CharacterObject attackedTroop,
+        PartyBase party, int damage, bool isFatal,
+        MissionTypeEnum missionType,
+        ref ExplainedNumber __result)
     {
         try
         {
             if (party.IsPlayerParty() && !attackerTroop.IsPlayer() && SettingsManager.TroopExperienceMultiplier.IsChanged)
             {
-                xpAmount = (int)Math.Round((float)xpAmount * SettingsManager.TroopExperienceMultiplier.Value);
+                __result = new ExplainedNumber((int)Math.Round(__result.ResultNumber * SettingsManager.TroopExperienceMultiplier.Value));
             }
         }
         catch (Exception e)

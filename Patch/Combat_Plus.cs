@@ -1,11 +1,15 @@
 ﻿using HarmonyLib;
+using MCM.Abstractions.Base.Global;
 using SandBox.GameComponents;
+using System;
 using System.Collections.Generic;
+using System.Runtime;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.ComponentInterfaces;
 using UFO.Extension;
 using UFO.Setting;
 
@@ -213,14 +217,21 @@ public class CutThroughEveryoneLogic : MissionLogic
 }
 
 
-[HarmonyPatch(typeof(Mission))]
-internal static class CutThroughEveryonePatch
+
+[HarmonyPatch(typeof(MissionCombatMechanicsHelper))]
+internal static class CutThroughEveryonePatchCollision
 {
     private static MeleeCollisionReaction meleeCollisionReaction;
 
     [HarmonyPostfix]
     [HarmonyPatch("DecideWeaponCollisionReaction")]
-    private static void DecideWeaponCollisionReactionPostfix(Mission __instance, Blow registeredBlow, ref AttackCollisionData collisionData, Agent attacker, Agent defender, bool isFatalHit, bool isShruggedOff, ref MeleeCollisionReaction colReaction)
+    private static void Postfix(
+        ref Blow registeredBlow,
+        ref AttackCollisionData collisionData,
+        Agent attacker, Agent defender,
+        ref MissionWeapon attackerWeapon,
+        bool isFatalHit, bool isShruggedOff, float momentumRemaining,
+        ref MeleeCollisionReaction colReaction)
     {
         meleeCollisionReaction = colReaction;
         if (CutThroughEveryoneLogic.ShouldCutThrough(collisionData, attacker, defender))
@@ -229,11 +240,23 @@ internal static class CutThroughEveryonePatch
             meleeCollisionReaction = MeleeCollisionReaction.SlicedThrough;
         }
     }
+}
+
+
+[HarmonyPatch(typeof(Mission))]
+internal static class CutThroughEveryonePatchMeleeHit
+{
+    private static MeleeCollisionReaction meleeCollisionReaction;
 
     [HarmonyPostfix]
     [HarmonyPatch("MeleeHitCallback")]
-    private static void MeleeHitCallbackPostfix(ref AttackCollisionData collisionData, Agent attacker, Agent victim, GameEntity realHitEntity, ref float inOutMomentumRemaining, ref MeleeCollisionReaction colReaction, CrushThroughState crushThroughState, Vec3 blowDir, Vec3 swingDir, ref HitParticleResultData hitParticleResultData, bool crushedThroughWithoutAgentCollision)
+    private static void Postfix(ref AttackCollisionData collisionData,
+        Agent attacker, Agent victim, GameEntity realHitEntity, ref float inOutMomentumRemaining,
+        ref MeleeCollisionReaction colReaction, CrushThroughState crushThroughState,
+        Vec3 blowDir, Vec3 swingDir, ref HitParticleResultData hitParticleResultData,
+        bool crushedThroughWithoutAgentCollision)
     {
+        meleeCollisionReaction = colReaction;
         if (meleeCollisionReaction != colReaction && meleeCollisionReaction == MeleeCollisionReaction.SlicedThrough)
         {
             colReaction = MeleeCollisionReaction.SlicedThrough;
@@ -243,6 +266,21 @@ internal static class CutThroughEveryonePatch
         {
             float num2 = (float)collisionData.InflictedDamage / (float)num;
             inOutMomentumRemaining = num2;
+        }
+    }
+}
+
+
+
+[HarmonyPatch(typeof(AgentApplyDamageModel), "CalculateDefaultRemainingMomentum")]
+internal class CalculateDefaultRemainingMomentumPatch
+{
+    private static void Postfix(ref float __result, float originalMomentum, in Blow b, in AttackCollisionData collisionData, Agent attacker, Agent victim, in MissionWeapon attackerWeapon, bool isCrushThrough)
+    {
+        if (isCrushThrough && attacker.IsPlayer() && SettingsManager.PlayerAlwaysCrush.Value)
+        {
+            __result *= 2;
+
         }
     }
 }

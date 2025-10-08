@@ -106,13 +106,13 @@ public static class FreeTroopUpgrades
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void GetGoldCostForUpgrade(ref PartyBase party, ref CharacterObject characterObject, ref CharacterObject upgradeTarget, ref int __result)
+    public static void GetGoldCostForUpgrade(ref PartyBase party, ref CharacterObject characterObject, ref CharacterObject upgradeTarget, ref ExplainedNumber __result)
     {
         try
         {
             if (party.IsPlayerParty() && SettingsManager.FreeTroopUpgrades.IsChanged)
             {
-                __result = 0;
+                __result = new ExplainedNumber(0);
             }
         }
         catch (Exception e)

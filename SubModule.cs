@@ -39,7 +39,9 @@ internal class SubModule : MBSubModuleBase
 
         if (game.GameType is Campaign)
         {
-            ((CampaignGameStarter)gameStarterObject).AddBehavior(Activator.CreateInstance<SavingWeaponProperties.CustomBehavior>());
+            CampaignGameStarter starter = (CampaignGameStarter)gameStarterObject;
+            starter.AddBehavior(Activator.CreateInstance<SavingWeaponProperties.CustomBehavior>());
+            starter.AddBehavior(Activator.CreateInstance<AddMoney>());
         }
     }
 
@@ -63,7 +65,7 @@ internal class SubModule : MBSubModuleBase
 
         Harmony patcher = new Harmony("UFO");
 
-        UNPATCH(patcher);
+        //UNPATCH(patcher);
 
         PATCH(patcher, ref PatchesApplied);
 
@@ -188,8 +190,10 @@ internal class SubModule : MBSubModuleBase
     {
         string path = $"Error-{DateTime.Now:yyyy-MM-dd-HH-mm-ss}.txt";
         string location = Assembly.GetAssembly(typeof(SubModule)).Location;
+        //string location = "C:\\Users\\Administrator\\Desktop";
         string directoryName = Path.GetDirectoryName(location);
         string text = Path.Combine(directoryName, path);
+        InformationManager.DisplayMessage(new InformationMessage(text, Colors.Red));
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.AppendLine("Thanks a lot for helping to improve this mod!");
         stringBuilder.AppendLine("You could drop the contents of this file into https://pastebin.com/ and post a link to the file");
