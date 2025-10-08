@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Xml.Linq;
+using UFO.Setting;
 
 
 public static class L10N
@@ -51,10 +52,11 @@ public static class L10N
 
     private static Dictionary<string, string> Values;
 
-    static L10N()
+    public static void LoadLanguage()
     {
+        string LangFile = EnumExtensions.ToLanguage(SettingsManager.LanguageSetting.Value);
         Values = new Dictionary<string, string>();
-        string uri = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "L10N.resx");
+        string uri = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), LangFile);
         XDocument xDocument = XDocument.Load(uri);
         XElement xElement = xDocument.Element("root");
         IEnumerable<XElement> enumerable = xElement.Descendants("data");

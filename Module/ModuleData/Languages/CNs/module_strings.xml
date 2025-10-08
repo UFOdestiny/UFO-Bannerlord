@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="str_crafting_template.loongspear1" text="龙首槊" />+
+    <string id="str_weapon_usage.LSOneHandedPolearm" text="单手" />
+    <string id="str_weapon_usage.LSTwoHandedPolearm" text="双手" />
+    <string id="str_weapon_usage.LSTwoHandedPolearm_Bracing" text="架矛" />
+    <string id="str_weapon_usage.LSTwoHandedPolearm_Couchable" text="骑枪" />
+</strings>

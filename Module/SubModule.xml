@@ -3,7 +3,7 @@
 	xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/BUTR/Bannerlord.XmlSchemas/master/SubModule.xsd">
 	<Id value="UFO" />
 	<Name value="UFO" />
-	<Version value="v1.1.0" />
+	<Version value="v1.0.0" />
 	<DefaultModule value="false" />
 	<ModuleCategory value="Singleplayer" />
 	<ModuleType value="Community" />
@@ -40,6 +40,17 @@
 		</SubModule>
 	</SubModules>
 	<Xmls>
+
+		<XmlNode>
+			<XmlName id="GameText" path="Languages/CNs/module_strings" />
+			<IncludedGameTypes>
+				<GameType value="Campaign" />
+				<GameType value="CampaignStoryMode" />
+				<GameType value="CustomGame" />
+				<GameType value="EditorGame" />
+				<GameType value="ShokuhoCampaign" />
+			</IncludedGameTypes>
+		</XmlNode>
 
 		<XmlNode>
 			<XmlName id="Items" path="Items/arrow" />

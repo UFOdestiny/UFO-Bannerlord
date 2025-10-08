@@ -75,17 +75,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Include="Module\bin\Win64_Shipping_Client\L10N.resx" />
-	  <EmbeddedResource Include="Module\bin\Win64_Shipping_Client\L10N_EN.resx" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Bannerlord.MCM" Version="5.10.2" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Module\bin\Win64_Shipping_Client\" />
+	</ItemGroup>
+
 	<Target Name="CopyOutputToModFolder" AfterTargets="Build">
-		<Copy SourceFiles="$(OutPutPath)\$(MSBuildProjectName).dll" DestinationFolder="$(GameFolder)\Modules\UFO\bin\Win64_Shipping_Client\" SkipUnchangedFiles="true" />
-		<Copy SourceFiles="$(OutPutPath)\L10N.resx" DestinationFolder="$(GameFolder)\Modules\UFO\bin\Win64_Shipping_Client\" SkipUnchangedFiles="true" />
+		<ItemGroup>
+			<FilesToCopy Include="$(OutPutPath)\*.*" />
+		</ItemGroup>
+		
+		<Copy SourceFiles="@(FilesToCopy)" DestinationFolder="$(GameFolder)\Modules\UFO\bin\Win64_Shipping_Client\" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="Module\SubModule.xml" DestinationFolder="$(GameFolder)\Modules\UFO\" SkipUnchangedFiles="true" />
 	</Target>
 

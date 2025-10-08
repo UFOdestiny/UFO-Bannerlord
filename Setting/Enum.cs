@@ -29,13 +29,13 @@ public static class EnumExtensions
         switch (s)
         {
             case Setting_Language.English:
-                return "L10N_English.resx";
+                return "English.resx";
             case Setting_Language.Chinese:
-                return "L10N_Chinese.resx";
+                return "Chinese.resx";
             case Setting_Language.Other:
-                return "L10N_Other.resx";
+                return "Other.resx";
             default:
-                return "L10N.resx";
+                return "English.resx";
         }
     }
 }

@@ -2,7 +2,7 @@
 <CraftingPieces>
 
   <CraftingPiece id="super_spear_blade"
-    name="Super Spear Head"
+    name="{=super_spear_head}Super Spear Head"
     tier="5"
     piece_type="Blade"
     mesh="spear_blade_27"

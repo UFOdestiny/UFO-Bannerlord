@@ -14,6 +14,7 @@ using TaleWorlds.MountAndBlade;
 using UFO.Behavior;
 using UFO.Extension;
 using UFO.Model;
+using UFO.Setting;
 
 namespace UFO;
 
@@ -29,6 +30,7 @@ internal class SubModule : MBSubModuleBase
     protected override void OnBeforeInitialModuleScreenSetAsRoot()
     {
         InformationManager.DisplayMessage(new InformationMessage("UFO's Mod Loaded", Colors.Green));
+        L10N.LoadLanguage();
     }
 
     protected override void OnGameStart(Game game, IGameStarter gameStarterObject)

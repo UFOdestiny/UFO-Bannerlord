@@ -5,7 +5,7 @@
     is_merchandise="false"
     crafting_template="loongspear1"
     culture="Culture.neutral_culture"
-    value="40000">
+    value="80000">
     <Pieces>
       <Piece id="loongspear_tou"
         Type="Blade"

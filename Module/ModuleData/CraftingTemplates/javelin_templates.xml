@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CraftingTemplates>
-  
   <CraftingTemplate id="Javelin"
     item_type="Thrown"
     modifier_group="spear_dart_throwing"
