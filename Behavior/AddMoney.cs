@@ -1,5 +1,6 @@
 ﻿using TaleWorlds.CampaignSystem;
 using TaleWorlds.Library;
+using UFO.Setting;
 
 namespace UFO.Behavior;
 
@@ -14,14 +15,14 @@ public class AddMoney : CampaignBehaviorBase
 
     private void DailyTick()
     {
-        if (Hero.MainHero.Gold<10000000)
+        if (Hero.MainHero.Gold< SettingsManager.AddMoneyThreshhold.Value)
         {
-            Hero.MainHero.ChangeHeroGold(gold);
+            Hero.MainHero.ChangeHeroGold(SettingsManager.AddMoney_count.Value);
         }
 
-        //InformationManager.DisplayMessage(
-        //    new InformationMessage($"You got {gold} gold!", new Color(1f, 0f, 0f, 1f))
-        //);
+        InformationManager.DisplayMessage(
+            new InformationMessage($"+ {gold} gold!", Colors.White)
+        );
     }
 
     public override void SyncData(IDataStore dataStore)

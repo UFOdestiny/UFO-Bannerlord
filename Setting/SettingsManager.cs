@@ -32,6 +32,9 @@ public static class SettingsManager
 
         public const Setting_Language LanguageSetting = Setting_Language.English;
 
+        public const int AddMoneyThreshhold = 10000000;
+        public const int AddMoney_count = 10000;
+
 
         // Cheat
         public const bool EnableHotkeys = false;
@@ -641,6 +644,20 @@ public static class SettingsManager
     //: ((GlobalInstance.InfiniteMomentum != true)
     //? new CheatValue<bool>(isChanged: true, GlobalInstance.InfiniteMomentum)
     //: new CheatValue<bool>(isChanged: false, true));
+
+    public static CheatValue<int> AddMoneyThreshhold =>
+    (IsPerCampaignInstanceLoaded && PerCampaignInstance.AddMoneyThreshhold != 5)
+        ? new CheatValue<int>(true, PerCampaignInstance.AddMoneyThreshhold)
+        : ((GlobalInstance.AddMoneyThreshhold != 5)
+            ? new CheatValue<int>(true, GlobalInstance.AddMoneyThreshhold)
+            : new CheatValue<int>(false, 5));
+
+    public static CheatValue<int> AddMoney_count =>
+    (IsPerCampaignInstanceLoaded && PerCampaignInstance.AddMoney_count != 5)
+        ? new CheatValue<int>(true, PerCampaignInstance.AddMoney_count)
+        : ((GlobalInstance.AddMoney_count != 5)
+            ? new CheatValue<int>(true, GlobalInstance.AddMoney_count)
+            : new CheatValue<int>(false, 5));
 
     public static CheatValue<bool> KeepDaughter =>
 (IsPerCampaignInstanceLoaded && PerCampaignInstance.KeepDaughter != true)

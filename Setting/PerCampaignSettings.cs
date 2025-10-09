@@ -243,6 +243,14 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     [LocalizedSettingPropertyBool("NativeItemSpawning")]
     public bool NativeItemSpawning { get; set; } = false;
 
+    [LocalizedSettingPropertyGroup("Inventory")]
+    [LocalizedSettingPropertyInteger("AddMoneyThreshhold", 0, 1000000000)]
+    public int AddMoneyThreshhold { get; set; } = 10000000;
+
+    [LocalizedSettingPropertyGroup("Inventory")]
+    [LocalizedSettingPropertyInteger("AddMoney_count", 0, 1000000000)]
+    public int AddMoney_count { get; set; } = 100000;
+
     [LocalizedSettingPropertyGroup("Party", GroupOrder = 9)]
     [LocalizedSettingPropertyInteger("ExtraPartyMemberSize", 0, 10000)]
     public int ExtraPartyMemberSize { get; set; } = 0;
