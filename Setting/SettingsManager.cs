@@ -33,7 +33,7 @@ public static class SettingsManager
         public const Setting_Language LanguageSetting = Setting_Language.English;
 
         public const int AddMoneyThreshhold = 10000000;
-        public const int AddMoney_count = 10000;
+        public const int AddMoney_count = 0;
 
 
         // Cheat

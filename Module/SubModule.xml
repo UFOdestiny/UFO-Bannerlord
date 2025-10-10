@@ -20,15 +20,15 @@
 		<DependedModule Id="CustomBattle" />
 	</DependedModules>
 	<DependedModuleMetadatas>
-		<DependedModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis" />
-		<DependedModuleMetadata id="Bannerlord.ButterLib" order="LoadBeforeThis" />
-		<DependedModuleMetadata id="Bannerlord.UIExtenderEx" order="LoadBeforeThis" />
-		<DependedModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadBeforeThis" />
-		<DependedModuleMetadata id="Native" order="LoadBeforeThis" />
-		<DependedModuleMetadata id="SandBoxCore" order="LoadBeforeThis" />
-		<DependedModuleMetadata id="Sandbox" order="LoadBeforeThis" />
-		<DependedModuleMetadata id="StoryMode" order="LoadBeforeThis" />
-		<DependedModuleMetadata id="CustomBattle" order="LoadBeforeThis" />
+		<DependedModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis" version="v2.3.6.220"/>
+		<DependedModuleMetadata id="Bannerlord.ButterLib" order="LoadBeforeThis" version="v2.10.0.0"/>
+		<DependedModuleMetadata id="Bannerlord.UIExtenderEx" order="LoadBeforeThis" version="v2.13.0.0"/>
+		<DependedModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadBeforeThis" version="v5.11.2.0"/>
+		<DependedModuleMetadata id="Native" order="LoadBeforeThis" version="v1.3.1.*"/>
+		<DependedModuleMetadata id="SandBoxCore" order="LoadBeforeThis" version="v1.3.1.*"/>
+		<DependedModuleMetadata id="Sandbox" order="LoadBeforeThis" version="v1.3.1.*"/>
+		<DependedModuleMetadata id="StoryMode" order="LoadBeforeThis" version="v1.3.1.*"/>
+		<DependedModuleMetadata id="CustomBattle" order="LoadBeforeThis" version="v1.3.1.*"/>
 	</DependedModuleMetadatas>
 	<SubModules>
 		<SubModule>

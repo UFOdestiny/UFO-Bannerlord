@@ -6,8 +6,6 @@ namespace UFO.Behavior;
 
 public class AddMoney : CampaignBehaviorBase
 {
-    private int gold = 100000;
-
     public override void RegisterEvents()
     {
         CampaignEvents.DailyTickEvent.AddNonSerializedListener(this, DailyTick);
@@ -15,14 +13,15 @@ public class AddMoney : CampaignBehaviorBase
 
     private void DailyTick()
     {
-        if (Hero.MainHero.Gold< SettingsManager.AddMoneyThreshhold.Value)
+        if (Hero.MainHero.Gold < SettingsManager.AddMoneyThreshhold.Value)
         {
             Hero.MainHero.ChangeHeroGold(SettingsManager.AddMoney_count.Value);
+            InformationManager.DisplayMessage(
+    new InformationMessage($"+ {SettingsManager.AddMoney_count.Value} gold!", Colors.White)
+);
         }
 
-        InformationManager.DisplayMessage(
-            new InformationMessage($"+ {gold} gold!", Colors.White)
-        );
+
     }
 
     public override void SyncData(IDataStore dataStore)

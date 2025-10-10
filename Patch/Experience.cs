@@ -120,41 +120,39 @@ public static class FreeFocusPointAssignment
 
 
 
-//[HarmonyPatch(typeof(DefaultCharacterDevelopmentModel), "CalculateLearningLimit")]
-//public static class LearningLimitMultiplier
-//{
-//    [UsedImplicitly]
-//    [HarmonyPostfix]
-//    public static void CalculateLearningLimit(int attributeValue, int focusValue, TextObject attributeName, bool includeDescriptions, ref ExplainedNumber __result)
-//    {
-//        try
-//        {
-//            if (SettingsManager.LearningLimitMultiplier.IsChanged)
-//            {
-//                __result.AddMultiplier(SettingsManager.LearningLimitMultiplier.Value);
-//            }
-//        }
-//        catch (Exception e)
-//        {
-//            SubModule.LogError(e, typeof(LearningLimitMultiplier));
-//        }
-//    }
-//}
+[HarmonyPatch(typeof(DefaultCharacterDevelopmentModel), "CalculateLearningLimit")]
+public static class LearningLimitMultiplier
+{
+    [UsedImplicitly]
+    [HarmonyPostfix]
+    public static void CalculateLearningLimit(IReadOnlyPropertyOwner<CharacterAttribute> characterAttributes, int focusValue, SkillObject skill, bool includeDescriptions,
+        ref ExplainedNumber __result)
+    {
+        try
+        {
+            if (SettingsManager.LearningLimitMultiplier.IsChanged)
+            {
+                __result.AddMultiplier(SettingsManager.LearningLimitMultiplier.Value);
+            }
+        }
+        catch (Exception e)
+        {
+            SubModule.LogError(e, typeof(LearningLimitMultiplier));
+        }
+    }
+}
 
-//[HarmonyPatch(typeof(DefaultCharacterDevelopmentModel), "CalculateLearningRate", new Type[]
-//{
-//    typeof(Hero),
-//    typeof(SkillObject)
-//})]
+//[HarmonyPatch(typeof(DefaultCharacterDevelopmentModel), "CalculateLearningRate")]
 //public static class LearningRateMultiplier
 //{
 //    [UsedImplicitly]
 //    [HarmonyPostfix]
-//    public static void CalculateLearningRate(Hero hero, SkillObject skill, ref float __result)
+//    public static void CalculateLearningRate(IReadOnlyPropertyOwner<CharacterAttribute> characterAttributes, int focusValue, SkillObject skill, bool includeDescriptions,
+//        ref ExplainedNumber __result)
 //    {
 //        try
 //        {
-//            if (hero.IsPlayer() && SettingsManager.LearningRateMultiplier.IsChanged)
+//            if (characterAttributes.IsPlayer() && SettingsManager.LearningRateMultiplier.IsChanged)
 //            {
 //                __result *= SettingsManager.LearningRateMultiplier.Value;
 //            }

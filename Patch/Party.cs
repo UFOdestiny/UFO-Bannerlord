@@ -220,7 +220,8 @@ public static class PartyHealingMultiplierTroops
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void GetDailyHealingForRegulars(ref MobileParty party, ref bool includeDescriptions, ref ExplainedNumber __result)
+    public static void GetDailyHealingForRegulars(PartyBase party, bool isPrisoners, bool includeDescriptions, 
+        ref ExplainedNumber __result)
     {
         try
         {
