@@ -32,8 +32,10 @@ public static class SettingsManager
 
         public const Setting_Language LanguageSetting = Setting_Language.English;
 
-        public const int AddMoneyThreshhold = 10000000;
+        public const int AddMoneyThreshhold =0;
         public const int AddMoney_count = 0;
+
+        public const int MaxAttr = 10;
 
 
         // Cheat
@@ -646,10 +648,17 @@ public static class SettingsManager
     //: new CheatValue<bool>(isChanged: false, true));
 
     public static CheatValue<int> AddMoneyThreshhold =>
-    (IsPerCampaignInstanceLoaded && PerCampaignInstance.AddMoneyThreshhold != 5)
-        ? new CheatValue<int>(true, PerCampaignInstance.AddMoneyThreshhold)
-        : ((GlobalInstance.AddMoneyThreshhold != 5)
-            ? new CheatValue<int>(true, GlobalInstance.AddMoneyThreshhold)
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.AddMoneyThreshhold != 5)
+    ? new CheatValue<int>(true, PerCampaignInstance.AddMoneyThreshhold)
+    : ((GlobalInstance.AddMoneyThreshhold != 5)
+        ? new CheatValue<int>(true, GlobalInstance.AddMoneyThreshhold)
+        : new CheatValue<int>(false, 5));
+
+    public static CheatValue<int> MaxAttr =>
+    (IsPerCampaignInstanceLoaded && PerCampaignInstance.MaxAttr != 5)
+        ? new CheatValue<int>(true, PerCampaignInstance.MaxAttr)
+        : ((GlobalInstance.MaxAttr != 5)
+            ? new CheatValue<int>(true, GlobalInstance.MaxAttr)
             : new CheatValue<int>(false, 5));
 
     public static CheatValue<int> AddMoney_count =>

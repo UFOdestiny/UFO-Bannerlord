@@ -77,6 +77,11 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     [LocalizedSettingPropertyBool("EnableHotkeyTips")]
     public bool EnableHotkeyTips { get; set; } = false;
 
+    [LocalizedSettingPropertyGroup("General")]
+    [LocalizedSettingPropertyInteger("MaxAttr", 10, 99, RequireRestart = true)]
+    public int MaxAttr { get; set; } = 10;
+
+
     [LocalizedSettingPropertyGroup("Map", GroupOrder = 2)]
     [LocalizedSettingPropertyFloatingInteger("MapSpeedMultiplier", 1f, 100f)]
     public float MapSpeedMultiplier { get; set; } = 1f;
