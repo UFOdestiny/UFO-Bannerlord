@@ -79,7 +79,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Module\bin\Win64_Shipping_Client\" />
+		<None Include="Module\bin\Win64_Shipping_Client\*" />
 	</ItemGroup>
 
 	<Target Name="CopyOutputToModFolder" AfterTargets="Build">
