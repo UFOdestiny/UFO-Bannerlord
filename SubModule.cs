@@ -37,13 +37,13 @@ internal class SubModule : MBSubModuleBase
     {
         base.OnGameStart(game, gameStarterObject);
 
-        ReplaceModel<DefaultCharacterDevelopmentModel, ModifiedCharacterDevelopmentModel>(gameStarterObject);
-
         if (game.GameType is Campaign)
         {
             CampaignGameStarter starter = (CampaignGameStarter)gameStarterObject;
             starter.AddBehavior(Activator.CreateInstance<SavingWeaponProperties.CustomBehavior>());
             starter.AddBehavior(Activator.CreateInstance<AddMoney>());
+
+            ReplaceModel<DefaultCharacterDevelopmentModel, ModifiedCharacterDevelopmentModel>(gameStarterObject);
         }
     }
 

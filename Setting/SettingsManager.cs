@@ -648,25 +648,25 @@ public static class SettingsManager
     //: new CheatValue<bool>(isChanged: false, true));
 
     public static CheatValue<int> AddMoneyThreshhold =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.AddMoneyThreshhold != 5)
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.AddMoneyThreshhold != 0)
     ? new CheatValue<int>(true, PerCampaignInstance.AddMoneyThreshhold)
-    : ((GlobalInstance.AddMoneyThreshhold != 5)
+    : ((GlobalInstance.AddMoneyThreshhold != 0)
         ? new CheatValue<int>(true, GlobalInstance.AddMoneyThreshhold)
-        : new CheatValue<int>(false, 5));
+        : new CheatValue<int>(false, 0));
 
     public static CheatValue<int> MaxAttr =>
-    (IsPerCampaignInstanceLoaded && PerCampaignInstance.MaxAttr != 5)
+    (IsPerCampaignInstanceLoaded && PerCampaignInstance.MaxAttr != 10)
         ? new CheatValue<int>(true, PerCampaignInstance.MaxAttr)
-        : ((GlobalInstance.MaxAttr != 5)
+        : ((GlobalInstance.MaxAttr != 10)
             ? new CheatValue<int>(true, GlobalInstance.MaxAttr)
-            : new CheatValue<int>(false, 5));
+            : new CheatValue<int>(false, 10));
 
     public static CheatValue<int> AddMoney_count =>
-    (IsPerCampaignInstanceLoaded && PerCampaignInstance.AddMoney_count != 5)
+    (IsPerCampaignInstanceLoaded && PerCampaignInstance.AddMoney_count != 0)
         ? new CheatValue<int>(true, PerCampaignInstance.AddMoney_count)
-        : ((GlobalInstance.AddMoney_count != 5)
+        : ((GlobalInstance.AddMoney_count != 0)
             ? new CheatValue<int>(true, GlobalInstance.AddMoney_count)
-            : new CheatValue<int>(false, 5));
+            : new CheatValue<int>(false, 0));
 
     public static CheatValue<bool> KeepDaughter =>
 (IsPerCampaignInstanceLoaded && PerCampaignInstance.KeepDaughter != true)
