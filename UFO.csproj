@@ -82,6 +82,11 @@
 		<None Include="Module\bin\Win64_Shipping_Client\*" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Module\bin\Win64_Shipping_Client\UFO.dll" />
+	  <None Remove="Module\bin\Win64_Shipping_Client\UFO.pdb" />
+	</ItemGroup>
+
 	<Target Name="CopyOutputToModFolder" AfterTargets="Build">
 		<ItemGroup>
 			<FilesToCopy Include="$(OutPutPath)\*.*" />
