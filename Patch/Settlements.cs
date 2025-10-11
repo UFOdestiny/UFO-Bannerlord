@@ -9,6 +9,7 @@ using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.Core;
+using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.MountAndBlade;
 using UFO.Extension;
 using UFO.Setting;
@@ -415,3 +416,40 @@ public static class VillagesNeverRaided
         return true;
     }
 }
+
+
+[HarmonyPatch(typeof(DefaultNotableSpawnModel), "GetTargetNotableCountForSettlement")]
+public static class NotableCount
+{
+    internal static void Postfix(Settlement settlement, Occupation occupation, ref int __result)
+    {
+        if (settlement.IsTown)
+        {
+            switch (occupation)
+            {
+                case Occupation.GangLeader:
+                    __result += SettingsManager.xGang.Value;
+                    break;
+                case Occupation.Artisan:
+                    __result += SettingsManager.xArt.Value;
+                    break;
+                case Occupation.Merchant:
+                    __result += SettingsManager.xMerch.Value;
+                    break;
+            }
+        }
+        if (settlement.IsVillage)
+        {
+            switch (occupation)
+            {
+                case Occupation.RuralNotable:
+                    __result += SettingsManager.xRural.Value;
+                    break;
+                case Occupation.Headman:
+                    __result += SettingsManager.xVill.Value;
+                    break;
+            }
+        }
+    }
+}
+

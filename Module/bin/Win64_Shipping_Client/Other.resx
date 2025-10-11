@@ -1,65 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -112,10 +54,12 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0,
+      Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0,
+      Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ModName" xml:space="preserve">
     <value>Cheats</value>
@@ -739,10 +683,10 @@
     <value>Factor by which the learning rate of player companions is multiplied. A factor of 1 means default learning.</value>
   </data>
   <data name="SliceThroughEveryone_Name" xml:space="preserve">
-    <value>Slice Through Everyone</value>
+    <value>Cut / Slice Through Everyone</value>
   </data>
   <data name="SliceThroughEveryone_Desc" xml:space="preserve">
-    <value>Always slice through enemies with every attack unless blocked by their weapon.</value>
+    <value>Always cut / slice through enemies.</value>
   </data>
   <data name="PlayerHorseInvincible_Name" xml:space="preserve">
     <value>Player Horse Invincible</value>
@@ -978,467 +922,518 @@
   </data>
 
 
-<data name="General_Enhancement_GroupName" xml:space="preserve">
-    <value>General Enhancement</value>
-  </data>
-  <data name="Vigor_Enhancement_GroupName" xml:space="preserve">
-    <value>Vigor Enhancement</value>
-  </data>
-  <data name="Control_Enhancement_GroupName" xml:space="preserve">
-    <value>Control Enhancement</value>
-  </data>
-  <data name="Intelligence_Enhancement_GroupName" xml:space="preserve">
-    <value>Intelligence Enhancement</value>
-  </data>
-  <data name="Endurance_Enhancement_GroupName" xml:space="preserve">
-    <value>Endurance Enhancement</value>
-  </data>
-  <data name="Cunning_Enhancement_GroupName" xml:space="preserve">
-    <value>Cunning Enhancement</value>
-  </data>
-  <data name="Social_Enhancement_GroupName" xml:space="preserve">
-    <value>Social Enhancement</value>
-  </data>
+  <data name="General_Enhancement_GroupName" xml:space="preserve">
+    <value>General Enhancement</value>
+  </data>
+  <data name="Vigor_Enhancement_GroupName" xml:space="preserve">
+    <value>Vigor Enhancement</value>
+  </data>
+  <data name="Control_Enhancement_GroupName" xml:space="preserve">
+    <value>Control Enhancement</value>
+  </data>
+  <data name="Intelligence_Enhancement_GroupName" xml:space="preserve">
+    <value>Intelligence Enhancement</value>
+  </data>
+  <data name="Endurance_Enhancement_GroupName" xml:space="preserve">
+    <value>Endurance Enhancement</value>
+  </data>
+  <data name="Cunning_Enhancement_GroupName" xml:space="preserve">
+    <value>Cunning Enhancement</value>
+  </data>
+  <data name="Social_Enhancement_GroupName" xml:space="preserve">
+    <value>Social Enhancement</value>
+  </data>
 
-  <data name="EnableEverYoung_Name" xml:space="preserve">
-    <value>Enable Ever Young</value>
-  </data>
-  <data name="EnableEverYoung_Desc" xml:space="preserve">
-    <value>The player gains eternal youth regardless of skill level requirements. Disabling this option turns off all Ever Young-related features. Try turning this off if there is a conflict with other mods.</value>
-  </data>
+  <data name="EnableEverYoung_Name" xml:space="preserve">
+    <value>Enable Ever Young</value>
+  </data>
+  <data name="EnableEverYoung_Desc" xml:space="preserve">
+    <value>The player gains eternal youth regardless of skill level requirements. Disabling this option turns off all Ever Young-related features. Try turning this off if there is a conflict with other mods.</value>
+  </data>
 
-  <data name="EverYoungSkillNeed_Name" xml:space="preserve">
-    <value>Clan Ever Young Skill Level (Athletics + Charm) Requirement</value>
-  </data>
-  <data name="EverYoungSkillNeed_Desc" xml:space="preserve">
-    <value>If a clan member's Athletics + Charm is greater than or equal to this value, they will gain the Ever Young ability.</value>
-  </data>
+  <data name="EverYoungSkillNeed_Name" xml:space="preserve">
+    <value>Clan Ever Young Skill Level (Athletics + Charm) Requirement</value>
+  </data>
+  <data name="EverYoungSkillNeed_Desc" xml:space="preserve">
+    <value>If a clan member's Athletics + Charm is greater than or equal to this value, they will gain the Ever Young ability.</value>
+  </data>
 
-  <data name="AutoChoosePerk_Name" xml:space="preserve">
-    <value>Automatically Acquire Both Perk Branches</value>
-  </data>
-  <data name="AutoChoosePerk_Desc" xml:space="preserve">
-    <value>Requires the skill level to meet the requirement.</value>
-  </data>
-  <data name="Enum_AutoChoosePerk_Type_Clan" xml:space="preserve">
-    <value>Player Clan Members</value>
-  </data>
-  <data name="Enum_AutoChoosePerk_Type_All" xml:space="preserve">
-    <value>All Heroes</value>
-  </data>
-  <data name="Enum_AutoChoosePerk_Type_Player" xml:space="preserve">
-    <value>The Player</value>
-  </data>
-  <data name="Enum_AutoChoosePerk_Type_No" xml:space="preserve">
-    <value>No One</value>
-  </data>
+  <data name="AutoChoosePerk_Name" xml:space="preserve">
+    <value>Automatically Acquire Both Perk Branches</value>
+  </data>
+  <data name="AutoChoosePerk_Desc" xml:space="preserve">
+    <value>Requires the skill level to meet the requirement.</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_Clan" xml:space="preserve">
+    <value>Player Clan Members</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_All" xml:space="preserve">
+    <value>All Heroes</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_Player" xml:space="preserve">
+    <value>The Player</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_No" xml:space="preserve">
+    <value>No One</value>
+  </data>
 
 
-  <data name="VigorDmgPercent_Name" xml:space="preserve">
-    <value>Vigor Damage Bonus Percentage</value>
-  </data>
-  <data name="VigorDmgPercent_Desc" xml:space="preserve">
-    <value>The damage percentage increase per point of Vigor.</value>
-  </data>
+  <data name="VigorDmgPercent_Name" xml:space="preserve">
+    <value>Vigor Damage Bonus Percentage</value>
+  </data>
+  <data name="VigorDmgPercent_Desc" xml:space="preserve">
+    <value>The damage percentage increase per point of Vigor.</value>
+  </data>
 
-  <data name="VigorArmorAdd_Name" xml:space="preserve">
-    <value>Vigor Armor Bonus</value>
-  </data>
-  <data name="VigorArmorAdd_Desc" xml:space="preserve">
-    <value>The armor value increase per point of Vigor.</value>
-  </data>
+  <data name="VigorArmorAdd_Name" xml:space="preserve">
+    <value>Vigor Armor Bonus</value>
+  </data>
+  <data name="VigorArmorAdd_Desc" xml:space="preserve">
+    <value>The armor value increase per point of Vigor.</value>
+  </data>
 
-  <data name="VigorMountArmorAdd_Name" xml:space="preserve">
-    <value>Vigor Mount Armor Value</value>
-  </data>
-  <data name="VigorMountArmorAdd_Desc" xml:space="preserve">
-    <value>The mount armor value increase per point of Vigor.</value>
-  </data>
+  <data name="VigorMountArmorAdd_Name" xml:space="preserve">
+    <value>Vigor Mount Armor Value</value>
+  </data>
+  <data name="VigorMountArmorAdd_Desc" xml:space="preserve">
+    <value>The mount armor value increase per point of Vigor.</value>
+  </data>
 
-  <data name="VigorShieldEndurancePercent_Name" xml:space="preserve">
-    <value>Vigor Shield Reinforcement</value>
-  </data>
-  <data name="VigorShieldEndurancePercent_Desc" xml:space="preserve">
-    <value>The percentage increase in shield durability per point of Vigor.</value>
-  </data>
+  <data name="VigorShieldEndurancePercent_Name" xml:space="preserve">
+    <value>Vigor Shield Reinforcement</value>
+  </data>
+  <data name="VigorShieldEndurancePercent_Desc" xml:space="preserve">
+    <value>The percentage increase in shield durability per point of Vigor.</value>
+  </data>
 
-  <data name="VigorFinalDmgAdd_Name" xml:space="preserve">
-    <value>Vigor Forced Damage Bonus</value>
-  </data>
-  <data name="VigorFinalDmgAdd_Desc" xml:space="preserve">
-    <value>The forced damage value increase against enemies per point of Vigor.</value>
-  </data>
+  <data name="VigorFinalDmgAdd_Name" xml:space="preserve">
+    <value>Vigor Forced Damage Bonus</value>
+  </data>
+  <data name="VigorFinalDmgAdd_Desc" xml:space="preserve">
+    <value>The forced damage value increase against enemies per point of Vigor.</value>
+  </data>
 
-  <data name="VigorDmgTakenReduce_Name" xml:space="preserve">
-    <value>Vigor Damage Reduction</value>
-  </data>
-  <data name="VigorDmgTakenReduce_Desc" xml:space="preserve">
-    <value>The value of damage reduction from enemies per point of Vigor.</value>
-  </data>
+  <data name="VigorDmgTakenReduce_Name" xml:space="preserve">
+    <value>Vigor Damage Reduction</value>
+  </data>
+  <data name="VigorDmgTakenReduce_Desc" xml:space="preserve">
+    <value>The value of damage reduction from enemies per point of Vigor.</value>
+  </data>
 
-  <data name="VigorCrushThroughPositive_Name" xml:space="preserve">
-    <value>Vigor Block Crush Probability</value>
-  </data>
-  <data name="VigorCrushThroughPositive_Desc" xml:space="preserve">
-    <value>The probability increase of crushing an opponent's block for every 1 point of Vigor advantage over the opponent.</value>
-  </data>
+  <data name="VigorCrushThroughPositive_Name" xml:space="preserve">
+    <value>Vigor Block Crush Probability</value>
+  </data>
+  <data name="VigorCrushThroughPositive_Desc" xml:space="preserve">
+    <value>The probability increase of crushing an opponent's block for every 1 point of Vigor advantage over the opponent.</value>
+  </data>
 
-  <data name="VigorCrushThroughNegative_Name" xml:space="preserve">
-    <value>Vigor Resist Block Crush Probability</value>
-  </data>
-  <data name="VigorCrushThroughNegative_Desc" xml:space="preserve">
-    <value>The probability increase of resisting a block crush for every 1 point of Vigor advantage over the opponent.</value>
-  </data>
+  <data name="VigorCrushThroughNegative_Name" xml:space="preserve">
+    <value>Vigor Resist Block Crush Probability</value>
+  </data>
+  <data name="VigorCrushThroughNegative_Desc" xml:space="preserve">
+    <value>The probability increase of resisting a block crush for every 1 point of Vigor advantage over the opponent.</value>
+  </data>
 
-  <data name="IntelligenceAmmoAddPercent_Name" xml:space="preserve">
-    <value>Intelligence Ammunition Capacity Bonus</value>
-  </data>
-  <data name="IntelligenceAmmoAddPercent_Desc" xml:space="preserve">
-    <value>The percentage increase in the party's maximum ammunition capacity per point of Intelligence (Quartermaster).</value>
-  </data>
+  <data name="IntelligenceAmmoAddPercent_Name" xml:space="preserve">
+    <value>Intelligence Ammunition Capacity Bonus</value>
+  </data>
+  <data name="IntelligenceAmmoAddPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in the party's maximum ammunition capacity per point of Intelligence (Quartermaster).</value>
+  </data>
 
-  <data name="ControlAmmoNoConsumeRate_Name" xml:space="preserve">
-    <value>Control Ammunition Non-Consumption Rate</value>
-  </data>
-  <data name="ControlAmmoNoConsumeRate_Desc" xml:space="preserve">
-    <value>The probability that each shot will not consume ammunition per point of Control.</value>
-  </data>
+  <data name="ControlAmmoNoConsumeRate_Name" xml:space="preserve">
+    <value>Control Ammunition Non-Consumption Rate</value>
+  </data>
+  <data name="ControlAmmoNoConsumeRate_Desc" xml:space="preserve">
+    <value>The probability that each shot will not consume ammunition per point of Control.</value>
+  </data>
 
-  <data name="ControlDropDmgReducePercent_Name" xml:space="preserve">
-    <value>Control Fall Damage Reduction</value>
-  </data>
-  <data name="ControlDropDmgReducePercent_Desc" xml:space="preserve">
-    <value>The percentage reduction in fall damage per point of Control.</value>
-  </data>
+  <data name="ControlDropDmgReducePercent_Name" xml:space="preserve">
+    <value>Control Fall Damage Reduction</value>
+  </data>
+  <data name="ControlDropDmgReducePercent_Desc" xml:space="preserve">
+    <value>The percentage reduction in fall damage per point of Control.</value>
+  </data>
 
-  <data name="ControlAimStabilityPercent_Name" xml:space="preserve">
-    <value>Control Aim Stability Bonus</value>
-  </data>
-  <data name="ControlAimStabilityPercent_Desc" xml:space="preserve">
-    <value>The percentage increase in aiming stability per point of Control.</value>
-  </data>
+  <data name="ControlAimStabilityPercent_Name" xml:space="preserve">
+    <value>Control Aim Stability Bonus</value>
+  </data>
+  <data name="ControlAimStabilityPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in aiming stability per point of Control.</value>
+  </data>
 
-  <data name="ControlMountManeuverPercent_Name" xml:space="preserve">
-    <value>Control Mount Maneuverability Bonus</value>
-  </data>
-  <data name="ControlMountManeuverPercent_Desc" xml:space="preserve">
-    <value>The percentage increase in mount maneuverability per point of Control.</value>
-  </data>
+  <data name="ControlMountManeuverPercent_Name" xml:space="preserve">
+    <value>Control Mount Maneuverability Bonus</value>
+  </data>
+  <data name="ControlMountManeuverPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in mount maneuverability per point of Control.</value>
+  </data>
 
-  <data name="ControlCritRate_Name" xml:space="preserve">
-    <value>Control Critical Hit Rate</value>
-  </data>
-  <data name="ControlCritRate_Desc" xml:space="preserve">
-    <value>The probability increase of a critical hit (double damage) for every 1 point of Control advantage over the opponent.</value>
-  </data>
+  <data name="ControlCritRate_Name" xml:space="preserve">
+    <value>Control Critical Hit Rate</value>
+  </data>
+  <data name="ControlCritRate_Desc" xml:space="preserve">
+    <value>The probability increase of a critical hit (double damage) for every 1 point of Control advantage over the opponent.</value>
+  </data>
 
-  <data name="ControlExemptionRate_Name" xml:space="preserve">
-    <value>Control Exemption Rate</value>
-  </data>
-  <data name="ControlExemptionRate_Desc" xml:space="preserve">
-    <value>The probability increase of exemption (complete damage immunity) for every 1 point of Control advantage over the opponent.</value>
-  </data>
+  <data name="ControlExemptionRate_Name" xml:space="preserve">
+    <value>Control Exemption Rate</value>
+  </data>
+  <data name="ControlExemptionRate_Desc" xml:space="preserve">
+    <value>The probability increase of exemption (complete damage immunity) for every 1 point of Control advantage over the opponent.</value>
+  </data>
 
-  <data name="ControlPenetrateRate_Name" xml:space="preserve">
-    <value>Control Ranged Shield Penetration Rate</value>
-  </data>
-  <data name="ControlPenetrateRate_Desc" xml:space="preserve">
-    <value>The probability increase of ranged shield penetration per point of Control.</value>
-  </data>
+  <data name="ControlPenetrateRate_Name" xml:space="preserve">
+    <value>Control Ranged Shield Penetration Rate</value>
+  </data>
+  <data name="ControlPenetrateRate_Desc" xml:space="preserve">
+    <value>The probability increase of ranged shield penetration per point of Control.</value>
+  </data>
 
-  <data name="EnduranceHpAddPercent_Name" xml:space="preserve">
-    <value>Endurance Health Bonus</value>
-  </data>
-  <data name="EnduranceHpAddPercent_Desc" xml:space="preserve">
-    <value>The percentage increase in maximum health per point of Endurance.</value>
-  </data>
+  <data name="EnduranceHpAddPercent_Name" xml:space="preserve">
+    <value>Endurance Health Bonus</value>
+  </data>
+  <data name="EnduranceHpAddPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in maximum health per point of Endurance.</value>
+  </data>
 
-  <data name="EnduranceHealRate_Name" xml:space="preserve">
-    <value>Endurance Health Recovery Rate Bonus</value>
-  </data>
-  <data name="EnduranceHealRate_Desc" xml:space="preserve">
-    <value>The percentage increase in health recovery (on the world map) per point of Endurance.</value>
-  </data>
+  <data name="EnduranceHealRate_Name" xml:space="preserve">
+    <value>Endurance Health Recovery Rate Bonus</value>
+  </data>
+  <data name="EnduranceHealRate_Desc" xml:space="preserve">
+    <value>The percentage increase in health recovery (on the world map) per point of Endurance.</value>
+  </data>
 
-  <data name="EnduranceStaggerPercent_Name" xml:space="preserve">
-    <value>Endurance Stagger Resistance Bonus</value>
-  </data>
-  <data name="EnduranceStaggerPercent_Desc" xml:space="preserve">
-    <value>The percentage increase in stagger resistance per point of Endurance.</value>
-  </data>
+  <data name="EnduranceStaggerPercent_Name" xml:space="preserve">
+    <value>Endurance Stagger Resistance Bonus</value>
+  </data>
+  <data name="EnduranceStaggerPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in stagger resistance per point of Endurance.</value>
+  </data>
 
-  <data name="EnduranceWalkSpeedPercent_Name" xml:space="preserve">
-    <value>Endurance Walking Speed Bonus</value>
-  </data>
-  <data name="EnduranceWalkSpeedPercent_Desc" xml:space="preserve">
-    <value>The percentage increase in walking speed per point of Endurance.</value>
-  </data>
+  <data name="EnduranceWalkSpeedPercent_Name" xml:space="preserve">
+    <value>Endurance Walking Speed Bonus</value>
+  </data>
+  <data name="EnduranceWalkSpeedPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in walking speed per point of Endurance.</value>
+  </data>
 
-  <data name="EnduranceMountSpeedPercent_Name" xml:space="preserve">
-    <value>Endurance Riding Speed Bonus</value>
-  </data>
-  <data name="EnduranceMountSpeedPercent_Desc" xml:space="preserve">
-    <value>The percentage increase in riding speed per point of Endurance.</value>
-  </data>
+  <data name="EnduranceMountSpeedPercent_Name" xml:space="preserve">
+    <value>Endurance Riding Speed Bonus</value>
+  </data>
+  <data name="EnduranceMountSpeedPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in riding speed per point of Endurance.</value>
+  </data>
 
-  <data name="CunningPrisonerRecruitSpeedPercent_Name" xml:space="preserve">
-    <value>Cunning Prisoner Recruitment Speed Bonus</value>
-  </data>
-  <data name="CunningPrisonerRecruitSpeedPercent_Desc" xml:space="preserve">
-    <value>The percentage increase in prisoner recruitment speed per point of Cunning (Party Leader).</value>
-  </data>
+  <data name="CunningPrisonerRecruitSpeedPercent_Name" xml:space="preserve">
+    <value>Cunning Prisoner Recruitment Speed Bonus</value>
+  </data>
+  <data name="CunningPrisonerRecruitSpeedPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in prisoner recruitment speed per point of Cunning (Party Leader).</value>
+  </data>
 
-  <data name="CunningPrisonerCapacityPercent_Name" xml:space="preserve">
-    <value>Cunning Prisoner Capacity Bonus</value>
-  </data>
-  <data name="CunningPrisonerCapacityPercent_Desc" xml:space="preserve">
-    <value>The increase in prisoner capacity per point of Cunning (Party Leader).</value>
-  </data>
+  <data name="CunningPrisonerCapacityPercent_Name" xml:space="preserve">
+    <value>Cunning Prisoner Capacity Bonus</value>
+  </data>
+  <data name="CunningPrisonerCapacityPercent_Desc" xml:space="preserve">
+    <value>The increase in prisoner capacity per point of Cunning (Party Leader).</value>
+  </data>
 
-  <data name="CunningRaidSpeedPercent_Name" xml:space="preserve">
-    <value>Cunning Raid Speed Bonus</value>
-  </data>
-  <data name="CunningRaidSpeedPercent_Desc" xml:space="preserve">
-    <value>The percentage increase in raiding speed per point of Cunning (Party Leader).</value>
-  </data>
+  <data name="CunningRaidSpeedPercent_Name" xml:space="preserve">
+    <value>Cunning Raid Speed Bonus</value>
+  </data>
+  <data name="CunningRaidSpeedPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in raiding speed per point of Cunning (Party Leader).</value>
+  </data>
 
-  <data name="CunningPartySpeedAdd_Name" xml:space="preserve">
-    <value>Cunning Party Speed Bonus</value>
-  </data>
-  <data name="CunningPartySpeedAdd_Desc" xml:space="preserve">
-    <value>The increase in party speed per point of Cunning (Scout).</value>
-  </data>
+  <data name="CunningPartySpeedAdd_Name" xml:space="preserve">
+    <value>Cunning Party Speed Bonus</value>
+  </data>
+  <data name="CunningPartySpeedAdd_Desc" xml:space="preserve">
+    <value>The increase in party speed per point of Cunning (Scout).</value>
+  </data>
 
-  <data name="CunningCompanionCapacityAdd_Name" xml:space="preserve">
-    <value>Cunning Companion Capacity Bonus</value>
-  </data>
-  <data name="CunningCompanionCapacityAdd_Desc" xml:space="preserve">
-    <value>The increase in companion limit per point of Cunning (Clan Leader).</value>
-  </data>
+  <data name="CunningCompanionCapacityAdd_Name" xml:space="preserve">
+    <value>Cunning Companion Capacity Bonus</value>
+  </data>
+  <data name="CunningCompanionCapacityAdd_Desc" xml:space="preserve">
+    <value>The increase in companion limit per point of Cunning (Clan Leader).</value>
+  </data>
 
-  <data name="SocialBoundary_Name" xml:space="preserve">
-    <value>Social Threshold</value>
-  </data>
-  <data name="SocialBoundary_Desc" xml:space="preserve">
-    <value>Sets the Social effect calculation threshold.</value>
-  </data>
+  <data name="SocialBoundary_Name" xml:space="preserve">
+    <value>Social Threshold</value>
+  </data>
+  <data name="SocialBoundary_Desc" xml:space="preserve">
+    <value>Sets the Social effect calculation threshold.</value>
+  </data>
 
-  <data name="SocialHearthAdd_Name" xml:space="preserve">
-    <value>Social Settlement Hearth Growth Bonus</value>
-  </data>
-  <data name="SocialHearthAdd_Desc" xml:space="preserve">
-    <value>The increase in settlement hearth growth value per point of Social (Clan Leader and Governor).</value>
-  </data>
+  <data name="SocialHearthAdd_Name" xml:space="preserve">
+    <value>Social Settlement Hearth Growth Bonus</value>
+  </data>
+  <data name="SocialHearthAdd_Desc" xml:space="preserve">
+    <value>The increase in settlement hearth growth value per point of Social (Clan Leader and Governor).</value>
+  </data>
 
-  <data name="SocialSettlementLoyaltyAdd_Name" xml:space="preserve">
-    <value>Social Settlement Loyalty Bonus</value>
-  </data>
-  <data name="SocialSettlementLoyaltyAdd_Desc" xml:space="preserve">
-    <value>The increase in settlement loyalty per point of Social (Clan Leader and Governor).</value>
-  </data>
+  <data name="SocialSettlementLoyaltyAdd_Name" xml:space="preserve">
+    <value>Social Settlement Loyalty Bonus</value>
+  </data>
+  <data name="SocialSettlementLoyaltyAdd_Desc" xml:space="preserve">
+    <value>The increase in settlement loyalty per point of Social (Clan Leader and Governor).</value>
+  </data>
 
-  <data name="SocialMilitiaAdd_Name" xml:space="preserve">
-    <value>Social Settlement Militia Bonus</value>
-  </data>
-  <data name="SocialMilitiaAdd_Desc" xml:space="preserve">
-    <value>The increase in settlement militia per point of Social (Clan Leader and Governor).</value>
-  </data>
+  <data name="SocialMilitiaAdd_Name" xml:space="preserve">
+    <value>Social Settlement Militia Bonus</value>
+  </data>
+  <data name="SocialMilitiaAdd_Desc" xml:space="preserve">
+    <value>The increase in settlement militia per point of Social (Clan Leader and Governor).</value>
+  </data>
 
-  <data name="SocialRecruitSpeedPercent_Name" xml:space="preserve">
-    <value>Social Recruitment Pool Refresh Speed</value>
-  </data>
-  <data name="SocialRecruitSpeedPercent_Desc" xml:space="preserve">
-    <value>The percentage increase in settlement recruitment pool refresh speed per point of Social (Clan Leader and Governor).</value>
-  </data>
+  <data name="SocialRecruitSpeedPercent_Name" xml:space="preserve">
+    <value>Social Recruitment Pool Refresh Speed</value>
+  </data>
+  <data name="SocialRecruitSpeedPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in settlement recruitment pool refresh speed per point of Social (Clan Leader and Governor).</value>
+  </data>
 
-  <data name="SocialTaxPercent_Name" xml:space="preserve">
-    <value>Social Tax Bonus</value>
-  </data>
-  <data name="SocialTaxPercent_Desc" xml:space="preserve">
-    <value>The percentage increase in settlement taxes per point of Social (Governor).</value>
-  </data>
+  <data name="SocialTaxPercent_Name" xml:space="preserve">
+    <value>Social Tax Bonus</value>
+  </data>
+  <data name="SocialTaxPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in settlement taxes per point of Social (Governor).</value>
+  </data>
 
-  <data name="SocialWorkshopProductionPercent_Name" xml:space="preserve">
-    <value>Social Workshop Production Bonus</value>
-  </data>
-  <data name="SocialWorkshopProductionPercent_Desc" xml:space="preserve">
-    <value>The percentage increase in workshop production per point of Social (Governor).</value>
-  </data>
+  <data name="SocialWorkshopProductionPercent_Name" xml:space="preserve">
+    <value>Social Workshop Production Bonus</value>
+  </data>
+  <data name="SocialWorkshopProductionPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in workshop production per point of Social (Governor).</value>
+  </data>
 
-  <data name="SocialCompanionCapacityAdd_Name" xml:space="preserve">
-    <value>Social Companion Capacity Bonus</value>
-  </data>
-  <data name="SocialCompanionCapacityAdd_Desc" xml:space="preserve">
-    <value>The increase in companion limit per point of Social (Clan Leader).</value>
-  </data>
+  <data name="SocialCompanionCapacityAdd_Name" xml:space="preserve">
+    <value>Social Companion Capacity Bonus</value>
+  </data>
+  <data name="SocialCompanionCapacityAdd_Desc" xml:space="preserve">
+    <value>The increase in companion limit per point of Social (Clan Leader).</value>
+  </data>
 
-  <data name="IntelligenceBoundary_Name" xml:space="preserve">
-    <value>Intelligence Threshold</value>
-  </data>
-  <data name="IntelligenceBoundary_Desc" xml:space="preserve">
-    <value>Sets the Intelligence effect calculation threshold.</value>
-  </data>
+  <data name="IntelligenceBoundary_Name" xml:space="preserve">
+    <value>Intelligence Threshold</value>
+  </data>
+  <data name="IntelligenceBoundary_Desc" xml:space="preserve">
+    <value>Sets the Intelligence effect calculation threshold.</value>
+  </data>
 
-  <data name="IntelligenceExpRate_Name" xml:space="preserve">
-    <value>Intelligence Experience Bonus</value>
-  </data>
-  <data name="IntelligenceExpRate_Desc" xml:space="preserve">
-    <value>The increase in experience gain rate per point of Intelligence, doubled for Cunning, Social, and Intelligence skills.</value>
-  </data>
+  <data name="IntelligenceExpRate_Name" xml:space="preserve">
+    <value>Intelligence Experience Bonus</value>
+  </data>
+  <data name="IntelligenceExpRate_Desc" xml:space="preserve">
+    <value>The increase in experience gain rate per point of Intelligence, doubled for Cunning, Social, and Intelligence skills.</value>
+  </data>
 
-  <data name="IntelligenceSiegeEndurancePercent_Name" xml:space="preserve">
-    <value>Intelligence Siege Weapon Durability Bonus</value>
-  </data>
-  <data name="IntelligenceSiegeEndurancePercent_Desc" xml:space="preserve">
-    <value>The percentage increase in siege weapon durability per point of Intelligence (Engineer).</value>
-  </data>
+  <data name="IntelligenceSiegeEndurancePercent_Name" xml:space="preserve">
+    <value>Intelligence Siege Weapon Durability Bonus</value>
+  </data>
+  <data name="IntelligenceSiegeEndurancePercent_Desc" xml:space="preserve">
+    <value>The percentage increase in siege weapon durability per point of Intelligence (Engineer).</value>
+  </data>
 
-  <data name="IntelligenceWallEndurancePercent_Name" xml:space="preserve">
-    <value>Intelligence Wall Durability Bonus</value>
-  </data>
-  <data name="IntelligenceWallEndurancePercent_Desc" xml:space="preserve">
-    <value>The percentage increase in wall durability per point of Intelligence (Governor).</value>
-  </data>
+  <data name="IntelligenceWallEndurancePercent_Name" xml:space="preserve">
+    <value>Intelligence Wall Durability Bonus</value>
+  </data>
+  <data name="IntelligenceWallEndurancePercent_Desc" xml:space="preserve">
+    <value>The percentage increase in wall durability per point of Intelligence (Governor).</value>
+  </data>
 
-  <data name="IntelligenceBallistaAdd_Name" xml:space="preserve">
-    <value>Intelligence Ballista Bonus</value>
-  </data>
-  <data name="IntelligenceBallistaAdd_Desc" xml:space="preserve">
-    <value>The increase in initial ballista count during sieges/defense per point of Intelligence (Attacker's Engineer, or Defender's Governor).</value>
-  </data>
+  <data name="IntelligenceBallistaAdd_Name" xml:space="preserve">
+    <value>Intelligence Ballista Bonus</value>
+  </data>
+  <data name="IntelligenceBallistaAdd_Desc" xml:space="preserve">
+    <value>The increase in initial ballista count during sieges/defense per point of Intelligence (Attacker's Engineer, or Defender's Governor).</value>
+  </data>
 
-  <data name="IntelligenceLeaderSettlementFoodPercent_Name" xml:space="preserve">
-    <value>Intelligence Settlement Food Bonus - Clan Leader</value>
-  </data>
-  <data name="IntelligenceLeaderSettlementFoodPercent_Desc" xml:space="preserve">
-    <value>The increase in settlement food production per point of Intelligence.</value>
-  </data>
+  <data name="IntelligenceLeaderSettlementFoodPercent_Name" xml:space="preserve">
+    <value>Intelligence Settlement Food Bonus - Clan Leader</value>
+  </data>
+  <data name="IntelligenceLeaderSettlementFoodPercent_Desc" xml:space="preserve">
+    <value>The increase in settlement food production per point of Intelligence.</value>
+  </data>
 
-  <data name="IntelligenceGovernorSettlementFoodPercent_Name" xml:space="preserve">
-    <value>Intelligence Settlement Food Bonus - Governor</value>
-  </data>
-  <data name="IntelligenceGovernorSettlementFoodPercent_Desc" xml:space="preserve">
-    <value>The increase in settlement food production per point of Intelligence.</value>
-  </data>
+  <data name="IntelligenceGovernorSettlementFoodPercent_Name" xml:space="preserve">
+    <value>Intelligence Settlement Food Bonus - Governor</value>
+  </data>
+  <data name="IntelligenceGovernorSettlementFoodPercent_Desc" xml:space="preserve">
+    <value>The increase in settlement food production per point of Intelligence.</value>
+  </data>
 
-  <data name="IntelligenceProsperityFoodCostReducePercent_Name" xml:space="preserve">
-    <value>Intelligence Prosperity Food Consumption Reduction</value>
-  </data>
-  <data name="IntelligenceProsperityFoodCostReducePercent_Desc" xml:space="preserve">
-    <value>The percentage reduction in food consumed due to prosperity per point of Intelligence.</value>
-  </data>
+  <data name="IntelligenceProsperityFoodCostReducePercent_Name" xml:space="preserve">
+    <value>Intelligence Prosperity Food Consumption Reduction</value>
+  </data>
+  <data name="IntelligenceProsperityFoodCostReducePercent_Desc" xml:space="preserve">
+    <value>The percentage reduction in food consumed due to prosperity per point of Intelligence.</value>
+  </data>
 
-  <data name="IntelligenceGarrisonWageReducePercent_Name" xml:space="preserve">
-    <value>Intelligence Garrison Wage Bonus</value>
-  </data>
-  <data name="IntelligenceGarrisonWageReducePercent_Desc" xml:space="preserve">
-    <value>The reduction in garrison wages per point of Intelligence.</value>
-  </data>
+  <data name="IntelligenceGarrisonWageReducePercent_Name" xml:space="preserve">
+    <value>Intelligence Garrison Wage Bonus</value>
+  </data>
+  <data name="IntelligenceGarrisonWageReducePercent_Desc" xml:space="preserve">
+    <value>The reduction in garrison wages per point of Intelligence.</value>
+  </data>
 
-  <data name="IntelligenceWorkshopProductionPercent_Name" xml:space="preserve">
-    <value>Intelligence Workshop Production Bonus</value>
-  </data>
-  <data name="IntelligenceWorkshopProductionPercent_Desc" xml:space="preserve">
-    <value>The percentage increase in workshop production per point of Intelligence (Owner).</value>
-  </data>
+  <data name="IntelligenceWorkshopProductionPercent_Name" xml:space="preserve">
+    <value>Intelligence Workshop Production Bonus</value>
+  </data>
+  <data name="IntelligenceWorkshopProductionPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in workshop production per point of Intelligence (Owner).</value>
+  </data>
 
-  <data name="EnableDailyGainXp_Name" xml:space="preserve">
-    <value>Enable Heroes to Gain Daily Character Experience</value>
-  </data>
-  <data name="EnableDailyGainXp_Desc" xml:space="preserve">
-    <value>Specifically, Level x Intelligence x Intelligence x 2</value>
-  </data>
+  <data name="EnableDailyGainXp_Name" xml:space="preserve">
+    <value>Enable Heroes to Gain Daily Character Experience</value>
+  </data>
+  <data name="EnableDailyGainXp_Desc" xml:space="preserve">
+    <value>Specifically, Level x Intelligence x Intelligence x 2</value>
+  </data>
 
-  <data name="CombatAttributeRatePlayer_Name" xml:space="preserve">
-    <value>Combat Enhancement Coefficient - Player</value>
-  </data>
-  <data name="CombatAttributeRatePlayer_Desc" xml:space="preserve">
-    <value>The combat enhancement effect will be multiplied by this coefficient, while negative effects will be divided by this value.</value>
-  </data>
+  <data name="CombatAttributeRatePlayer_Name" xml:space="preserve">
+    <value>Combat Enhancement Coefficient - Player</value>
+  </data>
+  <data name="CombatAttributeRatePlayer_Desc" xml:space="preserve">
+    <value>The combat enhancement effect will be multiplied by this coefficient, while negative effects will be divided by this value.</value>
+  </data>
 
-  <data name="CombatAttributeRateClanMember_Name" xml:space="preserve">
-    <value>Combat Enhancement Coefficient - Player Clan Members</value>
-  </data>
-  <data name="CombatAttributeRateClanMember_Desc" xml:space="preserve">
-    <value>The combat enhancement effect will be multiplied by this coefficient, while negative effects will be divided by this value.</value>
-  </data>
+  <data name="CombatAttributeRateClanMember_Name" xml:space="preserve">
+    <value>Combat Enhancement Coefficient - Player Clan Members</value>
+  </data>
+  <data name="CombatAttributeRateClanMember_Desc" xml:space="preserve">
+    <value>The combat enhancement effect will be multiplied by this coefficient, while negative effects will be divided by this value.</value>
+  </data>
 
-  <data name="CombatAttributeRateOther_Name" xml:space="preserve">
-    <value>Combat Enhancement Coefficient - Others</value>
-  </data>
-  <data name="CombatAttributeRateOther_Desc" xml:space="preserve">
-    <value>The combat enhancement effect will be multiplied by this coefficient, while negative effects will be divided by this value.</value>
-  </data>
+  <data name="CombatAttributeRateOther_Name" xml:space="preserve">
+    <value>Combat Enhancement Coefficient - Others</value>
+  </data>
+  <data name="CombatAttributeRateOther_Desc" xml:space="preserve">
+    <value>The combat enhancement effect will be multiplied by this coefficient, while negative effects will be divided by this value.</value>
+  </data>
 
-  <data name="StrategyAttributeRatePlayer_Name" xml:space="preserve">
-    <value>Strategic Enhancement Coefficient - Player</value>
-  </data>
-  <data name="StrategyAttributeRatePlayer_Desc" xml:space="preserve">
-    <value>The strategic enhancement effect will be multiplied by this coefficient, while negative effects will be divided by this value.</value>
-  </data>
+  <data name="StrategyAttributeRatePlayer_Name" xml:space="preserve">
+    <value>Strategic Enhancement Coefficient - Player</value>
+  </data>
+  <data name="StrategyAttributeRatePlayer_Desc" xml:space="preserve">
+    <value>The strategic enhancement effect will be multiplied by this coefficient, while negative effects will be divided by this value.</value>
+  </data>
 
-  <data name="StrategyAttributeRateClanMember_Name" xml:space="preserve">
-    <value>Strategic Enhancement Coefficient - Player Clan Members</value>
-  </data>
-  <data name="StrategyAttributeRateClanMember_Desc" xml:space="preserve">
-    <value>The strategic enhancement effect will be multiplied by this coefficient, while negative effects will be divided by this value.</value>
-  </data>
+  <data name="StrategyAttributeRateClanMember_Name" xml:space="preserve">
+    <value>Strategic Enhancement Coefficient - Player Clan Members</value>
+  </data>
+  <data name="StrategyAttributeRateClanMember_Desc" xml:space="preserve">
+    <value>The strategic enhancement effect will be multiplied by this coefficient, while negative effects will be divided by this value.</value>
+  </data>
 
-  <data name="StrategyAttributeRateOther_Name" xml:space="preserve">
-    <value>Strategic Enhancement Coefficient - Others</value>
-  </data>
-  <data name="StrategyAttributeRateOther_Desc" xml:space="preserve">
-    <value>The strategic enhancement effect will be multiplied by this coefficient, while negative effects will be divided by this value.</value>
-  </data>
+  <data name="StrategyAttributeRateOther_Name" xml:space="preserve">
+    <value>Strategic Enhancement Coefficient - Others</value>
+  </data>
+  <data name="StrategyAttributeRateOther_Desc" xml:space="preserve">
+    <value>The strategic enhancement effect will be multiplied by this coefficient, while negative effects will be divided by this value.</value>
+  </data>
 
-  <data name="TestMode_Name" xml:space="preserve">
-    <value>Test Mode</value>
-  </data>
-  <data name="TestMode_Desc" xml:space="preserve">
-    <value>Everyone has infinite health in combat</value>
-  </data>
+  <data name="TestMode_Name" xml:space="preserve">
+    <value>Test Mode</value>
+  </data>
+  <data name="TestMode_Desc" xml:space="preserve">
+    <value>Everyone has infinite health in combat</value>
+  </data>
 
-  <data name="PlayerAlwaysCrush_Name" xml:space="preserve">
-    <value>Player Always Crush Block</value>
-  </data>
-  <data name="PlayerAlwaysCrush_Desc" xml:space="preserve">
-    <value>Only the player can always crush blocks</value>
-  </data>
+  <data name="PlayerAlwaysCrush_Name" xml:space="preserve">
+    <value>Player Always Crush Through</value>
+  </data>
+  <data name="PlayerAlwaysCrush_Desc" xml:space="preserve">
+    <value>Only the player can always crush through</value>
+  </data>
 
-  <data name="InfiniteMomentum_Name" xml:space="preserve">
-    <value>Player Infinite Momentum</value>
-  </data>
-  <data name="InfiniteMomentum_Desc" xml:space="preserve">
-    <value>Player has infinite momentum</value>
-  </data>
+  <data name="InfiniteMomentum_Name" xml:space="preserve">
+    <value>Player Infinite Momentum</value>
+  </data>
+  <data name="InfiniteMomentum_Desc" xml:space="preserve">
+    <value>Player has infinite momentum</value>
+  </data>
 
-  <data name="KeepDaughter_Name" xml:space="preserve">
-    <value>Female Marriage Stay in Clan</value>
-  </data>
-  <data name="KeepDaughter_Desc" xml:space="preserve">
-    <value>Female members of the player's clan will remain in the player's clan after marriage</value>
-  </data>
+  <data name="KeepDaughter_Name" xml:space="preserve">
+    <value>Female Marriage Stay in Clan</value>
+  </data>
+  <data name="KeepDaughter_Desc" xml:space="preserve">
+    <value>Female members of the player's clan will remain in the player's clan after marriage</value>
+  </data>
+  <data name="AddMoneyThreshhold_Name" xml:space="preserve">
+    <value>Threshold of adding money</value>
+  </data>
+  <data name="AddMoneyThreshhold_Desc" xml:space="preserve">
+    <value>You will get a specific amount of money EVERYDAY if your money is less than this threshold</value>
+  </data>
+  <data name="AddMoney_count_Name" xml:space="preserve">
+    <value>The amount of adding money everyday</value>
+  </data>
+  <data name="AddMoney_count_Desc" xml:space="preserve">
+    <value>You will get this amount of money EVERYDAY if your money is less than this threshold</value>
+  </data>
 
-  <data name="LanguageSetting_Name" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="LanguageSetting_Desc" xml:space="preserve">
-    <value>Select the language for settings</value>
-  </data>
-  <data name="Enum_Setting_Language_English" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="Enum_Setting_Language_Chinese" xml:space="preserve">
-    <value>Chinese</value>
-  </data>
-  <data name="Enum_Setting_Language_Other" xml:space="preserve">
-    <value>Other</value>
-  </data>
+  <data name="LanguageSetting_Name" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LanguageSetting_Desc" xml:space="preserve">
+    <value>Select the language for settings</value>
+  </data>
+  <data name="MaxAttr_Name" xml:space="preserve">
+    <value>Max Attribute Limit</value>
+  </data>
+  <data name="MaxAttr_Desc" xml:space="preserve">
+    <value>Max Attribute Limit (Default: 10)</value>
+  </data>
+  <data name="Enum_Setting_Language_English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Enum_Setting_Language_Chinese" xml:space="preserve">
+    <value>Chinese</value>
+  </data>
+  <data name="Enum_Setting_Language_Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
 
-  <data name="JoinMyKindom" xml:space="preserve">
-    <value>Lead your clan to join my kingdom. This is the only choice to prevent your clan from perishing.</value>
-  </data>
-  <data name="JoinMyKindom_OK" xml:space="preserve">
-    <value>Alright.</value>
-  </data>
+  <data name="JoinMyKindom" xml:space="preserve">
+    <value>Lead your clan to join my kingdom. This is the only choice to prevent your clan from perishing.</value>
+  </data>
+  <data name="JoinMyKindom_OK" xml:space="preserve">
+    <value>Alright.</value>
+  </data>
+
+  <data name="xGang_Name" xml:space="preserve">
+    <value>Notables - Gang Leader Increase</value>
+    </data>
+  <data name="xGang_Desc" xml:space="preserve">
+    <value>Gang Leader Increase per Settlement (Only applies to a NEW Campaign)</value>
+    </data>
+  <data name="xArt_Name" xml:space="preserve">
+    <value>Notables - Artisan Increase</value>
+    </data>
+  <data name="xArt_Desc" xml:space="preserve">
+    <value>Artisan Increase per Settlement (Only applies to a NEW Campaign)</value>
+    </data>
+  <data name="xMerch_Name" xml:space="preserve">
+    <value>Notables - Merchant Increase</value>
+    </data>
+  <data name="xMerch_Desc" xml:space="preserve">
+    <value>Merchant Increase per Settlement (Only applies to a NEW Campaign)</value>
+    </data>
+  <data name="xVill_Name" xml:space="preserve">
+    <value>Notables - Village Nobles Increase</value>
+    </data>
+  <data name="xVill_Desc" xml:space="preserve">
+    <value>Village Nobles Increased per Settlement (Only applies to a NEW Campaign)</value>
+    </data>
+  <data name="xRural_Name" xml:space="preserve">
+    <value>Notables - Headmen Increased</value>
+    </data>
+  <data name="xRural_Desc" xml:space="preserve">
+    <value>Headmen Increased per Settlement (Only applies to a NEW Campaign)</value>
+    </data>
+
+
 </root>

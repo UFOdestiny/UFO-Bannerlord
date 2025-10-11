@@ -490,6 +490,23 @@ public class BannerlordCheatsGlobalSettings : AttributeGlobalSettings<Bannerlord
     [LocalizedSettingPropertyBool("SettlementsNeverRebel")]
     public bool SettlementsNeverRebel { get; set; } = false;
 
+    [LocalizedSettingPropertyGroup("Settlements")]
+    [LocalizedSettingPropertyInteger("xGang", 0, 10)]
+    public int xGang { get; set; } = 0;
+    [LocalizedSettingPropertyGroup("Settlements")]
+    [LocalizedSettingPropertyInteger("xArt", 0, 10)]
+    public int xArt { get; set; } = 0;
+    [LocalizedSettingPropertyGroup("Settlements")]
+    [LocalizedSettingPropertyInteger("xMerch", 0, 10)]
+    public int xMerch { get; set; } = 0;
+    [LocalizedSettingPropertyGroup("Settlements")]
+    [LocalizedSettingPropertyInteger("xVill", 0, 10)]
+    public int xVill { get; set; } = 0;
+    [LocalizedSettingPropertyGroup("Settlements")]
+    [LocalizedSettingPropertyInteger("xRural", 0, 10)]
+    public int xRural { get; set; } = 0;
+
+
     [LocalizedSettingPropertyGroup("Smithing", GroupOrder = 17)]
     [LocalizedSettingPropertyPercent("SmithingEnergyCostPercentage")]
     public float SmithingEnergyCostPercentage { get; set; } = 100f;

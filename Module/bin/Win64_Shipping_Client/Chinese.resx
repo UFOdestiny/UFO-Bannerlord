@@ -1411,5 +1411,36 @@
     <value>好的。</value>
   </data>
 
+  <data name="xGang_Name" xml:space="preserve">
+    <value>名人-帮派头子增加</value>
+  </data>
+  <data name="xGang_Desc" xml:space="preserve">
+    <value>每个定居点名人-帮派头子增加数量（只对新战役生效）</value>
+  </data>
+  <data name="xArt_Name" xml:space="preserve">
+    <value>名人-工匠增加</value>
+  </data>
+  <data name="xArt_Desc" xml:space="preserve">
+    <value>每个定居点名人-工匠增加数量（只对新战役生效）</value>
+  </data>
+  <data name="xMerch_Name" xml:space="preserve">
+    <value>名人-商人增加</value>
+  </data>
+  <data name="xMerch_Desc" xml:space="preserve">
+    <value>每个定居点名人-商人增加数量（只对新战役生效）</value>
+  </data>
+  <data name="xVill_Name" xml:space="preserve">
+    <value>名人-村庄贵族增加</value>
+  </data>
+  <data name="xVill_Desc" xml:space="preserve">
+    <value>每个定居点名人-村庄贵族增加数量（只对新战役生效）</value>
+  </data>
+  <data name="xRural_Name" xml:space="preserve">
+    <value>名人-头人增加</value>
+  </data>
+  <data name="xRural_Desc" xml:space="preserve">
+    <value>每个定居点名人-头人增加数量（只对新战役生效）</value>
+  </data>
+
 
 </root>

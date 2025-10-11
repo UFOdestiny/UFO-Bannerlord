@@ -1403,4 +1403,37 @@
   <data name="JoinMyKindom_OK" xml:space="preserve">
     <value>Alright.</value>
   </data>
+
+  <data name="xGang_Name" xml:space="preserve">
+    <value>Notables - Gang Leader Increase</value>
+    </data>
+  <data name="xGang_Desc" xml:space="preserve">
+    <value>Gang Leader Increase per Settlement (Only applies to a NEW Campaign)</value>
+    </data>
+  <data name="xArt_Name" xml:space="preserve">
+    <value>Notables - Artisan Increase</value>
+    </data>
+  <data name="xArt_Desc" xml:space="preserve">
+    <value>Artisan Increase per Settlement (Only applies to a NEW Campaign)</value>
+    </data>
+  <data name="xMerch_Name" xml:space="preserve">
+    <value>Notables - Merchant Increase</value>
+    </data>
+  <data name="xMerch_Desc" xml:space="preserve">
+    <value>Merchant Increase per Settlement (Only applies to a NEW Campaign)</value>
+    </data>
+  <data name="xVill_Name" xml:space="preserve">
+    <value>Notables - Village Nobles Increase</value>
+    </data>
+  <data name="xVill_Desc" xml:space="preserve">
+    <value>Village Nobles Increased per Settlement (Only applies to a NEW Campaign)</value>
+    </data>
+  <data name="xRural_Name" xml:space="preserve">
+    <value>Notables - Headmen Increased</value>
+    </data>
+  <data name="xRural_Desc" xml:space="preserve">
+    <value>Headmen Increased per Settlement (Only applies to a NEW Campaign)</value>
+    </data>
+
+
 </root>

@@ -37,6 +37,12 @@ public static class SettingsManager
 
         public const int MaxAttr = 10;
 
+        public const int xGang = 0;
+        public const int xArt = 0;
+        public const int xMerch = 0;
+        public const int xVill = 0;
+        public const int xRural = 0;
+
 
         // Cheat
         public const bool EnableHotkeys = false;
@@ -646,6 +652,42 @@ public static class SettingsManager
     //: ((GlobalInstance.InfiniteMomentum != true)
     //? new CheatValue<bool>(isChanged: true, GlobalInstance.InfiniteMomentum)
     //: new CheatValue<bool>(isChanged: false, true));
+    public static CheatValue<int> xGang =>
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.xGang != 0)
+? new CheatValue<int>(true, PerCampaignInstance.xGang)
+: ((GlobalInstance.xGang != 0)
+    ? new CheatValue<int>(true, GlobalInstance.xGang)
+    : new CheatValue<int>(false, 0));
+    public static CheatValue<int> xArt =>
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.xArt != 0)
+? new CheatValue<int>(true, PerCampaignInstance.xArt)
+: ((GlobalInstance.xArt != 0)
+? new CheatValue<int>(true, GlobalInstance.xArt)
+: new CheatValue<int>(false, 0));
+    public static CheatValue<int> xMerch =>
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.xMerch != 0)
+? new CheatValue<int>(true, PerCampaignInstance.xMerch)
+: ((GlobalInstance.xMerch != 0)
+? new CheatValue<int>(true, GlobalInstance.xMerch)
+: new CheatValue<int>(false, 0));
+    public static CheatValue<int> xVill =>
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.xVill != 0)
+? new CheatValue<int>(true, PerCampaignInstance.xVill)
+: ((GlobalInstance.xVill != 0)
+? new CheatValue<int>(true, GlobalInstance.xVill)
+: new CheatValue<int>(false, 0));
+
+    public static CheatValue<int> xRural =>
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.xRural != 0)
+? new CheatValue<int>(true, PerCampaignInstance.xRural)
+: ((GlobalInstance.xRural != 0)
+? new CheatValue<int>(true, GlobalInstance.xRural)
+: new CheatValue<int>(false, 0));
+
+
+
+
+
 
     public static CheatValue<int> AddMoneyThreshhold =>
 (IsPerCampaignInstanceLoaded && PerCampaignInstance.AddMoneyThreshhold != 0)
