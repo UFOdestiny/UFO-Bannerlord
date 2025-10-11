@@ -4,7 +4,7 @@
 	</GetItem>
 	<UpdateItem>
 		<ModuleFolder Value="D:\mod\UFO\Module"/>
-		<ChangeNotes Value="Notable" />
+		<ChangeNotes Value="Inventory" />
 		<Tags>
 			<Tag Value="Utility" />
 			<Tag Value="Singleplayer" />
