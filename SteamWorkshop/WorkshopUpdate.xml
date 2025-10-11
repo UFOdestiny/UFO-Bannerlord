@@ -4,7 +4,7 @@
 	</GetItem>
 	<UpdateItem>
 		<ModuleFolder Value="D:\mod\UFO\Module"/>
-		<ChangeNotes Value="MaxAttribute" />
+		<ChangeNotes Value="Notable" />
 		<Tags>
 			<Tag Value="Utility" />
 			<Tag Value="Singleplayer" />
@@ -14,5 +14,5 @@
 </Tasks>
 
 <!-- 
-TaleWorlds.MountAndBlade.SteamWorkshop.exe D:\mod\UFO\SteamWorkshop\WorkshopUpdate.xml
+"E:\SteamLibrary\steamapps\common\Mount & Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.SteamWorkshop.exe" D:\mod\UFO\SteamWorkshop\WorkshopUpdate.xml
  -->

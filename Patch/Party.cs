@@ -6,6 +6,7 @@ using TaleWorlds.CampaignSystem.Actions;
 using TaleWorlds.CampaignSystem.CampaignBehaviors;
 using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.CampaignSystem.Party;
+using TaleWorlds.CampaignSystem.Roster;
 using TaleWorlds.Localization;
 using UFO.Extension;
 using UFO.Setting;
@@ -174,7 +175,7 @@ public static class NoPrisonerEscape
 {
     [UsedImplicitly]
     [HarmonyPrefix]
-    public static bool ApplyByEscape(Hero character, Hero facilitator)
+    public static bool ApplyByEscape(Hero character, Hero facilitator, bool showNotification)
     {
         try
         {
@@ -198,7 +199,8 @@ public static class PartyHealingMultiplierHeroes
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void GetDailyHealingHpForHeroes(ref MobileParty party, ref bool includeDescriptions, ref ExplainedNumber __result)
+    public static void GetDailyHealingHpForHeroes(PartyBase party, bool isPrisoners, bool includeDescriptions,
+        ref ExplainedNumber __result)
     {
         try
         {
@@ -220,7 +222,7 @@ public static class PartyHealingMultiplierTroops
 {
     [UsedImplicitly]
     [HarmonyPostfix]
-    public static void GetDailyHealingForRegulars(PartyBase party, bool isPrisoners, bool includeDescriptions, 
+    public static void GetDailyHealingForRegulars(PartyBase party, bool isPrisoners, bool includeDescriptions,
         ref ExplainedNumber __result)
     {
         try
@@ -242,7 +244,8 @@ public static class PartyHealingMultiplierTroops
 [HarmonyPatch(typeof(DefaultPartyWageModel), "GetTotalWage")]
 public static class TroopWagesPercentage
 {
-    public static void Postfix(MobileParty mobileParty, bool includeDescriptions, ref ExplainedNumber __result)
+    public static void Postfix(MobileParty mobileParty, TroopRoster troopRoster, bool includeDescriptions,
+        ref ExplainedNumber __result)
     {
         if (__result.ResultNumber == 0f || __result.BaseNumber == 0f)
         {

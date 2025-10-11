@@ -15,4 +15,4 @@ I want to give full credit to the original authors of the mods.
 - [拥有《穿透/穿盾/破盾/击倒/爆炸》功能的箭矢 (Super OP Arrows)](https://bbs.mountblade.com.cn/download_1580.html)
 
 # Steam Workshop
-- [UFO's Cheat Mods Bundle](https://steamcommunity.com/sharedfiles/filedetails/?id=3775766450)
+- [UFO's Cheat Mods Bundle](https://steamcommunity.com/sharedfiles/filedetails/?id=3583201039)
