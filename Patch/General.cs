@@ -456,7 +456,7 @@ public static class EnableHotkeysTroopExperience
                 {
                     int index = PartyBase.MainParty.MemberRoster.FindIndexOfTroop(currentCharacter.Character);
                     int xpAmount = currentCharacter.MaxXP * currentCharacter.Number - currentCharacter.CurrentXP;
-                    PartyBase.MainParty.MemberRoster.AddXpToTroopAtIndex(xpAmount, index);
+                    PartyBase.MainParty.MemberRoster.AddXpToTroopAtIndex(index, xpAmount);
                     TroopRosterElement troop = currentCharacter.Troop;
                     troop.Xp = currentCharacter.MaxXP * currentCharacter.Number;
                     currentCharacter.Troop = troop;

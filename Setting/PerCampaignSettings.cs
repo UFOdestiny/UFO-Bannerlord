@@ -349,7 +349,7 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     public float PregnancyChanceMultiplier { get; set; } = 1f;
 
     [LocalizedSettingPropertyGroup("Characters")]
-    [LocalizedSettingPropertyInteger("AdjustPregnancyDuration", 1, 36)]
+    [LocalizedSettingPropertyInteger("AdjustPregnancyDuration", 1, 360)]
     public int AdjustPregnancyDuration { get; set; } = 36;
 
     [LocalizedSettingPropertyGroup("Kingdom", GroupOrder = 12)]

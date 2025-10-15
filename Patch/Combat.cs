@@ -116,6 +116,24 @@ public static class CCF
     }
 }
 
+[HarmonyPatch(typeof(CustomBattleMoraleModel), "CalculateCasualtiesFactor")]
+public static class CCF2
+{
+    public static void Postfix(BattleSideEnum battleSide, ref float __result)
+    {
+        try
+        {
+            if (SettingsManager.EnemiesNoRunningAway.IsChanged && Mission.Current.PlayerTeam.Side != battleSide)
+            {
+                __result = 0f;
+            }
+        }
+        catch (Exception e)
+        {
+            SubModule.LogError(e, typeof(CCF));
+        }
+    }
+}
 
 
 [HarmonyPatch(typeof(SandboxBattleMoraleModel), "CalculateMaxMoraleChangeDueToAgentIncapacitated")]
@@ -139,6 +157,29 @@ public static class CMMCDTAI
         }
     }
 }
+
+[HarmonyPatch(typeof(CustomBattleMoraleModel), "CalculateMaxMoraleChangeDueToAgentIncapacitated")]
+public static class CMMCDTAI2
+{
+    public static bool Prefix(Agent affectedAgent, AgentState affectedAgentState, Agent affectorAgent, in KillingBlow killingBlow, ref (float, float) __result)
+    {
+        try
+        {
+            if (SettingsManager.EnemiesNoRunningAway.IsChanged && Mission.Current.PlayerTeam.Side != affectedAgent.Team.Side)
+            {
+                __result = (0f, 0f);
+                return false;
+            }
+            return true;
+        }
+        catch (Exception e)
+        {
+            SubModule.LogError(e, typeof(CMMCDTAI));
+            return true;
+        }
+    }
+}
+
 
 
 public static class CompanionsKnockoutOrKilled
@@ -424,6 +465,26 @@ public static class ENRA
     }
 }
 
+[HarmonyPatch(typeof(CustomBattleMoraleModel), "CalculateMoraleChangeToCharacter")]
+public static class ENRA2
+{
+    public static void Postfix(Agent agent, float maxMoraleChange, ref float __result)
+    {
+        try
+        {
+            if (agent.IsPlayerEnemy() && SettingsManager.EnemiesNoRunningAway.IsChanged)
+            {
+                __result = 0f;
+            }
+        }
+        catch (Exception e)
+        {
+            SubModule.LogError(e, typeof(ENRA));
+        }
+    }
+}
+
+
 
 
 [HarmonyPatch(typeof(SandboxBattleMoraleModel), "CanPanicDueToMorale")]
@@ -444,6 +505,26 @@ public static class ENRACP
         }
     }
 }
+
+[HarmonyPatch(typeof(CustomBattleMoraleModel), "CanPanicDueToMorale")]
+public static class ENRACP2
+{
+    public static void Postfix(Agent agent, ref bool __result)
+    {
+        try
+        {
+            if (agent.IsPlayerEnemy() && SettingsManager.EnemiesNoRunningAway.IsChanged)
+            {
+                __result = false;
+            }
+        }
+        catch (Exception e)
+        {
+            SubModule.LogError(e, typeof(ENRACP));
+        }
+    }
+}
+
 
 
 public static class FriendlyLordsKnockoutOrKilled
