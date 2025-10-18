@@ -51,11 +51,25 @@ public class BannerlordCheatsGlobalSettings : AttributeGlobalSettings<Bannerlord
     // UFO's
     [LocalizedSettingPropertyGroup("Combat_Player", GroupOrder = 3)]
     [LocalizedSettingPropertyBool("PlayerAlwaysCrush")]
-    public bool PlayerAlwaysCrush { get; set; } = true;
+    public bool PlayerAlwaysCrush { get; set; } = false;
 
-    //[LocalizedSettingPropertyGroup("Combat_Player", GroupOrder = 3)]
-    //[LocalizedSettingPropertyBool("InfiniteMomentum")]
-    //public bool InfiniteMomentum { get; set; } = false;
+    [LocalizedSettingPropertyGroup("Combat_Player")]
+    [LocalizedSettingPropertyBool("SliceThroughEveryone")]
+    public bool SliceThroughEveryone { get; set; } = false;
+
+    [LocalizedSettingPropertyGroup("Combat_Player")]
+    [LocalizedSettingPropertyBool("UnblockableThrust_player")]
+    public bool UnblockableThrust_player { get; set; } = false;
+
+
+
+    //[LocalizedSettingPropertyGroup("Combat_Player")]
+    //[LocalizedSettingPropertyBool("AICrush")]
+    //public bool AICrush { get; set; } = false;
+
+    [LocalizedSettingPropertyGroup("Combat_Player", GroupOrder = 3)]
+    [LocalizedSettingPropertyBool("InfiniteMomentum")]
+    public bool InfiniteMomentum { get; set; } = false;
 
     [LocalizedSettingPropertyGroup("General", GroupOrder = 1)]
     [LocalizedSettingPropertyDropdown("LanguageSetting", Setting_Language.English, RequireRestart = true)]
@@ -63,7 +77,7 @@ public class BannerlordCheatsGlobalSettings : AttributeGlobalSettings<Bannerlord
 
     [LocalizedSettingPropertyGroup("Clan", GroupOrder = 10)]
     [LocalizedSettingPropertyBool("KeepDaughter")]
-    public bool KeepDaughter { get; set; } = true;
+    public bool KeepDaughter { get; set; } = false;
 
     // Cheat
 
@@ -115,13 +129,16 @@ public class BannerlordCheatsGlobalSettings : AttributeGlobalSettings<Bannerlord
     [LocalizedSettingPropertyBool("OneHitKill")]
     public bool OneHitKill { get; set; } = false;
 
-    [LocalizedSettingPropertyGroup("Combat_Player")]
-    [LocalizedSettingPropertyBool("AlwaysCrushThroughShields")]
-    public bool AlwaysCrushThroughShields { get; set; } = false;
+    //[LocalizedSettingPropertyGroup("Combat_Player")]
+    //[LocalizedSettingPropertyBool("AlwaysCrushThroughShields")]
+    //public bool AlwaysCrushThroughShields { get; set; } = false;
 
-    [LocalizedSettingPropertyGroup("Combat_Player")]
-    [LocalizedSettingPropertyBool("SliceThroughEveryone")]
-    public bool SliceThroughEveryone { get; set; } = false;
+
+
+    //[LocalizedSettingPropertyGroup("Combat_Player")]
+    //[LocalizedSettingPropertyBool("SliceThroughEveryone_AI")]
+    //public bool SliceThroughEveryone_AI { get; set; } = false;
+
 
     [LocalizedSettingPropertyGroup("Combat_Player")]
     [LocalizedSettingPropertyPercent("HealthRegeneration")]
@@ -160,6 +177,19 @@ public class BannerlordCheatsGlobalSettings : AttributeGlobalSettings<Bannerlord
     public Dropdown<LocalizedDropdownValue<KnockoutOrKilled>> CompanionsKnockoutOrKilled { get; set; } = LocalizedDropdownValue<KnockoutOrKilled>.GenerateDropdown(KnockoutOrKilled.Default);
 
     [LocalizedSettingPropertyGroup("Combat_Party")]
+    [LocalizedSettingPropertyBool("AllyCrush")]
+    public bool AllyCrush { get; set; } = false;
+
+    [LocalizedSettingPropertyGroup("Combat_Party")]
+    [LocalizedSettingPropertyBool("SliceThroughEveryone_ally")]
+    public bool SliceThroughEveryone_ally { get; set; } = false;
+
+    [LocalizedSettingPropertyGroup("Combat_Party")]
+    [LocalizedSettingPropertyBool("UnblockableThrust_ally")]
+    public bool UnblockableThrust_ally { get; set; } = false;
+
+
+    [LocalizedSettingPropertyGroup("Combat_Party")]
     [LocalizedSettingPropertyBool("PartyInvincible")]
     public bool PartyInvincible { get; set; } = false;
 
@@ -193,6 +223,12 @@ public class BannerlordCheatsGlobalSettings : AttributeGlobalSettings<Bannerlord
     [LocalizedSettingPropertyBool("NoFriendlyFire")]
     public bool NoFriendlyFire { get; set; } = false;
 
+
+    //[LocalizedSettingPropertyGroup("Combat_Player")]
+    //[LocalizedSettingPropertyBool("UnblockableThrust_AI")]
+    //public bool UnblockableThrust_AI { get; set; } = false;
+
+
     [LocalizedSettingPropertyGroup("Combat_Allies", GroupOrder = 5)]
     [LocalizedSettingPropertyDropdown("FriendlyLordsKnockoutOrKilled", KnockoutOrKilled.Default)]
     public Dropdown<LocalizedDropdownValue<KnockoutOrKilled>> FriendlyLordsKnockoutOrKilled { get; set; } = LocalizedDropdownValue<KnockoutOrKilled>.GenerateDropdown(KnockoutOrKilled.Default);
@@ -204,6 +240,20 @@ public class BannerlordCheatsGlobalSettings : AttributeGlobalSettings<Bannerlord
     [LocalizedSettingPropertyGroup("Combat_Enemies")]
     [LocalizedSettingPropertyDropdown("EnemyTroopsKnockoutOrKilled", KnockoutOrKilled.Default)]
     public Dropdown<LocalizedDropdownValue<KnockoutOrKilled>> EnemyTroopsKnockoutOrKilled { get; set; } = LocalizedDropdownValue<KnockoutOrKilled>.GenerateDropdown(KnockoutOrKilled.Default);
+
+
+    [LocalizedSettingPropertyGroup("Combat_Enemies")]
+    [LocalizedSettingPropertyBool("EnemyCrush")]
+    public bool EnemyCrush { get; set; } = false;
+
+    [LocalizedSettingPropertyGroup("Combat_Enemies")]
+    [LocalizedSettingPropertyBool("SliceThroughEveryone_enemy")]
+    public bool SliceThroughEveryone_enemy { get; set; } = false;
+
+    [LocalizedSettingPropertyGroup("Combat_Enemies")]
+    [LocalizedSettingPropertyBool("UnblockableThrust_enemy")]
+    public bool UnblockableThrust_enemy { get; set; } = false;
+
 
     [LocalizedSettingPropertyGroup("Combat_Enemies")]
     [LocalizedSettingPropertyBool("EnemiesNoRunningAway")]
@@ -573,11 +623,11 @@ public class BannerlordCheatsGlobalSettings : AttributeGlobalSettings<Bannerlord
 
     [LocalizedSettingPropertyGroup("General_Enhancement")]
     [LocalizedSettingPropertyBool("EnableEverYoung")]
-    public bool EnableEverYoung { get; set; } = true;
+    public bool EnableEverYoung { get; set; } = false;
 
     [LocalizedSettingPropertyGroup("General_Enhancement")]
     [LocalizedSettingPropertyBool("EnableDailyGainXp")]
-    public bool EnableDailyGainXp { get; set; } = true;
+    public bool EnableDailyGainXp { get; set; } = false;
 
     [LocalizedSettingPropertyGroup("General_Enhancement")]
     [LocalizedSettingPropertyBool("TestMode")]

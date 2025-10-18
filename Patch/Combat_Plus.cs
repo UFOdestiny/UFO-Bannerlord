@@ -17,17 +17,27 @@ namespace UFO.Patch.Combat;
 
 
 // CRUSH THROUGH EVERYONE
+public class CrushThroughEveryoneLogic
+{
+    public static bool ShouldCrushThrough(Agent attackerAgent)
+    {
+        if ((attackerAgent.IsPlayer() && SettingsManager.PlayerAlwaysCrush.Value) || 
+            (attackerAgent.IsPlayerAlly() && SettingsManager.AllyCrush.Value) ||
+            (attackerAgent.IsPlayerEnemy() && SettingsManager.EnemyCrush.Value))
+        {
+            return true;
+        }
+        return false;
+    }
+}
 
 [HarmonyPatch(typeof(CustomAgentApplyDamageModel), "DecideCrushedThrough")]
 internal class DecideCrushedThroughPostfixPatch_c
 {
     private static void Postfix(ref bool __result, Agent attackerAgent, Agent defenderAgent, float totalAttackEnergy, Agent.UsageDirection attackDirection, StrikeType strikeType, WeaponComponentData defendItem, bool isPassiveUsage)
     {
-        if (SettingsManager.TestMode.Value)
-        {
-            return;
-        }
-        if (SettingsManager.PlayerAlwaysCrush.Value && attackerAgent.IsPlayer())
+
+        if (CrushThroughEveryoneLogic.ShouldCrushThrough(attackerAgent))
         {
             __result = true;
             return;
@@ -73,11 +83,7 @@ internal class DecideCrushedThroughPostfixPatch_s
 {
     private static void Postfix(ref bool __result, Agent attackerAgent, Agent defenderAgent, float totalAttackEnergy, Agent.UsageDirection attackDirection, StrikeType strikeType, WeaponComponentData defendItem, bool isPassiveUsage)
     {
-        if (SettingsManager.TestMode.Value)
-        {
-            return;
-        }
-        if (SettingsManager.PlayerAlwaysCrush.Value && attackerAgent.IsPlayer())
+        if (CrushThroughEveryoneLogic.ShouldCrushThrough(attackerAgent))
         {
             __result = true;
             return;
@@ -117,7 +123,6 @@ internal class DecideCrushedThroughPostfixPatch_s
         }
     }
 }
-
 
 
 
@@ -174,16 +179,23 @@ public class CutThroughEveryoneLogic : MissionLogic
 
     public static bool ShouldCutThrough(AttackCollisionData collisionData, Agent attacker, Agent victim)
     {
-
-        if (!SettingsManager.PlayerAlwaysCrush.Value || !attacker.IsPlayer())
+        if ((attacker.IsPlayer() && SettingsManager.SliceThroughEveryone.Value) ||
+            (attacker.IsPlayerAlly() && SettingsManager.SliceThroughEveryone_ally.Value) ||
+            (attacker.IsPlayerEnemy() && SettingsManager.SliceThroughEveryone_enemy.Value))
+        {
+            return DoPreflightChecksPass(collisionData, attacker, victim);
+        }
+        else
         {
             return false;
         }
 
-        if (!DoPreflightChecksPass(collisionData, attacker, victim))
-        {
-            return false;
-        }
+
+
+        //if (!DoPreflightChecksPass(collisionData, attacker, victim))
+        //{
+        //    return false;
+        //}
 
         //WeaponClass valueOrDefault = (attacker.WieldedWeapon.Item.Weapons?.FirstOrDefault()?.WeaponClass).GetValueOrDefault();
 
@@ -201,21 +213,20 @@ public class CutThroughEveryoneLogic : MissionLogic
 
         //return (double)((float)collisionData.InflictedDamage / (float)num) >= (double)0.01;
 
-        return true;
+        //return true;
     }
 
 
     private static bool DoPreflightChecksPass(AttackCollisionData collisionData, Agent attacker, Agent victim)
     {
         bool result = false;
-        if (victim != null && attacker != null && attacker.WieldedWeapon.Item != null && attacker.IsPlayer())
+        if (victim != null && attacker != null && attacker.WieldedWeapon.Item != null)
         {
             result = true;
         }
         return result;
     }
 }
-
 
 
 [HarmonyPatch(typeof(MissionCombatMechanicsHelper))]
@@ -271,7 +282,6 @@ internal static class CutThroughEveryonePatchMeleeHit
 }
 
 
-
 [HarmonyPatch(typeof(AgentApplyDamageModel), "CalculateDefaultRemainingMomentum")]
 internal class CalculateDefaultRemainingMomentumPatch
 {
@@ -282,5 +292,37 @@ internal class CalculateDefaultRemainingMomentumPatch
             __result *= 2;
 
         }
+    }
+}
+
+
+
+[HarmonyPatch(typeof(MissionCombatMechanicsHelper), "GetDefendCollisionResults")]
+internal class MissionCombatMechanicsHelperGetDefendCollisionResultsPatch
+{
+    private static void Postfix(Agent attackerAgent, Agent defenderAgent,
+        CombatCollisionResult collisionResult,
+        int attackerWeaponSlotIndex, bool isAlternativeAttack,
+        StrikeType strikeType, Agent.UsageDirection attackDirection,
+        float collisionDistanceOnWeapon, float attackProgress,
+        bool attackIsParried, bool isPassiveUsageHit, bool isHeavyAttack,
+        ref float defenderStunPeriod, ref float attackerStunPeriod,
+        ref bool crushedThrough, ref bool chamber)
+    {
+        if ((attackerAgent.IsPlayer() && SettingsManager.UnblockableThrust_player.Value) ||
+            (attackerAgent.IsPlayerAlly() && SettingsManager.UnblockableThrust_ally.Value) ||
+            (attackerAgent.IsPlayerEnemy() && SettingsManager.UnblockableThrust_enemy.Value))
+        {
+
+            if (strikeType == StrikeType.Thrust && collisionResult == CombatCollisionResult.Blocked && defenderAgent != null)
+            {
+                EquipmentIndex wieldedOffhandItemIndex = defenderAgent.GetOffhandWieldedItemIndex();
+                if (wieldedOffhandItemIndex == EquipmentIndex.None || !defenderAgent.Equipment[wieldedOffhandItemIndex].CurrentUsageItem.IsShield)
+                {
+                    crushedThrough = true;
+                }
+            }
+        }
+
     }
 }

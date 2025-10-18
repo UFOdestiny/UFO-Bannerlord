@@ -683,11 +683,31 @@
     <value>Factor by which the learning rate of player companions is multiplied. A factor of 1 means default learning.</value>
   </data>
   <data name="SliceThroughEveryone_Name" xml:space="preserve">
-    <value>Cut / Slice Through Everyone</value>
+    <value>Player Cut / Slice Through Everyone</value>
   </data>
   <data name="SliceThroughEveryone_Desc" xml:space="preserve">
-    <value>Always cut / slice through enemies.</value>
+    <value>Player always cut / slice through enemies.</value>
   </data>
+  <data name="SliceThroughEveryone_AI_Name" xml:space="preserve">
+    <value>AI Cut / Slice Through Everyone</value>
+  </data>
+  <data name="SliceThroughEveryone_AI_Desc" xml:space="preserve">
+    <value>AI always cut / slice through enemies.</value>
+  </data>
+  <data name="SliceThroughEveryone_ally_Name" xml:space="preserve">
+    <value>Ally Cut / Slice Through Everyone</value>
+  </data>
+  <data name="SliceThroughEveryone_ally_Desc" xml:space="preserve">
+    <value>Ally always cut / slice through enemies.</value>
+  </data>
+  <data name="SliceThroughEveryone_enemy_Name" xml:space="preserve">
+    <value>Enemy Cut / Slice Through Everyone</value>
+  </data>
+  <data name="SliceThroughEveryone_enemy_Desc" xml:space="preserve">
+    <value>Enemy always cut / slice through enemies.</value>
+  </data>
+
+
   <data name="PlayerHorseInvincible_Name" xml:space="preserve">
     <value>Player Horse Invincible</value>
   </data>
@@ -1347,6 +1367,49 @@
   </data>
   <data name="PlayerAlwaysCrush_Desc" xml:space="preserve">
     <value>Only the player can always crush through</value>
+  </data>
+  <data name="AICrush_Name" xml:space="preserve">
+    <value>AI Always Crush Through</value>
+  </data>
+  <data name="AICrush_Desc" xml:space="preserve">
+    <value>AI can always crush through</value>
+  </data>
+  <data name="AllyCrush_Name" xml:space="preserve">
+    <value>Ally Always Crush Through</value>
+  </data>
+  <data name="AllyCrush_Desc" xml:space="preserve">
+    <value>Ally can always crush through</value>
+  </data>
+  <data name="EnemyCrush_Name" xml:space="preserve">
+    <value>Enemy Always Crush Through</value>
+  </data>
+  <data name="EnemyCrush_Desc" xml:space="preserve">
+    <value>Enemy can always crush through</value>
+  </data>
+
+  <data name="UnblockableThrust_player_Name" xml:space="preserve">
+    <value>Unblockable Thrust for Player</value>
+  </data>
+  <data name="UnblockableThrust_player_Desc" xml:space="preserve">
+    <value>Player's thrusts cannot be blocked unless using a shield (spear, sword thrusts)</value>
+  </data>
+  <data name="UnblockableThrust_AI_Name" xml:space="preserve">
+    <value>Unblockable Thrust for AI</value>
+  </data>
+  <data name="UnblockableThrust_AI_Desc" xml:space="preserve">
+    <value>AI's thrusts cannot be blocked unless using a shield (spear, sword thrusts)</value>
+  </data>
+  <data name="UnblockableThrust_ally_Name" xml:space="preserve">
+    <value>Unblockable Thrust for Ally</value>
+  </data>
+  <data name="UnblockableThrust_ally_Desc" xml:space="preserve">
+    <value>Ally's thrusts cannot be blocked unless using a shield (spear, sword thrusts)</value>
+  </data>
+  <data name="UnblockableThrust_enemy_Name" xml:space="preserve">
+    <value>Unblockable Thrust for Enemy</value>
+  </data>
+  <data name="UnblockableThrust_enemy_Desc" xml:space="preserve">
+    <value>Enemy's thrusts cannot be blocked unless using a shield (spear, sword thrusts)</value>
   </data>
 
   <data name="InfiniteMomentum_Name" xml:space="preserve">

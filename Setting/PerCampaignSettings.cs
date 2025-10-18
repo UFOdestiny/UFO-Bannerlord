@@ -52,11 +52,23 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     // UFO's
     [LocalizedSettingPropertyGroup("Combat_Player", GroupOrder = 3)]
     [LocalizedSettingPropertyBool("PlayerAlwaysCrush")]
-    public bool PlayerAlwaysCrush { get; set; } = true;
+    public bool PlayerAlwaysCrush { get; set; } = false;
 
-    //[LocalizedSettingPropertyGroup("Combat_Player", GroupOrder = 3)]
-    //[LocalizedSettingPropertyBool("InfiniteMomentum")]
-    //public bool InfiniteMomentum { get; set; } = false;
+    //[LocalizedSettingPropertyGroup("Combat_Player")]
+    //[LocalizedSettingPropertyBool("AICrush")]
+    //public bool AICrush { get; set; } = false;
+
+    [LocalizedSettingPropertyGroup("Combat_Player")]
+    [LocalizedSettingPropertyBool("AllyCrush")]
+    public bool AllyCrush { get; set; } = false;
+
+    [LocalizedSettingPropertyGroup("Combat_Player")]
+    [LocalizedSettingPropertyBool("EnemyCrush")]
+    public bool EnemyCrush { get; set; } = false;
+
+    [LocalizedSettingPropertyGroup("Combat_Player", GroupOrder = 3)]
+    [LocalizedSettingPropertyBool("InfiniteMomentum")]
+    public bool InfiniteMomentum { get; set; } = false;
 
     [LocalizedSettingPropertyGroup("General", GroupOrder = 1)]
     [LocalizedSettingPropertyDropdown("LanguageSetting", Setting_Language.English, RequireRestart = true)]
@@ -64,7 +76,7 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
 
     [LocalizedSettingPropertyGroup("Clan", GroupOrder = 10)]
     [LocalizedSettingPropertyBool("KeepDaughter")]
-    public bool KeepDaughter { get; set; } = true;
+    public bool KeepDaughter { get; set; } = false;
 
 
     // Cheat
@@ -118,13 +130,25 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     [LocalizedSettingPropertyBool("OneHitKill")]
     public bool OneHitKill { get; set; } = false;
 
-    [LocalizedSettingPropertyGroup("Combat_Player")]
-    [LocalizedSettingPropertyBool("AlwaysCrushThroughShields")]
-    public bool AlwaysCrushThroughShields { get; set; } = false;
+    //[LocalizedSettingPropertyGroup("Combat_Player")]
+    //[LocalizedSettingPropertyBool("AlwaysCrushThroughShields")]
+    //public bool AlwaysCrushThroughShields { get; set; } = false;
 
     [LocalizedSettingPropertyGroup("Combat_Player")]
     [LocalizedSettingPropertyBool("SliceThroughEveryone")]
     public bool SliceThroughEveryone { get; set; } = false;
+
+    //[LocalizedSettingPropertyGroup("Combat_Player")]
+    //[LocalizedSettingPropertyBool("SliceThroughEveryone_AI")]
+    //public bool SliceThroughEveryone_AI { get; set; } = false;
+
+    [LocalizedSettingPropertyGroup("Combat_Player")]
+    [LocalizedSettingPropertyBool("SliceThroughEveryone_ally")]
+    public bool SliceThroughEveryone_ally { get; set; } = false;
+
+    [LocalizedSettingPropertyGroup("Combat_Player")]
+    [LocalizedSettingPropertyBool("SliceThroughEveryone_enemy")]
+    public bool SliceThroughEveryone_enemy { get; set; } = false;
 
     [LocalizedSettingPropertyGroup("Combat_Player")]
     [LocalizedSettingPropertyPercent("HealthRegeneration")]
@@ -195,6 +219,25 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     [LocalizedSettingPropertyGroup("Combat_Party")]
     [LocalizedSettingPropertyBool("NoFriendlyFire")]
     public bool NoFriendlyFire { get; set; } = false;
+
+
+    [LocalizedSettingPropertyGroup("Combat_Player")]
+    [LocalizedSettingPropertyBool("UnblockableThrust_player")]
+    public bool UnblockableThrust_player { get; set; } = false;
+
+    //[LocalizedSettingPropertyGroup("Combat_Player")]
+    //[LocalizedSettingPropertyBool("UnblockableThrust_AI")]
+    //public bool UnblockableThrust_AI { get; set; } = false;
+
+
+    [LocalizedSettingPropertyGroup("Combat_Player")]
+    [LocalizedSettingPropertyBool("UnblockableThrust_ally")]
+    public bool UnblockableThrust_ally { get; set; } = false;
+
+    [LocalizedSettingPropertyGroup("Combat_Player")]
+    [LocalizedSettingPropertyBool("UnblockableThrust_enemy")]
+    public bool UnblockableThrust_enemy { get; set; } = false;
+
 
     [LocalizedSettingPropertyGroup("Combat_Allies", GroupOrder = 5)]
     [LocalizedSettingPropertyDropdown("FriendlyLordsKnockoutOrKilled", KnockoutOrKilled.Default)]
@@ -592,11 +635,11 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
 
     [LocalizedSettingPropertyGroup("General_Enhancement")]
     [LocalizedSettingPropertyBool("EnableEverYoung")]
-    public bool EnableEverYoung { get; set; } = true;
+    public bool EnableEverYoung { get; set; } = false;
 
     [LocalizedSettingPropertyGroup("General_Enhancement")]
     [LocalizedSettingPropertyBool("EnableDailyGainXp")]
-    public bool EnableDailyGainXp { get; set; } = true;
+    public bool EnableDailyGainXp { get; set; } = false;
 
     [LocalizedSettingPropertyGroup("General_Enhancement")]
     [LocalizedSettingPropertyBool("TestMode")]

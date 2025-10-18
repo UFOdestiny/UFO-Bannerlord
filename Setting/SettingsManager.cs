@@ -24,11 +24,14 @@ public static class SettingsManager
     {
 
         // UFO's
-        public const bool PlayerAlwaysCrush = true;
+        public const bool PlayerAlwaysCrush = false;
+        public const bool AICrush = false;
+        public const bool AllyCrush = false;
+        public const bool EnemyCrush = false;
 
         public const bool InfiniteMomentum = false;
 
-        public const bool KeepDaughter = true;
+        public const bool KeepDaughter = false;
 
         public const Setting_Language LanguageSetting = Setting_Language.English;
 
@@ -42,6 +45,12 @@ public static class SettingsManager
         public const int xMerch = 0;
         public const int xVill = 0;
         public const int xRural = 0;
+
+
+        public const bool UnblockableThrust_player = false;
+        public const bool UnblockableThrust_AI = false;
+        public const bool UnblockableThrust_ally = false;
+        public const bool UnblockableThrust_enemy = false;
 
 
         // Cheat
@@ -70,6 +79,9 @@ public static class SettingsManager
         public const bool AlwaysCrushThroughShields = false;
 
         public const bool SliceThroughEveryone = false;
+        public const bool SliceThroughEveryone_AI = false;
+        public const bool SliceThroughEveryone_ally = false;
+        public const bool SliceThroughEveryone_enemy = false;
 
         public const float HealthRegeneration = 0f;
 
@@ -293,7 +305,7 @@ public static class SettingsManager
 
         // Hero Enhance Settings
 
-        public const bool EnableEverYoung = true;
+        public const bool EnableEverYoung = false;
 
         public const int EverYoungSkillNeed = 400;
 
@@ -387,7 +399,7 @@ public static class SettingsManager
 
         public const float IntelligenceWorkshopProductionPercent = 0.25f;
 
-        public const bool EnableDailyGainXp = true;
+        public const bool EnableDailyGainXp = false;
 
         public const float CombatAttributeRatePlayer = 1f;
 
@@ -433,9 +445,13 @@ public static class SettingsManager
 
     public static CheatValue<bool> OneHitKill => (IsPerCampaignInstanceLoaded && PerCampaignInstance.OneHitKill) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.OneHitKill) : (GlobalInstance.OneHitKill ? new CheatValue<bool>(isChanged: true, GlobalInstance.OneHitKill) : new CheatValue<bool>(isChanged: false, value: false));
 
-    public static CheatValue<bool> AlwaysCrushThroughShields => (IsPerCampaignInstanceLoaded && PerCampaignInstance.AlwaysCrushThroughShields) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.AlwaysCrushThroughShields) : (GlobalInstance.AlwaysCrushThroughShields ? new CheatValue<bool>(isChanged: true, GlobalInstance.AlwaysCrushThroughShields) : new CheatValue<bool>(isChanged: false, value: false));
+    //public static CheatValue<bool> AlwaysCrushThroughShields => (IsPerCampaignInstanceLoaded && PerCampaignInstance.AlwaysCrushThroughShields) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.AlwaysCrushThroughShields) : (GlobalInstance.AlwaysCrushThroughShields ? new CheatValue<bool>(isChanged: true, GlobalInstance.AlwaysCrushThroughShields) : new CheatValue<bool>(isChanged: false, value: false));
 
     public static CheatValue<bool> SliceThroughEveryone => (IsPerCampaignInstanceLoaded && PerCampaignInstance.SliceThroughEveryone) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.SliceThroughEveryone) : (GlobalInstance.SliceThroughEveryone ? new CheatValue<bool>(isChanged: true, GlobalInstance.SliceThroughEveryone) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> SliceThroughEveryone_ally => (IsPerCampaignInstanceLoaded && PerCampaignInstance.SliceThroughEveryone_ally) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.SliceThroughEveryone_ally) : (GlobalInstance.SliceThroughEveryone_ally ? new CheatValue<bool>(isChanged: true, GlobalInstance.SliceThroughEveryone_ally) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> SliceThroughEveryone_enemy => (IsPerCampaignInstanceLoaded && PerCampaignInstance.SliceThroughEveryone_enemy) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.SliceThroughEveryone_enemy) : (GlobalInstance.SliceThroughEveryone_enemy ? new CheatValue<bool>(isChanged: true, GlobalInstance.SliceThroughEveryone_enemy) : new CheatValue<bool>(isChanged: false, value: false));
+    //public static CheatValue<bool> SliceThroughEveryone_AI => (IsPerCampaignInstanceLoaded && PerCampaignInstance.SliceThroughEveryone_AI) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.SliceThroughEveryone_AI) : (GlobalInstance.SliceThroughEveryone_AI ? new CheatValue<bool>(isChanged: true, GlobalInstance.SliceThroughEveryone_AI) : new CheatValue<bool>(isChanged: false, value: false));
+
 
     public static CheatValue<float> HealthRegeneration => (IsPerCampaignInstanceLoaded && PerCampaignInstance.HealthRegeneration != 0f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.HealthRegeneration) : ((GlobalInstance.HealthRegeneration != 0f) ? new CheatValue<float>(isChanged: true, GlobalInstance.HealthRegeneration) : new CheatValue<float>(isChanged: false, 0f));
 
@@ -646,6 +662,36 @@ public static class SettingsManager
     public static CheatValue<Setting_Language> LanguageSetting => (IsPerCampaignInstanceLoaded && PerCampaignInstance.LanguageSetting.GetValue() != Setting_Language.English) ? new CheatValue<Setting_Language>(isChanged: true, PerCampaignInstance.LanguageSetting.GetValue()) : ((GlobalInstance.LanguageSetting.GetValue() != Setting_Language.English) ? new CheatValue<Setting_Language>(isChanged: true, GlobalInstance.LanguageSetting.GetValue()) : new CheatValue<Setting_Language>(isChanged: false, Setting_Language.English));
 
 
+
+    public static CheatValue<bool> UnblockableThrust_player =>
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.UnblockableThrust_player)
+? new CheatValue<bool>(isChanged: true, PerCampaignInstance.UnblockableThrust_player)
+: ((GlobalInstance.UnblockableThrust_player)
+? new CheatValue<bool>(isChanged: true, GlobalInstance.UnblockableThrust_player)
+: new CheatValue<bool>(isChanged: false, false));
+
+    public static CheatValue<bool> UnblockableThrust_ally =>
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.UnblockableThrust_ally)
+? new CheatValue<bool>(isChanged: true, PerCampaignInstance.UnblockableThrust_ally)
+: ((GlobalInstance.UnblockableThrust_ally)
+? new CheatValue<bool>(isChanged: true, GlobalInstance.UnblockableThrust_ally)
+: new CheatValue<bool>(isChanged: false, false));
+
+    public static CheatValue<bool> UnblockableThrust_enemy =>
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.UnblockableThrust_enemy)
+? new CheatValue<bool>(isChanged: true, PerCampaignInstance.UnblockableThrust_enemy)
+: ((GlobalInstance.UnblockableThrust_enemy)
+? new CheatValue<bool>(isChanged: true, GlobalInstance.UnblockableThrust_enemy)
+: new CheatValue<bool>(isChanged: false, false));
+
+//    public static CheatValue<bool> UnblockableThrust_AI =>
+//(IsPerCampaignInstanceLoaded && PerCampaignInstance.UnblockableThrust_AI != true)
+//? new CheatValue<bool>(isChanged: true, PerCampaignInstance.UnblockableThrust_AI)
+//: ((GlobalInstance.UnblockableThrust_AI != true)
+//? new CheatValue<bool>(isChanged: true, GlobalInstance.UnblockableThrust_AI)
+//: new CheatValue<bool>(isChanged: false, true));
+
+
     //        public static CheatValue<bool> InfiniteMomentum =>
     //(IsPerCampaignInstanceLoaded && PerCampaignInstance.InfiniteMomentum != true)
     //? new CheatValue<bool>(isChanged: true, PerCampaignInstance.InfiniteMomentum)
@@ -711,26 +757,46 @@ public static class SettingsManager
             : new CheatValue<int>(false, 0));
 
     public static CheatValue<bool> KeepDaughter =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.KeepDaughter != true)
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.KeepDaughter)
 ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.KeepDaughter)
-: ((GlobalInstance.KeepDaughter != true)
+: ((GlobalInstance.KeepDaughter)
 ? new CheatValue<bool>(isChanged: true, GlobalInstance.KeepDaughter)
-: new CheatValue<bool>(isChanged: false, true));
+: new CheatValue<bool>(isChanged: false, false));
 
 
     public static CheatValue<bool> PlayerAlwaysCrush =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.PlayerAlwaysCrush != true)
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.PlayerAlwaysCrush)
 ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.PlayerAlwaysCrush)
-: ((GlobalInstance.PlayerAlwaysCrush != true)
+: ((GlobalInstance.PlayerAlwaysCrush)
 ? new CheatValue<bool>(isChanged: true, GlobalInstance.PlayerAlwaysCrush)
-: new CheatValue<bool>(isChanged: false, true));
+: new CheatValue<bool>(isChanged: false, false));
+
+    //    public static CheatValue<bool> AICrush =>
+    //(IsPerCampaignInstanceLoaded && PerCampaignInstance.AICrush)
+    //? new CheatValue<bool>(isChanged: true, PerCampaignInstance.AICrush): 
+    //        ((GlobalInstance.AICrush) ? new CheatValue<bool>(isChanged: true, GlobalInstance.AICrush): new CheatValue<bool>(isChanged: false, false));
+
+
+    public static CheatValue<bool> AllyCrush =>
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.AllyCrush)
+? new CheatValue<bool>(isChanged: true, PerCampaignInstance.AllyCrush)
+: ((GlobalInstance.AllyCrush)
+? new CheatValue<bool>(isChanged: true, GlobalInstance.AllyCrush)
+: new CheatValue<bool>(isChanged: false, false));
+
+    public static CheatValue<bool> EnemyCrush =>
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.EnemyCrush)
+? new CheatValue<bool>(isChanged: true, PerCampaignInstance.EnemyCrush)
+: ((GlobalInstance.EnemyCrush)
+? new CheatValue<bool>(isChanged: true, GlobalInstance.EnemyCrush)
+: new CheatValue<bool>(isChanged: false, false));
 
     public static CheatValue<bool> EnableEverYoung =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.EnableEverYoung != true)
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.EnableEverYoung)
     ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.EnableEverYoung)
-    : ((GlobalInstance.EnableEverYoung != true)
+    : ((GlobalInstance.EnableEverYoung)
         ? new CheatValue<bool>(isChanged: true, GlobalInstance.EnableEverYoung)
-        : new CheatValue<bool>(isChanged: false, true));
+        : new CheatValue<bool>(isChanged: false, false));
 
     public static CheatValue<int> EverYoungSkillNeed =>
         (IsPerCampaignInstanceLoaded && PerCampaignInstance.EverYoungSkillNeed != 400)
@@ -1049,11 +1115,11 @@ public static class SettingsManager
                 : new CheatValue<float>(false, 0.25f));
 
     public static CheatValue<bool> EnableDailyGainXp =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.EnableDailyGainXp != true)
+(IsPerCampaignInstanceLoaded && PerCampaignInstance.EnableDailyGainXp)
     ? new CheatValue<bool>(true, PerCampaignInstance.EnableDailyGainXp)
-    : ((GlobalInstance.EnableDailyGainXp != true)
+    : ((GlobalInstance.EnableDailyGainXp)
         ? new CheatValue<bool>(true, GlobalInstance.EnableDailyGainXp)
-        : new CheatValue<bool>(false, true));
+        : new CheatValue<bool>(false, false));
 
     public static CheatValue<float> CombatAttributeRatePlayer =>
         (IsPerCampaignInstanceLoaded && PerCampaignInstance.CombatAttributeRatePlayer != 1f)
@@ -1098,9 +1164,9 @@ public static class SettingsManager
                 : new CheatValue<float>(false, 1f));
 
     public static CheatValue<bool> TestMode =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.TestMode != false)
+        (IsPerCampaignInstanceLoaded && PerCampaignInstance.TestMode)
             ? new CheatValue<bool>(true, PerCampaignInstance.TestMode)
-            : ((GlobalInstance.TestMode != false)
+            : ((GlobalInstance.TestMode)
                 ? new CheatValue<bool>(true, GlobalInstance.TestMode)
                 : new CheatValue<bool>(false, false));
 

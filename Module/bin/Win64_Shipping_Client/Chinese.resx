@@ -688,11 +688,31 @@
     <value>玩家同伴所有技能学习上限的倍数。倍数1表示默认学习上限。</value>
   </data>
   <data name="SliceThroughEveryone_Name" xml:space="preserve">
-    <value>攻击穿透</value>
+    <value>攻击穿透: 玩家</value>
   </data>
   <data name="SliceThroughEveryone_Desc" xml:space="preserve">
-    <value>每次攻击时都能穿透敌人。</value>
+    <value>玩家每次攻击时都能穿透敌人。</value>
   </data>
+  <data name="SliceThroughEveryone_AI_Name" xml:space="preserve">
+    <value>AI攻击穿透</value>
+  </data>
+  <data name="SliceThroughEveryone_AI_Desc" xml:space="preserve">
+    <value>AI每次攻击时都能穿透敌人。</value>
+  </data>
+  <data name="SliceThroughEveryone_ally_Name" xml:space="preserve">
+    <value>攻击穿透: 友军</value>
+  </data>
+  <data name="SliceThroughEveryone_ally_Desc" xml:space="preserve">
+    <value>友军每次攻击时都能穿透敌人。</value>
+  </data>
+  <data name="SliceThroughEveryone_enemy_Name" xml:space="preserve">
+    <value>攻击穿透: 敌人</value>
+  </data>
+  <data name="SliceThroughEveryone_enemy_Desc" xml:space="preserve">
+    <value>敌人每次攻击时都能穿透敌人。</value>
+  </data>
+
+
   <data name="PlayerHorseInvincible_Name" xml:space="preserve">
     <value>玩家坐骑无敌</value>
   </data>
@@ -1350,10 +1370,53 @@
   </data>
 
   <data name="PlayerAlwaysCrush_Name" xml:space="preserve">
-    <value>玩家永远破格挡</value>
+    <value>永远破格挡: 玩家</value>
   </data>
   <data name="PlayerAlwaysCrush_Desc" xml:space="preserve">
-    <value>只有玩家永远可以破格挡</value>
+    <value>玩家永远破格挡</value>
+  </data>
+  <data name="AICrush_Name" xml:space="preserve">
+    <value>AI永远破格挡</value>
+  </data>
+  <data name="AICrush_Desc" xml:space="preserve">
+    <value>AI永远破格挡</value>
+  </data>
+  <data name="AllyCrush_Name" xml:space="preserve">
+    <value>永远破格挡: 友军</value>
+  </data>
+  <data name="AllyCrush_Desc" xml:space="preserve">
+    <value>友军永远破格挡</value>
+  </data>
+  <data name="EnemyCrush_Name" xml:space="preserve">
+    <value>永远破格挡: 敌人</value>
+  </data>
+  <data name="EnemyCrush_Desc" xml:space="preserve">
+    <value>敌人永远破格挡</value>
+  </data>
+
+  <data name="UnblockableThrust_player_Name" xml:space="preserve">
+    <value>刺击无法格挡: 玩家</value>
+  </data>
+  <data name="UnblockableThrust_player_Desc" xml:space="preserve">
+    <value>玩家刺击无法格挡，除非使用盾防御（矛，剑的刺击）</value>
+  </data>
+  <data name="UnblockableThrust_AI_Name" xml:space="preserve">
+    <value>AI刺击无法格挡</value>
+  </data>
+  <data name="UnblockableThrust_AI_Desc" xml:space="preserve">
+    <value>AI刺击无法格挡，除非使用盾防御（矛，剑的刺击）</value>
+  </data>
+  <data name="UnblockableThrust_ally_Name" xml:space="preserve">
+    <value>刺击无法格挡: 友军</value>
+  </data>
+  <data name="UnblockableThrust_ally_Desc" xml:space="preserve">
+    <value>友军刺击无法格挡，除非使用盾防御（矛，剑的刺击）</value>
+  </data>
+  <data name="UnblockableThrust_enemy_Name" xml:space="preserve">
+    <value>刺击无法格挡: 敌人</value>
+  </data>
+  <data name="UnblockableThrust_enemy_Desc" xml:space="preserve">
+    <value>敌人刺击无法格挡，除非使用盾防御（矛，剑的刺击）</value>
   </data>
 
   <data name="InfiniteMomentum_Name" xml:space="preserve">
