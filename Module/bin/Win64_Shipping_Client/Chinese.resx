@@ -992,7 +992,7 @@
     <value>需要技能等级满足要求</value>
   </data>
   <data name="Enum_AutoChoosePerk_Type_Clan" xml:space="preserve">
-    <value>玩家家族成员</value>
+    <value>玩家家族成员，包括玩家自己</value>
   </data>
   <data name="Enum_AutoChoosePerk_Type_All" xml:space="preserve">
     <value>所有英雄</value>

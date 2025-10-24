@@ -985,7 +985,7 @@
     <value>Requires the skill level to meet the requirement.</value>
   </data>
   <data name="Enum_AutoChoosePerk_Type_Clan" xml:space="preserve">
-    <value>Player Clan Members</value>
+    <value>Player Clan Members, including Player</value>
   </data>
   <data name="Enum_AutoChoosePerk_Type_All" xml:space="preserve">
     <value>All Heroes</value>

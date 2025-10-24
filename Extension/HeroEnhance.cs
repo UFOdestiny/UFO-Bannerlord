@@ -160,10 +160,22 @@ namespace UFO.Extension
 
         public static void AddBothBranchPerks(this Hero hero)
         {
-            if (!hero.IsAlive || (int)SettingsManager.AutoChoosePerk.Value != hero.EnhanceType())
+            if (!hero.IsAlive)
             {
                 return;
             }
+
+            if ((int)SettingsManager.AutoChoosePerk.Value != hero.EnhanceType())
+            {
+                if (hero.EnhanceType() == 1 && (int)SettingsManager.AutoChoosePerk.Value == 0)
+                {
+                }
+                else
+                {
+                    return;
+                }
+            }
+
 
             foreach (PerkObject item in PerkObject.All)
             {
