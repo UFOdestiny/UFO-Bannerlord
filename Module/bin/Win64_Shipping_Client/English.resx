@@ -1497,6 +1497,17 @@
   <data name="xRural_Desc" xml:space="preserve">
     <value>Headmen Increased per Settlement (Only applies to a NEW Campaign)</value>
     </data>
-
+  <data name="Town_Init_Gold_Extra_Name" xml:space="preserve">
+    <value>Town Inital Gold Bonus(k)</value>
+  </data>
+  <data name="Town_Init_Gold_Extra_Desc" xml:space="preserve">
+    <value>Town Inital Gold Bonus(k) (Only applies to a NEW Campaign)</value>
+  </data>
+  <data name="Village_Init_Gold_Extra_Name" xml:space="preserve">
+    <value>Village Inital Gold Bonus(k)</value>
+  </data>
+  <data name="Village_Init_Gold_Extra_Desc" xml:space="preserve">
+    <value>Village Inital Gold Bonus(k) (Only applies to a NEW Campaign)</value>
+  </data>
 
 </root>

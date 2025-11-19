@@ -38,6 +38,9 @@ public static class SettingsManager
         public const int AddMoneyThreshhold =0;
         public const int AddMoney_count = 0;
 
+        public const int Village_Init_Gold_Extra = 0;
+        public const int Town_Init_Gold_Extra = 0;
+
         public const int MaxAttr = 10;
 
         public const int xGang = 0;
@@ -661,6 +664,8 @@ public static class SettingsManager
 
     public static CheatValue<Setting_Language> LanguageSetting => (IsPerCampaignInstanceLoaded && PerCampaignInstance.LanguageSetting.GetValue() != Setting_Language.English) ? new CheatValue<Setting_Language>(isChanged: true, PerCampaignInstance.LanguageSetting.GetValue()) : ((GlobalInstance.LanguageSetting.GetValue() != Setting_Language.English) ? new CheatValue<Setting_Language>(isChanged: true, GlobalInstance.LanguageSetting.GetValue()) : new CheatValue<Setting_Language>(isChanged: false, Setting_Language.English));
 
+    public static CheatValue<int> Village_Init_Gold_Extra => (IsPerCampaignInstanceLoaded && PerCampaignInstance.Village_Init_Gold_Extra != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.Village_Init_Gold_Extra) : ((GlobalInstance.Village_Init_Gold_Extra != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.Village_Init_Gold_Extra) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<int> Town_Init_Gold_Extra => (IsPerCampaignInstanceLoaded && PerCampaignInstance.Town_Init_Gold_Extra != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.Town_Init_Gold_Extra) : ((GlobalInstance.Town_Init_Gold_Extra != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.Town_Init_Gold_Extra) : new CheatValue<int>(isChanged: false, 0));
 
 
     public static CheatValue<bool> UnblockableThrust_player =>

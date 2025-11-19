@@ -683,7 +683,7 @@
     <value>Factor by which the learning rate of player companions is multiplied. A factor of 1 means default learning.</value>
   </data>
   <data name="SliceThroughEveryone_Name" xml:space="preserve">
-    <value>Player Cut / Slice Through Everyone</value>
+    <value>Cut / Slice Through Everyone: Player</value>
   </data>
   <data name="SliceThroughEveryone_Desc" xml:space="preserve">
     <value>Player always cut / slice through enemies.</value>
@@ -695,13 +695,13 @@
     <value>AI always cut / slice through enemies.</value>
   </data>
   <data name="SliceThroughEveryone_ally_Name" xml:space="preserve">
-    <value>Ally Cut / Slice Through Everyone</value>
+    <value>Cut / Slice Through Everyone: Ally</value>
   </data>
   <data name="SliceThroughEveryone_ally_Desc" xml:space="preserve">
     <value>Ally always cut / slice through enemies.</value>
   </data>
   <data name="SliceThroughEveryone_enemy_Name" xml:space="preserve">
-    <value>Enemy Cut / Slice Through Everyone</value>
+    <value>Cut / Slice Through Everyone: Enemy</value>
   </data>
   <data name="SliceThroughEveryone_enemy_Desc" xml:space="preserve">
     <value>Enemy always cut / slice through enemies.</value>
@@ -1363,10 +1363,10 @@
   </data>
 
   <data name="PlayerAlwaysCrush_Name" xml:space="preserve">
-    <value>Player Always Crush Through</value>
+    <value>Crush Through: Player</value>
   </data>
   <data name="PlayerAlwaysCrush_Desc" xml:space="preserve">
-    <value>Only the player can always crush through</value>
+    <value>Player can always crush through</value>
   </data>
   <data name="AICrush_Name" xml:space="preserve">
     <value>AI Always Crush Through</value>
@@ -1375,38 +1375,38 @@
     <value>AI can always crush through</value>
   </data>
   <data name="AllyCrush_Name" xml:space="preserve">
-    <value>Ally Always Crush Through</value>
+    <value>Crush Through: Ally</value>
   </data>
   <data name="AllyCrush_Desc" xml:space="preserve">
     <value>Ally can always crush through</value>
   </data>
   <data name="EnemyCrush_Name" xml:space="preserve">
-    <value>Enemy Always Crush Through</value>
+    <value>Crush Through: Enemy</value>
   </data>
   <data name="EnemyCrush_Desc" xml:space="preserve">
     <value>Enemy can always crush through</value>
   </data>
 
   <data name="UnblockableThrust_player_Name" xml:space="preserve">
-    <value>Unblockable Thrust for Player</value>
+    <value>Unblockable Thrust: Player</value>
   </data>
   <data name="UnblockableThrust_player_Desc" xml:space="preserve">
-    <value>Player's thrusts cannot be blocked unless using a shield (spear, sword thrusts)</value>
+    <value>Player's thrusts cannot be blocked unless using a shield (spear, sword thrusts).</value>
   </data>
   <data name="UnblockableThrust_AI_Name" xml:space="preserve">
-    <value>Unblockable Thrust for AI</value>
+    <value>Unblockable Thrust: AI</value>
   </data>
   <data name="UnblockableThrust_AI_Desc" xml:space="preserve">
     <value>AI's thrusts cannot be blocked unless using a shield (spear, sword thrusts)</value>
   </data>
   <data name="UnblockableThrust_ally_Name" xml:space="preserve">
-    <value>Unblockable Thrust for Ally</value>
+    <value>Unblockable Thrust: Ally</value>
   </data>
   <data name="UnblockableThrust_ally_Desc" xml:space="preserve">
     <value>Ally's thrusts cannot be blocked unless using a shield (spear, sword thrusts)</value>
   </data>
   <data name="UnblockableThrust_enemy_Name" xml:space="preserve">
-    <value>Unblockable Thrust for Enemy</value>
+    <value>Unblockable Thrust: Enemy</value>
   </data>
   <data name="UnblockableThrust_enemy_Desc" xml:space="preserve">
     <value>Enemy's thrusts cannot be blocked unless using a shield (spear, sword thrusts)</value>
@@ -1497,6 +1497,17 @@
   <data name="xRural_Desc" xml:space="preserve">
     <value>Headmen Increased per Settlement (Only applies to a NEW Campaign)</value>
     </data>
-
+  <data name="Town_Init_Gold_Extra_Name" xml:space="preserve">
+    <value>Town Inital Gold Bonus(k)</value>
+  </data>
+  <data name="Town_Init_Gold_Extra_Desc" xml:space="preserve">
+    <value>Town Inital Gold Bonus(k) (Only applies to a NEW Campaign)</value>
+  </data>
+  <data name="Village_Init_Gold_Extra_Name" xml:space="preserve">
+    <value>Village Inital Gold Bonus(k)</value>
+  </data>
+  <data name="Village_Init_Gold_Extra_Desc" xml:space="preserve">
+    <value>Village Inital Gold Bonus(k) (Only applies to a NEW Campaign)</value>
+  </data>
 
 </root>

@@ -49,7 +49,9 @@ public static class AKD_S
     typeof(PartyBase),
     typeof(PartyBase),
     typeof(float),
-    typeof(MapEvent)
+    typeof(MapEvent),
+    typeof(float),
+    typeof(float),
 })]
 public static class AWBS
 {
@@ -58,7 +60,7 @@ public static class AWBS
         PartyBase strikerParty,
         PartyBase struckParty,
         float strikerAdvantage, 
-        MapEvent battle,
+        MapEvent battle, float strikerSideMorale, float struckSideMorale,
         ref ExplainedNumber __result)
     {
         try

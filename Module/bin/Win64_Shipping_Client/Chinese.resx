@@ -1504,6 +1504,17 @@
   <data name="xRural_Desc" xml:space="preserve">
     <value>每个定居点名人-头人增加数量（只对新战役生效）</value>
   </data>
-
+  <data name="Town_Init_Gold_Extra_Name" xml:space="preserve">
+    <value>城镇起始资金增加(千)</value>
+  </data>
+  <data name="Town_Init_Gold_Extra_Desc" xml:space="preserve">
+    <value>城镇起始资金增加(千)（只对新战役生效）</value>
+  </data>
+  <data name="Village_Init_Gold_Extra_Name" xml:space="preserve">
+    <value>村庄起始资金增加(千)</value>
+  </data>
+  <data name="Village_Init_Gold_Extra_Desc" xml:space="preserve">
+    <value>村庄起始资金增加(千)（只对新战役生效）</value>
+  </data>
 
 </root>

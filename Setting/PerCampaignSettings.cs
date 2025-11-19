@@ -550,6 +550,13 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     [LocalizedSettingPropertyGroup("Settlements")]
     [LocalizedSettingPropertyInteger("xRural", 0, 10)]
     public int xRural { get; set; } = 0;
+    [LocalizedSettingPropertyGroup("Settlements")]
+    [LocalizedSettingPropertyInteger("Village_Init_Gold_Extra", 0, 10000)]
+    public int Village_Init_Gold_Extra { get; set; } = 0;
+    [LocalizedSettingPropertyGroup("Settlements")]
+    [LocalizedSettingPropertyInteger("Town_Init_Gold_Extra", 0, 10000)]
+    public int Town_Init_Gold_Extra { get; set; } = 0;
+
 
     [LocalizedSettingPropertyGroup("Smithing", GroupOrder = 17)]
     [LocalizedSettingPropertyPercent("SmithingEnergyCostPercentage")]

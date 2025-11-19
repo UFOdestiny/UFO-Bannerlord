@@ -62,6 +62,7 @@ public static class DailyFoodBonus
 
 
 
+
 //[HarmonyPatch(typeof(Town), "GarrisonChange", MethodType.Getter)]
 //public static class DailyGarrisonBonus
 //{
@@ -453,3 +454,21 @@ public static class NotableCount
     }
 }
 
+
+[HarmonyPatch(typeof(Village), nameof(Village.OnInit))]
+public class Village_OnInit_Patch
+{
+    static void Postfix(Village __instance)
+    {
+        __instance.ChangeGold(SettingsManager.Village_Init_Gold_Extra.Value*1000);
+    }
+}
+
+[HarmonyPatch(typeof(Town), nameof(Town.OnInit))]
+public class Town_OnInit_Patch
+{
+    static void Postfix(Town __instance)
+    {
+        __instance.ChangeGold(SettingsManager.Town_Init_Gold_Extra.Value*1000);
+    }
+}
