@@ -166,27 +166,70 @@ public static class LearningLimitMultiplier
 
 
 
-[HarmonyPatch(typeof(DefaultCombatXpModel), "GetXpFromHit")]
+//[HarmonyPatch(typeof(DefaultCombatXpModel), "GetXpFromHit")]
+//public static class TroopExperienceMultiplier
+//{
+//    [UsedImplicitly]
+//    [HarmonyPostfix]
+//    public static void Postfix(CharacterObject attackerTroop,
+//        CharacterObject captain, CharacterObject attackedTroop,
+//        PartyBase party, int damage, bool isFatal,
+//        MissionTypeEnum missionType,
+//        ref ExplainedNumber __result)
+//    {
+//        try
+//        {
+//            if (party.IsPlayerParty() && !attackerTroop.IsPlayer() && SettingsManager.TroopExperienceMultiplier.IsChanged)
+//            {
+//                __result = new ExplainedNumber((int)Math.Round(__result.ResultNumber * SettingsManager.TroopExperienceMultiplier.Value));
+//            }
+//        }
+//        catch (Exception e)
+//        {
+//            SubModule.LogError(e, typeof(TroopExperienceMultiplier));
+//        }
+//    }
+//}
+
+
+[HarmonyPatch(typeof(DefaultCombatXpModel))]
+[HarmonyPatch("GetXpFromHit")]
+[HarmonyPatch(new Type[] {
+        typeof(CharacterObject),
+        typeof(CharacterObject),
+        typeof(CharacterObject),
+        typeof(PartyBase),
+        typeof(int),
+        typeof(bool),
+        typeof(MissionTypeEnum)
+    })]
 public static class TroopExperienceMultiplier
 {
-    [UsedImplicitly]
     [HarmonyPostfix]
-    public static void Postfix(CharacterObject attackerTroop,
-        CharacterObject captain, CharacterObject attackedTroop,
-        PartyBase party, int damage, bool isFatal,
+    public static void Postfix(
+        CharacterObject attackerTroop,
+        CharacterObject captain,
+        CharacterObject attackedTroop,
+        PartyBase attackerParty,
+        int damage,
+        bool isFatal,
         MissionTypeEnum missionType,
         ref ExplainedNumber __result)
     {
         try
         {
-            if (party.IsPlayerParty() && !attackerTroop.IsPlayer() && SettingsManager.TroopExperienceMultiplier.IsChanged)
+            if (attackerParty == null) return;
+
+            if (attackerParty.IsPlayerParty() &&
+                !attackerTroop.IsPlayer() &&
+                SettingsManager.TroopExperienceMultiplier.IsChanged)
             {
-                __result = new ExplainedNumber((int)Math.Round(__result.ResultNumber * SettingsManager.TroopExperienceMultiplier.Value));
+                __result.AddFactor(SettingsManager.TroopExperienceMultiplier.Value - 1f);
             }
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            SubModule.LogError(e, typeof(TroopExperienceMultiplier));
+            SubModule.LogError(ex, typeof(TroopExperienceMultiplier));
         }
     }
 }
