@@ -624,8 +624,8 @@ public class BannerlordCheatsGlobalSettings : AttributeGlobalSettings<Bannerlord
     // Hero Enhance
 
     [LocalizedSettingPropertyGroup("General_Enhancement", GroupOrder = 19)]
-    [LocalizedSettingPropertyDropdown("AutoChoosePerk", AutoChoosePerk_Type.Clan)]
-    public Dropdown<LocalizedDropdownValue<AutoChoosePerk_Type>> AutoChoosePerk { get; set; } = LocalizedDropdownValue<AutoChoosePerk_Type>.GenerateDropdown(AutoChoosePerk_Type.Clan);
+    [LocalizedSettingPropertyDropdown("AutoChoosePerk", AutoChoosePerk_Type.No)]
+    public Dropdown<LocalizedDropdownValue<AutoChoosePerk_Type>> AutoChoosePerk { get; set; } = LocalizedDropdownValue<AutoChoosePerk_Type>.GenerateDropdown(AutoChoosePerk_Type.No);
 
 
     [LocalizedSettingPropertyGroup("General_Enhancement")]

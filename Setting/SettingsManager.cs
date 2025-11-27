@@ -312,7 +312,7 @@ public static class SettingsManager
 
         public const int EverYoungSkillNeed = 400;
 
-        public const AutoChoosePerk_Type AutoChoosePerk = AutoChoosePerk_Type.Clan;
+        public const AutoChoosePerk_Type AutoChoosePerk = AutoChoosePerk_Type.No;
 
         public const float VigorDmgPercent = 0.02f;
 
@@ -660,7 +660,7 @@ public static class SettingsManager
 
     public static CheatValue<float> WorkshopSellingCostMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.WorkshopSellingCostMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.WorkshopSellingCostMultiplier) : ((GlobalInstance.WorkshopSellingCostMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.WorkshopSellingCostMultiplier) : new CheatValue<float>(isChanged: false, 1f));
 
-    public static CheatValue<AutoChoosePerk_Type> AutoChoosePerk => (IsPerCampaignInstanceLoaded && PerCampaignInstance.AutoChoosePerk.GetValue() != AutoChoosePerk_Type.Clan) ? new CheatValue<AutoChoosePerk_Type>(isChanged: true, PerCampaignInstance.AutoChoosePerk.GetValue()) : ((GlobalInstance.AutoChoosePerk.GetValue() != AutoChoosePerk_Type.Clan) ? new CheatValue<AutoChoosePerk_Type>(isChanged: true, GlobalInstance.AutoChoosePerk.GetValue()) : new CheatValue<AutoChoosePerk_Type>(isChanged: false, AutoChoosePerk_Type.Clan));
+    public static CheatValue<AutoChoosePerk_Type> AutoChoosePerk => (IsPerCampaignInstanceLoaded && PerCampaignInstance.AutoChoosePerk.GetValue() != AutoChoosePerk_Type.No) ? new CheatValue<AutoChoosePerk_Type>(isChanged: true, PerCampaignInstance.AutoChoosePerk.GetValue()) : ((GlobalInstance.AutoChoosePerk.GetValue() != AutoChoosePerk_Type.No) ? new CheatValue<AutoChoosePerk_Type>(isChanged: true, GlobalInstance.AutoChoosePerk.GetValue()) : new CheatValue<AutoChoosePerk_Type>(isChanged: false, AutoChoosePerk_Type.No));
 
     public static CheatValue<Setting_Language> LanguageSetting => (IsPerCampaignInstanceLoaded && PerCampaignInstance.LanguageSetting.GetValue() != Setting_Language.English) ? new CheatValue<Setting_Language>(isChanged: true, PerCampaignInstance.LanguageSetting.GetValue()) : ((GlobalInstance.LanguageSetting.GetValue() != Setting_Language.English) ? new CheatValue<Setting_Language>(isChanged: true, GlobalInstance.LanguageSetting.GetValue()) : new CheatValue<Setting_Language>(isChanged: false, Setting_Language.English));
 

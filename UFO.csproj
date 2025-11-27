@@ -66,16 +66,25 @@
 			<HintPath>%(Identity)</HintPath>
 			<Private>False</Private>
 		</Reference>
-
-		<!--Shokuho-->
-		<Reference Include="E:\SteamLibrary\steamapps\workshop\content\261550\3496296180\bin\Win64_Shipping_Client\*.dll">
+		<Reference Include="$(GameFolder)\Modules\NavalDLC\bin\$(GameBinariesFolder)\*.dll">
 			<HintPath>%(Identity)</HintPath>
 			<Private>False</Private>
 		</Reference>
+
+
+		<!--Shokuho-->
+		<!--
+		<Reference Include="E:\SteamLibrary\steamapps\workshop\content\261550\3496296180\bin\Win64_Shipping_Client\*.dll">
+			<HintPath>%(Identity)</HintPath>
+			<Private>False</Private>
+		</Reference> 
+		-->
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Bannerlord.MCM" Version="5.10.2" />
+		<PackageReference Include="Bannerlord.UIExtenderEx" Version="2.13.1" />
+		<PackageReference Include="Lib.Harmony" Version="2.4.2" />
 	</ItemGroup>
 
 	<ItemGroup>

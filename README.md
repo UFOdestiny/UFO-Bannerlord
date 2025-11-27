@@ -1,4 +1,4 @@
-# UFO's Cheat Mods Bundle For Bannerlord [Beta 1.3.1]
+# UFO's Cheat Mods Bundle For Bannerlord [Beta 1.3.3]
 
 My original goal was to learn how to make mods. It just so happened that the 'crush through' feature I wanted stopped working, so I decompiled it and combined it with several well-known mods. I noticed that many people were also sad about some wanted features no longer working, so I decided to release this mod directly. 
 
