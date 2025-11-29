@@ -1,7 +1,9 @@
 using MCM.Abstractions.Base.Global;
 using MCM.Abstractions.Base.PerCampaign;
+using MCM.Common;
 using System;
 using UFO.Extension;
+using UFO.Localization;
 
 namespace UFO.Setting;
 
@@ -10,7 +12,6 @@ public static class SettingsManager
     public struct CheatValue<T>
     {
         public bool IsChanged { get; }
-
         public T Value { get; }
 
         public CheatValue(bool isChanged, T value)
@@ -300,8 +301,6 @@ public static class SettingsManager
 
         public const float WorkshopDailyExpensePercentage = 100f;
 
-        public const float WorkshopUpgradeCostPercentage = 100f;
-
         public const float WorkshopSellingCostMultiplier = 1f;
 
         public const bool EveryoneBuysWorkshops = false;
@@ -426,753 +425,628 @@ public static class SettingsManager
 
     private static BannerlordCheatsPerCampaignSettings PerCampaignInstance => PerCampaignSettings<BannerlordCheatsPerCampaignSettings>.Instance ?? throw new InvalidOperationException("Should have checked if per-campaign instance is loaded!");
 
-    public static CheatValue<bool> EnableHotkeys => (IsPerCampaignInstanceLoaded && PerCampaignInstance.EnableHotkeys) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.EnableHotkeys) : (GlobalInstance.EnableHotkeys ? new CheatValue<bool>(isChanged: true, GlobalInstance.EnableHotkeys) : new CheatValue<bool>(isChanged: false, value: false));
+    // Generic helper methods to reduce code duplication
+    private static CheatValue<bool> GetBoolValue(Func<BannerlordCheatsPerCampaignSettings, bool> perCampaignGetter,
+                                                  Func<BannerlordCheatsGlobalSettings, bool> globalGetter)
+    {
+        if (IsPerCampaignInstanceLoaded && perCampaignGetter(PerCampaignInstance))
+            return new CheatValue<bool>(true, perCampaignGetter(PerCampaignInstance));
+        
+        if (globalGetter(GlobalInstance))
+            return new CheatValue<bool>(true, globalGetter(GlobalInstance));
+        
+        return new CheatValue<bool>(false, false);
+    }
+
+    private static CheatValue<int> GetIntValue(Func<BannerlordCheatsPerCampaignSettings, int> perCampaignGetter,
+                                                Func<BannerlordCheatsGlobalSettings, int> globalGetter,
+                                                int defaultValue)
+    {
+        if (IsPerCampaignInstanceLoaded && perCampaignGetter(PerCampaignInstance) != defaultValue)
+            return new CheatValue<int>(true, perCampaignGetter(PerCampaignInstance));
+        
+        if (globalGetter(GlobalInstance) != defaultValue)
+            return new CheatValue<int>(true, globalGetter(GlobalInstance));
+        
+        return new CheatValue<int>(false, defaultValue);
+    }
+
+    private static CheatValue<float> GetFloatValue(Func<BannerlordCheatsPerCampaignSettings, float> perCampaignGetter,
+                                                    Func<BannerlordCheatsGlobalSettings, float> globalGetter,
+                                                    float defaultValue)
+    {
+        if (IsPerCampaignInstanceLoaded && perCampaignGetter(PerCampaignInstance) != defaultValue)
+            return new CheatValue<float>(true, perCampaignGetter(PerCampaignInstance));
+        
+        if (globalGetter(GlobalInstance) != defaultValue)
+            return new CheatValue<float>(true, globalGetter(GlobalInstance));
+        
+        return new CheatValue<float>(false, defaultValue);
+    }
+
+    private static CheatValue<T> GetDropdownValue<T>(Func<BannerlordCheatsPerCampaignSettings, Dropdown<LocalizedDropdownValue<T>>> perCampaignGetter,
+                                                      Func<BannerlordCheatsGlobalSettings, Dropdown<LocalizedDropdownValue<T>>> globalGetter,
+                                                      T defaultValue) where T : struct, Enum
+    {
+        if (IsPerCampaignInstanceLoaded && perCampaignGetter(PerCampaignInstance).GetValue().CompareTo(defaultValue) != 0)
+            return new CheatValue<T>(true, perCampaignGetter(PerCampaignInstance).GetValue());
+        
+        if (globalGetter(GlobalInstance).GetValue().CompareTo(defaultValue) != 0)
+            return new CheatValue<T>(true, globalGetter(GlobalInstance).GetValue());
+        
+        return new CheatValue<T>(false, defaultValue);
+    }
+
+    // Public properties using the helper methods
+    public static CheatValue<bool> EnableHotkeys => 
+        GetBoolValue(s => s.EnableHotkeys, s => s.EnableHotkeys);
+
+    public static CheatValue<bool> EnableHotkeyTips => 
+        GetBoolValue(s => s.EnableHotkeyTips, s => s.EnableHotkeyTips);
+
+    public static CheatValue<float> MapSpeedMultiplier => 
+        GetFloatValue(s => s.MapSpeedMultiplier, s => s.MapSpeedMultiplier, 1f);
+
+    public static CheatValue<float> MapVisibilityMultiplier => 
+        GetFloatValue(s => s.MapVisibilityMultiplier, s => s.MapVisibilityMultiplier, 1f);
 
-    public static CheatValue<bool> EnableHotkeyTips => (IsPerCampaignInstanceLoaded && PerCampaignInstance.EnableHotkeyTips) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.EnableHotkeyTips) : (GlobalInstance.EnableHotkeyTips ? new CheatValue<bool>(isChanged: true, GlobalInstance.EnableHotkeyTips) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> NpcMapSpeedPercentage => 
+        GetFloatValue(s => s.NpcMapSpeedPercentage, s => s.NpcMapSpeedPercentage, 100f);
 
-    public static CheatValue<float> MapSpeedMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.MapSpeedMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.MapSpeedMultiplier) : ((GlobalInstance.MapSpeedMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.MapSpeedMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<bool> PartyInvisibleOnMap => 
+        GetBoolValue(s => s.PartyInvisibleOnMap, s => s.PartyInvisibleOnMap);
 
-    public static CheatValue<float> MapVisibilityMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.MapVisibilityMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.MapVisibilityMultiplier) : ((GlobalInstance.MapVisibilityMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.MapVisibilityMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<bool> CaravansInvisibleOnMap => 
+        GetBoolValue(s => s.CaravansInvisibleOnMap, s => s.CaravansInvisibleOnMap);
 
-    public static CheatValue<float> NpcMapSpeedPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.NpcMapSpeedPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.NpcMapSpeedPercentage) : ((GlobalInstance.NpcMapSpeedPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.NpcMapSpeedPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<float> DamageTakenPercentage => 
+        GetFloatValue(s => s.DamageTakenPercentage, s => s.DamageTakenPercentage, 100f);
 
-    public static CheatValue<bool> PartyInvisibleOnMap => (IsPerCampaignInstanceLoaded && PerCampaignInstance.PartyInvisibleOnMap) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.PartyInvisibleOnMap) : (GlobalInstance.PartyInvisibleOnMap ? new CheatValue<bool>(isChanged: true, GlobalInstance.PartyInvisibleOnMap) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> Invincible => 
+        GetBoolValue(s => s.Invincible, s => s.Invincible);
 
-    public static CheatValue<bool> CaravansInvisibleOnMap => (IsPerCampaignInstanceLoaded && PerCampaignInstance.CaravansInvisibleOnMap) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.CaravansInvisibleOnMap) : (GlobalInstance.CaravansInvisibleOnMap ? new CheatValue<bool>(isChanged: true, GlobalInstance.CaravansInvisibleOnMap) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> PlayerHorseInvincible => 
+        GetBoolValue(s => s.PlayerHorseInvincible, s => s.PlayerHorseInvincible);
 
-    public static CheatValue<float> DamageTakenPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.DamageTakenPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.DamageTakenPercentage) : ((GlobalInstance.DamageTakenPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.DamageTakenPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<bool> OneHitKill => 
+        GetBoolValue(s => s.OneHitKill, s => s.OneHitKill);
 
-    public static CheatValue<bool> Invincible => (IsPerCampaignInstanceLoaded && PerCampaignInstance.Invincible) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.Invincible) : (GlobalInstance.Invincible ? new CheatValue<bool>(isChanged: true, GlobalInstance.Invincible) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> SliceThroughEveryone => 
+        GetBoolValue(s => s.SliceThroughEveryone, s => s.SliceThroughEveryone);
 
-    public static CheatValue<bool> PlayerHorseInvincible => (IsPerCampaignInstanceLoaded && PerCampaignInstance.PlayerHorseInvincible) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.PlayerHorseInvincible) : (GlobalInstance.PlayerHorseInvincible ? new CheatValue<bool>(isChanged: true, GlobalInstance.PlayerHorseInvincible) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> SliceThroughEveryone_ally => 
+        GetBoolValue(s => s.SliceThroughEveryone_ally, s => s.SliceThroughEveryone_ally);
 
-    public static CheatValue<bool> OneHitKill => (IsPerCampaignInstanceLoaded && PerCampaignInstance.OneHitKill) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.OneHitKill) : (GlobalInstance.OneHitKill ? new CheatValue<bool>(isChanged: true, GlobalInstance.OneHitKill) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> SliceThroughEveryone_enemy => 
+        GetBoolValue(s => s.SliceThroughEveryone_enemy, s => s.SliceThroughEveryone_enemy);
 
-    //public static CheatValue<bool> AlwaysCrushThroughShields => (IsPerCampaignInstanceLoaded && PerCampaignInstance.AlwaysCrushThroughShields) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.AlwaysCrushThroughShields) : (GlobalInstance.AlwaysCrushThroughShields ? new CheatValue<bool>(isChanged: true, GlobalInstance.AlwaysCrushThroughShields) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> HealthRegeneration => 
+        GetFloatValue(s => s.HealthRegeneration, s => s.HealthRegeneration, 0f);
 
-    public static CheatValue<bool> SliceThroughEveryone => (IsPerCampaignInstanceLoaded && PerCampaignInstance.SliceThroughEveryone) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.SliceThroughEveryone) : (GlobalInstance.SliceThroughEveryone ? new CheatValue<bool>(isChanged: true, GlobalInstance.SliceThroughEveryone) : new CheatValue<bool>(isChanged: false, value: false));
-    public static CheatValue<bool> SliceThroughEveryone_ally => (IsPerCampaignInstanceLoaded && PerCampaignInstance.SliceThroughEveryone_ally) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.SliceThroughEveryone_ally) : (GlobalInstance.SliceThroughEveryone_ally ? new CheatValue<bool>(isChanged: true, GlobalInstance.SliceThroughEveryone_ally) : new CheatValue<bool>(isChanged: false, value: false));
-    public static CheatValue<bool> SliceThroughEveryone_enemy => (IsPerCampaignInstanceLoaded && PerCampaignInstance.SliceThroughEveryone_enemy) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.SliceThroughEveryone_enemy) : (GlobalInstance.SliceThroughEveryone_enemy ? new CheatValue<bool>(isChanged: true, GlobalInstance.SliceThroughEveryone_enemy) : new CheatValue<bool>(isChanged: false, value: false));
-    //public static CheatValue<bool> SliceThroughEveryone_AI => (IsPerCampaignInstanceLoaded && PerCampaignInstance.SliceThroughEveryone_AI) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.SliceThroughEveryone_AI) : (GlobalInstance.SliceThroughEveryone_AI ? new CheatValue<bool>(isChanged: true, GlobalInstance.SliceThroughEveryone_AI) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> InfiniteAmmo => 
+        GetBoolValue(s => s.InfiniteAmmo, s => s.InfiniteAmmo);
 
+    public static CheatValue<float> DamageMultiplier => 
+        GetFloatValue(s => s.DamageMultiplier, s => s.DamageMultiplier, 1f);
 
-    public static CheatValue<float> HealthRegeneration => (IsPerCampaignInstanceLoaded && PerCampaignInstance.HealthRegeneration != 0f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.HealthRegeneration) : ((GlobalInstance.HealthRegeneration != 0f) ? new CheatValue<float>(isChanged: true, GlobalInstance.HealthRegeneration) : new CheatValue<float>(isChanged: false, 0f));
+    public static CheatValue<bool> AlwaysKnockDown => 
+        GetBoolValue(s => s.AlwaysKnockDown, s => s.AlwaysKnockDown);
 
-    public static CheatValue<bool> InfiniteAmmo => (IsPerCampaignInstanceLoaded && PerCampaignInstance.InfiniteAmmo) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.InfiniteAmmo) : (GlobalInstance.InfiniteAmmo ? new CheatValue<bool>(isChanged: true, GlobalInstance.InfiniteAmmo) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> NeverKnockedBackByAttacks => 
+        GetBoolValue(s => s.NeverKnockedBackByAttacks, s => s.NeverKnockedBackByAttacks);
 
-    public static CheatValue<float> DamageMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.DamageMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.DamageMultiplier) : ((GlobalInstance.DamageMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.DamageMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<bool> NoStuckArrows => 
+        GetBoolValue(s => s.NoStuckArrows, s => s.NoStuckArrows);
 
-    public static CheatValue<bool> AlwaysKnockDown => (IsPerCampaignInstanceLoaded && PerCampaignInstance.AlwaysKnockDown) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.AlwaysKnockDown) : (GlobalInstance.AlwaysKnockDown ? new CheatValue<bool>(isChanged: true, GlobalInstance.AlwaysKnockDown) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> InstantCrossbowReload => 
+        GetBoolValue(s => s.InstantCrossbowReload, s => s.InstantCrossbowReload);
 
-    public static CheatValue<bool> NeverKnockedBackByAttacks => (IsPerCampaignInstanceLoaded && PerCampaignInstance.NeverKnockedBackByAttacks) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.NeverKnockedBackByAttacks) : (GlobalInstance.NeverKnockedBackByAttacks ? new CheatValue<bool>(isChanged: true, GlobalInstance.NeverKnockedBackByAttacks) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<KnockoutOrKilled> PartyKnockoutOrKilled => 
+        GetDropdownValue(s => s.PartyKnockoutOrKilled, s => s.PartyKnockoutOrKilled, KnockoutOrKilled.Default);
 
-    public static CheatValue<bool> NoStuckArrows => (IsPerCampaignInstanceLoaded && PerCampaignInstance.NoStuckArrows) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.NoStuckArrows) : (GlobalInstance.NoStuckArrows ? new CheatValue<bool>(isChanged: true, GlobalInstance.NoStuckArrows) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<KnockoutOrKilled> CompanionsKnockoutOrKilled => 
+        GetDropdownValue(s => s.CompanionsKnockoutOrKilled, s => s.CompanionsKnockoutOrKilled, KnockoutOrKilled.Default);
 
-    public static CheatValue<bool> InstantCrossbowReload => (IsPerCampaignInstanceLoaded && PerCampaignInstance.InstantCrossbowReload) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.InstantCrossbowReload) : (GlobalInstance.InstantCrossbowReload ? new CheatValue<bool>(isChanged: true, GlobalInstance.InstantCrossbowReload) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> PartyInvincible => 
+        GetBoolValue(s => s.PartyInvincible, s => s.PartyInvincible);
 
-    public static CheatValue<KnockoutOrKilled> PartyKnockoutOrKilled => (IsPerCampaignInstanceLoaded && PerCampaignInstance.PartyKnockoutOrKilled.GetValue() != KnockoutOrKilled.Default) ? new CheatValue<KnockoutOrKilled>(isChanged: true, PerCampaignInstance.PartyKnockoutOrKilled.GetValue()) : ((GlobalInstance.PartyKnockoutOrKilled.GetValue() != KnockoutOrKilled.Default) ? new CheatValue<KnockoutOrKilled>(isChanged: true, GlobalInstance.PartyKnockoutOrKilled.GetValue()) : new CheatValue<KnockoutOrKilled>(isChanged: false, KnockoutOrKilled.Default));
+    public static CheatValue<bool> PartyHeroesInvincible => 
+        GetBoolValue(s => s.PartyHeroesInvincible, s => s.PartyHeroesInvincible);
 
-    public static CheatValue<KnockoutOrKilled> CompanionsKnockoutOrKilled => (IsPerCampaignInstanceLoaded && PerCampaignInstance.CompanionsKnockoutOrKilled.GetValue() != KnockoutOrKilled.Default) ? new CheatValue<KnockoutOrKilled>(isChanged: true, PerCampaignInstance.CompanionsKnockoutOrKilled.GetValue()) : ((GlobalInstance.CompanionsKnockoutOrKilled.GetValue() != KnockoutOrKilled.Default) ? new CheatValue<KnockoutOrKilled>(isChanged: true, GlobalInstance.CompanionsKnockoutOrKilled.GetValue()) : new CheatValue<KnockoutOrKilled>(isChanged: false, KnockoutOrKilled.Default));
+    public static CheatValue<float> PartyDamageTakenPercentage => 
+        GetFloatValue(s => s.PartyDamageTakenPercentage, s => s.PartyDamageTakenPercentage, 100f);
 
-    public static CheatValue<bool> PartyInvincible => (IsPerCampaignInstanceLoaded && PerCampaignInstance.PartyInvincible) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.PartyInvincible) : (GlobalInstance.PartyInvincible ? new CheatValue<bool>(isChanged: true, GlobalInstance.PartyInvincible) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> PartyOneHitKill => 
+        GetBoolValue(s => s.PartyOneHitKill, s => s.PartyOneHitKill);
 
-    public static CheatValue<bool> PartyHeroesInvincible => (IsPerCampaignInstanceLoaded && PerCampaignInstance.PartyHeroesInvincible) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.PartyHeroesInvincible) : (GlobalInstance.PartyHeroesInvincible ? new CheatValue<bool>(isChanged: true, GlobalInstance.PartyHeroesInvincible) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> NoRunningAway => 
+        GetBoolValue(s => s.NoRunningAway, s => s.NoRunningAway);
 
-    public static CheatValue<float> PartyDamageTakenPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.PartyDamageTakenPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.PartyDamageTakenPercentage) : ((GlobalInstance.PartyDamageTakenPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.PartyDamageTakenPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<float> PartyHealthRegeneration => 
+        GetFloatValue(s => s.PartyHealthRegeneration, s => s.PartyHealthRegeneration, 0f);
 
-    public static CheatValue<bool> PartyOneHitKill => (IsPerCampaignInstanceLoaded && PerCampaignInstance.PartyOneHitKill) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.PartyOneHitKill) : (GlobalInstance.PartyOneHitKill ? new CheatValue<bool>(isChanged: true, GlobalInstance.PartyOneHitKill) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> PartyInfiniteAmmo => 
+        GetBoolValue(s => s.PartyInfiniteAmmo, s => s.PartyInfiniteAmmo);
 
-    public static CheatValue<bool> NoRunningAway => (IsPerCampaignInstanceLoaded && PerCampaignInstance.NoRunningAway) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.NoRunningAway) : (GlobalInstance.NoRunningAway ? new CheatValue<bool>(isChanged: true, GlobalInstance.NoRunningAway) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> PartyDamageMultiplier => 
+        GetFloatValue(s => s.PartyDamageMultiplier, s => s.PartyDamageMultiplier, 1f);
 
-    public static CheatValue<float> PartyHealthRegeneration => (IsPerCampaignInstanceLoaded && PerCampaignInstance.PartyHealthRegeneration != 0f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.PartyHealthRegeneration) : ((GlobalInstance.PartyHealthRegeneration != 0f) ? new CheatValue<float>(isChanged: true, GlobalInstance.PartyHealthRegeneration) : new CheatValue<float>(isChanged: false, 0f));
+    public static CheatValue<bool> NoFriendlyFire => 
+        GetBoolValue(s => s.NoFriendlyFire, s => s.NoFriendlyFire);
 
-    public static CheatValue<bool> PartyInfiniteAmmo => (IsPerCampaignInstanceLoaded && PerCampaignInstance.PartyInfiniteAmmo) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.PartyInfiniteAmmo) : (GlobalInstance.PartyInfiniteAmmo ? new CheatValue<bool>(isChanged: true, GlobalInstance.PartyInfiniteAmmo) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<KnockoutOrKilled> FriendlyLordsKnockoutOrKilled => 
+        GetDropdownValue(s => s.FriendlyLordsKnockoutOrKilled, s => s.FriendlyLordsKnockoutOrKilled, KnockoutOrKilled.Default);
 
-    public static CheatValue<float> PartyDamageMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.PartyDamageMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.PartyDamageMultiplier) : ((GlobalInstance.PartyDamageMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.PartyDamageMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<KnockoutOrKilled> EnemyLordsKnockoutOrKilled => 
+        GetDropdownValue(s => s.EnemyLordsKnockoutOrKilled, s => s.EnemyLordsKnockoutOrKilled, KnockoutOrKilled.Default);
 
-    public static CheatValue<bool> NoFriendlyFire => (IsPerCampaignInstanceLoaded && PerCampaignInstance.NoFriendlyFire) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.NoFriendlyFire) : (GlobalInstance.NoFriendlyFire ? new CheatValue<bool>(isChanged: true, GlobalInstance.NoFriendlyFire) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<KnockoutOrKilled> EnemyTroopsKnockoutOrKilled => 
+        GetDropdownValue(s => s.EnemyTroopsKnockoutOrKilled, s => s.EnemyTroopsKnockoutOrKilled, KnockoutOrKilled.Default);
 
-    public static CheatValue<KnockoutOrKilled> FriendlyLordsKnockoutOrKilled => (IsPerCampaignInstanceLoaded && PerCampaignInstance.FriendlyLordsKnockoutOrKilled.GetValue() != KnockoutOrKilled.Default) ? new CheatValue<KnockoutOrKilled>(isChanged: true, PerCampaignInstance.FriendlyLordsKnockoutOrKilled.GetValue()) : ((GlobalInstance.FriendlyLordsKnockoutOrKilled.GetValue() != KnockoutOrKilled.Default) ? new CheatValue<KnockoutOrKilled>(isChanged: true, GlobalInstance.FriendlyLordsKnockoutOrKilled.GetValue()) : new CheatValue<KnockoutOrKilled>(isChanged: false, KnockoutOrKilled.Default));
+    public static CheatValue<bool> EnemiesNoRunningAway => 
+        GetBoolValue(s => s.EnemiesNoRunningAway, s => s.EnemiesNoRunningAway);
 
-    public static CheatValue<KnockoutOrKilled> EnemyLordsKnockoutOrKilled => (IsPerCampaignInstanceLoaded && PerCampaignInstance.EnemyLordsKnockoutOrKilled.GetValue() != KnockoutOrKilled.Default) ? new CheatValue<KnockoutOrKilled>(isChanged: true, PerCampaignInstance.EnemyLordsKnockoutOrKilled.GetValue()) : ((GlobalInstance.EnemyLordsKnockoutOrKilled.GetValue() != KnockoutOrKilled.Default) ? new CheatValue<KnockoutOrKilled>(isChanged: true, GlobalInstance.EnemyLordsKnockoutOrKilled.GetValue()) : new CheatValue<KnockoutOrKilled>(isChanged: false, KnockoutOrKilled.Default));
+    public static CheatValue<float> EnemyDamagePercentage => 
+        GetFloatValue(s => s.EnemyDamagePercentage, s => s.EnemyDamagePercentage, 100f);
 
-    public static CheatValue<KnockoutOrKilled> EnemyTroopsKnockoutOrKilled => (IsPerCampaignInstanceLoaded && PerCampaignInstance.EnemyTroopsKnockoutOrKilled.GetValue() != KnockoutOrKilled.Default) ? new CheatValue<KnockoutOrKilled>(isChanged: true, PerCampaignInstance.EnemyTroopsKnockoutOrKilled.GetValue()) : ((GlobalInstance.EnemyTroopsKnockoutOrKilled.GetValue() != KnockoutOrKilled.Default) ? new CheatValue<KnockoutOrKilled>(isChanged: true, GlobalInstance.EnemyTroopsKnockoutOrKilled.GetValue()) : new CheatValue<KnockoutOrKilled>(isChanged: false, KnockoutOrKilled.Default));
+    public static CheatValue<float> RenownRewardMultiplier => 
+        GetFloatValue(s => s.RenownRewardMultiplier, s => s.RenownRewardMultiplier, 1f);
 
-    public static CheatValue<bool> EnemiesNoRunningAway => (IsPerCampaignInstanceLoaded && PerCampaignInstance.EnemiesNoRunningAway) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.EnemiesNoRunningAway) : (GlobalInstance.EnemiesNoRunningAway ? new CheatValue<bool>(isChanged: true, GlobalInstance.EnemiesNoRunningAway) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> InfluenceRewardMultiplier => 
+        GetFloatValue(s => s.InfluenceRewardMultiplier, s => s.InfluenceRewardMultiplier, 1f);
 
-    public static CheatValue<float> EnemyDamagePercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.EnemyDamagePercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.EnemyDamagePercentage) : ((GlobalInstance.EnemyDamagePercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.EnemyDamagePercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<bool> AlwaysWinBattleSimulation => 
+        GetBoolValue(s => s.AlwaysWinBattleSimulation, s => s.AlwaysWinBattleSimulation);
 
-    public static CheatValue<float> RenownRewardMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.RenownRewardMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.RenownRewardMultiplier) : ((GlobalInstance.RenownRewardMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.RenownRewardMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<bool> NoTroopSacrifice => 
+        GetBoolValue(s => s.NoTroopSacrifice, s => s.NoTroopSacrifice);
 
-    public static CheatValue<float> InfluenceRewardMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.InfluenceRewardMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.InfluenceRewardMultiplier) : ((GlobalInstance.InfluenceRewardMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.InfluenceRewardMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<int> BanditHideoutTroopLimit => 
+        GetIntValue(s => s.BanditHideoutTroopLimit, s => s.BanditHideoutTroopLimit, 0);
 
-    public static CheatValue<bool> AlwaysWinBattleSimulation => (IsPerCampaignInstanceLoaded && PerCampaignInstance.AlwaysWinBattleSimulation) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.AlwaysWinBattleSimulation) : (GlobalInstance.AlwaysWinBattleSimulation ? new CheatValue<bool>(isChanged: true, GlobalInstance.AlwaysWinBattleSimulation) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> CombatZoomMultiplier => 
+        GetFloatValue(s => s.CombatZoomMultiplier, s => s.CombatZoomMultiplier, 1f);
 
-    public static CheatValue<bool> NoTroopSacrifice => (IsPerCampaignInstanceLoaded && PerCampaignInstance.NoTroopSacrifice) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.NoTroopSacrifice) : (GlobalInstance.NoTroopSacrifice ? new CheatValue<bool>(isChanged: true, GlobalInstance.NoTroopSacrifice) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<int> ExtraInventoryCapacity => 
+        GetIntValue(s => s.ExtraInventoryCapacity, s => s.ExtraInventoryCapacity, 0);
 
-    public static CheatValue<int> BanditHideoutTroopLimit => (IsPerCampaignInstanceLoaded && PerCampaignInstance.BanditHideoutTroopLimit != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.BanditHideoutTroopLimit) : ((GlobalInstance.BanditHideoutTroopLimit != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.BanditHideoutTroopLimit) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<bool> NativeItemSpawning => 
+        GetBoolValue(s => s.NativeItemSpawning, s => s.NativeItemSpawning);
 
-    public static CheatValue<float> CombatZoomMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.CombatZoomMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.CombatZoomMultiplier) : ((GlobalInstance.CombatZoomMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.CombatZoomMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<int> ExtraPartyMemberSize => 
+        GetIntValue(s => s.ExtraPartyMemberSize, s => s.ExtraPartyMemberSize, 0);
 
-    public static CheatValue<int> ExtraInventoryCapacity => (IsPerCampaignInstanceLoaded && PerCampaignInstance.ExtraInventoryCapacity != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.ExtraInventoryCapacity) : ((GlobalInstance.ExtraInventoryCapacity != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.ExtraInventoryCapacity) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<int> ExtraPartyPrisonerSize => 
+        GetIntValue(s => s.ExtraPartyPrisonerSize, s => s.ExtraPartyPrisonerSize, 0);
 
-    public static CheatValue<bool> NativeItemSpawning => (IsPerCampaignInstanceLoaded && PerCampaignInstance.NativeItemSpawning) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.NativeItemSpawning) : (GlobalInstance.NativeItemSpawning ? new CheatValue<bool>(isChanged: true, GlobalInstance.NativeItemSpawning) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<int> ExtraPartyMorale => 
+        GetIntValue(s => s.ExtraPartyMorale, s => s.ExtraPartyMorale, 0);
 
-    public static CheatValue<int> ExtraPartyMemberSize => (IsPerCampaignInstanceLoaded && PerCampaignInstance.ExtraPartyMemberSize != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.ExtraPartyMemberSize) : ((GlobalInstance.ExtraPartyMemberSize != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.ExtraPartyMemberSize) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<bool> InstantEscape => 
+        GetBoolValue(s => s.InstantEscape, s => s.InstantEscape);
 
-    public static CheatValue<int> ExtraPartyPrisonerSize => (IsPerCampaignInstanceLoaded && PerCampaignInstance.ExtraPartyPrisonerSize != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.ExtraPartyPrisonerSize) : ((GlobalInstance.ExtraPartyPrisonerSize != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.ExtraPartyPrisonerSize) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<float> FoodConsumptionPercentage => 
+        GetFloatValue(s => s.FoodConsumptionPercentage, s => s.FoodConsumptionPercentage, 100f);
 
-    public static CheatValue<int> ExtraPartyMorale => (IsPerCampaignInstanceLoaded && PerCampaignInstance.ExtraPartyMorale != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.ExtraPartyMorale) : ((GlobalInstance.ExtraPartyMorale != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.ExtraPartyMorale) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<float> TroopWagesPercentage => 
+        GetFloatValue(s => s.TroopWagesPercentage, s => s.TroopWagesPercentage, 100f);
 
-    public static CheatValue<bool> InstantEscape => (IsPerCampaignInstanceLoaded && PerCampaignInstance.InstantEscape) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.InstantEscape) : (GlobalInstance.InstantEscape ? new CheatValue<bool>(isChanged: true, GlobalInstance.InstantEscape) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> FreeTroopUpgrades => 
+        GetBoolValue(s => s.FreeTroopUpgrades, s => s.FreeTroopUpgrades);
 
-    public static CheatValue<float> FoodConsumptionPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.FoodConsumptionPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.FoodConsumptionPercentage) : ((GlobalInstance.FoodConsumptionPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.FoodConsumptionPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<bool> FreeCompanionHiring => 
+        GetBoolValue(s => s.FreeCompanionHiring, s => s.FreeCompanionHiring);
 
-    public static CheatValue<float> TroopWagesPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.TroopWagesPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.TroopWagesPercentage) : ((GlobalInstance.TroopWagesPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.TroopWagesPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<bool> InstantPrisonerRecruitment => 
+        GetBoolValue(s => s.InstantPrisonerRecruitment, s => s.InstantPrisonerRecruitment);
 
-    public static CheatValue<bool> FreeTroopUpgrades => (IsPerCampaignInstanceLoaded && PerCampaignInstance.FreeTroopUpgrades) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.FreeTroopUpgrades) : (GlobalInstance.FreeTroopUpgrades ? new CheatValue<bool>(isChanged: true, GlobalInstance.FreeTroopUpgrades) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> NoPrisonerEscape => 
+        GetBoolValue(s => s.NoPrisonerEscape, s => s.NoPrisonerEscape);
 
-    public static CheatValue<bool> FreeCompanionHiring => (IsPerCampaignInstanceLoaded && PerCampaignInstance.FreeCompanionHiring) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.FreeCompanionHiring) : (GlobalInstance.FreeCompanionHiring ? new CheatValue<bool>(isChanged: true, GlobalInstance.FreeCompanionHiring) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> PartyHealingMultiplier => 
+        GetFloatValue(s => s.PartyHealingMultiplier, s => s.PartyHealingMultiplier, 1f);
 
-    public static CheatValue<bool> InstantPrisonerRecruitment => (IsPerCampaignInstanceLoaded && PerCampaignInstance.InstantPrisonerRecruitment) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.InstantPrisonerRecruitment) : (GlobalInstance.InstantPrisonerRecruitment ? new CheatValue<bool>(isChanged: true, GlobalInstance.InstantPrisonerRecruitment) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<int> ExtraCompanionLimit => 
+        GetIntValue(s => s.ExtraCompanionLimit, s => s.ExtraCompanionLimit, 0);
 
-    public static CheatValue<bool> NoPrisonerEscape => (IsPerCampaignInstanceLoaded && PerCampaignInstance.NoPrisonerEscape) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.NoPrisonerEscape) : (GlobalInstance.NoPrisonerEscape ? new CheatValue<bool>(isChanged: true, GlobalInstance.NoPrisonerEscape) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<int> ExtraClanPartyLimit => 
+        GetIntValue(s => s.ExtraClanPartyLimit, s => s.ExtraClanPartyLimit, 0);
 
-    public static CheatValue<float> PartyHealingMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.PartyHealingMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.PartyHealingMultiplier) : ((GlobalInstance.PartyHealingMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.PartyHealingMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<int> ExtraClanPartySize => 
+        GetIntValue(s => s.ExtraClanPartySize, s => s.ExtraClanPartySize, 0);
 
-    public static CheatValue<int> ExtraCompanionLimit => (IsPerCampaignInstanceLoaded && PerCampaignInstance.ExtraCompanionLimit != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.ExtraCompanionLimit) : ((GlobalInstance.ExtraCompanionLimit != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.ExtraCompanionLimit) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<float> RelationGainAfterBattleMultiplier => 
+        GetFloatValue(s => s.RelationGainAfterBattleMultiplier, s => s.RelationGainAfterBattleMultiplier, 1f);
 
-    public static CheatValue<int> ExtraClanPartyLimit => (IsPerCampaignInstanceLoaded && PerCampaignInstance.ExtraClanPartyLimit != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.ExtraClanPartyLimit) : ((GlobalInstance.ExtraClanPartyLimit != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.ExtraClanPartyLimit) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<bool> PerfectRelationships => 
+        GetBoolValue(s => s.PerfectRelationships, s => s.PerfectRelationships);
 
-    public static CheatValue<int> ExtraClanPartySize => (IsPerCampaignInstanceLoaded && PerCampaignInstance.ExtraClanPartySize != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.ExtraClanPartySize) : ((GlobalInstance.ExtraClanPartySize != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.ExtraClanPartySize) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<bool> NeverDieOfOldAge => 
+        GetBoolValue(s => s.NeverDieOfOldAge, s => s.NeverDieOfOldAge);
 
-    public static CheatValue<float> RelationGainAfterBattleMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.RelationGainAfterBattleMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.RelationGainAfterBattleMultiplier) : ((GlobalInstance.RelationGainAfterBattleMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.RelationGainAfterBattleMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<bool> BarterOfferAlwaysAccepted => 
+        GetBoolValue(s => s.BarterOfferAlwaysAccepted, s => s.BarterOfferAlwaysAccepted);
 
-    public static CheatValue<bool> PerfectRelationships => (IsPerCampaignInstanceLoaded && PerCampaignInstance.PerfectRelationships) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.PerfectRelationships) : (GlobalInstance.PerfectRelationships ? new CheatValue<bool>(isChanged: true, GlobalInstance.PerfectRelationships) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> NoBarterCooldown => 
+        GetBoolValue(s => s.NoBarterCooldown, s => s.NoBarterCooldown);
 
-    public static CheatValue<bool> NeverDieOfOldAge => (IsPerCampaignInstanceLoaded && PerCampaignInstance.NeverDieOfOldAge) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.NeverDieOfOldAge) : (GlobalInstance.NeverDieOfOldAge ? new CheatValue<bool>(isChanged: true, GlobalInstance.NeverDieOfOldAge) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> ConversationAlwaysSuccessful => 
+        GetBoolValue(s => s.ConversationAlwaysSuccessful, s => s.ConversationAlwaysSuccessful);
 
-    public static CheatValue<bool> BarterOfferAlwaysAccepted => (IsPerCampaignInstanceLoaded && PerCampaignInstance.BarterOfferAlwaysAccepted) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.BarterOfferAlwaysAccepted) : (GlobalInstance.BarterOfferAlwaysAccepted ? new CheatValue<bool>(isChanged: true, GlobalInstance.BarterOfferAlwaysAccepted) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> PerfectAttraction => 
+        GetBoolValue(s => s.PerfectAttraction, s => s.PerfectAttraction);
 
-    public static CheatValue<bool> NoBarterCooldown => (IsPerCampaignInstanceLoaded && PerCampaignInstance.NoBarterCooldown) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.NoBarterCooldown) : (GlobalInstance.NoBarterCooldown ? new CheatValue<bool>(isChanged: true, GlobalInstance.NoBarterCooldown) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> AllowSameSexMarriage => 
+        GetBoolValue(s => s.AllowSameSexMarriage, s => s.AllowSameSexMarriage);
 
-    public static CheatValue<bool> ConversationAlwaysSuccessful => (IsPerCampaignInstanceLoaded && PerCampaignInstance.ConversationAlwaysSuccessful) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.ConversationAlwaysSuccessful) : (GlobalInstance.ConversationAlwaysSuccessful ? new CheatValue<bool>(isChanged: true, GlobalInstance.ConversationAlwaysSuccessful) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> PregnancyChanceMultiplier => 
+        GetFloatValue(s => s.PregnancyChanceMultiplier, s => s.PregnancyChanceMultiplier, 1f);
 
-    public static CheatValue<bool> PerfectAttraction => (IsPerCampaignInstanceLoaded && PerCampaignInstance.PerfectAttraction) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.PerfectAttraction) : (GlobalInstance.PerfectAttraction ? new CheatValue<bool>(isChanged: true, GlobalInstance.PerfectAttraction) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<int> AdjustPregnancyDuration => 
+        GetIntValue(s => s.AdjustPregnancyDuration, s => s.AdjustPregnancyDuration, 36);
 
-    public static CheatValue<bool> AllowSameSexMarriage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.AllowSameSexMarriage) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.AllowSameSexMarriage) : (GlobalInstance.AllowSameSexMarriage ? new CheatValue<bool>(isChanged: true, GlobalInstance.AllowSameSexMarriage) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> KingdomDecisionWeightMultiplier => 
+        GetFloatValue(s => s.KingdomDecisionWeightMultiplier, s => s.KingdomDecisionWeightMultiplier, 1f);
 
-    public static CheatValue<float> PregnancyChanceMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.PregnancyChanceMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.PregnancyChanceMultiplier) : ((GlobalInstance.PregnancyChanceMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.PregnancyChanceMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<bool> NoRelationshipLossOnDecision => 
+        GetBoolValue(s => s.NoRelationshipLossOnDecision, s => s.NoRelationshipLossOnDecision);
 
-    public static CheatValue<int> AdjustPregnancyDuration => (IsPerCampaignInstanceLoaded && PerCampaignInstance.AdjustPregnancyDuration != 36) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.AdjustPregnancyDuration) : ((GlobalInstance.AdjustPregnancyDuration != 36) ? new CheatValue<int>(isChanged: true, GlobalInstance.AdjustPregnancyDuration) : new CheatValue<int>(isChanged: false, 36));
+    public static CheatValue<bool> NoCrimeRatingForCrimes => 
+        GetBoolValue(s => s.NoCrimeRatingForCrimes, s => s.NoCrimeRatingForCrimes);
 
-    public static CheatValue<float> KingdomDecisionWeightMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.KingdomDecisionWeightMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.KingdomDecisionWeightMultiplier) : ((GlobalInstance.KingdomDecisionWeightMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.KingdomDecisionWeightMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<float> DecisionOverrideInfluenceCostPercentage => 
+        GetFloatValue(s => s.DecisionOverrideInfluenceCostPercentage, s => s.DecisionOverrideInfluenceCostPercentage, 100f);
 
-    public static CheatValue<bool> NoRelationshipLossOnDecision => (IsPerCampaignInstanceLoaded && PerCampaignInstance.NoRelationshipLossOnDecision) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.NoRelationshipLossOnDecision) : (GlobalInstance.NoRelationshipLossOnDecision ? new CheatValue<bool>(isChanged: true, GlobalInstance.NoRelationshipLossOnDecision) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> ExperienceMultiplier => 
+        GetFloatValue(s => s.ExperienceMultiplier, s => s.ExperienceMultiplier, 1f);
 
-    public static CheatValue<bool> NoCrimeRatingForCrimes => (IsPerCampaignInstanceLoaded && PerCampaignInstance.NoCrimeRatingForCrimes) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.NoCrimeRatingForCrimes) : (GlobalInstance.NoCrimeRatingForCrimes ? new CheatValue<bool>(isChanged: true, GlobalInstance.NoCrimeRatingForCrimes) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> CompanionExperienceMultiplier => 
+        GetFloatValue(s => s.CompanionExperienceMultiplier, s => s.CompanionExperienceMultiplier, 1f);
 
-    public static CheatValue<float> DecisionOverrideInfluenceCostPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.DecisionOverrideInfluenceCostPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.DecisionOverrideInfluenceCostPercentage) : ((GlobalInstance.DecisionOverrideInfluenceCostPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.DecisionOverrideInfluenceCostPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<float> ClanExperienceMultiplier => 
+        GetFloatValue(s => s.ClanExperienceMultiplier, s => s.ClanExperienceMultiplier, 1f);
 
-    public static CheatValue<float> ExperienceMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.ExperienceMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.ExperienceMultiplier) : ((GlobalInstance.ExperienceMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.ExperienceMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<float> LearningRateMultiplier => 
+        GetFloatValue(s => s.LearningRateMultiplier, s => s.LearningRateMultiplier, 1f);
 
-    public static CheatValue<float> CompanionExperienceMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.CompanionExperienceMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.CompanionExperienceMultiplier) : ((GlobalInstance.CompanionExperienceMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.CompanionExperienceMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<float> CompanionLearningRateMultiplier => 
+        GetFloatValue(s => s.CompanionLearningRateMultiplier, s => s.CompanionLearningRateMultiplier, 1f);
 
-    public static CheatValue<float> ClanExperienceMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.ClanExperienceMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.ClanExperienceMultiplier) : ((GlobalInstance.ClanExperienceMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.ClanExperienceMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<float> LearningLimitMultiplier => 
+        GetFloatValue(s => s.LearningLimitMultiplier, s => s.LearningLimitMultiplier, 1f);
 
-    public static CheatValue<float> LearningRateMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.LearningRateMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.LearningRateMultiplier) : ((GlobalInstance.LearningRateMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.LearningRateMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<float> TroopExperienceMultiplier => 
+        GetFloatValue(s => s.TroopExperienceMultiplier, s => s.TroopExperienceMultiplier, 1f);
 
-    public static CheatValue<float> CompanionLearningRateMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.CompanionLearningRateMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.CompanionLearningRateMultiplier) : ((GlobalInstance.CompanionLearningRateMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.CompanionLearningRateMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<bool> FreeFocusPointAssignment => 
+        GetBoolValue(s => s.FreeFocusPointAssignment, s => s.FreeFocusPointAssignment);
 
-    public static CheatValue<float> LearningLimitMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.LearningLimitMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.LearningLimitMultiplier) : ((GlobalInstance.LearningLimitMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.LearningLimitMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<float> SiegeBuildingSpeedMultiplier => 
+        GetFloatValue(s => s.SiegeBuildingSpeedMultiplier, s => s.SiegeBuildingSpeedMultiplier, 1f);
 
-    public static CheatValue<float> TroopExperienceMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.TroopExperienceMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.TroopExperienceMultiplier) : ((GlobalInstance.TroopExperienceMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.TroopExperienceMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<float> EnemySiegeBuildingSpeedPercentage => 
+        GetFloatValue(s => s.EnemySiegeBuildingSpeedPercentage, s => s.EnemySiegeBuildingSpeedPercentage, 100f);
 
-    public static CheatValue<bool> FreeFocusPointAssignment => (IsPerCampaignInstanceLoaded && PerCampaignInstance.FreeFocusPointAssignment) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.FreeFocusPointAssignment) : (GlobalInstance.FreeFocusPointAssignment ? new CheatValue<bool>(isChanged: true, GlobalInstance.FreeFocusPointAssignment) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> FactionArmyCohesionLossPercentage => 
+        GetFloatValue(s => s.FactionArmyCohesionLossPercentage, s => s.FactionArmyCohesionLossPercentage, 100f);
 
-    public static CheatValue<float> SiegeBuildingSpeedMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.SiegeBuildingSpeedMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.SiegeBuildingSpeedMultiplier) : ((GlobalInstance.SiegeBuildingSpeedMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.SiegeBuildingSpeedMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<float> ArmyCohesionLossPercentage => 
+        GetFloatValue(s => s.ArmyCohesionLossPercentage, s => s.ArmyCohesionLossPercentage, 100f);
 
-    public static CheatValue<float> EnemySiegeBuildingSpeedPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.EnemySiegeBuildingSpeedPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.EnemySiegeBuildingSpeedPercentage) : ((GlobalInstance.EnemySiegeBuildingSpeedPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.EnemySiegeBuildingSpeedPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<float> ArmyFoodConsumptionPercentage => 
+        GetFloatValue(s => s.ArmyFoodConsumptionPercentage, s => s.ArmyFoodConsumptionPercentage, 100f);
 
-    public static CheatValue<float> FactionArmyCohesionLossPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.FactionArmyCohesionLossPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.FactionArmyCohesionLossPercentage) : ((GlobalInstance.FactionArmyCohesionLossPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.FactionArmyCohesionLossPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<bool> VillagesNeverRaided => 
+        GetBoolValue(s => s.VillagesNeverRaided, s => s.VillagesNeverRaided);
 
-    public static CheatValue<float> ArmyCohesionLossPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.ArmyCohesionLossPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.ArmyCohesionLossPercentage) : ((GlobalInstance.ArmyCohesionLossPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.ArmyCohesionLossPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<bool> DisguiseAlwaysWorks => 
+        GetBoolValue(s => s.DisguiseAlwaysWorks, s => s.DisguiseAlwaysWorks);
 
-    public static CheatValue<float> ArmyFoodConsumptionPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.ArmyFoodConsumptionPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.ArmyFoodConsumptionPercentage) : ((GlobalInstance.ArmyFoodConsumptionPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.ArmyFoodConsumptionPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<bool> FreeTroopRecruitment => 
+        GetBoolValue(s => s.FreeTroopRecruitment, s => s.FreeTroopRecruitment);
 
-    public static CheatValue<bool> VillagesNeverRaided => (IsPerCampaignInstanceLoaded && PerCampaignInstance.VillagesNeverRaided) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.VillagesNeverRaided) : (GlobalInstance.VillagesNeverRaided ? new CheatValue<bool>(isChanged: true, GlobalInstance.VillagesNeverRaided) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> ItemTradingCostPercentage => 
+        GetFloatValue(s => s.ItemTradingCostPercentage, s => s.ItemTradingCostPercentage, 100f);
 
-    public static CheatValue<bool> DisguiseAlwaysWorks => (IsPerCampaignInstanceLoaded && PerCampaignInstance.DisguiseAlwaysWorks) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.DisguiseAlwaysWorks) : (GlobalInstance.DisguiseAlwaysWorks ? new CheatValue<bool>(isChanged: true, GlobalInstance.DisguiseAlwaysWorks) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> SellingPriceMultiplier => 
+        GetFloatValue(s => s.SellingPriceMultiplier, s => s.SellingPriceMultiplier, 1f);
 
-    public static CheatValue<bool> FreeTroopRecruitment => (IsPerCampaignInstanceLoaded && PerCampaignInstance.FreeTroopRecruitment) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.FreeTroopRecruitment) : (GlobalInstance.FreeTroopRecruitment ? new CheatValue<bool>(isChanged: true, GlobalInstance.FreeTroopRecruitment) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> TournamentMaximumBetMultiplier => 
+        GetFloatValue(s => s.TournamentMaximumBetMultiplier, s => s.TournamentMaximumBetMultiplier, 1f);
 
-    public static CheatValue<float> ItemTradingCostPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.ItemTradingCostPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.ItemTradingCostPercentage) : ((GlobalInstance.ItemTradingCostPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.ItemTradingCostPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<int> DailyFoodBonus => 
+        GetIntValue(s => s.DailyFoodBonus, s => s.DailyFoodBonus, 0);
 
-    public static CheatValue<float> SellingPriceMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.SellingPriceMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.SellingPriceMultiplier) : ((GlobalInstance.SellingPriceMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.SellingPriceMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<int> DailyGarrisonBonus => 
+        GetIntValue(s => s.DailyGarrisonBonus, s => s.DailyGarrisonBonus, 0);
 
-    public static CheatValue<float> TournamentMaximumBetMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.TournamentMaximumBetMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.TournamentMaximumBetMultiplier) : ((GlobalInstance.TournamentMaximumBetMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.TournamentMaximumBetMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<int> DailyMilitiaBonus => 
+        GetIntValue(s => s.DailyMilitiaBonus, s => s.DailyMilitiaBonus, 0);
 
-    public static CheatValue<int> DailyFoodBonus => (IsPerCampaignInstanceLoaded && PerCampaignInstance.DailyFoodBonus != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.DailyFoodBonus) : ((GlobalInstance.DailyFoodBonus != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.DailyFoodBonus) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<int> DailyProsperityBonus => 
+        GetIntValue(s => s.DailyProsperityBonus, s => s.DailyProsperityBonus, 0);
 
-    public static CheatValue<int> DailyGarrisonBonus => (IsPerCampaignInstanceLoaded && PerCampaignInstance.DailyGarrisonBonus != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.DailyGarrisonBonus) : ((GlobalInstance.DailyGarrisonBonus != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.DailyGarrisonBonus) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<int> DailyLoyaltyBonus => 
+        GetIntValue(s => s.DailyLoyaltyBonus, s => s.DailyLoyaltyBonus, 0);
 
-    public static CheatValue<int> DailyMilitiaBonus => (IsPerCampaignInstanceLoaded && PerCampaignInstance.DailyMilitiaBonus != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.DailyMilitiaBonus) : ((GlobalInstance.DailyMilitiaBonus != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.DailyMilitiaBonus) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<int> DailySecurityBonus => 
+        GetIntValue(s => s.DailySecurityBonus, s => s.DailySecurityBonus, 0);
 
-    public static CheatValue<int> DailyProsperityBonus => (IsPerCampaignInstanceLoaded && PerCampaignInstance.DailyProsperityBonus != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.DailyProsperityBonus) : ((GlobalInstance.DailyProsperityBonus != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.DailyProsperityBonus) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<int> DailyHearthsBonus => 
+        GetIntValue(s => s.DailyHearthsBonus, s => s.DailyHearthsBonus, 0);
 
-    public static CheatValue<int> DailyLoyaltyBonus => (IsPerCampaignInstanceLoaded && PerCampaignInstance.DailyLoyaltyBonus != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.DailyLoyaltyBonus) : ((GlobalInstance.DailyLoyaltyBonus != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.DailyLoyaltyBonus) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<float> GarrisonWagesPercentage => 
+        GetFloatValue(s => s.GarrisonWagesPercentage, s => s.GarrisonWagesPercentage, 100f);
 
-    public static CheatValue<int> DailySecurityBonus => (IsPerCampaignInstanceLoaded && PerCampaignInstance.DailySecurityBonus != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.DailySecurityBonus) : ((GlobalInstance.DailySecurityBonus != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.DailySecurityBonus) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<bool> NeverRequireCivilianEquipment => 
+        GetBoolValue(s => s.NeverRequireCivilianEquipment, s => s.NeverRequireCivilianEquipment);
 
-    public static CheatValue<int> DailyHearthsBonus => (IsPerCampaignInstanceLoaded && PerCampaignInstance.DailyHearthsBonus != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.DailyHearthsBonus) : ((GlobalInstance.DailyHearthsBonus != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.DailyHearthsBonus) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<float> ConstructionPowerMultiplier => 
+        GetFloatValue(s => s.ConstructionPowerMultiplier, s => s.ConstructionPowerMultiplier, 1f);
 
-    public static CheatValue<float> GarrisonWagesPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.GarrisonWagesPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.GarrisonWagesPercentage) : ((GlobalInstance.GarrisonWagesPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.GarrisonWagesPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<bool> NoBribeToEnterKeep => 
+        GetBoolValue(s => s.NoBribeToEnterKeep, s => s.NoBribeToEnterKeep);
 
-    public static CheatValue<bool> NeverRequireCivilianEquipment => (IsPerCampaignInstanceLoaded && PerCampaignInstance.NeverRequireCivilianEquipment) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.NeverRequireCivilianEquipment) : (GlobalInstance.NeverRequireCivilianEquipment ? new CheatValue<bool>(isChanged: true, GlobalInstance.NeverRequireCivilianEquipment) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> SettlementsNeverRebel => 
+        GetBoolValue(s => s.SettlementsNeverRebel, s => s.SettlementsNeverRebel);
 
-    public static CheatValue<float> ConstructionPowerMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.ConstructionPowerMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.ConstructionPowerMultiplier) : ((GlobalInstance.ConstructionPowerMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.ConstructionPowerMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<float> SmithingEnergyCostPercentage => 
+        GetFloatValue(s => s.SmithingEnergyCostPercentage, s => s.SmithingEnergyCostPercentage, 100f);
 
-    public static CheatValue<bool> NoBribeToEnterKeep => (IsPerCampaignInstanceLoaded && PerCampaignInstance.NoBribeToEnterKeep) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.NoBribeToEnterKeep) : (GlobalInstance.NoBribeToEnterKeep ? new CheatValue<bool>(isChanged: true, GlobalInstance.NoBribeToEnterKeep) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<bool> UnlockAllParts => 
+        GetBoolValue(s => s.UnlockAllParts, s => s.UnlockAllParts);
 
-    public static CheatValue<bool> SettlementsNeverRebel => (IsPerCampaignInstanceLoaded && PerCampaignInstance.SettlementsNeverRebel) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.SettlementsNeverRebel) : (GlobalInstance.SettlementsNeverRebel ? new CheatValue<bool>(isChanged: true, GlobalInstance.SettlementsNeverRebel) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<float> SmithingDifficultyPercentage => 
+        GetFloatValue(s => s.SmithingDifficultyPercentage, s => s.SmithingDifficultyPercentage, 100f);
 
-    public static CheatValue<float> SmithingEnergyCostPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.SmithingEnergyCostPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.SmithingEnergyCostPercentage) : ((GlobalInstance.SmithingEnergyCostPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.SmithingEnergyCostPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<float> SmithingCostPercentage => 
+        GetFloatValue(s => s.SmithingCostPercentage, s => s.SmithingCostPercentage, 100f);
 
-    public static CheatValue<bool> UnlockAllParts => (IsPerCampaignInstanceLoaded && PerCampaignInstance.UnlockAllParts) ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.UnlockAllParts) : (GlobalInstance.UnlockAllParts ? new CheatValue<bool>(isChanged: true, GlobalInstance.UnlockAllParts) : new CheatValue<bool>(isChanged: false, value: false));
+    public static CheatValue<int> CraftedWeaponHandlingBonus => 
+        GetIntValue(s => s.CraftedWeaponHandlingBonus, s => s.CraftedWeaponHandlingBonus, 0);
 
-    public static CheatValue<float> SmithingDifficultyPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.SmithingDifficultyPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.SmithingDifficultyPercentage) : ((GlobalInstance.SmithingDifficultyPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.SmithingDifficultyPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<int> CraftedWeaponSwingDamageBonus => 
+        GetIntValue(s => s.CraftedWeaponSwingDamageBonus, s => s.CraftedWeaponSwingDamageBonus, 0);
 
-    public static CheatValue<float> SmithingCostPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.SmithingCostPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.SmithingCostPercentage) : ((GlobalInstance.SmithingCostPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.SmithingCostPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<int> CraftedWeaponSwingSpeedBonus => 
+        GetIntValue(s => s.CraftedWeaponSwingSpeedBonus, s => s.CraftedWeaponSwingSpeedBonus, 0);
 
-    public static CheatValue<int> CraftedWeaponHandlingBonus => (IsPerCampaignInstanceLoaded && PerCampaignInstance.CraftedWeaponHandlingBonus != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.CraftedWeaponHandlingBonus) : ((GlobalInstance.CraftedWeaponHandlingBonus != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.CraftedWeaponHandlingBonus) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<int> CraftedWeaponThrustDamageBonus => 
+        GetIntValue(s => s.CraftedWeaponThrustDamageBonus, s => s.CraftedWeaponThrustDamageBonus, 0);
 
-    public static CheatValue<int> CraftedWeaponSwingDamageBonus => (IsPerCampaignInstanceLoaded && PerCampaignInstance.CraftedWeaponSwingDamageBonus != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.CraftedWeaponSwingDamageBonus) : ((GlobalInstance.CraftedWeaponSwingDamageBonus != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.CraftedWeaponSwingDamageBonus) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<int> CraftedWeaponThrustSpeedBonus => 
+        GetIntValue(s => s.CraftedWeaponThrustSpeedBonus, s => s.CraftedWeaponThrustSpeedBonus, 0);
 
-    public static CheatValue<int> CraftedWeaponSwingSpeedBonus => (IsPerCampaignInstanceLoaded && PerCampaignInstance.CraftedWeaponSwingSpeedBonus != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.CraftedWeaponSwingSpeedBonus) : ((GlobalInstance.CraftedWeaponSwingSpeedBonus != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.CraftedWeaponSwingSpeedBonus) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<float> WorkshopBuyingCostPercentage => 
+        GetFloatValue(s => s.WorkshopBuyingCostPercentage, s => s.WorkshopBuyingCostPercentage, 100f);
 
-    public static CheatValue<int> CraftedWeaponThrustDamageBonus => (IsPerCampaignInstanceLoaded && PerCampaignInstance.CraftedWeaponThrustDamageBonus != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.CraftedWeaponThrustDamageBonus) : ((GlobalInstance.CraftedWeaponThrustDamageBonus != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.CraftedWeaponThrustDamageBonus) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<float> WorkshopDailyExpensePercentage => 
+        GetFloatValue(s => s.WorkshopDailyExpensePercentage, s => s.WorkshopDailyExpensePercentage, 100f);
 
-    public static CheatValue<int> CraftedWeaponThrustSpeedBonus => (IsPerCampaignInstanceLoaded && PerCampaignInstance.CraftedWeaponThrustSpeedBonus != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.CraftedWeaponThrustSpeedBonus) : ((GlobalInstance.CraftedWeaponThrustSpeedBonus != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.CraftedWeaponThrustSpeedBonus) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<float> WorkshopSellingCostMultiplier => 
+        GetFloatValue(s => s.WorkshopSellingCostMultiplier, s => s.WorkshopSellingCostMultiplier, 1f);
 
-    public static CheatValue<float> WorkshopBuyingCostPercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.WorkshopBuyingCostPercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.WorkshopBuyingCostPercentage) : ((GlobalInstance.WorkshopBuyingCostPercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.WorkshopBuyingCostPercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<AutoChoosePerk_Type> AutoChoosePerk => 
+        GetDropdownValue(s => s.AutoChoosePerk, s => s.AutoChoosePerk, AutoChoosePerk_Type.No);
 
-    public static CheatValue<float> WorkshopDailyExpensePercentage => (IsPerCampaignInstanceLoaded && PerCampaignInstance.WorkshopDailyExpensePercentage != 100f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.WorkshopDailyExpensePercentage) : ((GlobalInstance.WorkshopDailyExpensePercentage != 100f) ? new CheatValue<float>(isChanged: true, GlobalInstance.WorkshopDailyExpensePercentage) : new CheatValue<float>(isChanged: false, 100f));
+    public static CheatValue<Setting_Language> LanguageSetting => 
+        GetDropdownValue(s => s.LanguageSetting, s => s.LanguageSetting, Setting_Language.English);
 
-    public static CheatValue<float> WorkshopSellingCostMultiplier => (IsPerCampaignInstanceLoaded && PerCampaignInstance.WorkshopSellingCostMultiplier != 1f) ? new CheatValue<float>(isChanged: true, PerCampaignInstance.WorkshopSellingCostMultiplier) : ((GlobalInstance.WorkshopSellingCostMultiplier != 1f) ? new CheatValue<float>(isChanged: true, GlobalInstance.WorkshopSellingCostMultiplier) : new CheatValue<float>(isChanged: false, 1f));
+    public static CheatValue<int> Village_Init_Gold_Extra => 
+        GetIntValue(s => s.Village_Init_Gold_Extra, s => s.Village_Init_Gold_Extra, 0);
 
-    public static CheatValue<AutoChoosePerk_Type> AutoChoosePerk => (IsPerCampaignInstanceLoaded && PerCampaignInstance.AutoChoosePerk.GetValue() != AutoChoosePerk_Type.No) ? new CheatValue<AutoChoosePerk_Type>(isChanged: true, PerCampaignInstance.AutoChoosePerk.GetValue()) : ((GlobalInstance.AutoChoosePerk.GetValue() != AutoChoosePerk_Type.No) ? new CheatValue<AutoChoosePerk_Type>(isChanged: true, GlobalInstance.AutoChoosePerk.GetValue()) : new CheatValue<AutoChoosePerk_Type>(isChanged: false, AutoChoosePerk_Type.No));
+    public static CheatValue<int> Town_Init_Gold_Extra => 
+        GetIntValue(s => s.Town_Init_Gold_Extra, s => s.Town_Init_Gold_Extra, 0);
 
-    public static CheatValue<Setting_Language> LanguageSetting => (IsPerCampaignInstanceLoaded && PerCampaignInstance.LanguageSetting.GetValue() != Setting_Language.English) ? new CheatValue<Setting_Language>(isChanged: true, PerCampaignInstance.LanguageSetting.GetValue()) : ((GlobalInstance.LanguageSetting.GetValue() != Setting_Language.English) ? new CheatValue<Setting_Language>(isChanged: true, GlobalInstance.LanguageSetting.GetValue()) : new CheatValue<Setting_Language>(isChanged: false, Setting_Language.English));
 
-    public static CheatValue<int> Village_Init_Gold_Extra => (IsPerCampaignInstanceLoaded && PerCampaignInstance.Village_Init_Gold_Extra != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.Village_Init_Gold_Extra) : ((GlobalInstance.Village_Init_Gold_Extra != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.Village_Init_Gold_Extra) : new CheatValue<int>(isChanged: false, 0));
-    public static CheatValue<int> Town_Init_Gold_Extra => (IsPerCampaignInstanceLoaded && PerCampaignInstance.Town_Init_Gold_Extra != 0) ? new CheatValue<int>(isChanged: true, PerCampaignInstance.Town_Init_Gold_Extra) : ((GlobalInstance.Town_Init_Gold_Extra != 0) ? new CheatValue<int>(isChanged: true, GlobalInstance.Town_Init_Gold_Extra) : new CheatValue<int>(isChanged: false, 0));
+    public static CheatValue<bool> UnblockableThrust_player => 
+        GetBoolValue(s => s.UnblockableThrust_player, s => s.UnblockableThrust_player);
 
+    public static CheatValue<bool> UnblockableThrust_ally => 
+        GetBoolValue(s => s.UnblockableThrust_ally, s => s.UnblockableThrust_ally);
 
-    public static CheatValue<bool> UnblockableThrust_player =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.UnblockableThrust_player)
-? new CheatValue<bool>(isChanged: true, PerCampaignInstance.UnblockableThrust_player)
-: ((GlobalInstance.UnblockableThrust_player)
-? new CheatValue<bool>(isChanged: true, GlobalInstance.UnblockableThrust_player)
-: new CheatValue<bool>(isChanged: false, false));
+    public static CheatValue<bool> UnblockableThrust_enemy => 
+        GetBoolValue(s => s.UnblockableThrust_enemy, s => s.UnblockableThrust_enemy);
 
-    public static CheatValue<bool> UnblockableThrust_ally =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.UnblockableThrust_ally)
-? new CheatValue<bool>(isChanged: true, PerCampaignInstance.UnblockableThrust_ally)
-: ((GlobalInstance.UnblockableThrust_ally)
-? new CheatValue<bool>(isChanged: true, GlobalInstance.UnblockableThrust_ally)
-: new CheatValue<bool>(isChanged: false, false));
+    public static CheatValue<int> xGang => 
+        GetIntValue(s => s.xGang, s => s.xGang, 0);
 
-    public static CheatValue<bool> UnblockableThrust_enemy =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.UnblockableThrust_enemy)
-? new CheatValue<bool>(isChanged: true, PerCampaignInstance.UnblockableThrust_enemy)
-: ((GlobalInstance.UnblockableThrust_enemy)
-? new CheatValue<bool>(isChanged: true, GlobalInstance.UnblockableThrust_enemy)
-: new CheatValue<bool>(isChanged: false, false));
+    public static CheatValue<int> xArt => 
+        GetIntValue(s => s.xArt, s => s.xArt, 0);
 
-//    public static CheatValue<bool> UnblockableThrust_AI =>
-//(IsPerCampaignInstanceLoaded && PerCampaignInstance.UnblockableThrust_AI != true)
-//? new CheatValue<bool>(isChanged: true, PerCampaignInstance.UnblockableThrust_AI)
-//: ((GlobalInstance.UnblockableThrust_AI != true)
-//? new CheatValue<bool>(isChanged: true, GlobalInstance.UnblockableThrust_AI)
-//: new CheatValue<bool>(isChanged: false, true));
+    public static CheatValue<int> xMerch => 
+        GetIntValue(s => s.xMerch, s => s.xMerch, 0);
 
+    public static CheatValue<int> xVill => 
+        GetIntValue(s => s.xVill, s => s.xVill, 0);
 
-    //        public static CheatValue<bool> InfiniteMomentum =>
-    //(IsPerCampaignInstanceLoaded && PerCampaignInstance.InfiniteMomentum != true)
-    //? new CheatValue<bool>(isChanged: true, PerCampaignInstance.InfiniteMomentum)
-    //: ((GlobalInstance.InfiniteMomentum != true)
-    //? new CheatValue<bool>(isChanged: true, GlobalInstance.InfiniteMomentum)
-    //: new CheatValue<bool>(isChanged: false, true));
-    public static CheatValue<int> xGang =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.xGang != 0)
-? new CheatValue<int>(true, PerCampaignInstance.xGang)
-: ((GlobalInstance.xGang != 0)
-    ? new CheatValue<int>(true, GlobalInstance.xGang)
-    : new CheatValue<int>(false, 0));
-    public static CheatValue<int> xArt =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.xArt != 0)
-? new CheatValue<int>(true, PerCampaignInstance.xArt)
-: ((GlobalInstance.xArt != 0)
-? new CheatValue<int>(true, GlobalInstance.xArt)
-: new CheatValue<int>(false, 0));
-    public static CheatValue<int> xMerch =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.xMerch != 0)
-? new CheatValue<int>(true, PerCampaignInstance.xMerch)
-: ((GlobalInstance.xMerch != 0)
-? new CheatValue<int>(true, GlobalInstance.xMerch)
-: new CheatValue<int>(false, 0));
-    public static CheatValue<int> xVill =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.xVill != 0)
-? new CheatValue<int>(true, PerCampaignInstance.xVill)
-: ((GlobalInstance.xVill != 0)
-? new CheatValue<int>(true, GlobalInstance.xVill)
-: new CheatValue<int>(false, 0));
+    public static CheatValue<int> xRural => 
+        GetIntValue(s => s.xRural, s => s.xRural, 0);
 
-    public static CheatValue<int> xRural =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.xRural != 0)
-? new CheatValue<int>(true, PerCampaignInstance.xRural)
-: ((GlobalInstance.xRural != 0)
-? new CheatValue<int>(true, GlobalInstance.xRural)
-: new CheatValue<int>(false, 0));
 
+    public static CheatValue<int> AddMoneyThreshhold => 
+        GetIntValue(s => s.AddMoneyThreshhold, s => s.AddMoneyThreshhold, 0);
 
+    public static CheatValue<int> MaxAttr => 
+        GetIntValue(s => s.MaxAttr, s => s.MaxAttr, 10);
 
+    public static CheatValue<int> AddMoney_count => 
+        GetIntValue(s => s.AddMoney_count, s => s.AddMoney_count, 0);
 
+    public static CheatValue<bool> KeepDaughter => 
+        GetBoolValue(s => s.KeepDaughter, s => s.KeepDaughter);
 
 
-    public static CheatValue<int> AddMoneyThreshhold =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.AddMoneyThreshhold != 0)
-    ? new CheatValue<int>(true, PerCampaignInstance.AddMoneyThreshhold)
-    : ((GlobalInstance.AddMoneyThreshhold != 0)
-        ? new CheatValue<int>(true, GlobalInstance.AddMoneyThreshhold)
-        : new CheatValue<int>(false, 0));
+    public static CheatValue<bool> PlayerAlwaysCrush => 
+        GetBoolValue(s => s.PlayerAlwaysCrush, s => s.PlayerAlwaysCrush);
 
-    public static CheatValue<int> MaxAttr =>
-    (IsPerCampaignInstanceLoaded && PerCampaignInstance.MaxAttr != 10)
-        ? new CheatValue<int>(true, PerCampaignInstance.MaxAttr)
-        : ((GlobalInstance.MaxAttr != 10)
-            ? new CheatValue<int>(true, GlobalInstance.MaxAttr)
-            : new CheatValue<int>(false, 10));
 
-    public static CheatValue<int> AddMoney_count =>
-    (IsPerCampaignInstanceLoaded && PerCampaignInstance.AddMoney_count != 0)
-        ? new CheatValue<int>(true, PerCampaignInstance.AddMoney_count)
-        : ((GlobalInstance.AddMoney_count != 0)
-            ? new CheatValue<int>(true, GlobalInstance.AddMoney_count)
-            : new CheatValue<int>(false, 0));
+    public static CheatValue<bool> AllyCrush => 
+        GetBoolValue(s => s.AllyCrush, s => s.AllyCrush);
 
-    public static CheatValue<bool> KeepDaughter =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.KeepDaughter)
-? new CheatValue<bool>(isChanged: true, PerCampaignInstance.KeepDaughter)
-: ((GlobalInstance.KeepDaughter)
-? new CheatValue<bool>(isChanged: true, GlobalInstance.KeepDaughter)
-: new CheatValue<bool>(isChanged: false, false));
+    public static CheatValue<bool> EnemyCrush => 
+        GetBoolValue(s => s.EnemyCrush, s => s.EnemyCrush);
 
+    public static CheatValue<bool> EnableEverYoung => 
+        GetBoolValue(s => s.EnableEverYoung, s => s.EnableEverYoung);
 
-    public static CheatValue<bool> PlayerAlwaysCrush =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.PlayerAlwaysCrush)
-? new CheatValue<bool>(isChanged: true, PerCampaignInstance.PlayerAlwaysCrush)
-: ((GlobalInstance.PlayerAlwaysCrush)
-? new CheatValue<bool>(isChanged: true, GlobalInstance.PlayerAlwaysCrush)
-: new CheatValue<bool>(isChanged: false, false));
+    public static CheatValue<int> EverYoungSkillNeed => 
+        GetIntValue(s => s.EverYoungSkillNeed, s => s.EverYoungSkillNeed, 400);
 
-    //    public static CheatValue<bool> AICrush =>
-    //(IsPerCampaignInstanceLoaded && PerCampaignInstance.AICrush)
-    //? new CheatValue<bool>(isChanged: true, PerCampaignInstance.AICrush): 
-    //        ((GlobalInstance.AICrush) ? new CheatValue<bool>(isChanged: true, GlobalInstance.AICrush): new CheatValue<bool>(isChanged: false, false));
+    public static CheatValue<float> VigorDmgPercent => 
+        GetFloatValue(s => s.VigorDmgPercent, s => s.VigorDmgPercent, 0.02f);
 
+    public static CheatValue<float> VigorArmorAdd => 
+        GetFloatValue(s => s.VigorArmorAdd, s => s.VigorArmorAdd, 1f);
 
-    public static CheatValue<bool> AllyCrush =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.AllyCrush)
-? new CheatValue<bool>(isChanged: true, PerCampaignInstance.AllyCrush)
-: ((GlobalInstance.AllyCrush)
-? new CheatValue<bool>(isChanged: true, GlobalInstance.AllyCrush)
-: new CheatValue<bool>(isChanged: false, false));
+    public static CheatValue<float> VigorMountArmorAdd => 
+        GetFloatValue(s => s.VigorMountArmorAdd, s => s.VigorMountArmorAdd, 1f);
 
-    public static CheatValue<bool> EnemyCrush =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.EnemyCrush)
-? new CheatValue<bool>(isChanged: true, PerCampaignInstance.EnemyCrush)
-: ((GlobalInstance.EnemyCrush)
-? new CheatValue<bool>(isChanged: true, GlobalInstance.EnemyCrush)
-: new CheatValue<bool>(isChanged: false, false));
+    public static CheatValue<float> VigorShieldEndurancePercent => 
+        GetFloatValue(s => s.VigorShieldEndurancePercent, s => s.VigorShieldEndurancePercent, 1f);
 
-    public static CheatValue<bool> EnableEverYoung =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.EnableEverYoung)
-    ? new CheatValue<bool>(isChanged: true, PerCampaignInstance.EnableEverYoung)
-    : ((GlobalInstance.EnableEverYoung)
-        ? new CheatValue<bool>(isChanged: true, GlobalInstance.EnableEverYoung)
-        : new CheatValue<bool>(isChanged: false, false));
+    public static CheatValue<float> VigorFinalDmgAdd => 
+        GetFloatValue(s => s.VigorFinalDmgAdd, s => s.VigorFinalDmgAdd, 0.334f);
 
-    public static CheatValue<int> EverYoungSkillNeed =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.EverYoungSkillNeed != 400)
-            ? new CheatValue<int>(isChanged: true, PerCampaignInstance.EverYoungSkillNeed)
-            : ((GlobalInstance.EverYoungSkillNeed != 400)
-                ? new CheatValue<int>(isChanged: true, GlobalInstance.EverYoungSkillNeed)
-                : new CheatValue<int>(isChanged: false, 400));
+    public static CheatValue<float> VigorDmgTakenReduce => 
+        GetFloatValue(s => s.VigorDmgTakenReduce, s => s.VigorDmgTakenReduce, 0.334f);
 
-    public static CheatValue<float> VigorDmgPercent =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.VigorDmgPercent != 0.02f)
-    ? new CheatValue<float>(true, PerCampaignInstance.VigorDmgPercent)
-    : ((GlobalInstance.VigorDmgPercent != 0.02f)
-        ? new CheatValue<float>(true, GlobalInstance.VigorDmgPercent)
-        : new CheatValue<float>(false, 0.02f));
+    public static CheatValue<int> VigorCrushThroughPositive => 
+        GetIntValue(s => s.VigorCrushThroughPositive, s => s.VigorCrushThroughPositive, 5);
 
-    public static CheatValue<float> VigorArmorAdd =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.VigorArmorAdd != 1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.VigorArmorAdd)
-            : ((GlobalInstance.VigorArmorAdd != 1f)
-                ? new CheatValue<float>(true, GlobalInstance.VigorArmorAdd)
-                : new CheatValue<float>(false, 1f));
+    public static CheatValue<int> VigorCrushThroughNegative => 
+        GetIntValue(s => s.VigorCrushThroughNegative, s => s.VigorCrushThroughNegative, 10);
 
-    public static CheatValue<float> VigorMountArmorAdd =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.VigorMountArmorAdd != 1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.VigorMountArmorAdd)
-            : ((GlobalInstance.VigorMountArmorAdd != 1f)
-                ? new CheatValue<float>(true, GlobalInstance.VigorMountArmorAdd)
-                : new CheatValue<float>(false, 1f));
+    public static CheatValue<float> IntelligenceAmmoAddPercent => 
+        GetFloatValue(s => s.IntelligenceAmmoAddPercent, s => s.IntelligenceAmmoAddPercent, 0.1f);
 
-    public static CheatValue<float> VigorShieldEndurancePercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.VigorShieldEndurancePercent != 1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.VigorShieldEndurancePercent)
-            : ((GlobalInstance.VigorShieldEndurancePercent != 1f)
-                ? new CheatValue<float>(true, GlobalInstance.VigorShieldEndurancePercent)
-                : new CheatValue<float>(false, 1f));
+    public static CheatValue<int> ControlAmmoNoConsumeRate => 
+        GetIntValue(s => s.ControlAmmoNoConsumeRate, s => s.ControlAmmoNoConsumeRate, 5);
 
-    public static CheatValue<float> VigorFinalDmgAdd =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.VigorFinalDmgAdd != 0.334f)
-            ? new CheatValue<float>(true, PerCampaignInstance.VigorFinalDmgAdd)
-            : ((GlobalInstance.VigorFinalDmgAdd != 0.334f)
-                ? new CheatValue<float>(true, GlobalInstance.VigorFinalDmgAdd)
-                : new CheatValue<float>(false, 0.334f));
+    public static CheatValue<float> ControlDropDmgReducePercent => 
+        GetFloatValue(s => s.ControlDropDmgReducePercent, s => s.ControlDropDmgReducePercent, 0.05f);
 
-    public static CheatValue<float> VigorDmgTakenReduce =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.VigorDmgTakenReduce != 0.334f)
-            ? new CheatValue<float>(true, PerCampaignInstance.VigorDmgTakenReduce)
-            : ((GlobalInstance.VigorDmgTakenReduce != 0.334f)
-                ? new CheatValue<float>(true, GlobalInstance.VigorDmgTakenReduce)
-                : new CheatValue<float>(false, 0.334f));
+    public static CheatValue<float> ControlAimStabilityPercent => 
+        GetFloatValue(s => s.ControlAimStabilityPercent, s => s.ControlAimStabilityPercent, 0.1f);
 
-    public static CheatValue<int> VigorCrushThroughPositive =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.VigorCrushThroughPositive != 5)
-            ? new CheatValue<int>(true, PerCampaignInstance.VigorCrushThroughPositive)
-            : ((GlobalInstance.VigorCrushThroughPositive != 5)
-                ? new CheatValue<int>(true, GlobalInstance.VigorCrushThroughPositive)
-                : new CheatValue<int>(false, 5));
+    public static CheatValue<float> ControlMountManeuverPercent => 
+        GetFloatValue(s => s.ControlMountManeuverPercent, s => s.ControlMountManeuverPercent, 0.05f);
 
-    public static CheatValue<int> VigorCrushThroughNegative =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.VigorCrushThroughNegative != 10)
-            ? new CheatValue<int>(true, PerCampaignInstance.VigorCrushThroughNegative)
-            : ((GlobalInstance.VigorCrushThroughNegative != 10)
-                ? new CheatValue<int>(true, GlobalInstance.VigorCrushThroughNegative)
-                : new CheatValue<int>(false, 10));
+    public static CheatValue<int> ControlCritRate => 
+        GetIntValue(s => s.ControlCritRate, s => s.ControlCritRate, 2);
 
-    public static CheatValue<float> IntelligenceAmmoAddPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.IntelligenceAmmoAddPercent != 0.1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.IntelligenceAmmoAddPercent)
-            : ((GlobalInstance.IntelligenceAmmoAddPercent != 0.1f)
-                ? new CheatValue<float>(true, GlobalInstance.IntelligenceAmmoAddPercent)
-                : new CheatValue<float>(false, 0.1f));
+    public static CheatValue<int> ControlExemptionRate => 
+        GetIntValue(s => s.ControlExemptionRate, s => s.ControlExemptionRate, 2);
 
-    public static CheatValue<int> ControlAmmoNoConsumeRate =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.ControlAmmoNoConsumeRate != 5)
-            ? new CheatValue<int>(true, PerCampaignInstance.ControlAmmoNoConsumeRate)
-            : ((GlobalInstance.ControlAmmoNoConsumeRate != 5)
-                ? new CheatValue<int>(true, GlobalInstance.ControlAmmoNoConsumeRate)
-                : new CheatValue<int>(false, 5));
+    public static CheatValue<int> ControlPenetrateRate => 
+        GetIntValue(s => s.ControlPenetrateRate, s => s.ControlPenetrateRate, 3);
 
-    public static CheatValue<float> ControlDropDmgReducePercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.ControlDropDmgReducePercent != 0.05f)
-            ? new CheatValue<float>(true, PerCampaignInstance.ControlDropDmgReducePercent)
-            : ((GlobalInstance.ControlDropDmgReducePercent != 0.05f)
-                ? new CheatValue<float>(true, GlobalInstance.ControlDropDmgReducePercent)
-                : new CheatValue<float>(false, 0.05f));
+    public static CheatValue<float> EnduranceHpAddPercent => 
+        GetFloatValue(s => s.EnduranceHpAddPercent, s => s.EnduranceHpAddPercent, 0.05f);
 
-    public static CheatValue<float> ControlAimStabilityPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.ControlAimStabilityPercent != 0.1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.ControlAimStabilityPercent)
-            : ((GlobalInstance.ControlAimStabilityPercent != 0.1f)
-                ? new CheatValue<float>(true, GlobalInstance.ControlAimStabilityPercent)
-                : new CheatValue<float>(false, 0.1f));
+    public static CheatValue<float> EnduranceHealRate => 
+        GetFloatValue(s => s.EnduranceHealRate, s => s.EnduranceHealRate, 0.05f);
 
-    public static CheatValue<float> ControlMountManeuverPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.ControlMountManeuverPercent != 0.05f)
-            ? new CheatValue<float>(true, PerCampaignInstance.ControlMountManeuverPercent)
-            : ((GlobalInstance.ControlMountManeuverPercent != 0.05f)
-                ? new CheatValue<float>(true, GlobalInstance.ControlMountManeuverPercent)
-                : new CheatValue<float>(false, 0.05f));
+    public static CheatValue<float> EnduranceStaggerPercent => 
+        GetFloatValue(s => s.EnduranceStaggerPercent, s => s.EnduranceStaggerPercent, 0.2f);
 
-    public static CheatValue<int> ControlCritRate =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.ControlCritRate != 2)
-            ? new CheatValue<int>(true, PerCampaignInstance.ControlCritRate)
-            : ((GlobalInstance.ControlCritRate != 2)
-                ? new CheatValue<int>(true, GlobalInstance.ControlCritRate)
-                : new CheatValue<int>(false, 2));
+    public static CheatValue<float> EnduranceWalkSpeedPercent => 
+        GetFloatValue(s => s.EnduranceWalkSpeedPercent, s => s.EnduranceWalkSpeedPercent, 0.01f);
 
-    public static CheatValue<int> ControlExemptionRate =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.ControlExemptionRate != 2)
-            ? new CheatValue<int>(true, PerCampaignInstance.ControlExemptionRate)
-            : ((GlobalInstance.ControlExemptionRate != 2)
-                ? new CheatValue<int>(true, GlobalInstance.ControlExemptionRate)
-                : new CheatValue<int>(false, 2));
+    public static CheatValue<float> EnduranceMountSpeedPercent => 
+        GetFloatValue(s => s.EnduranceMountSpeedPercent, s => s.EnduranceMountSpeedPercent, 0.025f);
 
-    public static CheatValue<int> ControlPenetrateRate =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.ControlPenetrateRate != 3)
-            ? new CheatValue<int>(true, PerCampaignInstance.ControlPenetrateRate)
-            : ((GlobalInstance.ControlPenetrateRate != 3)
-                ? new CheatValue<int>(true, GlobalInstance.ControlPenetrateRate)
-                : new CheatValue<int>(false, 3));
+    public static CheatValue<float> CunningPrisonerRecruitSpeedPercent => 
+        GetFloatValue(s => s.CunningPrisonerRecruitSpeedPercent, s => s.CunningPrisonerRecruitSpeedPercent, 0.1f);
 
-    public static CheatValue<float> EnduranceHpAddPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.EnduranceHpAddPercent != 0.05f)
-            ? new CheatValue<float>(true, PerCampaignInstance.EnduranceHpAddPercent)
-            : ((GlobalInstance.EnduranceHpAddPercent != 0.05f)
-                ? new CheatValue<float>(true, GlobalInstance.EnduranceHpAddPercent)
-                : new CheatValue<float>(false, 0.05f));
+    public static CheatValue<float> CunningPrisonerCapacityPercent => 
+        GetFloatValue(s => s.CunningPrisonerCapacityPercent, s => s.CunningPrisonerCapacityPercent, 0.1f);
 
-    public static CheatValue<float> EnduranceHealRate =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.EnduranceHealRate != 0.05f)
-            ? new CheatValue<float>(true, PerCampaignInstance.EnduranceHealRate)
-            : ((GlobalInstance.EnduranceHealRate != 0.05f)
-                ? new CheatValue<float>(true, GlobalInstance.EnduranceHealRate)
-                : new CheatValue<float>(false, 0.05f));
+    public static CheatValue<float> CunningRaidSpeedPercent => 
+        GetFloatValue(s => s.CunningRaidSpeedPercent, s => s.CunningRaidSpeedPercent, 0.1f);
 
-    public static CheatValue<float> EnduranceStaggerPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.EnduranceStaggerPercent != 0.2f)
-            ? new CheatValue<float>(true, PerCampaignInstance.EnduranceStaggerPercent)
-            : ((GlobalInstance.EnduranceStaggerPercent != 0.2f)
-                ? new CheatValue<float>(true, GlobalInstance.EnduranceStaggerPercent)
-                : new CheatValue<float>(false, 0.2f));
+    public static CheatValue<float> CunningPartySpeedAdd => 
+        GetFloatValue(s => s.CunningPartySpeedAdd, s => s.CunningPartySpeedAdd, 0.1f);
 
-    public static CheatValue<float> EnduranceWalkSpeedPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.EnduranceWalkSpeedPercent != 0.01f)
-            ? new CheatValue<float>(true, PerCampaignInstance.EnduranceWalkSpeedPercent)
-            : ((GlobalInstance.EnduranceWalkSpeedPercent != 0.01f)
-                ? new CheatValue<float>(true, GlobalInstance.EnduranceWalkSpeedPercent)
-                : new CheatValue<float>(false, 0.01f));
-
-    public static CheatValue<float> EnduranceMountSpeedPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.EnduranceMountSpeedPercent != 0.025f)
-            ? new CheatValue<float>(true, PerCampaignInstance.EnduranceMountSpeedPercent)
-            : ((GlobalInstance.EnduranceMountSpeedPercent != 0.025f)
-                ? new CheatValue<float>(true, GlobalInstance.EnduranceMountSpeedPercent)
-                : new CheatValue<float>(false, 0.025f));
-
-    public static CheatValue<float> CunningPrisonerRecruitSpeedPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.CunningPrisonerRecruitSpeedPercent != 0.1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.CunningPrisonerRecruitSpeedPercent)
-            : ((GlobalInstance.CunningPrisonerRecruitSpeedPercent != 0.1f)
-                ? new CheatValue<float>(true, GlobalInstance.CunningPrisonerRecruitSpeedPercent)
-                : new CheatValue<float>(false, 0.1f));
-
-    public static CheatValue<float> CunningPrisonerCapacityPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.CunningPrisonerCapacityPercent != 0.1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.CunningPrisonerCapacityPercent)
-            : ((GlobalInstance.CunningPrisonerCapacityPercent != 0.1f)
-                ? new CheatValue<float>(true, GlobalInstance.CunningPrisonerCapacityPercent)
-                : new CheatValue<float>(false, 0.1f));
-
-    public static CheatValue<float> CunningRaidSpeedPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.CunningRaidSpeedPercent != 0.1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.CunningRaidSpeedPercent)
-            : ((GlobalInstance.CunningRaidSpeedPercent != 0.1f)
-                ? new CheatValue<float>(true, GlobalInstance.CunningRaidSpeedPercent)
-                : new CheatValue<float>(false, 0.1f));
-
-    public static CheatValue<float> CunningPartySpeedAdd =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.CunningPartySpeedAdd != 0.1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.CunningPartySpeedAdd)
-            : ((GlobalInstance.CunningPartySpeedAdd != 0.1f)
-                ? new CheatValue<float>(true, GlobalInstance.CunningPartySpeedAdd)
-                : new CheatValue<float>(false, 0.1f));
-
-    public static CheatValue<float> CunningCompanionCapacityAdd =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.CunningCompanionCapacityAdd != 0.2f)
-            ? new CheatValue<float>(true, PerCampaignInstance.CunningCompanionCapacityAdd)
-            : ((GlobalInstance.CunningCompanionCapacityAdd != 0.2f)
-                ? new CheatValue<float>(true, GlobalInstance.CunningCompanionCapacityAdd)
-                : new CheatValue<float>(false, 0.2f));
-
-
-    public static CheatValue<float> SocialBoundary =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.SocialBoundary != 3.5f)
-    ? new CheatValue<float>(true, PerCampaignInstance.SocialBoundary)
-    : ((GlobalInstance.SocialBoundary != 3.5f)
-        ? new CheatValue<float>(true, GlobalInstance.SocialBoundary)
-        : new CheatValue<float>(false, 3.5f));
-
-    public static CheatValue<float> SocialHearthAdd =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.SocialHearthAdd != 0.25f)
-            ? new CheatValue<float>(true, PerCampaignInstance.SocialHearthAdd)
-            : ((GlobalInstance.SocialHearthAdd != 0.25f)
-                ? new CheatValue<float>(true, GlobalInstance.SocialHearthAdd)
-                : new CheatValue<float>(false, 0.25f));
-
-    public static CheatValue<float> SocialSettlementLoyaltyAdd =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.SocialSettlementLoyaltyAdd != 0.25f)
-            ? new CheatValue<float>(true, PerCampaignInstance.SocialSettlementLoyaltyAdd)
-            : ((GlobalInstance.SocialSettlementLoyaltyAdd != 0.25f)
-                ? new CheatValue<float>(true, GlobalInstance.SocialSettlementLoyaltyAdd)
-                : new CheatValue<float>(false, 0.25f));
-
-    public static CheatValue<float> SocialMilitiaAdd =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.SocialMilitiaAdd != 0.5f)
-            ? new CheatValue<float>(true, PerCampaignInstance.SocialMilitiaAdd)
-            : ((GlobalInstance.SocialMilitiaAdd != 0.5f)
-                ? new CheatValue<float>(true, GlobalInstance.SocialMilitiaAdd)
-                : new CheatValue<float>(false, 0.5f));
-
-    public static CheatValue<float> SocialRecruitSpeedPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.SocialRecruitSpeedPercent != 0.05f)
-            ? new CheatValue<float>(true, PerCampaignInstance.SocialRecruitSpeedPercent)
-            : ((GlobalInstance.SocialRecruitSpeedPercent != 0.05f)
-                ? new CheatValue<float>(true, GlobalInstance.SocialRecruitSpeedPercent)
-                : new CheatValue<float>(false, 0.05f));
-
-    public static CheatValue<float> SocialTaxPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.SocialTaxPercent != 0.05f)
-            ? new CheatValue<float>(true, PerCampaignInstance.SocialTaxPercent)
-            : ((GlobalInstance.SocialTaxPercent != 0.05f)
-                ? new CheatValue<float>(true, GlobalInstance.SocialTaxPercent)
-                : new CheatValue<float>(false, 0.05f));
-
-    public static CheatValue<float> SocialWorkshopProductionPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.SocialWorkshopProductionPercent != 0.1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.SocialWorkshopProductionPercent)
-            : ((GlobalInstance.SocialWorkshopProductionPercent != 0.1f)
-                ? new CheatValue<float>(true, GlobalInstance.SocialWorkshopProductionPercent)
-                : new CheatValue<float>(false, 0.1f));
-
-    public static CheatValue<float> SocialCompanionCapacityAdd =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.SocialCompanionCapacityAdd != 0.2f)
-            ? new CheatValue<float>(true, PerCampaignInstance.SocialCompanionCapacityAdd)
-            : ((GlobalInstance.SocialCompanionCapacityAdd != 0.2f)
-                ? new CheatValue<float>(true, GlobalInstance.SocialCompanionCapacityAdd)
-                : new CheatValue<float>(false, 0.2f));
-
-    public static CheatValue<float> IntelligenceBoundary =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.IntelligenceBoundary != 3.5f)
-            ? new CheatValue<float>(true, PerCampaignInstance.IntelligenceBoundary)
-            : ((GlobalInstance.IntelligenceBoundary != 3.5f)
-                ? new CheatValue<float>(true, GlobalInstance.IntelligenceBoundary)
-                : new CheatValue<float>(false, 3.5f));
-
-    public static CheatValue<float> IntelligenceExpRate =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.IntelligenceExpRate != 0.05f)
-            ? new CheatValue<float>(true, PerCampaignInstance.IntelligenceExpRate)
-            : ((GlobalInstance.IntelligenceExpRate != 0.05f)
-                ? new CheatValue<float>(true, GlobalInstance.IntelligenceExpRate)
-                : new CheatValue<float>(false, 0.05f));
-
-    public static CheatValue<float> IntelligenceSiegeEndurancePercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.IntelligenceSiegeEndurancePercent != 0.1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.IntelligenceSiegeEndurancePercent)
-            : ((GlobalInstance.IntelligenceSiegeEndurancePercent != 0.1f)
-                ? new CheatValue<float>(true, GlobalInstance.IntelligenceSiegeEndurancePercent)
-                : new CheatValue<float>(false, 0.1f));
-
-    public static CheatValue<float> IntelligenceWallEndurancePercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.IntelligenceWallEndurancePercent != 0.1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.IntelligenceWallEndurancePercent)
-            : ((GlobalInstance.IntelligenceWallEndurancePercent != 0.1f)
-                ? new CheatValue<float>(true, GlobalInstance.IntelligenceWallEndurancePercent)
-                : new CheatValue<float>(false, 0.1f));
-
-    public static CheatValue<float> IntelligenceBallistaAdd =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.IntelligenceBallistaAdd != 0.334f)
-            ? new CheatValue<float>(true, PerCampaignInstance.IntelligenceBallistaAdd)
-            : ((GlobalInstance.IntelligenceBallistaAdd != 0.334f)
-                ? new CheatValue<float>(true, GlobalInstance.IntelligenceBallistaAdd)
-                : new CheatValue<float>(false, 0.334f));
-
-    public static CheatValue<float> IntelligenceLeaderSettlementFoodPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.IntelligenceLeaderSettlementFoodPercent != 0.5f)
-            ? new CheatValue<float>(true, PerCampaignInstance.IntelligenceLeaderSettlementFoodPercent)
-            : ((GlobalInstance.IntelligenceLeaderSettlementFoodPercent != 0.5f)
-                ? new CheatValue<float>(true, GlobalInstance.IntelligenceLeaderSettlementFoodPercent)
-                : new CheatValue<float>(false, 0.5f));
-
-    public static CheatValue<float> IntelligenceGovernorSettlementFoodPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.IntelligenceGovernorSettlementFoodPercent != 1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.IntelligenceGovernorSettlementFoodPercent)
-            : ((GlobalInstance.IntelligenceGovernorSettlementFoodPercent != 1f)
-                ? new CheatValue<float>(true, GlobalInstance.IntelligenceGovernorSettlementFoodPercent)
-                : new CheatValue<float>(false, 1f));
-
-    public static CheatValue<float> IntelligenceProsperityFoodCostReducePercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.IntelligenceProsperityFoodCostReducePercent != 0.075f)
-            ? new CheatValue<float>(true, PerCampaignInstance.IntelligenceProsperityFoodCostReducePercent)
-            : ((GlobalInstance.IntelligenceProsperityFoodCostReducePercent != 0.075f)
-                ? new CheatValue<float>(true, GlobalInstance.IntelligenceProsperityFoodCostReducePercent)
-                : new CheatValue<float>(false, 0.075f));
-
-    public static CheatValue<float> IntelligenceGarrisonWageReducePercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.IntelligenceGarrisonWageReducePercent != 0.05f)
-            ? new CheatValue<float>(true, PerCampaignInstance.IntelligenceGarrisonWageReducePercent)
-            : ((GlobalInstance.IntelligenceGarrisonWageReducePercent != 0.05f)
-                ? new CheatValue<float>(true, GlobalInstance.IntelligenceGarrisonWageReducePercent)
-                : new CheatValue<float>(false, 0.05f));
-
-    public static CheatValue<float> IntelligenceWorkshopProductionPercent =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.IntelligenceWorkshopProductionPercent != 0.25f)
-            ? new CheatValue<float>(true, PerCampaignInstance.IntelligenceWorkshopProductionPercent)
-            : ((GlobalInstance.IntelligenceWorkshopProductionPercent != 0.25f)
-                ? new CheatValue<float>(true, GlobalInstance.IntelligenceWorkshopProductionPercent)
-                : new CheatValue<float>(false, 0.25f));
-
-    public static CheatValue<bool> EnableDailyGainXp =>
-(IsPerCampaignInstanceLoaded && PerCampaignInstance.EnableDailyGainXp)
-    ? new CheatValue<bool>(true, PerCampaignInstance.EnableDailyGainXp)
-    : ((GlobalInstance.EnableDailyGainXp)
-        ? new CheatValue<bool>(true, GlobalInstance.EnableDailyGainXp)
-        : new CheatValue<bool>(false, false));
-
-    public static CheatValue<float> CombatAttributeRatePlayer =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.CombatAttributeRatePlayer != 1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.CombatAttributeRatePlayer)
-            : ((GlobalInstance.CombatAttributeRatePlayer != 1f)
-                ? new CheatValue<float>(true, GlobalInstance.CombatAttributeRatePlayer)
-                : new CheatValue<float>(false, 1f));
-
-    public static CheatValue<float> CombatAttributeRateClanMember =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.CombatAttributeRateClanMember != 1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.CombatAttributeRateClanMember)
-            : ((GlobalInstance.CombatAttributeRateClanMember != 1f)
-                ? new CheatValue<float>(true, GlobalInstance.CombatAttributeRateClanMember)
-                : new CheatValue<float>(false, 1f));
-
-    public static CheatValue<float> CombatAttributeRateOther =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.CombatAttributeRateOther != 1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.CombatAttributeRateOther)
-            : ((GlobalInstance.CombatAttributeRateOther != 1f)
-                ? new CheatValue<float>(true, GlobalInstance.CombatAttributeRateOther)
-                : new CheatValue<float>(false, 1f));
-
-    public static CheatValue<float> StrategyAttributeRatePlayer =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.StrategyAttributeRatePlayer != 1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.StrategyAttributeRatePlayer)
-            : ((GlobalInstance.StrategyAttributeRatePlayer != 1f)
-                ? new CheatValue<float>(true, GlobalInstance.StrategyAttributeRatePlayer)
-                : new CheatValue<float>(false, 1f));
-
-    public static CheatValue<float> StrategyAttributeRateClanMember =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.StrategyAttributeRateClanMember != 1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.StrategyAttributeRateClanMember)
-            : ((GlobalInstance.StrategyAttributeRateClanMember != 1f)
-                ? new CheatValue<float>(true, GlobalInstance.StrategyAttributeRateClanMember)
-                : new CheatValue<float>(false, 1f));
-
-    public static CheatValue<float> StrategyAttributeRateOther =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.StrategyAttributeRateOther != 1f)
-            ? new CheatValue<float>(true, PerCampaignInstance.StrategyAttributeRateOther)
-            : ((GlobalInstance.StrategyAttributeRateOther != 1f)
-                ? new CheatValue<float>(true, GlobalInstance.StrategyAttributeRateOther)
-                : new CheatValue<float>(false, 1f));
-
-    public static CheatValue<bool> TestMode =>
-        (IsPerCampaignInstanceLoaded && PerCampaignInstance.TestMode)
-            ? new CheatValue<bool>(true, PerCampaignInstance.TestMode)
-            : ((GlobalInstance.TestMode)
-                ? new CheatValue<bool>(true, GlobalInstance.TestMode)
-                : new CheatValue<bool>(false, false));
+    public static CheatValue<float> CunningCompanionCapacityAdd => 
+        GetFloatValue(s => s.CunningCompanionCapacityAdd, s => s.CunningCompanionCapacityAdd, 0.2f);
 
+
+    public static CheatValue<float> SocialBoundary => 
+        GetFloatValue(s => s.SocialBoundary, s => s.SocialBoundary, 3.5f);
+
+    public static CheatValue<float> SocialHearthAdd => 
+        GetFloatValue(s => s.SocialHearthAdd, s => s.SocialHearthAdd, 0.25f);
+
+    public static CheatValue<float> SocialSettlementLoyaltyAdd => 
+        GetFloatValue(s => s.SocialSettlementLoyaltyAdd, s => s.SocialSettlementLoyaltyAdd, 0.25f);
+
+    public static CheatValue<float> SocialMilitiaAdd => 
+        GetFloatValue(s => s.SocialMilitiaAdd, s => s.SocialMilitiaAdd, 0.5f);
+
+    public static CheatValue<float> SocialRecruitSpeedPercent => 
+        GetFloatValue(s => s.SocialRecruitSpeedPercent, s => s.SocialRecruitSpeedPercent, 0.05f);
+
+    public static CheatValue<float> SocialTaxPercent => 
+        GetFloatValue(s => s.SocialTaxPercent, s => s.SocialTaxPercent, 0.05f);
+
+    public static CheatValue<float> SocialWorkshopProductionPercent => 
+        GetFloatValue(s => s.SocialWorkshopProductionPercent, s => s.SocialWorkshopProductionPercent, 0.1f);
+
+    public static CheatValue<float> SocialCompanionCapacityAdd => 
+        GetFloatValue(s => s.SocialCompanionCapacityAdd, s => s.SocialCompanionCapacityAdd, 0.2f);
+
+    public static CheatValue<float> IntelligenceBoundary => 
+        GetFloatValue(s => s.IntelligenceBoundary, s => s.IntelligenceBoundary, 3.5f);
+
+    public static CheatValue<float> IntelligenceExpRate => 
+        GetFloatValue(s => s.IntelligenceExpRate, s => s.IntelligenceExpRate, 0.05f);
+
+    public static CheatValue<float> IntelligenceSiegeEndurancePercent => 
+        GetFloatValue(s => s.IntelligenceSiegeEndurancePercent, s => s.IntelligenceSiegeEndurancePercent, 0.1f);
+
+    public static CheatValue<float> IntelligenceWallEndurancePercent => 
+        GetFloatValue(s => s.IntelligenceWallEndurancePercent, s => s.IntelligenceWallEndurancePercent, 0.1f);
+
+    public static CheatValue<float> IntelligenceBallistaAdd => 
+        GetFloatValue(s => s.IntelligenceBallistaAdd, s => s.IntelligenceBallistaAdd, 0.334f);
+
+    public static CheatValue<float> IntelligenceLeaderSettlementFoodPercent => 
+        GetFloatValue(s => s.IntelligenceLeaderSettlementFoodPercent, s => s.IntelligenceLeaderSettlementFoodPercent, 0.5f);
+
+    public static CheatValue<float> IntelligenceGovernorSettlementFoodPercent => 
+        GetFloatValue(s => s.IntelligenceGovernorSettlementFoodPercent, s => s.IntelligenceGovernorSettlementFoodPercent, 1f);
+
+    public static CheatValue<float> IntelligenceProsperityFoodCostReducePercent => 
+        GetFloatValue(s => s.IntelligenceProsperityFoodCostReducePercent, s => s.IntelligenceProsperityFoodCostReducePercent, 0.075f);
+
+    public static CheatValue<float> IntelligenceGarrisonWageReducePercent => 
+        GetFloatValue(s => s.IntelligenceGarrisonWageReducePercent, s => s.IntelligenceGarrisonWageReducePercent, 0.05f);
+
+    public static CheatValue<float> IntelligenceWorkshopProductionPercent => 
+        GetFloatValue(s => s.IntelligenceWorkshopProductionPercent, s => s.IntelligenceWorkshopProductionPercent, 0.25f);
+
+    public static CheatValue<bool> EnableDailyGainXp => 
+        GetBoolValue(s => s.EnableDailyGainXp, s => s.EnableDailyGainXp);
+
+    public static CheatValue<float> CombatAttributeRatePlayer => 
+        GetFloatValue(s => s.CombatAttributeRatePlayer, s => s.CombatAttributeRatePlayer, 1f);
+
+    public static CheatValue<float> CombatAttributeRateClanMember => 
+        GetFloatValue(s => s.CombatAttributeRateClanMember, s => s.CombatAttributeRateClanMember, 1f);
+
+    public static CheatValue<float> CombatAttributeRateOther => 
+        GetFloatValue(s => s.CombatAttributeRateOther, s => s.CombatAttributeRateOther, 1f);
+
+    public static CheatValue<float> StrategyAttributeRatePlayer => 
+        GetFloatValue(s => s.StrategyAttributeRatePlayer, s => s.StrategyAttributeRatePlayer, 1f);
+
+    public static CheatValue<float> StrategyAttributeRateClanMember => 
+        GetFloatValue(s => s.StrategyAttributeRateClanMember, s => s.StrategyAttributeRateClanMember, 1f);
+
+    public static CheatValue<float> StrategyAttributeRateOther => 
+        GetFloatValue(s => s.StrategyAttributeRateOther, s => s.StrategyAttributeRateOther, 1f);
+
+    public static CheatValue<bool> TestMode => 
+        GetBoolValue(s => s.TestMode, s => s.TestMode);
 }

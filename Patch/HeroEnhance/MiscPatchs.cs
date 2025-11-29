@@ -236,24 +236,45 @@ internal class MiscPatchs
     [HarmonyPatch(typeof(CraftingCampaignBehavior), "HourlyTick")]
     internal class HourlyTickPostfixPatch
     {
-        private static void Postfix(ref CraftingCampaignBehavior __instance, ref Dictionary<Hero, object> ____heroCraftingRecords)
+        private static void Postfix(
+            CraftingCampaignBehavior __instance,
+            ref Dictionary<Hero, object> ____heroCraftingRecords)
         {
             if (!SettingsManager.EnableDailyGainXp.Value)
-            {
                 return;
-            }
-            MethodInfo method = typeof(CraftingCampaignBehavior).GetMethod("GetStaminaHourlyRecoveryRate", BindingFlags.Instance | BindingFlags.NonPublic);
-            foreach (KeyValuePair<Hero, object> ____heroCraftingRecord in ____heroCraftingRecords)
+
+            // private GetStaminaHourlyRecoveryRate
+            MethodInfo getRecoveryRate = typeof(CraftingCampaignBehavior)
+                .GetMethod("GetStaminaHourlyRecoveryRate", BindingFlags.Instance | BindingFlags.NonPublic);
+
+            // internal HeroCraftingRecord type
+            Type heroCraftingRecordType = typeof(CraftingCampaignBehavior)
+                .GetNestedType("HeroCraftingRecord", BindingFlags.NonPublic);
+
+            // private int CraftingStamina
+            FieldInfo staminaField = heroCraftingRecordType
+                .GetField("CraftingStamina", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+
+            foreach (var kv in ____heroCraftingRecords)
             {
-                Hero key = ____heroCraftingRecord.Key;
-                int maxHeroCraftingStamina = __instance.GetMaxHeroCraftingStamina(key);
-                Traverse traverse = Traverse.Create(____heroCraftingRecord.Value);
-                Traverse<int> traverse2 = traverse.Field<int>("CraftingStamina");
-                if (traverse2.Value < maxHeroCraftingStamina)
+                Hero hero = kv.Key;
+                object recordObj = kv.Value;   // HeroCraftingRecord instance
+
+                if (hero.CurrentSettlement == null)
+                    continue;
+
+                int maxStamina = __instance.GetMaxHeroCraftingStamina(hero);
+
+                int currentStamina = (int)staminaField.GetValue(recordObj);
+                if (currentStamina < maxStamina)
                 {
-                    int num = (int)method.Invoke(__instance, new object[1] { key });
-                    num = (num - 4) / 2;
-                    traverse2.Value = MathF.Min(maxHeroCraftingStamina, traverse2.Value + num);
+                    int baseRecovery = (int)getRecoveryRate.Invoke(__instance, new object[] { hero });
+
+                    // your modified formula
+                    int modifiedRecovery = (baseRecovery - 4) / 2;
+
+                    staminaField.SetValue(recordObj,
+                        MathF.Min(maxStamina, currentStamina + modifiedRecovery));
                 }
             }
         }
