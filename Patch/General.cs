@@ -141,7 +141,7 @@ public static class EnableHotkeysAddItems
 }
 
 
-
+/*
 public static class EnableHotkeysChangePlayerCharacter
 {
     [UsedImplicitly]
@@ -170,7 +170,7 @@ public static class EnableHotkeysChangePlayerCharacter
         }
     }
 }
-
+*/
 
 
 public static class EnableHotkeysCharacterAttributes

@@ -59,7 +59,7 @@ public static class AWBS
         CharacterObject struckTroop,
         PartyBase strikerParty,
         PartyBase struckParty,
-        float strikerAdvantage, 
+        float strikerAdvantage,
         MapEvent battle, float strikerSideMorale, float struckSideMorale,
         ref ExplainedNumber __result)
     {
@@ -1024,28 +1024,6 @@ public static class PartyDamageTakenPercentage
         {
             SubModule.LogError(e, typeof(PartyDamageTakenPercentage));
         }
-    }
-}
-
-
-public static class PartyDamageTakenPercentage_Default
-{
-    [UsedImplicitly]
-    [HarmonyPostfix]
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
-    {
-        PartyDamageTakenPercentage.CalculateDamage(attackInformation, collisionData, ref __result);
-    }
-}
-
-
-public static class PartyDamageTakenPercentage_Sandbox
-{
-    [UsedImplicitly]
-    [HarmonyPostfix]
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
-    {
-        PartyDamageTakenPercentage.CalculateDamage(attackInformation, collisionData, ref __result);
     }
 }
 

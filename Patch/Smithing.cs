@@ -114,7 +114,7 @@ internal class CraftedWeaponModifierSave
     }
 }
 
-
+/*
 public class LoadingWeaponProperties
 {
     public static void Postfix(ref ItemObject __result, ref ItemObject itemObject, ref WeaponDesign craftedData, ref TextObject itemName, ref BasicCultureObject culture)
@@ -139,7 +139,7 @@ public class LoadingWeaponProperties
         }
     }
 }
-
+*/
 
 [HarmonyPatch(typeof(DefaultSmithingModel), "GetSmithingCostsForWeaponDesign")]
 public static class SmithingCostPercentage

@@ -39,7 +39,7 @@ public static class ILInjection
     public static void EnableHotkeysEncyclopedia(EncyclopediaPageVM __instance)
     {
         EnableHotkeysAddEncyclopediaTroops.Handler(__instance);
-        EnableHotkeysChangePlayerCharacter.Handler(__instance);
+        //EnableHotkeysChangePlayerCharacter.Handler(__instance);
         EnableHotkeysKillCharacter.Handler(__instance);
         EnableHotkeysTransferSettlement.Handler(__instance);
     }
