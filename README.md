@@ -1,4 +1,4 @@
-# UFO's Cheat Mods Bundle For Bannerlord [Beta 1.3.3]
+# UFO's Cheat Mods Bundle For Bannerlord [Beta 1.3.8]
 
 My original goal was to learn how to make mods. It just so happened that the 'crush through' feature I wanted stopped working, so I decompiled it and combined it with several well-known mods. I noticed that many people were also sad about some wanted features no longer working, so I decided to release this mod directly. 
 
@@ -16,3 +16,6 @@ I want to give full credit to the original authors of the mods.
 
 # Steam Workshop
 - [UFO's Cheat Mods Bundle](https://steamcommunity.com/sharedfiles/filedetails/?id=3583201039)
+
+# Language Support
+Russian: [MaG3ro](https://steamcommunity.com/id/MaG3ro)
