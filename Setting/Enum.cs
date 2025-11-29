@@ -19,6 +19,7 @@ public enum Setting_Language
 {
     English,
     Chinese,
+    Russian,
     Other
 }
 
@@ -32,6 +33,8 @@ public static class EnumExtensions
                 return "English.resx";
             case Setting_Language.Chinese:
                 return "Chinese.resx";
+            case Setting_Language.Russian:
+                return "Russian.resx";
             case Setting_Language.Other:
                 return "Other.resx";
             default:

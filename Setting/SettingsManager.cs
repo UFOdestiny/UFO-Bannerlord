@@ -403,15 +403,15 @@ public static class SettingsManager
 
         public const bool EnableDailyGainXp = false;
 
-        public const float CombatAttributeRatePlayer = 1f;
+        public const float CombatAttributeRatePlayer = 0f;
 
-        public const float CombatAttributeRateClanMember = 0.5f;
+        public const float CombatAttributeRateClanMember = 0f;
 
         public const float CombatAttributeRateOther = 0f;
 
-        public const float StrategyAttributeRatePlayer = 1f;
+        public const float StrategyAttributeRatePlayer = 0f;
 
-        public const float StrategyAttributeRateClanMember = 0.5f;
+        public const float StrategyAttributeRateClanMember = 0f;
 
         public const float StrategyAttributeRateOther = 0f;
 
@@ -1030,22 +1030,22 @@ public static class SettingsManager
         GetBoolValue(s => s.EnableDailyGainXp, s => s.EnableDailyGainXp);
 
     public static CheatValue<float> CombatAttributeRatePlayer => 
-        GetFloatValue(s => s.CombatAttributeRatePlayer, s => s.CombatAttributeRatePlayer, 1f);
+        GetFloatValue(s => s.CombatAttributeRatePlayer, s => s.CombatAttributeRatePlayer, 0f);
 
     public static CheatValue<float> CombatAttributeRateClanMember => 
-        GetFloatValue(s => s.CombatAttributeRateClanMember, s => s.CombatAttributeRateClanMember, 1f);
+        GetFloatValue(s => s.CombatAttributeRateClanMember, s => s.CombatAttributeRateClanMember, 0f);
 
     public static CheatValue<float> CombatAttributeRateOther => 
-        GetFloatValue(s => s.CombatAttributeRateOther, s => s.CombatAttributeRateOther, 1f);
+        GetFloatValue(s => s.CombatAttributeRateOther, s => s.CombatAttributeRateOther, 0f);
 
     public static CheatValue<float> StrategyAttributeRatePlayer => 
-        GetFloatValue(s => s.StrategyAttributeRatePlayer, s => s.StrategyAttributeRatePlayer, 1f);
+        GetFloatValue(s => s.StrategyAttributeRatePlayer, s => s.StrategyAttributeRatePlayer, 0f);
 
     public static CheatValue<float> StrategyAttributeRateClanMember => 
-        GetFloatValue(s => s.StrategyAttributeRateClanMember, s => s.StrategyAttributeRateClanMember, 1f);
+        GetFloatValue(s => s.StrategyAttributeRateClanMember, s => s.StrategyAttributeRateClanMember, 0f);
 
     public static CheatValue<float> StrategyAttributeRateOther => 
-        GetFloatValue(s => s.StrategyAttributeRateOther, s => s.StrategyAttributeRateOther, 1f);
+        GetFloatValue(s => s.StrategyAttributeRateOther, s => s.StrategyAttributeRateOther, 0f);
 
     public static CheatValue<bool> TestMode => 
         GetBoolValue(s => s.TestMode, s => s.TestMode);

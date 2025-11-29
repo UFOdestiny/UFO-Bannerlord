@@ -834,27 +834,27 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
 
     [LocalizedSettingPropertyGroup("General_Enhancement")]
     [LocalizedSettingPropertyFloatingInteger("CombatAttributeRatePlayer", 0f, 10f)]
-    public float CombatAttributeRatePlayer { get; set; } = 1f;
+    public float CombatAttributeRatePlayer { get; set; } = 0f;
 
     [LocalizedSettingPropertyGroup("General_Enhancement")]
     [LocalizedSettingPropertyFloatingInteger("CombatAttributeRateClanMember", 0f, 10f)]
-    public float CombatAttributeRateClanMember { get; set; } = 1f;
+    public float CombatAttributeRateClanMember { get; set; } = 0f;
 
     [LocalizedSettingPropertyGroup("General_Enhancement")]
     [LocalizedSettingPropertyFloatingInteger("CombatAttributeRateOther", 0f, 10f)]
-    public float CombatAttributeRateOther { get; set; } = 1f;
+    public float CombatAttributeRateOther { get; set; } = 0f;
 
     [LocalizedSettingPropertyGroup("General_Enhancement")]
     [LocalizedSettingPropertyFloatingInteger("StrategyAttributeRatePlayer", 0f, 10f)]
-    public float StrategyAttributeRatePlayer { get; set; } = 1f;
+    public float StrategyAttributeRatePlayer { get; set; } = 0f;
 
     [LocalizedSettingPropertyGroup("General_Enhancement")]
     [LocalizedSettingPropertyFloatingInteger("StrategyAttributeRateClanMember", 0f, 10f)]
-    public float StrategyAttributeRateClanMember { get; set; } = 1f;
+    public float StrategyAttributeRateClanMember { get; set; } = 0f;
 
     [LocalizedSettingPropertyGroup("General_Enhancement")]
     [LocalizedSettingPropertyFloatingInteger("StrategyAttributeRateOther", 0f, 10f)]
-    public float StrategyAttributeRateOther { get; set; } = 1f;
+    public float StrategyAttributeRateOther { get; set; } = 0f;
 
 
 
