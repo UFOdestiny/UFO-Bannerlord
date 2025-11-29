@@ -97,6 +97,10 @@
 	  <None Remove="Module\bin\Win64_Shipping_Client\UFO.pdb" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <EmbeddedResource Include="Module\bin\Win64_Shipping_Client\Russian.resx" />
+	</ItemGroup>
+
 	<Target Name="CopyOutputToModFolder" AfterTargets="Build">
 		<ItemGroup>
 			<FilesToCopy Include="$(OutPutPath)\*.*" />
