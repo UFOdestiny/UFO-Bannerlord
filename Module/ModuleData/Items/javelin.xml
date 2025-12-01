@@ -2,7 +2,7 @@
 <Items>
   <CraftedItem id="super_javelin"
     name="{=super_javelin}Super Javelin"
-    crafting_template="Javelin"
+    crafting_template="Javelin_tmp"
     culture="Culture.neutral_culture"
     modifier_group="spear_dart_throwing">
     <Pieces>

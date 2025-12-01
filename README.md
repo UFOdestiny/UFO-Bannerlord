@@ -18,4 +18,4 @@ I want to give full credit to the original authors of the mods.
 - [UFO's Cheat Mods Bundle](https://steamcommunity.com/sharedfiles/filedetails/?id=3583201039)
 
 # Language Support
-Russian: [MaG3ro](https://steamcommunity.com/id/MaG3ro)
+- Russian: [MaG3ro](https://steamcommunity.com/id/MaG3ro)

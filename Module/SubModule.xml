@@ -18,6 +18,7 @@
 		<DependedModule Id="Sandbox" />
 		<DependedModule Id="StoryMode" />
 		<DependedModule Id="CustomBattle" />
+		<DependedModule Id="NavalDLC" />
 	</DependedModules>
 	<DependedModuleMetadatas>
 		<DependedModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis" version="v2.4.2.0"/>
@@ -29,6 +30,7 @@
 		<DependedModuleMetadata id="Sandbox" order="LoadBeforeThis" version="v1.3.6.*"/>
 		<DependedModuleMetadata id="StoryMode" order="LoadBeforeThis" version="v1.3.6.*"/>
 		<DependedModuleMetadata id="CustomBattle" order="LoadBeforeThis" version="v1.3.6.*"/>
+		<DependedModuleMetadata id="NavalDLC" order="LoadBeforeThis" version="v1.0.4"/>
 	</DependedModuleMetadatas>
 	<SubModules>
 		<SubModule>
@@ -48,7 +50,6 @@
 				<GameType value="CampaignStoryMode" />
 				<GameType value="CustomGame" />
 				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
 			</IncludedGameTypes>
 		</XmlNode>
 
@@ -59,7 +60,6 @@
 				<GameType value="CampaignStoryMode" />
 				<GameType value="CustomGame" />
 				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
 			</IncludedGameTypes>
 		</XmlNode>
 		
@@ -70,7 +70,6 @@
 				<GameType value="CampaignStoryMode" />
 				<GameType value="CustomGame" />
 				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
 			</IncludedGameTypes>
 		</XmlNode>
 		<XmlNode>
@@ -80,7 +79,6 @@
 				<GameType value="CampaignStoryMode" />
 				<GameType value="CustomGame" />
 				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
 			</IncludedGameTypes>
 		</XmlNode>
 		<XmlNode>
@@ -90,7 +88,6 @@
 				<GameType value="CampaignStoryMode" />
 				<GameType value="CustomGame" />
 				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
 			</IncludedGameTypes>
 		</XmlNode>
 		<XmlNode>
@@ -100,7 +97,6 @@
 				<GameType value="CampaignStoryMode" />
 				<GameType value="CustomGame" />
 				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
 			</IncludedGameTypes>
 		</XmlNode>
 
@@ -113,7 +109,6 @@
 				<GameType value="CampaignStoryMode" />
 				<GameType value="CustomGame" />
 				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
 			</IncludedGameTypes>
 		</XmlNode>
 		<XmlNode>
@@ -123,7 +118,6 @@
 				<GameType value="CampaignStoryMode" />
 				<GameType value="CustomGame" />
 				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
 			</IncludedGameTypes>
 		</XmlNode>
 		<XmlNode>
@@ -133,7 +127,6 @@
 				<GameType value="CampaignStoryMode" />
 				<GameType value="CustomGame" />
 				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
 			</IncludedGameTypes>
 		</XmlNode>
 		<XmlNode>
@@ -143,7 +136,6 @@
 				<GameType value="CampaignStoryMode" />
 				<GameType value="CustomGame" />
 				<GameType value="EditorGame" />
-				<GameType value="ShokuhoCampaign" />
 			</IncludedGameTypes>
 		</XmlNode>
 

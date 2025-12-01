@@ -213,6 +213,7 @@ internal class MiscPatchs
         private static void Postfix(ref AgingCampaignBehavior __instance, ref Hero hero)
         {
             hero.AddBothBranchPerks();
+            /*
             if (!SettingsManager.EnableDailyGainXp.Value)
             {
                 return;
@@ -230,9 +231,12 @@ internal class MiscPatchs
             catch (Exception)
             {
             }
+
+            */
         }
     }
 
+    /*
     [HarmonyPatch(typeof(CraftingCampaignBehavior), "HourlyTick")]
     internal class HourlyTickPostfixPatch
     {
@@ -279,5 +283,6 @@ internal class MiscPatchs
             }
         }
     }
+    */
 
 }
