@@ -2,7 +2,7 @@
 <Module xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/BUTR/Bannerlord.XmlSchemas/master/SubModule.xsd">
 	<Id value="UFO" />
-	<Name value="UFO" />
+	<Name value="UFO's Cheat Mods Bundle [1.3.8]" />
 	<Version value="v1.0.0" />
 	<DefaultModule value="false" />
 	<ModuleCategory value="Singleplayer" />
@@ -18,7 +18,6 @@
 		<DependedModule Id="Sandbox" />
 		<DependedModule Id="StoryMode" />
 		<DependedModule Id="CustomBattle" />
-		<DependedModule Id="NavalDLC" />
 	</DependedModules>
 	<DependedModuleMetadatas>
 		<DependedModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis" version="v2.4.2.0"/>
@@ -30,7 +29,6 @@
 		<DependedModuleMetadata id="Sandbox" order="LoadBeforeThis" version="v1.3.6.*"/>
 		<DependedModuleMetadata id="StoryMode" order="LoadBeforeThis" version="v1.3.6.*"/>
 		<DependedModuleMetadata id="CustomBattle" order="LoadBeforeThis" version="v1.3.6.*"/>
-		<DependedModuleMetadata id="NavalDLC" order="LoadBeforeThis" version="v1.0.4"/>
 	</DependedModuleMetadatas>
 	<SubModules>
 		<SubModule>

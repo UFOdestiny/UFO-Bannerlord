@@ -27,7 +27,8 @@
     mesh="loongspear_gan"
     culture="Culture.neutral_culture"
     length="248"
-    weight="0.05">
+    weight="0.05"
+	is_hidden="false">
     <BuildData piece_offset="34" />
     <Materials>
       <Material id="Wood"
@@ -41,10 +42,11 @@
     mesh="loongspear_wei"
     culture="Culture.neutral_culture"
     length="31.2"
-    weight="0.05">
+    weight="0.05"
+	is_hidden="false">
     <Materials>
       <Material id="Iron6"
-        count="3" />
+        count="0" />
     </Materials>
   </CraftingPiece>
 </CraftingPieces>

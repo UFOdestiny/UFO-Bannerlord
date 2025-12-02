@@ -21,7 +21,7 @@
 		</PieceDatas>
 		<WeaponDescriptions>
 			<WeaponDescription id="Javelin_des" />
-			<WeaponDescription id="OneHandedPolearm_JavelinAlternative" />
+			<WeaponDescription id="Javelin_des2" />
 		</WeaponDescriptions>
 		<StatsData weapon_description="Javelin_des">
 			<StatData stat_type="Weight"
@@ -37,7 +37,7 @@
 			<StatData stat_type="StackAmount"
 				max_value="5" />
 		</StatsData>
-		<StatsData weapon_description="OneHandedPolearm_JavelinAlternative">
+		<StatsData weapon_description="Javelin_des2">
 			<StatData stat_type="Weight"
 				max_value="7.0" />
 			<StatData stat_type="WeaponReach"
@@ -52,8 +52,6 @@
 				max_value="500" />
 			<StatData stat_type="Handling"
 				max_value="200" />
-			<!--<StatData
-      stat_type="FollowUp" max_value="200" />-->
 		</StatsData>
 		<UsablePieces>
 			<UsablePiece piece_id="super_spear_blade" />

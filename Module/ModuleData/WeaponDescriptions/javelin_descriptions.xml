@@ -1,27 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WeaponDescriptions>
 
-	<WeaponDescription id="Javelin_des"
-	  weapon_class="Javelin"
-	  item_usage_features="throwing:javelin"
-	  rotated_in_hand="true"
-	  use_center_of_mass_as_hand_base="true">
-		<WeaponFlags>
-			<WeaponFlag value="RangedWeapon" />
-			<WeaponFlag value="Consumable" />
-			<WeaponFlag value="AmmoSticksWhenShot" />
-			<WeaponFlag value="UseHandAsThrowBase" />
-			<WeaponFlag value="AutoReload" />
-			<WeaponFlag value="UnloadWhenSheathed" />
-		</WeaponFlags>
-		<AvailablePieces>
-			<AvailablePiece id="super_spear_blade" />
+  <WeaponDescription id="Javelin_des"
+    weapon_class="Javelin"
+    item_usage_features="throwing:javelin"
+    rotated_in_hand="true"
+    use_center_of_mass_as_hand_base="true">
+    <WeaponFlags>
+      <WeaponFlag value="RangedWeapon" />
+      <WeaponFlag value="Consumable" />
+      <WeaponFlag value="AmmoSticksWhenShot" />
+      <WeaponFlag value="UseHandAsThrowBase" />
+      <WeaponFlag value="AutoReload" />
+      <WeaponFlag value="UnloadWhenSheathed" />
+    </WeaponFlags>
+    <AvailablePieces>
+      <AvailablePiece id="super_spear_blade" />
 			<AvailablePiece id="spear_handle_10" />
 			<AvailablePiece id="default_polearm_guard" />
 			<AvailablePiece id="spear_pommel_12" />
-		</AvailablePieces>
-	</WeaponDescription>
+    </AvailablePieces>
+  </WeaponDescription>
 
+
+    <WeaponDescription id="Javelin_des2"
+		weapon_class="OneHandedPolearm"
+		item_usage_features="onehanded_polearm:block:shield:thrust">
+    <WeaponFlags>
+			<WeaponFlag
+				value="MeleeWeapon" />
+			<WeaponFlag
+				value="WideGrip" />
+    </WeaponFlags>
+    <AvailablePieces>
+      <AvailablePiece id="super_spear_blade" />
+			<AvailablePiece id="spear_handle_10" />
+			<AvailablePiece id="default_polearm_guard" />
+			<AvailablePiece id="spear_pommel_12" />
+    </AvailablePieces>
+  </WeaponDescription>
 
 
 </WeaponDescriptions>

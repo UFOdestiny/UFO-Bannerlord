@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CraftingPieces>
-
   <CraftingPiece id="super_spear_blade"
     name="{=super_spear_head}Super Spear Head"
     tier="5"
@@ -19,13 +18,11 @@
     </BladeData>
     <Flags>
       <Flag name="BonusAgainstShield" />
-      <Flag name="CanPenetrateShield" />
-      <!-- <Flag name="MultiplePenetration" /> -->
       <Flag name="Civilian"
         type="ItemFlags" />
     </Flags>
     <Materials>
-      <Material id="Iron5" count="2" />
+      <Material id="Iron5" count="0" />
     </Materials>
   </CraftingPiece>
 

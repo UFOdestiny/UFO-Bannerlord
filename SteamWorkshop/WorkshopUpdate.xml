@@ -3,8 +3,8 @@
 		<ItemId Value="3583201039"/>
 	</GetItem>
 	<UpdateItem>
-		<ModuleFolder Value="D:\workspace\UFO-Bannerlord\Module"/>
-		<ChangeNotes Value="Craft" />
+		<ModuleFolder Value="E:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\UFO"/>
+		<ChangeNotes Value="Javalin Bug" />
 		<Tags>
 			<Tag Value="Utility" />
 			<Tag Value="Singleplayer" />
