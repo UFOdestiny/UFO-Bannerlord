@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--You can add new or override old items(weapons and
+armors) by adding nodes to this xml.
+For examples please refer to: SandBoxCore/ModuleData/spitems/arm_armors.xml.-->
+<Items>
+
+	<!-- 更多弓箭 -->
+	<Item id="bawangjian"
+		name="{=bawangjian}霸王箭"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		mesh="arrow_bl_f"
+		holster_mesh="arrow_bl_f_quiver"
+		holster_mesh_with_weapon="arrow_bl_f_quiver"
+		flying_mesh="arrow_bl_flying"
+		weight="0.1"
+		appearance="0.6"
+		Type="Arrows"
+		item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts"
+		value="60000"
+		is_merchandise="false">
+		<ItemComponent>
+			<Weapon weapon_class="Arrow"
+				stack_amount="30"
+				thrust_speed="200"
+				speed_rating="30"
+				physics_material="burning_jar"
+				trail_particle_name="psys_game_burning_jar_trail"
+				missile_speed="30"
+				thrust_damage="38"
+				thrust_damage_type="Blunt"
+				weapon_length="97"
+				item_usage="arrow_right"
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="0, -80, 25"
+				sticking_position="0,-0.97,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.13"
+				modifier_group="arrow">
+				<WeaponFlags Consumable="true"
+					AmmoSticksWhenShot="true"
+					AmmoBreaksOnBounceBack="true"
+					Burning="true"
+					LeavesTrail="true"
+					CanPenetrateShield="true"
+					BonusAgainstShield="true"
+					CanKnockDown="true"
+					AffectsAreaBig="true"
+					MultiplePenetration="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags Civilian="true" />
+	</Item>
+
+	<Item id="gaobaojian"
+		name="{=gaobaojian}高爆箭"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		mesh="arrow_bl_b"
+		holster_mesh="arrow_bl_b_quiver"
+		holster_mesh_with_weapon="arrow_bl_b_quiver"
+		flying_mesh="arrow_bl_flying"
+		weight="0.1"
+		appearance="0.9"
+		Type="Arrows"
+		item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts"
+		value="50000"
+		is_merchandise="false">
+		<ItemComponent>
+			<Weapon weapon_class="Arrow"
+				stack_amount="35"
+				thrust_speed="200"
+				speed_rating="10"
+				physics_material="burning_jar"
+				missile_speed="10"
+				thrust_damage="35"
+				thrust_damage_type="Blunt"
+				weapon_length="97"
+				item_usage="arrow_right"
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="0, -80, 25"
+				sticking_position="0,-0.97,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.13"
+				modifier_group="arrow">
+				<WeaponFlags Consumable="true"
+					AmmoSticksWhenShot="true"
+					AmmoBreaksOnBounceBack="true"
+					Burning="true"
+					LeavesTrail="true"
+					CanKnockDown="true"
+					AffectsAreaBig="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags Civilian="true" />
+	</Item>
+
+
+	<Item id="junengjian"
+		name="{=junengjian}聚能箭"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		mesh="arrow_bl_b"
+		holster_mesh="arrow_bl_b_quiver"
+		holster_mesh_with_weapon="arrow_bl_b_quiver"
+		flying_mesh="arrow_bl_flying"
+		weight="0.1"
+		appearance="0.9"
+		Type="Arrows"
+		item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts"
+		value="40000"
+		is_merchandise="false">
+		<ItemComponent>
+			<Weapon weapon_class="Arrow"
+				stack_amount="35"
+				thrust_speed="200"
+				speed_rating="30"
+				physics_material="missile"
+				missile_speed="30"
+				thrust_damage="35"
+				thrust_damage_type="Blunt"
+				weapon_length="97"
+				item_usage="arrow_right"
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="0, -80, 25"
+				sticking_position="0,-0.97,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.13"
+				modifier_group="arrow">
+				<WeaponFlags Consumable="true"
+					AmmoSticksWhenShot="true"
+					AmmoBreaksOnBounceBack="true"
+					Burning="true"
+					LeavesTrail="true"
+					BonusAgainstShield="true"
+					CanKnockDown="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags Civilian="true" />
+	</Item>
+
+	<Item id="guantoujian"
+		name="{=guantoujian}贯透箭"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		mesh="arrow_bl_e"
+		holster_mesh="arrow_bl_e_quiver"
+		holster_mesh_with_weapon="arrow_bl_e_quiver"
+		flying_mesh="arrow_bl_flying"
+		weight="0.1"
+		appearance="0.9"
+		Type="Arrows"
+		item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts"
+		value="40000"
+		is_merchandise="false">
+		<ItemComponent>
+			<Weapon weapon_class="Arrow"
+				stack_amount="35"
+				thrust_speed="200"
+				speed_rating="30"
+				physics_material="missile"
+				missile_speed="30"
+				thrust_damage="35"
+				thrust_damage_type="Pierce"
+				weapon_length="97"
+				item_usage="arrow_right"
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="0, -80, 25"
+				sticking_position="0,-0.97,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.13"
+				modifier_group="arrow">
+				<WeaponFlags Consumable="true"
+					AmmoSticksWhenShot="true"
+					AmmoBreaksOnBounceBack="true"
+					Burning="true"
+					LeavesTrail="true"
+					CanPenetrateShield="true"
+					CanKnockDown="true"
+					MultiplePenetration="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags Civilian="true" />
+	</Item>
+
+	<Item id="baozhajian"
+		name="{=baozhajian}爆炸箭"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		mesh="arrow_bl_e"
+		holster_mesh="arrow_bl_e_quiver"
+		holster_mesh_with_weapon="arrow_bl_e_quiver"
+		flying_mesh="arrow_bl_flying"
+		weight="0.1"
+		appearance="0.9"
+		Type="Arrows"
+		item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts"
+		value="40000"
+		is_merchandise="false">
+		<ItemComponent>
+			<Weapon weapon_class="Arrow"
+				stack_amount="38"
+				thrust_speed="200"
+				speed_rating="30"
+				physics_material="burning_jar"
+				missile_speed="30"
+				thrust_damage="40"
+				thrust_damage_type="Blunt"
+				weapon_length="97"
+				item_usage="arrow_right"
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="0, -80, 25"
+				sticking_position="0,-0.97,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.13"
+				modifier_group="arrow">
+				<WeaponFlags Consumable="true"
+					AmmoSticksWhenShot="true"
+					AmmoBreaksOnBounceBack="true"
+					Burning="true"
+					LeavesTrail="true"
+					AffectsAreaBig="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags Civilian="true" />
+	</Item>
+
+	<Item id="baoliejian"
+		name="{=baoliejian}爆裂箭"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		mesh="arrow_bl_e"
+		holster_mesh="arrow_bl_e_quiver"
+		holster_mesh_with_weapon="arrow_bl_e_quiver"
+		flying_mesh="arrow_bl_flying"
+		weight="0.1"
+		appearance="0.9"
+		Type="Arrows"
+		item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts"
+		value="40000"
+		is_merchandise="false">
+		<ItemComponent>
+			<Weapon weapon_class="Arrow"
+				stack_amount="35"
+				thrust_speed="200"
+				speed_rating="30"
+				physics_material="burning_jar"
+				missile_speed="30"
+				thrust_damage="35"
+				thrust_damage_type="Blunt"
+				weapon_length="97"
+				item_usage="arrow_right"
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="0, -80, 25"
+				sticking_position="0,-0.97,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.13"
+				modifier_group="arrow">
+				<WeaponFlags Consumable="true"
+					AmmoSticksWhenShot="true"
+					AmmoBreaksOnBounceBack="true"
+					Burning="true"
+					LeavesTrail="true"
+					BonusAgainstShield="true"
+					AffectsAreaBig="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags Civilian="true" />
+	</Item>
+
+
+	<Item id="baochuanjian"
+		name="{=baochuanjian}爆穿箭"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		mesh="arrow_bl_e"
+		holster_mesh="arrow_bl_e_quiver"
+		holster_mesh_with_weapon="arrow_bl_e_quiver"
+		flying_mesh="arrow_bl_flying"
+		weight="0.1"
+		appearance="0.9"
+		Type="Arrows"
+		item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts"
+		value="45000"
+		is_merchandise="false">
+		<ItemComponent>
+			<Weapon weapon_class="Arrow"
+				stack_amount="32"
+				thrust_speed="200"
+				speed_rating="30"
+				physics_material="burning_jar"
+				missile_speed="30"
+				thrust_damage="30"
+				thrust_damage_type="Pierce"
+				weapon_length="97"
+				item_usage="arrow_right"
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="0, -80, 25"
+				sticking_position="0,-0.97,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.13"
+				modifier_group="arrow">
+				<WeaponFlags Consumable="true"
+					AmmoSticksWhenShot="true"
+					AmmoBreaksOnBounceBack="true"
+					Burning="true"
+					LeavesTrail="true"
+					CanPenetrateShield="true"
+					MultiplePenetration="true"
+					AffectsAreaBig="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags Civilian="true" />
+	</Item>
+
+
+	<Item id="podunjian"
+		name="{=podunjian}破盾箭"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		mesh="arrow_bl_d"
+		holster_mesh="arrow_bl_d_quiver"
+		holster_mesh_with_weapon="arrow_bl_d_quiver"
+		flying_mesh="arrow_bl_flying"
+		weight="0.1"
+		appearance="0.9"
+		Type="Arrows"
+		item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts"
+		value="30000"
+		is_merchandise="false">
+		<ItemComponent>
+			<Weapon weapon_class="Arrow"
+				stack_amount="40"
+				thrust_speed="200"
+				speed_rating="30"
+				physics_material="missile"
+				missile_speed="30"
+				thrust_damage="28"
+				thrust_damage_type="Pierce"
+				weapon_length="97"
+				item_usage="arrow_right"
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="0, -80, 25"
+				sticking_position="0,-0.97,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.13"
+				modifier_group="arrow">
+				<WeaponFlags Consumable="true"
+					AmmoSticksWhenShot="true"
+					AmmoBreaksOnBounceBack="true"
+					Burning="true"
+					LeavesTrail="true"
+					BonusAgainstShield="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags Civilian="true" />
+	</Item>
+
+	<Item id="chuandunjian"
+		name="{=chuandunjian}穿盾箭"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		mesh="arrow_bl_d"
+		holster_mesh="arrow_bl_d_quiver"
+		holster_mesh_with_weapon="arrow_bl_d_quiver"
+		flying_mesh="arrow_bl_flying"
+		weight="0.1"
+		appearance="0.9"
+		Type="Arrows"
+		item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts"
+		value="30000"
+		is_merchandise="false">
+		<ItemComponent>
+			<Weapon weapon_class="Arrow"
+				stack_amount="40"
+				thrust_speed="200"
+				speed_rating="30"
+				physics_material="missile"
+				missile_speed="30"
+				thrust_damage="28"
+				thrust_damage_type="Pierce"
+				weapon_length="97"
+				item_usage="arrow_right"
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="0, -80, 25"
+				sticking_position="0,-0.97,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.13"
+				modifier_group="arrow">
+				<WeaponFlags Consumable="true"
+					AmmoSticksWhenShot="true"
+					AmmoBreaksOnBounceBack="true"
+					Burning="true"
+					LeavesTrail="true"
+					CanPenetrateShield="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags Civilian="true" />
+	</Item>
+
+	<Item id="chuantoujian"
+		name="{=chuantoujian}穿透箭"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		mesh="arrow_bl_c"
+		holster_mesh="arrow_bl_c_quiver"
+		holster_mesh_with_weapon="arrow_bl_c_quiver"
+		flying_mesh="arrow_bl_flying"
+		weight="0.1"
+		appearance="0.9"
+		Type="Arrows"
+		item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts"
+		value="30000"
+		is_merchandise="false">
+		<ItemComponent>
+			<Weapon weapon_class="Arrow"
+				stack_amount="42"
+				thrust_speed="200"
+				speed_rating="30"
+				physics_material="missile"
+				missile_speed="30"
+				thrust_damage="25"
+				thrust_damage_type="Pierce"
+				weapon_length="97"
+				item_usage="arrow_right"
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="0, -80, 25"
+				sticking_position="0,-0.97,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.13"
+				modifier_group="arrow">
+				<WeaponFlags Consumable="true"
+					AmmoSticksWhenShot="true"
+					AmmoBreaksOnBounceBack="true"
+					Burning="true"
+					LeavesTrail="true"
+					MultiplePenetration="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags Civilian="true" />
+	</Item>
+
+
+	<Item id="chuantoujian2"
+		name="{=chuantoujian2}扈从穿透箭"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		mesh="arrow_bl_c"
+		holster_mesh="arrow_bl_c_quiver"
+		holster_mesh_with_weapon="arrow_bl_c_quiver"
+		flying_mesh="arrow_bl_flying"
+		weight="0.1"
+		appearance="0.9"
+		Type="Arrows"
+		item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts"
+		value="30000"
+		is_merchandise="false">
+		<ItemComponent>
+			<Weapon weapon_class="Arrow"
+				stack_amount="90"
+				thrust_speed="0"
+				speed_rating="0"
+				physics_material="missile"
+				missile_speed="25"
+				thrust_damage="10"
+				thrust_damage_type="Pierce"
+				weapon_length="97"
+				item_usage="arrow_right"
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="0, -80, 25"
+				sticking_position="0,-0.97,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.13"
+				modifier_group="arrow">
+				<WeaponFlags Consumable="true"
+					AmmoSticksWhenShot="true"
+					AmmoBreaksOnBounceBack="true"
+					Burning="false"
+					LeavesTrail="true"
+					CanPenetrateShield="true"
+					MultiplePenetration="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags Civilian="true" />
+		<Flag name="BonusAgainstShield" />
+	</Item>
+
+	<Item
+		id="huimieshi"
+		name="{=huimieshi}毁灭矢"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		flying_mesh="bolt_bl_flying"
+		mesh="bolt_bl_b"
+		holster_mesh="bolt_bl_b_quiver"
+		holster_mesh_with_weapon="bolt_bl_b_quiver"
+		weight="0.05"
+		appearance="1"
+		Type="Bolts"
+		value="30000"
+		is_merchandise="false"
+		item_holsters="quiver_bolts:quiver_bolts_2:quiver_back_middle:quiver_back_top">
+		<ItemComponent>
+			<Weapon
+				weapon_class="Bolt"
+				stack_amount="25"
+				thrust_speed="0"
+				thrust_damage="18"
+				thrust_damage_type="Blunt"
+				speed_rating="0"
+				missile_speed="10"
+				weapon_length="47"
+				item_usage=""
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="180, 0, 0"
+				physics_material="burning_jar"
+				trail_particle_name="psys_game_burning_jar_trail"
+				sticking_position="0,-0.47,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.1">
+				<WeaponFlags
+					AttachAmmoToVisual="true"
+					Consumable="true"
+					AmmoSticksWhenShot="true"
+					CanPenetrateShield="true"
+					BonusAgainstShield="true"
+					CanKnockDown="true"
+					AffectsAreaBig="true"
+					MultiplePenetration="true"
+					AmmoBreaksOnBounceBack="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags
+			ForceAttachOffHandPrimaryItemBone="true" />
+	</Item>
+
+
+	<Item
+		id="gaobaoshi"
+		name="{=gaobaoshi}高爆矢"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		flying_mesh="bolt_bl_flying"
+		mesh="bolt_bl_a"
+		holster_mesh="bolt_bl_a_quiver"
+		holster_mesh_with_weapon="bolt_bl_a_quiver"
+		weight="0.05"
+		appearance="1"
+		Type="Bolts"
+		value="30000"
+		is_merchandise="false"
+		item_holsters="quiver_bolts:quiver_bolts_2:quiver_back_middle:quiver_back_top">
+		<ItemComponent>
+			<Weapon
+				weapon_class="Bolt"
+				stack_amount="20"
+				thrust_speed="0"
+				thrust_damage="12"
+				thrust_damage_type="Blunt"
+				speed_rating="0"
+				missile_speed="10"
+				weapon_length="47"
+				item_usage=""
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="180, 0, 0"
+				physics_material="burning_jar"
+				sticking_position="0,-0.47,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.1">
+				<WeaponFlags
+					AttachAmmoToVisual="true"
+					Consumable="true"
+					AmmoSticksWhenShot="true"
+					CanKnockDown="true"
+					AffectsAreaBig="true"
+					AmmoBreaksOnBounceBack="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags
+			ForceAttachOffHandPrimaryItemBone="true" />
+	</Item>
+
+
+	<Item
+		id="junengshi"
+		name="{=junengshi}聚能矢"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		flying_mesh="bolt_bl_flying"
+		mesh="bolt_bl_a"
+		holster_mesh="bolt_bl_a_quiver"
+		holster_mesh_with_weapon="bolt_bl_a_quiver"
+		weight="0.05"
+		appearance="1"
+		Type="Bolts"
+		value="30000"
+		is_merchandise="false"
+		item_holsters="quiver_bolts:quiver_bolts_2:quiver_back_middle:quiver_back_top">
+		<ItemComponent>
+			<Weapon
+				weapon_class="Bolt"
+				stack_amount="30"
+				thrust_speed="0"
+				thrust_damage="15"
+				thrust_damage_type="Blunt"
+				speed_rating="0"
+				missile_speed="10"
+				weapon_length="47"
+				item_usage=""
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="180, 0, 0"
+				physics_material="missile"
+				sticking_position="0,-0.47,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.1">
+				<WeaponFlags
+					AttachAmmoToVisual="true"
+					Consumable="true"
+					AmmoSticksWhenShot="true"
+					BonusAgainstShield="true"
+					CanKnockDown="true"
+					AmmoBreaksOnBounceBack="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags
+			ForceAttachOffHandPrimaryItemBone="true" />
+	</Item>
+
+
+	<Item
+		id="guanchuanshi"
+		name="{=guanchuanshi}贯穿矢"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		flying_mesh="bolt_bl_flying"
+		mesh="bolt_bl_a"
+		holster_mesh="bolt_bl_a_quiver"
+		holster_mesh_with_weapon="bolt_bl_a_quiver"
+		weight="0.05"
+		appearance="1"
+		Type="Bolts"
+		value="40000"
+		is_merchandise="false"
+		item_holsters="quiver_bolts:quiver_bolts_2:quiver_back_middle:quiver_back_top">
+		<ItemComponent>
+			<Weapon
+				weapon_class="Bolt"
+				stack_amount="30"
+				thrust_speed="0"
+				thrust_damage="15"
+				thrust_damage_type="Pierce"
+				speed_rating="0"
+				missile_speed="10"
+				weapon_length="47"
+				item_usage=""
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="180, 0, 0"
+				physics_material="missile"
+				sticking_position="0,-0.47,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.1">
+				<WeaponFlags
+					AttachAmmoToVisual="true"
+					Consumable="true"
+					AmmoSticksWhenShot="true"
+					CanPenetrateShield="true"
+					CanKnockDown="true"
+					MultiplePenetration="true"
+					AmmoBreaksOnBounceBack="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags
+			ForceAttachOffHandPrimaryItemBone="true" />
+	</Item>
+
+
+	<Item
+		id="baozhashi"
+		name="{=baozhashi}爆炸矢"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		flying_mesh="bolt_bl_flying"
+		mesh="bolt_bl_a"
+		holster_mesh="bolt_bl_a_quiver"
+		holster_mesh_with_weapon="bolt_bl_a_quiver"
+		weight="0.05"
+		appearance="1"
+		Type="Bolts"
+		value="30000"
+		is_merchandise="false"
+		item_holsters="quiver_bolts:quiver_bolts_2:quiver_back_middle:quiver_back_top">
+		<ItemComponent>
+			<Weapon
+				weapon_class="Bolt"
+				stack_amount="30"
+				thrust_speed="0"
+				thrust_damage="12"
+				thrust_damage_type="Blunt"
+				speed_rating="0"
+				missile_speed="10"
+				weapon_length="47"
+				item_usage=""
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="180, 0, 0"
+				physics_material="burning_jar"
+				sticking_position="0,-0.47,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.1">
+				<WeaponFlags
+					AttachAmmoToVisual="true"
+					Consumable="true"
+					AmmoSticksWhenShot="true"
+					AffectsAreaBig="true"
+					AmmoBreaksOnBounceBack="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags
+			ForceAttachOffHandPrimaryItemBone="true" />
+	</Item>
+
+
+	<Item
+		id="baolieshi"
+		name="{=baolieshi}爆裂矢"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		flying_mesh="bolt_bl_flying"
+		mesh="bolt_bl_a"
+		holster_mesh="bolt_bl_a_quiver"
+		holster_mesh_with_weapon="bolt_bl_a_quiver"
+		weight="0.05"
+		appearance="1"
+		Type="Bolts"
+		value="40000"
+		is_merchandise="false"
+		item_holsters="quiver_bolts:quiver_bolts_2:quiver_back_middle:quiver_back_top">
+		<ItemComponent>
+			<Weapon
+				weapon_class="Bolt"
+				stack_amount="30"
+				thrust_speed="0"
+				thrust_damage="15"
+				thrust_damage_type="Blunt"
+				speed_rating="0"
+				missile_speed="10"
+				weapon_length="47"
+				item_usage=""
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="180, 0, 0"
+				physics_material="burning_jar"
+				sticking_position="0,-0.47,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.1">
+				<WeaponFlags
+					AttachAmmoToVisual="true"
+					Consumable="true"
+					AmmoSticksWhenShot="true"
+					BonusAgainstShield="true"
+					AffectsAreaBig="true"
+					AmmoBreaksOnBounceBack="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags
+			ForceAttachOffHandPrimaryItemBone="true" />
+	</Item>
+
+
+	<Item
+		id="baochuanshi"
+		name="{=baochuanshi}爆穿矢"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		flying_mesh="bolt_bl_flying"
+		mesh="bolt_bl_a"
+		holster_mesh="bolt_bl_a_quiver"
+		holster_mesh_with_weapon="bolt_bl_a_quiver"
+		weight="0.05"
+		appearance="1"
+		Type="Bolts"
+		value="3000"
+		is_merchandise="false"
+		item_holsters="quiver_bolts:quiver_bolts_2:quiver_back_middle:quiver_back_top">
+		<ItemComponent>
+			<Weapon
+				weapon_class="Bolt"
+				stack_amount="30"
+				thrust_speed="0"
+				thrust_damage="12"
+				thrust_damage_type="Blunt"
+				speed_rating="0"
+				missile_speed="10"
+				weapon_length="47"
+				item_usage=""
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="180, 0, 0"
+				physics_material="burning_jar"
+				sticking_position="0,-0.47,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.1">
+				<WeaponFlags
+					AttachAmmoToVisual="true"
+					Consumable="true"
+					AmmoSticksWhenShot="true"
+					CanPenetrateShield="true"
+					MultiplePenetration="true"
+					AffectsAreaBig="true"
+					AmmoBreaksOnBounceBack="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags
+			ForceAttachOffHandPrimaryItemBone="true" />
+	</Item>
+
+
+	<Item
+		id="podunshi"
+		name="{=podunshi}破盾矢"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		flying_mesh="bolt_bl_flying"
+		mesh="bolt_bl_a"
+		holster_mesh="bolt_bl_a_quiver"
+		holster_mesh_with_weapon="bolt_bl_a_quiver"
+		weight="0.05"
+		appearance="1"
+		Type="Bolts"
+		value="20000"
+		is_merchandise="false"
+		item_holsters="quiver_bolts:quiver_bolts_2:quiver_back_middle:quiver_back_top">
+		<ItemComponent>
+			<Weapon
+				weapon_class="Bolt"
+				stack_amount="30"
+				thrust_speed="0"
+				thrust_damage="28"
+				thrust_damage_type="Blunt"
+				speed_rating="0"
+				missile_speed="10"
+				weapon_length="47"
+				item_usage=""
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="180, 0, 0"
+				physics_material="missile"
+				sticking_position="0,-0.47,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.1">
+				<WeaponFlags
+					AttachAmmoToVisual="true"
+					Consumable="true"
+					AmmoSticksWhenShot="true"
+					BonusAgainstShield="true"
+					AmmoBreaksOnBounceBack="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags
+			ForceAttachOffHandPrimaryItemBone="true" />
+	</Item>
+
+
+	<Item
+		id="chuandunshi"
+		name="{=chuandunshi}穿盾矢"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		flying_mesh="bolt_bl_flying"
+		mesh="bolt_bl_a"
+		holster_mesh="bolt_bl_a_quiver"
+		holster_mesh_with_weapon="bolt_bl_a_quiver"
+		weight="0.05"
+		appearance="1"
+		Type="Bolts"
+		value="20000"
+		is_merchandise="false"
+		item_holsters="quiver_bolts:quiver_bolts_2:quiver_back_middle:quiver_back_top">
+		<ItemComponent>
+			<Weapon
+				weapon_class="Bolt"
+				stack_amount="30"
+				thrust_speed="0"
+				thrust_damage="10"
+				thrust_damage_type="Pierce"
+				speed_rating="0"
+				missile_speed="10"
+				weapon_length="47"
+				item_usage=""
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="180, 0, 0"
+				physics_material="missile"
+				sticking_position="0,-0.47,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.1">
+				<WeaponFlags
+					AttachAmmoToVisual="true"
+					Consumable="true"
+					AmmoSticksWhenShot="true"
+					CanPenetrateShield="true"
+					AmmoBreaksOnBounceBack="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags
+			ForceAttachOffHandPrimaryItemBone="true" />
+	</Item>
+
+
+	<Item
+		id="chuantoushi"
+		name="{=chuantoushi}穿透矢"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		flying_mesh="bolt_bl_flying"
+		mesh="bolt_bl_a"
+		holster_mesh="bolt_bl_a_quiver"
+		holster_mesh_with_weapon="bolt_bl_a_quiver"
+		weight="0.05"
+		appearance="1"
+		Type="Bolts"
+		value="20000"
+		is_merchandise="false"
+		item_holsters="quiver_bolts:quiver_bolts_2:quiver_back_middle:quiver_back_top">
+		<ItemComponent>
+			<Weapon
+				weapon_class="Bolt"
+				stack_amount="30"
+				thrust_speed="10"
+				thrust_damage="10"
+				thrust_damage_type="Pierce"
+				speed_rating="10"
+				missile_speed="10"
+				weapon_length="47"
+				item_usage=""
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="180, 0, 0"
+				physics_material="missile"
+				sticking_position="0,-0.47,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.1">
+				<WeaponFlags
+					AttachAmmoToVisual="true"
+					Consumable="true"
+					AmmoSticksWhenShot="true"
+					MultiplePenetration="true"
+					AmmoBreaksOnBounceBack="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags
+			ForceAttachOffHandPrimaryItemBone="true" />
+	</Item>
+
+	<Item
+		id="chuantoushi2"
+		name="{=chuantoushi2}扈从穿透矢"
+		body_name="bo_capsule_arrow"
+		holster_body_name="bo_axe_short"
+		flying_mesh="bolt_bl_flying"
+		mesh="bolt_bl_a"
+		holster_mesh="bolt_bl_a_quiver"
+		holster_mesh_with_weapon="bolt_bl_a_quiver"
+		weight="0.05"
+		appearance="1"
+		Type="Bolts"
+		value="20000"
+		is_merchandise="false"
+		item_holsters="quiver_bolts:quiver_bolts_2:quiver_back_middle:quiver_back_top">
+		<ItemComponent>
+			<Weapon
+				weapon_class="Bolt"
+				stack_amount="90"
+				thrust_speed="10"
+				thrust_damage="10"
+				thrust_damage_type="Pierce"
+				speed_rating="10"
+				missile_speed="10"
+				weapon_length="47"
+				item_usage=""
+				passby_sound_code="event:/mission/combat/missile/passby"
+				rotation="180, 0, 0"
+				physics_material="missile"
+				sticking_position="0,-0.47,0"
+				sticking_rotation="90,0,0"
+				center_of_mass="0,0,-0.1">
+				<WeaponFlags
+					AttachAmmoToVisual="true"
+					Consumable="true"
+					AmmoSticksWhenShot="true"
+					MultiplePenetration="true"
+					AmmoBreaksOnBounceBack="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags
+			ForceAttachOffHandPrimaryItemBone="true" />
+	</Item>
+
+	<!-- 
+	<Item id="huoguan" name="投掷火罐" is_merchandise="false" body_name="bo_throwing_stone"
+		holster_body_name="bo_axe_short" holster_mesh="stone_holster"
+		holster_mesh_with_weapon="stone_holster" mesh="projectile_pot" value="30000" weight="1"
+		appearance="0.3" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
+		<ItemComponent>
+			<Weapon weapon_class="Boulder" ammo_class="Boulder" stack_amount="4"
+				position="0.05, -0.15, 0" physics_material="burning_jar" thrust_speed="110"
+				speed_rating="80" thrust_damage_type="Pierce" missile_speed="40" weapon_length="95"
+				thrust_damage="125" item_usage="stone"
+				flying_sound_code="event:/mission/combat/boulder/passby"
+				trail_particle_name="psys_game_burning_jar_trail" rotation_speed="0, -3.0, 0">
+				<WeaponFlags RangedWeapon="true" NotUsableWithOneHand="true"
+					TwoHandIdleOnMount="true" CanPenetrateShield="true" MissileWithPhysics="true"
+					Consumable="true" LeavesTrail="true" Burning="true" AffectsAreaBig="true"
+					AmmoBreaksOnBounceBack="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags />
+	</Item>
+
+	<Item id="throwing_stone9" name="石块" is_merchandise="false" flying_mesh="projectile_pot"
+		body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="stone_holster"
+		holster_mesh_with_weapon="stone_holster" mesh="throwing_stone" value="200" weight="0.1"
+		appearance="0.8" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
+		<ItemComponent>
+			<Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="20"
+				physics_material="missile" accuracy="145" thrust_speed="120" speed_rating="120"
+				missile_speed="60" weapon_length="10" thrust_damage="40" item_usage="stone"
+				rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
+				<WeaponFlags
+					RangedWeapon="true"
+					Consumable="true"
+					AutoReload="true"
+					MultiplePenetration="true"
+					CanKnockDown="true"
+					CanPenetrateShield="true"
+					AffectsArea="true"
+					UnloadWhenSheathed="true"
+					UseHandAsThrowBase="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags />
+
+	</Item>
+	<Item id="throwing_stone8" name="大石块" is_merchandise="false" flying_mesh="projectile_pot"
+		body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="stone_holster"
+		holster_mesh_with_weapon="stone_holster" mesh="throwing_stone" value="200" weight="0.1"
+		appearance="0.8" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
+		<ItemComponent>
+			<Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="22"
+				physics_material="missile" accuracy="145" thrust_speed="150" speed_rating="150"
+				missile_speed="80" weapon_length="10" thrust_damage="50" item_usage="stone"
+				rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
+				<WeaponFlags
+					RangedWeapon="true"
+					Consumable="true"
+					AutoReload="true"
+					MultiplePenetration="true"
+					CanKnockDown="true"
+					CanPenetrateShield="true"
+					AffectsAreaBig="true"
+					UnloadWhenSheathed="true"
+					UseHandAsThrowBase="true" />
+			</Weapon>
+		</ItemComponent>
+		<Flags />
+	</Item> -->
+
+
+</Items>

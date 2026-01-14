@@ -1,0 +1,109 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net480</TargetFramework>
+		<BuildForWindows>false</BuildForWindows>
+		<BuildForWindowsStore>false</BuildForWindowsStore>
+		<LangVersion>12.0</LangVersion>
+		<ModuleId>$(MSBuildProjectName)</ModuleId>
+		<ModuleName>$(MSBuildProjectName)</ModuleName>
+		<ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+		<Platforms>x64</Platforms>
+		<BuildForWindows>true</BuildForWindows>
+		<OutPutPath>Module\bin\Win64_Shipping_Client\</OutPutPath>
+		<GameFolder>E:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</GameFolder>
+		<GameBinariesFolder Condition="Exists('$(GameFolder)\bin\Win64_Shipping_Client\Bannerlord.exe')">Win64_Shipping_Client</GameBinariesFolder>
+		<GameBinariesFolder Condition="Exists('$(GameFolder)\bin\Gaming.Desktop.x64_Shipping_Client\Bannerlord.exe')">Gaming.Desktop.x64_Shipping_Client</GameBinariesFolder>
+		<PlatformTarget>x64</PlatformTarget>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<OutputPath>$(OutPutPath)</OutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<OutputPath>bin\Debug\</OutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<DebugType>full</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<DebugType>full</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="$(GameFolder)\bin\$(GameBinariesFolder)\Newtonsoft.Json.dll">
+			<HintPath>%(Identity)</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(GameFolder)\bin\$(GameBinariesFolder)\TaleWorlds.*.dll" Exclude="$(GameFolder)\bin\$(GameBinariesFolder)\TaleWorlds.Native.dll">
+			<HintPath>%(Identity)</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(GameFolder)\Modules\Native\bin\$(GameBinariesFolder)\*.dll">
+			<HintPath>%(Identity)</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(GameFolder)\Modules\SandBox\bin\$(GameBinariesFolder)\*.dll">
+			<HintPath>%(Identity)</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(GameFolder)\Modules\SandBoxCore\bin\$(GameBinariesFolder)\*.dll">
+			<HintPath>%(Identity)</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(GameFolder)\Modules\StoryMode\bin\$(GameBinariesFolder)\*.dll">
+			<HintPath>%(Identity)</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(GameFolder)\Modules\CustomBattle\bin\$(GameBinariesFolder)\*.dll">
+			<HintPath>%(Identity)</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(GameFolder)\Modules\BirthAndDeath\bin\$(GameBinariesFolder)\*.dll">
+			<HintPath>%(Identity)</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(GameFolder)\Modules\NavalDLC\bin\$(GameBinariesFolder)\*.dll">
+			<HintPath>%(Identity)</HintPath>
+			<Private>False</Private>
+		</Reference>
+
+
+		<!--Shokuho-->
+		<!--
+		<Reference Include="E:\SteamLibrary\steamapps\workshop\content\261550\3496296180\bin\Win64_Shipping_Client\*.dll">
+			<HintPath>%(Identity)</HintPath>
+			<Private>False</Private>
+		</Reference> 
+		-->
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Bannerlord.ButterLib" Version="2.10.2" />
+		<PackageReference Include="Bannerlord.MCM" Version="5.11.3" />
+		<PackageReference Include="Bannerlord.UIExtenderEx" Version="2.13.2" />
+		<PackageReference Include="Lib.Harmony" Version="2.4.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Module\bin\Win64_Shipping_Client\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Module\bin\Win64_Shipping_Client\UFO.dll" />
+	  <None Remove="Module\bin\Win64_Shipping_Client\UFO.pdb" />
+	</ItemGroup>
+
+	<Target Name="CopyOutputToModFolder" AfterTargets="Build">
+		<ItemGroup>
+			<FilesToCopy Include="$(OutPutPath)\*.*" />
+		</ItemGroup>
+		
+		<Copy SourceFiles="@(FilesToCopy)" DestinationFolder="$(GameFolder)\Modules\UFO\bin\Win64_Shipping_Client\" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="Module\SubModule.xml" DestinationFolder="$(GameFolder)\Modules\UFO\" SkipUnchangedFiles="true" />
+	</Target>
+
+</Project>
