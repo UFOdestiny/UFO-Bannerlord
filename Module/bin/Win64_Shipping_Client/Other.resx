@@ -1501,4 +1501,7 @@
   <data name="Enum_Setting_Language_Russian" xml:space="preserve">
     <value>Russian</value>
   </data>
+  <data name="Enum_Setting_Language_Portuguese" xml:space="preserve">
+    <value>Portuguese</value>
+  </data>
 </root>

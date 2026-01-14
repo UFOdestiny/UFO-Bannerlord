@@ -198,7 +198,6 @@ internal class SubModule : MBSubModuleBase
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.AppendLine("Thanks a lot for helping to improve this mod!");
         stringBuilder.AppendLine("You could drop the contents of this file into https://pastebin.com/ and post a link to the file");
-        stringBuilder.AppendLine("in the Steam Workshop at https://steamcommunity.com/app/261550/workshop/");
         stringBuilder.AppendLine();
         stringBuilder.AppendLine("Modules:");
         foreach (ModuleInfo module in ModuleHelper.GetModules())

@@ -4,11 +4,11 @@
 	</GetItem>
 	<UpdateItem>
 		<ModuleFolder Value="E:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\UFO"/>
-		<ChangeNotes Value="Javalin Bug" />
+		<ChangeNotes Value="1.3.13" />
 		<Tags>
 			<Tag Value="Utility" />
 			<Tag Value="Singleplayer" />
-			<Tag Value="1.3.8" />
+			<Tag Value="1.3.13" />
 		</Tags>
 		<Image Value="D:\workspace\UFO-Bannerlord\SteamWorkshop\image.png"/>
 		<Visibility Value="Public"/>
