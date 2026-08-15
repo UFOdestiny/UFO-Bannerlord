@@ -1,0 +1,1459 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xsd:string" />
+              <xs:attribute name="type" type="xsd:string" />
+              <xs:attribute name="mimetype" type="xsd:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xsd:string" />
+              <xs:attribute name="name" type="xsd:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xsd:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xsd:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xsd:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ModName" xml:space="preserve">
+    <value>UFO's Mod</value>
+  </data>
+  <data name="Combat_Player_GroupName" xml:space="preserve">
+    <value>Бой – Игрок</value>
+  </data>
+  <data name="Combat_Party_GroupName" xml:space="preserve">
+    <value>Бой – Отряд</value>
+  </data>
+  <data name="Combat_Allies_GroupName" xml:space="preserve">
+    <value>Бой – Союзники</value>
+  </data>
+  <data name="Combat_Enemies_GroupName" xml:space="preserve">
+    <value>Бой – Враги</value>
+  </data>
+  <data name="Combat_Misc_GroupName" xml:space="preserve">
+    <value>Бой – Прочее</value>
+  </data>
+  <data name="Party_GroupName" xml:space="preserve">
+    <value> Отряд</value>
+  </data>
+  <data name="Smithing_GroupName" xml:space="preserve">
+    <value>Кузнечное дело</value>
+  </data>
+  <data name="Settlements_GroupName" xml:space="preserve">
+    <value>Поселения</value>
+  </data>
+  <data name="Clan_GroupName" xml:space="preserve">
+    <value> Клан</value>
+  </data>
+  <data name="Kingdom_GroupName" xml:space="preserve">
+    <value>Королевство</value>
+  </data>
+  <data name="Experience_GroupName" xml:space="preserve">
+    <value>Опыт</value>
+  </data>
+  <data name="Map_GroupName" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="General_GroupName" xml:space="preserve">
+    <value>Общие</value>
+  </data>
+  <data name="Inventory_GroupName" xml:space="preserve">
+    <value>Инвентарь</value>
+  </data>
+  <data name="Sieges_GroupName" xml:space="preserve">
+    <value>Осада</value>
+  </data>
+  <data name="Army_GroupName" xml:space="preserve">
+    <value> Армия</value>
+  </data>
+  <data name="UFOs_GroupName" xml:space="preserve">
+    <value>UFO's Общие настройки</value>
+  </data>
+  <data name="Invincible_Name" xml:space="preserve">
+    <value>Неуязвимость</value>
+  </data>
+  <data name="Invincible_Desc" xml:space="preserve">
+    <value>Игрок неуязвим, никакие атаки не наносят ему урон</value>
+  </data>
+  <data name="EnableHotkeys_Name" xml:space="preserve">
+    <value>Неуязвимый отряд</value>
+  </data>
+  <data name="EnableHotkeys_Desc" xml:space="preserve">
+    <value>Включить чит‑горячие клавиши в интерфейсах склада, отряда, клана и других меню。</value>
+  </data>
+  <data name="MapSpeedMultiplier_Name" xml:space="preserve">
+    <value>множитель</value>
+  </data>
+  <data name="MapSpeedMultiplier_Desc" xml:space="preserve">
+    <value>Множитель скорости отряда игрока на глобальной карте. Значение 1 — стандартная скорость.</value>
+  </data>
+  <data name="ExtraInventoryCapacity_Name" xml:space="preserve">
+    <value>Дополнительный инвентарь</value>
+  </data>
+  <data name="ExtraInventoryCapacity_Desc" xml:space="preserve">
+    <value>Ёмкость инвентаря отряда игрока.</value>
+  </data>
+  <data name="MapVisibilityMultiplier_Name" xml:space="preserve">
+    <value>Множитель обзора на карте</value>
+  </data>
+  <data name="MapVisibilityMultiplier_Desc" xml:space="preserve">
+    <value>Множитель дальности обзора отряда игрока на карте. Значение 1 даёт стандартный обзор. Внимание: может отрицательно влиять на производительность!</value>
+  </data>
+  <data name="PartyInvincible_Name" xml:space="preserve">
+    <value>Неуязвимый отряд</value>
+  </data>
+  <data name="PartyInvincible_Desc" xml:space="preserve">
+    <value>Отряд игрока неуязвим, никакие атаки не наносят ему урон.</value>
+  </data>
+  <data name="OneHitKill_Name" xml:space="preserve">
+    <value>Убийство с одного удара</value>
+  </data>
+  <data name="OneHitKill_Desc" xml:space="preserve">
+    <value>Один удар убивает врага.</value>
+  </data>
+  <data name="PartyOneHitKill_Name" xml:space="preserve">
+    <value>Отряд убивает с одного удара</value>
+  </data>
+  <data name="PartyOneHitKill_Desc" xml:space="preserve">
+    <value>Войска отряда игрока убивают врагов одним ударом.</value>
+  </data>
+  <data name="RenownRewardMultiplier_Name" xml:space="preserve">
+    <value>Множитель награды славы</value>
+  </data>
+  <data name="RenownRewardMultiplier_Desc" xml:space="preserve">
+    <value>Множитель славы, получаемой за победу в битвах и турнирах. Значение 1 даёт стандартную славу.</value>
+  </data>
+  <data name="InfluenceRewardMultiplier_Name" xml:space="preserve">
+    <value>Множитель награды влияния</value>
+  </data>
+  <data name="InfluenceRewardMultiplier_Desc" xml:space="preserve">
+    <value>Множитель влияния, получаемого за победу в битве. Значение 1 даёт стандартное влияние.</value>
+  </data>
+  <data name="AlwaysWinBattleSimulation_Name" xml:space="preserve">
+    <value>Всегда побеждать в авторасчёте</value>
+  </data>
+  <data name="AlwaysWinBattleSimulation_Desc" xml:space="preserve">
+    <value>При авторасчёте битвы враг не наносит урон отряду игрока.</value>
+  </data>
+  <data name="NoTroopSacrifice_Name" xml:space="preserve">
+    <value>Без потерь отряда</value>
+  </data>
+  <data name="NoTroopSacrifice_Desc" xml:space="preserve">
+    <value>При отступлении, штурме или прорыве отряд не несёт потерь.</value>
+  </data>
+  <data name="NoRunningAway_Name" xml:space="preserve">
+    <value>Отряд не бежит</value>
+  </data>
+  <data name="NoRunningAway_Desc" xml:space="preserve">
+    <value>Отряд игрока в бою никогда не обращается в бегство.</value>
+  </data>
+  <data name="EnemiesNoRunningAway_Name" xml:space="preserve">
+    <value>Враги не бегут</value>
+  </data>
+  <data name="EnemiesNoRunningAway_Desc" xml:space="preserve">
+    <value>Враги в бою никогда не обращаются в бегство.</value>
+  </data>
+  <data name="BanditHideoutTroopLimit_Name" xml:space="preserve">
+    <value>Дополнительные войска при штурме логова</value>
+  </data>
+  <data name="BanditHideoutTroopLimit_Desc" xml:space="preserve">
+    <value>Дополнительные войска, которые могут присоединиться к штурму логова бандитов. Значение 0 даёт стандартный лимит войск.</value>
+  </data>
+  <data name="AlwaysCrushThroughShields_Name" xml:space="preserve">
+    <value>Всегда ломать щиты</value>
+  </data>
+  <data name="AlwaysCrushThroughShields_Desc" xml:space="preserve">
+    <value>Атаки игрока всегда могут проломить щит врага.</value>
+  </data>
+  <data name="ExtraPartyMemberSize_Name" xml:space="preserve">
+    <value>Дополнительный размер отряда</value>
+  </data>
+  <data name="ExtraPartyMemberSize_Desc" xml:space="preserve">
+    <value>Увеличивает максимальный размер отряда игрока.</value>
+  </data>
+  <data name="ExtraPartyPrisonerSize_Name" xml:space="preserve">
+    <value>Дополнительный лимит пленных</value>
+  </data>
+  <data name="ExtraPartyPrisonerSize_Desc" xml:space="preserve">
+    <value>Увеличивает максимальное количество пленных, которых может вести отряд.</value>
+  </data>
+  <data name="ExtraPartyMorale_Name" xml:space="preserve">
+    <value>Дополнительный боевой дух отряда</value>
+  </data>
+  <data name="ExtraPartyMorale_Desc" xml:space="preserve">
+    <value>Даёт дополнительный боевой дух отряду.</value>
+  </data>
+  <data name="FoodConsumptionPercentage_Name" xml:space="preserve">
+    <value>Процент потребления пищи</value>
+  </data>
+  <data name="FoodConsumptionPercentage_Desc" xml:space="preserve">
+    <value>Сколько пищи нужно отряду игрока. 100% — полное потребление, 0% — отсутствие потребления пищи.</value>
+  </data>
+  <data name="TroopWagesPercentage_Name" xml:space="preserve">
+    <value>Процент жалования войск</value>
+  </data>
+  <data name="TroopWagesPercentage_Desc" xml:space="preserve">
+    <value>Сколько жалования нужно платить войскам. 100% — полная плата, 0% — без жалования.</value>
+  </data>
+  <data name="FreeTroopUpgrades_Name" xml:space="preserve">
+    <value>Бесплатное повышение войск</value>
+  </data>
+  <data name="FreeTroopUpgrades_Desc" xml:space="preserve">
+    <value>Повышение уровня войск отряда игрока бесплатно.</value>
+  </data>
+  <data name="FreeCompanionHiring_Name" xml:space="preserve">
+    <value>Бесплатный найм спутников</value>
+  </data>
+  <data name="FreeCompanionHiring_Desc" xml:space="preserve">
+    <value>Найм спутников для игрока бесплатен.</value>
+  </data>
+  <data name="InstantPrisonerRecruitment_Name" xml:space="preserve">
+    <value>Мгновенный набор пленных</value>
+  </data>
+  <data name="InstantPrisonerRecruitment_Desc" xml:space="preserve">
+    <value>Пленных можно завербовать немедленно.</value>
+  </data>
+  <data name="NoPrisonerEscape_Name" xml:space="preserve">
+    <value>Пленные не сбегают</value>
+  </data>
+  <data name="NoPrisonerEscape_Desc" xml:space="preserve">
+    <value>Пленные не могут сбежать из отряда.</value>
+  </data>
+  <data name="PartyHealingMultiplier_Name" xml:space="preserve">
+    <value>Множитель скорости лечения отряда</value>
+  </data>
+  <data name="PartyHealingMultiplier_Desc" xml:space="preserve">
+    <value>Множитель скорости лечения отряда игрока. Значение 1 даёт стандартную скорость.</value>
+  </data>
+  <data name="ExtraCompanionLimit_Name" xml:space="preserve">
+    <value>Дополнительный лимит спутников</value>
+  </data>
+  <data name="ExtraCompanionLimit_Desc" xml:space="preserve">
+    <value>Увеличивает максимальное число спутников в клане.</value>
+  </data>
+  <data name="ExtraClanPartyLimit_Name" xml:space="preserve">
+    <value>Дополнительный лимит отрядов клана</value>
+  </data>
+  <data name="ExtraClanPartyLimit_Desc" xml:space="preserve">
+    <value>Увеличивает максимальное количество отрядов клана.</value>
+  </data>
+  <data name="KingdomDecisionWeightMultiplier_Name" xml:space="preserve">
+    <value>Множитель веса голоса в королевстве</value>
+  </data>
+  <data name="KingdomDecisionWeightMultiplier_Desc" xml:space="preserve">
+    <value>Множитель веса голоса игрока при голосовании по решениям королевства, то есть шанс, что его вариант будет принят.</value>
+  </data>
+  <data name="NoRelationshipLossOnDecision_Name" xml:space="preserve">
+    <value>Без потери отношений за решения</value>
+  </data>
+  <data name="NoRelationshipLossOnDecision_Desc" xml:space="preserve">
+    <value>Отношения с теми, кто против решения, не ухудшаются.</value>
+  </data>
+  <data name="ExperienceMultiplier_Name" xml:space="preserve">
+    <value>Множитель опыта</value>
+  </data>
+  <data name="ExperienceMultiplier_Desc" xml:space="preserve">
+    <value>Множитель получаемого игроком опыта. Значение 1 даёт стандартный опыт.</value>
+  </data>
+  <data name="LearningRateMultiplier_Name" xml:space="preserve">
+    <value>Множитель скорости обучения</value>
+  </data>
+  <data name="LearningRateMultiplier_Desc" xml:space="preserve">
+    <value>Множитель скорости обучения игрока. Значение 1 даёт стандартную скорость.</value>
+  </data>
+  <data name="TroopExperienceMultiplier_Name" xml:space="preserve">
+    <value>Множитель опыта войск</value>
+  </data>
+  <data name="TroopExperienceMultiplier_Desc" xml:space="preserve">
+    <value>Множитель опыта войск отряда игрока. Значение 1 даёт стандартный опыт.</value>
+  </data>
+  <data name="SiegeBuildingSpeedMultiplier_Name" xml:space="preserve">
+    <value>Множитель скорости постройки осадных машин</value>
+  </data>
+  <data name="SiegeBuildingSpeedMultiplier_Desc" xml:space="preserve">
+    <value>Множитель скорости строительства осадных машин для атакующей стороны. Значение 1 даёт стандартную скорость.</value>
+  </data>
+  <data name="ArmyCohesionLossPercentage_Name" xml:space="preserve">
+    <value>Процент потери сплочённости армии</value>
+  </data>
+  <data name="ArmyCohesionLossPercentage_Desc" xml:space="preserve">
+    <value>Сколько сплочённости теряет армия, к которой присоединился игрок. 100% — полная потеря, 0% — сплочённость не убывает.</value>
+  </data>
+  <data name="ArmyFoodConsumptionPercentage_Name" xml:space="preserve">
+    <value>Процент потребления пищи армией</value>
+  </data>
+  <data name="ArmyFoodConsumptionPercentage_Desc" xml:space="preserve">
+    <value>Сколько пищи требуется армии, к которой присоединился игрок. 100% — полное потребление, 0% — отсутствие потребления.</value>
+  </data>
+  <data name="DisguiseAlwaysWorks_Name" xml:space="preserve">
+    <value>Маскировка всегда успешна</value>
+  </data>
+  <data name="DisguiseAlwaysWorks_Desc" xml:space="preserve">
+    <value>Маскировка при проникновении в город всегда успешна.</value>
+  </data>
+  <data name="SmithingEnergyCostPercentage_Name" xml:space="preserve">
+    <value>Процент затрат выносливости</value>
+  </data>
+  <data name="SmithingEnergyCostPercentage_Desc" xml:space="preserve">
+    <value>Сколько выносливости тратится на ковку, плавку и переработку. 100% — полная трата, 0% — без затрат выносливости.</value>
+  </data>
+  <data name="UnlockAllParts_Name" xml:space="preserve">
+    <value>Разблокировать все детали</value>
+  </data>
+  <data name="UnlockAllParts_Desc" xml:space="preserve">
+    <value>Все кузнечные детали разблокированы.</value>
+  </data>
+  <data name="SmithingDifficultyPercentage_Name" xml:space="preserve">
+    <value>Процент сложности</value>
+  </data>
+  <data name="SmithingDifficultyPercentage_Desc" xml:space="preserve">
+    <value>Насколько сложным является проектирование оружия. 100% — полная сложность, 0% — без сложности.</value>
+  </data>
+  <data name="SmithingCostPercentage_Name" xml:space="preserve">
+    <value>Процент затрат материалов</value>
+  </data>
+  <data name="SmithingCostPercentage_Desc" xml:space="preserve">
+    <value>Сколько материалов требуется для создания оружия. 100% — полные затраты, 0% — без затрат материалов.</value>
+  </data>
+  <data name="CraftedWeaponHandlingBonus_Name" xml:space="preserve">
+    <value>Бонус обращения с созданным оружием</value>
+  </data>
+  <data name="CraftedWeaponHandlingBonus_Desc" xml:space="preserve">
+    <value>Бонус к удобству обращения с любым оружием, выкованным игроком.</value>
+  </data>
+  <data name="CraftedWeaponSwingDamageBonus_Name" xml:space="preserve">
+    <value>Бонус рубящего урона созданного оружия</value>
+  </data>
+  <data name="CraftedWeaponSwingDamageBonus_Desc" xml:space="preserve">
+    <value>Бонус к рубящему урону любого оружия, выкованного игроком.</value>
+  </data>
+  <data name="CraftedWeaponSwingSpeedBonus_Name" xml:space="preserve">
+    <value>Бонус скорости взмаха созданного оружия</value>
+  </data>
+  <data name="CraftedWeaponSwingSpeedBonus_Desc" xml:space="preserve">
+    <value>Бонус к скорости рубящих атак любого оружия, выкованного игроком.</value>
+  </data>
+  <data name="CraftedWeaponThrustDamageBonus_Name" xml:space="preserve">
+    <value>Бонус колющего урона созданного оружия</value>
+  </data>
+  <data name="CraftedWeaponThrustDamageBonus_Desc" xml:space="preserve">
+    <value>Бонус к колющему урону любого оружия, выкованного игроком.</value>
+  </data>
+  <data name="CraftedWeaponThrustSpeedBonus_Name" xml:space="preserve">
+    <value>Бонус скорости укола созданного оружия</value>
+  </data>
+  <data name="CraftedWeaponThrustSpeedBonus_Desc" xml:space="preserve">
+    <value>Бонус к скорости колющих атак любого оружия, выкованного игроком.</value>
+  </data>
+  <data name="AddAttributePointMessage" xml:space="preserve">
+    <value>{1} получает 1 очко характеристики {0}.</value>
+  </data>
+  <data name="AddGoldMessage" xml:space="preserve">
+    <value>Получено {0} динаров.</value>
+  </data>
+  <data name="AddInfluenceMessage" xml:space="preserve">
+    <value>Получено 1000 единиц влияния.</value>
+  </data>
+  <data name="AddTroopsMessage" xml:space="preserve">
+    <value>{1} получает {0} солдат.</value>
+  </data>
+  <data name="AddTroopXpMessage" xml:space="preserve">
+    <value>{0} получает опыт.</value>
+  </data>
+  <data name="SetAllAttributesMessage" xml:space="preserve">
+    <value>Характеристики {0} установлены на 10.</value>
+  </data>
+  <data name="PerfectRelationships_Desc" xml:space="preserve">
+    <value>Отношения игрока со всеми персонажами установлены на 100.</value>
+  </data>
+  <data name="PerfectRelationships_Name" xml:space="preserve">
+    <value>Идеальные отношения</value>
+  </data>
+  <data name="Characters_GroupName" xml:space="preserve">
+    <value>Персонажи</value>
+  </data>
+  <data name="BarterOfferAlwaysAccepted_Desc" xml:space="preserve">
+    <value>Предложения на переговорах всегда принимаются другими персонажами.</value>
+  </data>
+  <data name="BarterOfferAlwaysAccepted_Name" xml:space="preserve">
+    <value>Всегда успешные переговоры</value>
+  </data>
+  <data name="ConversationAlwaysSuccessful_Desc" xml:space="preserve">
+    <value>Диалоги и убеждение всегда успешны.</value>
+  </data>
+  <data name="ConversationAlwaysSuccessful_Name" xml:space="preserve">
+    <value>Всегда успешный диалог</value>
+  </data>
+  <data name="FreeTroopRecruitment_Desc" xml:space="preserve">
+    <value>Бесплатный набор новобранцев из поселений в отряд.</value>
+  </data>
+  <data name="FreeTroopRecruitment_Name" xml:space="preserve">
+    <value>Бесплатный набор войск</value>
+  </data>
+  <data name="NoBarterCooldown_Desc" xml:space="preserve">
+    <value>Нет времени восстановления между переговорами.</value>
+  </data>
+  <data name="NoBarterCooldown_Name" xml:space="preserve">
+    <value>Без перезарядки переговоров</value>
+  </data>
+  <data name="NpcMapSpeedPercentage_Desc" xml:space="preserve">
+    <value>Процент скорости отрядов НПС на карте. 100% — стандартная скорость, 50% — половина скорости, 0% — не двигаются.</value>
+  </data>
+  <data name="NpcMapSpeedPercentage_Name" xml:space="preserve">
+    <value>Скорость отрядов НПС</value>
+  </data>
+  <data name="PartyInvisibleOnMap_Desc" xml:space="preserve">
+    <value>Вражеские отряды на карте не преследуют и не атакуют отряд игрока.</value>
+  </data>
+  <data name="PartyInvisibleOnMap_Name" xml:space="preserve">
+    <value>Невидимый отряд</value>
+  </data>
+  <data name="InstantEscape_Desc" xml:space="preserve">
+    <value>После поимки другой стороной игрок сразу сбегает.</value>
+  </data>
+  <data name="InstantEscape_Name" xml:space="preserve">
+    <value>Мгновенный побег</value>
+  </data>
+  <data name="HealthRegeneration_Desc" xml:space="preserve">
+    <value>Процент от максимального запаса здоровья игрока, восстанавливаемый каждую секунду в бою. 0% — без регенерации.</value>
+  </data>
+  <data name="HealthRegeneration_Name" xml:space="preserve">
+    <value>Регенерация здоровья</value>
+  </data>
+  <data name="InfiniteAmmo_Desc" xml:space="preserve">
+    <value>Бесконечные боеприпасы для дальнобойного и метательного оружия.</value>
+  </data>
+  <data name="InfiniteAmmo_Name" xml:space="preserve">
+    <value>Бесконечные боеприпасы</value>
+  </data>
+  <data name="EnemySiegeBuildingSpeedPercentage_Desc" xml:space="preserve">
+    <value>Насколько быстро враг может строить осадные машины при осаде. 100% — полная скорость, 0% — не может строить.</value>
+  </data>
+  <data name="EnemySiegeBuildingSpeedPercentage_Name" xml:space="preserve">
+    <value>Процент скорости постройки осадных машин врага</value>
+  </data>
+  <data name="DamageMultiplier_Desc" xml:space="preserve">
+    <value>Множитель урона, наносимого игроком в бою. Значение 1 даёт стандартный урон. Не действует, если включён режим «Убийство с одного удара».</value>
+  </data>
+  <data name="DamageMultiplier_Name" xml:space="preserve">
+    <value>Множитель урона</value>
+  </data>
+  <data name="NoFriendlyFire_Desc" xml:space="preserve">
+    <value>Полностью отключает дружеский огонь отряда игрока.</value>
+  </data>
+  <data name="NoFriendlyFire_Name" xml:space="preserve">
+    <value>Без урона союзникам</value>
+  </data>
+  <data name="PartyDamageMultiplier_Desc" xml:space="preserve">
+    <value>Множитель урона, наносимого войсками отряда игрока в бою. Значение 1 даёт стандартный урон. Не действует, если включён режим «Убийство с одного удара».</value>
+  </data>
+  <data name="PartyDamageMultiplier_Name" xml:space="preserve">
+    <value>Множитель урона отряда</value>
+  </data>
+  <data name="PartyInfiniteAmmo_Desc" xml:space="preserve">
+    <value>Бесконечные боеприпасы для дальнобойного и метательного оружия войск отряда игрока.</value>
+  </data>
+  <data name="PartyInfiniteAmmo_Name" xml:space="preserve">
+    <value>Бесконечные боеприпасы отряда</value>
+  </data>
+  <data name="DamageTakenPercentage_Desc" xml:space="preserve">
+    <value>Какой процент урона получает игрок от каждого удара. 100% — полный урон, 50% — половина урона, 0% — полная неуязвимость.</value>
+  </data>
+  <data name="DamageTakenPercentage_Name" xml:space="preserve">
+    <value>Процент получаемого урона</value>
+  </data>
+  <data name="ItemTradingCostPercentage_Desc" xml:space="preserve">
+    <value>Сколько нужно заплатить за товары. 100% — полная цена, 50% — половина цены, 0% — всё бесплатно.</value>
+  </data>
+  <data name="ItemTradingCostPercentage_Name" xml:space="preserve">
+    <value>Процент цены покупки товаров</value>
+  </data>
+  <data name="SellingPriceMultiplier_Desc" xml:space="preserve">
+    <value>Множитель цены продажи предметов игроком. Значение 1 даёт стандартную цену.</value>
+  </data>
+  <data name="SellingPriceMultiplier_Name" xml:space="preserve">
+    <value>Множитель цены продажи</value>
+  </data>
+  <data name="PartyDamageTakenPercentage_Desc" xml:space="preserve">
+    <value>Какой урон получает отряд игрока от каждого удара. 100% — полный урон, 50% — половина урона, 0% — полная неуязвимость отряда.</value>
+  </data>
+  <data name="PartyDamageTakenPercentage_Name" xml:space="preserve">
+    <value>Процент получаемого урона отрядом</value>
+  </data>
+  <data name="DailyFoodBonus_Desc" xml:space="preserve">
+    <value>Запасы еды в замках и городах игрока ежедневно увеличиваются на заданное значение.</value>
+  </data>
+  <data name="DailyFoodBonus_Name" xml:space="preserve">
+    <value>Ежедневный запас еды</value>
+  </data>
+  <data name="DailyGarrisonBonus_Desc" xml:space="preserve">
+    <value>Гарнизон в замках и городах игрока ежедневно увеличивается на заданное значение.</value>
+  </data>
+  <data name="DailyGarrisonBonus_Name" xml:space="preserve">
+    <value>Ежедневное пополнение гарнизона</value>
+  </data>
+  <data name="DailyMilitiaBonus_Desc" xml:space="preserve">
+    <value>Милиция в деревнях и городах игрока ежедневно увеличивается на заданное значение.</value>
+  </data>
+  <data name="DailyMilitiaBonus_Name" xml:space="preserve">
+    <value>Ежедневное пополнение милиции</value>
+  </data>
+  <data name="GarrisonWagesPercentage_Name" xml:space="preserve">
+    <value>Процент жалования гарнизону</value>
+  </data>
+  <data name="GarrisonWagesPercentage_Desc" xml:space="preserve">
+    <value>Сколько жалования нужно платить гарнизону. 100% — полная плата, 0% — без жалования.</value>
+  </data>
+  <data name="PartyHealthRegeneration_Desc" xml:space="preserve">
+    <value>Процент от максимального запаса здоровья отряда игрока, восстанавливаемый каждую секунду в бою. 0% — без регенерации.</value>
+  </data>
+  <data name="PartyHealthRegeneration_Name" xml:space="preserve">
+    <value>Регенерация здоровья отряда</value>
+  </data>
+  <data name="DailyHearthsBonus_Desc" xml:space="preserve">
+    <value>Число дворов в деревнях игрока ежедневно увеличивается на заданное значение.</value>
+  </data>
+  <data name="DailyHearthsBonus_Name" xml:space="preserve">
+    <value>Ежедневный прирост дворов</value>
+  </data>
+  <data name="DailyLoyaltyBonus_Desc" xml:space="preserve">
+    <value>Лояльность в замках и городах игрока ежедневно увеличивается на заданное значение.</value>
+  </data>
+  <data name="DailyLoyaltyBonus_Name" xml:space="preserve">
+    <value>Ежедневный прирост лояльности</value>
+  </data>
+  <data name="DailyProsperityBonus_Desc" xml:space="preserve">
+    <value>Процветание в замках и городах игрока ежедневно увеличивается на заданное значение.</value>
+  </data>
+  <data name="DailyProsperityBonus_Name" xml:space="preserve">
+    <value>Ежедневный прирост процветания</value>
+  </data>
+  <data name="DailySecurityBonus_Desc" xml:space="preserve">
+    <value>Порядок в замках и городах игрока ежедневно увеличивается на заданное значение.</value>
+  </data>
+  <data name="DailySecurityBonus_Name" xml:space="preserve">
+    <value>Ежедневный прирост порядка</value>
+  </data>
+  <data name="AddItemsMessage" xml:space="preserve">
+    <value>{1} получает {0}.</value>
+  </data>
+  <data name="CombatZoomMultiplier_Name" xml:space="preserve">
+    <value>Множитель масштаба в бою</value>
+  </data>
+  <data name="CombatZoomMultiplier_Desc" xml:space="preserve">
+    <value>Множитель масштаба поля боя во время сражения. Значение 1 даёт стандартный масштаб.</value>
+  </data>
+  <data name="InstantCrossbowReload_Name" xml:space="preserve">
+    <value>Мгновенная перезарядка арбалета</value>
+  </data>
+  <data name="InstantCrossbowReload_Desc" xml:space="preserve">
+    <value>Если включено, арбалет перезаряжается почти мгновенно.</value>
+  </data>
+  <data name="NeverRequireCivilianEquipment_Name" xml:space="preserve">
+    <value>Не требуется гражданское снаряжение</value>
+  </data>
+  <data name="NeverRequireCivilianEquipment_Desc" xml:space="preserve">
+    <value>Позволяет входить в любые сцены в боевом снаряжении.</value>
+  </data>
+  <data name="FreeFocusPointAssignment_Name" xml:space="preserve">
+    <value>Свободное распределение очков фокуса</value>
+  </data>
+  <data name="FreeFocusPointAssignment_Desc" xml:space="preserve">
+    <value>Повышение уровня фокуса навыков не тратит очки фокуса.</value>
+  </data>
+  <data name="AddUnspentFocusPointMessage" xml:space="preserve">
+    <value>{0} получает 1 очко фокуса.</value>
+  </data>
+  <data name="AddUnspentAttributePointMessage" xml:space="preserve">
+    <value>{0} получает 1 очко характеристики.</value>
+  </data>
+  <data name="NoCrimeRatingForCrimes_Name" xml:space="preserve">
+    <value>Без наказания за преступления</value>
+  </data>
+  <data name="NoCrimeRatingForCrimes_Desc" xml:space="preserve">
+    <value>Незаконные действия не повышают уровень преступности.</value>
+  </data>
+  <data name="PartyHeroesInvincible_Desc" xml:space="preserve">
+    <value>Герои в отряде игрока неуязвимы, никакие атаки не наносят им урона. На обычных солдат не влияет.</value>
+  </data>
+  <data name="PartyHeroesInvincible_Name" xml:space="preserve">
+    <value>Неуязвимые герои отряда</value>
+  </data>
+  <data name="ExtraClanPartySize_Name" xml:space="preserve">
+    <value>Дополнительный размер отрядов клана</value>
+  </data>
+  <data name="ExtraClanPartySize_Desc" xml:space="preserve">
+    <value>Увеличивает максимальный размер отрядов твоего клана.</value>
+  </data>
+  <data name="Workshops_GroupName" xml:space="preserve">
+    <value>Мастерские</value>
+  </data>
+  <data name="WorkshopDailyExpensePercentage_Name" xml:space="preserve">
+    <value>Процент ежедневных расходов</value>
+  </data>
+  <data name="WorkshopDailyExpensePercentage_Desc" xml:space="preserve">
+    <value>Процент ежедневных расходов мастерских. 100% — полная стоимость, 0% — без расходов.</value>
+  </data>
+  <data name="WorkshopUpgradeCostPercentage_Name" xml:space="preserve">
+    <value>Процент стоимости улучшения</value>
+  </data>
+  <data name="WorkshopUpgradeCostPercentage_Desc" xml:space="preserve">
+    <value>Процент стоимости улучшения мастерских. 100% — полная стоимость, 0% — бесплатное улучшение.</value>
+  </data>
+  <data name="WorkshopSellingCostMultiplier_Name" xml:space="preserve">
+    <value>Множитель цены продажи мастерских</value>
+  </data>
+  <data name="WorkshopSellingCostMultiplier_Desc" xml:space="preserve">
+    <value>Множитель прибыли от продажи мастерских. Значение 1 даёт стандартную цену продажи.</value>
+  </data>
+  <data name="WorkshopBuyingCostPercentage_Name" xml:space="preserve">
+    <value>Процент цены покупки мастерских</value>
+  </data>
+  <data name="WorkshopBuyingCostPercentage_Desc" xml:space="preserve">
+    <value>Сколько стоит покупка мастерской. 100% — полная цена, 0% — бесплатно.</value>
+  </data>
+  <data name="FactionArmyCohesionLossPercentage_Name" xml:space="preserve">
+    <value>Процент потери сплочённости армий фракции</value>
+  </data>
+  <data name="FactionArmyCohesionLossPercentage_Desc" xml:space="preserve">
+    <value>Сколько сплочённости теряют армии фракции игрока. 100% — полная потеря, 0% — сплочённость не убывает.</value>
+  </data>
+  <data name="AddTroopsFromEncyclopediaMessage" xml:space="preserve">
+    <value>Добавлено {0} бойцов типа {1} в отряд.</value>
+  </data>
+  <data name="LearningLimitMultiplier_Name" xml:space="preserve">
+    <value>Множитель предела обучения</value>
+  </data>
+  <data name="LearningLimitMultiplier_Desc" xml:space="preserve">
+    <value>Множитель лимитов обучения для всех навыков. Значение 1 даёт стандартный предел.</value>
+  </data>
+  <data name="CompanionExperienceMultiplier_Name" xml:space="preserve">
+    <value>Множитель опыта спутников</value>
+  </data>
+  <data name="CompanionExperienceMultiplier_Desc" xml:space="preserve">
+    <value>Множитель получаемого спутниками опыта. Значение 1 даёт стандартный опыт.</value>
+  </data>
+  <data name="CompanionLearningRateMultiplier_Name" xml:space="preserve">
+    <value>Множитель скорости обучения спутников</value>
+  </data>
+  <data name="CompanionLearningRateMultiplier_Desc" xml:space="preserve">
+    <value>Множитель лимитов обучения всех навыков спутников игрока. Значение 1 даёт стандартный предел.</value>
+  </data>
+  <data name="SliceThroughEveryone_Name" xml:space="preserve">
+    <value>Проходящий удар: игрок</value>
+  </data>
+  <data name="SliceThroughEveryone_Desc" xml:space="preserve">
+    <value>Каждая атака игрока может пробивать сразу нескольких врагов.</value>
+  </data>
+  <data name="SliceThroughEveryone_AI_Name" xml:space="preserve">
+    <value>Проходящий удар: ИИ</value>
+  </data>
+  <data name="SliceThroughEveryone_AI_Desc" xml:space="preserve">
+    <value>Каждая атака ИИ может пробивать сразу нескольких врагов.</value>
+  </data>
+  <data name="SliceThroughEveryone_ally_Name" xml:space="preserve">
+    <value>Проходящий удар: союзники</value>
+  </data>
+  <data name="SliceThroughEveryone_ally_Desc" xml:space="preserve">
+    <value>Каждая атака союзников может пробивать сразу нескольких врагов.</value>
+  </data>
+  <data name="SliceThroughEveryone_enemy_Name" xml:space="preserve">
+    <value>Проходящий удар: враги</value>
+  </data>
+  <data name="SliceThroughEveryone_enemy_Desc" xml:space="preserve">
+    <value>Каждая атака врагов может пробивать сразу нескольких целей.</value>
+  </data>
+  <data name="PlayerHorseInvincible_Name" xml:space="preserve">
+    <value>Неуязвимая лошадь игрока</value>
+  </data>
+  <data name="PlayerHorseInvincible_Desc" xml:space="preserve">
+    <value>Лошадь игрока неуязвима, никакие атаки не наносят ей урон.</value>
+  </data>
+  <data name="AlwaysKnockDown_Name" xml:space="preserve">
+    <value>Всегда оглушать</value>
+  </data>
+  <data name="AlwaysKnockDown_Desc" xml:space="preserve">
+    <value>Каждая атака всегда оглушает врагов.</value>
+  </data>
+  <data name="DecisionOverrideInfluenceCostPercentage_Name" xml:space="preserve">
+    <value>Процент стоимости влияния за отмену решений</value>
+  </data>
+  <data name="DecisionOverrideInfluenceCostPercentage_Desc" xml:space="preserve">
+    <value>Сколько влияния нужно потратить, чтобы отменить решение королевства. 100% — полная стоимость, 0% — без затрат влияния.</value>
+  </data>
+  <data name="EnableHotkeyTips_Name" xml:space="preserve">
+    <value>Включить подсказки горячих клавиш</value>
+  </data>
+  <data name="EnableHotkeyTips_Desc" xml:space="preserve">
+    <value>Позволяет в любом интерфейсе, где доступны горячие клавиши, просматривать список чит‑горячих клавиш.</value>
+  </data>
+  <data name="NativeItemSpawning_Name" xml:space="preserve">
+    <value>Чит‑магазин</value>
+  </data>
+  <data name="NativeItemSpawning_Desc" xml:space="preserve">
+    <value>Включает чит‑магазин: открой инвентарь, чтобы просматривать и получать все предметы в игре.</value>
+  </data>
+  <data name="ConstructionPowerMultiplier_Name" xml:space="preserve">
+    <value>Множитель скорости строительства</value>
+  </data>
+  <data name="ConstructionPowerMultiplier_Desc" xml:space="preserve">
+    <value>Множитель скорости строительства в городах игрока. Значение 1 даёт стандартную скорость.</value>
+  </data>
+  <data name="NoBribeToEnterKeep_Name" xml:space="preserve">
+    <value>Без взятки за вход</value>
+  </data>
+  <data name="NoBribeToEnterKeep_Desc" xml:space="preserve">
+    <value>Если включено, вход во внутренний двор замка не требует взятки.</value>
+  </data>
+  <data name="EveryoneBuysWorkshops_Name" xml:space="preserve">
+    <value>Мастерские всегда найдут покупателя</value>
+  </data>
+  <data name="EveryoneBuysWorkshops_Desc" xml:space="preserve">
+    <value>Если включено, на твои мастерские всегда найдётся покупатель.</value>
+  </data>
+  <data name="PerfectAttraction_Name" xml:space="preserve">
+    <value>Непреодолимое обаяние</value>
+  </data>
+  <data name="PerfectAttraction_Desc" xml:space="preserve">
+    <value>Если включено, потенциальный супруг будет на 100% очарован тобой.</value>
+  </data>
+  <data name="AllowSameSexMarriage_Name" xml:space="preserve">
+    <value>Разрешить однополый брак</value>
+  </data>
+  <data name="AllowSameSexMarriage_Desc" xml:space="preserve">
+    <value>Если включено, можно вступать в брак с персонажами того же пола.</value>
+  </data>
+  <data name="PregnancyChanceMultiplier_Name" xml:space="preserve">
+    <value>Множитель шанса беременности</value>
+  </data>
+  <data name="PregnancyChanceMultiplier_Desc" xml:space="preserve">
+    <value>Множитель шанса беременности персонажа игрока или его супруга. Не влияет на персонажей, которые не могут забеременеть. Значение 1 даёт стандартный шанс.</value>
+  </data>
+  <data name="AdjustPregnancyDuration_Name" xml:space="preserve">
+    <value>Настройка срока беременности</value>
+  </data>
+  <data name="AdjustPregnancyDuration_Desc" xml:space="preserve">
+    <value>Изменяет срок беременности для всех персонажей в игре. Стандартная длительность беременности — 36 дней.</value>
+  </data>
+  <data name="ModWarningMessageConfirm" xml:space="preserve">
+    <value>Я понял</value>
+  </data>
+  <data name="ModFailedLoadWarningTitle" xml:space="preserve">
+    <value>Не удалось загрузить встроенный модификатор Cheats!</value>
+  </data>
+  <data name="ModFailedLoadWarningMessage" xml:space="preserve">
+    <value>Скорее всего, это вызвано несовпадением версии игры и мода. Проверьте, соответствует ли версия мода вашей версии игры.
+Если всё верно, отправьте сообщение об ошибке из файла «{0}» автору мода, чтобы он мог изучить проблему.
+Вы всё равно можете продолжить игру, но большинство читов работать не будет.
+Спасибо!</value>
+  </data>
+  <data name="NeverKnockedBackByAttacks_Desc" xml:space="preserve">
+    <value>Если включено, удары врагов не будут прерывать твои действия (нет стана).</value>
+  </data>
+  <data name="NeverKnockedBackByAttacks_Name" xml:space="preserve">
+    <value>Не перебивай меня! (без стана)</value>
+  </data>
+  <data name="EnemyDamagePercentage_Name" xml:space="preserve">
+    <value>Процент урона от врагов</value>
+  </data>
+  <data name="EnemyDamagePercentage_Desc" xml:space="preserve">
+    <value>Процент урона, который враги наносят игроку в бою. 100% — полный урон.</value>
+  </data>
+  <data name="TournamentMaximumBetMultiplier_Name" xml:space="preserve">
+    <value>Множитель максимальной ставки в турнирах</value>
+  </data>
+  <data name="TournamentMaximumBetMultiplier_Desc" xml:space="preserve">
+    <value>Множитель максимальной суммы, которую игрок может поставить на турнире. 1 — стандартное значение.</value>
+  </data>
+  <data name="NoStuckArrows_Name" xml:space="preserve">
+    <value>Без застрявших стрел</value>
+  </data>
+  <data name="NoStuckArrows_Desc" xml:space="preserve">
+    <value>Если включено, стрелы не будут застревать в персонаже игрока.</value>
+  </data>
+  <data name="ModExceptionMessage" xml:space="preserve">
+    <value>Bannerlord Cheats обнаружил ошибку при попытке применить чит. Отправьте информацию об ошибке из файла «{0}» автору мода, чтобы он мог разобраться в проблеме. Приносим извинения за неудобства!</value>
+  </data>
+  <data name="ModExceptionTitle" xml:space="preserve">
+    <value>Bannerlord Cheats обнаружил ошибку!</value>
+  </data>
+  <data name="SettlementsNeverRebel_Name" xml:space="preserve">
+    <value>Поселения не бунтуют</value>
+  </data>
+  <data name="SettlementsNeverRebel_Desc" xml:space="preserve">
+    <value>Если включено, принадлежащие игроку поселения никогда не восстанут.</value>
+  </data>
+  <data name="NeverDieOfOldAge_Name" xml:space="preserve">
+    <value>Не умирать от старости</value>
+  </data>
+  <data name="NeverDieOfOldAge_Desc" xml:space="preserve">
+    <value>Если включено, главный герой стареет и может болеть, но не умирает от этого.</value>
+  </data>
+  <data name="KillCharacterMessageTitle" xml:space="preserve">
+    <value>Убить {0}?</value>
+  </data>
+  <data name="KillCharacterMessage" xml:space="preserve">
+    <value>Убить этого персонажа?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="KillCharacterConfirm" xml:space="preserve">
+    <value>УБИТЬ!</value>
+  </data>
+  <data name="TransferSettlementMessageTitle" xml:space="preserve">
+    <value>Передать {0}?</value>
+  </data>
+  <data name="TransferSettlementMessage" xml:space="preserve">
+    <value>Передать право владения этим поселением себе?</value>
+  </data>
+  <data name="TransferSettlementConfirm" xml:space="preserve">
+    <value>Сюда её!</value>
+  </data>
+  <data name="ChangePlayerMessageTitle" xml:space="preserve">
+    <value>Играть за {0}?</value>
+  </data>
+  <data name="ChangePlayerMessage" xml:space="preserve">
+    <value>Начать играть за этого персонажа? Это может привести к непредвиденным последствиям! Перед использованием лучше сохранить игру и действовать на свой страх и риск.</value>
+  </data>
+  <data name="ChangePlayerConfirm" xml:space="preserve">
+    <value>Играть!</value>
+  </data>
+  <data name="IUnderstand_Name" xml:space="preserve">
+    <value>Загрузите кампанию (выйдите на глобальную карту), чтобы включить встроенный модификатор Cheats!</value>
+  </data>
+  <data name="IUnderstand_Desc" xml:space="preserve">
+    <value>Настройки встроенного модификатора действуют только для одного персонажа. Изменять их можно только в кампании (на глобальной карте). Нажмите ESC и выберите: Настройки → Mod Options → Встроенный модификатор.</value>
+  </data>
+  <data name="Understood" xml:space="preserve">
+    <value>Понял!</value>
+  </data>
+  <data name="ThanksForReadingMessage" xml:space="preserve">
+    <value>Спасибо за внимание и понимание!</value>
+  </data>
+  <data name="Global" xml:space="preserve">
+    <value>Глобальные</value>
+  </data>
+  <data name="Enum_KnockoutOrKilled_Default" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="Enum_KnockoutOrKilled_Knockout" xml:space="preserve">
+    <value>Оглушение</value>
+  </data>
+  <data name="Enum_KnockoutOrKilled_Killed" xml:space="preserve">
+    <value>Убит</value>
+  </data>
+  <data name="PartyKnockoutOrKilled_Name" xml:space="preserve">
+    <value>Солдаты игрока: оглушить или убить</value>
+  </data>
+  <data name="PartyKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>После поражения солдаты вашего отряда либо всегда оглушаются, либо всегда погибают — в зависимости от настройки. По умолчанию используется обычный шанс оглушения.</value>
+  </data>
+  <data name="CompanionsKnockoutOrKilled_Name" xml:space="preserve">
+    <value>Спутники: оглушить или убить</value>
+  </data>
+  <data name="CompanionsKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>После поражения спутники в вашем отряде либо всегда оглушаются, либо всегда погибают — в зависимости от настройки. По умолчанию используется обычный шанс оглушения.</value>
+  </data>
+  <data name="FriendlyLordsKnockoutOrKilled_Name" xml:space="preserve">
+    <value>Союзные лорды: оглушить или убить</value>
+  </data>
+  <data name="FriendlyLordsKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>После поражения союзные лорды либо всегда оглушаются, либо всегда погибают — в зависимости от настройки. По умолчанию используется обычный шанс оглушения.</value>
+  </data>
+  <data name="EnemyLordsKnockoutOrKilled_Name" xml:space="preserve">
+    <value>Вражеские лорды: оглушить или убить</value>
+  </data>
+  <data name="EnemyLordsKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>После поражения вражеские лорды либо всегда оглушаются, либо всегда погибают — в зависимости от настройки. По умолчанию используется обычный шанс оглушения.</value>
+  </data>
+  <data name="EnemyTroopsKnockoutOrKilled_Name" xml:space="preserve">
+    <value>Вражеские солдаты: оглушить или убить</value>
+  </data>
+  <data name="EnemyTroopsKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>После поражения солдаты вражеского отряда либо всегда оглушаются, либо всегда погибают — в зависимости от настройки. По умолчанию используется обычный шанс оглушения.</value>
+  </data>
+  <data name="CaravansInvisibleOnMap_Name" xml:space="preserve">
+    <value>Невидимые караваны</value>
+  </data>
+  <data name="CaravansInvisibleOnMap_Desc" xml:space="preserve">
+    <value>Вражеские отряды не будут преследовать и атаковать караваны игрока.</value>
+  </data>
+  <data name="ClanExperienceMultiplier_Name" xml:space="preserve">
+    <value>Множитель опыта членов клана</value>
+  </data>
+  <data name="ClanExperienceMultiplier_Desc" xml:space="preserve">
+    <value>Множитель прироста опыта членов клана игрока. Стандартное значение — 1.</value>
+  </data>
+  <data name="RelationGainAfterBattleMultiplier_Name" xml:space="preserve">
+    <value>Множитель роста отношений после боя</value>
+  </data>
+  <data name="RelationGainAfterBattleMultiplier_Desc" xml:space="preserve">
+    <value>Множитель прироста отношений с лордом, которому вы помогли в бою. Стандартное значение — 1.</value>
+  </data>
+  <data name="VillagesNeverRaided_Name" xml:space="preserve">
+    <value>Деревни игрока не грабят</value>
+  </data>
+  <data name="VillagesNeverRaided_Desc" xml:space="preserve">
+    <value>Если включено, деревни игрока никогда не будут разорены вражескими лордами.</value>
+  </data>
+  <data name="General_Enhancement_GroupName" xml:space="preserve">
+    <value>Общие усиления</value>
+  </data>
+  <data name="Vigor_Enhancement_GroupName" xml:space="preserve">
+    <value>Усиление силы</value>
+  </data>
+  <data name="Control_Enhancement_GroupName" xml:space="preserve">
+    <value>Усиление контроля</value>
+  </data>
+  <data name="Intelligence_Enhancement_GroupName" xml:space="preserve">
+    <value>Усиление интеллекта</value>
+  </data>
+  <data name="Endurance_Enhancement_GroupName" xml:space="preserve">
+    <value>Усиление выносливости</value>
+  </data>
+  <data name="Cunning_Enhancement_GroupName" xml:space="preserve">
+    <value>Усиление хитрости</value>
+  </data>
+  <data name="Social_Enhancement_GroupName" xml:space="preserve">
+    <value>Усиление социальности</value>
+  </data>
+  <data name="EnableEverYoung_Name" xml:space="preserve">
+    <value>Включить вечную молодость</value>
+  </data>
+  <data name="EnableEverYoung_Desc" xml:space="preserve">
+    <value>Игрок получает вечную молодость независимо от требований к уровню навыков. Отключение параметра отключает все функции, связанные с вечной молодостью. При конфликте с другими модами попробуйте выключить эту опцию.</value>
+  </data>
+  <data name="EverYoungSkillNeed_Name" xml:space="preserve">
+    <value>Требуемый уровень навыков клана для вечной молодости (бег + обаяние)</value>
+  </data>
+  <data name="EverYoungSkillNeed_Desc" xml:space="preserve">
+    <value>Если сумма навыков бег + обаяние у члена клана больше или равна этому значению, он получает способность вечной молодости.</value>
+  </data>
+  <data name="AutoChoosePerk_Name" xml:space="preserve">
+    <value>Автоматически брать обе ветки перков</value>
+  </data>
+  <data name="AutoChoosePerk_Desc" xml:space="preserve">
+    <value>Требуется выполнение условий по уровню навыков.</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_Clan" xml:space="preserve">
+    <value>Члены клана игрока, включая самого игрока</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_All" xml:space="preserve">
+    <value>Все герои</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_Player" xml:space="preserve">
+    <value>Только игрок</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_No" xml:space="preserve">
+    <value>Никто</value>
+  </data>
+  <data name="VigorDmgPercent_Name" xml:space="preserve">
+    <value>Бонус урона от силы (%)</value>
+  </data>
+  <data name="VigorDmgPercent_Desc" xml:space="preserve">
+    <value>Процент бонуса к урону за каждую единицу силы.</value>
+  </data>
+  <data name="VigorArmorAdd_Name" xml:space="preserve">
+    <value>Бонус брони от силы</value>
+  </data>
+  <data name="VigorArmorAdd_Desc" xml:space="preserve">
+    <value>Бонус к значению брони за каждую единицу силы.</value>
+  </data>
+  <data name="VigorMountArmorAdd_Name" xml:space="preserve">
+    <value>Бонус брони коня от силы</value>
+  </data>
+  <data name="VigorMountArmorAdd_Desc" xml:space="preserve">
+    <value>Бонус к броне коня за каждую единицу силы.</value>
+  </data>
+  <data name="VigorShieldEndurancePercent_Name" xml:space="preserve">
+    <value>Усиление щита от силы (%)</value>
+  </data>
+  <data name="VigorShieldEndurancePercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к прочности щита за каждую единицу силы.</value>
+  </data>
+  <data name="VigorFinalDmgAdd_Name" xml:space="preserve">
+    <value>Принудительный бонус урона от силы</value>
+  </data>
+  <data name="VigorFinalDmgAdd_Desc" xml:space="preserve">
+    <value>Плоский бонус к урону по врагам за каждую единицу силы.</value>
+  </data>
+  <data name="VigorDmgTakenReduce_Name" xml:space="preserve">
+    <value>Снижение получаемого урона от силы</value>
+  </data>
+  <data name="VigorDmgTakenReduce_Desc" xml:space="preserve">
+    <value>Плоское снижение урона от врагов за каждую единицу силы.</value>
+  </data>
+  <data name="VigorCrushThroughPositive_Name" xml:space="preserve">
+    <value>Шанс пробить блок за счёт силы</value>
+  </data>
+  <data name="VigorCrushThroughPositive_Desc" xml:space="preserve">
+    <value>Прирост шанса пробить блок щитом за каждую единицу силы сверх силы противника.</value>
+  </data>
+  <data name="VigorCrushThroughNegative_Name" xml:space="preserve">
+    <value>Шанс противостоять пробитию блока силой</value>
+  </data>
+  <data name="VigorCrushThroughNegative_Desc" xml:space="preserve">
+    <value>Прирост шанса устоять против пробития блока за каждую единицу силы сверх силы противника.</value>
+  </data>
+  <data name="IntelligenceAmmoAddPercent_Name" xml:space="preserve">
+    <value>Бонус боеприпасов от интеллекта</value>
+  </data>
+  <data name="IntelligenceAmmoAddPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к лимиту боеприпасов отряда за каждую единицу интеллекта (четвертьмистр).</value>
+  </data>
+  <data name="ControlAmmoNoConsumeRate_Name" xml:space="preserve">
+    <value>Шанс не тратить боеприпасы от контроля</value>
+  </data>
+  <data name="ControlAmmoNoConsumeRate_Desc" xml:space="preserve">
+    <value>Прирост шанса не расходовать боеприпасы при выстреле за каждую единицу контроля.</value>
+  </data>
+  <data name="ControlDropDmgReducePercent_Name" xml:space="preserve">
+    <value>Снижение урона от падений от контроля</value>
+  </data>
+  <data name="ControlDropDmgReducePercent_Desc" xml:space="preserve">
+    <value>Процент снижения урона от падений за каждую единицу контроля.</value>
+  </data>
+  <data name="ControlAimStabilityPercent_Name" xml:space="preserve">
+    <value>Бонус стабильности прицеливания от контроля</value>
+  </data>
+  <data name="ControlAimStabilityPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к стабильности прицеливания за каждую единицу контроля.</value>
+  </data>
+  <data name="ControlMountManeuverPercent_Name" xml:space="preserve">
+    <value>Бонус манёвренности коня от контроля</value>
+  </data>
+  <data name="ControlMountManeuverPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к манёвренности коня за каждую единицу контроля.</value>
+  </data>
+  <data name="ControlCritRate_Name" xml:space="preserve">
+    <value>Шанс критического удара от контроля</value>
+  </data>
+  <data name="ControlCritRate_Desc" xml:space="preserve">
+    <value>Прирост шанса критического удара (двойной урон) за каждую единицу контроля сверх контроля противника.</value>
+  </data>
+  <data name="ControlExemptionRate_Name" xml:space="preserve">
+    <value>Шанс полного игнорирования урона от контроля</value>
+  </data>
+  <data name="ControlExemptionRate_Desc" xml:space="preserve">
+    <value>Прирост шанса полностью игнорировать урон за каждую единицу контроля сверх контроля противника.</value>
+  </data>
+  <data name="ControlPenetrateRate_Name" xml:space="preserve">
+    <value>Шанс пробития щита выстрелом от контроля</value>
+  </data>
+  <data name="ControlPenetrateRate_Desc" xml:space="preserve">
+    <value>Прирост шанса пробить щит дальнобойной атакой за каждую единицу контроля.</value>
+  </data>
+  <data name="EnduranceHpAddPercent_Name" xml:space="preserve">
+    <value>Бонус здоровья от выносливости</value>
+  </data>
+  <data name="EnduranceHpAddPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к максимальному здоровью за каждую единицу выносливости.</value>
+  </data>
+  <data name="EnduranceHealRate_Name" xml:space="preserve">
+    <value>Бонус восстановления здоровья от выносливости</value>
+  </data>
+  <data name="EnduranceHealRate_Desc" xml:space="preserve">
+    <value>Процентный бонус к восстановлению здоровья на глобальной карте за каждую единицу выносливости.</value>
+  </data>
+  <data name="EnduranceStaggerPercent_Name" xml:space="preserve">
+    <value>Снижение шанса стана от выносливости</value>
+  </data>
+  <data name="EnduranceStaggerPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус сопротивления стану за каждую единицу выносливости.</value>
+  </data>
+  <data name="EnduranceWalkSpeedPercent_Name" xml:space="preserve">
+    <value>Бонус скорости ходьбы от выносливости</value>
+  </data>
+  <data name="EnduranceWalkSpeedPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к скорости ходьбы за каждую единицу выносливости.</value>
+  </data>
+  <data name="EnduranceMountSpeedPercent_Name" xml:space="preserve">
+    <value>Бонус скорости верховой езды от выносливости</value>
+  </data>
+  <data name="EnduranceMountSpeedPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к скорости верховой езды за каждую единицу выносливости.</value>
+  </data>
+  <data name="CunningPrisonerRecruitSpeedPercent_Name" xml:space="preserve">
+    <value>Бонус скорости набора пленных от хитрости</value>
+  </data>
+  <data name="CunningPrisonerRecruitSpeedPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к скорости вербовки пленных за каждую единицу хитрости (командир отряда).</value>
+  </data>
+  <data name="CunningPrisonerCapacityPercent_Name" xml:space="preserve">
+    <value>Бонус лимита пленных от хитрости</value>
+  </data>
+  <data name="CunningPrisonerCapacityPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к лимиту пленных за каждую единицу хитрости (командир отряда).</value>
+  </data>
+  <data name="CunningRaidSpeedPercent_Name" xml:space="preserve">
+    <value>Бонус скорости грабежа от хитрости</value>
+  </data>
+  <data name="CunningRaidSpeedPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к скорости грабежа за каждую единицу хитрости (командир отряда).</value>
+  </data>
+  <data name="CunningPartySpeedAdd_Name" xml:space="preserve">
+    <value>Бонус скорости отряда от хитрости</value>
+  </data>
+  <data name="CunningPartySpeedAdd_Desc" xml:space="preserve">
+    <value>Бонус к скорости отряда на глобальной карте за каждую единицу хитрости (разведчик).</value>
+  </data>
+  <data name="CunningCompanionCapacityAdd_Name" xml:space="preserve">
+    <value>Бонус лимита спутников от хитрости</value>
+  </data>
+  <data name="CunningCompanionCapacityAdd_Desc" xml:space="preserve">
+    <value>Бонус к лимиту спутников за каждую единицу хитрости (глава клана).</value>
+  </data>
+  <data name="SocialBoundary_Name" xml:space="preserve">
+    <value>Порог социального эффекта</value>
+  </data>
+  <data name="SocialBoundary_Desc" xml:space="preserve">
+    <value>Задаёт порог для расчёта эффектов характеристик «Социальность».</value>
+  </data>
+  <data name="SocialHearthAdd_Name" xml:space="preserve">
+    <value>Бонус роста дворов от социальности</value>
+  </data>
+  <data name="SocialHearthAdd_Desc" xml:space="preserve">
+    <value>Прирост числа дворов в поселении за каждую единицу социальности (глава клана и губернатор).</value>
+  </data>
+  <data name="SocialSettlementLoyaltyAdd_Name" xml:space="preserve">
+    <value>Бонус лояльности поселения от социальности</value>
+  </data>
+  <data name="SocialSettlementLoyaltyAdd_Desc" xml:space="preserve">
+    <value>Прирост лояльности поселения за каждую единицу социальности (глава клана и губернатор).</value>
+  </data>
+  <data name="SocialMilitiaAdd_Name" xml:space="preserve">
+    <value>Бонус милиции поселения от социальности</value>
+  </data>
+  <data name="SocialMilitiaAdd_Desc" xml:space="preserve">
+    <value>Прирост милиции поселения за каждую единицу социальности (глава клана и губернатор).</value>
+  </data>
+  <data name="SocialRecruitSpeedPercent_Name" xml:space="preserve">
+    <value>Скорость обновления рекрутов от социальности</value>
+  </data>
+  <data name="SocialRecruitSpeedPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к скорости обновления пула рекрутов в поселениях за каждую единицу социальности (глава клана и губернатор).</value>
+  </data>
+  <data name="SocialTaxPercent_Name" xml:space="preserve">
+    <value>Бонус налогов от социальности</value>
+  </data>
+  <data name="SocialTaxPercent_Desc" xml:space="preserve">
+    <value>Прирост налоговых поступлений поселения за каждую единицу социальности (губернатор).</value>
+  </data>
+  <data name="SocialWorkshopProductionPercent_Name" xml:space="preserve">
+    <value>Бонус производства мастерских от социальности</value>
+  </data>
+  <data name="SocialWorkshopProductionPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к производству мастерских за каждую единицу социальности (губернатор).</value>
+  </data>
+  <data name="SocialCompanionCapacityAdd_Name" xml:space="preserve">
+    <value>Бонус лимита спутников от социальности</value>
+  </data>
+  <data name="SocialCompanionCapacityAdd_Desc" xml:space="preserve">
+    <value>Бонус к лимиту спутников за каждую единицу социальности (глава клана).</value>
+  </data>
+  <data name="IntelligenceBoundary_Name" xml:space="preserve">
+    <value>Порог интеллекта</value>
+  </data>
+  <data name="IntelligenceBoundary_Desc" xml:space="preserve">
+    <value>Задаёт порог для расчёта эффектов характеристики «Интеллект».</value>
+  </data>
+  <data name="IntelligenceExpRate_Name" xml:space="preserve">
+    <value>Бонус опыта от интеллекта</value>
+  </data>
+  <data name="IntelligenceExpRate_Desc" xml:space="preserve">
+    <value>Бонус к скорости получения опыта за каждую единицу интеллекта; эффект удваивается для навыков хитрости, социальности и интеллекта.</value>
+  </data>
+  <data name="IntelligenceSiegeEndurancePercent_Name" xml:space="preserve">
+    <value>Бонус прочности осадных орудий от интеллекта</value>
+  </data>
+  <data name="IntelligenceSiegeEndurancePercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к прочности осадных орудий за каждую единицу интеллекта (инженер).</value>
+  </data>
+  <data name="IntelligenceWallEndurancePercent_Name" xml:space="preserve">
+    <value>Бонус прочности стен от интеллекта</value>
+  </data>
+  <data name="IntelligenceWallEndurancePercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к прочности городских стен за каждую единицу интеллекта (губернатор).</value>
+  </data>
+  <data name="IntelligenceBallistaAdd_Name" xml:space="preserve">
+    <value>Бонус баллист при осаде от интеллекта</value>
+  </data>
+  <data name="IntelligenceBallistaAdd_Desc" xml:space="preserve">
+    <value>Дополнительное начальное число баллист при осаде за каждую единицу интеллекта (инженер атакующей стороны или губернатор при обороне).</value>
+  </data>
+  <data name="IntelligenceLeaderSettlementFoodPercent_Name" xml:space="preserve">
+    <value>Бонус пищи в поселениях от интеллекта (глава клана)</value>
+  </data>
+  <data name="IntelligenceLeaderSettlementFoodPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к производству пищи в поселениях за каждую единицу интеллекта.</value>
+  </data>
+  <data name="IntelligenceGovernorSettlementFoodPercent_Name" xml:space="preserve">
+    <value>Бонус пищи в поселениях от интеллекта (губернатор)</value>
+  </data>
+  <data name="IntelligenceGovernorSettlementFoodPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к производству пищи в поселениях за каждую единицу интеллекта.</value>
+  </data>
+  <data name="IntelligenceProsperityFoodCostReducePercent_Name" xml:space="preserve">
+    <value>Снижение расхода пищи из‑за процветания от интеллекта</value>
+  </data>
+  <data name="IntelligenceProsperityFoodCostReducePercent_Desc" xml:space="preserve">
+    <value>Процент снижения потребления пищи, вызванного высоким процветанием, за каждую единицу интеллекта.</value>
+  </data>
+  <data name="IntelligenceGarrisonWageReducePercent_Name" xml:space="preserve">
+    <value>Снижение жалования гарнизону от интеллекта</value>
+  </data>
+  <data name="IntelligenceGarrisonWageReducePercent_Desc" xml:space="preserve">
+    <value>Сколько уменьшается жалование гарнизону за каждую единицу интеллекта.</value>
+  </data>
+  <data name="IntelligenceWorkshopProductionPercent_Name" xml:space="preserve">
+    <value>Бонус производства мастерских от интеллекта</value>
+  </data>
+  <data name="IntelligenceWorkshopProductionPercent_Desc" xml:space="preserve">
+    <value>Процентный бонус к производству мастерских за каждую единицу интеллекта (владелец).</value>
+  </data>
+  <data name="EnableDailyGainXp_Name" xml:space="preserve">
+    <value>Включить ежедневный опыт для героев</value>
+  </data>
+  <data name="EnableDailyGainXp_Desc" xml:space="preserve">
+    <value>Формула: уровень × интеллект × интеллект × 2.</value>
+  </data>
+  <data name="CombatAttributeRatePlayer_Name" xml:space="preserve">
+    <value>Коэффициент боевых усилений — игрок</value>
+  </data>
+  <data name="CombatAttributeRatePlayer_Desc" xml:space="preserve">
+    <value>Боевые усиления умножаются на этот коэффициент, штрафы делятся на него.</value>
+  </data>
+  <data name="CombatAttributeRateClanMember_Name" xml:space="preserve">
+    <value>Коэффициент боевых усилений — члены клана</value>
+  </data>
+  <data name="CombatAttributeRateClanMember_Desc" xml:space="preserve">
+    <value>Боевые усиления умножаются на этот коэффициент, штрафы делятся на него.</value>
+  </data>
+  <data name="CombatAttributeRateOther_Name" xml:space="preserve">
+    <value>Коэффициент боевых усилений — прочие</value>
+  </data>
+  <data name="CombatAttributeRateOther_Desc" xml:space="preserve">
+    <value>Боевые усиления умножаются на этот коэффициент, штрафы делятся на него.</value>
+  </data>
+  <data name="StrategyAttributeRatePlayer_Name" xml:space="preserve">
+    <value>Коэффициент стратегических усилений — игрок</value>
+  </data>
+  <data name="StrategyAttributeRatePlayer_Desc" xml:space="preserve">
+    <value>Стратегические усиления умножаются на этот коэффициент, штрафы делятся на него.</value>
+  </data>
+  <data name="StrategyAttributeRateClanMember_Name" xml:space="preserve">
+    <value>Коэффициент стратегических усилений — члены клана</value>
+  </data>
+  <data name="StrategyAttributeRateClanMember_Desc" xml:space="preserve">
+    <value>Стратегические усиления умножаются на этот коэффициент, штрафы делятся на него.</value>
+  </data>
+  <data name="StrategyAttributeRateOther_Name" xml:space="preserve">
+    <value>Коэффициент стратегических усилений — прочие</value>
+  </data>
+  <data name="StrategyAttributeRateOther_Desc" xml:space="preserve">
+    <value>Стратегические усиления умножаются на этот коэффициент, штрафы делятся на него.</value>
+  </data>
+  <data name="TestMode_Name" xml:space="preserve">
+    <value>Тестовый режим</value>
+  </data>
+  <data name="TestMode_Desc" xml:space="preserve">
+    <value>У всех в бою бесконечное здоровье.</value>
+  </data>
+  <data name="PlayerAlwaysCrush_Name" xml:space="preserve">
+    <value>Всегда пробивать блок: игрок</value>
+  </data>
+  <data name="PlayerAlwaysCrush_Desc" xml:space="preserve">
+    <value>Атаки игрока всегда пробивают блок.</value>
+  </data>
+  <data name="AICrush_Name" xml:space="preserve">
+    <value>Всегда пробивать блок: ИИ</value>
+  </data>
+  <data name="AICrush_Desc" xml:space="preserve">
+    <value>Атаки ИИ всегда пробивают блок.</value>
+  </data>
+  <data name="AllyCrush_Name" xml:space="preserve">
+    <value>Всегда пробивать блок: союзники</value>
+  </data>
+  <data name="AllyCrush_Desc" xml:space="preserve">
+    <value>Атаки союзников всегда пробивают блок.</value>
+  </data>
+  <data name="EnemyCrush_Name" xml:space="preserve">
+    <value>Всегда пробивать блок: враги</value>
+  </data>
+  <data name="EnemyCrush_Desc" xml:space="preserve">
+    <value>Атаки врагов всегда пробивают блок.</value>
+  </data>
+  <data name="UnblockableThrust_player_Name" xml:space="preserve">
+    <value>Неотбиваемый укол: игрок</value>
+  </data>
+  <data name="UnblockableThrust_player_Desc" xml:space="preserve">
+    <value>Уколы игрока (копья, колющие удары мечом) нельзя парировать, только блокировать щитом.</value>
+  </data>
+  <data name="UnblockableThrust_AI_Name" xml:space="preserve">
+    <value>Неотбиваемый укол: ИИ</value>
+  </data>
+  <data name="UnblockableThrust_AI_Desc" xml:space="preserve">
+    <value>Уколы ИИ (копья, колющие удары мечом) нельзя парировать, только блокировать щитом.</value>
+  </data>
+  <data name="UnblockableThrust_ally_Name" xml:space="preserve">
+    <value>Неотбиваемый укол: союзники</value>
+  </data>
+  <data name="UnblockableThrust_ally_Desc" xml:space="preserve">
+    <value>Уколы союзников (копья, колющие удары мечом) нельзя парировать, только блокировать щитом.</value>
+  </data>
+  <data name="UnblockableThrust_enemy_Name" xml:space="preserve">
+    <value>Неотбиваемый укол: враги</value>
+  </data>
+  <data name="UnblockableThrust_enemy_Desc" xml:space="preserve">
+    <value>Уколы врагов (копья, колющие удары мечом) нельзя парировать, только блокировать щитом.</value>
+  </data>
+  <data name="InfiniteMomentum_Name" xml:space="preserve">
+    <value>Бесконечный импульс игрока</value>
+  </data>
+  <data name="InfiniteMomentum_Desc" xml:space="preserve">
+    <value>У игрока всегда максимальный импульс атаки.</value>
+  </data>
+  <data name="KeepDaughter_Name" xml:space="preserve">
+    <value>Дочери остаются в клане</value>
+  </data>
+  <data name="KeepDaughter_Desc" xml:space="preserve">
+    <value>После свадьбы женщины из клана игрока остаются в его клане.</value>
+  </data>
+  <data name="AddMoneyThreshhold_Name" xml:space="preserve">
+    <value>Порог ежедневного начисления денег</value>
+  </data>
+  <data name="AddMoneyThreshhold_Desc" xml:space="preserve">
+    <value>Если в конце дня денег меньше этого значения, они будут начислены.</value>
+  </data>
+  <data name="AddMoney_count_Name" xml:space="preserve">
+    <value>Сумма ежедневного начисления</value>
+  </data>
+  <data name="AddMoney_count_Desc" xml:space="preserve">
+    <value>Сколько денег добавлять каждый день (если сумма ниже порога).</value>
+  </data>
+  <data name="LanguageSetting_Name" xml:space="preserve">
+    <value>Language(Язык)</value>
+  </data>
+  <data name="LanguageSetting_Desc" xml:space="preserve">
+    <value>Выбор языка настроек.</value>
+  </data>
+  <data name="MaxAttr_Name" xml:space="preserve">
+    <value>Предел характеристик</value>
+  </data>
+  <data name="MaxAttr_Desc" xml:space="preserve">
+    <value>Максимальное значение характеристик (по умолчанию 10).</value>
+  </data>
+  <data name="Enum_Setting_Language_English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Enum_Setting_Language_Chinese" xml:space="preserve">
+    <value>Chinese</value>
+  </data>
+  <data name="Enum_Setting_Language_Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="JoinMyKindom" xml:space="preserve">
+    <value>Приведи свой клан в моё королевство — это единственный способ уберечь его от гибели.</value>
+  </data>
+  <data name="JoinMyKindom_OK" xml:space="preserve">
+    <value>Хорошо.</value>
+  </data>
+  <data name="xGang_Name" xml:space="preserve">
+    <value>Знаменитости — главари банд: прирост</value>
+  </data>
+  <data name="xGang_Desc" xml:space="preserve">
+    <value>Сколько дополнительных знаменитостей‑бандитов добавлять в каждом поселении (только для новой кампании).</value>
+  </data>
+  <data name="xArt_Name" xml:space="preserve">
+    <value>Знаменитости — ремесленники: прирост</value>
+  </data>
+  <data name="xArt_Desc" xml:space="preserve">
+    <value>Сколько дополнительных знаменитостей‑ремесленников добавлять в каждом поселении (только для новой кампании).</value>
+  </data>
+  <data name="xMerch_Name" xml:space="preserve">
+    <value>Знаменитости — торговцы: прирост</value>
+  </data>
+  <data name="xMerch_Desc" xml:space="preserve">
+    <value>Сколько дополнительных знаменитостей‑торговцев добавлять в каждом поселении (только для новой кампании).</value>
+  </data>
+  <data name="xVill_Name" xml:space="preserve">
+    <value>Знаменитости — сельская знать: прирост</value>
+  </data>
+  <data name="xVill_Desc" xml:space="preserve">
+    <value>Сколько дополнительных знаменитостей‑сельских дворян добавлять в каждом поселении (только для новой кампании).</value>
+  </data>
+  <data name="xRural_Name" xml:space="preserve">
+    <value>Знаменитости — старосты: прирост</value>
+  </data>
+  <data name="xRural_Desc" xml:space="preserve">
+    <value>Сколько дополнительных знаменитостей‑старост добавлять в каждом поселении (только для новой кампании).</value>
+  </data>
+  <data name="Town_Init_Gold_Extra_Name" xml:space="preserve">
+    <value>Дополнительное стартовое золото города (тыс.)</value>
+  </data>
+  <data name="Town_Init_Gold_Extra_Desc" xml:space="preserve">
+    <value>Дополнительное стартовое золото для городов в тысячах (только для новой кампании).</value>
+  </data>
+  <data name="Village_Init_Gold_Extra_Name" xml:space="preserve">
+    <value>Дополнительное стартовое золото деревни (тыс.)</value>
+  </data>
+  <data name="Village_Init_Gold_Extra_Desc" xml:space="preserve">
+    <value>Дополнительное стартовое золото для деревень в тысячах (только для новой кампании).</value>
+  </data>
+  <data name="Enum_Setting_Language_Russian" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="Enum_Setting_Language_Portuguese" xml:space="preserve">
+    <value>Portuguese</value>
+  </data>
+  <data name="Enum_Setting_Language_Spanish" xml:space="preserve">
+    <value>Испанский</value>
+  </data>
+  <data name="Enum_Setting_Language_Japanese" xml:space="preserve">
+    <value>Японский</value>
+  </data>
+</root>

@@ -1,0 +1,1457 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xsd:string" />
+              <xs:attribute name="type" type="xsd:string" />
+              <xs:attribute name="mimetype" type="xsd:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xsd:string" />
+              <xs:attribute name="name" type="xsd:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xsd:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xsd:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xsd:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ModName" xml:space="preserve">
+    <value>UFO's Mod</value>
+  </data>
+  <data name="Combat_Player_GroupName" xml:space="preserve">
+    <value>Combate - Jogador</value>
+  </data>
+  <data name="Combat_Party_GroupName" xml:space="preserve">
+    <value>Combate - Grupo do Jogador</value>
+  </data>
+  <data name="Combat_Allies_GroupName" xml:space="preserve">
+    <value>Combate - Aliados</value>
+  </data>
+  <data name="Combat_Enemies_GroupName" xml:space="preserve">
+    <value>Combate - Inimigos</value>
+  </data>
+  <data name="Combat_Misc_GroupName" xml:space="preserve">
+    <value>Combate - Diversos</value>
+  </data>
+  <data name="Party_GroupName" xml:space="preserve">
+    <value>Grupo</value>
+  </data>
+  <data name="Smithing_GroupName" xml:space="preserve">
+    <value>Ferraria</value>
+  </data>
+  <data name="Settlements_GroupName" xml:space="preserve">
+    <value>Assentamentos</value>
+  </data>
+  <data name="Clan_GroupName" xml:space="preserve">
+    <value>Clã</value>
+  </data>
+  <data name="Kingdom_GroupName" xml:space="preserve">
+    <value>Reino</value>
+  </data>
+  <data name="Experience_GroupName" xml:space="preserve">
+    <value>Experiência</value>
+  </data>
+  <data name="Map_GroupName" xml:space="preserve">
+    <value>Mapa</value>
+  </data>
+  <data name="General_GroupName" xml:space="preserve">
+    <value># Geral #</value>
+  </data>
+  <data name="Inventory_GroupName" xml:space="preserve">
+    <value>Inventário</value>
+  </data>
+  <data name="Sieges_GroupName" xml:space="preserve">
+    <value>Cerco</value>
+  </data>
+  <data name="Army_GroupName" xml:space="preserve">
+    <value>Exército</value>
+  </data>
+  <data name="Invincible_Name" xml:space="preserve">
+    <value>Se Tornar Invencível</value>
+  </data>
+  <data name="Invincible_Desc" xml:space="preserve">
+    <value>Desativa todo dano ao personagem do jogador.</value>
+  </data>
+  <data name="EnableHotkeys_Name" xml:space="preserve">
+    <value>Ativar Teclas de Atalho</value>
+  </data>
+  <data name="EnableHotkeys_Desc" xml:space="preserve">
+    <value>Ativa as teclas de atalho de trapaça na tela de inventário, tela de grupo, tela de clã, etc.</value>
+  </data>
+  <data name="MapSpeedMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Velocidade no Mapa</value>
+  </data>
+  <data name="MapSpeedMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual a velocidade do jogador no mapa é multiplicada. Um fator de 1 significa velocidade padrão.</value>
+  </data>
+  <data name="ExtraInventoryCapacity_Name" xml:space="preserve">
+    <value>Capacidade Extra de Inventário</value>
+  </data>
+  <data name="ExtraInventoryCapacity_Desc" xml:space="preserve">
+    <value>Capacidade extra de inventário para o grupo do jogador.</value>
+  </data>
+  <data name="MapVisibilityMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Visibilidade no Mapa</value>
+  </data>
+  <data name="MapVisibilityMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual o alcance de visibilidade do jogador no mapa é multiplicado. Um fator de 1 significa visibilidade padrão. AVISO: Pode afetar negativamente o desempenho!</value>
+  </data>
+  <data name="PartyInvincible_Name" xml:space="preserve">
+    <value>Grupo Invencível</value>
+  </data>
+  <data name="PartyInvincible_Desc" xml:space="preserve">
+    <value>Desativa todo dano aos membros do grupo do jogador.</value>
+  </data>
+  <data name="OneHitKill_Name" xml:space="preserve">
+    <value>Matar com 1 Golpe</value>
+  </data>
+  <data name="OneHitKill_Desc" xml:space="preserve">
+    <value>Mata inimigos com um golpe.</value>
+  </data>
+  <data name="PartyOneHitKill_Name" xml:space="preserve">
+    <value>Matar com 1 Golpe no Grupo</value>
+  </data>
+  <data name="PartyOneHitKill_Desc" xml:space="preserve">
+    <value>Os membros do grupo matam inimigos com um golpe.</value>
+  </data>
+  <data name="RenownRewardMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Ganho de Recompensa de Renome</value>
+  </data>
+  <data name="RenownRewardMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual a recompensa de renome após uma batalha ou torneio vencido é multiplicada. Um fator de 1 significa renome padrão.</value>
+  </data>
+  <data name="InfluenceRewardMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Ganho de Recompensa de Influência</value>
+  </data>
+  <data name="InfluenceRewardMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual a recompensa de influência após uma batalha vencida é multiplicada. Um fator de 1 significa influência padrão.</value>
+  </data>
+  <data name="AlwaysWinBattleSimulation_Name" xml:space="preserve">
+    <value>Sempre Vencer as Batalhas Simuladas</value>
+  </data>
+  <data name="AlwaysWinBattleSimulation_Desc" xml:space="preserve">
+    <value>Os inimigos não causam dano ao grupo do jogador em simulações de combate.</value>
+  </data>
+  <data name="NoTroopSacrifice_Name" xml:space="preserve">
+    <value>Sem Sacrifício de Tropas</value>
+  </data>
+  <data name="NoTroopSacrifice_Desc" xml:space="preserve">
+    <value>Sem sacrifício de tropas ao fugir de um inimigo ou quebrar um cerco.</value>
+  </data>
+  <data name="NoRunningAway_Name" xml:space="preserve">
+    <value>Sem Fuga</value>
+  </data>
+  <data name="NoRunningAway_Desc" xml:space="preserve">
+    <value>As tropas do grupo do jogador não fogem durante o combate.</value>
+  </data>
+  <data name="EnemiesNoRunningAway_Name" xml:space="preserve">
+    <value>Inimigos Nunca Fogem</value>
+  </data>
+  <data name="EnemiesNoRunningAway_Desc" xml:space="preserve">
+    <value>Os inimigos nunca fogem durante o combate.</value>
+  </data>
+  <data name="BanditHideoutTroopLimit_Name" xml:space="preserve">
+    <value>Extra Bandit Hideout Troops</value>
+  </data>
+  <data name="BanditHideoutTroopLimit_Desc" xml:space="preserve">
+    <value>Tropas adicionais que podem se juntar ao jogador em batalhas de esconderijo. Um valor de 0 significa o limite padrão de tropas.</value>
+  </data>
+  <data name="AlwaysCrushThroughShields_Name" xml:space="preserve">
+    <value>Sempre Esmagar Escudos</value>
+  </data>
+  <data name="AlwaysCrushThroughShields_Desc" xml:space="preserve">
+    <value>Seus golpes sempre esmagam os escudos inimigos.</value>
+  </data>
+  <data name="ExtraPartyMemberSize_Name" xml:space="preserve">
+    <value>Tamanho Extra do Grupo</value>
+  </data>
+  <data name="ExtraPartyMemberSize_Desc" xml:space="preserve">
+    <value>Aumenta o tamanho máximo do grupo do jogador.</value>
+  </data>
+  <data name="ExtraPartyPrisonerSize_Name" xml:space="preserve">
+    <value>Tamanho Extra de Prisioneiros no Grupo</value>
+  </data>
+  <data name="ExtraPartyPrisonerSize_Desc" xml:space="preserve">
+    <value>Aumenta o número máximo de prisioneiros viajando com o grupo.</value>
+  </data>
+  <data name="ExtraPartyMorale_Name" xml:space="preserve">
+    <value>Moral Extra pro Grupo</value>
+  </data>
+  <data name="ExtraPartyMorale_Desc" xml:space="preserve">
+    <value>Aumenta o moral do grupo do jogador.</value>
+  </data>
+  <data name="FoodConsumptionPercentage_Name" xml:space="preserve">
+    <value>Porcentagem de Consumo de Comida</value>
+  </data>
+  <data name="FoodConsumptionPercentage_Desc" xml:space="preserve">
+    <value>Quanto de comida o grupo do jogador precisa. 100% significa consumo total de comida, 0% significa nenhum consumo de comida.</value>
+  </data>
+  <data name="TroopWagesPercentage_Name" xml:space="preserve">
+    <value>Porcentagem de Salários das Tropas</value>
+  </data>
+  <data name="TroopWagesPercentage_Desc" xml:space="preserve">
+    <value>Porcentagem dos salários originais das tropas que o jogador deve pagar. 100% significa salários completos, 0% significa nenhum salário para as tropas.</value>
+  </data>
+  <data name="FreeTroopUpgrades_Name" xml:space="preserve">
+    <value>Atualizar Tropas Gratuitamente</value>
+  </data>
+  <data name="FreeTroopUpgrades_Desc" xml:space="preserve">
+    <value>As atualizações das tropas do grupo do jogador são gratuitas.</value>
+  </data>
+  <data name="FreeCompanionHiring_Name" xml:space="preserve">
+    <value>Contratação Gratuita de Companheiros</value>
+  </data>
+  <data name="FreeCompanionHiring_Desc" xml:space="preserve">
+    <value>Companheiros não requerem taxa de contratação.</value>
+  </data>
+  <data name="InstantPrisonerRecruitment_Name" xml:space="preserve">
+    <value>Recrutamento Instantâneo de Prisioneiros</value>
+  </data>
+  <data name="InstantPrisonerRecruitment_Desc" xml:space="preserve">
+    <value>Prisioneiros podem ser recrutados instantaneamente.</value>
+  </data>
+  <data name="NoPrisonerEscape_Name" xml:space="preserve">
+    <value>Prisioneiros não iram Fugir</value>
+  </data>
+  <data name="NoPrisonerEscape_Desc" xml:space="preserve">
+    <value>Prisioneiros não podem escapar do cativeiro.</value>
+  </data>
+  <data name="PartyHealingMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Cura do Grupo</value>
+  </data>
+  <data name="PartyHealingMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual a taxa de cura do grupo é multiplicada. Um fator de 1 significa cura padrão.</value>
+  </data>
+  <data name="ExtraCompanionLimit_Name" xml:space="preserve">
+    <value>Limite Extra de Companheiros</value>
+  </data>
+  <data name="ExtraCompanionLimit_Desc" xml:space="preserve">
+    <value>Aumenta a quantidade máxima de companheiros em seu clã.</value>
+  </data>
+  <data name="ExtraClanPartyLimit_Name" xml:space="preserve">
+    <value>Limite Extra de Grupos do Clã</value>
+  </data>
+  <data name="ExtraClanPartyLimit_Desc" xml:space="preserve">
+    <value>Aumenta a quantidade máxima de grupos em seu clã.</value>
+  </data>
+  <data name="KingdomDecisionWeightMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Peso do Voto do Reino</value>
+  </data>
+  <data name="KingdomDecisionWeightMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual a probabilidade de vencer ('peso') do voto da decisão do reino que o jogador apoia é aumentada.</value>
+  </data>
+  <data name="NoRelationshipLossOnDecision_Name" xml:space="preserve">
+    <value>Sem Perda de Relacionamento na Decisão</value>
+  </data>
+  <data name="NoRelationshipLossOnDecision_Desc" xml:space="preserve">
+    <value>Não perca pontos de relacionamento com pessoas do lado oposto do voto do jogador.</value>
+  </data>
+  <data name="ExperienceMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Ganho de Experiência</value>
+  </data>
+  <data name="ExperienceMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual o ganho de experiência do jogador é multiplicado. Um fator de 1 significa experiência padrão.</value>
+  </data>
+  <data name="LearningRateMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Taxa de Aprendizado</value>
+  </data>
+  <data name="LearningRateMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual a taxa de aprendizado do jogador é multiplicada. Um fator de 1 significa aprendizado padrão.</value>
+  </data>
+  <data name="TroopExperienceMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Ganho de Experiência das Tropas</value>
+  </data>
+  <data name="TroopExperienceMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual o ganho de experiência das tropas do jogador é multiplicado. Um fator de 1 significa experiência padrão.</value>
+  </data>
+  <data name="SiegeBuildingSpeedMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Velocidade de Construção de Cerco</value>
+  </data>
+  <data name="SiegeBuildingSpeedMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual a velocidade de construção de máquinas de cerco do grupo do jogador é multiplicada. Um fator de 1 significa velocidade de construção padrão.</value>
+  </data>
+  <data name="ArmyCohesionLossPercentage_Name" xml:space="preserve">
+    <value>Perda de Coesão do Exército</value>
+  </data>
+  <data name="ArmyCohesionLossPercentage_Desc" xml:space="preserve">
+    <value>Quanto de coesão o exército que o grupo do jogador se juntou perde. 100% significa perda total de coesão, 0% significa coesão congelada.</value>
+  </data>
+  <data name="ArmyFoodConsumptionPercentage_Name" xml:space="preserve">
+    <value>Porcentagem de Consumo de Comida do Exército</value>
+  </data>
+  <data name="ArmyFoodConsumptionPercentage_Desc" xml:space="preserve">
+    <value>Quanto de comida o exército que o grupo do jogador se juntou precisa. 100% significa consumo total de comida, 0% significa nenhum consumo de comida.</value>
+  </data>
+  <data name="DisguiseAlwaysWorks_Name" xml:space="preserve">
+    <value>Disfarce Sempre Funciona</value>
+  </data>
+  <data name="DisguiseAlwaysWorks_Desc" xml:space="preserve">
+    <value>Entrar sorrateiramente em assentamentos sempre tem sucesso.</value>
+  </data>
+  <data name="SmithingEnergyCostPercentage_Name" xml:space="preserve">
+    <value>Porcentagem de Custo de Energia</value>
+  </data>
+  <data name="SmithingEnergyCostPercentage_Desc" xml:space="preserve">
+    <value>Quanto custa em energia forjar, fundir ou refinar. 100% significa custo total de energia, 0% significa nenhum custo de energia.</value>
+  </data>
+  <data name="UnlockAllParts_Name" xml:space="preserve">
+    <value>Desbloquear Todas as Peças</value>
+  </data>
+  <data name="UnlockAllParts_Desc" xml:space="preserve">
+    <value>Todas as peças de forja estão desbloqueadas.</value>
+  </data>
+  <data name="SmithingDifficultyPercentage_Name" xml:space="preserve">
+    <value>Porcentagem de Dificuldade</value>
+  </data>
+  <data name="SmithingDifficultyPercentage_Desc" xml:space="preserve">
+    <value>Quão difícil é o design de uma arma. 100% significa dificuldade total, 0% significa nenhuma dificuldade.</value>
+  </data>
+  <data name="SmithingCostPercentage_Name" xml:space="preserve">
+    <value>Porcentagem de Custo de Materiais</value>
+  </data>
+  <data name="SmithingCostPercentage_Desc" xml:space="preserve">
+    <value>Quanto custa em materiais forjar uma arma. 100% significa custo total de materiais, 0% significa nenhum custo de materiais.</value>
+  </data>
+  <data name="CraftedWeaponHandlingBonus_Name" xml:space="preserve">
+    <value>Bônus de Manuseio de Arma Forjada</value>
+  </data>
+  <data name="CraftedWeaponHandlingBonus_Desc" xml:space="preserve">
+    <value>Bônus aplicado ao valor de Manuseio de qualquer arma que o jogador forja.</value>
+  </data>
+  <data name="CraftedWeaponSwingDamageBonus_Name" xml:space="preserve">
+    <value>Bônus de Dano de Ataque de Arma Forjada</value>
+  </data>
+  <data name="CraftedWeaponSwingDamageBonus_Desc" xml:space="preserve">
+    <value>Bônus aplicado ao valor de Dano de Ataque de qualquer arma que o jogador forja.</value>
+  </data>
+  <data name="CraftedWeaponSwingSpeedBonus_Name" xml:space="preserve">
+    <value>Bônus de Velocidade de Ataque de Arma Forjada</value>
+  </data>
+  <data name="CraftedWeaponSwingSpeedBonus_Desc" xml:space="preserve">
+    <value>Bônus aplicado ao valor de Velocidade de Ataque de qualquer arma que o jogador forja.</value>
+  </data>
+  <data name="CraftedWeaponThrustDamageBonus_Name" xml:space="preserve">
+    <value>Bônus de Dano de Estocada de Arma Forjada</value>
+  </data>
+  <data name="CraftedWeaponThrustDamageBonus_Desc" xml:space="preserve">
+    <value>Bônus aplicado ao valor de Dano de Estocada de qualquer arma que o jogador forja.</value>
+  </data>
+  <data name="CraftedWeaponThrustSpeedBonus_Name" xml:space="preserve">
+    <value>Bônus de Velocidade de Estocada de Arma Forjada</value>
+  </data>
+  <data name="CraftedWeaponThrustSpeedBonus_Desc" xml:space="preserve">
+    <value>Bônus aplicado ao valor de Velocidade de Estocada de qualquer arma que o jogador forja.</value>
+  </data>
+  <data name="AddAttributePointMessage" xml:space="preserve">
+    <value>Adicionado 1 ponto a {0} por {1}.</value>
+  </data>
+  <data name="AddGoldMessage" xml:space="preserve">
+    <value>Adicionado {0} de ouro.</value>
+  </data>
+  <data name="AddInfluenceMessage" xml:space="preserve">
+    <value>Adicionado 1000 de influência.</value>
+  </data>
+  <data name="AddTroopsMessage" xml:space="preserve">
+    <value>Adicionado {0} tropas a {1}.</value>
+  </data>
+  <data name="AddTroopXpMessage" xml:space="preserve">
+    <value>Adicionado XP a {0}.</value>
+  </data>
+  <data name="SetAllAttributesMessage" xml:space="preserve">
+    <value>Definir atributos de {0} para 10.</value>
+  </data>
+  <data name="PerfectRelationships_Desc" xml:space="preserve">
+    <value>Todos os relacionamentos entre o jogador e outros personagens são definidos para 100.</value>
+  </data>
+  <data name="PerfectRelationships_Name" xml:space="preserve">
+    <value>Relacionamentos Perfeitos</value>
+  </data>
+  <data name="Characters_GroupName" xml:space="preserve">
+    <value>Personagens</value>
+  </data>
+  <data name="BarterOfferAlwaysAccepted_Desc" xml:space="preserve">
+    <value>Ofertas de troca são sempre aceitáveis para outros personagens.</value>
+  </data>
+  <data name="BarterOfferAlwaysAccepted_Name" xml:space="preserve">
+    <value>Oferta de Troca Sempre Aceita</value>
+  </data>
+  <data name="ConversationAlwaysSuccessful_Desc" xml:space="preserve">
+    <value>As tentativas de conversa e persuasão sempre têm sucesso.</value>
+  </data>
+  <data name="ConversationAlwaysSuccessful_Name" xml:space="preserve">
+    <value>Conversa Sempre Bem-Sucedida</value>
+  </data>
+  <data name="FreeTroopRecruitment_Desc" xml:space="preserve">
+    <value>Os recrutas dos assentamentos juntam-se ao grupo do jogador gratuitamente.</value>
+  </data>
+  <data name="FreeTroopRecruitment_Name" xml:space="preserve">
+    <value>Recrutamento Gratuito de Tropas</value>
+  </data>
+  <data name="NoBarterCooldown_Desc" xml:space="preserve">
+    <value>Sem tempo de espera entre tentativas de troca com um personagem.</value>
+  </data>
+  <data name="NoBarterCooldown_Name" xml:space="preserve">
+    <value>Sem Tempo de Espera para Troca</value>
+  </data>
+  <data name="NpcMapSpeedPercentage_Desc" xml:space="preserve">
+    <value>Diminua a velocidade das tropas NPC no mapa para uma porcentagem de sua velocidade original. Um valor de 100% significa velocidade padrão, 50% significa metade da velocidade, 0% significa que eles não podem se mover.</value>
+  </data>
+  <data name="NpcMapSpeedPercentage_Name" xml:space="preserve">
+    <value>Velocidade da Tropa NPC</value>
+  </data>
+  <data name="PartyInvisibleOnMap_Desc" xml:space="preserve">
+    <value>Partes hostis não rastrearão nem atacarão a tropa do jogador no mapa.</value>
+  </data>
+  <data name="PartyInvisibleOnMap_Name" xml:space="preserve">
+    <value>Tropa Invisível no Mapa</value>
+  </data>
+  <data name="InstantEscape_Desc" xml:space="preserve">
+    <value>O jogador escapa instantaneamente após ser capturado por outra tropa.</value>
+  </data>
+  <data name="InstantEscape_Name" xml:space="preserve">
+    <value>Fugir Instantaneamente</value>
+  </data>
+  <data name="HealthRegeneration_Desc" xml:space="preserve">
+    <value>O personagem do jogador regenera a porcentagem definida de sua saúde total a cada segundo durante o combate. Um valor de 0% significa nenhuma regeneração.</value>
+  </data>
+  <data name="HealthRegeneration_Name" xml:space="preserve">
+    <value>Regeneração de Saúde</value>
+  </data>
+  <data name="InfiniteAmmo_Desc" xml:space="preserve">
+    <value>Armas de longo alcance e arremesso têm munição infinita.</value>
+  </data>
+  <data name="InfiniteAmmo_Name" xml:space="preserve">
+    <value>Munição Infinita</value>
+  </data>
+  <data name="EnemySiegeBuildingSpeedPercentage_Desc" xml:space="preserve">
+    <value>Quão rapidamente o lado oposto nos cercos pode construir máquinas de cerco ou defesas de muralha. 100% significa velocidade total, 0% significa nenhuma máquina de cerco.</value>
+  </data>
+  <data name="EnemySiegeBuildingSpeedPercentage_Name" xml:space="preserve">
+    <value>Porcentagem da Velocidade de Construção de Cerco do Inimigo</value>
+  </data>
+  <data name="DamageMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual o dano causado pelo jogador durante o combate é multiplicado. Um fator de 1 significa dano padrão. Se Matar com 1 Golpe estiver ativo, isso não tem efeito.</value>
+  </data>
+  <data name="DamageMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Dano que o Jogador Causa</value>
+  </data>
+  <data name="NoFriendlyFire_Desc" xml:space="preserve">
+    <value>Desativa completamente o fogo amigo para o grupo do jogador.</value>
+  </data>
+  <data name="NoFriendlyFire_Name" xml:space="preserve">
+    <value>Sem Fogo Amigo</value>
+  </data>
+  <data name="PartyDamageMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual o dano causado pelos membros do grupo do jogador durante o combate é multiplicado. Um fator de 1 significa dano padrão. Se Matar com 1 Golpe no Grupo estiver ativo, isso não tem efeito.</value>
+  </data>
+  <data name="PartyDamageMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Dano que o Grupo Causa</value>
+  </data>
+  <data name="PartyInfiniteAmmo_Desc" xml:space="preserve">
+    <value>Armas de longo alcance e arremesso dos membros do grupo do jogador têm munição infinita.</value>
+  </data>
+  <data name="PartyInfiniteAmmo_Name" xml:space="preserve">
+    <value>Munição Infinita para o Grupo</value>
+  </data>
+  <data name="DamageTakenPercentage_Desc" xml:space="preserve">
+    <value>Quanto dano o jogador recebe a cada golpe. 100% significa dano total, 50% significa metade do dano, e 0% torna o jogador invencível.</value>
+  </data>
+  <data name="DamageTakenPercentage_Name" xml:space="preserve">
+    <value>Porcentagem de Dano Recebido</value>
+  </data>
+  <data name="ItemTradingCostPercentage_Desc" xml:space="preserve">
+    <value>Quanto os itens custam para comprar dos comerciantes. 100% significa preço cheio, 50% significa metade do preço, e 0% significa que tudo é grátis.</value>
+  </data>
+  <data name="ItemTradingCostPercentage_Name" xml:space="preserve">
+    <value>Porcentagem do Custo de Comércio de Itens</value>
+  </data>
+  <data name="SellingPriceMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual o preço dos itens vendidos pelo jogador é aumentado. Um fator de 1 significa preço padrão.</value>
+  </data>
+  <data name="SellingPriceMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Preço de Venda</value>
+  </data>
+  <data name="PartyDamageTakenPercentage_Desc" xml:space="preserve">
+    <value>Quanto dano os membros da tropa do jogador recebem a cada golpe. 100% significa dano total, 50% significa metade do dano e 0% torna-os invencíveis.</value>
+  </data>
+  <data name="PartyDamageTakenPercentage_Name" xml:space="preserve">
+    <value>Porcentagem de Dano Recebido da Tropa</value>
+  </data>
+  <data name="DailyFoodBonus_Desc" xml:space="preserve">
+    <value>Os estoques de alimentos em castelos e cidades de propriedade do jogador crescem pelo valor configurado a cada dia.</value>
+  </data>
+  <data name="DailyFoodBonus_Name" xml:space="preserve">
+    <value>Bônus Diário de Alimentos</value>
+  </data>
+  <data name="DailyGarrisonBonus_Desc" xml:space="preserve">
+    <value>A guarnição em castelos e cidades de propriedade do jogador cresce pelo valor configurado a cada dia.</value>
+  </data>
+  <data name="DailyGarrisonBonus_Name" xml:space="preserve">
+    <value>Bônus Diário de Guarnição</value>
+  </data>
+  <data name="DailyMilitiaBonus_Desc" xml:space="preserve">
+    <value>A milícia em aldeias e cidades de propriedade do jogador cresce pelo valor configurado a cada dia.</value>
+  </data>
+  <data name="DailyMilitiaBonus_Name" xml:space="preserve">
+    <value>Bônus Diário de Milícia</value>
+  </data>
+  <data name="GarrisonWagesPercentage_Name" xml:space="preserve">
+    <value>Porcentagem dos Salários da Guarnição</value>
+  </data>
+  <data name="GarrisonWagesPercentage_Desc" xml:space="preserve">
+    <value>Porcentagem dos salários originais da guarnição que o jogador deve pagar. 100% significa salários completos, 0% significa nenhum salário para as tropas.</value>
+  </data>
+  <data name="PartyHealthRegeneration_Desc" xml:space="preserve">
+    <value>Porcentagem da regeneração original da guarnição que o jogador deve pagar. 100% significa regeneração total, 0% significa nenhuma regeneração para as tropas.</value>
+  </data>
+  <data name="PartyHealthRegeneration_Name" xml:space="preserve">
+    <value>Regeneração da Saúde do Grupo</value>
+  </data>
+  <data name="DailyHearthsBonus_Desc" xml:space="preserve">
+    <value>As lareiras em aldeias de propriedade do jogador crescem pelo valor configurado a cada dia.</value>
+  </data>
+  <data name="DailyHearthsBonus_Name" xml:space="preserve">
+    <value>Bônus Diário de Lareiras</value>
+  </data>
+  <data name="DailyLoyaltyBonus_Desc" xml:space="preserve">
+    <value>A lealdade em castelos e cidades de propriedade do jogador cresce pelo valor configurado a cada dia.</value>
+  </data>
+  <data name="DailyLoyaltyBonus_Name" xml:space="preserve">
+    <value>Bônus Diário de Lealdade</value>
+  </data>
+  <data name="DailyProsperityBonus_Desc" xml:space="preserve">
+    <value>A prosperidade em castelos e cidades de propriedade do jogador cresce pelo valor configurado a cada dia.</value>
+  </data>
+  <data name="DailyProsperityBonus_Name" xml:space="preserve">
+    <value>Bônus Diário de Prosperidade</value>
+  </data>
+  <data name="DailySecurityBonus_Desc" xml:space="preserve">
+    <value>A segurança em castelos e cidades de propriedade do jogador cresce pelo valor configurado a cada dia.</value>
+  </data>
+  <data name="DailySecurityBonus_Name" xml:space="preserve">
+    <value>Bônus Diário de Segurança</value>
+  </data>
+  <data name="AddItemsMessage" xml:space="preserve">
+    <value>Adicionado {0} para {1}.</value>
+  </data>
+  <data name="CombatZoomMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Zoom em Combate</value>
+  </data>
+  <data name="CombatZoomMultiplier_Desc" xml:space="preserve">
+    <value>Aumenta o nível de zoom durante o combate. 1 significa zoom padrão.</value>
+  </data>
+  <data name="InstantCrossbowReload_Name" xml:space="preserve">
+    <value>Recarregamento Instantâneo de Besta</value>
+  </data>
+  <data name="InstantCrossbowReload_Desc" xml:space="preserve">
+    <value>Se ativado, o recarregamento da besta é quase instantâneo.</value>
+  </data>
+  <data name="NeverRequireCivilianEquipment_Name" xml:space="preserve">
+    <value>Nunca Requer Equipamento Civil</value>
+  </data>
+  <data name="NeverRequireCivilianEquipment_Desc" xml:space="preserve">
+    <value>Permite que você entre em qualquer missão com seu equipamento de batalha.</value>
+  </data>
+  <data name="FreeFocusPointAssignment_Name" xml:space="preserve">
+    <value>Atribuição Gratuita de Pontos de Foco</value>
+  </data>
+  <data name="FreeFocusPointAssignment_Desc" xml:space="preserve">
+    <value>Atribuir níveis de foco a uma habilidade não custa pontos de foco.</value>
+  </data>
+  <data name="AddUnspentFocusPointMessage" xml:space="preserve">
+    <value>Adicionar 1 ponto de Foco para {0}.</value>
+  </data>
+  <data name="AddUnspentAttributePointMessage" xml:space="preserve">
+    <value>Adicionar 1 ponto de Atributo para {0}.</value>
+  </data>
+  <data name="NoCrimeRatingForCrimes_Name" xml:space="preserve">
+    <value>Sem Classificação de Crime para Crimes</value>
+  </data>
+  <data name="NoCrimeRatingForCrimes_Desc" xml:space="preserve">
+    <value>Ações ilegais não resultam em uma classificação de crime.</value>
+  </data>
+  <data name="PartyHeroesInvincible_Desc" xml:space="preserve">
+    <value>Desativa todo dano aos membros heróis do grupo do jogador. Não afeta tropas normais.</value>
+  </data>
+  <data name="PartyHeroesInvincible_Name" xml:space="preserve">
+    <value>Heróis do Grupo Invencíveis</value>
+  </data>
+  <data name="ExtraClanPartySize_Name" xml:space="preserve">
+    <value>Tamanho Extra do Grupo do Clã</value>
+  </data>
+  <data name="ExtraClanPartySize_Desc" xml:space="preserve">
+    <value>Aumenta a quantidade máxima de tropas nos grupos do seu clã.</value>
+  </data>
+  <data name="Workshops_GroupName" xml:space="preserve">
+    <value>Oficinas</value>
+  </data>
+  <data name="WorkshopDailyExpensePercentage_Name" xml:space="preserve">
+    <value>Percentual de Despesa Diária</value>
+  </data>
+  <data name="WorkshopDailyExpensePercentage_Desc" xml:space="preserve">
+    <value>Percentual dos custos diários de despesa da oficina. 100% significa despesas completas, 0% significa sem despesas.</value>
+  </data>
+  <data name="WorkshopUpgradeCostPercentage_Name" xml:space="preserve">
+    <value>Percentual de Custo de Upgrade da Oficina</value>
+  </data>
+  <data name="WorkshopUpgradeCostPercentage_Desc" xml:space="preserve">
+    <value>Percentual dos custos de upgrade da oficina. 100% significa custo total, 0% significa upgrades gratuitos.</value>
+  </data>
+  <data name="WorkshopSellingCostMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Preço de Venda</value>
+  </data>
+  <data name="WorkshopSellingCostMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual o dinheiro que você recebe ao vender uma oficina é multiplicado. Um fator de 1 significa preço de venda padrão.</value>
+  </data>
+  <data name="WorkshopBuyingCostPercentage_Name" xml:space="preserve">
+    <value>Percentual de Custo de Compra da Oficina</value>
+  </data>
+  <data name="WorkshopBuyingCostPercentage_Desc" xml:space="preserve">
+    <value>Percentual do preço para comprar uma oficina. 100% significa preço total, 0% significa oficinas gratuitas.</value>
+  </data>
+  <data name="FactionArmyCohesionLossPercentage_Name" xml:space="preserve">
+    <value>Percentual de Perda de Coesão do Exército da Facção</value>
+  </data>
+  <data name="FactionArmyCohesionLossPercentage_Desc" xml:space="preserve">
+    <value>Quanto de coesão os exércitos NPC da facção do jogador perdem ao longo do tempo. 100% significa perda total de coesão, 0% significa coesão congelada.</value>
+  </data>
+  <data name="AddTroopsFromEncyclopediaMessage" xml:space="preserve">
+    <value>Adicionado {0} {1} ao grupo.</value>
+  </data>
+  <data name="LearningLimitMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Limite de Aprendizado</value>
+  </data>
+  <data name="LearningLimitMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual o limite de aprendizado para todas as habilidades é multiplicado. Um fator de 1 significa limite de aprendizado padrão.</value>
+  </data>
+  <data name="CompanionExperienceMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Ganho de Experiência do Companheiro</value>
+  </data>
+  <data name="CompanionExperienceMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual o ganho de experiência dos companheiros do jogador é multiplicado. Um fator de 1 significa experiência padrão.</value>
+  </data>
+  <data name="CompanionLearningRateMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Taxa de Aprendizado do Companheiro</value>
+  </data>
+  <data name="CompanionLearningRateMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual a taxa de aprendizado dos companheiros do jogador é multiplicada. Um fator de 1 significa aprendizado padrão.</value>
+  </data>
+  <data name="SliceThroughEveryone_Name" xml:space="preserve">
+    <value>Cortar / Fatia Através de Todos: Jogador</value>
+  </data>
+  <data name="SliceThroughEveryone_Desc" xml:space="preserve">
+    <value>O jogador sempre corta / fatia os inimigos.</value>
+  </data>
+  <data name="SliceThroughEveryone_AI_Name" xml:space="preserve">
+    <value>AI Cortar / Fatia Através de Todos</value>
+  </data>
+  <data name="SliceThroughEveryone_AI_Desc" xml:space="preserve">
+    <value>AI sempre corta / fatia os inimigos.</value>
+  </data>
+  <data name="SliceThroughEveryone_ally_Name" xml:space="preserve">
+    <value>Cortar / Fatia Através de Todos: Aliado</value>
+  </data>
+  <data name="SliceThroughEveryone_ally_Desc" xml:space="preserve">
+    <value>O aliado sempre corta / fatia os inimigos.</value>
+  </data>
+  <data name="SliceThroughEveryone_enemy_Name" xml:space="preserve">
+    <value>Cortar / Fatia Através de Todos: Inimigo</value>
+  </data>
+  <data name="SliceThroughEveryone_enemy_Desc" xml:space="preserve">
+    <value>O inimigo sempre corta / fatia os inimigos.</value>
+  </data>
+  <data name="PlayerHorseInvincible_Name" xml:space="preserve">
+    <value>Cavalo do Jogador Invencível</value>
+  </data>
+  <data name="PlayerHorseInvincible_Desc" xml:space="preserve">
+    <value>Desativa todo dano ao cavalo que o jogador está montando atualmente.</value>
+  </data>
+  <data name="AlwaysKnockDown_Name" xml:space="preserve">
+    <value>Sempre Derrubar Inimigos</value>
+  </data>
+  <data name="AlwaysKnockDown_Desc" xml:space="preserve">
+    <value>Sempre derrube os inimigos a cada golpe.</value>
+  </data>
+  <data name="DecisionOverrideInfluenceCostPercentage_Name" xml:space="preserve">
+    <value>Porcentagem do Custo de Influência para Sobrescrever Decisão</value>
+  </data>
+  <data name="DecisionOverrideInfluenceCostPercentage_Desc" xml:space="preserve">
+    <value>Porcentagem do custo de influência para sobrescrever uma decisão do reino. 100% significa custo total, 0% significa nenhum custo de influência.</value>
+  </data>
+  <data name="EnableHotkeyTips_Name" xml:space="preserve">
+    <value>Ativar Dicas de Teclas de Atalho</value>
+  </data>
+  <data name="EnableHotkeyTips_Desc" xml:space="preserve">
+    <value>Ative para ver uma lista de teclas de atalho de trapaça disponíveis em todas as telas que as possuem.</value>
+  </data>
+  <data name="NativeItemSpawning_Name" xml:space="preserve">
+    <value>Gerar Itens</value>
+  </data>
+  <data name="NativeItemSpawning_Desc" xml:space="preserve">
+    <value>Marque para ativar a geração de itens assim como no modo de trapaça nativo. Abra o inventário para ver todos os itens do jogo, arraste para o seu inventário para gerá-los.</value>
+  </data>
+  <data name="ConstructionPowerMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Força de Construção</value>
+  </data>
+  <data name="ConstructionPowerMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual a força de construção das cidades do jogador é multiplicada. Um fator de 1 significa força de construção padrão.</value>
+  </data>
+  <data name="NoBribeToEnterKeep_Name" xml:space="preserve">
+    <value>Entrar em Fortalezas Sem Suborno</value>
+  </data>
+  <data name="NoBribeToEnterKeep_Desc" xml:space="preserve">
+    <value>Se ativado, nenhum suborno é necessário para entrar em uma fortaleza.</value>
+  </data>
+  <data name="EveryoneBuysWorkshops_Name" xml:space="preserve">
+    <value>Todo mundo Compra Oficinas</value>
+  </data>
+  <data name="EveryoneBuysWorkshops_Desc" xml:space="preserve">
+    <value>Se ativado, você sempre encontrará um comprador para sua oficina, mesmo que tenha ajustado o preço de venda da oficina na trapaça.</value>
+  </data>
+  <data name="PerfectAttraction_Name" xml:space="preserve">
+    <value>Atração Perfeita</value>
+  </data>
+  <data name="PerfectAttraction_Desc" xml:space="preserve">
+    <value>Se ativado, parceiros em potencial sempre estarão 100% atraídos por você.</value>
+  </data>
+  <data name="AllowSameSexMarriage_Name" xml:space="preserve">
+    <value>Permitir Casamento entre Pessoas do Mesmo Sexo</value>
+  </data>
+  <data name="AllowSameSexMarriage_Desc" xml:space="preserve">
+    <value>Se ativado, você pode se casar com personagens do mesmo gênero que o seu personagem.</value>
+  </data>
+  <data name="PregnancyChanceMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Chance de Gravidez</value>
+  </data>
+  <data name="PregnancyChanceMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual a chance de engravidar para personagens do jogador ou cônjuges de personagens do jogador é multiplicada. Não afeta personagens que não podem engravidar! Um fator de 1 significa a chance padrão de gravidez.</value>
+  </data>
+  <data name="AdjustPregnancyDuration_Name" xml:space="preserve">
+    <value>Ajustar Duração da Gravidez</value>
+  </data>
+  <data name="AdjustPregnancyDuration_Desc" xml:space="preserve">
+    <value>Ajuste a duração das gravidezes para todos os personagens do jogo. A duração padrão de uma gravidez é de 36 dias.</value>
+  </data>
+  <data name="ModWarningMessageConfirm" xml:space="preserve">
+    <value>Eu Entendo</value>
+  </data>
+  <data name="ModFailedLoadWarningTitle" xml:space="preserve">
+    <value>Bannerlord Cheats failed to load!</value>
+  </data>
+  <data name="ModFailedLoadWarningMessage" xml:space="preserve">
+    <value>Bannerlord Cheats could not load some cheats. Do you have the correct mod version for your game version? The following cheats failed to load:
+{0}</value>
+  </data>
+  <data name="NeverKnockedBackByAttacks_Desc" xml:space="preserve">
+    <value>Se ativado, o personagem do jogador nunca é repelido ou atordoado por ataques inimigos.</value>
+  </data>
+  <data name="NeverKnockedBackByAttacks_Name" xml:space="preserve">
+    <value>Nunca Repelido por Ataques</value>
+  </data>
+  <data name="EnemyDamagePercentage_Name" xml:space="preserve">
+    <value>Porcentagem de Dano dos Inimigos</value>
+  </data>
+  <data name="EnemyDamagePercentage_Desc" xml:space="preserve">
+    <value>Porcentagem do dano que todos os inimigos do jogador causam durante o combate em comparação com o dano original. 100% significa dano total.</value>
+  </data>
+  <data name="TournamentMaximumBetMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Máximo de Aposta em Torneios</value>
+  </data>
+  <data name="TournamentMaximumBetMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual o valor máximo de dinheiro que você pode apostar em um torneio é multiplicado. 1 significa valor padrão.</value>
+  </data>
+  <data name="NoStuckArrows_Name" xml:space="preserve">
+    <value>Sem Flechas Presas</value>
+  </data>
+  <data name="NoStuckArrows_Desc" xml:space="preserve">
+    <value>Se ativado, as flechas não ficarão presas no personagem do jogador.</value>
+  </data>
+  <data name="ModExceptionMessage" xml:space="preserve">
+    <value>Bannerlord Cheats encountered an error while trying to apply a cheat. Please send the error information that has been generated in the file "{0}" to the mod author so that they can investigate this issue. Sorry for the inconvenience!</value>
+  </data>
+  <data name="ModExceptionTitle" xml:space="preserve">
+    <value>Bannerlord Cheats encountered an error!</value>
+  </data>
+  <data name="SettlementsNeverRebel_Name" xml:space="preserve">
+    <value>Assentamentos Nunca Rebelam</value>
+  </data>
+  <data name="SettlementsNeverRebel_Desc" xml:space="preserve">
+    <value>Se ativado, os assentamentos pertencentes ao jogador nunca iniciarão uma rebelião.</value>
+  </data>
+  <data name="NeverDieOfOldAge_Name" xml:space="preserve">
+    <value>Nunca Morra de Velhice</value>
+  </data>
+  <data name="NeverDieOfOldAge_Desc" xml:space="preserve">
+    <value>Se ativado, seu personagem principal ainda ficará doente e envelhecerá, mas nunca morrerá de velhice ou doença.</value>
+  </data>
+  <data name="KillCharacterMessageTitle" xml:space="preserve">
+    <value>Matar {0}?</value>
+  </data>
+  <data name="KillCharacterMessage" xml:space="preserve">
+    <value>Este personagem deve morrer?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="KillCharacterConfirm" xml:space="preserve">
+    <value>Matar!</value>
+  </data>
+  <data name="TransferSettlementMessageTitle" xml:space="preserve">
+    <value>Transferir {0}?</value>
+  </data>
+  <data name="TransferSettlementMessage" xml:space="preserve">
+    <value>Deve a propriedade deste assentamento ser transferida para você?</value>
+  </data>
+  <data name="TransferSettlementConfirm" xml:space="preserve">
+    <value>Transferir!</value>
+  </data>
+  <data name="ChangePlayerMessageTitle" xml:space="preserve">
+    <value>Trocar para {0}?</value>
+  </data>
+  <data name="ChangePlayerMessage" xml:space="preserve">
+    <value>Jogar como este personagem a partir de agora? Isso pode ter consequências inesperadas! Use por sua conta e risco e salve seu jogo antes de fazer isso!</value>
+  </data>
+  <data name="ChangePlayerConfirm" xml:space="preserve">
+    <value>Trocar!</value>
+  </data>
+  <data name="IUnderstand_Name" xml:space="preserve">
+    <value>Load a campaign to see cheats!</value>
+  </data>
+  <data name="IUnderstand_Desc" xml:space="preserve">
+    <value>Cheats are saved per character! They only show up when you are in a campaign. Press ESC, then go to Options → Mod Options → Cheats while in a campaign.</value>
+  </data>
+  <data name="Understood" xml:space="preserve">
+    <value>Understood!</value>
+  </data>
+  <data name="ThanksForReadingMessage" xml:space="preserve">
+    <value>Thanks for reading and understanding!</value>
+  </data>
+  <data name="Global" xml:space="preserve">
+    <value>Global</value>
+  </data>
+  <data name="Enum_KnockoutOrKilled_Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="Enum_KnockoutOrKilled_Knockout" xml:space="preserve">
+    <value>Nocauteado</value>
+  </data>
+  <data name="Enum_KnockoutOrKilled_Killed" xml:space="preserve">
+    <value>Morto</value>
+  </data>
+  <data name="PartyKnockoutOrKilled_Name" xml:space="preserve">
+    <value>Grupo Nocauteado ou Morto</value>
+  </data>
+  <data name="PartyKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>Quando isso está definido, as tropas em seu grupo são sempre nocauteadas ou sempre mortas quando derrotadas, dependendo da configuração. O padrão significa a chance padrão de um nocaute.</value>
+  </data>
+  <data name="CompanionsKnockoutOrKilled_Name" xml:space="preserve">
+    <value>Companheiros Nocauteados ou Mortos</value>
+  </data>
+  <data name="CompanionsKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>Quando isso está definido, os heróis em seu grupo são sempre nocauteados ou sempre mortos quando derrotados, dependendo da configuração. O padrão significa a chance padrão de um nocaute.</value>
+  </data>
+  <data name="FriendlyLordsKnockoutOrKilled_Name" xml:space="preserve">
+    <value>Senhores Aliados Nocauteados ou Mortos</value>
+  </data>
+  <data name="FriendlyLordsKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>Quando isso está definido, os senhores aliados são sempre nocauteados ou sempre mortos quando derrotados, dependendo da configuração. O padrão significa a chance padrão de um nocaute.</value>
+  </data>
+  <data name="EnemyLordsKnockoutOrKilled_Name" xml:space="preserve">
+    <value>Senhores Inimigos Nocauteados ou Mortos</value>
+  </data>
+  <data name="EnemyLordsKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>Quando isso está definido, os senhores inimigos são sempre nocauteados ou sempre mortos quando derrotados, dependendo da configuração. O padrão significa a chance padrão de um nocaute.</value>
+  </data>
+  <data name="EnemyTroopsKnockoutOrKilled_Name" xml:space="preserve">
+    <value>Tropas Inimigas Nocauteadas ou Mortas</value>
+  </data>
+  <data name="EnemyTroopsKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>Quando isso está definido, as tropas inimigas são sempre nocauteadas ou sempre mortas quando derrotadas, dependendo da configuração. O padrão significa a chance padrão de um nocaute.</value>
+  </data>
+  <data name="CaravansInvisibleOnMap_Name" xml:space="preserve">
+    <value>Caravanas invisíveis no mapa</value>
+  </data>
+  <data name="CaravansInvisibleOnMap_Desc" xml:space="preserve">
+    <value>As tropas hostis não rastrearão nem atacarão as caravanas de propriedade do jogador no mapa.</value>
+  </data>
+  <data name="ClanExperienceMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Ganho de Experiência dos Membros do Clã</value>
+  </data>
+  <data name="ClanExperienceMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual o ganho de experiência dos outros membros do clã do jogador é multiplicado. Um fator de 1 significa experiência padrão.</value>
+  </data>
+  <data name="RelationGainAfterBattleMultiplier_Name" xml:space="preserve">
+    <value>Multiplicar - Ganho de Relação Após Batalha</value>
+  </data>
+  <data name="RelationGainAfterBattleMultiplier_Desc" xml:space="preserve">
+    <value>Fator pelo qual o aumento de relação com senhores que você ajudou na batalha é multiplicado. Um fator de 1 significa aumento padrão.</value>
+  </data>
+  <data name="VillagesNeverRaided_Name" xml:space="preserve">
+    <value>Aldeias de Jogadores Nunca Serão Invadidas</value>
+  </data>
+  <data name="VillagesNeverRaided_Desc" xml:space="preserve">
+    <value>Quando ativado, as aldeias de propriedade do jogador nunca podem ser invadidas.</value>
+  </data>
+  <data name="General_Enhancement_GroupName" xml:space="preserve">
+    <value>Aprimoramento Geral</value>
+  </data>
+  <data name="Vigor_Enhancement_GroupName" xml:space="preserve">
+    <value>Aprimoramento de Vigor</value>
+  </data>
+  <data name="Control_Enhancement_GroupName" xml:space="preserve">
+    <value>Aprimoramento de Controle</value>
+  </data>
+  <data name="Intelligence_Enhancement_GroupName" xml:space="preserve">
+    <value>Aprimoramento de Inteligência</value>
+  </data>
+  <data name="Endurance_Enhancement_GroupName" xml:space="preserve">
+    <value>Aprimoramento de Resistência</value>
+  </data>
+  <data name="Cunning_Enhancement_GroupName" xml:space="preserve">
+    <value>Aprimoramento de Astúcia</value>
+  </data>
+  <data name="Social_Enhancement_GroupName" xml:space="preserve">
+    <value>Aprimoramento Social</value>
+  </data>
+  <data name="EnableEverYoung_Name" xml:space="preserve">
+    <value>Ativar Sempre Jovem</value>
+  </data>
+  <data name="EnableEverYoung_Desc" xml:space="preserve">
+    <value>O jogador ganha juventude eterna independentemente dos requisitos de nível de habilidade. Desativar esta opção desliga todos os recursos relacionados ao Sempre Jovem. Tente desativar se houver conflito com outros mods.</value>
+  </data>
+  <data name="EverYoungSkillNeed_Name" xml:space="preserve">
+    <value>Nível de Habilidade Sempre Jovem do Clã (Atletismo + Charme) Requisito</value>
+  </data>
+  <data name="EverYoungSkillNeed_Desc" xml:space="preserve">
+    <value>Se a soma de Atletismo + Charme de um membro do clã for maior ou igual a este valor, ele ganhará a habilidade Sempre Jovem.</value>
+  </data>
+  <data name="AutoChoosePerk_Name" xml:space="preserve">
+    <value>Adquirir Automaticamente Ambos os Ramos de Perk</value>
+  </data>
+  <data name="AutoChoosePerk_Desc" xml:space="preserve">
+    <value>Requer que o nível de habilidade atenda ao requisito.</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_Clan" xml:space="preserve">
+    <value>Clã do Jogador e o Jogador</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_All" xml:space="preserve">
+    <value>Todos os Herois</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_Player" xml:space="preserve">
+    <value>O Jogador</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_No" xml:space="preserve">
+    <value>Ninguém</value>
+  </data>
+  <data name="VigorDmgPercent_Name" xml:space="preserve">
+    <value>Porcentagem de Bônus de Dano ao Vigor</value>
+  </data>
+  <data name="VigorDmgPercent_Desc" xml:space="preserve">
+    <value>O aumento percentual de dano por ponto de Vigor.</value>
+  </data>
+  <data name="VigorArmorAdd_Name" xml:space="preserve">
+    <value>Bônus de Armadura de Vigor</value>
+  </data>
+  <data name="VigorArmorAdd_Desc" xml:space="preserve">
+    <value>O aumento do valor de armadura por ponto de Vigor.</value>
+  </data>
+  <data name="VigorMountArmorAdd_Name" xml:space="preserve">
+    <value>Bônus de Armadura de Montaria de Vigor</value>
+  </data>
+  <data name="VigorMountArmorAdd_Desc" xml:space="preserve">
+    <value>O aumento do valor de armadura da montaria por ponto de Vigor.</value>
+  </data>
+  <data name="VigorShieldEndurancePercent_Name" xml:space="preserve">
+    <value>Reforço de Durabilidade do Escudo de Vigor</value>
+  </data>
+  <data name="VigorShieldEndurancePercent_Desc" xml:space="preserve">
+    <value>O aumento percentual na durabilidade do escudo por ponto de Vigor.</value>
+  </data>
+  <data name="VigorFinalDmgAdd_Name" xml:space="preserve">
+    <value>Bônus Forçado de Dano de Vigor</value>
+  </data>
+  <data name="VigorFinalDmgAdd_Desc" xml:space="preserve">
+    <value>O aumento do valor de dano forçado contra inimigos por ponto de Vigor.</value>
+  </data>
+  <data name="VigorDmgTakenReduce_Name" xml:space="preserve">
+    <value>Redução de Dano de Vigor</value>
+  </data>
+  <data name="VigorDmgTakenReduce_Desc" xml:space="preserve">
+    <value>O valor da redução de dano de inimigos por ponto de Vigor.</value>
+  </data>
+  <data name="VigorCrushThroughPositive_Name" xml:space="preserve">
+    <value>Probabilidade de Quebra de Bloqueio por Vigor</value>
+  </data>
+  <data name="VigorCrushThroughPositive_Desc" xml:space="preserve">
+    <value>O aumento da probabilidade de quebrar o bloqueio de um oponente para cada 1 ponto de vantagem de Vigor sobre o oponente.</value>
+  </data>
+  <data name="VigorCrushThroughNegative_Name" xml:space="preserve">
+    <value>Probabilidade de Resistência a Quebra de Bloqueio por Vigor</value>
+  </data>
+  <data name="VigorCrushThroughNegative_Desc" xml:space="preserve">
+    <value>O aumento da probabilidade de resistir a uma quebra de bloqueio para cada 1 ponto de vantagem de Vigor sobre o oponente.</value>
+  </data>
+  <data name="IntelligenceAmmoAddPercent_Name" xml:space="preserve">
+    <value>Bônus de Capacidade de Munição de Inteligência</value>
+  </data>
+  <data name="IntelligenceAmmoAddPercent_Desc" xml:space="preserve">
+    <value>O aumento percentual na capacidade máxima de munição do grupo por ponto de Inteligência (Quartel-Mestre).</value>
+  </data>
+  <data name="ControlAmmoNoConsumeRate_Name" xml:space="preserve">
+    <value>Taxa de Não Consumo de Munição de Controle</value>
+  </data>
+  <data name="ControlAmmoNoConsumeRate_Desc" xml:space="preserve">
+    <value>A probabilidade de que cada disparo não consuma munição por ponto de Controle.</value>
+  </data>
+  <data name="ControlDropDmgReducePercent_Name" xml:space="preserve">
+    <value>Controle a Redução de Dano por Queda</value>
+  </data>
+  <data name="ControlDropDmgReducePercent_Desc" xml:space="preserve">
+    <value>Controle A redução percentual no dano por queda por ponto de Controle.</value>
+  </data>
+  <data name="ControlAimStabilityPercent_Name" xml:space="preserve">
+    <value>Bônus de Estabilidade de Mira de Controle</value>
+  </data>
+  <data name="ControlAimStabilityPercent_Desc" xml:space="preserve">
+    <value>O aumento percentual na estabilidade de mira por ponto de Controle.</value>
+  </data>
+  <data name="ControlMountManeuverPercent_Name" xml:space="preserve">
+    <value>Controle dos Bônus de Manobrabilidade de Montaria</value>
+  </data>
+  <data name="ControlMountManeuverPercent_Desc" xml:space="preserve">
+    <value>O aumento percentual na manobrabilidade da montaria por ponto de Controle.</value>
+  </data>
+  <data name="ControlCritRate_Name" xml:space="preserve">
+    <value>Taxa de Acerto Crítico de Controle</value>
+  </data>
+  <data name="ControlCritRate_Desc" xml:space="preserve">
+    <value>Aumento da probabilidade de um acerto crítico (dano duplo) para cada 1 ponto de vantagem de Controle sobre o oponente.</value>
+  </data>
+  <data name="ControlExemptionRate_Name" xml:space="preserve">
+    <value>Taxa de Isenção de Controle</value>
+  </data>
+  <data name="ControlExemptionRate_Desc" xml:space="preserve">
+    <value>Aumento da probabilidade de isenção (imunidade completa a danos) para cada 1 ponto de vantagem de Controle sobre o oponente.</value>
+  </data>
+  <data name="ControlPenetrateRate_Name" xml:space="preserve">
+    <value>Taxa de Penetração de Escudo à Distância de Controle</value>
+  </data>
+  <data name="ControlPenetrateRate_Desc" xml:space="preserve">
+    <value>O aumento da probabilidade de penetração de escudo à distância por ponto de Controle.</value>
+  </data>
+  <data name="EnduranceHpAddPercent_Name" xml:space="preserve">
+    <value>Bônus de Saúde de Resistência</value>
+  </data>
+  <data name="EnduranceHpAddPercent_Desc" xml:space="preserve">
+    <value>O aumento percentual na saúde máxima por ponto de Resistência.</value>
+  </data>
+  <data name="EnduranceHealRate_Name" xml:space="preserve">
+    <value>Bônus de Taxa de Recuperação de Saúde de Resistência</value>
+  </data>
+  <data name="EnduranceHealRate_Desc" xml:space="preserve">
+    <value>O aumento percentual na recuperação de saúde (no mapa mundial) por ponto de Resistência.</value>
+  </data>
+  <data name="EnduranceStaggerPercent_Name" xml:space="preserve">
+    <value>Bônus de Resistência a Atordoamento de Resistência</value>
+  </data>
+  <data name="EnduranceStaggerPercent_Desc" xml:space="preserve">
+    <value>O aumento percentual na resistência a atordoamento por ponto de Resistência.</value>
+  </data>
+  <data name="EnduranceWalkSpeedPercent_Name" xml:space="preserve">
+    <value>Bônus de Velocidade de Caminhada de Resistência</value>
+  </data>
+  <data name="EnduranceWalkSpeedPercent_Desc" xml:space="preserve">
+    <value>O aumento percentual na velocidade de caminhada por ponto de Resistência.</value>
+  </data>
+  <data name="EnduranceMountSpeedPercent_Name" xml:space="preserve">
+    <value>Bônus de Velocidade de Montaria de Resistência</value>
+  </data>
+  <data name="EnduranceMountSpeedPercent_Desc" xml:space="preserve">
+    <value>O aumento percentual na velocidade de montaria por ponto de Resistência.</value>
+  </data>
+  <data name="CunningPrisonerRecruitSpeedPercent_Name" xml:space="preserve">
+    <value>Bônus de Velocidade de Recrutamento de Prisioneiros de Astúcia</value>
+  </data>
+  <data name="CunningPrisonerRecruitSpeedPercent_Desc" xml:space="preserve">
+    <value>O aumento percentual na velocidade de recrutamento de prisioneiros por ponto de Astúcia (Líder do Partido).</value>
+  </data>
+  <data name="CunningPrisonerCapacityPercent_Name" xml:space="preserve">
+    <value>Bônus de Capacidade de Prisioneiros de Astúcia</value>
+  </data>
+  <data name="CunningPrisonerCapacityPercent_Desc" xml:space="preserve">
+    <value>O aumento na capacidade de prisioneiros por ponto de Astúcia (Líder do Partido).</value>
+  </data>
+  <data name="CunningRaidSpeedPercent_Name" xml:space="preserve">
+    <value>Bônus de Velocidade de Saque de Astúcia</value>
+  </data>
+  <data name="CunningRaidSpeedPercent_Desc" xml:space="preserve">
+    <value>O aumento percentual na velocidade de saque por ponto de Astúcia (Líder do Partido).</value>
+  </data>
+  <data name="CunningPartySpeedAdd_Name" xml:space="preserve">
+    <value>Bônus de Velocidade de Partido de Astúcia</value>
+  </data>
+  <data name="CunningPartySpeedAdd_Desc" xml:space="preserve">
+    <value>O aumento na velocidade do partido por ponto de Astúcia (Explorador).</value>
+  </data>
+  <data name="CunningCompanionCapacityAdd_Name" xml:space="preserve">
+    <value>Bônus de Capacidade de Companheiros de Astúcia</value>
+  </data>
+  <data name="CunningCompanionCapacityAdd_Desc" xml:space="preserve">
+    <value>O aumento na capacidade de companheiros por ponto de Astúcia (Líder do Clã).</value>
+  </data>
+  <data name="SocialBoundary_Name" xml:space="preserve">
+    <value>Limite Social</value>
+  </data>
+  <data name="SocialBoundary_Desc" xml:space="preserve">
+    <value>Define o limite de cálculo do efeito social.</value>
+  </data>
+  <data name="SocialHearthAdd_Name" xml:space="preserve">
+    <value>Social Settlement Hearth Growth Bonus</value>
+  </data>
+  <data name="SocialHearthAdd_Desc" xml:space="preserve">
+    <value>The increase in settlement hearth growth value per point of Social (Clan Leader and Governor).</value>
+  </data>
+  <data name="SocialSettlementLoyaltyAdd_Name" xml:space="preserve">
+    <value>Social Settlement Loyalty Bonus</value>
+  </data>
+  <data name="SocialSettlementLoyaltyAdd_Desc" xml:space="preserve">
+    <value>The increase in settlement loyalty per point of Social (Clan Leader and Governor).</value>
+  </data>
+  <data name="SocialMilitiaAdd_Name" xml:space="preserve">
+    <value>Social Settlement Militia Bonus</value>
+  </data>
+  <data name="SocialMilitiaAdd_Desc" xml:space="preserve">
+    <value>The increase in settlement militia per point of Social (Clan Leader and Governor).</value>
+  </data>
+  <data name="SocialRecruitSpeedPercent_Name" xml:space="preserve">
+    <value>Social Recruitment Pool Refresh Speed</value>
+  </data>
+  <data name="SocialRecruitSpeedPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in settlement recruitment pool refresh speed per point of Social (Clan Leader and Governor).</value>
+  </data>
+  <data name="SocialTaxPercent_Name" xml:space="preserve">
+    <value>Social Tax Bonus</value>
+  </data>
+  <data name="SocialTaxPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in settlement taxes per point of Social (Governor).</value>
+  </data>
+  <data name="SocialWorkshopProductionPercent_Name" xml:space="preserve">
+    <value>Social Workshop Production Bonus</value>
+  </data>
+  <data name="SocialWorkshopProductionPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in workshop production per point of Social (Governor).</value>
+  </data>
+  <data name="SocialCompanionCapacityAdd_Name" xml:space="preserve">
+    <value>Social Companion Capacity Bonus</value>
+  </data>
+  <data name="SocialCompanionCapacityAdd_Desc" xml:space="preserve">
+    <value>The increase in companion limit per point of Social (Clan Leader).</value>
+  </data>
+  <data name="IntelligenceBoundary_Name" xml:space="preserve">
+    <value>Limite de Inteligência</value>
+  </data>
+  <data name="IntelligenceBoundary_Desc" xml:space="preserve">
+    <value>Sets the Intelligence effect calculation threshold.</value>
+  </data>
+  <data name="IntelligenceExpRate_Name" xml:space="preserve">
+    <value>Intelligence Experience Bonus</value>
+  </data>
+  <data name="IntelligenceExpRate_Desc" xml:space="preserve">
+    <value>The increase in experience gain rate per point of Intelligence, doubled for Cunning, Social, and Intelligence skills.</value>
+  </data>
+  <data name="IntelligenceSiegeEndurancePercent_Name" xml:space="preserve">
+    <value>Intelligence Siege Weapon Durability Bonus</value>
+  </data>
+  <data name="IntelligenceSiegeEndurancePercent_Desc" xml:space="preserve">
+    <value>The percentage increase in siege weapon durability per point of Intelligence (Engineer).</value>
+  </data>
+  <data name="IntelligenceWallEndurancePercent_Name" xml:space="preserve">
+    <value>Intelligence Wall Durability Bonus</value>
+  </data>
+  <data name="IntelligenceWallEndurancePercent_Desc" xml:space="preserve">
+    <value>The percentage increase in wall durability per point of Intelligence (Governor).</value>
+  </data>
+  <data name="IntelligenceBallistaAdd_Name" xml:space="preserve">
+    <value>Intelligence Ballista Bonus</value>
+  </data>
+  <data name="IntelligenceBallistaAdd_Desc" xml:space="preserve">
+    <value>The increase in initial ballista count during sieges/defense per point of Intelligence (Attacker's Engineer, or Defender's Governor).</value>
+  </data>
+  <data name="IntelligenceLeaderSettlementFoodPercent_Name" xml:space="preserve">
+    <value>Intelligence Settlement Food Bonus - Clan Leader</value>
+  </data>
+  <data name="IntelligenceLeaderSettlementFoodPercent_Desc" xml:space="preserve">
+    <value>The increase in settlement food production per point of Intelligence.</value>
+  </data>
+  <data name="IntelligenceGovernorSettlementFoodPercent_Name" xml:space="preserve">
+    <value>Intelligence Settlement Food Bonus - Governor</value>
+  </data>
+  <data name="IntelligenceGovernorSettlementFoodPercent_Desc" xml:space="preserve">
+    <value>The increase in settlement food production per point of Intelligence.</value>
+  </data>
+  <data name="IntelligenceProsperityFoodCostReducePercent_Name" xml:space="preserve">
+    <value>Intelligence Prosperity Food Consumption Reduction</value>
+  </data>
+  <data name="IntelligenceProsperityFoodCostReducePercent_Desc" xml:space="preserve">
+    <value>The percentage reduction in food consumed due to prosperity per point of Intelligence.</value>
+  </data>
+  <data name="IntelligenceGarrisonWageReducePercent_Name" xml:space="preserve">
+    <value>Intelligence Garrison Wage Bonus</value>
+  </data>
+  <data name="IntelligenceGarrisonWageReducePercent_Desc" xml:space="preserve">
+    <value>The reduction in garrison wages per point of Intelligence.</value>
+  </data>
+  <data name="IntelligenceWorkshopProductionPercent_Name" xml:space="preserve">
+    <value>Intelligence Workshop Production Bonus</value>
+  </data>
+  <data name="IntelligenceWorkshopProductionPercent_Desc" xml:space="preserve">
+    <value>The percentage increase in workshop production per point of Intelligence (Owner).</value>
+  </data>
+  <data name="EnableDailyGainXp_Name" xml:space="preserve">
+    <value>Permitir que Heróis Ganhem Experiência de Personagem Diária</value>
+  </data>
+  <data name="EnableDailyGainXp_Desc" xml:space="preserve">
+    <value>Especificamente, Nível x Inteligência x Inteligência x 2</value>
+  </data>
+  <data name="CombatAttributeRatePlayer_Name" xml:space="preserve">
+    <value>Coeficiente de Aprimoramento de Combate - Jogador</value>
+  </data>
+  <data name="CombatAttributeRatePlayer_Desc" xml:space="preserve">
+    <value>O efeito de aprimoramento de combate será multiplicado por este coeficiente, enquanto os efeitos negativos serão divididos por este valor.</value>
+  </data>
+  <data name="CombatAttributeRateClanMember_Name" xml:space="preserve">
+    <value>Coeficiente de Aprimoramento de Combate - Membros do Clã do Jogador</value>
+  </data>
+  <data name="CombatAttributeRateClanMember_Desc" xml:space="preserve">
+    <value>O efeito de aprimoramento de combate será multiplicado por este coeficiente, enquanto os efeitos negativos serão divididos por este valor.</value>
+  </data>
+  <data name="CombatAttributeRateOther_Name" xml:space="preserve">
+    <value>Coeficiente de Aprimoramento de Combate - Outros</value>
+  </data>
+  <data name="CombatAttributeRateOther_Desc" xml:space="preserve">
+    <value>O efeito de aprimoramento de combate será multiplicado por este coeficiente, enquanto os efeitos negativos serão divididos por este valor.</value>
+  </data>
+  <data name="StrategyAttributeRatePlayer_Name" xml:space="preserve">
+    <value>Coeficiente de Aprimoramento Estratégico - Jogador</value>
+  </data>
+  <data name="StrategyAttributeRatePlayer_Desc" xml:space="preserve">
+    <value>O efeito de aprimoramento estratégico será multiplicado por este coeficiente, enquanto os efeitos negativos serão divididos por este valor.</value>
+  </data>
+  <data name="StrategyAttributeRateClanMember_Name" xml:space="preserve">
+    <value>Coeficiente de Aprimoramento Estratégico - Membros do Clã do Jogador</value>
+  </data>
+  <data name="StrategyAttributeRateClanMember_Desc" xml:space="preserve">
+    <value>O efeito de aprimoramento estratégico será multiplicado por este coeficiente, enquanto os efeitos negativos serão divididos por este valor.</value>
+  </data>
+  <data name="StrategyAttributeRateOther_Name" xml:space="preserve">
+    <value>Coeficiente de Aprimoramento Estratégico - Outros</value>
+  </data>
+  <data name="StrategyAttributeRateOther_Desc" xml:space="preserve">
+    <value>O efeito de aprimoramento estratégico será multiplicado por este coeficiente, enquanto os efeitos negativos serão divididos por este valor.</value>
+  </data>
+  <data name="TestMode_Name" xml:space="preserve">
+    <value>Test Mode</value>
+  </data>
+  <data name="TestMode_Desc" xml:space="preserve">
+    <value>Todos têm saúde infinita em combate</value>
+  </data>
+  <data name="PlayerAlwaysCrush_Name" xml:space="preserve">
+    <value>Esmagar Sempre: Jogador</value>
+  </data>
+  <data name="PlayerAlwaysCrush_Desc" xml:space="preserve">
+    <value>O jogador pode sempre esmagar</value>
+  </data>
+  <data name="AICrush_Name" xml:space="preserve">
+    <value>Esmagar Sempre: AI</value>
+  </data>
+  <data name="AICrush_Desc" xml:space="preserve">
+    <value>AI pode sempre esmagar</value>
+  </data>
+  <data name="AllyCrush_Name" xml:space="preserve">
+    <value>Esmagar Sempre: Aliado</value>
+  </data>
+  <data name="AllyCrush_Desc" xml:space="preserve">
+    <value>O aliado pode sempre esmagar</value>
+  </data>
+  <data name="EnemyCrush_Name" xml:space="preserve">
+    <value>Esmagar Sempre: Inimigo</value>
+  </data>
+  <data name="EnemyCrush_Desc" xml:space="preserve">
+    <value>O inimigo pode sempre esmagar</value>
+  </data>
+  <data name="UnblockableThrust_player_Name" xml:space="preserve">
+    <value>Impossível Bloquear: Jogador</value>
+  </data>
+  <data name="UnblockableThrust_player_Desc" xml:space="preserve">
+    <value>Os ataques de estocada do jogador não podem ser bloqueados, a menos que use um escudo (estocadas de lança, espada).</value>
+  </data>
+  <data name="UnblockableThrust_AI_Name" xml:space="preserve">
+    <value>Impossível Bloquear: AI</value>
+  </data>
+  <data name="UnblockableThrust_AI_Desc" xml:space="preserve">
+    <value>Os ataques de estocada do AI não podem ser bloqueados, a menos que use um escudo (estocadas de lança, espada).</value>
+  </data>
+  <data name="UnblockableThrust_ally_Name" xml:space="preserve">
+    <value>Impossível Bloquear: Aliado</value>
+  </data>
+  <data name="UnblockableThrust_ally_Desc" xml:space="preserve">
+    <value>Os ataques de estocada do aliado não podem ser bloqueados, a menos que use um escudo (estocadas de lança, espada).</value>
+  </data>
+  <data name="UnblockableThrust_enemy_Name" xml:space="preserve">
+    <value>Impossível Bloquear: Inimigo</value>
+  </data>
+  <data name="UnblockableThrust_enemy_Desc" xml:space="preserve">
+    <value>Os ataques de estocada do inimigo não podem ser bloqueados, a menos que use um escudo (estocadas de lança, espada).</value>
+  </data>
+  <data name="InfiniteMomentum_Name" xml:space="preserve">
+    <value>Player Infinite Momentum</value>
+  </data>
+  <data name="InfiniteMomentum_Desc" xml:space="preserve">
+    <value>Player has infinite momentum</value>
+  </data>
+  <data name="KeepDaughter_Name" xml:space="preserve">
+    <value>Membros Femininos Casadas Permanecem no Clã</value>
+  </data>
+  <data name="KeepDaughter_Desc" xml:space="preserve">
+    <value>Membros femininos do clã do jogador permanecerão no clã do jogador após o casamento</value>
+  </data>
+  <data name="AddMoneyThreshhold_Name" xml:space="preserve">
+    <value>Limite para adicionar dinheiro</value>
+  </data>
+  <data name="AddMoneyThreshhold_Desc" xml:space="preserve">
+    <value>Você receberá uma quantia específica de dinheiro TODOS OS DIAS se seu dinheiro for menor que esse limite</value>
+  </data>
+  <data name="AddMoney_count_Name" xml:space="preserve">
+    <value>A quantia de dinheiro adicionada todos os dias</value>
+  </data>
+  <data name="AddMoney_count_Desc" xml:space="preserve">
+    <value>Você receberá essa quantia de dinheiro TODOS OS DIAS se seu dinheiro for menor que esse limite</value>
+  </data>
+  <data name="LanguageSetting_Name" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="LanguageSetting_Desc" xml:space="preserve">
+    <value>Selecione o idioma para as configurações</value>
+  </data>
+  <data name="MaxAttr_Name" xml:space="preserve">
+    <value>Limite Máximo de Atributo</value>
+  </data>
+  <data name="MaxAttr_Desc" xml:space="preserve">
+    <value>Limite Máximo de Atributo (Padrão: 10)</value>
+  </data>
+  <data name="Enum_Setting_Language_English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Enum_Setting_Language_Chinese" xml:space="preserve">
+    <value>Chinese</value>
+  </data>
+  <data name="Enum_Setting_Language_Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="JoinMyKindom" xml:space="preserve">
+    <value>Lidere seu clã para se juntar ao meu reino. Esta é a única escolha para evitar que seu clã pereça.</value>
+  </data>
+  <data name="JoinMyKindom_OK" xml:space="preserve">
+    <value>Ok.</value>
+  </data>
+  <data name="xGang_Name" xml:space="preserve">
+    <value>Nótaveis - Aumento de Líder de Gangue</value>
+  </data>
+  <data name="xGang_Desc" xml:space="preserve">
+    <value>Aumento de Líder de Gangue por Assentamento (Aplica-se apenas a uma NOVA Campanha)</value>
+  </data>
+  <data name="xArt_Name" xml:space="preserve">
+    <value>Nótaveis - Aumento de Artesão</value>
+  </data>
+  <data name="xArt_Desc" xml:space="preserve">
+    <value>Aumento de Artesão por Assentamento (Aplica-se apenas a uma NOVA Campanha)</value>
+  </data>
+  <data name="xMerch_Name" xml:space="preserve">
+    <value>Nótaveis - Aumento de Comerciante</value>
+  </data>
+  <data name="xMerch_Desc" xml:space="preserve">
+    <value>Aumento de Comerciante por Assentamento (Aplica-se apenas a uma NOVA Campanha)</value>
+  </data>
+  <data name="xVill_Name" xml:space="preserve">
+    <value>Nótaveis - Aumento de Nobreza da Vila</value>
+  </data>
+  <data name="xVill_Desc" xml:space="preserve">
+    <value>Aumento de Nobreza da Vila por Assentamento (Aplica-se apenas a uma NOVA Campanha)</value>
+  </data>
+  <data name="xRural_Name" xml:space="preserve">
+    <value>Nótaveis - Aumento de Chefes Rurais</value>
+  </data>
+  <data name="xRural_Desc" xml:space="preserve">
+    <value>Aumento de Chefes Rurais por Assentamento (Aplica-se apenas a uma NOVA Campanha)</value>
+  </data>
+  <data name="Town_Init_Gold_Extra_Name" xml:space="preserve">
+    <value>Cidade Inicial Ouro Bônus(k)</value>
+  </data>
+  <data name="Town_Init_Gold_Extra_Desc" xml:space="preserve">
+    <value>Cidade Inicial Ouro Bônus(k) (Aplica-se apenas a uma NOVA Campanha)</value>
+  </data>
+  <data name="Village_Init_Gold_Extra_Name" xml:space="preserve">
+    <value>Bônus Inicial de Ouro da Vila (k)</value>
+  </data>
+  <data name="Village_Init_Gold_Extra_Desc" xml:space="preserve">
+    <value>Bônus Inicial de Ouro da Vila (k) (Aplica-se apenas a uma NOVA Campanha)</value>
+  </data>
+  <data name="Enum_Setting_Language_Russian" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="Enum_Setting_Language_Portuguese" xml:space="preserve">
+    <value>Portuguese</value>
+  </data>
+  <data name="UFOs_GroupName" xml:space="preserve">
+    <value>Configurações gerais do UFO</value>
+  </data>
+  <data name="Enum_Setting_Language_Spanish" xml:space="preserve">
+    <value>Espanhol</value>
+  </data>
+  <data name="Enum_Setting_Language_Japanese" xml:space="preserve">
+    <value>Japonês</value>
+  </data>
+</root>

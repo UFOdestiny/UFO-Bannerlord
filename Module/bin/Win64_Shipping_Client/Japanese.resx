@@ -1,0 +1,1459 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xsd:string" />
+              <xs:attribute name="type" type="xsd:string" />
+              <xs:attribute name="mimetype" type="xsd:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xsd:string" />
+              <xs:attribute name="name" type="xsd:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xsd:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xsd:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xsd:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ModName" xml:space="preserve">
+    <value>UFO's Mod</value>
+  </data>
+  <data name="Combat_Player_GroupName" xml:space="preserve">
+    <value>戦闘 - プレイヤー</value>
+  </data>
+  <data name="Combat_Party_GroupName" xml:space="preserve">
+    <value>戦闘 - 軍隊</value>
+  </data>
+  <data name="Combat_Allies_GroupName" xml:space="preserve">
+    <value>戦闘 - 同盟者</value>
+  </data>
+  <data name="Combat_Enemies_GroupName" xml:space="preserve">
+    <value>戦闘 - 敵</value>
+  </data>
+  <data name="Combat_Misc_GroupName" xml:space="preserve">
+    <value>戦闘 - その他</value>
+  </data>
+  <data name="Party_GroupName" xml:space="preserve">
+    <value>力</value>
+  </data>
+  <data name="Smithing_GroupName" xml:space="preserve">
+    <value>鍛冶</value>
+  </data>
+  <data name="Settlements_GroupName" xml:space="preserve">
+    <value>決済</value>
+  </data>
+  <data name="Clan_GroupName" xml:space="preserve">
+    <value>家族</value>
+  </data>
+  <data name="Kingdom_GroupName" xml:space="preserve">
+    <value>王国</value>
+  </data>
+  <data name="Experience_GroupName" xml:space="preserve">
+    <value>経験</value>
+  </data>
+  <data name="Map_GroupName" xml:space="preserve">
+    <value>地図</value>
+  </data>
+  <data name="General_GroupName" xml:space="preserve">
+    <value>従来の</value>
+  </data>
+  <data name="Inventory_GroupName" xml:space="preserve">
+    <value>在庫</value>
+  </data>
+  <data name="Sieges_GroupName" xml:space="preserve">
+    <value>包囲</value>
+  </data>
+  <data name="Army_GroupName" xml:space="preserve">
+    <value>軍</value>
+  </data>
+  <data name="UFOs_GroupName" xml:space="preserve">
+    <value>UFOの一般設定</value>
+  </data>
+  <data name="Invincible_Name" xml:space="preserve">
+    <value>無敵</value>
+  </data>
+  <data name="Invincible_Desc" xml:space="preserve">
+    <value>プレイヤーは無敵であり、いかなる攻撃もプレイヤーにダメージを与えることはできません。</value>
+  </data>
+  <data name="EnableHotkeys_Name" xml:space="preserve">
+    <value>ホットキーを有効にする</value>
+  </data>
+  <data name="EnableHotkeys_Desc" xml:space="preserve">
+    <value>倉庫インターフェース、部隊インターフェース、家族インターフェースなどでチートホットキーを有効にします。</value>
+  </data>
+  <data name="MapSpeedMultiplier_Name" xml:space="preserve">
+    <value>マップ速度乗数</value>
+  </data>
+  <data name="MapSpeedMultiplier_Desc" xml:space="preserve">
+    <value>マップ上のプレイヤーの速度の倍数。 1 の倍数はデフォルトの速度を表します。</value>
+  </data>
+  <data name="ExtraInventoryCapacity_Name" xml:space="preserve">
+    <value>追加在庫</value>
+  </data>
+  <data name="ExtraInventoryCapacity_Desc" xml:space="preserve">
+    <value>プレイヤーの軍隊の在庫容量。</value>
+  </data>
+  <data name="MapVisibilityMultiplier_Name" xml:space="preserve">
+    <value>マップ視野乗数</value>
+  </data>
+  <data name="MapVisibilityMultiplier_Desc" xml:space="preserve">
+    <value>マップ上のプレイヤーの視野の乗数。乗数 1 は、デフォルトの視野を表します。警告: パフォーマンスに悪影響を及ぼします。</value>
+  </data>
+  <data name="PartyInvincible_Name" xml:space="preserve">
+    <value>軍隊は無敵です</value>
+  </data>
+  <data name="PartyInvincible_Desc" xml:space="preserve">
+    <value>プレイヤーの軍隊は無敵であり、いかなる攻撃もプレイヤーの軍隊にダメージを与えることはできません。</value>
+  </data>
+  <data name="OneHitKill_Name" xml:space="preserve">
+    <value>一撃で倒す</value>
+  </data>
+  <data name="OneHitKill_Desc" xml:space="preserve">
+    <value>ナイフ1本で敵を倒す。</value>
+  </data>
+  <data name="PartyOneHitKill_Name" xml:space="preserve">
+    <value>軍隊は一撃で殺せる</value>
+  </data>
+  <data name="PartyOneHitKill_Desc" xml:space="preserve">
+    <value>プレイヤーの部隊は一撃で敵を倒します。</value>
+  </data>
+  <data name="RenownRewardMultiplier_Name" xml:space="preserve">
+    <value>評判報酬乗数</value>
+  </data>
+  <data name="RenownRewardMultiplier_Desc" xml:space="preserve">
+    <value>戦闘または競争に勝利した後に得られる名声報酬の倍数。乗数 1 はデフォルトのレピュテーションを表します。</value>
+  </data>
+  <data name="InfluenceRewardMultiplier_Name" xml:space="preserve">
+    <value>報酬乗数に影響を与える</value>
+  </data>
+  <data name="InfluenceRewardMultiplier_Desc" xml:space="preserve">
+    <value>戦闘勝利後に得られる影響力報酬の倍率。乗数 1 はデフォルトの影響を表します。</value>
+  </data>
+  <data name="AlwaysWinBattleSimulation_Name" xml:space="preserve">
+    <value>指揮を執って指揮を執れば勝利するだろう。</value>
+  </data>
+  <data name="AlwaysWinBattleSimulation_Desc" xml:space="preserve">
+    <value>指揮官に座っているとき、敵はプレイヤーの軍隊にダメージを与えません。</value>
+  </data>
+  <data name="NoTroopSacrifice_Name" xml:space="preserve">
+    <value>兵士は犠牲にならなかった</value>
+  </data>
+  <data name="NoTroopSacrifice_Desc" xml:space="preserve">
+    <value>軍隊は、逃げたり、突入したり、突破したりするときに犠牲になりません。</value>
+  </data>
+  <data name="NoRunningAway_Name" xml:space="preserve">
+    <value>決して逃げないでください</value>
+  </data>
+  <data name="NoRunningAway_Desc" xml:space="preserve">
+    <value>プレイヤーユニットは戦闘中に逃げません。</value>
+  </data>
+  <data name="EnemiesNoRunningAway_Name" xml:space="preserve">
+    <value>敵は決して逃げない</value>
+  </data>
+  <data name="EnemiesNoRunningAway_Desc" xml:space="preserve">
+    <value>戦闘中に敵は逃げません。</value>
+  </data>
+  <data name="BanditHideoutTroopLimit_Name" xml:space="preserve">
+    <value>アジトの追加部隊を攻撃する</value>
+  </data>
+  <data name="BanditHideoutTroopLimit_Desc" xml:space="preserve">
+    <value>攻撃の隠れ家は、プレイヤーの攻撃に追加できる追加の軍隊です。値 0 は、デフォルトの部隊制限を表します。</value>
+  </data>
+  <data name="AlwaysCrushThroughShields_Name" xml:space="preserve">
+    <value>常にシールドを粉砕する</value>
+  </data>
+  <data name="AlwaysCrushThroughShields_Desc" xml:space="preserve">
+    <value>あなたの攻撃は常に敵のシールドを粉砕します。</value>
+  </data>
+  <data name="ExtraPartyMemberSize_Name" xml:space="preserve">
+    <value>追加部隊の数</value>
+  </data>
+  <data name="ExtraPartyMemberSize_Desc" xml:space="preserve">
+    <value>プレイヤーの軍隊の最大サイズを増やします。</value>
+  </data>
+  <data name="ExtraPartyPrisonerSize_Name" xml:space="preserve">
+    <value>追加捕虜の数</value>
+  </data>
+  <data name="ExtraPartyPrisonerSize_Desc" xml:space="preserve">
+    <value>ユニットが護衛できる捕虜の最大数が増加します。</value>
+  </data>
+  <data name="ExtraPartyMorale_Name" xml:space="preserve">
+    <value>余分な部隊の士気</value>
+  </data>
+  <data name="ExtraPartyMorale_Desc" xml:space="preserve">
+    <value>部隊の士気をさらに高めます。</value>
+  </data>
+  <data name="FoodConsumptionPercentage_Name" xml:space="preserve">
+    <value>食料消費率</value>
+  </data>
+  <data name="FoodConsumptionPercentage_Desc" xml:space="preserve">
+    <value>プレイヤーの軍隊にはどれくらいの食料が必要ですか。 100% は完全な食物摂取を表し、0% は食物摂取がないことを表します。</value>
+  </data>
+  <data name="TroopWagesPercentage_Name" xml:space="preserve">
+    <value>軍人給与の割合</value>
+  </data>
+  <data name="TroopWagesPercentage_Desc" xml:space="preserve">
+    <value>プレイヤーが軍隊に支払うために必要な賃金。 100% は給与全額を意味し、0% は給与がないことを意味します。</value>
+  </data>
+  <data name="FreeTroopUpgrades_Name" xml:space="preserve">
+    <value>無料の部隊アップグレード</value>
+  </data>
+  <data name="FreeTroopUpgrades_Desc" xml:space="preserve">
+    <value>プレイヤー部隊のアップグレードは無料です。</value>
+  </data>
+  <data name="FreeCompanionHiring_Name" xml:space="preserve">
+    <value>無料のピア募集</value>
+  </data>
+  <data name="FreeCompanionHiring_Desc" xml:space="preserve">
+    <value>プレイヤー仲間の募集は無料です。</value>
+  </data>
+  <data name="InstantPrisonerRecruitment_Name" xml:space="preserve">
+    <value>すぐに捕虜を募集する</value>
+  </data>
+  <data name="InstantPrisonerRecruitment_Desc" xml:space="preserve">
+    <value>囚人はすぐに募集できます。</value>
+  </data>
+  <data name="NoPrisonerEscape_Name" xml:space="preserve">
+    <value>囚人は決して逃げない</value>
+  </data>
+  <data name="NoPrisonerEscape_Desc" xml:space="preserve">
+    <value>捕虜は軍隊から逃げることはできません。</value>
+  </data>
+  <data name="PartyHealingMultiplier_Name" xml:space="preserve">
+    <value>部隊の回復速度乗数</value>
+  </data>
+  <data name="PartyHealingMultiplier_Desc" xml:space="preserve">
+    <value>プレイヤーの軍隊の回復速度の乗数。 1 の倍数はデフォルトの速度を表します。</value>
+  </data>
+  <data name="ExtraCompanionLimit_Name" xml:space="preserve">
+    <value>追加の同伴者制限</value>
+  </data>
+  <data name="ExtraCompanionLimit_Desc" xml:space="preserve">
+    <value>家族の最大同伴者数を増やします。</value>
+  </data>
+  <data name="ExtraClanPartyLimit_Name" xml:space="preserve">
+    <value>家族部隊の追加制限</value>
+  </data>
+  <data name="ExtraClanPartyLimit_Desc" xml:space="preserve">
+    <value>家族の最大軍隊数が増加します。</value>
+  </data>
+  <data name="KingdomDecisionWeightMultiplier_Name" xml:space="preserve">
+    <value>王国の投票重み乗数</value>
+  </data>
+  <data name="KingdomDecisionWeightMultiplier_Desc" xml:space="preserve">
+    <value>王国の決定に対するプレイヤーの投票の重み乗数、言い換えれば、決定が可決される確率。</value>
+  </data>
+  <data name="NoRelationshipLossOnDecision_Name" xml:space="preserve">
+    <value>判定なしの負け</value>
+  </data>
+  <data name="NoRelationshipLossOnDecision_Desc" xml:space="preserve">
+    <value>決定の相手との関係が失われることはありません。</value>
+  </data>
+  <data name="ExperienceMultiplier_Name" xml:space="preserve">
+    <value>経験乗数</value>
+  </data>
+  <data name="ExperienceMultiplier_Desc" xml:space="preserve">
+    <value>プレイヤーが獲得する経験値の乗数。乗数 1 はデフォルトのエクスペリエンスを表します。</value>
+  </data>
+  <data name="LearningRateMultiplier_Name" xml:space="preserve">
+    <value>学習効率の倍数</value>
+  </data>
+  <data name="LearningRateMultiplier_Desc" xml:space="preserve">
+    <value>プレーヤーの学習効率の倍数。 1 の倍数はデフォルトの効率を表します。</value>
+  </data>
+  <data name="TroopExperienceMultiplier_Name" xml:space="preserve">
+    <value>部隊経験乗数</value>
+  </data>
+  <data name="TroopExperienceMultiplier_Desc" xml:space="preserve">
+    <value>プレイヤーの部隊経験の乗数。乗数 1 はデフォルトのエクスペリエンスを表します。</value>
+  </data>
+  <data name="SiegeBuildingSpeedMultiplier_Name" xml:space="preserve">
+    <value>攻城装置建設速度倍率</value>
+  </data>
+  <data name="SiegeBuildingSpeedMultiplier_Desc" xml:space="preserve">
+    <value>攻城隊の攻城装備の建設速度の倍数。 1 の倍数はデフォルトの速度を表します。</value>
+  </data>
+  <data name="ArmyCohesionLossPercentage_Name" xml:space="preserve">
+    <value>レギオンの凝集力喪失率</value>
+  </data>
+  <data name="ArmyCohesionLossPercentage_Desc" xml:space="preserve">
+    <value>プレイヤーが参加した軍団がどれだけ結束を失うか。 100% は完全な凝集損失を意味し、0% は凝集が凍結していることを意味します。</value>
+  </data>
+  <data name="ArmyFoodConsumptionPercentage_Name" xml:space="preserve">
+    <value>食料消費率</value>
+  </data>
+  <data name="ArmyFoodConsumptionPercentage_Desc" xml:space="preserve">
+    <value>プレイヤーが参加する軍団にはどれくらいの食料が必要ですか。 100% は完全な食物摂取を表し、0% は食物摂取がないことを表します。</value>
+  </data>
+  <data name="DisguiseAlwaysWorks_Name" xml:space="preserve">
+    <value>変装はいつでも機能する</value>
+  </data>
+  <data name="DisguiseAlwaysWorks_Desc" xml:space="preserve">
+    <value>変装して街に忍び込むのはいつも成功します。</value>
+  </data>
+  <data name="SmithingEnergyCostPercentage_Name" xml:space="preserve">
+    <value>スタミナ消費率</value>
+  </data>
+  <data name="SmithingEnergyCostPercentage_Desc" xml:space="preserve">
+    <value>鍛造、製錬、精錬で消費するスタミナはどのくらいですか。 100% はスタミナが完全に消耗されることを意味し、0% はスタミナが消耗されないことを意味します。</value>
+  </data>
+  <data name="UnlockAllParts_Name" xml:space="preserve">
+    <value>すべてのパーツのロックを解除する</value>
+  </data>
+  <data name="UnlockAllParts_Desc" xml:space="preserve">
+    <value>すべての鍛造パーツのロックが解除されます。</value>
+  </data>
+  <data name="SmithingDifficultyPercentage_Name" xml:space="preserve">
+    <value>難易度の割合</value>
+  </data>
+  <data name="SmithingDifficultyPercentage_Desc" xml:space="preserve">
+    <value>武器の設計って難しいですよね。 100% は完全な難易度を意味し、0% は難易度がないことを意味します。</value>
+  </data>
+  <data name="SmithingCostPercentage_Name" xml:space="preserve">
+    <value>材料消費率</value>
+  </data>
+  <data name="SmithingCostPercentage_Desc" xml:space="preserve">
+    <value>武器を作るのに必要な材料の量。 100% は材料が完全に消費されていることを意味し、0% は材料が消費されていないことを意味します。</value>
+  </data>
+  <data name="CraftedWeaponHandlingBonus_Name" xml:space="preserve">
+    <value>武器操作ボーナスを作成する</value>
+  </data>
+  <data name="CraftedWeaponHandlingBonus_Desc" xml:space="preserve">
+    <value>プレイヤーが作成した武器の扱いにボーナス。</value>
+  </data>
+  <data name="CraftedWeaponSwingDamageBonus_Name" xml:space="preserve">
+    <value>クラフト武器の斬撃ダメージボーナス</value>
+  </data>
+  <data name="CraftedWeaponSwingDamageBonus_Desc" xml:space="preserve">
+    <value>プレイヤーが作成した武器の斬撃ダメージにボーナス。</value>
+  </data>
+  <data name="CraftedWeaponSwingSpeedBonus_Name" xml:space="preserve">
+    <value>武器のスイング速度ボーナスを作成する</value>
+  </data>
+  <data name="CraftedWeaponSwingSpeedBonus_Desc" xml:space="preserve">
+    <value>プレイヤーが作成した武器のスイング速度にボーナス。</value>
+  </data>
+  <data name="CraftedWeaponThrustDamageBonus_Name" xml:space="preserve">
+    <value>武器貫通ダメージボーナスを作成する</value>
+  </data>
+  <data name="CraftedWeaponThrustDamageBonus_Desc" xml:space="preserve">
+    <value>プレイヤーが作成した武器の貫通ダメージにボーナス。</value>
+  </data>
+  <data name="CraftedWeaponThrustSpeedBonus_Name" xml:space="preserve">
+    <value>武器の推力ボーナスを作成する</value>
+  </data>
+  <data name="CraftedWeaponThrustSpeedBonus_Desc" xml:space="preserve">
+    <value>プレイヤーが作成した武器の推力速度にボーナス。</value>
+  </data>
+  <data name="AddAttributePointMessage" xml:space="preserve">
+    <value>{1} は 1 ポイント {0} を獲得しました。</value>
+  </data>
+  <data name="AddGoldMessage" xml:space="preserve">
+    <value>{0} ディナールを獲得します。</value>
+  </data>
+  <data name="AddInfluenceMessage" xml:space="preserve">
+    <value>影響力が 1000 増加します。</value>
+  </data>
+  <data name="AddTroopsMessage" xml:space="preserve">
+    <value>{1}{0} 人の兵士を集めます。</value>
+  </data>
+  <data name="AddTroopXpMessage" xml:space="preserve">
+    <value>{0}経験値を獲得します。</value>
+  </data>
+  <data name="SetAllAttributesMessage" xml:space="preserve">
+    <value>{0} の属性は 10 に調整されます。</value>
+  </data>
+  <data name="PerfectRelationships_Desc" xml:space="preserve">
+    <value>プレイヤーとすべてのキャラクターとの関係は 100 に設定されます。</value>
+  </data>
+  <data name="PerfectRelationships_Name" xml:space="preserve">
+    <value>完璧な関係</value>
+  </data>
+  <data name="Characters_GroupName" xml:space="preserve">
+    <value>役割</value>
+  </data>
+  <data name="BarterOfferAlwaysAccepted_Desc" xml:space="preserve">
+    <value>他のキャラクターによる交渉提案は常に受け入れられます。</value>
+  </data>
+  <data name="BarterOfferAlwaysAccepted_Name" xml:space="preserve">
+    <value>交渉提案は必ず成功する</value>
+  </data>
+  <data name="ConversationAlwaysSuccessful_Desc" xml:space="preserve">
+    <value>会話と説得は必ず成功します。</value>
+  </data>
+  <data name="ConversationAlwaysSuccessful_Name" xml:space="preserve">
+    <value>会話は常に成功します</value>
+  </data>
+  <data name="FreeTroopRecruitment_Desc" xml:space="preserve">
+    <value>定住した新兵を無料で軍隊に募集します。</value>
+  </data>
+  <data name="FreeTroopRecruitment_Name" xml:space="preserve">
+    <value>無料募集</value>
+  </data>
+  <data name="NoBarterCooldown_Desc" xml:space="preserve">
+    <value>交渉に冷却期間はありません。</value>
+  </data>
+  <data name="NoBarterCooldown_Name" xml:space="preserve">
+    <value>交渉を冷却しない</value>
+  </data>
+  <data name="NpcMapSpeedPercentage_Desc" xml:space="preserve">
+    <value>マップ上の NPC 部隊の速度が一定の割合まで低下します。 100% はデフォルトの速度、50% は半分の速度、0% は動きがないことを意味します。</value>
+  </data>
+  <data name="NpcMapSpeedPercentage_Name" xml:space="preserve">
+    <value>NPCの部隊速度</value>
+  </data>
+  <data name="PartyInvisibleOnMap_Desc" xml:space="preserve">
+    <value>場所はマップ上のプレイヤーユニットを追跡したり攻撃したりしません。</value>
+  </data>
+  <data name="PartyInvisibleOnMap_Name" xml:space="preserve">
+    <value>ステルス力</value>
+  </data>
+  <data name="InstantEscape_Desc" xml:space="preserve">
+    <value>プレイヤーは相手に捕まった後すぐに逃げます。</value>
+  </data>
+  <data name="InstantEscape_Name" xml:space="preserve">
+    <value>即座に逃げる</value>
+  </data>
+  <data name="HealthRegeneration_Desc" xml:space="preserve">
+    <value>プレイヤーは戦闘中、毎秒総体力の一定の割合を回復します。 0% は再生がないことを意味します。</value>
+  </data>
+  <data name="HealthRegeneration_Name" xml:space="preserve">
+    <value>血液量の再生</value>
+  </data>
+  <data name="InfiniteAmmo_Desc" xml:space="preserve">
+    <value>遠距離武器と投擲武器の弾数は無制限です。</value>
+  </data>
+  <data name="InfiniteAmmo_Name" xml:space="preserve">
+    <value>無制限の弾薬</value>
+  </data>
+  <data name="EnemySiegeBuildingSpeedPercentage_Desc" xml:space="preserve">
+    <value>包囲中に敵がどれだけ早く攻城兵器を構築できるか。 100% はフルスピードを意味し、0% はビルド不可能を意味します。</value>
+  </data>
+  <data name="EnemySiegeBuildingSpeedPercentage_Name" xml:space="preserve">
+    <value>敵の攻城設備建設速度パーセンテージ</value>
+  </data>
+  <data name="DamageMultiplier_Desc" xml:space="preserve">
+    <value>戦闘中にプレイヤーが与えるダメージの乗数。乗数 1 はデフォルトのダメージを表します。 「One Hit Kill」が有効な場合、この変更は効果がありません。</value>
+  </data>
+  <data name="DamageMultiplier_Name" xml:space="preserve">
+    <value>ダメージ倍率</value>
+  </data>
+  <data name="NoFriendlyFire_Desc" xml:space="preserve">
+    <value>プレイヤーユニットに対するフレンドリーファイアを完全に無効化します。</value>
+  </data>
+  <data name="NoFriendlyFire_Name" xml:space="preserve">
+    <value>味方ダメージなし</value>
+  </data>
+  <data name="PartyDamageMultiplier_Desc" xml:space="preserve">
+    <value>戦闘中にプレイヤーユニットが与えるダメージの乗数。乗数 1 はデフォルトのダメージを表します。 「One Hit Kill」が有効な場合、この変更は効果がありません。</value>
+  </data>
+  <data name="PartyDamageMultiplier_Name" xml:space="preserve">
+    <value>部隊ダメージ倍率</value>
+  </data>
+  <data name="PartyInfiniteAmmo_Desc" xml:space="preserve">
+    <value>プレイヤーの軍隊は、遠距離武器や投擲武器の弾薬を無制限に持っています。</value>
+  </data>
+  <data name="PartyInfiniteAmmo_Name" xml:space="preserve">
+    <value>軍隊の弾薬は無制限</value>
+  </data>
+  <data name="DamageTakenPercentage_Desc" xml:space="preserve">
+    <value>プレイヤーが各攻撃でどれだけのダメージを与えるか。 100% は完全なダメージを意味し、50% は半分のダメージを意味し、0% はプレイヤーが無敵であることを意味します。</value>
+  </data>
+  <data name="DamageTakenPercentage_Name" xml:space="preserve">
+    <value>怪我の割合</value>
+  </data>
+  <data name="ItemTradingCostPercentage_Desc" xml:space="preserve">
+    <value>製品を購入するのにいくらかかりますか。 100% は定価、50% は半額、0% はすべて無料を意味します。</value>
+  </data>
+  <data name="ItemTradingCostPercentage_Name" xml:space="preserve">
+    <value>アイテム購入価格の割合</value>
+  </data>
+  <data name="SellingPriceMultiplier_Desc" xml:space="preserve">
+    <value>プレイヤーが販売するアイテムの価格乗数。 1 の倍数はデフォルトの価格を表します。</value>
+  </data>
+  <data name="SellingPriceMultiplier_Name" xml:space="preserve">
+    <value>販売価格の倍数</value>
+  </data>
+  <data name="PartyDamageTakenPercentage_Desc" xml:space="preserve">
+    <value>プレイヤーのユニットが各攻撃で与えるダメージ。 100% は完全なダメージを意味し、50% は半分のダメージを意味し、0% はプレイヤーの軍隊が無敵であることを意味します。</value>
+  </data>
+  <data name="PartyDamageTakenPercentage_Name" xml:space="preserve">
+    <value>部隊の負傷者の割合</value>
+  </data>
+  <data name="DailyFoodBonus_Desc" xml:space="preserve">
+    <value>プレイヤーの城や町の食料在庫は毎日一定値に応じて増加します。</value>
+  </data>
+  <data name="DailyFoodBonus_Name" xml:space="preserve">
+    <value>毎日の食事のご褒美</value>
+  </data>
+  <data name="DailyGarrisonBonus_Desc" xml:space="preserve">
+    <value>プレイヤーの城や町の守備隊は毎日一定値に応じて増加します。</value>
+  </data>
+  <data name="DailyGarrisonBonus_Name" xml:space="preserve">
+    <value>毎日の守備隊報酬</value>
+  </data>
+  <data name="DailyMilitiaBonus_Desc" xml:space="preserve">
+    <value>プレイヤーの村や町の民兵は毎日一定の値に応じて増加します。</value>
+  </data>
+  <data name="DailyMilitiaBonus_Name" xml:space="preserve">
+    <value>毎日の民兵追加報酬</value>
+  </data>
+  <data name="GarrisonWagesPercentage_Name" xml:space="preserve">
+    <value>駐屯軍の給与割合</value>
+  </data>
+  <data name="GarrisonWagesPercentage_Desc" xml:space="preserve">
+    <value>プレーヤーは守備隊にいくらの給料を支払う必要がありますか。 100% は給与全額を意味し、0% は給与がないことを意味します。</value>
+  </data>
+  <data name="PartyHealthRegeneration_Desc" xml:space="preserve">
+    <value>プレイヤーのユニットの総体力のうち、戦闘中に 1 秒あたりに回復する割合。 0% は再生がないことを意味します。</value>
+  </data>
+  <data name="PartyHealthRegeneration_Name" xml:space="preserve">
+    <value>部隊の健康回復</value>
+  </data>
+  <data name="DailyHearthsBonus_Desc" xml:space="preserve">
+    <value>プレイヤーの村の世帯数は​​毎日一定値ずつ増加します。</value>
+  </data>
+  <data name="DailyHearthsBonus_Name" xml:space="preserve">
+    <value>毎日のアカウントボーナス</value>
+  </data>
+  <data name="DailyLoyaltyBonus_Desc" xml:space="preserve">
+    <value>プレイヤーの城や町の忠誠度は毎日一定の値に応じて増加します。</value>
+  </data>
+  <data name="DailyLoyaltyBonus_Name" xml:space="preserve">
+    <value>毎日のロイヤルティ報酬</value>
+  </data>
+  <data name="DailyProsperityBonus_Desc" xml:space="preserve">
+    <value>プレイヤーの城や町の繁栄は毎日一定の値に応じて増加します。</value>
+  </data>
+  <data name="DailyProsperityBonus_Name" xml:space="preserve">
+    <value>毎日の繁栄報酬</value>
+  </data>
+  <data name="DailySecurityBonus_Desc" xml:space="preserve">
+    <value>プレイヤーの城や町のセキュリティレベルは毎日一定の値に応じて増加します。</value>
+  </data>
+  <data name="DailySecurityBonus_Name" xml:space="preserve">
+    <value>毎日のセキュリティ報酬</value>
+  </data>
+  <data name="AddItemsMessage" xml:space="preserve">
+    <value>{1}増加{0}。</value>
+  </data>
+  <data name="CombatZoomMultiplier_Name" xml:space="preserve">
+    <value>戦場のズーム倍率</value>
+  </data>
+  <data name="CombatZoomMultiplier_Desc" xml:space="preserve">
+    <value>戦場エリアは戦闘中に複数回拡大縮小されます。 1 はデフォルトのスケーリングを表します。</value>
+  </data>
+  <data name="InstantCrossbowReload_Name" xml:space="preserve">
+    <value>クロスボウの矢は即座にリロードされる</value>
+  </data>
+  <data name="InstantCrossbowReload_Desc" xml:space="preserve">
+    <value>有効にすると、クロスボウ ボルトのリロードがほぼ瞬時に行われます。</value>
+  </data>
+  <data name="NeverRequireCivilianEquipment_Name" xml:space="preserve">
+    <value>毎日の装備は必要ありません</value>
+  </data>
+  <data name="NeverRequireCivilianEquipment_Desc" xml:space="preserve">
+    <value>戦闘服を着てあらゆるシーンに参加してください。</value>
+  </data>
+  <data name="FreeFocusPointAssignment_Name" xml:space="preserve">
+    <value>専門ポイントの無料配分</value>
+  </data>
+  <data name="FreeFocusPointAssignment_Desc" xml:space="preserve">
+    <value>専門レベルに割り当てられたスキルには専門ポイントはかかりません。</value>
+  </data>
+  <data name="AddUnspentFocusPointMessage" xml:space="preserve">
+    <value>{0}専門化ポイントを 1 つ追加します。</value>
+  </data>
+  <data name="AddUnspentAttributePointMessage" xml:space="preserve">
+    <value>{0}属性ポイントを 1 つ追加します。</value>
+  </data>
+  <data name="NoCrimeRatingForCrimes_Name" xml:space="preserve">
+    <value>無法地帯</value>
+  </data>
+  <data name="NoCrimeRatingForCrimes_Desc" xml:space="preserve">
+    <value>違法行為は犯罪レベルにはなりません。</value>
+  </data>
+  <data name="PartyHeroesInvincible_Desc" xml:space="preserve">
+    <value>プレイヤーのヒーローは無敵であり、いかなる攻撃もプレイヤーのヒーローにダメージを与えることはできません。一般兵士には影響しない。</value>
+  </data>
+  <data name="PartyHeroesInvincible_Name" xml:space="preserve">
+    <value>軍隊の英雄は無敵です</value>
+  </data>
+  <data name="ExtraClanPartySize_Name" xml:space="preserve">
+    <value>追加の家族部隊の数</value>
+  </data>
+  <data name="ExtraClanPartySize_Desc" xml:space="preserve">
+    <value>クランの軍隊の最大軍隊数を増やします。</value>
+  </data>
+  <data name="Workshops_GroupName" xml:space="preserve">
+    <value>ワークショップ</value>
+  </data>
+  <data name="WorkshopDailyExpensePercentage_Name" xml:space="preserve">
+    <value>1 日あたりの支出割合</value>
+  </data>
+  <data name="WorkshopDailyExpensePercentage_Desc" xml:space="preserve">
+    <value>ワークショップの日常経費の割合。 100% は全額手数料を意味し、0% は手数料なしを意味します。</value>
+  </data>
+  <data name="WorkshopUpgradeCostPercentage_Name" xml:space="preserve">
+    <value>アップグレード料金の割合</value>
+  </data>
+  <data name="WorkshopUpgradeCostPercentage_Desc" xml:space="preserve">
+    <value>ワークショップのアップグレード費用の割合。 100% は全額コストを意味し、0% は無料アップグレードを意味します。</value>
+  </data>
+  <data name="WorkshopSellingCostMultiplier_Name" xml:space="preserve">
+    <value>販売価格の倍数</value>
+  </data>
+  <data name="WorkshopSellingCostMultiplier_Desc" xml:space="preserve">
+    <value>ワークショップを売却することで得られるマルチプル。 1 の倍数はデフォルトの販売価格を表します。</value>
+  </data>
+  <data name="WorkshopBuyingCostPercentage_Name" xml:space="preserve">
+    <value>購入価格の割合</value>
+  </data>
+  <data name="WorkshopBuyingCostPercentage_Desc" xml:space="preserve">
+    <value>工場を買うのにいくらかかりますか。 100% は定価を意味し、0% は無料を意味します。</value>
+  </data>
+  <data name="FactionArmyCohesionLossPercentage_Name" xml:space="preserve">
+    <value>派閥軍団の結束力損失率</value>
+  </data>
+  <data name="FactionArmyCohesionLossPercentage_Desc" xml:space="preserve">
+    <value>プレイヤーの派閥の軍団がどれだけ結束を失うか。 100% は完全な凝集損失を意味し、0% は凝集が凍結していることを意味します。</value>
+  </data>
+  <data name="AddTroopsFromEncyclopediaMessage" xml:space="preserve">
+    <value>{0}{1}を軍隊に追加します。</value>
+  </data>
+  <data name="LearningLimitMultiplier_Name" xml:space="preserve">
+    <value>学習上限倍数</value>
+  </data>
+  <data name="LearningLimitMultiplier_Desc" xml:space="preserve">
+    <value>すべてのスキルの学習上限の倍数。 1 の倍数は、デフォルトの学習上限を表します。</value>
+  </data>
+  <data name="CompanionExperienceMultiplier_Name" xml:space="preserve">
+    <value>コンパニオンの経験値乗数</value>
+  </data>
+  <data name="CompanionExperienceMultiplier_Desc" xml:space="preserve">
+    <value>コンパニオンの獲得経験値の乗数。乗数 1 はデフォルトのエクスペリエンスを表します。</value>
+  </data>
+  <data name="CompanionLearningRateMultiplier_Name" xml:space="preserve">
+    <value>ピアラーニング上限倍数</value>
+  </data>
+  <data name="CompanionLearningRateMultiplier_Desc" xml:space="preserve">
+    <value>プレイヤーのコンパニオンのすべてのスキルの学習上限の倍数。 1 の倍数は、デフォルトの学習上限を表します。</value>
+  </data>
+  <data name="SliceThroughEveryone_Name" xml:space="preserve">
+    <value>攻撃貫通力: プレイヤー</value>
+  </data>
+  <data name="SliceThroughEveryone_Desc" xml:space="preserve">
+    <value>プレイヤーは攻撃するたびに敵を貫通できます。</value>
+  </data>
+  <data name="SliceThroughEveryone_AI_Name" xml:space="preserve">
+    <value>AI攻撃の侵入</value>
+  </data>
+  <data name="SliceThroughEveryone_AI_Desc" xml:space="preserve">
+    <value>AIは攻撃するたびに敵を貫通することができます。</value>
+  </data>
+  <data name="SliceThroughEveryone_ally_Name" xml:space="preserve">
+    <value>攻撃貫通力: 友軍</value>
+  </data>
+  <data name="SliceThroughEveryone_ally_Desc" xml:space="preserve">
+    <value>味方の軍隊は敵が攻撃するたびに侵入することができます。</value>
+  </data>
+  <data name="SliceThroughEveryone_enemy_Name" xml:space="preserve">
+    <value>攻撃貫通力：敵</value>
+  </data>
+  <data name="SliceThroughEveryone_enemy_Desc" xml:space="preserve">
+    <value>敵は攻撃するたびに敵を貫通することができます。</value>
+  </data>
+  <data name="PlayerHorseInvincible_Name" xml:space="preserve">
+    <value>プレイヤーマウントは無敵です</value>
+  </data>
+  <data name="PlayerHorseInvincible_Desc" xml:space="preserve">
+    <value>プレイヤーの乗り物はいかなる攻撃によってもダメージを受けることはありません。</value>
+  </data>
+  <data name="AlwaysKnockDown_Name" xml:space="preserve">
+    <value>いつも気絶する</value>
+  </data>
+  <data name="AlwaysKnockDown_Desc" xml:space="preserve">
+    <value>各攻撃は常に敵を気絶させます。</value>
+  </data>
+  <data name="DecisionOverrideInfluenceCostPercentage_Name" xml:space="preserve">
+    <value>覆す決定に影響するコストの割合</value>
+  </data>
+  <data name="DecisionOverrideInfluenceCostPercentage_Desc" xml:space="preserve">
+    <value>王国の決定を覆すために必要な影響力の量。 100% は完全な影響を意味し、0% は影響がないことを意味します。</value>
+  </data>
+  <data name="EnableHotkeyTips_Name" xml:space="preserve">
+    <value>ホットキーのヒントを有効にする</value>
+  </data>
+  <data name="EnableHotkeyTips_Desc" xml:space="preserve">
+    <value>利用可能なチート ホットキーのリストは、ホットキーが利用可能なインターフェイス上で表示できます。</value>
+  </data>
+  <data name="NativeItemSpawning_Name" xml:space="preserve">
+    <value>チートモール</value>
+  </data>
+  <data name="NativeItemSpawning_Desc" xml:space="preserve">
+    <value>Cheat Mall を有効にしてインベントリを開いて、ゲーム内のすべてのアイテムを確認します。</value>
+  </data>
+  <data name="ConstructionPowerMultiplier_Name" xml:space="preserve">
+    <value>建設速度乗数</value>
+  </data>
+  <data name="ConstructionPowerMultiplier_Desc" xml:space="preserve">
+    <value>プレイヤーの街づくり速度の倍数。乗数 1 は、デフォルトの建設速度を表します。</value>
+  </data>
+  <data name="NoBribeToEnterKeep_Name" xml:space="preserve">
+    <value>賄賂は必要ありません</value>
+  </data>
+  <data name="NoBribeToEnterKeep_Desc" xml:space="preserve">
+    <value>有効にすると、城の中庭に入るのに賄賂は必要ありません。</value>
+  </data>
+  <data name="EveryoneBuysWorkshops_Name" xml:space="preserve">
+    <value>工房は購入者を心配する必要がありません</value>
+  </data>
+  <data name="EveryoneBuysWorkshops_Desc" xml:space="preserve">
+    <value>有効にすると、ワークショップの購入者を常に見つけることができます。</value>
+  </data>
+  <data name="PerfectAttraction_Name" xml:space="preserve">
+    <value>並外れた魅力</value>
+  </data>
+  <data name="PerfectAttraction_Desc" xml:space="preserve">
+    <value>有効にすると、あなたの潜在的な配偶者は 100% あなたに惹かれるでしょう。</value>
+  </data>
+  <data name="AllowSameSexMarriage_Name" xml:space="preserve">
+    <value>同性婚を認める</value>
+  </data>
+  <data name="AllowSameSexMarriage_Desc" xml:space="preserve">
+    <value>有効にすると、同性のキャラクターと結婚できます。</value>
+  </data>
+  <data name="PregnancyChanceMultiplier_Name" xml:space="preserve">
+    <value>妊娠確率倍数</value>
+  </data>
+  <data name="PregnancyChanceMultiplier_Desc" xml:space="preserve">
+    <value>プレイヤー キャラクターまたはプレイヤーの配偶者が妊娠する確率の乗数。妊娠できないキャラクターには影響しません！ 1 の倍数は、デフォルトの妊娠確率を表します。</value>
+  </data>
+  <data name="AdjustPregnancyDuration_Name" xml:space="preserve">
+    <value>妊娠時期を調整する</value>
+  </data>
+  <data name="AdjustPregnancyDuration_Desc" xml:space="preserve">
+    <value>ゲーム内のすべてのキャラクターの妊娠タイミングを調整しました。デフォルトの妊娠期間は 36 日です。</value>
+  </data>
+  <data name="ModWarningMessageConfirm" xml:space="preserve">
+    <value>なるほど</value>
+  </data>
+  <data name="ModFailedLoadWarningTitle" xml:space="preserve">
+    <value>チート組み込みモディファイアをロードできません!</value>
+  </data>
+  <data name="ModFailedLoadWarningMessage" xml:space="preserve">
+    <value>これはおそらく、ゲームと MOD の間のバージョンの不一致が原因です。ゲームのバージョンに正しい Mod バージョンがあるかどうかを確認してください。
+これを行う場合は、問題を調査できるよう、ファイル "{0}" で生成されたエラー メッセージを MOD 作成者に送信してください。
+ゲームは引き続きプレイできますが、ほとんどのチートは機能しません。
+ありがとう！</value>
+  </data>
+  <data name="NeverKnockedBackByAttacks_Desc" xml:space="preserve">
+    <value>有効にすると、敵の攻撃によって中断されなくなります (スタンなし)。</value>
+  </data>
+  <data name="NeverKnockedBackByAttacks_Name" xml:space="preserve">
+    <value>私の邪魔をしないでください！ (硬さはありません)</value>
+  </data>
+  <data name="EnemyDamagePercentage_Name" xml:space="preserve">
+    <value>敵のダメージ割合</value>
+  </data>
+  <data name="EnemyDamagePercentage_Desc" xml:space="preserve">
+    <value>戦闘中に敵がプレイヤーに与えるダメージの割合。 100%はフルダメージです。</value>
+  </data>
+  <data name="TournamentMaximumBetMultiplier_Name" xml:space="preserve">
+    <value>競技イベントの最大ベット倍率</value>
+  </data>
+  <data name="TournamentMaximumBetMultiplier_Desc" xml:space="preserve">
+    <value>プレイヤーが競技トーナメントで賭けることができる最大額の倍数。 1 はデフォルトの倍数を表します。</value>
+  </data>
+  <data name="NoStuckArrows_Name" xml:space="preserve">
+    <value>矢が止まらない</value>
+  </data>
+  <data name="NoStuckArrows_Desc" xml:space="preserve">
+    <value>有効にすると、プレイヤーに向かって発射された矢が引っかかることがなくなります。</value>
+  </data>
+  <data name="ModExceptionMessage" xml:space="preserve">
+    <value>Bannerlord Cheats でチートを適用しようとしたときにエラーが発生しました。この問題を調査できるよう、ファイル「{0}」で生成されたエラー情報を MOD 作成者に送信してください。ご不便をおかけして申し訳ありません！</value>
+  </data>
+  <data name="ModExceptionTitle" xml:space="preserve">
+    <value>Bannerlord Cheats でエラーが発生しました。</value>
+  </data>
+  <data name="SettlementsNeverRebel_Name" xml:space="preserve">
+    <value>定住地は決して反逆しない</value>
+  </data>
+  <data name="SettlementsNeverRebel_Desc" xml:space="preserve">
+    <value>有効にすると、プレイヤー所有の居住地が反乱を起こすことはありません。</value>
+  </data>
+  <data name="NeverDieOfOldAge_Name" xml:space="preserve">
+    <value>決して老衰で死ぬことはない</value>
+  </data>
+  <data name="NeverDieOfOldAge_Desc" xml:space="preserve">
+    <value>有効にすると、主人公は老いて病気になりますが、その結果として死ぬことはありません。</value>
+  </data>
+  <data name="KillCharacterMessageTitle" xml:space="preserve">
+    <value>{0}を殺しますか？</value>
+  </data>
+  <data name="KillCharacterMessage" xml:space="preserve">
+    <value>この人を殺したいですか？</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="KillCharacterConfirm" xml:space="preserve">
+    <value>殺せ殺せ殺せ！</value>
+  </data>
+  <data name="TransferSettlementMessageTitle" xml:space="preserve">
+    <value>{0}を転送しますか?</value>
+  </data>
+  <data name="TransferSettlementMessage" xml:space="preserve">
+    <value>この和解の所有権をあなたに譲渡しますか?</value>
+  </data>
+  <data name="TransferSettlementConfirm" xml:space="preserve">
+    <value>わかってください！</value>
+  </data>
+  <data name="ChangePlayerMessageTitle" xml:space="preserve">
+    <value>{0} としてプレイしますか?</value>
+  </data>
+  <data name="ChangePlayerMessage" xml:space="preserve">
+    <value>これからこの役を演じるのですか？これにより、予期せぬ結果が生じる可能性があります。ゲームを使用する前にゲームを保存し、自己責任で行うことをお勧めします。</value>
+  </data>
+  <data name="ChangePlayerConfirm" xml:space="preserve">
+    <value>遊ぶ！</value>
+  </data>
+  <data name="IUnderstand_Name" xml:space="preserve">
+    <value>キャンペーンをロードして (大きなマップに入り)、Cheats の組み込みモディファイアを有効にします。</value>
+  </data>
+  <data name="IUnderstand_Desc" xml:space="preserve">
+    <value>組み込みモディファイア設定は 1 つのキャラクターにのみ適用されます。組み込み修飾子は、(大きなマップ上の) キャンペーンに参加している場合にのみ設定できます。 ESC を押して次を選択します: 設定 → Mod オプション → 組み込みモディファイア</value>
+  </data>
+  <data name="Understood" xml:space="preserve">
+    <value>理解した！</value>
+  </data>
+  <data name="ThanksForReadingMessage" xml:space="preserve">
+    <value>読んで理解していただきありがとうございます!</value>
+  </data>
+  <data name="Global" xml:space="preserve">
+    <value>全体的な状況</value>
+  </data>
+  <data name="Enum_KnockoutOrKilled_Default" xml:space="preserve">
+    <value>デフォルト</value>
+  </data>
+  <data name="Enum_KnockoutOrKilled_Knockout" xml:space="preserve">
+    <value>意識を失った</value>
+  </data>
+  <data name="Enum_KnockoutOrKilled_Killed" xml:space="preserve">
+    <value>殺される</value>
+  </data>
+  <data name="PartyKnockoutOrKilled_Name" xml:space="preserve">
+    <value>プレイヤーの兵士が意識を失うか死亡する</value>
+  </data>
+  <data name="PartyKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>あなたのユニットの兵士は、敗北すると、設定に応じて常に気絶するか、常に殺されます。このオプションのデフォルトでは、気絶する確率が設定されています。</value>
+  </data>
+  <data name="CompanionsKnockoutOrKilled_Name" xml:space="preserve">
+    <value>仲間が気絶するか死亡する</value>
+  </data>
+  <data name="CompanionsKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>あなたのユニットの仲間は、敗北すると、設定に応じて常に気絶するか、常に殺されます。このオプションのデフォルトでは、気絶する確率が設定されています。</value>
+  </data>
+  <data name="FriendlyLordsKnockoutOrKilled_Name" xml:space="preserve">
+    <value>友好的な領主は気絶するか殺される</value>
+  </data>
+  <data name="FriendlyLordsKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>味方の領主は、敗北すると、設定に応じて常に気絶するか、常に殺されます。このオプションのデフォルトでは、気絶する確率が設定されています。</value>
+  </data>
+  <data name="EnemyLordsKnockoutOrKilled_Name" xml:space="preserve">
+    <value>敵の領主が気絶するか死亡する</value>
+  </data>
+  <data name="EnemyLordsKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>敵の領主は、敗北すると、設定に応じて常に気絶するか、常に殺されます。このオプションのデフォルトでは、気絶する確率が設定されています。</value>
+  </data>
+  <data name="EnemyTroopsKnockoutOrKilled_Name" xml:space="preserve">
+    <value>敵兵は気絶するか死亡する</value>
+  </data>
+  <data name="EnemyTroopsKnockoutOrKilled_Desc" xml:space="preserve">
+    <value>敵のトルーパーは、敗北すると、設定に応じて常に気絶するか、常に殺されます。このオプションのデフォルトでは、気絶する確率が設定されています。</value>
+  </data>
+  <data name="CaravansInvisibleOnMap_Name" xml:space="preserve">
+    <value>目に見えないキャラバン</value>
+  </data>
+  <data name="CaravansInvisibleOnMap_Desc" xml:space="preserve">
+    <value>敵ユニットはプレイヤーのキャラバンを追跡したり攻撃したりしません。</value>
+  </data>
+  <data name="ClanExperienceMultiplier_Name" xml:space="preserve">
+    <value>家族メンバーの経験乗数</value>
+  </data>
+  <data name="ClanExperienceMultiplier_Desc" xml:space="preserve">
+    <value>プレイヤーの家族の経験値獲得乗数。デフォルトは 1 です。</value>
+  </data>
+  <data name="RelationGainAfterBattleMultiplier_Name" xml:space="preserve">
+    <value>戦後の好感度上昇倍率</value>
+  </data>
+  <data name="RelationGainAfterBattleMultiplier_Desc" xml:space="preserve">
+    <value>助力した領主との戦いの後、あなたの好意は何倍にもなります。デフォルトは 1 です。</value>
+  </data>
+  <data name="VillagesNeverRaided_Name" xml:space="preserve">
+    <value>プレイヤーの村が略奪されることはありません</value>
+  </data>
+  <data name="VillagesNeverRaided_Desc" xml:space="preserve">
+    <value>有効にすると、プレイヤーの村が敵の領主によって焼き払われることはありません。</value>
+  </data>
+  <data name="General_Enhancement_GroupName" xml:space="preserve">
+    <value>全体的な強化</value>
+  </data>
+  <data name="Vigor_Enhancement_GroupName" xml:space="preserve">
+    <value>活力の増加</value>
+  </data>
+  <data name="Control_Enhancement_GroupName" xml:space="preserve">
+    <value>コントロールの向上</value>
+  </data>
+  <data name="Intelligence_Enhancement_GroupName" xml:space="preserve">
+    <value>知能の強化</value>
+  </data>
+  <data name="Endurance_Enhancement_GroupName" xml:space="preserve">
+    <value>耐久性の向上</value>
+  </data>
+  <data name="Cunning_Enhancement_GroupName" xml:space="preserve">
+    <value>狡猾さが増す</value>
+  </data>
+  <data name="Social_Enhancement_GroupName" xml:space="preserve">
+    <value>社会的強化</value>
+  </data>
+  <data name="EnableEverYoung_Name" xml:space="preserve">
+    <value>不死性をオンにする</value>
+  </data>
+  <data name="EnableEverYoung_Desc" xml:space="preserve">
+    <value>プレイヤーはスキルレベルの要件を無視し、直接不滅になります。これをオフにすると、不死関連の機能がすべてオフになります。他の MOD との競合が発生した場合は、これをオフにしてみてください。</value>
+  </data>
+  <data name="EverYoungSkillNeed_Name" xml:space="preserve">
+    <value>Family Immortality スキルレベル (ランニング + チャーム) の要件</value>
+  </data>
+  <data name="EverYoungSkillNeed_Desc" xml:space="preserve">
+    <value>家族の走り＋魅力がこの値以上であれば永遠に生きる能力を得る。</value>
+  </data>
+  <data name="AutoChoosePerk_Name" xml:space="preserve">
+    <value>両方のブランチのスキルを自動的に取得します</value>
+  </data>
+  <data name="AutoChoosePerk_Desc" xml:space="preserve">
+    <value>要件を満たすために必要なスキルレベル</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_Clan" xml:space="preserve">
+    <value>選手本人を含む選手の家族</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_All" xml:space="preserve">
+    <value>すべてのヒーロー</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_Player" xml:space="preserve">
+    <value>選手自身</value>
+  </data>
+  <data name="Enum_AutoChoosePerk_Type_No" xml:space="preserve">
+    <value>誰も</value>
+  </data>
+  <data name="VigorDmgPercent_Name" xml:space="preserve">
+    <value>生命力ダメージボーナスの割合</value>
+  </data>
+  <data name="VigorDmgPercent_Desc" xml:space="preserve">
+    <value>活力ポイントあたりのダメージの割合が増加</value>
+  </data>
+  <data name="VigorArmorAdd_Name" xml:space="preserve">
+    <value>バイタリティアーマーボーナス</value>
+  </data>
+  <data name="VigorArmorAdd_Desc" xml:space="preserve">
+    <value>生命力ポイントごとに追加されるアーマー</value>
+  </data>
+  <data name="VigorMountArmorAdd_Name" xml:space="preserve">
+    <value>バイタリティマウントアーマー値</value>
+  </data>
+  <data name="VigorMountArmorAdd_Desc" xml:space="preserve">
+    <value>生命力ポイントあたりのマウントアーマー値の増加</value>
+  </data>
+  <data name="VigorShieldEndurancePercent_Name" xml:space="preserve">
+    <value>バイタリティシールド強化</value>
+  </data>
+  <data name="VigorShieldEndurancePercent_Desc" xml:space="preserve">
+    <value>バイタリティポイントごとにシールドの耐久性パーセンテージが増加</value>
+  </data>
+  <data name="VigorFinalDmgAdd_Name" xml:space="preserve">
+    <value>活力強制ダメージボーナス</value>
+  </data>
+  <data name="VigorFinalDmgAdd_Desc" xml:space="preserve">
+    <value>敵への強制ダメージが生命力ポイントごとに増加</value>
+  </data>
+  <data name="VigorDmgTakenReduce_Name" xml:space="preserve">
+    <value>生命力ダメージ軽減</value>
+  </data>
+  <data name="VigorDmgTakenReduce_Desc" xml:space="preserve">
+    <value>生命力ポイントごとに敵からのダメージを軽減します</value>
+  </data>
+  <data name="VigorCrushThroughPositive_Name" xml:space="preserve">
+    <value>バイタリティがブロックを破壊する確率</value>
+  </data>
+  <data name="VigorCrushThroughPositive_Desc" xml:space="preserve">
+    <value>ブロックを破壊する確率は、相手の生命力が 1 ポイントごとに増加します。</value>
+  </data>
+  <data name="VigorCrushThroughNegative_Name" xml:space="preserve">
+    <value>生命力抵抗力ブロック破壊確率</value>
+  </data>
+  <data name="VigorCrushThroughNegative_Desc" xml:space="preserve">
+    <value>抵抗してブロックを破壊する確率は、相手の生命力1ポイントごとに増加します。</value>
+  </data>
+  <data name="IntelligenceAmmoAddPercent_Name" xml:space="preserve">
+    <value>インテリジェンス弾薬ボーナス</value>
+  </data>
+  <data name="IntelligenceAmmoAddPercent_Desc" xml:space="preserve">
+    <value>チームの弾薬制限のパーセンテージが各諜報ポイントによって増加します (補給官)</value>
+  </data>
+  <data name="ControlAmmoNoConsumeRate_Name" xml:space="preserve">
+    <value>弾薬が消費されない確率を制御する</value>
+  </data>
+  <data name="ControlAmmoNoConsumeRate_Desc" xml:space="preserve">
+    <value>各制御点では、各ショットが弾薬を消費しない可能性が与えられます。</value>
+  </data>
+  <data name="ControlDropDmgReducePercent_Name" xml:space="preserve">
+    <value>制御された落下ダメージの軽減</value>
+  </data>
+  <data name="ControlDropDmgReducePercent_Desc" xml:space="preserve">
+    <value>コントロールポイントごとの落下ダメージの割合の減少</value>
+  </data>
+  <data name="ControlAimStabilityPercent_Name" xml:space="preserve">
+    <value>コントロール照準安定性ボーナス</value>
+  </data>
+  <data name="ControlAimStabilityPercent_Desc" xml:space="preserve">
+    <value>コントロールポイントごとの照準安定性に追加されるパーセンテージ</value>
+  </data>
+  <data name="ControlMountManeuverPercent_Name" xml:space="preserve">
+    <value>マウントのハンドリングボーナスを制御する</value>
+  </data>
+  <data name="ControlMountManeuverPercent_Desc" xml:space="preserve">
+    <value>制御ポイントごとのマウント処理の増加率</value>
+  </data>
+  <data name="ControlCritRate_Name" xml:space="preserve">
+    <value>クリティカルヒットの確率を制御する</value>
+  </data>
+  <data name="ControlCritRate_Desc" xml:space="preserve">
+    <value>対戦相手のコントロール1ポイントごとにクリティカルヒット（ダメージ2倍）の確率が増加</value>
+  </data>
+  <data name="ControlExemptionRate_Name" xml:space="preserve">
+    <value>免疫確率を制御する</value>
+  </data>
+  <data name="ControlExemptionRate_Desc" xml:space="preserve">
+    <value>対戦相手のコントロールが1ポイントごとにセーヴィングスローの確率が増加（ダメージを完全に受けない）</value>
+  </data>
+  <data name="ControlPenetrateRate_Name" xml:space="preserve">
+    <value>リモートシールドの貫通確率を制御する</value>
+  </data>
+  <data name="ControlPenetrateRate_Desc" xml:space="preserve">
+    <value>制御点ごとのリモートシールド貫通確率の増加</value>
+  </data>
+  <data name="EnduranceHpAddPercent_Name" xml:space="preserve">
+    <value>スタミナ健康ボーナス</value>
+  </data>
+  <data name="EnduranceHpAddPercent_Desc" xml:space="preserve">
+    <value>スタミナの各ポイントによって増加する最大体力の割合</value>
+  </data>
+  <data name="EnduranceHealRate_Name" xml:space="preserve">
+    <value>スタミナ体力回復率ボーナス</value>
+  </data>
+  <data name="EnduranceHealRate_Desc" xml:space="preserve">
+    <value>スタミナポイントあたりの健康回復（大きなマップ）の割合の増加</value>
+  </data>
+  <data name="EnduranceStaggerPercent_Name" xml:space="preserve">
+    <value>耐久耐性ボーナス</value>
+  </data>
+  <data name="EnduranceStaggerPercent_Desc" xml:space="preserve">
+    <value>スタミナポイントあたりの硬直耐性の割合が増加しました</value>
+  </data>
+  <data name="EnduranceWalkSpeedPercent_Name" xml:space="preserve">
+    <value>持久力歩行速度ボーナス</value>
+  </data>
+  <data name="EnduranceWalkSpeedPercent_Desc" xml:space="preserve">
+    <value>スタミナポイントあたりの歩行速度の増加率</value>
+  </data>
+  <data name="EnduranceMountSpeedPercent_Name" xml:space="preserve">
+    <value>スタミナライディングスピードボーナス</value>
+  </data>
+  <data name="EnduranceMountSpeedPercent_Desc" xml:space="preserve">
+    <value>スタミナポイントあたりのライディングスピードの増加率</value>
+  </data>
+  <data name="CunningPrisonerRecruitSpeedPercent_Name" xml:space="preserve">
+    <value>狡猾な者は捕虜をより早く募集する</value>
+  </data>
+  <data name="CunningPrisonerRecruitSpeedPercent_Desc" xml:space="preserve">
+    <value>狡猾さのポイントごとの捕虜の採用速度の増加率 (部隊指揮官)</value>
+  </data>
+  <data name="CunningPrisonerCapacityPercent_Name" xml:space="preserve">
+    <value>狡猾な囚人キャップボーナス</value>
+  </data>
+  <data name="CunningPrisonerCapacityPercent_Desc" xml:space="preserve">
+    <value>狡猾さのポイントごとの捕虜の制限を増加 (部隊指揮官)</value>
+  </data>
+  <data name="CunningRaidSpeedPercent_Name" xml:space="preserve">
+    <value>狡猾な襲撃速度ボーナス</value>
+  </data>
+  <data name="CunningRaidSpeedPercent_Desc" xml:space="preserve">
+    <value>狡猾さのポイントごとの襲撃速度の増加率 (部隊指揮官)</value>
+  </data>
+  <data name="CunningPartySpeedAdd_Name" xml:space="preserve">
+    <value>狡猾なチームスピードボーナス</value>
+  </data>
+  <data name="CunningPartySpeedAdd_Desc" xml:space="preserve">
+    <value>狡猾さのポイントごとのチーム速度の増加（スカウト）</value>
+  </data>
+  <data name="CunningCompanionCapacityAdd_Name" xml:space="preserve">
+    <value>狡猾な仲間の最大ボーナス</value>
+  </data>
+  <data name="CunningCompanionCapacityAdd_Desc" xml:space="preserve">
+    <value>狡猾さのポイントごとにコンパニオンの制限が増加しました（ファミリーリーダー）</value>
+  </data>
+  <data name="SocialBoundary_Name" xml:space="preserve">
+    <value>社会的閾値</value>
+  </data>
+  <data name="SocialBoundary_Desc" xml:space="preserve">
+    <value>社会的効果の計算閾値を設定する</value>
+  </data>
+  <data name="SocialHearthAdd_Name" xml:space="preserve">
+    <value>社会決済世帯成長ボーナス</value>
+  </data>
+  <data name="SocialHearthAdd_Desc" xml:space="preserve">
+    <value>集落内の世帯数の増加値は、社会的交流の各ポイント（家族のリーダーと知事）によって増加しました</value>
+  </data>
+  <data name="SocialSettlementLoyaltyAdd_Name" xml:space="preserve">
+    <value>ソーシャルセトルメントロイヤルティボーナス</value>
+  </data>
+  <data name="SocialSettlementLoyaltyAdd_Desc" xml:space="preserve">
+    <value>社会的交流のポイントごとの入植地の忠誠度の増加（家族の指導者と知事）</value>
+  </data>
+  <data name="SocialMilitiaAdd_Name" xml:space="preserve">
+    <value>社会定住民兵ボーナス</value>
+  </data>
+  <data name="SocialMilitiaAdd_Desc" xml:space="preserve">
+    <value>社会ポイントあたりの入植民兵（家族の指導者および総督）の増加</value>
+  </data>
+  <data name="SocialRecruitSpeedPercent_Name" xml:space="preserve">
+    <value>ソーシャルリクルーティングプールの更新速度</value>
+  </data>
+  <data name="SocialRecruitSpeedPercent_Desc" xml:space="preserve">
+    <value>居住地募集プールのリフレッシュレートが各社会ポイント（家族のリーダーと知事）ごとに増加しました</value>
+  </data>
+  <data name="SocialTaxPercent_Name" xml:space="preserve">
+    <value>社会税ボーナス</value>
+  </data>
+  <data name="SocialTaxPercent_Desc" xml:space="preserve">
+    <value>社会的交流のポイントごとの清算税の増加 (知事)</value>
+  </data>
+  <data name="SocialWorkshopProductionPercent_Name" xml:space="preserve">
+    <value>ソーシャルワークショップの成果ボーナス</value>
+  </data>
+  <data name="SocialWorkshopProductionPercent_Desc" xml:space="preserve">
+    <value>各社会秩序によって増加したワークショップの生産物の割合（知事）</value>
+  </data>
+  <data name="SocialCompanionCapacityAdd_Name" xml:space="preserve">
+    <value>ソーシャルコンパニオン制限ボーナス</value>
+  </data>
+  <data name="SocialCompanionCapacityAdd_Desc" xml:space="preserve">
+    <value>ソーシャルポイントごとに増加する仲間の上限（ファミリーリーダー）</value>
+  </data>
+  <data name="IntelligenceBoundary_Name" xml:space="preserve">
+    <value>知能の閾値</value>
+  </data>
+  <data name="IntelligenceBoundary_Desc" xml:space="preserve">
+    <value>インテリジェンス効果の計算閾値を設定する</value>
+  </data>
+  <data name="IntelligenceExpRate_Name" xml:space="preserve">
+    <value>インテリジェンス経験値ボーナス</value>
+  </data>
+  <data name="IntelligenceExpRate_Desc" xml:space="preserve">
+    <value>知性の各ポイントにより経験値の獲得率が増加し、狡猾さ、社交性、知性のスキルへの効果が 2 倍になります。</value>
+  </data>
+  <data name="IntelligenceSiegeEndurancePercent_Name" xml:space="preserve">
+    <value>インテリジェンス攻城兵器耐久度ボーナス</value>
+  </data>
+  <data name="IntelligenceSiegeEndurancePercent_Desc" xml:space="preserve">
+    <value>インテリジェンス ポイントごとの攻城兵器の耐久性の増加率 (エンジニア)</value>
+  </data>
+  <data name="IntelligenceWallEndurancePercent_Name" xml:space="preserve">
+    <value>インテリジェンスウォール耐久度ボーナス</value>
+  </data>
+  <data name="IntelligenceWallEndurancePercent_Desc" xml:space="preserve">
+    <value>インテリジェンス ポイントごとに増加する壁の耐久性の割合 (ガバナー)</value>
+  </data>
+  <data name="IntelligenceBallistaAdd_Name" xml:space="preserve">
+    <value>インテリジェンス攻撃および防御シティバリスタボーナス</value>
+  </data>
+  <data name="IntelligenceBallistaAdd_Desc" xml:space="preserve">
+    <value>インテリジェンスの各ポイントにより、都市を攻撃および防御する際のバリスタの初期数が増加します (攻撃側のエンジニア、または防御側のガバナー)。</value>
+  </data>
+  <data name="IntelligenceLeaderSettlementFoodPercent_Name" xml:space="preserve">
+    <value>インテリジェンス セトルメント フード ボーナス - ファミリー リーダー</value>
+  </data>
+  <data name="IntelligenceLeaderSettlementFoodPercent_Desc" xml:space="preserve">
+    <value>インテリジェンスポイントごとの居住地の食糧生産量を増加させる</value>
+  </data>
+  <data name="IntelligenceGovernorSettlementFoodPercent_Name" xml:space="preserve">
+    <value>知的居住地食品ボーナス - 知事</value>
+  </data>
+  <data name="IntelligenceGovernorSettlementFoodPercent_Desc" xml:space="preserve">
+    <value>インテリジェンスポイントごとの居住地の食糧生産量を増加させる</value>
+  </data>
+  <data name="IntelligenceProsperityFoodCostReducePercent_Name" xml:space="preserve">
+    <value>知的繁栄は食料ボーナスを消費する</value>
+  </data>
+  <data name="IntelligenceProsperityFoodCostReducePercent_Desc" xml:space="preserve">
+    <value>知能低下ポイント当たりの繁栄により消費された食物の割合</value>
+  </data>
+  <data name="IntelligenceGarrisonWageReducePercent_Name" xml:space="preserve">
+    <value>インテリジェンスディフェンダーの給与ボーナス</value>
+  </data>
+  <data name="IntelligenceGarrisonWageReducePercent_Desc" xml:space="preserve">
+    <value>インテリジェンスポイントあたりのディフェンダーの給与を削減します</value>
+  </data>
+  <data name="IntelligenceWorkshopProductionPercent_Name" xml:space="preserve">
+    <value>インテリジェンスワークショップの成果ボーナス</value>
+  </data>
+  <data name="IntelligenceWorkshopProductionPercent_Desc" xml:space="preserve">
+    <value>インテリジェンス (所有者) ポイントあたりのワークショップ生産量の増加の割合</value>
+  </data>
+  <data name="EnableDailyGainXp_Name" xml:space="preserve">
+    <value>ヒーローをオンにして、毎日キャラクター経験値を獲得します</value>
+  </data>
+  <data name="EnableDailyGainXp_Desc" xml:space="preserve">
+    <value>具体的には、レベル×知力×知力×2</value>
+  </data>
+  <data name="CombatAttributeRatePlayer_Name" xml:space="preserve">
+    <value>戦闘強化係数プレイヤー</value>
+  </data>
+  <data name="CombatAttributeRatePlayer_Desc" xml:space="preserve">
+    <value>戦闘強化効果にはこの係数が乗算され、マイナス効果はこの値で除算されます。</value>
+  </data>
+  <data name="CombatAttributeRateClanMember_Name" xml:space="preserve">
+    <value>戦闘強化係数 - プレイヤー家族</value>
+  </data>
+  <data name="CombatAttributeRateClanMember_Desc" xml:space="preserve">
+    <value>戦闘強化効果にはこの係数が乗算され、マイナス効果はこの値で除算されます。</value>
+  </data>
+  <data name="CombatAttributeRateOther_Name" xml:space="preserve">
+    <value>戦闘強化要素・その他</value>
+  </data>
+  <data name="CombatAttributeRateOther_Desc" xml:space="preserve">
+    <value>戦闘強化効果にはこの係数が乗算され、マイナス効果はこの値で除算されます。</value>
+  </data>
+  <data name="StrategyAttributeRatePlayer_Name" xml:space="preserve">
+    <value>戦略強化係数プレイヤー</value>
+  </data>
+  <data name="StrategyAttributeRatePlayer_Desc" xml:space="preserve">
+    <value>戦略強化効果にはこの係数が乗算され、マイナス効果はこの値で除算されます。</value>
+  </data>
+  <data name="StrategyAttributeRateClanMember_Name" xml:space="preserve">
+    <value>戦略強化係数選手ファミリーメンバー</value>
+  </data>
+  <data name="StrategyAttributeRateClanMember_Desc" xml:space="preserve">
+    <value>戦略強化効果にはこの係数が乗算され、マイナス効果はこの値で除算されます。</value>
+  </data>
+  <data name="StrategyAttributeRateOther_Name" xml:space="preserve">
+    <value>戦略強化係数-その他</value>
+  </data>
+  <data name="StrategyAttributeRateOther_Desc" xml:space="preserve">
+    <value>戦略強化効果にはこの係数が乗算され、マイナス効果はこの値で除算されます。</value>
+  </data>
+  <data name="TestMode_Name" xml:space="preserve">
+    <value>テストモード</value>
+  </data>
+  <data name="TestMode_Desc" xml:space="preserve">
+    <value>戦闘中は誰もが無制限の健康状態を維持できます</value>
+  </data>
+  <data name="PlayerAlwaysCrush_Name" xml:space="preserve">
+    <value>常にブロックを壊す: プレイヤー</value>
+  </data>
+  <data name="PlayerAlwaysCrush_Desc" xml:space="preserve">
+    <value>プレイヤーは常にブロックを壊す</value>
+  </data>
+  <data name="AICrush_Name" xml:space="preserve">
+    <value>AIは常にブロックを突破します</value>
+  </data>
+  <data name="AICrush_Desc" xml:space="preserve">
+    <value>AIは常にブロックを突破します</value>
+  </data>
+  <data name="AllyCrush_Name" xml:space="preserve">
+    <value>常にブロックを壊す: 味方部隊</value>
+  </data>
+  <data name="AllyCrush_Desc" xml:space="preserve">
+    <value>友軍は常にブロックを突破する</value>
+  </data>
+  <data name="EnemyCrush_Name" xml:space="preserve">
+    <value>常にブロックを壊す：敵</value>
+  </data>
+  <data name="EnemyCrush_Desc" xml:space="preserve">
+    <value>敵は必ずブロックを壊す</value>
+  </data>
+  <data name="UnblockableThrust_player_Name" xml:space="preserve">
+    <value>ブロック不可能な刺し: プレイヤー</value>
+  </data>
+  <data name="UnblockableThrust_player_Desc" xml:space="preserve">
+    <value>プレイヤーの突きは盾を使って防御しない限り防御できません（槍や剣の突き）</value>
+  </data>
+  <data name="UnblockableThrust_AI_Name" xml:space="preserve">
+    <value>AIの刺しはブロックできない</value>
+  </data>
+  <data name="UnblockableThrust_AI_Desc" xml:space="preserve">
+    <value>AI の突きは、盾を使用して防御しない限りブロックできません (槍や剣の突き)</value>
+  </data>
+  <data name="UnblockableThrust_ally_Name" xml:space="preserve">
+    <value>ブロック不可能な刺し: フレンドリー</value>
+  </data>
+  <data name="UnblockableThrust_ally_Desc" xml:space="preserve">
+    <value>味方の突きはシールドされていない限り防御できない（槍や剣の突き）</value>
+  </data>
+  <data name="UnblockableThrust_enemy_Name" xml:space="preserve">
+    <value>ブロック不可能な刺し: 敵</value>
+  </data>
+  <data name="UnblockableThrust_enemy_Desc" xml:space="preserve">
+    <value>敵の突きはシールドされていなければ防ぐことができない（槍や剣の突き）</value>
+  </data>
+  <data name="InfiniteMomentum_Name" xml:space="preserve">
+    <value>選手には無限の勢いがある</value>
+  </data>
+  <data name="InfiniteMomentum_Desc" xml:space="preserve">
+    <value>選手には無限の勢いがある</value>
+  </data>
+  <data name="KeepDaughter_Name" xml:space="preserve">
+    <value>女性は結婚して家庭に留まる</value>
+  </data>
+  <data name="KeepDaughter_Desc" xml:space="preserve">
+    <value>プレイヤーの家族の女性は結婚後もプレイヤーの家族に残ります</value>
+  </data>
+  <data name="AddMoneyThreshhold_Name" xml:space="preserve">
+    <value>毎日の追加金額のしきい値</value>
+  </data>
+  <data name="AddMoneyThreshhold_Desc" xml:space="preserve">
+    <value>毎日お金がこの数字より少ない場合、さらにお金が追加されます</value>
+  </data>
+  <data name="AddMoney_count_Name" xml:space="preserve">
+    <value>毎日追加される金額</value>
+  </data>
+  <data name="AddMoney_count_Desc" xml:space="preserve">
+    <value>この金額を毎日追加します（金額が追加しきい値より低い場合）</value>
+  </data>
+  <data name="LanguageSetting_Name" xml:space="preserve">
+    <value>言語</value>
+  </data>
+  <data name="LanguageSetting_Desc" xml:space="preserve">
+    <value>設定の言語を選択してください</value>
+  </data>
+  <data name="MaxAttr_Name" xml:space="preserve">
+    <value>スキル上限</value>
+  </data>
+  <data name="MaxAttr_Desc" xml:space="preserve">
+    <value>スキルキャップ（デフォルトは10）</value>
+  </data>
+  <data name="Enum_Setting_Language_English" xml:space="preserve">
+    <value>英語</value>
+  </data>
+  <data name="Enum_Setting_Language_Chinese" xml:space="preserve">
+    <value>中国語</value>
+  </data>
+  <data name="Enum_Setting_Language_Other" xml:space="preserve">
+    <value>他の</value>
+  </data>
+  <data name="JoinMyKindom" xml:space="preserve">
+    <value>あなたの家族を私の王国に導くことが、あなたの家族が滅亡を避けるための唯一の選択肢です。</value>
+  </data>
+  <data name="JoinMyKindom_OK" xml:space="preserve">
+    <value>わかりました</value>
+  </data>
+  <data name="xGang_Name" xml:space="preserve">
+    <value>有名人グループのリーダーが追加されました</value>
+  </data>
+  <data name="xGang_Desc" xml:space="preserve">
+    <value>居住地ごとの有名人ギャングのリーダー数の増加 (新しいキャンペーンにのみ有効)</value>
+  </data>
+  <data name="xArt_Name" xml:space="preserve">
+    <value>有名人・職人追加</value>
+  </data>
+  <data name="xArt_Desc" xml:space="preserve">
+    <value>居住地あたりの著名な職人の数の増加 (新しいキャンペーンにのみ有効)</value>
+  </data>
+  <data name="xMerch_Name" xml:space="preserve">
+    <value>芸能人・実業家増加</value>
+  </data>
+  <data name="xMerch_Desc" xml:space="preserve">
+    <value>決済ごとの有名人販売者の数の増加 (新しいキャンペーンにのみ有効)</value>
+  </data>
+  <data name="xVill_Name" xml:space="preserve">
+    <value>有名人 - 村の貴族を追加</value>
+  </data>
+  <data name="xVill_Desc" xml:space="preserve">
+    <value>居住地ごとのセレブ村の貴族数の増加 (新規キャンペーンにのみ有効)</value>
+  </data>
+  <data name="xRural_Name" xml:space="preserve">
+    <value>芸能人頭の人が増える</value>
+  </data>
+  <data name="xRural_Desc" xml:space="preserve">
+    <value>居住地ごとの有名人首長の数の増加 (新しいキャンペーンにのみ有効)</value>
+  </data>
+  <data name="Town_Init_Gold_Extra_Name" xml:space="preserve">
+    <value>町の開始資金が増加（千）</value>
+  </data>
+  <data name="Town_Init_Gold_Extra_Desc" xml:space="preserve">
+    <value>町の開始資本が（千）増加します（新しい戦闘にのみ有効です）</value>
+  </data>
+  <data name="Village_Init_Gold_Extra_Name" xml:space="preserve">
+    <value>村の開始資本が増加しました（千）</value>
+  </data>
+  <data name="Village_Init_Gold_Extra_Desc" xml:space="preserve">
+    <value>村の開始資本が（千）増加します（新しい戦闘にのみ有効です）</value>
+  </data>
+  <data name="Enum_Setting_Language_Russian" xml:space="preserve">
+    <value>ロシア</value>
+  </data>
+  <data name="Enum_Setting_Language_Portuguese" xml:space="preserve">
+    <value>ポルトガル語</value>
+  </data>
+  <data name="Enum_Setting_Language_Spanish" xml:space="preserve">
+    <value>スペイン語</value>
+  </data>
+  <data name="Enum_Setting_Language_Japanese" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+</root>
