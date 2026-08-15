@@ -59,7 +59,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ModName" xml:space="preserve">
-    <value>UFO's Mod</value>
+    <value>UFO's Cheat</value>
+  </data>
+  <data name="Common_GroupName" xml:space="preserve">
+    <value>よく使う機能</value>
   </data>
   <data name="Combat_Player_GroupName" xml:space="preserve">
     <value>戦闘 - プレイヤー</value>
@@ -1456,4 +1459,5 @@
   <data name="Enum_Setting_Language_Japanese" xml:space="preserve">
     <value>日本語</value>
   </data>
+  <data name="NavalDLC_GroupName" xml:space="preserve"><value>海戦 DLC</value></data>
 </root>

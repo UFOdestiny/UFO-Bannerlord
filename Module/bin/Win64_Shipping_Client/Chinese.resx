@@ -59,7 +59,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ModName" xml:space="preserve">
-    <value>UFO's Mod</value>
+    <value>UFO's Cheat</value>
+  </data>
+  <data name="Common_GroupName" xml:space="preserve">
+    <value>常用功能</value>
   </data>
   <data name="Combat_Player_GroupName" xml:space="preserve">
     <value>战斗 - 玩家</value>
@@ -1456,4 +1459,27 @@
   <data name="Enum_Setting_Language_Japanese" xml:space="preserve">
     <value>日语</value>
   </data>
+  <data name="NavalDLC_GroupName" xml:space="preserve"><value>海战 DLC</value></data>
+  <data name="NavalCampaignSpeedMultiplier_Name" xml:space="preserve"><value>战役航行速度倍数</value></data><data name="NavalCampaignSpeedMultiplier_Desc" xml:space="preserve"><value>调整玩家所属船只提供的战役航行速度加成。</value></data>
+  <data name="NavalOarForceMultiplier_Name" xml:space="preserve"><value>玩家船只划桨力倍数</value></data><data name="NavalOarForceMultiplier_Desc" xml:space="preserve"><value>调整玩家所属船只的划桨推力。</value></data>
+  <data name="NavalSailForceMultiplier_Name" xml:space="preserve"><value>玩家船只帆力倍数</value></data><data name="NavalSailForceMultiplier_Desc" xml:space="preserve"><value>调整玩家所属船只的帆力。</value></data>
+  <data name="NavalCrewCapacityMultiplier_Name" xml:space="preserve"><value>玩家船只船员容量倍数</value></data><data name="NavalCrewCapacityMultiplier_Desc" xml:space="preserve"><value>调整玩家所属船只的船员容量加成。</value></data>
+  <data name="NavalShipCombatFactorMultiplier_Name" xml:space="preserve"><value>船只战斗系数倍数</value></data><data name="NavalShipCombatFactorMultiplier_Desc" xml:space="preserve"><value>调整所有阵营的 Naval DLC 船只战斗系数。</value></data>
+  <data name="NavalAdditionalAmmo_Name" xml:space="preserve"><value>玩家船只额外弹药</value></data><data name="NavalAdditionalAmmo_Desc" xml:space="preserve"><value>为玩家所属船只增加额外弹药。</value></data>
+  <data name="NavalSeaAttritionPercentage_Name" xml:space="preserve"><value>玩家船只海上损耗</value></data><data name="NavalSeaAttritionPercentage_Desc" xml:space="preserve"><value>航行时每小时受到的船只损伤；0% 为无损耗。</value></data>
+  <data name="NavalBattleShipDamagePercentage_Name" xml:space="preserve"><value>玩家船只海战伤害</value></data><data name="NavalBattleShipDamagePercentage_Desc" xml:space="preserve"><value>玩家所属船只在海战中受到的伤害；0% 为免疫。</value></data>
+  <data name="NavalStormDamagePercentage_Name" xml:space="preserve"><value>玩家船只风暴伤害</value></data><data name="NavalStormDamagePercentage_Desc" xml:space="preserve"><value>玩家所属船只受到的风暴伤害；0% 为风暴免疫。</value></data>
+  <data name="NavalStormFrequencyMultiplier_Name" xml:space="preserve"><value>风暴出现频率倍数</value></data><data name="NavalStormFrequencyMultiplier_Desc" xml:space="preserve"><value>调整战役地图中的风暴生成概率；0 为不再生成新风暴。</value></data>
+  <data name="NavalStormStrengthMultiplier_Name" xml:space="preserve"><value>风暴强度倍数</value></data><data name="NavalStormStrengthMultiplier_Desc" xml:space="preserve"><value>调整全局风暴强度与风眼强度。</value></data>
+  <data name="NavalShipPurchaseCostMultiplier_Name" xml:space="preserve"><value>船只购买价格倍数</value></data><data name="NavalShipPurchaseCostMultiplier_Desc" xml:space="preserve"><value>调整玩家购买船只时的价格。</value></data>
+  <data name="NavalShipRepairCostMultiplier_Name" xml:space="preserve"><value>船只维修费用倍数</value></data><data name="NavalShipRepairCostMultiplier_Desc" xml:space="preserve"><value>调整玩家所属船只的维修费用。</value></data>
+  <data name="NavalShipUpgradeCostMultiplier_Name" xml:space="preserve"><value>船只升级费用倍数</value></data><data name="NavalShipUpgradeCostMultiplier_Desc" xml:space="preserve"><value>调整玩家所属船只的升级部件费用。</value></data>
+  <data name="NavalDeploymentLimitMultiplier_Name" xml:space="preserve"><value>玩家海战部署上限倍数</value></data><data name="NavalDeploymentLimitMultiplier_Desc" xml:space="preserve"><value>调整玩家在海战中可部署的船只数量。</value></data>
+  <data name="NavalBattleRewardMultiplier_Name" xml:space="preserve"><value>海战奖励倍数</value></data><data name="NavalBattleRewardMultiplier_Desc" xml:space="preserve"><value>调整玩家在海战中获得的声望与影响力。</value></data>
+  <data name="NavalFleetMinimumTroopPercentage_Name" xml:space="preserve"><value>舰队派遣最低兵力</value></data><data name="NavalFleetMinimumTroopPercentage_Desc" xml:space="preserve"><value>调整派遣船只所需的最低兵力；0% 为无要求。</value></data>
+  <data name="NavalShipId_Name" xml:space="preserve"><value>船只标识符</value></data><data name="NavalShipId_Desc" xml:space="preserve"><value>输入一个或多个 Naval DLC 船只标识符，以空格、逗号或分号分隔。</value></data>
+  <data name="NavalGrantShip_Name" xml:space="preserve"><value>给予船只</value></data><data name="NavalGrantShip_Desc" xml:space="preserve"><value>将输入的船只标识符对应船只加入玩家舰队。</value></data><data name="NavalGrantShip_Button" xml:space="preserve"><value>给予船只</value></data>
+  <data name="NavalFigureheadId_Name" xml:space="preserve"><value>船首像标识符</value></data><data name="NavalFigureheadId_Desc" xml:space="preserve"><value>输入一个或多个 Naval DLC 船首像标识符，以空格、逗号或分号分隔。</value></data>
+  <data name="NavalUnlockFigurehead_Name" xml:space="preserve"><value>解锁船首像</value></data><data name="NavalUnlockFigurehead_Desc" xml:space="preserve"><value>解锁输入的船首像标识符。</value></data><data name="NavalUnlockFigurehead_Button" xml:space="preserve"><value>解锁船首像</value></data>
+  <data name="NavalDLCIdentifierRequired" xml:space="preserve"><value>请先输入至少一个 Naval DLC 标识符。</value></data><data name="NavalDLCNotInstalled" xml:space="preserve"><value>未安装或未加载 Naval DLC。</value></data>
 </root>

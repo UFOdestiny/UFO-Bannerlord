@@ -1,7 +1,8 @@
 using MCM.Abstractions.Base.PerCampaign;
 using MCM.Common;
+using System;
 using System.Reflection;
-using System.Text.RegularExpressions;
+using UFO.Patching;
 using TaleWorlds.CampaignSystem;
 using UFO.Localization;
 
@@ -15,18 +16,7 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
 
     private string DisplayNameCore { get; }
 
-    public override string DisplayName
-    {
-        get
-        {
-            string text = Hero.MainHero?.FirstName.ToString();
-            if (Hero.MainHero?.Clan?.Name != null)
-            {
-                text += $" {Hero.MainHero?.Clan?.Name}";
-            }
-            return string.Format(DisplayNameCore, text);
-        }
-    }
+    public override string DisplayName => DisplayNameCore;
 
     public BannerlordCheatsPerCampaignSettings()
     {
@@ -39,21 +29,11 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
         {
             text = "Cheats";
         }
-        string input = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-        input = Regex.Replace(input, "(?:\\.0)+$", string.Empty);
-        if (!input.Contains("."))
-        {
-            input += ".0";
-        }
-        DisplayNameCore = text + " " + input + " ({0})";
+        DisplayNameCore = text;
     }
 
 
     // UFO's
-    [LocalizedSettingPropertyGroup("Combat_Player", GroupOrder = 3)]
-    [LocalizedSettingPropertyBool("PlayerAlwaysCrush")]
-    public bool PlayerAlwaysCrush { get; set; } = false;
-
     //[LocalizedSettingPropertyGroup("Combat_Player")]
     //[LocalizedSettingPropertyBool("AICrush")]
     //public bool AICrush { get; set; } = false;
@@ -70,9 +50,25 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     [LocalizedSettingPropertyBool("InfiniteMomentum")]
     public bool InfiniteMomentum { get; set; } = false;
 
-    [LocalizedSettingPropertyGroup("General", GroupOrder = 1)]
+    [LocalizedSettingPropertyGroup("Common", GroupOrder = 1)]
     [LocalizedSettingPropertyDropdown("LanguageSetting", Setting_Language.English, RequireRestart = true)]
     public Dropdown<LocalizedDropdownValue<Setting_Language>> LanguageSetting { get; set; } = LocalizedDropdownValue<Setting_Language>.GenerateDropdown(Setting_Language.English);
+
+    [LocalizedSettingPropertyGroup("Common")]
+    [LocalizedSettingPropertyBool("PlayerAlwaysCrush")]
+    public bool PlayerAlwaysCrush { get; set; } = false;
+
+    [LocalizedSettingPropertyGroup("Common")]
+    [LocalizedSettingPropertyInteger("AddMoneyThreshhold", 0, 1000000000)]
+    public int AddMoneyThreshhold { get; set; } = 0;
+
+    [LocalizedSettingPropertyGroup("Common")]
+    [LocalizedSettingPropertyInteger("AddMoney_count", 0, 1000000000)]
+    public int AddMoney_count { get; set; } = 0;
+
+    [LocalizedSettingPropertyGroup("Common")]
+    [LocalizedSettingPropertyBool("NativeItemSpawning")]
+    public bool NativeItemSpawning { get; set; } = false;
 
     [LocalizedSettingPropertyGroup("Clan", GroupOrder = 10)]
     [LocalizedSettingPropertyBool("KeepDaughter")]
@@ -286,18 +282,6 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     [LocalizedSettingPropertyGroup("Inventory", GroupOrder = 8)]
     [LocalizedSettingPropertyInteger("ExtraInventoryCapacity", 0, 1000000)]
     public int ExtraInventoryCapacity { get; set; } = 0;
-
-    [LocalizedSettingPropertyGroup("Inventory")]
-    [LocalizedSettingPropertyBool("NativeItemSpawning")]
-    public bool NativeItemSpawning { get; set; } = false;
-
-    [LocalizedSettingPropertyGroup("Inventory")]
-    [LocalizedSettingPropertyInteger("AddMoneyThreshhold", 0, 1000000000)]
-    public int AddMoneyThreshhold { get; set; } = 0;
-
-    [LocalizedSettingPropertyGroup("Inventory")]
-    [LocalizedSettingPropertyInteger("AddMoney_count", 0, 1000000000)]
-    public int AddMoney_count { get; set; } = 0;
 
     [LocalizedSettingPropertyGroup("Party", GroupOrder = 9)]
     [LocalizedSettingPropertyInteger("ExtraPartyMemberSize", 0, 10000)]
@@ -860,4 +844,26 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
 
 
 
+    [LocalizedSettingPropertyGroup("NavalDLC", GroupOrder = 26)]
+    [LocalizedSettingPropertyFloatingInteger("NavalCampaignSpeedMultiplier", 0.1f, 10f)] public float NavalCampaignSpeedMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyFloatingInteger("NavalOarForceMultiplier", 0.1f, 10f)] public float NavalOarForceMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyFloatingInteger("NavalSailForceMultiplier", 0.1f, 10f)] public float NavalSailForceMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyFloatingInteger("NavalCrewCapacityMultiplier", 0.1f, 10f)] public float NavalCrewCapacityMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyFloatingInteger("NavalShipCombatFactorMultiplier", 0.1f, 10f)] public float NavalShipCombatFactorMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyInteger("NavalAdditionalAmmo", 0, 10000)] public int NavalAdditionalAmmo { get; set; } = 0;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyPercent("NavalSeaAttritionPercentage")] public float NavalSeaAttritionPercentage { get; set; } = 100f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyPercent("NavalBattleShipDamagePercentage")] public float NavalBattleShipDamagePercentage { get; set; } = 100f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyPercent("NavalStormDamagePercentage")] public float NavalStormDamagePercentage { get; set; } = 100f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyFloatingInteger("NavalStormFrequencyMultiplier", 0f, 10f)] public float NavalStormFrequencyMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyFloatingInteger("NavalStormStrengthMultiplier", 0f, 10f)] public float NavalStormStrengthMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyFloatingInteger("NavalShipPurchaseCostMultiplier", 0f, 10f)] public float NavalShipPurchaseCostMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyFloatingInteger("NavalShipRepairCostMultiplier", 0f, 10f)] public float NavalShipRepairCostMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyFloatingInteger("NavalShipUpgradeCostMultiplier", 0f, 10f)] public float NavalShipUpgradeCostMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyFloatingInteger("NavalDeploymentLimitMultiplier", 0.1f, 10f)] public float NavalDeploymentLimitMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyFloatingInteger("NavalBattleRewardMultiplier", 0f, 100f)] public float NavalBattleRewardMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyPercent("NavalFleetMinimumTroopPercentage")] public float NavalFleetMinimumTroopPercentage { get; set; } = 100f;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyText("NavalShipId")] public string NavalShipId { get; set; } = string.Empty;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyButton("NavalGrantShip", "NavalGrantShip_Button")] public Action NavalGrantShip => () => NavalDlcCompatibility.GrantShip(NavalShipId);
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyText("NavalFigureheadId")] public string NavalFigureheadId { get; set; } = string.Empty;
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyButton("NavalUnlockFigurehead", "NavalUnlockFigurehead_Button")] public Action NavalUnlockFigurehead => () => NavalDlcCompatibility.UnlockFigurehead(NavalFigureheadId);
 }

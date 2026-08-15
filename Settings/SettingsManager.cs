@@ -1030,6 +1030,24 @@ public static class SettingsManager
     public static CheatValue<float> StrategyAttributeRateOther => 
         GetValue(s => s.StrategyAttributeRateOther, s => s.StrategyAttributeRateOther, 0f);
 
+    public static CheatValue<float> NavalCampaignSpeedMultiplier => GetValue(s => s.NavalCampaignSpeedMultiplier, s => s.NavalCampaignSpeedMultiplier, 1f);
+    public static CheatValue<float> NavalOarForceMultiplier => GetValue(s => s.NavalOarForceMultiplier, s => s.NavalOarForceMultiplier, 1f);
+    public static CheatValue<float> NavalSailForceMultiplier => GetValue(s => s.NavalSailForceMultiplier, s => s.NavalSailForceMultiplier, 1f);
+    public static CheatValue<float> NavalCrewCapacityMultiplier => GetValue(s => s.NavalCrewCapacityMultiplier, s => s.NavalCrewCapacityMultiplier, 1f);
+    public static CheatValue<float> NavalShipCombatFactorMultiplier => GetValue(s => s.NavalShipCombatFactorMultiplier, s => s.NavalShipCombatFactorMultiplier, 1f);
+    public static CheatValue<int> NavalAdditionalAmmo => GetValue(s => s.NavalAdditionalAmmo, s => s.NavalAdditionalAmmo, 0);
+    public static CheatValue<float> NavalSeaAttritionPercentage => GetValue(s => s.NavalSeaAttritionPercentage, s => s.NavalSeaAttritionPercentage, 100f);
+    public static CheatValue<float> NavalBattleShipDamagePercentage => GetValue(s => s.NavalBattleShipDamagePercentage, s => s.NavalBattleShipDamagePercentage, 100f);
+    public static CheatValue<float> NavalStormDamagePercentage => GetValue(s => s.NavalStormDamagePercentage, s => s.NavalStormDamagePercentage, 100f);
+    public static CheatValue<float> NavalStormFrequencyMultiplier => GetValue(s => s.NavalStormFrequencyMultiplier, s => s.NavalStormFrequencyMultiplier, 1f);
+    public static CheatValue<float> NavalStormStrengthMultiplier => GetValue(s => s.NavalStormStrengthMultiplier, s => s.NavalStormStrengthMultiplier, 1f);
+    public static CheatValue<float> NavalShipPurchaseCostMultiplier => GetValue(s => s.NavalShipPurchaseCostMultiplier, s => s.NavalShipPurchaseCostMultiplier, 1f);
+    public static CheatValue<float> NavalShipRepairCostMultiplier => GetValue(s => s.NavalShipRepairCostMultiplier, s => s.NavalShipRepairCostMultiplier, 1f);
+    public static CheatValue<float> NavalShipUpgradeCostMultiplier => GetValue(s => s.NavalShipUpgradeCostMultiplier, s => s.NavalShipUpgradeCostMultiplier, 1f);
+    public static CheatValue<float> NavalDeploymentLimitMultiplier => GetValue(s => s.NavalDeploymentLimitMultiplier, s => s.NavalDeploymentLimitMultiplier, 1f);
+    public static CheatValue<float> NavalBattleRewardMultiplier => GetValue(s => s.NavalBattleRewardMultiplier, s => s.NavalBattleRewardMultiplier, 1f);
+    public static CheatValue<float> NavalFleetMinimumTroopPercentage => GetValue(s => s.NavalFleetMinimumTroopPercentage, s => s.NavalFleetMinimumTroopPercentage, 100f);
+
     public static CheatValue<bool> TestMode => 
         GetValue(s => s.TestMode, s => s.TestMode);
 }

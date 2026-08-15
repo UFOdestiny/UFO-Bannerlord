@@ -59,7 +59,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ModName" xml:space="preserve">
-    <value>UFO's Mod</value>
+    <value>UFO's Cheat</value>
+  </data>
+  <data name="Common_GroupName" xml:space="preserve">
+    <value>Funciones comunes</value>
   </data>
   <data name="Combat_Player_GroupName" xml:space="preserve">
     <value>Combate - Jugador</value>
@@ -1456,4 +1459,5 @@ Aún puedes jugar, pero la mayoría de los trucos no funcionarán.
   <data name="Enum_Setting_Language_Japanese" xml:space="preserve">
     <value>Japonés</value>
   </data>
+  <data name="NavalDLC_GroupName" xml:space="preserve"><value>DLC naval</value></data>
 </root>

@@ -66,6 +66,7 @@ internal class SubModule : MBSubModuleBase
         //UNPATCH(patcher);
 
         var failedPatches = PatchBootstrapper.Apply(patcher, typeof(SubModule).Assembly);
+        NavalDlcCompatibility.Apply(patcher);
         PatchesApplied = true;
         if (failedPatches.Any())
             InformationManager.ShowInquiry(new InquiryData(L10N.GetText("ModFailedLoadWarningTitle"), L10N.GetTextFormat("ModFailedLoadWarningMessage", string.Join(Environment.NewLine, failedPatches)), true, false, L10N.GetText("ModWarningMessageConfirm"), null, null, null));
