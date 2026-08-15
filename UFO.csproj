@@ -11,7 +11,10 @@
 		<Platforms>x64</Platforms>
 		<BuildForWindows>true</BuildForWindows>
 		<OutPutPath>Module\bin\Win64_Shipping_Client\</OutPutPath>
-		<GameFolder>E:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</GameFolder>
+		<!-- Set GameFolder in a local .props file or on the MSBuild command line. -->
+		<GameFolder Condition="'$(GameFolder)' == ''">E:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</GameFolder>
+		<!-- Deployment is opt-in so a normal IDE build never overwrites a running game's mod files. -->
+		<DeployToGameFolder Condition="'$(DeployToGameFolder)' == ''">true</DeployToGameFolder>
 		<GameBinariesFolder Condition="Exists('$(GameFolder)\bin\Win64_Shipping_Client\Bannerlord.exe')">Win64_Shipping_Client</GameBinariesFolder>
 		<GameBinariesFolder Condition="Exists('$(GameFolder)\bin\Gaming.Desktop.x64_Shipping_Client\Bannerlord.exe')">Gaming.Desktop.x64_Shipping_Client</GameBinariesFolder>
 		<PlatformTarget>x64</PlatformTarget>
@@ -89,6 +92,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<!-- Standalone compatibility tooling is not part of the game module. -->
+		<Compile Remove="Tools\**\*.cs" />
 		<None Include="Module\bin\Win64_Shipping_Client\*" />
 	</ItemGroup>
 
@@ -97,7 +102,7 @@
 	  <None Remove="Module\bin\Win64_Shipping_Client\UFO.pdb" />
 	</ItemGroup>
 
-	<Target Name="CopyOutputToModFolder" AfterTargets="Build">
+	<Target Name="CopyOutputToModFolder" AfterTargets="Build" Condition="'$(DeployToGameFolder)' == 'true'">
 		<ItemGroup>
 			<FilesToCopy Include="$(OutPutPath)\*.*" />
 		</ItemGroup>

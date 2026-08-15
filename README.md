@@ -1,4 +1,33 @@
-# UFO's Cheat Mods Bundle For Bannerlord [Beta 1.3.8]
+# UFO's Cheat Mods Bundle For Bannerlord [v1.4.8]
+
+The project is compiled and its module dependencies are declared for Bannerlord v1.4.8.
+
+## Project structure
+
+- `Bootstrap/`: Bannerlord module lifecycle and game-starter configuration.
+- `Behaviors/`: campaign behaviors.
+- `Patches/`: Harmony patches grouped by campaign, combat, characters, progression, inventory, smithing, and UI.
+- `Patching/`: patch discovery and registration.
+- `Settings/`, `Localization/`, `Diagnostics/`: configuration, translations, and failure reporting.
+- `Extensions/`, `Infrastructure/`, `Models/`: shared game helpers and model replacements.
+- `Module/ModuleData/`: game content grouped as ranged ammunition, crafted items, crafting pieces, templates, weapon descriptions, and language resources.
+
+## Harmony compatibility audit
+
+`Tools/HarmonyApiAudit` reads the compiled module and the installed game DLL metadata without starting Bannerlord. It verifies every declared Harmony target and the parameter names used for Harmony binding.
+
+```powershell
+dotnet restore Tools/HarmonyApiAudit/HarmonyApiAudit.csproj --configfile Tools/HarmonyApiAudit/NuGet.Config
+dotnet run --project Tools/HarmonyApiAudit/HarmonyApiAudit.csproj -- Module/bin/Win64_Shipping_Client/UFO.dll "E:\SteamLibrary\steamapps\common\Mount & Blade II Bannerlord\bin\Win64_Shipping_Client"
+```
+
+## ModuleData audit
+
+`Tools/ModuleDataAudit/Validate-ModuleData.ps1` validates XML syntax, `SubModule.xml` registrations, custom IDs, Native crafting references, and language file registrations against the installed game.
+
+```powershell
+./Tools/ModuleDataAudit/Validate-ModuleData.ps1 -GameRoot "E:\SteamLibrary\steamapps\common\Mount & Blade II Bannerlord"
+```
 
 My original goal was to learn how to make mods. It just so happened that the 'crush through' feature I wanted stopped working, so I decompiled it and combined it with several well-known mods. I noticed that many people were also sad about some wanted features no longer working, so I decided to release this mod directly. 
 

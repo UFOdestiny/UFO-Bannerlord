@@ -28,6 +28,9 @@ x86/
 [Aa][Rr][Mm]64/
 bld/
 [Bb]in/
+!Module/bin/
+!Module/bin/Win64_Shipping_Client/
+!Module/bin/Win64_Shipping_Client/*.resx
 [Oo]bj/
 [Oo]ut/
 [Ll]og/

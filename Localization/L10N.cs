@@ -1,7 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using System.Xml.Linq;
+using UFO.Localization;
 using UFO.Setting;
 
 
@@ -11,7 +12,7 @@ public static class L10N
     {
         public const string Global = "Global";
 
-        public const string ModName = "ModName";
+        public const string ModName = "UFO's Cheat";
 
         public const string CombatPlayerGroupName = "Combat_Player";
 
@@ -50,31 +51,21 @@ public static class L10N
         public const string WorkshopsGroupName = "Workshops";
     }
 
-    private static Dictionary<string, string> Values;
+    private static readonly Dictionary<string, string> Values = new Dictionary<string, string>(StringComparer.Ordinal);
 
     public static void LoadLanguage()
     {
-        string LangFile = EnumExtensions.ToLanguage(SettingsManager.LanguageSetting.Value);
-        Values = new Dictionary<string, string>();
-        string uri = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), LangFile);
-        XDocument xDocument = XDocument.Load(uri);
-        XElement xElement = xDocument.Element("root");
-        IEnumerable<XElement> enumerable = xElement.Descendants("data");
-        foreach (XElement item in enumerable)
-        {
-            string value = item.Attribute("name").Value;
-            string value2 = item.Element("value").Value;
-            if (!string.IsNullOrEmpty(value) && !string.IsNullOrEmpty(value2))
-            {
-                Values.Add(value, value2);
-            }
-        }
+        Values.Clear();
+        var directory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        LocalizationResourceLoader.Overlay(Values, directory, "English.resx", required: true);
+        string requestedLanguage = EnumExtensions.ToLanguage(SettingsManager.LanguageSetting.Value);
+        if (!string.Equals(requestedLanguage, "English.resx", StringComparison.OrdinalIgnoreCase))
+            LocalizationResourceLoader.Overlay(Values, directory, requestedLanguage, required: false);
     }
 
     public static string GetText(string key)
     {
-        string value;
-        return Values.TryGetValue(key, out value) ? value : key;
+        return Values.TryGetValue(key, out string value) ? value : key;
     }
 
     public static string GetTextFormat(string key, params object[] formatValues)
