@@ -851,7 +851,19 @@ public class BannerlordCheatsGlobalSettings : AttributeGlobalSettings<Bannerlord
     [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyFloatingInteger("NavalBattleRewardMultiplier", 0f, 100f)] public float NavalBattleRewardMultiplier { get; set; } = 1f;
     [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyPercent("NavalFleetMinimumTroopPercentage")] public float NavalFleetMinimumTroopPercentage { get; set; } = 100f;
     [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyText("NavalShipId")] public string NavalShipId { get; set; } = string.Empty;
-    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyButton("NavalGrantShip", "NavalGrantShip_Button")] public Action NavalGrantShip => () => NavalDlcCompatibility.GrantShip(NavalShipId);
+    [LocalizedSettingPropertyGroup("NavalDLC")]
+    [LocalizedSettingPropertyButton("NavalGrantShip", "NavalGrantShip_Button")]
+    public Action NavalGrantShip
+    {
+        get => () => NavalDlcCompatibility.GrantShip(NavalShipId);
+        set { }
+    }
     [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyText("NavalFigureheadId")] public string NavalFigureheadId { get; set; } = string.Empty;
-    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyButton("NavalUnlockFigurehead", "NavalUnlockFigurehead_Button")] public Action NavalUnlockFigurehead => () => NavalDlcCompatibility.UnlockFigurehead(NavalFigureheadId);
+    [LocalizedSettingPropertyGroup("NavalDLC")]
+    [LocalizedSettingPropertyButton("NavalUnlockFigurehead", "NavalUnlockFigurehead_Button")]
+    public Action NavalUnlockFigurehead
+    {
+        get => () => NavalDlcCompatibility.UnlockFigurehead(NavalFigureheadId);
+        set { }
+    }
 }
