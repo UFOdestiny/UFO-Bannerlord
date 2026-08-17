@@ -39,5 +39,12 @@
     <string id="str_weapon_usage.LSTwoHandedPolearm_Bracing" text="架矛" />
     <string id="str_weapon_usage.LSTwoHandedPolearm_Couchable" text="骑枪" />
 
+    <string id="ufoJavThrow" text="投掷" />
+    <string id="ufoJavOneHanded" text="单手" />
+    <string id="ufoLsOneHanded" text="单手" />
+    <string id="ufoLsTwoHanded" text="双手" />
+    <string id="ufoLsBrace" text="架矛" />
+    <string id="ufoLsCouch" text="骑枪" />
+
   </strings>
 </base> 

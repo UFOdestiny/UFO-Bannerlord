@@ -1470,6 +1470,4 @@
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Scales AiDefendWithShieldDecisionChanceValue for your main party's AI melee troops. 1.000 is vanilla.</value></data>
   <data name="RecruitExileClans_Name" xml:space="preserve"><value>Recruit exiled clans</value></data>
   <data name="RecruitExileClans_Desc" xml:space="preserve"><value>Allow inviting unaffiliated, non-mercenary clan leaders to join the player's kingdom in conversation. Enabled by default.</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>Base weapon inaccuracy</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>Scales WeaponInaccuracy for bows and crossbows in the player main party. 1.000 is vanilla; lower values are more accurate.</value></data>
 </root>

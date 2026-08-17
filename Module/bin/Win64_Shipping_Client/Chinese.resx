@@ -1472,6 +1472,4 @@
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>调整主队 AI 近战兵的 AiDefendWithShieldDecisionChanceValue。1.000 为原版数值。</value></data>
   <data name="RecruitExileClans_Name" xml:space="preserve"><value>招募流亡家族</value></data>
   <data name="RecruitExileClans_Desc" xml:space="preserve"><value>允许在对话中邀请未加入王国、非雇佣兵的家族领袖加入玩家所属王国。默认开启。</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>基础武器散布</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>调整玩家主队弓弩手的 WeaponInaccuracy。1.000 为原版；更低的值更精准。</value></data>
 </root>

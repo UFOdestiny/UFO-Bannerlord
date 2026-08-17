@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string id="str_weapon_usage.Javelin_des" text="{=ufoJavThrow}Thrown" />
+  <string id="str_weapon_usage.Javelin_des2" text="{=ufoJavOneHanded}One Handed" />
+  <string id="str_weapon_usage.LSOneHandedPolearm" text="{=ufoLsOneHanded}One Handed" />
+  <string id="str_weapon_usage.LSTwoHandedPolearm" text="{=ufoLsTwoHanded}Two Handed" />
+  <string id="str_weapon_usage.LSTwoHandedPolearm_Bracing" text="{=ufoLsBrace}Spear Brace" />
+  <string id="str_weapon_usage.LSTwoHandedPolearm_Couchable" text="{=ufoLsCouch}Couch Lance" />
+  <!-- Crafted weapons can fall back to these native usage identifiers. -->
+  <string id="str_weapon_usage.TwoHandedPolearm" text="{=ufoLsTwoHanded}Two Handed" />
+  <string id="str_weapon_usage.TwoHandedPolearm_Bracing" text="{=ufoLsBrace}Spear Brace" />
+</strings>
