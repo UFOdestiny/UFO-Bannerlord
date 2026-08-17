@@ -1504,4 +1504,6 @@ Aún puedes jugar, pero la mayoría de los trucos no funcionarán.
   <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>Ajusta AIParryOnDecideAbility de las tropas cuerpo a cuerpo de IA de tu grupo. 1.000 es nativo.</value></data>
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>Decisión de defensa con escudo de IA</value></data>
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Ajusta AiDefendWithShieldDecisionChanceValue de las tropas cuerpo a cuerpo de IA de tu grupo. 1.000 es nativo.</value></data>
+  <data name="RecruitExileClans_Name" xml:space="preserve"><value>Reclutar clanes exiliados</value></data>
+  <data name="RecruitExileClans_Desc" xml:space="preserve"><value>Permite invitar en conversación a líderes de clanes sin reino y no mercenarios para unirse al reino del jugador. Activado por defecto.</value></data>
 </root>

@@ -216,6 +216,8 @@ public static class SettingsManager
 
         public const bool NoCrimeRatingForCrimes = false;
 
+        public const bool RecruitExileClans = true;
+
         public const float DecisionOverrideInfluenceCostPercentage = 100f;
 
         public const float ExperienceMultiplier = 1f;
@@ -676,6 +678,9 @@ public static class SettingsManager
 
     public static CheatValue<bool> NoCrimeRatingForCrimes => 
         GetValue(s => s.NoCrimeRatingForCrimes, s => s.NoCrimeRatingForCrimes);
+
+    public static CheatValue<bool> RecruitExileClans =>
+        GetValue(s => s.RecruitExileClans, s => s.RecruitExileClans, true);
 
     public static CheatValue<float> DecisionOverrideInfluenceCostPercentage => 
         GetValue(s => s.DecisionOverrideInfluenceCostPercentage, s => s.DecisionOverrideInfluenceCostPercentage, 100f);

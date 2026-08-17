@@ -1502,4 +1502,6 @@
   <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>Ajusta AIParryOnDecideAbility das tropas corpo a corpo de IA do seu grupo. 1.000 é nativo.</value></data>
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>Decisão de defesa com escudo da IA</value></data>
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Ajusta AiDefendWithShieldDecisionChanceValue das tropas corpo a corpo de IA do seu grupo. 1.000 é nativo.</value></data>
+  <data name="RecruitExileClans_Name" xml:space="preserve"><value>Recrutar clãs exilados</value></data>
+  <data name="RecruitExileClans_Desc" xml:space="preserve"><value>Permite convidar em conversa líderes de clãs sem reino e não mercenários para entrar no reino do jogador. Ativado por padrão.</value></data>
 </root>

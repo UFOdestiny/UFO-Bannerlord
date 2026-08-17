@@ -1502,4 +1502,6 @@
   <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>Scales AIParryOnDecideAbility for your main party's AI melee troops. 1.000 is vanilla.</value></data>
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>AI shield defense decision</value></data>
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Scales AiDefendWithShieldDecisionChanceValue for your main party's AI melee troops. 1.000 is vanilla.</value></data>
+  <data name="RecruitExileClans_Name" xml:space="preserve"><value>Recruit exiled clans</value></data>
+  <data name="RecruitExileClans_Desc" xml:space="preserve"><value>Allow inviting unaffiliated, non-mercenary clan leaders to join the player's kingdom in conversation. Enabled by default.</value></data>
 </root>

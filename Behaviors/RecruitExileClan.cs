@@ -1,5 +1,6 @@
 ﻿using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.Actions;
+using UFO.Setting;
 namespace UFO.Behavior;
 
 internal class RecruitExileClan : CampaignBehaviorBase
@@ -26,6 +27,11 @@ internal class RecruitExileClan : CampaignBehaviorBase
 
     private bool checkcondition()
     {
+        if (!SettingsManager.RecruitExileClans.Value)
+        {
+            return false;
+        }
+
         Clan clan = Hero.OneToOneConversationHero.Clan;
         if (clan == null)
         {

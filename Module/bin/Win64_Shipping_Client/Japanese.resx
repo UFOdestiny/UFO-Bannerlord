@@ -1504,4 +1504,6 @@
   <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>主力部隊の AI 近接兵の AIParryOnDecideAbility を調整します。1.000 はバニラ値です。</value></data>
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>AI 盾防御判断</value></data>
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>主力部隊の AI 近接兵の AiDefendWithShieldDecisionChanceValue を調整します。1.000 はバニラ値です。</value></data>
+  <data name="RecruitExileClans_Name" xml:space="preserve"><value>流亡家族を勧誘</value></data>
+  <data name="RecruitExileClans_Desc" xml:space="preserve"><value>会話で、王国未所属かつ傭兵ではない家族の指導者をプレイヤーの王国へ招待できます。初期設定では有効です。</value></data>
 </root>

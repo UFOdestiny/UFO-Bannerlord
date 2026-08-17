@@ -375,6 +375,10 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     [LocalizedSettingPropertyBool("NoCrimeRatingForCrimes")]
     public bool NoCrimeRatingForCrimes { get; set; } = false;
 
+    [LocalizedSettingPropertyGroup("Kingdom")]
+    [LocalizedSettingPropertyBool("RecruitExileClans")]
+    public bool RecruitExileClans { get; set; } = true;
+
     [LocalizedSettingPropertyGroup("Party")]
     [LocalizedSettingPropertyPercent("DecisionOverrideInfluenceCostPercentage")]
     public float DecisionOverrideInfluenceCostPercentage { get; set; } = 100f;

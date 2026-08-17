@@ -1504,4 +1504,6 @@
   <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>Изменяет AIParryOnDecideAbility ИИ-бойцов ближнего боя вашего отряда. 1.000 — значение игры.</value></data>
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>Решение ИИ защищаться щитом</value></data>
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Изменяет AiDefendWithShieldDecisionChanceValue ИИ-бойцов ближнего боя вашего отряда. 1.000 — значение игры.</value></data>
+  <data name="RecruitExileClans_Name" xml:space="preserve"><value>Приглашать изгнанные кланы</value></data>
+  <data name="RecruitExileClans_Desc" xml:space="preserve"><value>Позволяет в разговоре приглашать лидеров кланов без королевства и не являющихся наёмниками в королевство игрока. Включено по умолчанию.</value></data>
 </root>
