@@ -1406,8 +1406,6 @@
   <data name="NavalDLC_GroupName" xml:space="preserve"><value>DLC Naval</value></data>
   <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>À distância - Grupo principal</value></data>
   <data name="RangedCadence_GroupName" xml:space="preserve"><value>À distância - Ritmo de disparo</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>Imprecisão base da arma</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>1.000 é o valor nativo. Valores menores tornam arcos e bestas mais precisos.</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>Penalidade de precisão em movimento</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>Ajusta WeaponMaxMovementAccuracyPenalty. Valores menores reduzem a imprecisão ao mover-se.</value></data>
   <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>Penalidade de mira instável</value></data>

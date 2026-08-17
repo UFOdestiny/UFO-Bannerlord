@@ -1,6 +1,5 @@
 using HarmonyLib;
 using JetBrains.Annotations;
-using SandBox.GameComponents;
 using System;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.Party;
@@ -16,36 +15,23 @@ internal static class PlayerPartyRangedAccuracy
 {
     internal static bool AppliesTo(Agent agent, WeaponComponentData weapon)
     {
-        return agent?.Origin != null
-            && agent.Origin.TryGetParty(out var party)
-            && party == MobileParty.MainParty?.Party
-            && weapon != null
-            && (weapon.WeaponClass == WeaponClass.Bow || weapon.WeaponClass == WeaponClass.Crossbow);
+        if (agent == null
+            || weapon == null
+            || (weapon.WeaponClass != WeaponClass.Bow && weapon.WeaponClass != WeaponClass.Crossbow)
+            || Mission.Current?.PlayerTeam == null
+            || agent.Team != Mission.Current.PlayerTeam)
+        {
+            return false;
+        }
+
+        // Agent.Origin is not safe to read during GetWeaponInaccuracy: the native agent can
+        // outlive its campaign origin for a frame. Use the live player roster instead.
+        CharacterObject character = agent.Character as CharacterObject;
+        return agent.IsPlayer()
+            || (character != null && PartyBase.MainParty?.MemberRoster.FindIndexOfTroop(character) >= 0);
     }
 
     internal static float Factor(float multiplier) => multiplier;
-}
-
-[HarmonyPatch(typeof(SandboxAgentStatCalculateModel), "GetWeaponInaccuracy")]
-public static class PlayerPartyRangedWeaponInaccuracy
-{
-    [UsedImplicitly]
-    [HarmonyPostfix]
-    public static void GetWeaponInaccuracy(Agent agent, MissionWeapon weapon, int weaponSkill, ref float __result)
-    {
-        try
-        {
-            if (PlayerPartyRangedAccuracy.AppliesTo(agent, weapon.CurrentUsageItem)
-                && SettingsManager.PlayerPartyRangedInaccuracyPercentage.IsChanged)
-            {
-                __result *= PlayerPartyRangedAccuracy.Factor(SettingsManager.PlayerPartyRangedInaccuracyPercentage.Value);
-            }
-        }
-        catch (Exception e)
-        {
-            SubModule.LogError(e, typeof(PlayerPartyRangedWeaponInaccuracy));
-        }
-    }
 }
 
 [HarmonyPatch(typeof(AgentStatCalculateModel), "SetAllWeaponInaccuracy")]

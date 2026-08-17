@@ -1,6 +1,7 @@
 using HarmonyLib;
 using JetBrains.Annotations;
 using System;
+using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
@@ -14,10 +15,17 @@ internal static class PlayerPartyMelee
 {
     internal static bool AppliesTo(Agent agent, WeaponComponentData weapon)
     {
-        return agent?.Origin != null
-            && agent.Origin.TryGetParty(out var party)
-            && party == MobileParty.MainParty?.Party
-            && weapon?.IsMeleeWeapon == true;
+        if (agent == null
+            || weapon?.IsMeleeWeapon != true
+            || Mission.Current?.PlayerTeam == null
+            || agent.Team != Mission.Current.PlayerTeam)
+        {
+            return false;
+        }
+
+        CharacterObject character = agent.Character as CharacterObject;
+        return agent.IsPlayer()
+            || (character != null && PartyBase.MainParty?.MemberRoster.FindIndexOfTroop(character) >= 0);
     }
 
     internal static float Apply(float value, SettingsManager.CheatValue<float> setting)

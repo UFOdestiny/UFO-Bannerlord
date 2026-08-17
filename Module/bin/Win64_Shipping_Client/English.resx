@@ -1428,8 +1428,6 @@
   <data name="NavalDLCIdentifierRequired" xml:space="preserve"><value>Enter at least one Naval DLC identifier first.</value></data><data name="NavalDLCNotInstalled" xml:space="preserve"><value>Naval DLC is not installed or not loaded.</value></data>
   <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>Ranged - Player Main Party</value></data>
   <data name="RangedCadence_GroupName" xml:space="preserve"><value>Ranged - Firing Cadence</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>Base weapon inaccuracy</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>1.000 is vanilla. Lower values make bows and crossbows more accurate.</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>Movement accuracy penalty</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>Scales WeaponMaxMovementAccuracyPenalty. Lower values reduce inaccuracy while moving.</value></data>
   <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>Unsteady aim penalty</value></data>

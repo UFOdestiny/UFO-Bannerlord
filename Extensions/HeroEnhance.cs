@@ -71,15 +71,25 @@ namespace UFO.Extension
 
         public static float CombatEnhanceRate(this Hero hero)
         {
-            if (hero == null)
+            if (hero == null || Campaign.Current == null)
             {
                 return 0f;
             }
-            if (hero == Hero.MainHero)
+
+            // Story Mode registers hero objects before Hero.MainHero and Clan.PlayerClan exist.
+            // Do not access those static properties until the player party has been created.
+            if (hero.CharacterObject?.IsPlayerCharacter == true)
             {
                 return SettingsManager.CombatAttributeRatePlayer.Value;
             }
-            if (hero.Clan == Clan.PlayerClan)
+
+            Clan playerClan = Campaign.Current.MainParty?.ActualClan;
+            if (playerClan == null)
+            {
+                return 0f;
+            }
+
+            if (hero.Clan == playerClan)
             {
                 return SettingsManager.CombatAttributeRateClanMember.Value;
             }
@@ -108,15 +118,22 @@ namespace UFO.Extension
 
         public static float StrategyEnhanceRate(this Hero hero)
         {
-            if (hero == null)
+            if (hero == null || Campaign.Current == null)
             {
                 return 0f;
             }
-            if (hero == Hero.MainHero)
+            if (hero.CharacterObject?.IsPlayerCharacter == true)
             {
                 return SettingsManager.StrategyAttributeRatePlayer.Value;
             }
-            if (hero.Clan == Clan.PlayerClan)
+
+            Clan playerClan = Campaign.Current.MainParty?.ActualClan;
+            if (playerClan == null)
+            {
+                return 0f;
+            }
+
+            if (hero.Clan == playerClan)
             {
                 return SettingsManager.StrategyAttributeRateClanMember.Value;
             }
@@ -125,16 +142,18 @@ namespace UFO.Extension
 
         public static int EnhanceType(this CharacterObject character)
         {
-            Hero heroObject = character.HeroObject;
+            Hero heroObject = character?.HeroObject;
             if (heroObject == null)
             {
                 return -1;
             }
-            if (heroObject == Hero.MainHero)
+            if (heroObject.CharacterObject?.IsPlayerCharacter == true)
             {
                 return 1;
             }
-            if (heroObject.Clan == Clan.PlayerClan)
+
+            Clan playerClan = Campaign.Current?.MainParty?.ActualClan;
+            if (playerClan != null && heroObject.Clan == playerClan)
             {
                 return 0;
             }

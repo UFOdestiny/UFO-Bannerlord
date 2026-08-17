@@ -1430,8 +1430,6 @@
   <data name="NavalDLCIdentifierRequired" xml:space="preserve"><value>请先输入至少一个 Naval DLC 标识符。</value></data><data name="NavalDLCNotInstalled" xml:space="preserve"><value>未安装或未加载 Naval DLC。</value></data>
   <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>弓弩 - 玩家主队</value></data>
   <data name="RangedCadence_GroupName" xml:space="preserve"><value>弓弩 - 射击节奏</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>武器基础散布</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>1.000 为原版数值。数值越低，弓和弩越精准。</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>移动精度惩罚</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>调整 WeaponMaxMovementAccuracyPenalty。数值越低，移动时的散布惩罚越小。</value></data>
   <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>瞄准不稳惩罚</value></data>

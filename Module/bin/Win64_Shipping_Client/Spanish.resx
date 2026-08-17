@@ -1408,8 +1408,6 @@ Aún puedes jugar, pero la mayoría de los trucos no funcionarán.
   <data name="NavalDLC_GroupName" xml:space="preserve"><value>DLC naval</value></data>
   <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>A distancia - Grupo principal</value></data>
   <data name="RangedCadence_GroupName" xml:space="preserve"><value>A distancia - Ritmo de disparo</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>Imprecisión base del arma</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>1.000 es el valor nativo. Los valores menores hacen más precisos los arcos y ballestas.</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>Penalización de precisión al moverse</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>Ajusta WeaponMaxMovementAccuracyPenalty. Los valores menores reducen la imprecisión al moverse.</value></data>
   <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>Penalización por puntería inestable</value></data>

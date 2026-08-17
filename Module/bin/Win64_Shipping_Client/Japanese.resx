@@ -1408,8 +1408,6 @@
   <data name="NavalDLC_GroupName" xml:space="preserve"><value>海戦 DLC</value></data>
   <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>弓・クロスボウ - プレイヤー主力部隊</value></data>
   <data name="RangedCadence_GroupName" xml:space="preserve"><value>弓・クロスボウ - 射撃テンポ</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>武器の基本ばらつき</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>1.000 はバニラ値です。低いほど弓とクロスボウの精度が上がります。</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>移動時の精度ペナルティ</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>WeaponMaxMovementAccuracyPenalty を調整します。低いほど移動中のばらつきが減ります。</value></data>
   <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>照準不安定ペナルティ</value></data>

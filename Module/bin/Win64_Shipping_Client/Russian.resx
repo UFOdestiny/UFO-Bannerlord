@@ -1408,8 +1408,6 @@
   <data name="NavalDLC_GroupName" xml:space="preserve"><value>Морское DLC</value></data>
   <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>Дальний бой - основной отряд</value></data>
   <data name="RangedCadence_GroupName" xml:space="preserve"><value>Дальний бой - темп стрельбы</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>Базовая неточность оружия</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>1.000 — значение игры. Меньшие значения повышают точность луков и арбалетов.</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>Штраф точности при движении</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>Изменяет WeaponMaxMovementAccuracyPenalty. Меньшие значения уменьшают неточность в движении.</value></data>
   <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>Штраф нестабильного прицеливания</value></data>
