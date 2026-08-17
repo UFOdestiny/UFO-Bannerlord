@@ -1472,4 +1472,6 @@
   <data name="NavalFigureheadId_Name" xml:space="preserve"><value>Figurehead Identifier</value></data><data name="NavalFigureheadId_Desc" xml:space="preserve"><value>One or more Naval DLC figurehead identifiers, separated by spaces, commas, or semicolons.</value></data>
   <data name="NavalUnlockFigurehead_Name" xml:space="preserve"><value>Unlock Figurehead</value></data><data name="NavalUnlockFigurehead_Desc" xml:space="preserve"><value>Unlocks the entered figurehead identifiers.</value></data><data name="NavalUnlockFigurehead_Button" xml:space="preserve"><value>Unlock figurehead</value></data>
   <data name="NavalDLCIdentifierRequired" xml:space="preserve"><value>Enter at least one Naval DLC identifier first.</value></data><data name="NavalDLCNotInstalled" xml:space="preserve"><value>Naval DLC is not installed or not loaded.</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>Базовая неточность оружия</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>Настраивает WeaponInaccuracy луков и арбалетов главного отряда игрока. 1.000 — ванильное значение; меньше — точнее.</value></data>
 </root>

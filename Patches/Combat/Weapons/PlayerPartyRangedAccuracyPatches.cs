@@ -46,6 +46,7 @@ public static class PlayerPartyRangedWeaponProperties
             if (!PlayerPartyRangedAccuracy.AppliesTo(agent, equippedWeaponComponent))
                 return;
 
+            agentDrivenProperties.WeaponInaccuracy = Apply(agentDrivenProperties.WeaponInaccuracy, SettingsManager.PlayerPartyRangedInaccuracyPercentage);
             agentDrivenProperties.WeaponMaxMovementAccuracyPenalty = Apply(agentDrivenProperties.WeaponMaxMovementAccuracyPenalty, SettingsManager.PlayerPartyRangedMovementPenaltyPercentage);
             agentDrivenProperties.WeaponMaxUnsteadyAccuracyPenalty = Apply(agentDrivenProperties.WeaponMaxUnsteadyAccuracyPenalty, SettingsManager.PlayerPartyRangedUnsteadyPenaltyPercentage);
             agentDrivenProperties.WeaponBestAccuracyWaitTime = Apply(agentDrivenProperties.WeaponBestAccuracyWaitTime, SettingsManager.PlayerPartyRangedBestAccuracyWaitPercentage);

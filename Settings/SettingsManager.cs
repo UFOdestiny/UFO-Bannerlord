@@ -1012,6 +1012,7 @@ public static class SettingsManager
     public static CheatValue<float> StrategyAttributeRateOther => 
         GetValue(s => s.StrategyAttributeRateOther, s => s.StrategyAttributeRateOther, 0f);
 
+    public static CheatValue<float> PlayerPartyRangedInaccuracyPercentage => GetValue(s => s.PlayerPartyRangedInaccuracyPercentage, s => s.PlayerPartyRangedInaccuracyPercentage, 1f);
     public static CheatValue<float> PlayerPartyRangedMovementPenaltyPercentage => GetValue(s => s.PlayerPartyRangedMovementPenaltyPercentage, s => s.PlayerPartyRangedMovementPenaltyPercentage, 1f);
     public static CheatValue<float> PlayerPartyRangedUnsteadyPenaltyPercentage => GetValue(s => s.PlayerPartyRangedUnsteadyPenaltyPercentage, s => s.PlayerPartyRangedUnsteadyPenaltyPercentage, 1f);
     public static CheatValue<float> PlayerPartyRangedBestAccuracyWaitPercentage => GetValue(s => s.PlayerPartyRangedBestAccuracyWaitPercentage, s => s.PlayerPartyRangedBestAccuracyWaitPercentage, 1f);

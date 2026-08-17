@@ -784,7 +784,8 @@ public class BannerlordCheatsGlobalSettings : AttributeGlobalSettings<Bannerlord
 
 
 
-    [LocalizedSettingPropertyGroup("RangedAccuracy", GroupOrder = 26)] [LocalizedSettingPropertyMultiplier("PlayerPartyRangedMovementPenaltyPercentage")] public float PlayerPartyRangedMovementPenaltyPercentage { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("RangedAccuracy", GroupOrder = 26)] [LocalizedSettingPropertyMultiplier("PlayerPartyRangedInaccuracyPercentage")] public float PlayerPartyRangedInaccuracyPercentage { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("RangedAccuracy")] [LocalizedSettingPropertyMultiplier("PlayerPartyRangedMovementPenaltyPercentage")] public float PlayerPartyRangedMovementPenaltyPercentage { get; set; } = 1f;
     [LocalizedSettingPropertyGroup("RangedAccuracy")] [LocalizedSettingPropertyMultiplier("PlayerPartyRangedUnsteadyPenaltyPercentage")] public float PlayerPartyRangedUnsteadyPenaltyPercentage { get; set; } = 1f;
     [LocalizedSettingPropertyGroup("RangedAccuracy")] [LocalizedSettingPropertyMultiplier("PlayerPartyRangedBestAccuracyWaitPercentage")] public float PlayerPartyRangedBestAccuracyWaitPercentage { get; set; } = 1f;
     [LocalizedSettingPropertyGroup("RangedAccuracy")] [LocalizedSettingPropertyMultiplier("PlayerPartyRangedRotationPenaltyPercentage")] public float PlayerPartyRangedRotationPenaltyPercentage { get; set; } = 1f;

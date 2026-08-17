@@ -13,8 +13,10 @@
 		<OutPutPath>Module\bin\Win64_Shipping_Client\</OutPutPath>
 		<!-- Set GameFolder in a local .props file or on the MSBuild command line. -->
 		<GameFolder Condition="'$(GameFolder)' == ''">E:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</GameFolder>
-		<!-- Deployment is opt-in so a normal IDE build never overwrites a running game's mod files. -->
+		<!-- Deployment is opt-in because it replaces the game's complete module bin folder. -->
 		<DeployToGameFolder Condition="'$(DeployToGameFolder)' == ''">true</DeployToGameFolder>
+		<DeployModuleFolder>$(GameFolder)\Modules\UFO</DeployModuleFolder>
+		<DeployBinFolder>$(DeployModuleFolder)\bin</DeployBinFolder>
 		<GameBinariesFolder Condition="Exists('$(GameFolder)\bin\Win64_Shipping_Client\Bannerlord.exe')">Win64_Shipping_Client</GameBinariesFolder>
 		<GameBinariesFolder Condition="Exists('$(GameFolder)\bin\Gaming.Desktop.x64_Shipping_Client\Bannerlord.exe')">Gaming.Desktop.x64_Shipping_Client</GameBinariesFolder>
 		<PlatformTarget>x64</PlatformTarget>
@@ -103,12 +105,15 @@
 	</ItemGroup>
 
 	<Target Name="CopyOutputToModFolder" AfterTargets="Build" Condition="'$(DeployToGameFolder)' == 'true'">
+		<RemoveDir Directories="$(DeployBinFolder)" />
+		<MakeDir Directories="$(DeployBinFolder)" />
+
 		<ItemGroup>
-			<FilesToCopy Include="$(OutPutPath)\*.*" />
+			<FilesToCopy Include="Module\bin\**\*.*" />
 		</ItemGroup>
 		
-		<Copy SourceFiles="@(FilesToCopy)" DestinationFolder="$(GameFolder)\Modules\UFO\bin\Win64_Shipping_Client\" SkipUnchangedFiles="true" />
-		<Copy SourceFiles="Module\SubModule.xml" DestinationFolder="$(GameFolder)\Modules\UFO\" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(FilesToCopy)" DestinationFiles="@(FilesToCopy->'$(DeployBinFolder)\%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="Module\SubModule.xml" DestinationFolder="$(DeployModuleFolder)\" SkipUnchangedFiles="true" />
 	</Target>
 
 </Project>
