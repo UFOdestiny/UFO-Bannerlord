@@ -15,7 +15,7 @@ public class BannerlordCheatsGlobalSettings : AttributeGlobalSettings<Bannerlord
 
     public override string DisplayName => "UFO's Cheat (Global)";
 
-    public override string FolderName => "UFO_G";
+    public override string FolderName => "UFO_Global";
 
     public override string FormatType => "json2";
 
