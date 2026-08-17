@@ -2,9 +2,9 @@
 using MCM.Abstractions.Base.Global;
 using SandBox.GameComponents;
 using System;
-using System.Collections.Generic;
 using System.Runtime;
 using TaleWorlds.CampaignSystem;
+using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.Library;
@@ -22,7 +22,7 @@ public class CrushThroughEveryoneLogic
     public static bool ShouldCrushThrough(Agent attackerAgent)
     {
         if ((attackerAgent.IsPlayer() && SettingsManager.PlayerAlwaysCrush.Value) || 
-            (attackerAgent.IsPlayerAlly() && SettingsManager.AllyCrush.Value) ||
+            (PlayerPartyCombatants.Contains(attackerAgent) && SettingsManager.PlayerPartyCrush.Value) ||
             (attackerAgent.IsPlayerEnemy() && SettingsManager.EnemyCrush.Value))
         {
             return true;
@@ -36,6 +36,10 @@ internal class DecideCrushedThroughPostfixPatch_c
 {
     private static void Postfix(ref bool __result, Agent attackerAgent, Agent defenderAgent, float totalAttackEnergy, Agent.UsageDirection attackDirection, StrikeType strikeType, WeaponComponentData defendItem, bool isPassiveUsage)
     {
+        if (defenderAgent == null)
+        {
+            return;
+        }
 
         if (CrushThroughEveryoneLogic.ShouldCrushThrough(attackerAgent))
         {
@@ -83,6 +87,11 @@ internal class DecideCrushedThroughPostfixPatch_s
 {
     private static void Postfix(ref bool __result, Agent attackerAgent, Agent defenderAgent, float totalAttackEnergy, Agent.UsageDirection attackDirection, StrikeType strikeType, WeaponComponentData defendItem, bool isPassiveUsage)
     {
+        if (defenderAgent == null)
+        {
+            return;
+        }
+
         if (CrushThroughEveryoneLogic.ShouldCrushThrough(attackerAgent))
         {
             __result = true;
@@ -127,104 +136,31 @@ internal class DecideCrushedThroughPostfixPatch_s
 
 
 // CUT THROUGH EVERYONE
-public class CutThroughEveryoneLogic : MissionLogic
+internal static class PlayerPartyCombatants
 {
-    private struct SliceMetadatum
+    internal static bool Contains(Agent agent)
     {
-        public HashSet<Agent.UsageDirection> SliceDirections;
+        if (agent?.Team == null || Mission.Current?.PlayerTeam == null || agent.Team != Mission.Current.PlayerTeam)
+            return false;
+
+        return agent.IsPlayer()
+            || (agent.Origin != null
+                && agent.Origin.TryGetParty(out var party)
+                && party == MobileParty.MainParty?.Party);
     }
+}
 
-    private static readonly SliceMetadatum BladeSliceMetadatum = new SliceMetadatum
-    {
-        SliceDirections = new HashSet<Agent.UsageDirection>
-        {
-            Agent.UsageDirection.AttackUp,
-            Agent.UsageDirection.AttackDown,
-            Agent.UsageDirection.AttackLeft,
-            Agent.UsageDirection.AttackRight
-        }
-    };
-
-    private static readonly SliceMetadatum PolearmSliceMetadatum = new SliceMetadatum
-    {
-        SliceDirections = new HashSet<Agent.UsageDirection>
-        {
-            Agent.UsageDirection.AttackUp,
-            Agent.UsageDirection.AttackDown,
-            Agent.UsageDirection.AttackLeft,
-            Agent.UsageDirection.AttackRight
-        }
-    };
-
-    private static readonly SliceMetadatum AxeSliceMetadatum = new SliceMetadatum
-    {
-        SliceDirections = new HashSet<Agent.UsageDirection>
-        {
-            Agent.UsageDirection.AttackLeft,
-            Agent.UsageDirection.AttackRight
-        }
-    };
-
-    private static readonly IReadOnlyDictionary<WeaponClass, SliceMetadatum> WeaponClassSliceMetadata = new Dictionary<WeaponClass, SliceMetadatum>
-    {
-        [WeaponClass.Dagger] = BladeSliceMetadatum,
-        [WeaponClass.OneHandedSword] = BladeSliceMetadatum,
-        [WeaponClass.TwoHandedSword] = BladeSliceMetadatum,
-        [WeaponClass.OneHandedAxe] = AxeSliceMetadatum,
-        [WeaponClass.TwoHandedAxe] = AxeSliceMetadatum,
-        [WeaponClass.LowGripPolearm] = PolearmSliceMetadatum,
-        [WeaponClass.OneHandedPolearm] = PolearmSliceMetadatum,
-        [WeaponClass.TwoHandedPolearm] = PolearmSliceMetadatum
-    };
-
+public static class CutThroughEveryoneLogic
+{
     public static bool ShouldCutThrough(AttackCollisionData collisionData, Agent attacker, Agent victim)
     {
-        if ((attacker.IsPlayer() && SettingsManager.SliceThroughEveryone.Value) ||
-            (attacker.IsPlayerAlly() && SettingsManager.SliceThroughEveryone_ally.Value) ||
-            (attacker.IsPlayerEnemy() && SettingsManager.SliceThroughEveryone_enemy.Value))
-        {
-            return DoPreflightChecksPass(collisionData, attacker, victim);
-        }
-        else
-        {
-            return false;
-        }
-
-
-
-        //if (!DoPreflightChecksPass(collisionData, attacker, victim))
-        //{
-        //    return false;
-        //}
-
-        //WeaponClass valueOrDefault = (attacker.WieldedWeapon.Item.Weapons?.FirstOrDefault()?.WeaponClass).GetValueOrDefault();
-
-        //if (!WeaponClassSliceMetadata.ContainsKey(valueOrDefault) || !WeaponClassSliceMetadata[valueOrDefault].SliceDirections.Contains(collisionData.AttackDirection))
-        //{
-        //    return false;
-        //}
-
-        //if (attacker.Team == victim.Team)
-        //{
-        //    return true;
-        //}
-
-        //int num = collisionData.InflictedDamage + collisionData.AbsorbedByArmor;
-
-        //return (double)((float)collisionData.InflictedDamage / (float)num) >= (double)0.01;
-
-        //return true;
-    }
-
-
-    private static bool DoPreflightChecksPass(AttackCollisionData collisionData, Agent attacker, Agent victim)
-    {
-        bool result = false;
-        if (victim != null && attacker != null && attacker.WieldedWeapon.Item != null)
-        {
-            result = true;
-        }
-        return result;
+        return attacker != null
+            && victim != null
+            && collisionData.IsColliderAgent
+            && attacker.WieldedWeapon.Item != null
+            && ((attacker.IsPlayer() && SettingsManager.SliceThroughEveryone.Value)
+                || (PlayerPartyCombatants.Contains(attacker) && SettingsManager.PlayerPartySliceThroughEveryone.Value)
+                || (attacker.IsPlayerEnemy() && SettingsManager.SliceThroughEveryone_enemy.Value));
     }
 }
 
@@ -232,8 +168,6 @@ public class CutThroughEveryoneLogic : MissionLogic
 [HarmonyPatch(typeof(MissionCombatMechanicsHelper))]
 internal static class CutThroughEveryonePatchCollision
 {
-    private static MeleeCollisionReaction meleeCollisionReaction;
-
     [HarmonyPostfix]
     [HarmonyPatch("DecideWeaponCollisionReaction")]
     private static void Postfix(
@@ -244,11 +178,9 @@ internal static class CutThroughEveryonePatchCollision
         bool isFatalHit, bool isShruggedOff, float momentumRemaining,
         ref MeleeCollisionReaction colReaction)
     {
-        meleeCollisionReaction = colReaction;
         if (CutThroughEveryoneLogic.ShouldCutThrough(collisionData, attacker, defender))
         {
             colReaction = MeleeCollisionReaction.SlicedThrough;
-            meleeCollisionReaction = MeleeCollisionReaction.SlicedThrough;
         }
     }
 }
@@ -257,8 +189,6 @@ internal static class CutThroughEveryonePatchCollision
 [HarmonyPatch(typeof(Mission))]
 internal static class CutThroughEveryonePatchMeleeHit
 {
-    private static MeleeCollisionReaction meleeCollisionReaction;
-
     [HarmonyPostfix]
     [HarmonyPatch("MeleeHitCallback")]
     private static void Postfix(ref AttackCollisionData collisionData,
@@ -267,16 +197,11 @@ internal static class CutThroughEveryonePatchMeleeHit
         Vec3 blowDir, Vec3 swingDir, ref HitParticleResultData hitParticleResultData,
         bool crushedThroughWithoutAgentCollision)
     {
-        meleeCollisionReaction = colReaction;
-        if (meleeCollisionReaction != colReaction && meleeCollisionReaction == MeleeCollisionReaction.SlicedThrough)
-        {
-            colReaction = MeleeCollisionReaction.SlicedThrough;
-        }
         int num = collisionData.InflictedDamage + collisionData.AbsorbedByArmor;
         if (num >= 1 && CutThroughEveryoneLogic.ShouldCutThrough(collisionData, attacker, victim))
         {
             float num2 = (float)collisionData.InflictedDamage / (float)num;
-            inOutMomentumRemaining = num2;
+            inOutMomentumRemaining = 1f - (1f - num2) * SettingsManager.PlayerMomentumDecayMultiplier.Value;
         }
     }
 }
@@ -287,6 +212,12 @@ internal class CalculateDefaultRemainingMomentumPatch
 {
     private static void Postfix(ref float __result, float originalMomentum, in Blow b, in AttackCollisionData collisionData, Agent attacker, Agent victim, in MissionWeapon attackerWeapon, bool isCrushThrough)
     {
+        if (attacker?.IsPlayer() == true && victim != null && collisionData.IsColliderAgent)
+        {
+            float decayMultiplier = SettingsManager.PlayerMomentumDecayMultiplier.Value;
+            __result = originalMomentum - (originalMomentum - __result) * decayMultiplier;
+        }
+
         if (isCrushThrough && attacker.IsPlayer() && SettingsManager.PlayerAlwaysCrush.Value)
         {
             __result *= 2;

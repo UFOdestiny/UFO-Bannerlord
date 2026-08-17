@@ -27,11 +27,9 @@ public static class SettingsManager
 
         // UFO's
         public const bool PlayerAlwaysCrush = false;
-        public const bool AICrush = false;
-        public const bool AllyCrush = false;
+        public const bool PlayerPartyCrush = false;
         public const bool EnemyCrush = false;
 
-        public const bool InfiniteMomentum = false;
 
         public const bool KeepDaughter = false;
 
@@ -53,7 +51,6 @@ public static class SettingsManager
 
 
         public const bool UnblockableThrust_player = false;
-        public const bool UnblockableThrust_AI = false;
         public const bool UnblockableThrust_ally = false;
         public const bool UnblockableThrust_enemy = false;
 
@@ -81,11 +78,10 @@ public static class SettingsManager
 
         public const bool OneHitKill = false;
 
-        public const bool AlwaysCrushThroughShields = false;
 
         public const bool SliceThroughEveryone = false;
-        public const bool SliceThroughEveryone_AI = false;
-        public const bool SliceThroughEveryone_ally = false;
+        public const float PlayerMomentumDecayMultiplier = 1f;
+        public const bool PlayerPartySliceThroughEveryone = false;
         public const bool SliceThroughEveryone_enemy = false;
 
         public const float HealthRegeneration = 0f;
@@ -110,11 +106,8 @@ public static class SettingsManager
 
         public const bool PartyHeroesInvincible = false;
 
-        public const float PartyDamageTakenPercentage = 100f;
-
         public const bool PartyOneHitKill = false;
 
-        public const bool PartyOnlyKnockout = false;
 
         public const bool NoRunningAway = false;
 
@@ -126,25 +119,20 @@ public static class SettingsManager
 
         public const bool NoFriendlyFire = false;
 
-        public const float CompanionDeathPercentage = 100f;
 
         public const KnockoutOrKilled FriendlyLordsKnockoutOrKilled = KnockoutOrKilled.Default;
 
-        public const float FriendlyLordCombatDeathPercentage = 100f;
 
         public const KnockoutOrKilled EnemyLordsKnockoutOrKilled = KnockoutOrKilled.Default;
 
         public const KnockoutOrKilled EnemyTroopsKnockoutOrKilled = KnockoutOrKilled.Default;
 
-        public const bool EnemyOnlyKnockout = false;
 
         public const bool EnemiesNoRunningAway = false;
 
         public const float EnemyDamagePercentage = 100f;
 
-        public const float EnemyLordCombatDeathPercentage = 100f;
 
-        public const float EnemyLordCombatDeathChanceMultiplier = 1f;
 
         public const float RenownRewardMultiplier = 1f;
 
@@ -306,7 +294,6 @@ public static class SettingsManager
 
         public const float WorkshopSellingCostMultiplier = 1f;
 
-        public const bool EveryoneBuysWorkshops = false;
 
         // Hero Enhance Settings
 
@@ -319,8 +306,6 @@ public static class SettingsManager
         public const float VigorDmgPercent = 0.02f;
 
         public const float VigorArmorAdd = 1f;
-
-        public const float VigorMountArmorAdd = 1f;
 
         public const float VigorShieldEndurancePercent = 1f;
 
@@ -403,8 +388,6 @@ public static class SettingsManager
         public const float IntelligenceGarrisonWageReducePercent = 0.05f;
 
         public const float IntelligenceWorkshopProductionPercent = 0.25f;
-
-        public const bool EnableDailyGainXp = false;
 
         public const float CombatAttributeRatePlayer = 0f;
 
@@ -499,8 +482,11 @@ public static class SettingsManager
     public static CheatValue<bool> SliceThroughEveryone => 
         GetValue(s => s.SliceThroughEveryone, s => s.SliceThroughEveryone);
 
-    public static CheatValue<bool> SliceThroughEveryone_ally => 
-        GetValue(s => s.SliceThroughEveryone_ally, s => s.SliceThroughEveryone_ally);
+    public static CheatValue<float> PlayerMomentumDecayMultiplier =>
+        GetValue(s => s.PlayerMomentumDecayMultiplier, s => s.PlayerMomentumDecayMultiplier, 1f);
+
+    public static CheatValue<bool> PlayerPartySliceThroughEveryone =>
+        GetValue(s => s.PlayerPartySliceThroughEveryone, s => s.PlayerPartySliceThroughEveryone);
 
     public static CheatValue<bool> SliceThroughEveryone_enemy => 
         GetValue(s => s.SliceThroughEveryone_enemy, s => s.SliceThroughEveryone_enemy);
@@ -537,9 +523,6 @@ public static class SettingsManager
 
     public static CheatValue<bool> PartyHeroesInvincible => 
         GetValue(s => s.PartyHeroesInvincible, s => s.PartyHeroesInvincible);
-
-    public static CheatValue<float> PartyDamageTakenPercentage => 
-        GetValue(s => s.PartyDamageTakenPercentage, s => s.PartyDamageTakenPercentage, 100f);
 
     public static CheatValue<bool> PartyOneHitKill => 
         GetValue(s => s.PartyOneHitKill, s => s.PartyOneHitKill);
@@ -869,8 +852,8 @@ public static class SettingsManager
         GetValue(s => s.PlayerAlwaysCrush, s => s.PlayerAlwaysCrush);
 
 
-    public static CheatValue<bool> AllyCrush => 
-        GetValue(s => s.AllyCrush, s => s.AllyCrush);
+    public static CheatValue<bool> PlayerPartyCrush =>
+        GetValue(s => s.PlayerPartyCrush, s => s.PlayerPartyCrush);
 
     public static CheatValue<bool> EnemyCrush => 
         GetValue(s => s.EnemyCrush, s => s.EnemyCrush);
@@ -886,9 +869,6 @@ public static class SettingsManager
 
     public static CheatValue<float> VigorArmorAdd => 
         GetValue(s => s.VigorArmorAdd, s => s.VigorArmorAdd, 1f);
-
-    public static CheatValue<float> VigorMountArmorAdd => 
-        GetValue(s => s.VigorMountArmorAdd, s => s.VigorMountArmorAdd, 1f);
 
     public static CheatValue<float> VigorShieldEndurancePercent => 
         GetValue(s => s.VigorShieldEndurancePercent, s => s.VigorShieldEndurancePercent, 1f);
@@ -1013,9 +993,6 @@ public static class SettingsManager
 
     public static CheatValue<float> IntelligenceWorkshopProductionPercent => 
         GetValue(s => s.IntelligenceWorkshopProductionPercent, s => s.IntelligenceWorkshopProductionPercent, 0.25f);
-
-    public static CheatValue<bool> EnableDailyGainXp => 
-        GetValue(s => s.EnableDailyGainXp, s => s.EnableDailyGainXp);
 
     public static CheatValue<float> CombatAttributeRatePlayer => 
         GetValue(s => s.CombatAttributeRatePlayer, s => s.CombatAttributeRatePlayer, 0f);

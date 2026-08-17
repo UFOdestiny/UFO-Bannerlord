@@ -41,7 +41,6 @@ public static class AKD_S
 
 
 
-
 [HarmonyPatch(typeof(DefaultCombatSimulationModel), "SimulateHit")]
 [HarmonyPatch(new Type[] {
     typeof(CharacterObject),
@@ -1007,27 +1006,6 @@ public static class PartyDamageMultiplier_Sandbox
 }
 
 
-public static class PartyDamageTakenPercentage
-{
-    public static void CalculateDamage(AttackInformation attackInformation, AttackCollisionData collisionData, ref float __result)
-    {
-        try
-        {
-            if (attackInformation.VictimAgentOrigin.TryGetParty(out var party) && party.IsPlayerParty() && !attackInformation.IsVictimPlayer && SettingsManager.PartyDamageTakenPercentage.IsChanged)
-            {
-                float num = SettingsManager.PartyDamageTakenPercentage.Value / 100f;
-                int num2 = (int)Math.Round(num * __result);
-                __result = num2;
-            }
-        }
-        catch (Exception e)
-        {
-            SubModule.LogError(e, typeof(PartyDamageTakenPercentage));
-        }
-    }
-}
-
-
 public static class PartyHealthRegeneration
 {
     private static int? LastSet;
@@ -1302,33 +1280,3 @@ public static class RenownRewardMultiplierTournament
         }
     }
 }
-
-//public static class SliceThroughEveryonePassive
-//{
-//    public static void DecidePassiveAttackCollisionReaction(Agent attacker, Agent defender, bool isFatalHit, ref MeleeCollisionReaction __result)
-//    {
-//        try
-//        {
-//            if (attacker.IsPlayer() && SettingsManager.SliceThroughEveryone.IsChanged)
-//            {
-//                __result = MeleeCollisionReaction.SlicedThrough;
-//            }
-//        }
-//        catch (Exception e)
-//        {
-//            SubModule.LogError(e, typeof(SliceThroughEveryonePassive));
-//        }
-//    }
-//}
-
-
-//[HarmonyPatch(typeof(SandboxAgentApplyDamageModel), "DecidePassiveAttackCollisionReaction")]
-//public static class SliceThroughEveryonePassive_Sandbox
-//{
-//    [UsedImplicitly]
-//    [HarmonyPostfix]
-//    public static void DecidePassiveAttackCollisionReaction(Agent attacker, Agent defender, bool isFatalHit, ref MeleeCollisionReaction __result)
-//    {
-//        SliceThroughEveryonePassive.DecidePassiveAttackCollisionReaction(attacker, defender, isFatalHit, ref __result);
-//    }
-//}

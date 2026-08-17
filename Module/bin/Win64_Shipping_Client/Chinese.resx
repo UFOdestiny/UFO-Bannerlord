@@ -205,12 +205,6 @@
   <data name="BanditHideoutTroopLimit_Desc" xml:space="preserve">
     <value>进攻藏身处是，可加入玩家进攻的额外部队。值0表示默认部队限制。</value>
   </data>
-  <data name="AlwaysCrushThroughShields_Name" xml:space="preserve">
-    <value>始终粉碎盾牌</value>
-  </data>
-  <data name="AlwaysCrushThroughShields_Desc" xml:space="preserve">
-    <value>你的攻击总是能粉碎敌人的盾牌。</value>
-  </data>
   <data name="ExtraPartyMemberSize_Name" xml:space="preserve">
     <value>额外部队人数</value>
   </data>
@@ -520,12 +514,6 @@
   <data name="SellingPriceMultiplier_Name" xml:space="preserve">
     <value>销售价格倍数</value>
   </data>
-  <data name="PartyDamageTakenPercentage_Desc" xml:space="preserve">
-    <value>玩家部队每次受到的攻击会造成多少伤害。100％表示完整伤害，50％表示一半伤害，0％表示玩家部队无敌。</value>
-  </data>
-  <data name="PartyDamageTakenPercentage_Name" xml:space="preserve">
-    <value>部队受伤百分比</value>
-  </data>
   <data name="DailyFoodBonus_Desc" xml:space="preserve">
     <value>玩家城堡和城镇的食物库存每日按照一定数值增长。</value>
   </data>
@@ -640,12 +628,6 @@
   <data name="WorkshopDailyExpensePercentage_Desc" xml:space="preserve">
     <value>工坊每日开支的百分比。100％表示完整费用，0％表示没有费用。</value>
   </data>
-  <data name="WorkshopUpgradeCostPercentage_Name" xml:space="preserve">
-    <value>升级费用百分比</value>
-  </data>
-  <data name="WorkshopUpgradeCostPercentage_Desc" xml:space="preserve">
-    <value>工坊升级费用的百分比。100％表示完整费用，0％表示免费升级。</value>
-  </data>
   <data name="WorkshopSellingCostMultiplier_Name" xml:space="preserve">
     <value>售价倍数</value>
   </data>
@@ -691,17 +673,17 @@
   <data name="SliceThroughEveryone_Desc" xml:space="preserve">
     <value>玩家每次攻击时都能穿透敌人。</value>
   </data>
-  <data name="SliceThroughEveryone_AI_Name" xml:space="preserve">
-    <value>AI攻击穿透</value>
+  <data name="PlayerMomentumDecayMultiplier_Name" xml:space="preserve">
+    <value>玩家动量衰减倍率</value>
   </data>
-  <data name="SliceThroughEveryone_AI_Desc" xml:space="preserve">
-    <value>AI每次攻击时都能穿透敌人。</value>
+  <data name="PlayerMomentumDecayMultiplier_Desc" xml:space="preserve">
+    <value>仅在玩家近战命中单位时生效。1.00 为游戏默认衰减；0.00 为命中单位后不衰减。不会改变墙体或场景碰撞。</value>
   </data>
-  <data name="SliceThroughEveryone_ally_Name" xml:space="preserve">
-    <value>攻击穿透: 友军</value>
+  <data name="PlayerPartySliceThroughEveryone_Name" xml:space="preserve">
+    <value>攻击穿透: 己方英雄与士兵</value>
   </data>
-  <data name="SliceThroughEveryone_ally_Desc" xml:space="preserve">
-    <value>友军每次攻击时都能穿透敌人。</value>
+  <data name="PlayerPartySliceThroughEveryone_Desc" xml:space="preserve">
+    <value>仅作用于玩家本人及玩家主队中、与玩家同一战斗阵营的英雄和士兵；所有有效攻击都会尝试穿透，不影响参战友军。</value>
   </data>
   <data name="SliceThroughEveryone_enemy_Name" xml:space="preserve">
     <value>攻击穿透: 敌人</value>
@@ -750,12 +732,6 @@
   </data>
   <data name="NoBribeToEnterKeep_Desc" xml:space="preserve">
     <value>如果启用，则无需贿赂即可进入城堡内庭。</value>
-  </data>
-  <data name="EveryoneBuysWorkshops_Name" xml:space="preserve">
-    <value>工坊不愁买家</value>
-  </data>
-  <data name="EveryoneBuysWorkshops_Desc" xml:space="preserve">
-    <value>如果启用，你始终都能为你的工坊找到买家。</value>
   </data>
   <data name="PerfectAttraction_Name" xml:space="preserve">
     <value>魅力非凡</value>
@@ -1006,12 +982,6 @@
   <data name="VigorArmorAdd_Desc" xml:space="preserve">
     <value>每点活力增加的护甲值</value>
   </data>
-  <data name="VigorMountArmorAdd_Name" xml:space="preserve">
-    <value>活力坐骑护甲值</value>
-  </data>
-  <data name="VigorMountArmorAdd_Desc" xml:space="preserve">
-    <value>每点活力增加的坐骑护甲值</value>
-  </data>
   <data name="VigorShieldEndurancePercent_Name" xml:space="preserve">
     <value>活力盾牌强化</value>
   </data>
@@ -1258,12 +1228,6 @@
   <data name="IntelligenceWorkshopProductionPercent_Desc" xml:space="preserve">
     <value>每点智力增加的工坊产量百分比(拥有者)</value>
   </data>
-  <data name="EnableDailyGainXp_Name" xml:space="preserve">
-    <value>开启英雄每天获得角色经验</value>
-  </data>
-  <data name="EnableDailyGainXp_Desc" xml:space="preserve">
-    <value>具体为等级x智力x智力x2</value>
-  </data>
   <data name="CombatAttributeRatePlayer_Name" xml:space="preserve">
     <value>战斗增强系数-玩家</value>
   </data>
@@ -1312,17 +1276,11 @@
   <data name="PlayerAlwaysCrush_Desc" xml:space="preserve">
     <value>玩家永远破格挡</value>
   </data>
-  <data name="AICrush_Name" xml:space="preserve">
-    <value>AI永远破格挡</value>
+  <data name="PlayerPartyCrush_Name" xml:space="preserve">
+    <value>永远破格挡: 己方英雄与士兵</value>
   </data>
-  <data name="AICrush_Desc" xml:space="preserve">
-    <value>AI永远破格挡</value>
-  </data>
-  <data name="AllyCrush_Name" xml:space="preserve">
-    <value>永远破格挡: 友军</value>
-  </data>
-  <data name="AllyCrush_Desc" xml:space="preserve">
-    <value>友军永远破格挡</value>
+  <data name="PlayerPartyCrush_Desc" xml:space="preserve">
+    <value>仅作用于玩家本人及玩家主队中、与玩家同一战斗阵营的英雄和士兵；不影响参战友军。</value>
   </data>
   <data name="EnemyCrush_Name" xml:space="preserve">
     <value>永远破格挡: 敌人</value>
@@ -1336,12 +1294,6 @@
   <data name="UnblockableThrust_player_Desc" xml:space="preserve">
     <value>玩家刺击无法格挡，除非使用盾防御（矛，剑的刺击）</value>
   </data>
-  <data name="UnblockableThrust_AI_Name" xml:space="preserve">
-    <value>AI刺击无法格挡</value>
-  </data>
-  <data name="UnblockableThrust_AI_Desc" xml:space="preserve">
-    <value>AI刺击无法格挡，除非使用盾防御（矛，剑的刺击）</value>
-  </data>
   <data name="UnblockableThrust_ally_Name" xml:space="preserve">
     <value>刺击无法格挡: 友军</value>
   </data>
@@ -1353,12 +1305,6 @@
   </data>
   <data name="UnblockableThrust_enemy_Desc" xml:space="preserve">
     <value>敌人刺击无法格挡，除非使用盾防御（矛，剑的刺击）</value>
-  </data>
-  <data name="InfiniteMomentum_Name" xml:space="preserve">
-    <value>玩家无限动量</value>
-  </data>
-  <data name="InfiniteMomentum_Desc" xml:space="preserve">
-    <value>玩家无限动量</value>
   </data>
   <data name="KeepDaughter_Name" xml:space="preserve">
     <value>女性结婚留在家族</value>

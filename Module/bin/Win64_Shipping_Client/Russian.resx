@@ -205,12 +205,6 @@
   <data name="BanditHideoutTroopLimit_Desc" xml:space="preserve">
     <value>Дополнительные войска, которые могут присоединиться к штурму логова бандитов. Значение 0 даёт стандартный лимит войск.</value>
   </data>
-  <data name="AlwaysCrushThroughShields_Name" xml:space="preserve">
-    <value>Всегда ломать щиты</value>
-  </data>
-  <data name="AlwaysCrushThroughShields_Desc" xml:space="preserve">
-    <value>Атаки игрока всегда могут проломить щит врага.</value>
-  </data>
   <data name="ExtraPartyMemberSize_Name" xml:space="preserve">
     <value>Дополнительный размер отряда</value>
   </data>
@@ -520,12 +514,6 @@
   <data name="SellingPriceMultiplier_Name" xml:space="preserve">
     <value>Множитель цены продажи</value>
   </data>
-  <data name="PartyDamageTakenPercentage_Desc" xml:space="preserve">
-    <value>Какой урон получает отряд игрока от каждого удара. 100% — полный урон, 50% — половина урона, 0% — полная неуязвимость отряда.</value>
-  </data>
-  <data name="PartyDamageTakenPercentage_Name" xml:space="preserve">
-    <value>Процент получаемого урона отрядом</value>
-  </data>
   <data name="DailyFoodBonus_Desc" xml:space="preserve">
     <value>Запасы еды в замках и городах игрока ежедневно увеличиваются на заданное значение.</value>
   </data>
@@ -640,12 +628,6 @@
   <data name="WorkshopDailyExpensePercentage_Desc" xml:space="preserve">
     <value>Процент ежедневных расходов мастерских. 100% — полная стоимость, 0% — без расходов.</value>
   </data>
-  <data name="WorkshopUpgradeCostPercentage_Name" xml:space="preserve">
-    <value>Процент стоимости улучшения</value>
-  </data>
-  <data name="WorkshopUpgradeCostPercentage_Desc" xml:space="preserve">
-    <value>Процент стоимости улучшения мастерских. 100% — полная стоимость, 0% — бесплатное улучшение.</value>
-  </data>
   <data name="WorkshopSellingCostMultiplier_Name" xml:space="preserve">
     <value>Множитель цены продажи мастерских</value>
   </data>
@@ -691,17 +673,17 @@
   <data name="SliceThroughEveryone_Desc" xml:space="preserve">
     <value>Каждая атака игрока может пробивать сразу нескольких врагов.</value>
   </data>
-  <data name="SliceThroughEveryone_AI_Name" xml:space="preserve">
-    <value>Проходящий удар: ИИ</value>
+  <data name="PlayerMomentumDecayMultiplier_Name" xml:space="preserve">
+    <value>Множитель потери инерции игрока</value>
   </data>
-  <data name="SliceThroughEveryone_AI_Desc" xml:space="preserve">
-    <value>Каждая атака ИИ может пробивать сразу нескольких врагов.</value>
+  <data name="PlayerMomentumDecayMultiplier_Desc" xml:space="preserve">
+    <value>Работает только при попадании игрока в бойца в ближнем бою. 1.00 использует стандартную потерю инерции игры; 0.00 сохраняет инерцию после попадания в бойца. Столкновения со стенами и сценой не меняются.</value>
   </data>
-  <data name="SliceThroughEveryone_ally_Name" xml:space="preserve">
-    <value>Проходящий удар: союзники</value>
+  <data name="PlayerPartySliceThroughEveryone_Name" xml:space="preserve">
+    <value>Проникновение атаки: свои герои и бойцы</value>
   </data>
-  <data name="SliceThroughEveryone_ally_Desc" xml:space="preserve">
-    <value>Каждая атака союзников может пробивать сразу нескольких врагов.</value>
+  <data name="PlayerPartySliceThroughEveryone_Desc" xml:space="preserve">
+    <value>Действует только на игрока и героев/бойцов основного отряда игрока в его боевой команде. Каждая допустимая атака пытается пройти насквозь; участвующие союзники исключены.</value>
   </data>
   <data name="SliceThroughEveryone_enemy_Name" xml:space="preserve">
     <value>Проходящий удар: враги</value>
@@ -750,12 +732,6 @@
   </data>
   <data name="NoBribeToEnterKeep_Desc" xml:space="preserve">
     <value>Если включено, вход во внутренний двор замка не требует взятки.</value>
-  </data>
-  <data name="EveryoneBuysWorkshops_Name" xml:space="preserve">
-    <value>Мастерские всегда найдут покупателя</value>
-  </data>
-  <data name="EveryoneBuysWorkshops_Desc" xml:space="preserve">
-    <value>Если включено, на твои мастерские всегда найдётся покупатель.</value>
   </data>
   <data name="PerfectAttraction_Name" xml:space="preserve">
     <value>Непреодолимое обаяние</value>
@@ -1006,12 +982,6 @@
   <data name="VigorArmorAdd_Desc" xml:space="preserve">
     <value>Бонус к значению брони за каждую единицу силы.</value>
   </data>
-  <data name="VigorMountArmorAdd_Name" xml:space="preserve">
-    <value>Бонус брони коня от силы</value>
-  </data>
-  <data name="VigorMountArmorAdd_Desc" xml:space="preserve">
-    <value>Бонус к броне коня за каждую единицу силы.</value>
-  </data>
   <data name="VigorShieldEndurancePercent_Name" xml:space="preserve">
     <value>Усиление щита от силы (%)</value>
   </data>
@@ -1258,12 +1228,6 @@
   <data name="IntelligenceWorkshopProductionPercent_Desc" xml:space="preserve">
     <value>Процентный бонус к производству мастерских за каждую единицу интеллекта (владелец).</value>
   </data>
-  <data name="EnableDailyGainXp_Name" xml:space="preserve">
-    <value>Включить ежедневный опыт для героев</value>
-  </data>
-  <data name="EnableDailyGainXp_Desc" xml:space="preserve">
-    <value>Формула: уровень × интеллект × интеллект × 2.</value>
-  </data>
   <data name="CombatAttributeRatePlayer_Name" xml:space="preserve">
     <value>Коэффициент боевых усилений — игрок</value>
   </data>
@@ -1312,17 +1276,11 @@
   <data name="PlayerAlwaysCrush_Desc" xml:space="preserve">
     <value>Атаки игрока всегда пробивают блок.</value>
   </data>
-  <data name="AICrush_Name" xml:space="preserve">
-    <value>Всегда пробивать блок: ИИ</value>
+  <data name="PlayerPartyCrush_Name" xml:space="preserve">
+    <value>Всегда пробивать блок: свои герои и бойцы</value>
   </data>
-  <data name="AICrush_Desc" xml:space="preserve">
-    <value>Атаки ИИ всегда пробивают блок.</value>
-  </data>
-  <data name="AllyCrush_Name" xml:space="preserve">
-    <value>Всегда пробивать блок: союзники</value>
-  </data>
-  <data name="AllyCrush_Desc" xml:space="preserve">
-    <value>Атаки союзников всегда пробивают блок.</value>
+  <data name="PlayerPartyCrush_Desc" xml:space="preserve">
+    <value>Действует только на игрока и героев/бойцов основного отряда игрока в его боевой команде. Не влияет на участвующих союзников.</value>
   </data>
   <data name="EnemyCrush_Name" xml:space="preserve">
     <value>Всегда пробивать блок: враги</value>
@@ -1336,12 +1294,6 @@
   <data name="UnblockableThrust_player_Desc" xml:space="preserve">
     <value>Уколы игрока (копья, колющие удары мечом) нельзя парировать, только блокировать щитом.</value>
   </data>
-  <data name="UnblockableThrust_AI_Name" xml:space="preserve">
-    <value>Неотбиваемый укол: ИИ</value>
-  </data>
-  <data name="UnblockableThrust_AI_Desc" xml:space="preserve">
-    <value>Уколы ИИ (копья, колющие удары мечом) нельзя парировать, только блокировать щитом.</value>
-  </data>
   <data name="UnblockableThrust_ally_Name" xml:space="preserve">
     <value>Неотбиваемый укол: союзники</value>
   </data>
@@ -1353,12 +1305,6 @@
   </data>
   <data name="UnblockableThrust_enemy_Desc" xml:space="preserve">
     <value>Уколы врагов (копья, колющие удары мечом) нельзя парировать, только блокировать щитом.</value>
-  </data>
-  <data name="InfiniteMomentum_Name" xml:space="preserve">
-    <value>Бесконечный импульс игрока</value>
-  </data>
-  <data name="InfiniteMomentum_Desc" xml:space="preserve">
-    <value>У игрока всегда максимальный импульс атаки.</value>
   </data>
   <data name="KeepDaughter_Name" xml:space="preserve">
     <value>Дочери остаются в клане</value>
@@ -1506,4 +1452,26 @@
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Изменяет AiDefendWithShieldDecisionChanceValue ИИ-бойцов ближнего боя вашего отряда. 1.000 — значение игры.</value></data>
   <data name="RecruitExileClans_Name" xml:space="preserve"><value>Приглашать изгнанные кланы</value></data>
   <data name="RecruitExileClans_Desc" xml:space="preserve"><value>Позволяет в разговоре приглашать лидеров кланов без королевства и не являющихся наёмниками в королевство игрока. Включено по умолчанию.</value></data>
+  <data name="NavalCampaignSpeedMultiplier_Name" xml:space="preserve"><value>Campaign Sailing Speed Multiplier</value></data><data name="NavalCampaignSpeedMultiplier_Desc" xml:space="preserve"><value>Multiplies the campaign sailing-speed bonus of player-owned ships.</value></data>
+  <data name="NavalOarForceMultiplier_Name" xml:space="preserve"><value>Player Ship Oar Force Multiplier</value></data><data name="NavalOarForceMultiplier_Desc" xml:space="preserve"><value>Multiplies rowing force of player-owned ships.</value></data>
+  <data name="NavalSailForceMultiplier_Name" xml:space="preserve"><value>Player Ship Sail Force Multiplier</value></data><data name="NavalSailForceMultiplier_Desc" xml:space="preserve"><value>Multiplies sail force of player-owned ships.</value></data>
+  <data name="NavalCrewCapacityMultiplier_Name" xml:space="preserve"><value>Player Ship Crew Capacity Multiplier</value></data><data name="NavalCrewCapacityMultiplier_Desc" xml:space="preserve"><value>Multiplies crew-capacity bonuses of player-owned ships.</value></data>
+  <data name="NavalShipCombatFactorMultiplier_Name" xml:space="preserve"><value>Ship Combat Factor Multiplier</value></data><data name="NavalShipCombatFactorMultiplier_Desc" xml:space="preserve"><value>Multiplies the Naval DLC ship combat factor for all sides.</value></data>
+  <data name="NavalAdditionalAmmo_Name" xml:space="preserve"><value>Player Ship Extra Ammunition</value></data><data name="NavalAdditionalAmmo_Desc" xml:space="preserve"><value>Extra ammunition granted by player-owned ships.</value></data>
+  <data name="NavalSeaAttritionPercentage_Name" xml:space="preserve"><value>Player Ship Sea Attrition</value></data><data name="NavalSeaAttritionPercentage_Desc" xml:space="preserve"><value>Hourly open-sea ship damage. 0% disables it.</value></data>
+  <data name="NavalBattleShipDamagePercentage_Name" xml:space="preserve"><value>Player Ship Battle Damage</value></data><data name="NavalBattleShipDamagePercentage_Desc" xml:space="preserve"><value>Damage received by player-owned ships in naval battles. 0% disables it.</value></data>
+  <data name="NavalStormDamagePercentage_Name" xml:space="preserve"><value>Player Ship Storm Damage</value></data><data name="NavalStormDamagePercentage_Desc" xml:space="preserve"><value>Storm damage received by player-owned ships. 0% grants storm immunity.</value></data>
+  <data name="NavalStormFrequencyMultiplier_Name" xml:space="preserve"><value>Storm Frequency Multiplier</value></data><data name="NavalStormFrequencyMultiplier_Desc" xml:space="preserve"><value>Multiplies storm-spawn chance across the campaign map. 0 disables new storms.</value></data>
+  <data name="NavalStormStrengthMultiplier_Name" xml:space="preserve"><value>Storm Strength Multiplier</value></data><data name="NavalStormStrengthMultiplier_Desc" xml:space="preserve"><value>Multiplies global storm intensity and eye strength.</value></data>
+  <data name="NavalShipPurchaseCostMultiplier_Name" xml:space="preserve"><value>Ship Purchase Cost Multiplier</value></data><data name="NavalShipPurchaseCostMultiplier_Desc" xml:space="preserve"><value>Multiplies ship purchase cost when the buyer is the player.</value></data>
+  <data name="NavalShipRepairCostMultiplier_Name" xml:space="preserve"><value>Ship Repair Cost Multiplier</value></data><data name="NavalShipRepairCostMultiplier_Desc" xml:space="preserve"><value>Multiplies repair cost for player-owned ships.</value></data>
+  <data name="NavalShipUpgradeCostMultiplier_Name" xml:space="preserve"><value>Ship Upgrade Cost Multiplier</value></data><data name="NavalShipUpgradeCostMultiplier_Desc" xml:space="preserve"><value>Multiplies upgrade-piece cost for player-owned ships.</value></data>
+  <data name="NavalDeploymentLimitMultiplier_Name" xml:space="preserve"><value>Player Naval Deployment Limit Multiplier</value></data><data name="NavalDeploymentLimitMultiplier_Desc" xml:space="preserve"><value>Multiplies the number of player ships deployable in a naval battle.</value></data>
+  <data name="NavalBattleRewardMultiplier_Name" xml:space="preserve"><value>Naval Battle Reward Multiplier</value></data><data name="NavalBattleRewardMultiplier_Desc" xml:space="preserve"><value>Multiplies player renown and influence earned from naval battles.</value></data>
+  <data name="NavalFleetMinimumTroopPercentage_Name" xml:space="preserve"><value>Fleet Dispatch Minimum Troops</value></data><data name="NavalFleetMinimumTroopPercentage_Desc" xml:space="preserve"><value>Minimum troops required to dispatch ships. 0% removes the requirement.</value></data>
+  <data name="NavalShipId_Name" xml:space="preserve"><value>Ship Identifier</value></data><data name="NavalShipId_Desc" xml:space="preserve"><value>One or more Naval DLC ship identifiers, separated by spaces, commas, or semicolons.</value></data>
+  <data name="NavalGrantShip_Name" xml:space="preserve"><value>Grant Ship</value></data><data name="NavalGrantShip_Desc" xml:space="preserve"><value>Adds the entered ship identifiers to the player fleet.</value></data><data name="NavalGrantShip_Button" xml:space="preserve"><value>Grant ship</value></data>
+  <data name="NavalFigureheadId_Name" xml:space="preserve"><value>Figurehead Identifier</value></data><data name="NavalFigureheadId_Desc" xml:space="preserve"><value>One or more Naval DLC figurehead identifiers, separated by spaces, commas, or semicolons.</value></data>
+  <data name="NavalUnlockFigurehead_Name" xml:space="preserve"><value>Unlock Figurehead</value></data><data name="NavalUnlockFigurehead_Desc" xml:space="preserve"><value>Unlocks the entered figurehead identifiers.</value></data><data name="NavalUnlockFigurehead_Button" xml:space="preserve"><value>Unlock figurehead</value></data>
+  <data name="NavalDLCIdentifierRequired" xml:space="preserve"><value>Enter at least one Naval DLC identifier first.</value></data><data name="NavalDLCNotInstalled" xml:space="preserve"><value>Naval DLC is not installed or not loaded.</value></data>
 </root>

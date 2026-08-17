@@ -205,12 +205,6 @@
   <data name="BanditHideoutTroopLimit_Desc" xml:space="preserve">
     <value>Los escondites de ataque son tropas adicionales que se pueden agregar al ataque del jugador. Un valor de 0 representa el límite de tropas predeterminado.</value>
   </data>
-  <data name="AlwaysCrushThroughShields_Name" xml:space="preserve">
-    <value>Siempre rompe el escudo</value>
-  </data>
-  <data name="AlwaysCrushThroughShields_Desc" xml:space="preserve">
-    <value>Tus ataques siempre rompen los escudos enemigos.</value>
-  </data>
   <data name="ExtraPartyMemberSize_Name" xml:space="preserve">
     <value>Número de tropas adicionales</value>
   </data>
@@ -520,12 +514,6 @@
   <data name="SellingPriceMultiplier_Name" xml:space="preserve">
     <value>precio de venta múltiplo</value>
   </data>
-  <data name="PartyDamageTakenPercentage_Desc" xml:space="preserve">
-    <value>Cuánto daño causará la unidad del jugador con cada ataque. 100% significa daño total, 50% significa la mitad del daño y 0% significa que las tropas del jugador son invencibles.</value>
-  </data>
-  <data name="PartyDamageTakenPercentage_Name" xml:space="preserve">
-    <value>Porcentaje de tropas lesionadas</value>
-  </data>
   <data name="DailyFoodBonus_Desc" xml:space="preserve">
     <value>El inventario de alimentos en el castillo y la ciudad del jugador aumenta según un valor determinado cada día.</value>
   </data>
@@ -640,12 +628,6 @@
   <data name="WorkshopDailyExpensePercentage_Desc" xml:space="preserve">
     <value>El porcentaje de los gastos diarios del taller. 100% significa tarifa completa, 0% significa sin tarifa.</value>
   </data>
-  <data name="WorkshopUpgradeCostPercentage_Name" xml:space="preserve">
-    <value>Porcentaje de tarifa de actualización</value>
-  </data>
-  <data name="WorkshopUpgradeCostPercentage_Desc" xml:space="preserve">
-    <value>Porcentaje del costo de actualización del taller. 100% significa costo total, 0% significa actualización gratuita.</value>
-  </data>
   <data name="WorkshopSellingCostMultiplier_Name" xml:space="preserve">
     <value>precio de venta múltiplo</value>
   </data>
@@ -691,17 +673,17 @@
   <data name="SliceThroughEveryone_Desc" xml:space="preserve">
     <value>Los jugadores pueden penetrar a los enemigos cada vez que atacan.</value>
   </data>
-  <data name="SliceThroughEveryone_AI_Name" xml:space="preserve">
-    <value>Penetración del ataque de IA</value>
+  <data name="PlayerMomentumDecayMultiplier_Name" xml:space="preserve">
+    <value>Multiplicador de pérdida de impulso del jugador</value>
   </data>
-  <data name="SliceThroughEveryone_AI_Desc" xml:space="preserve">
-    <value>La IA puede penetrar a los enemigos cada vez que ataca.</value>
+  <data name="PlayerMomentumDecayMultiplier_Desc" xml:space="preserve">
+    <value>Solo se aplica cuando el jugador golpea a un agente en combate cuerpo a cuerpo. 1.00 usa la pérdida predeterminada del juego; 0.00 conserva el impulso tras golpear a un agente. Las colisiones con muros y escenario no cambian.</value>
   </data>
-  <data name="SliceThroughEveryone_ally_Name" xml:space="preserve">
-    <value>Penetración del ataque: fuerzas amigas</value>
+  <data name="PlayerPartySliceThroughEveryone_Name" xml:space="preserve">
+    <value>Penetración de ataque: héroes y tropas propias</value>
   </data>
-  <data name="SliceThroughEveryone_ally_Desc" xml:space="preserve">
-    <value>Las tropas amigas pueden penetrar al enemigo cada vez que atacan.</value>
+  <data name="PlayerPartySliceThroughEveryone_Desc" xml:space="preserve">
+    <value>Solo se aplica al jugador y a héroes y tropas del grupo principal del jugador en su equipo de batalla. Todo ataque válido intenta penetrar; los aliados participantes quedan excluidos.</value>
   </data>
   <data name="SliceThroughEveryone_enemy_Name" xml:space="preserve">
     <value>Penetración de ataque: enemigo</value>
@@ -750,12 +732,6 @@
   </data>
   <data name="NoBribeToEnterKeep_Desc" xml:space="preserve">
     <value>Si está habilitado, no se requieren sobornos para ingresar al patio interior del castillo.</value>
-  </data>
-  <data name="EveryoneBuysWorkshops_Name" xml:space="preserve">
-    <value>El taller no se preocupa por los compradores.</value>
-  </data>
-  <data name="EveryoneBuysWorkshops_Desc" xml:space="preserve">
-    <value>Si está habilitado, siempre podrás encontrar un comprador para tu taller.</value>
   </data>
   <data name="PerfectAttraction_Name" xml:space="preserve">
     <value>encanto extraordinario</value>
@@ -1006,12 +982,6 @@ Aún puedes jugar, pero la mayoría de los trucos no funcionarán.
   <data name="VigorArmorAdd_Desc" xml:space="preserve">
     <value>Armadura añadida por punto de vitalidad.</value>
   </data>
-  <data name="VigorMountArmorAdd_Name" xml:space="preserve">
-    <value>Valor de armadura de montura de vitalidad</value>
-  </data>
-  <data name="VigorMountArmorAdd_Desc" xml:space="preserve">
-    <value>Aumento del valor de armadura de montura por punto de vitalidad.</value>
-  </data>
   <data name="VigorShieldEndurancePercent_Name" xml:space="preserve">
     <value>Mejora del escudo de vitalidad</value>
   </data>
@@ -1258,12 +1228,6 @@ Aún puedes jugar, pero la mayoría de los trucos no funcionarán.
   <data name="IntelligenceWorkshopProductionPercent_Desc" xml:space="preserve">
     <value>Porcentaje de aumento de la producción del taller por punto de inteligencia (propietario)</value>
   </data>
-  <data name="EnableDailyGainXp_Name" xml:space="preserve">
-    <value>Activa al héroe para ganar experiencia de personaje todos los días.</value>
-  </data>
-  <data name="EnableDailyGainXp_Desc" xml:space="preserve">
-    <value>Específicamente: Nivel x Inteligencia x Inteligencia x 2</value>
-  </data>
   <data name="CombatAttributeRatePlayer_Name" xml:space="preserve">
     <value>Jugador de coeficiente de mejora de combate.</value>
   </data>
@@ -1312,17 +1276,11 @@ Aún puedes jugar, pero la mayoría de los trucos no funcionarán.
   <data name="PlayerAlwaysCrush_Desc" xml:space="preserve">
     <value>Los jugadores siempre rompen bloques.</value>
   </data>
-  <data name="AICrush_Name" xml:space="preserve">
-    <value>La IA siempre rompe el bloque</value>
+  <data name="PlayerPartyCrush_Name" xml:space="preserve">
+    <value>Siempre rompe la guardia: héroes y tropas propias</value>
   </data>
-  <data name="AICrush_Desc" xml:space="preserve">
-    <value>La IA siempre rompe el bloque</value>
-  </data>
-  <data name="AllyCrush_Name" xml:space="preserve">
-    <value>Siempre rompe bloques: fuerzas amigas</value>
-  </data>
-  <data name="AllyCrush_Desc" xml:space="preserve">
-    <value>Las fuerzas amigas siempre rompen el bloqueo.</value>
+  <data name="PlayerPartyCrush_Desc" xml:space="preserve">
+    <value>Solo se aplica al jugador y a héroes y tropas del grupo principal del jugador en su equipo de batalla. No afecta a aliados participantes.</value>
   </data>
   <data name="EnemyCrush_Name" xml:space="preserve">
     <value>Siempre romper bloque: enemigo</value>
@@ -1336,12 +1294,6 @@ Aún puedes jugar, pero la mayoría de los trucos no funcionarán.
   <data name="UnblockableThrust_player_Desc" xml:space="preserve">
     <value>Los ataques del jugador no se pueden bloquear a menos que se use un escudo para defenderse (empujes de lanzas y espadas).</value>
   </data>
-  <data name="UnblockableThrust_AI_Name" xml:space="preserve">
-    <value>Las puñaladas de la IA no se pueden bloquear</value>
-  </data>
-  <data name="UnblockableThrust_AI_Desc" xml:space="preserve">
-    <value>Los ataques de la IA no se pueden bloquear a menos que se use un escudo para defenderse (empujes de lanzas y espadas).</value>
-  </data>
   <data name="UnblockableThrust_ally_Name" xml:space="preserve">
     <value>Puñalada imbloqueable: amigable</value>
   </data>
@@ -1353,12 +1305,6 @@ Aún puedes jugar, pero la mayoría de los trucos no funcionarán.
   </data>
   <data name="UnblockableThrust_enemy_Desc" xml:space="preserve">
     <value>Los ataques enemigos no se pueden bloquear a menos que estén protegidos (empujes de lanzas y espadas).</value>
-  </data>
-  <data name="InfiniteMomentum_Name" xml:space="preserve">
-    <value>Los jugadores tienen un impulso ilimitado.</value>
-  </data>
-  <data name="InfiniteMomentum_Desc" xml:space="preserve">
-    <value>Los jugadores tienen un impulso ilimitado.</value>
   </data>
   <data name="KeepDaughter_Name" xml:space="preserve">
     <value>Las mujeres se casan y permanecen en la familia.</value>
@@ -1506,4 +1452,26 @@ Aún puedes jugar, pero la mayoría de los trucos no funcionarán.
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Ajusta AiDefendWithShieldDecisionChanceValue de las tropas cuerpo a cuerpo de IA de tu grupo. 1.000 es nativo.</value></data>
   <data name="RecruitExileClans_Name" xml:space="preserve"><value>Reclutar clanes exiliados</value></data>
   <data name="RecruitExileClans_Desc" xml:space="preserve"><value>Permite invitar en conversación a líderes de clanes sin reino y no mercenarios para unirse al reino del jugador. Activado por defecto.</value></data>
+  <data name="NavalCampaignSpeedMultiplier_Name" xml:space="preserve"><value>Campaign Sailing Speed Multiplier</value></data><data name="NavalCampaignSpeedMultiplier_Desc" xml:space="preserve"><value>Multiplies the campaign sailing-speed bonus of player-owned ships.</value></data>
+  <data name="NavalOarForceMultiplier_Name" xml:space="preserve"><value>Player Ship Oar Force Multiplier</value></data><data name="NavalOarForceMultiplier_Desc" xml:space="preserve"><value>Multiplies rowing force of player-owned ships.</value></data>
+  <data name="NavalSailForceMultiplier_Name" xml:space="preserve"><value>Player Ship Sail Force Multiplier</value></data><data name="NavalSailForceMultiplier_Desc" xml:space="preserve"><value>Multiplies sail force of player-owned ships.</value></data>
+  <data name="NavalCrewCapacityMultiplier_Name" xml:space="preserve"><value>Player Ship Crew Capacity Multiplier</value></data><data name="NavalCrewCapacityMultiplier_Desc" xml:space="preserve"><value>Multiplies crew-capacity bonuses of player-owned ships.</value></data>
+  <data name="NavalShipCombatFactorMultiplier_Name" xml:space="preserve"><value>Ship Combat Factor Multiplier</value></data><data name="NavalShipCombatFactorMultiplier_Desc" xml:space="preserve"><value>Multiplies the Naval DLC ship combat factor for all sides.</value></data>
+  <data name="NavalAdditionalAmmo_Name" xml:space="preserve"><value>Player Ship Extra Ammunition</value></data><data name="NavalAdditionalAmmo_Desc" xml:space="preserve"><value>Extra ammunition granted by player-owned ships.</value></data>
+  <data name="NavalSeaAttritionPercentage_Name" xml:space="preserve"><value>Player Ship Sea Attrition</value></data><data name="NavalSeaAttritionPercentage_Desc" xml:space="preserve"><value>Hourly open-sea ship damage. 0% disables it.</value></data>
+  <data name="NavalBattleShipDamagePercentage_Name" xml:space="preserve"><value>Player Ship Battle Damage</value></data><data name="NavalBattleShipDamagePercentage_Desc" xml:space="preserve"><value>Damage received by player-owned ships in naval battles. 0% disables it.</value></data>
+  <data name="NavalStormDamagePercentage_Name" xml:space="preserve"><value>Player Ship Storm Damage</value></data><data name="NavalStormDamagePercentage_Desc" xml:space="preserve"><value>Storm damage received by player-owned ships. 0% grants storm immunity.</value></data>
+  <data name="NavalStormFrequencyMultiplier_Name" xml:space="preserve"><value>Storm Frequency Multiplier</value></data><data name="NavalStormFrequencyMultiplier_Desc" xml:space="preserve"><value>Multiplies storm-spawn chance across the campaign map. 0 disables new storms.</value></data>
+  <data name="NavalStormStrengthMultiplier_Name" xml:space="preserve"><value>Storm Strength Multiplier</value></data><data name="NavalStormStrengthMultiplier_Desc" xml:space="preserve"><value>Multiplies global storm intensity and eye strength.</value></data>
+  <data name="NavalShipPurchaseCostMultiplier_Name" xml:space="preserve"><value>Ship Purchase Cost Multiplier</value></data><data name="NavalShipPurchaseCostMultiplier_Desc" xml:space="preserve"><value>Multiplies ship purchase cost when the buyer is the player.</value></data>
+  <data name="NavalShipRepairCostMultiplier_Name" xml:space="preserve"><value>Ship Repair Cost Multiplier</value></data><data name="NavalShipRepairCostMultiplier_Desc" xml:space="preserve"><value>Multiplies repair cost for player-owned ships.</value></data>
+  <data name="NavalShipUpgradeCostMultiplier_Name" xml:space="preserve"><value>Ship Upgrade Cost Multiplier</value></data><data name="NavalShipUpgradeCostMultiplier_Desc" xml:space="preserve"><value>Multiplies upgrade-piece cost for player-owned ships.</value></data>
+  <data name="NavalDeploymentLimitMultiplier_Name" xml:space="preserve"><value>Player Naval Deployment Limit Multiplier</value></data><data name="NavalDeploymentLimitMultiplier_Desc" xml:space="preserve"><value>Multiplies the number of player ships deployable in a naval battle.</value></data>
+  <data name="NavalBattleRewardMultiplier_Name" xml:space="preserve"><value>Naval Battle Reward Multiplier</value></data><data name="NavalBattleRewardMultiplier_Desc" xml:space="preserve"><value>Multiplies player renown and influence earned from naval battles.</value></data>
+  <data name="NavalFleetMinimumTroopPercentage_Name" xml:space="preserve"><value>Fleet Dispatch Minimum Troops</value></data><data name="NavalFleetMinimumTroopPercentage_Desc" xml:space="preserve"><value>Minimum troops required to dispatch ships. 0% removes the requirement.</value></data>
+  <data name="NavalShipId_Name" xml:space="preserve"><value>Ship Identifier</value></data><data name="NavalShipId_Desc" xml:space="preserve"><value>One or more Naval DLC ship identifiers, separated by spaces, commas, or semicolons.</value></data>
+  <data name="NavalGrantShip_Name" xml:space="preserve"><value>Grant Ship</value></data><data name="NavalGrantShip_Desc" xml:space="preserve"><value>Adds the entered ship identifiers to the player fleet.</value></data><data name="NavalGrantShip_Button" xml:space="preserve"><value>Grant ship</value></data>
+  <data name="NavalFigureheadId_Name" xml:space="preserve"><value>Figurehead Identifier</value></data><data name="NavalFigureheadId_Desc" xml:space="preserve"><value>One or more Naval DLC figurehead identifiers, separated by spaces, commas, or semicolons.</value></data>
+  <data name="NavalUnlockFigurehead_Name" xml:space="preserve"><value>Unlock Figurehead</value></data><data name="NavalUnlockFigurehead_Desc" xml:space="preserve"><value>Unlocks the entered figurehead identifiers.</value></data><data name="NavalUnlockFigurehead_Button" xml:space="preserve"><value>Unlock figurehead</value></data>
+  <data name="NavalDLCIdentifierRequired" xml:space="preserve"><value>Enter at least one Naval DLC identifier first.</value></data><data name="NavalDLCNotInstalled" xml:space="preserve"><value>Naval DLC is not installed or not loaded.</value></data>
 </root>

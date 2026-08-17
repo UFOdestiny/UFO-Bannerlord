@@ -18,21 +18,13 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
 
 
     // UFO's
-    //[LocalizedSettingPropertyGroup("Combat_Player")]
-    //[LocalizedSettingPropertyBool("AICrush")]
-    //public bool AICrush { get; set; } = false;
+    [LocalizedSettingPropertyGroup("Combat_Party", GroupOrder = 4)]
+    [LocalizedSettingPropertyBool("PlayerPartyCrush")]
+    public bool PlayerPartyCrush { get; set; } = false;
 
-    [LocalizedSettingPropertyGroup("Combat_Player")]
-    [LocalizedSettingPropertyBool("AllyCrush")]
-    public bool AllyCrush { get; set; } = false;
-
-    [LocalizedSettingPropertyGroup("Combat_Player")]
+    [LocalizedSettingPropertyGroup("Combat_Enemies", GroupOrder = 6)]
     [LocalizedSettingPropertyBool("EnemyCrush")]
     public bool EnemyCrush { get; set; } = false;
-
-    [LocalizedSettingPropertyGroup("Combat_Player", GroupOrder = 3)]
-    [LocalizedSettingPropertyBool("InfiniteMomentum")]
-    public bool InfiniteMomentum { get; set; } = false;
 
     [LocalizedSettingPropertyGroup("Common", GroupOrder = 1)]
     [LocalizedSettingPropertyDropdown("LanguageSetting", Setting_Language.English, RequireRestart = true)]
@@ -110,23 +102,19 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     [LocalizedSettingPropertyBool("OneHitKill")]
     public bool OneHitKill { get; set; } = false;
 
-    //[LocalizedSettingPropertyGroup("Combat_Player")]
-    //[LocalizedSettingPropertyBool("AlwaysCrushThroughShields")]
-    //public bool AlwaysCrushThroughShields { get; set; } = false;
-
     [LocalizedSettingPropertyGroup("Combat_Player")]
     [LocalizedSettingPropertyBool("SliceThroughEveryone")]
     public bool SliceThroughEveryone { get; set; } = false;
 
-    //[LocalizedSettingPropertyGroup("Combat_Player")]
-    //[LocalizedSettingPropertyBool("SliceThroughEveryone_AI")]
-    //public bool SliceThroughEveryone_AI { get; set; } = false;
-
     [LocalizedSettingPropertyGroup("Combat_Player")]
-    [LocalizedSettingPropertyBool("SliceThroughEveryone_ally")]
-    public bool SliceThroughEveryone_ally { get; set; } = false;
+    [LocalizedSettingPropertyFloatingInteger("PlayerMomentumDecayMultiplier", 0f, 1f)]
+    public float PlayerMomentumDecayMultiplier { get; set; } = 1f;
 
-    [LocalizedSettingPropertyGroup("Combat_Player")]
+    [LocalizedSettingPropertyGroup("Combat_Party")]
+    [LocalizedSettingPropertyBool("PlayerPartySliceThroughEveryone")]
+    public bool PlayerPartySliceThroughEveryone { get; set; } = false;
+
+    [LocalizedSettingPropertyGroup("Combat_Enemies")]
     [LocalizedSettingPropertyBool("SliceThroughEveryone_enemy")]
     public bool SliceThroughEveryone_enemy { get; set; } = false;
 
@@ -174,8 +162,6 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     [LocalizedSettingPropertyBool("PartyHeroesInvincible")]
     public bool PartyHeroesInvincible { get; set; } = false;
 
-    public float PartyDamageTakenPercentage { get; set; } = 100f;
-
     [LocalizedSettingPropertyGroup("Combat_Party")]
     [LocalizedSettingPropertyBool("PartyOneHitKill")]
     public bool PartyOneHitKill { get; set; } = false;
@@ -205,16 +191,12 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     [LocalizedSettingPropertyBool("UnblockableThrust_player")]
     public bool UnblockableThrust_player { get; set; } = false;
 
-    //[LocalizedSettingPropertyGroup("Combat_Player")]
-    //[LocalizedSettingPropertyBool("UnblockableThrust_AI")]
-    //public bool UnblockableThrust_AI { get; set; } = false;
 
-
-    [LocalizedSettingPropertyGroup("Combat_Player")]
+    [LocalizedSettingPropertyGroup("Combat_Party")]
     [LocalizedSettingPropertyBool("UnblockableThrust_ally")]
     public bool UnblockableThrust_ally { get; set; } = false;
 
-    [LocalizedSettingPropertyGroup("Combat_Player")]
+    [LocalizedSettingPropertyGroup("Combat_Enemies")]
     [LocalizedSettingPropertyBool("UnblockableThrust_enemy")]
     public bool UnblockableThrust_enemy { get; set; } = false;
 
@@ -575,16 +557,8 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     public float WorkshopDailyExpensePercentage { get; set; } = 100f;
 
     [LocalizedSettingPropertyGroup("Workshops")]
-    [LocalizedSettingPropertyPercent("WorkshopUpgradeCostPercentage")]
-    public float WorkshopUpgradeCostPercentage { get; set; } = 100f;
-
-    [LocalizedSettingPropertyGroup("Workshops")]
     [LocalizedSettingPropertyFloatingInteger("WorkshopSellingCostMultiplier", 1f, 100f)]
     public float WorkshopSellingCostMultiplier { get; set; } = 1f;
-
-    [LocalizedSettingPropertyGroup("Workshops")]
-    [LocalizedSettingPropertyBool("EveryoneBuysWorkshops")]
-    public bool EveryoneBuysWorkshops { get; set; } = false;
 
 
 
@@ -615,10 +589,6 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     [LocalizedSettingPropertyGroup("General_Enhancement")]
     [LocalizedSettingPropertyBool("EnableEverYoung")]
     public bool EnableEverYoung { get; set; } = false;
-
-    [LocalizedSettingPropertyGroup("General_Enhancement")]
-    [LocalizedSettingPropertyBool("EnableDailyGainXp")]
-    public bool EnableDailyGainXp { get; set; } = false;
 
     [LocalizedSettingPropertyGroup("General_Enhancement")]
     [LocalizedSettingPropertyBool("TestMode")]
@@ -659,10 +629,6 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
     [LocalizedSettingPropertyGroup("Vigor_Enhancement")]
     [LocalizedSettingPropertyFloatingInteger("VigorArmorAdd", 0f, 100f)]
     public float VigorArmorAdd { get; set; } = 1f;
-
-    [LocalizedSettingPropertyGroup("Vigor_Enhancement")]
-    [LocalizedSettingPropertyFloatingInteger("VigorMountArmorAdd", 0f, 100f)]
-    public float VigorMountArmorAdd { get; set; } = 1f;
 
     [LocalizedSettingPropertyGroup("Vigor_Enhancement")]
     [LocalizedSettingPropertyFloatingInteger("VigorShieldEndurancePercent", 0f, 100f)]
