@@ -23,7 +23,7 @@ internal static class PlayerPartyRangedAccuracy
             && (weapon.WeaponClass == WeaponClass.Bow || weapon.WeaponClass == WeaponClass.Crossbow);
     }
 
-    internal static float Factor(float percentage) => percentage / 100f;
+    internal static float Factor(float multiplier) => multiplier;
 }
 
 [HarmonyPatch(typeof(SandboxAgentStatCalculateModel), "GetWeaponInaccuracy")]

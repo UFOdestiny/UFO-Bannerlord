@@ -1463,7 +1463,7 @@ Aún puedes jugar, pero la mayoría de los trucos no funcionarán.
   <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>A distancia - Grupo principal</value></data>
   <data name="RangedCadence_GroupName" xml:space="preserve"><value>A distancia - Ritmo de disparo</value></data>
   <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>Imprecisión base del arma</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>100% es el valor nativo. Los valores menores hacen más precisos los arcos y ballestas.</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>1.000 es el valor nativo. Los valores menores hacen más precisos los arcos y ballestas.</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>Penalización de precisión al moverse</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>Ajusta WeaponMaxMovementAccuracyPenalty. Los valores menores reducen la imprecisión al moverse.</value></data>
   <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>Penalización por puntería inestable</value></data>
@@ -1487,21 +1487,21 @@ Aún puedes jugar, pero la mayoría de los trucos no funcionarán.
   <data name="MeleeActions_GroupName" xml:space="preserve"><value>Cuerpo a cuerpo - Grupo principal</value></data>
   <data name="MeleeDefense_GroupName" xml:space="preserve"><value>Cuerpo a cuerpo - Defensa de IA</value></data>
   <data name="PlayerPartyMeleeSwingSpeedMultiplier_Name" xml:space="preserve"><value>Velocidad de golpe</value></data>
-  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Desc" xml:space="preserve"><value>Ajusta SwingSpeedMultiplier de las tropas cuerpo a cuerpo de tu grupo. 100% es nativo.</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Desc" xml:space="preserve"><value>Ajusta SwingSpeedMultiplier de las tropas cuerpo a cuerpo de tu grupo. 1.000 es nativo.</value></data>
   <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Name" xml:space="preserve"><value>Velocidad de preparación de estocada</value></data>
-  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Desc" xml:space="preserve"><value>Ajusta ThrustOrRangedReadySpeedMultiplier solo al usar un arma cuerpo a cuerpo. 100% es nativo.</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Desc" xml:space="preserve"><value>Ajusta ThrustOrRangedReadySpeedMultiplier solo al usar un arma cuerpo a cuerpo. 1.000 es nativo.</value></data>
   <data name="PlayerPartyMeleeHandlingMultiplier_Name" xml:space="preserve"><value>Manejo de arma</value></data>
-  <data name="PlayerPartyMeleeHandlingMultiplier_Desc" xml:space="preserve"><value>Ajusta HandlingMultiplier de las tropas cuerpo a cuerpo de tu grupo. 100% es nativo.</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Desc" xml:space="preserve"><value>Ajusta HandlingMultiplier de las tropas cuerpo a cuerpo de tu grupo. 1.000 es nativo.</value></data>
   <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Name" xml:space="preserve"><value>Velocidad de defensa secundaria</value></data>
-  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Desc" xml:space="preserve"><value>Ajusta OffhandWeaponDefendSpeedMultiplier con un arma cuerpo a cuerpo equipada. 100% es nativo.</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Desc" xml:space="preserve"><value>Ajusta OffhandWeaponDefendSpeedMultiplier con un arma cuerpo a cuerpo equipada. 1.000 es nativo.</value></data>
   <data name="PlayerPartyMeleeShieldBashStunMultiplier_Name" xml:space="preserve"><value>Duración de aturdimiento de golpe de escudo</value></data>
-  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Desc" xml:space="preserve"><value>Ajusta ShieldBashStunDurationMultiplier de las tropas cuerpo a cuerpo de tu grupo. 100% es nativo.</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Desc" xml:space="preserve"><value>Ajusta ShieldBashStunDurationMultiplier de las tropas cuerpo a cuerpo de tu grupo. 1.000 es nativo.</value></data>
   <data name="PlayerPartyMeleeKickStunMultiplier_Name" xml:space="preserve"><value>Duración de aturdimiento de patada</value></data>
-  <data name="PlayerPartyMeleeKickStunMultiplier_Desc" xml:space="preserve"><value>Ajusta KickStunDurationMultiplier de las tropas cuerpo a cuerpo de tu grupo. 100% es nativo.</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Desc" xml:space="preserve"><value>Ajusta KickStunDurationMultiplier de las tropas cuerpo a cuerpo de tu grupo. 1.000 es nativo.</value></data>
   <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Name" xml:space="preserve"><value>Decisión de bloqueo de IA</value></data>
-  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Desc" xml:space="preserve"><value>Ajusta AIBlockOnDecideAbility de las tropas cuerpo a cuerpo de IA de tu grupo. 100% es nativo.</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Desc" xml:space="preserve"><value>Ajusta AIBlockOnDecideAbility de las tropas cuerpo a cuerpo de IA de tu grupo. 1.000 es nativo.</value></data>
   <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Name" xml:space="preserve"><value>Decisión de parada de IA</value></data>
-  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>Ajusta AIParryOnDecideAbility de las tropas cuerpo a cuerpo de IA de tu grupo. 100% es nativo.</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>Ajusta AIParryOnDecideAbility de las tropas cuerpo a cuerpo de IA de tu grupo. 1.000 es nativo.</value></data>
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>Decisión de defensa con escudo de IA</value></data>
-  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Ajusta AiDefendWithShieldDecisionChanceValue de las tropas cuerpo a cuerpo de IA de tu grupo. 100% es nativo.</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Ajusta AiDefendWithShieldDecisionChanceValue de las tropas cuerpo a cuerpo de IA de tu grupo. 1.000 es nativo.</value></data>
 </root>

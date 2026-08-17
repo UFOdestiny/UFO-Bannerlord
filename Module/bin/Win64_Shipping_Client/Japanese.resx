@@ -1463,7 +1463,7 @@
   <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>弓・クロスボウ - プレイヤー主力部隊</value></data>
   <data name="RangedCadence_GroupName" xml:space="preserve"><value>弓・クロスボウ - 射撃テンポ</value></data>
   <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>武器の基本ばらつき</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>100% はバニラ値です。低いほど弓とクロスボウの精度が上がります。</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>1.000 はバニラ値です。低いほど弓とクロスボウの精度が上がります。</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>移動時の精度ペナルティ</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>WeaponMaxMovementAccuracyPenalty を調整します。低いほど移動中のばらつきが減ります。</value></data>
   <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>照準不安定ペナルティ</value></data>
@@ -1487,21 +1487,21 @@
   <data name="MeleeActions_GroupName" xml:space="preserve"><value>近接戦 - プレイヤー主力部隊</value></data>
   <data name="MeleeDefense_GroupName" xml:space="preserve"><value>近接戦 - AI 防御</value></data>
   <data name="PlayerPartyMeleeSwingSpeedMultiplier_Name" xml:space="preserve"><value>振り速度</value></data>
-  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Desc" xml:space="preserve"><value>主力部隊の近接兵の SwingSpeedMultiplier を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Desc" xml:space="preserve"><value>主力部隊の近接兵の SwingSpeedMultiplier を調整します。1.000 はバニラ値です。</value></data>
   <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Name" xml:space="preserve"><value>突き準備速度</value></data>
-  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Desc" xml:space="preserve"><value>近接武器を使う時だけ ThrustOrRangedReadySpeedMultiplier を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Desc" xml:space="preserve"><value>近接武器を使う時だけ ThrustOrRangedReadySpeedMultiplier を調整します。1.000 はバニラ値です。</value></data>
   <data name="PlayerPartyMeleeHandlingMultiplier_Name" xml:space="preserve"><value>武器操作性</value></data>
-  <data name="PlayerPartyMeleeHandlingMultiplier_Desc" xml:space="preserve"><value>主力部隊の近接兵の HandlingMultiplier を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Desc" xml:space="preserve"><value>主力部隊の近接兵の HandlingMultiplier を調整します。1.000 はバニラ値です。</value></data>
   <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Name" xml:space="preserve"><value>副手防御速度</value></data>
-  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Desc" xml:space="preserve"><value>近接武器装備中の OffhandWeaponDefendSpeedMultiplier を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Desc" xml:space="preserve"><value>近接武器装備中の OffhandWeaponDefendSpeedMultiplier を調整します。1.000 はバニラ値です。</value></data>
   <data name="PlayerPartyMeleeShieldBashStunMultiplier_Name" xml:space="preserve"><value>盾攻撃のスタン時間</value></data>
-  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Desc" xml:space="preserve"><value>主力部隊の近接兵の ShieldBashStunDurationMultiplier を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Desc" xml:space="preserve"><value>主力部隊の近接兵の ShieldBashStunDurationMultiplier を調整します。1.000 はバニラ値です。</value></data>
   <data name="PlayerPartyMeleeKickStunMultiplier_Name" xml:space="preserve"><value>蹴りのスタン時間</value></data>
-  <data name="PlayerPartyMeleeKickStunMultiplier_Desc" xml:space="preserve"><value>主力部隊の近接兵の KickStunDurationMultiplier を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Desc" xml:space="preserve"><value>主力部隊の近接兵の KickStunDurationMultiplier を調整します。1.000 はバニラ値です。</value></data>
   <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Name" xml:space="preserve"><value>AI 格挡判断</value></data>
-  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Desc" xml:space="preserve"><value>主力部隊の AI 近接兵の AIBlockOnDecideAbility を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Desc" xml:space="preserve"><value>主力部隊の AI 近接兵の AIBlockOnDecideAbility を調整します。1.000 はバニラ値です。</value></data>
   <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Name" xml:space="preserve"><value>AI パリィ判断</value></data>
-  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>主力部隊の AI 近接兵の AIParryOnDecideAbility を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>主力部隊の AI 近接兵の AIParryOnDecideAbility を調整します。1.000 はバニラ値です。</value></data>
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>AI 盾防御判断</value></data>
-  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>主力部隊の AI 近接兵の AiDefendWithShieldDecisionChanceValue を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>主力部隊の AI 近接兵の AiDefendWithShieldDecisionChanceValue を調整します。1.000 はバニラ値です。</value></data>
 </root>

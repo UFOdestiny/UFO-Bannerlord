@@ -1463,7 +1463,7 @@
   <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>Дальний бой - основной отряд</value></data>
   <data name="RangedCadence_GroupName" xml:space="preserve"><value>Дальний бой - темп стрельбы</value></data>
   <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>Базовая неточность оружия</value></data>
-  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>100% — значение игры. Меньшие значения повышают точность луков и арбалетов.</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>1.000 — значение игры. Меньшие значения повышают точность луков и арбалетов.</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>Штраф точности при движении</value></data>
   <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>Изменяет WeaponMaxMovementAccuracyPenalty. Меньшие значения уменьшают неточность в движении.</value></data>
   <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>Штраф нестабильного прицеливания</value></data>
@@ -1487,21 +1487,21 @@
   <data name="MeleeActions_GroupName" xml:space="preserve"><value>Ближний бой - основной отряд</value></data>
   <data name="MeleeDefense_GroupName" xml:space="preserve"><value>Ближний бой - защита ИИ</value></data>
   <data name="PlayerPartyMeleeSwingSpeedMultiplier_Name" xml:space="preserve"><value>Скорость взмаха</value></data>
-  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Desc" xml:space="preserve"><value>Изменяет SwingSpeedMultiplier бойцов ближнего боя вашего отряда. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Desc" xml:space="preserve"><value>Изменяет SwingSpeedMultiplier бойцов ближнего боя вашего отряда. 1.000 — значение игры.</value></data>
   <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Name" xml:space="preserve"><value>Скорость подготовки укола</value></data>
-  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Desc" xml:space="preserve"><value>Изменяет ThrustOrRangedReadySpeedMultiplier только при ближнем оружии. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Desc" xml:space="preserve"><value>Изменяет ThrustOrRangedReadySpeedMultiplier только при ближнем оружии. 1.000 — значение игры.</value></data>
   <data name="PlayerPartyMeleeHandlingMultiplier_Name" xml:space="preserve"><value>Управляемость оружия</value></data>
-  <data name="PlayerPartyMeleeHandlingMultiplier_Desc" xml:space="preserve"><value>Изменяет HandlingMultiplier бойцов ближнего боя вашего отряда. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Desc" xml:space="preserve"><value>Изменяет HandlingMultiplier бойцов ближнего боя вашего отряда. 1.000 — значение игры.</value></data>
   <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Name" xml:space="preserve"><value>Скорость защиты второй рукой</value></data>
-  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Desc" xml:space="preserve"><value>Изменяет OffhandWeaponDefendSpeedMultiplier при экипированном ближнем оружии. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Desc" xml:space="preserve"><value>Изменяет OffhandWeaponDefendSpeedMultiplier при экипированном ближнем оружии. 1.000 — значение игры.</value></data>
   <data name="PlayerPartyMeleeShieldBashStunMultiplier_Name" xml:space="preserve"><value>Длительность оглушения ударом щита</value></data>
-  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Desc" xml:space="preserve"><value>Изменяет ShieldBashStunDurationMultiplier бойцов ближнего боя вашего отряда. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Desc" xml:space="preserve"><value>Изменяет ShieldBashStunDurationMultiplier бойцов ближнего боя вашего отряда. 1.000 — значение игры.</value></data>
   <data name="PlayerPartyMeleeKickStunMultiplier_Name" xml:space="preserve"><value>Длительность оглушения ударом ногой</value></data>
-  <data name="PlayerPartyMeleeKickStunMultiplier_Desc" xml:space="preserve"><value>Изменяет KickStunDurationMultiplier бойцов ближнего боя вашего отряда. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Desc" xml:space="preserve"><value>Изменяет KickStunDurationMultiplier бойцов ближнего боя вашего отряда. 1.000 — значение игры.</value></data>
   <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Name" xml:space="preserve"><value>Решение ИИ блокировать</value></data>
-  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Desc" xml:space="preserve"><value>Изменяет AIBlockOnDecideAbility ИИ-бойцов ближнего боя вашего отряда. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Desc" xml:space="preserve"><value>Изменяет AIBlockOnDecideAbility ИИ-бойцов ближнего боя вашего отряда. 1.000 — значение игры.</value></data>
   <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Name" xml:space="preserve"><value>Решение ИИ парировать</value></data>
-  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>Изменяет AIParryOnDecideAbility ИИ-бойцов ближнего боя вашего отряда. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>Изменяет AIParryOnDecideAbility ИИ-бойцов ближнего боя вашего отряда. 1.000 — значение игры.</value></data>
   <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>Решение ИИ защищаться щитом</value></data>
-  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Изменяет AiDefendWithShieldDecisionChanceValue ИИ-бойцов ближнего боя вашего отряда. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Изменяет AiDefendWithShieldDecisionChanceValue ИИ-бойцов ближнего боя вашего отряда. 1.000 — значение игры.</value></data>
 </root>

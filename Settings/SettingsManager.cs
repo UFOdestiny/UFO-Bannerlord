@@ -1030,17 +1030,17 @@ public static class SettingsManager
     public static CheatValue<float> StrategyAttributeRateOther => 
         GetValue(s => s.StrategyAttributeRateOther, s => s.StrategyAttributeRateOther, 0f);
 
-    public static CheatValue<float> PlayerPartyRangedInaccuracyPercentage => GetValue(s => s.PlayerPartyRangedInaccuracyPercentage, s => s.PlayerPartyRangedInaccuracyPercentage, 100f);
-    public static CheatValue<float> PlayerPartyRangedMovementPenaltyPercentage => GetValue(s => s.PlayerPartyRangedMovementPenaltyPercentage, s => s.PlayerPartyRangedMovementPenaltyPercentage, 100f);
-    public static CheatValue<float> PlayerPartyRangedUnsteadyPenaltyPercentage => GetValue(s => s.PlayerPartyRangedUnsteadyPenaltyPercentage, s => s.PlayerPartyRangedUnsteadyPenaltyPercentage, 100f);
-    public static CheatValue<float> PlayerPartyRangedBestAccuracyWaitPercentage => GetValue(s => s.PlayerPartyRangedBestAccuracyWaitPercentage, s => s.PlayerPartyRangedBestAccuracyWaitPercentage, 100f);
-    public static CheatValue<float> PlayerPartyRangedRotationPenaltyPercentage => GetValue(s => s.PlayerPartyRangedRotationPenaltyPercentage, s => s.PlayerPartyRangedRotationPenaltyPercentage, 100f);
-    public static CheatValue<float> PlayerPartyRangedAccelerationPenaltyPercentage => GetValue(s => s.PlayerPartyRangedAccelerationPenaltyPercentage, s => s.PlayerPartyRangedAccelerationPenaltyPercentage, 100f);
-    public static CheatValue<float> PlayerPartyRangedAiShooterErrorPercentage => GetValue(s => s.PlayerPartyRangedAiShooterErrorPercentage, s => s.PlayerPartyRangedAiShooterErrorPercentage, 100f);
-    public static CheatValue<float> PlayerPartyRangedAiLeadErrorPercentage => GetValue(s => s.PlayerPartyRangedAiLeadErrorPercentage, s => s.PlayerPartyRangedAiLeadErrorPercentage, 100f);
-    public static CheatValue<float> PlayerPartyRangedAiHorizontalErrorPercentage => GetValue(s => s.PlayerPartyRangedAiHorizontalErrorPercentage, s => s.PlayerPartyRangedAiHorizontalErrorPercentage, 100f);
-    public static CheatValue<float> PlayerPartyRangedAiVerticalErrorPercentage => GetValue(s => s.PlayerPartyRangedAiVerticalErrorPercentage, s => s.PlayerPartyRangedAiVerticalErrorPercentage, 100f);
-    public static CheatValue<float> PlayerPartyRangedAiShootIntervalPercentage => GetValue(s => s.PlayerPartyRangedAiShootIntervalPercentage, s => s.PlayerPartyRangedAiShootIntervalPercentage, 100f);
+    public static CheatValue<float> PlayerPartyRangedInaccuracyPercentage => GetValue(s => s.PlayerPartyRangedInaccuracyPercentage, s => s.PlayerPartyRangedInaccuracyPercentage, 1f);
+    public static CheatValue<float> PlayerPartyRangedMovementPenaltyPercentage => GetValue(s => s.PlayerPartyRangedMovementPenaltyPercentage, s => s.PlayerPartyRangedMovementPenaltyPercentage, 1f);
+    public static CheatValue<float> PlayerPartyRangedUnsteadyPenaltyPercentage => GetValue(s => s.PlayerPartyRangedUnsteadyPenaltyPercentage, s => s.PlayerPartyRangedUnsteadyPenaltyPercentage, 1f);
+    public static CheatValue<float> PlayerPartyRangedBestAccuracyWaitPercentage => GetValue(s => s.PlayerPartyRangedBestAccuracyWaitPercentage, s => s.PlayerPartyRangedBestAccuracyWaitPercentage, 1f);
+    public static CheatValue<float> PlayerPartyRangedRotationPenaltyPercentage => GetValue(s => s.PlayerPartyRangedRotationPenaltyPercentage, s => s.PlayerPartyRangedRotationPenaltyPercentage, 1f);
+    public static CheatValue<float> PlayerPartyRangedAccelerationPenaltyPercentage => GetValue(s => s.PlayerPartyRangedAccelerationPenaltyPercentage, s => s.PlayerPartyRangedAccelerationPenaltyPercentage, 1f);
+    public static CheatValue<float> PlayerPartyRangedAiShooterErrorPercentage => GetValue(s => s.PlayerPartyRangedAiShooterErrorPercentage, s => s.PlayerPartyRangedAiShooterErrorPercentage, 1f);
+    public static CheatValue<float> PlayerPartyRangedAiLeadErrorPercentage => GetValue(s => s.PlayerPartyRangedAiLeadErrorPercentage, s => s.PlayerPartyRangedAiLeadErrorPercentage, 1f);
+    public static CheatValue<float> PlayerPartyRangedAiHorizontalErrorPercentage => GetValue(s => s.PlayerPartyRangedAiHorizontalErrorPercentage, s => s.PlayerPartyRangedAiHorizontalErrorPercentage, 1f);
+    public static CheatValue<float> PlayerPartyRangedAiVerticalErrorPercentage => GetValue(s => s.PlayerPartyRangedAiVerticalErrorPercentage, s => s.PlayerPartyRangedAiVerticalErrorPercentage, 1f);
+    public static CheatValue<float> PlayerPartyRangedAiShootIntervalPercentage => GetValue(s => s.PlayerPartyRangedAiShootIntervalPercentage, s => s.PlayerPartyRangedAiShootIntervalPercentage, 1f);
 
     public static CheatValue<float> PlayerPartyMeleeSwingSpeedMultiplier => GetValue(s => s.PlayerPartyMeleeSwingSpeedMultiplier, s => s.PlayerPartyMeleeSwingSpeedMultiplier, 1f);
     public static CheatValue<float> PlayerPartyMeleeThrustReadySpeedMultiplier => GetValue(s => s.PlayerPartyMeleeThrustReadySpeedMultiplier, s => s.PlayerPartyMeleeThrustReadySpeedMultiplier, 1f);
