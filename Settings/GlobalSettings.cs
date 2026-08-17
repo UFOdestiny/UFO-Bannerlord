@@ -13,26 +13,11 @@ public class BannerlordCheatsGlobalSettings : AttributeGlobalSettings<Bannerlord
 {
     public override string Id { get; } = $"UFO_v{Assembly.GetExecutingAssembly().GetName().Version.Major}_Global";
 
-    public override string DisplayName { get; }
+    public override string DisplayName => "UFO's Cheat (Global)";
 
     public override string FolderName => "UFO_G";
 
     public override string FormatType => "json2";
-
-    public BannerlordCheatsGlobalSettings()
-    {
-        string text;
-        try
-        {
-            text = L10N.GetText("ModName");
-        }
-        catch
-        {
-            text = "Cheats";
-        }
-        DisplayName = text;
-    }
-
 
     // UFO's
     [LocalizedSettingPropertyGroup("Combat_Player")]

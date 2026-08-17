@@ -14,23 +14,7 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
 
     public override string FolderName { get; } = "UFO_C";
 
-    private string DisplayNameCore { get; }
-
-    public override string DisplayName => DisplayNameCore;
-
-    public BannerlordCheatsPerCampaignSettings()
-    {
-        string text;
-        try
-        {
-            text = L10N.GetText("ModName");
-        }
-        catch
-        {
-            text = "Cheats";
-        }
-        DisplayNameCore = text;
-    }
+    public override string DisplayName => "UFO's Cheat (Local)";
 
 
     // UFO's
