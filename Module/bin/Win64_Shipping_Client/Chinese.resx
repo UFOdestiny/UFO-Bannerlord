@@ -1482,4 +1482,48 @@
   <data name="NavalFigureheadId_Name" xml:space="preserve"><value>船首像标识符</value></data><data name="NavalFigureheadId_Desc" xml:space="preserve"><value>输入一个或多个 Naval DLC 船首像标识符，以空格、逗号或分号分隔。</value></data>
   <data name="NavalUnlockFigurehead_Name" xml:space="preserve"><value>解锁船首像</value></data><data name="NavalUnlockFigurehead_Desc" xml:space="preserve"><value>解锁输入的船首像标识符。</value></data><data name="NavalUnlockFigurehead_Button" xml:space="preserve"><value>解锁船首像</value></data>
   <data name="NavalDLCIdentifierRequired" xml:space="preserve"><value>请先输入至少一个 Naval DLC 标识符。</value></data><data name="NavalDLCNotInstalled" xml:space="preserve"><value>未安装或未加载 Naval DLC。</value></data>
+  <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>弓弩 - 玩家主队</value></data>
+  <data name="RangedCadence_GroupName" xml:space="preserve"><value>弓弩 - 射击节奏</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>武器基础散布</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>100% 为原版数值。数值越低，弓和弩越精准。</value></data>
+  <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>移动精度惩罚</value></data>
+  <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>调整 WeaponMaxMovementAccuracyPenalty。数值越低，移动时的散布惩罚越小。</value></data>
+  <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>瞄准不稳惩罚</value></data>
+  <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Desc" xml:space="preserve"><value>调整 WeaponMaxUnsteadyAccuracyPenalty。数值越低，瞄准不稳时的惩罚越小。</value></data>
+  <data name="PlayerPartyRangedBestAccuracyWaitPercentage_Name" xml:space="preserve"><value>最佳精度等待时间</value></data>
+  <data name="PlayerPartyRangedBestAccuracyWaitPercentage_Desc" xml:space="preserve"><value>调整 WeaponBestAccuracyWaitTime。数值越低，越快达到最高精度。</value></data>
+  <data name="PlayerPartyRangedRotationPenaltyPercentage_Name" xml:space="preserve"><value>转向精度惩罚</value></data>
+  <data name="PlayerPartyRangedRotationPenaltyPercentage_Desc" xml:space="preserve"><value>调整 WeaponRotationalAccuracyPenaltyInRadians。数值越低，转向时的惩罚越小。</value></data>
+  <data name="PlayerPartyRangedAccelerationPenaltyPercentage_Name" xml:space="preserve"><value>加速度精度惩罚</value></data>
+  <data name="PlayerPartyRangedAccelerationPenaltyPercentage_Desc" xml:space="preserve"><value>调整 WeaponExternalAccelerationAccuracyPenalty。数值越低，受外部加速度的惩罚越小。</value></data>
+  <data name="PlayerPartyRangedAiShooterErrorPercentage_Name" xml:space="preserve"><value>AI 基础瞄准误差</value></data>
+  <data name="PlayerPartyRangedAiShooterErrorPercentage_Desc" xml:space="preserve"><value>调整主队弓弩兵的 AI 基础射击误差。数值越低，射击越精准。</value></data>
+  <data name="PlayerPartyRangedAiLeadErrorPercentage_Name" xml:space="preserve"><value>AI 运动目标提前量误差</value></data>
+  <data name="PlayerPartyRangedAiLeadErrorPercentage_Desc" xml:space="preserve"><value>调整 AI 对移动目标的提前量最小与最大误差。数值越低，对移动预判越准确。</value></data>
+  <data name="PlayerPartyRangedAiHorizontalErrorPercentage_Name" xml:space="preserve"><value>AI 水平瞄准误差</value></data>
+  <data name="PlayerPartyRangedAiHorizontalErrorPercentage_Desc" xml:space="preserve"><value>调整 AI 水平方向的瞄准误差。数值越低，射击越精准。</value></data>
+  <data name="PlayerPartyRangedAiVerticalErrorPercentage_Name" xml:space="preserve"><value>AI 垂直瞄准误差</value></data>
+  <data name="PlayerPartyRangedAiVerticalErrorPercentage_Desc" xml:space="preserve"><value>调整 AI 垂直方向的瞄准误差。数值越低，射击越精准。</value></data>
+  <data name="PlayerPartyRangedAiShootIntervalPercentage_Name" xml:space="preserve"><value>AI 射击间隔</value></data>
+  <data name="PlayerPartyRangedAiShootIntervalPercentage_Desc" xml:space="preserve"><value>调整 AIWaitBeforeShootFactor。数值越低，AI 士兵射击越频繁。</value></data>
+  <data name="MeleeActions_GroupName" xml:space="preserve"><value>近战 - 玩家主队</value></data>
+  <data name="MeleeDefense_GroupName" xml:space="preserve"><value>近战 - AI 防御</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Name" xml:space="preserve"><value>挥砍速度</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Desc" xml:space="preserve"><value>调整主队近战兵的 SwingSpeedMultiplier。100% 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Name" xml:space="preserve"><value>刺击准备速度</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Desc" xml:space="preserve"><value>仅在使用近战武器时调整 ThrustOrRangedReadySpeedMultiplier。100% 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Name" xml:space="preserve"><value>武器操控</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Desc" xml:space="preserve"><value>调整主队近战兵的 HandlingMultiplier。100% 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Name" xml:space="preserve"><value>副手防御速度</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Desc" xml:space="preserve"><value>近战武器装备时调整 OffhandWeaponDefendSpeedMultiplier。100% 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Name" xml:space="preserve"><value>盾击眩晕时长</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Desc" xml:space="preserve"><value>调整主队近战兵的 ShieldBashStunDurationMultiplier。100% 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Name" xml:space="preserve"><value>踢击眩晕时长</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Desc" xml:space="preserve"><value>调整主队近战兵的 KickStunDurationMultiplier。100% 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Name" xml:space="preserve"><value>AI 格挡判断</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Desc" xml:space="preserve"><value>调整主队 AI 近战兵的 AIBlockOnDecideAbility。100% 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Name" xml:space="preserve"><value>AI 招架判断</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>调整主队 AI 近战兵的 AIParryOnDecideAbility。100% 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>AI 盾牌防御判断</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>调整主队 AI 近战兵的 AiDefendWithShieldDecisionChanceValue。100% 为原版数值。</value></data>
 </root>

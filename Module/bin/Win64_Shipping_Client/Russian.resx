@@ -1460,4 +1460,48 @@
     <value>Японский</value>
   </data>
   <data name="NavalDLC_GroupName" xml:space="preserve"><value>Морское DLC</value></data>
+  <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>Дальний бой - основной отряд</value></data>
+  <data name="RangedCadence_GroupName" xml:space="preserve"><value>Дальний бой - темп стрельбы</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>Базовая неточность оружия</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>100% — значение игры. Меньшие значения повышают точность луков и арбалетов.</value></data>
+  <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>Штраф точности при движении</value></data>
+  <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>Изменяет WeaponMaxMovementAccuracyPenalty. Меньшие значения уменьшают неточность в движении.</value></data>
+  <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>Штраф нестабильного прицеливания</value></data>
+  <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Desc" xml:space="preserve"><value>Изменяет WeaponMaxUnsteadyAccuracyPenalty. Меньшие значения уменьшают штраф при нестабильном прицеливании.</value></data>
+  <data name="PlayerPartyRangedBestAccuracyWaitPercentage_Name" xml:space="preserve"><value>Ожидание максимальной точности</value></data>
+  <data name="PlayerPartyRangedBestAccuracyWaitPercentage_Desc" xml:space="preserve"><value>Изменяет WeaponBestAccuracyWaitTime. Меньшие значения быстрее дают максимальную точность.</value></data>
+  <data name="PlayerPartyRangedRotationPenaltyPercentage_Name" xml:space="preserve"><value>Штраф точности при повороте</value></data>
+  <data name="PlayerPartyRangedRotationPenaltyPercentage_Desc" xml:space="preserve"><value>Изменяет WeaponRotationalAccuracyPenaltyInRadians. Меньшие значения уменьшают штраф при повороте.</value></data>
+  <data name="PlayerPartyRangedAccelerationPenaltyPercentage_Name" xml:space="preserve"><value>Штраф точности от ускорения</value></data>
+  <data name="PlayerPartyRangedAccelerationPenaltyPercentage_Desc" xml:space="preserve"><value>Изменяет WeaponExternalAccelerationAccuracyPenalty. Меньшие значения уменьшают штраф от внешнего ускорения.</value></data>
+  <data name="PlayerPartyRangedAiShooterErrorPercentage_Name" xml:space="preserve"><value>Базовая ошибка прицеливания ИИ</value></data>
+  <data name="PlayerPartyRangedAiShooterErrorPercentage_Desc" xml:space="preserve"><value>Изменяет ошибку стрельбы лучников и арбалетчиков вашего отряда. Меньшие значения точнее.</value></data>
+  <data name="PlayerPartyRangedAiLeadErrorPercentage_Name" xml:space="preserve"><value>Ошибка упреждения движущейся цели ИИ</value></data>
+  <data name="PlayerPartyRangedAiLeadErrorPercentage_Desc" xml:space="preserve"><value>Изменяет минимальную и максимальную ошибку упреждения движущейся цели. Меньшие значения лучше предсказывают движение.</value></data>
+  <data name="PlayerPartyRangedAiHorizontalErrorPercentage_Name" xml:space="preserve"><value>Горизонтальная ошибка прицеливания ИИ</value></data>
+  <data name="PlayerPartyRangedAiHorizontalErrorPercentage_Desc" xml:space="preserve"><value>Изменяет горизонтальную ошибку прицеливания ИИ. Меньшие значения точнее.</value></data>
+  <data name="PlayerPartyRangedAiVerticalErrorPercentage_Name" xml:space="preserve"><value>Вертикальная ошибка прицеливания ИИ</value></data>
+  <data name="PlayerPartyRangedAiVerticalErrorPercentage_Desc" xml:space="preserve"><value>Изменяет вертикальную ошибку прицеливания ИИ. Меньшие значения точнее.</value></data>
+  <data name="PlayerPartyRangedAiShootIntervalPercentage_Name" xml:space="preserve"><value>Интервал стрельбы ИИ</value></data>
+  <data name="PlayerPartyRangedAiShootIntervalPercentage_Desc" xml:space="preserve"><value>Изменяет AIWaitBeforeShootFactor. Меньшие значения заставляют бойцов ИИ стрелять чаще。</value></data>
+  <data name="MeleeActions_GroupName" xml:space="preserve"><value>Ближний бой - основной отряд</value></data>
+  <data name="MeleeDefense_GroupName" xml:space="preserve"><value>Ближний бой - защита ИИ</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Name" xml:space="preserve"><value>Скорость взмаха</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Desc" xml:space="preserve"><value>Изменяет SwingSpeedMultiplier бойцов ближнего боя вашего отряда. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Name" xml:space="preserve"><value>Скорость подготовки укола</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Desc" xml:space="preserve"><value>Изменяет ThrustOrRangedReadySpeedMultiplier только при ближнем оружии. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Name" xml:space="preserve"><value>Управляемость оружия</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Desc" xml:space="preserve"><value>Изменяет HandlingMultiplier бойцов ближнего боя вашего отряда. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Name" xml:space="preserve"><value>Скорость защиты второй рукой</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Desc" xml:space="preserve"><value>Изменяет OffhandWeaponDefendSpeedMultiplier при экипированном ближнем оружии. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Name" xml:space="preserve"><value>Длительность оглушения ударом щита</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Desc" xml:space="preserve"><value>Изменяет ShieldBashStunDurationMultiplier бойцов ближнего боя вашего отряда. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Name" xml:space="preserve"><value>Длительность оглушения ударом ногой</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Desc" xml:space="preserve"><value>Изменяет KickStunDurationMultiplier бойцов ближнего боя вашего отряда. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Name" xml:space="preserve"><value>Решение ИИ блокировать</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Desc" xml:space="preserve"><value>Изменяет AIBlockOnDecideAbility ИИ-бойцов ближнего боя вашего отряда. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Name" xml:space="preserve"><value>Решение ИИ парировать</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>Изменяет AIParryOnDecideAbility ИИ-бойцов ближнего боя вашего отряда. 100% — значение игры.</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>Решение ИИ защищаться щитом</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Изменяет AiDefendWithShieldDecisionChanceValue ИИ-бойцов ближнего боя вашего отряда. 100% — значение игры.</value></data>
 </root>

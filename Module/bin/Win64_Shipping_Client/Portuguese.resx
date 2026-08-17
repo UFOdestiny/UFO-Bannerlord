@@ -1458,4 +1458,48 @@
     <value>Japonês</value>
   </data>
   <data name="NavalDLC_GroupName" xml:space="preserve"><value>DLC Naval</value></data>
+  <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>À distância - Grupo principal</value></data>
+  <data name="RangedCadence_GroupName" xml:space="preserve"><value>À distância - Ritmo de disparo</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>Imprecisão base da arma</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>100% é o valor nativo. Valores menores tornam arcos e bestas mais precisos.</value></data>
+  <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>Penalidade de precisão em movimento</value></data>
+  <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>Ajusta WeaponMaxMovementAccuracyPenalty. Valores menores reduzem a imprecisão ao mover-se.</value></data>
+  <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>Penalidade de mira instável</value></data>
+  <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Desc" xml:space="preserve"><value>Ajusta WeaponMaxUnsteadyAccuracyPenalty. Valores menores reduzem a penalidade quando a mira está instável.</value></data>
+  <data name="PlayerPartyRangedBestAccuracyWaitPercentage_Name" xml:space="preserve"><value>Espera pela precisão máxima</value></data>
+  <data name="PlayerPartyRangedBestAccuracyWaitPercentage_Desc" xml:space="preserve"><value>Ajusta WeaponBestAccuracyWaitTime. Valores menores atingem a precisão máxima mais cedo.</value></data>
+  <data name="PlayerPartyRangedRotationPenaltyPercentage_Name" xml:space="preserve"><value>Penalidade de precisão ao virar</value></data>
+  <data name="PlayerPartyRangedRotationPenaltyPercentage_Desc" xml:space="preserve"><value>Ajusta WeaponRotationalAccuracyPenaltyInRadians. Valores menores reduzem a penalidade ao virar.</value></data>
+  <data name="PlayerPartyRangedAccelerationPenaltyPercentage_Name" xml:space="preserve"><value>Penalidade de precisão por aceleração</value></data>
+  <data name="PlayerPartyRangedAccelerationPenaltyPercentage_Desc" xml:space="preserve"><value>Ajusta WeaponExternalAccelerationAccuracyPenalty. Valores menores reduzem a penalidade de aceleração externa.</value></data>
+  <data name="PlayerPartyRangedAiShooterErrorPercentage_Name" xml:space="preserve"><value>Erro base de mira da IA</value></data>
+  <data name="PlayerPartyRangedAiShooterErrorPercentage_Desc" xml:space="preserve"><value>Ajusta o erro de tiro das tropas de arco e besta do seu grupo. Valores menores são mais precisos.</value></data>
+  <data name="PlayerPartyRangedAiLeadErrorPercentage_Name" xml:space="preserve"><value>Erro de previsão de alvo móvel da IA</value></data>
+  <data name="PlayerPartyRangedAiLeadErrorPercentage_Desc" xml:space="preserve"><value>Ajusta os erros mínimo e máximo de previsão de alvos móveis. Valores menores preveem melhor o movimento.</value></data>
+  <data name="PlayerPartyRangedAiHorizontalErrorPercentage_Name" xml:space="preserve"><value>Erro horizontal de mira da IA</value></data>
+  <data name="PlayerPartyRangedAiHorizontalErrorPercentage_Desc" xml:space="preserve"><value>Ajusta o erro horizontal de mira da IA. Valores menores são mais precisos.</value></data>
+  <data name="PlayerPartyRangedAiVerticalErrorPercentage_Name" xml:space="preserve"><value>Erro vertical de mira da IA</value></data>
+  <data name="PlayerPartyRangedAiVerticalErrorPercentage_Desc" xml:space="preserve"><value>Ajusta o erro vertical de mira da IA. Valores menores são mais precisos.</value></data>
+  <data name="PlayerPartyRangedAiShootIntervalPercentage_Name" xml:space="preserve"><value>Intervalo de disparo da IA</value></data>
+  <data name="PlayerPartyRangedAiShootIntervalPercentage_Desc" xml:space="preserve"><value>Ajusta AIWaitBeforeShootFactor. Valores menores fazem as tropas da IA dispararem com mais frequência。</value></data>
+  <data name="MeleeActions_GroupName" xml:space="preserve"><value>Corpo a corpo - Grupo principal</value></data>
+  <data name="MeleeDefense_GroupName" xml:space="preserve"><value>Corpo a corpo - Defesa da IA</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Name" xml:space="preserve"><value>Velocidade de golpe</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Desc" xml:space="preserve"><value>Ajusta SwingSpeedMultiplier das tropas corpo a corpo do seu grupo. 100% é nativo.</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Name" xml:space="preserve"><value>Velocidade de preparo da estocada</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Desc" xml:space="preserve"><value>Ajusta ThrustOrRangedReadySpeedMultiplier somente com arma corpo a corpo. 100% é nativo.</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Name" xml:space="preserve"><value>Manejo da arma</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Desc" xml:space="preserve"><value>Ajusta HandlingMultiplier das tropas corpo a corpo do seu grupo. 100% é nativo.</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Name" xml:space="preserve"><value>Velocidade de defesa na mão secundária</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Desc" xml:space="preserve"><value>Ajusta OffhandWeaponDefendSpeedMultiplier com arma corpo a corpo equipada. 100% é nativo.</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Name" xml:space="preserve"><value>Duração de atordoamento da pancada de escudo</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Desc" xml:space="preserve"><value>Ajusta ShieldBashStunDurationMultiplier das tropas corpo a corpo do seu grupo. 100% é nativo.</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Name" xml:space="preserve"><value>Duração de atordoamento do chute</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Desc" xml:space="preserve"><value>Ajusta KickStunDurationMultiplier das tropas corpo a corpo do seu grupo. 100% é nativo.</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Name" xml:space="preserve"><value>Decisão de bloqueio da IA</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Desc" xml:space="preserve"><value>Ajusta AIBlockOnDecideAbility das tropas corpo a corpo de IA do seu grupo. 100% é nativo.</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Name" xml:space="preserve"><value>Decisão de aparo da IA</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>Ajusta AIParryOnDecideAbility das tropas corpo a corpo de IA do seu grupo. 100% é nativo.</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>Decisão de defesa com escudo da IA</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Ajusta AiDefendWithShieldDecisionChanceValue das tropas corpo a corpo de IA do seu grupo. 100% é nativo.</value></data>
 </root>

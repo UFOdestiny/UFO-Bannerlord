@@ -1460,4 +1460,48 @@
     <value>日本語</value>
   </data>
   <data name="NavalDLC_GroupName" xml:space="preserve"><value>海戦 DLC</value></data>
+  <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>弓・クロスボウ - プレイヤー主力部隊</value></data>
+  <data name="RangedCadence_GroupName" xml:space="preserve"><value>弓・クロスボウ - 射撃テンポ</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>武器の基本ばらつき</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>100% はバニラ値です。低いほど弓とクロスボウの精度が上がります。</value></data>
+  <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>移動時の精度ペナルティ</value></data>
+  <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>WeaponMaxMovementAccuracyPenalty を調整します。低いほど移動中のばらつきが減ります。</value></data>
+  <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>照準不安定ペナルティ</value></data>
+  <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Desc" xml:space="preserve"><value>WeaponMaxUnsteadyAccuracyPenalty を調整します。低いほど照準が不安定な時のペナルティが減ります。</value></data>
+  <data name="PlayerPartyRangedBestAccuracyWaitPercentage_Name" xml:space="preserve"><value>最高精度までの待機時間</value></data>
+  <data name="PlayerPartyRangedBestAccuracyWaitPercentage_Desc" xml:space="preserve"><value>WeaponBestAccuracyWaitTime を調整します。低いほど最高精度に早く到達します。</value></data>
+  <data name="PlayerPartyRangedRotationPenaltyPercentage_Name" xml:space="preserve"><value>旋回時の精度ペナルティ</value></data>
+  <data name="PlayerPartyRangedRotationPenaltyPercentage_Desc" xml:space="preserve"><value>WeaponRotationalAccuracyPenaltyInRadians を調整します。低いほど旋回時のペナルティが減ります。</value></data>
+  <data name="PlayerPartyRangedAccelerationPenaltyPercentage_Name" xml:space="preserve"><value>加速度による精度ペナルティ</value></data>
+  <data name="PlayerPartyRangedAccelerationPenaltyPercentage_Desc" xml:space="preserve"><value>WeaponExternalAccelerationAccuracyPenalty を調整します。低いほど外部加速度のペナルティが減ります。</value></data>
+  <data name="PlayerPartyRangedAiShooterErrorPercentage_Name" xml:space="preserve"><value>AI 基本照準誤差</value></data>
+  <data name="PlayerPartyRangedAiShooterErrorPercentage_Desc" xml:space="preserve"><value>主力部隊の弓兵・クロスボウ兵の AI 射撃誤差を調整します。低いほど正確です。</value></data>
+  <data name="PlayerPartyRangedAiLeadErrorPercentage_Name" xml:space="preserve"><value>AI 移動目標の予測誤差</value></data>
+  <data name="PlayerPartyRangedAiLeadErrorPercentage_Desc" xml:space="preserve"><value>移動目標に対する AI の予測誤差の最小値と最大値を調整します。低いほど正確に予測します。</value></data>
+  <data name="PlayerPartyRangedAiHorizontalErrorPercentage_Name" xml:space="preserve"><value>AI 水平照準誤差</value></data>
+  <data name="PlayerPartyRangedAiHorizontalErrorPercentage_Desc" xml:space="preserve"><value>AI の水平照準誤差を調整します。低いほど正確です。</value></data>
+  <data name="PlayerPartyRangedAiVerticalErrorPercentage_Name" xml:space="preserve"><value>AI 垂直照準誤差</value></data>
+  <data name="PlayerPartyRangedAiVerticalErrorPercentage_Desc" xml:space="preserve"><value>AI の垂直照準誤差を調整します。低いほど正確です。</value></data>
+  <data name="PlayerPartyRangedAiShootIntervalPercentage_Name" xml:space="preserve"><value>AI 射撃間隔</value></data>
+  <data name="PlayerPartyRangedAiShootIntervalPercentage_Desc" xml:space="preserve"><value>AIWaitBeforeShootFactor を調整します。低いほど AI 部隊が頻繁に射撃します。</value></data>
+  <data name="MeleeActions_GroupName" xml:space="preserve"><value>近接戦 - プレイヤー主力部隊</value></data>
+  <data name="MeleeDefense_GroupName" xml:space="preserve"><value>近接戦 - AI 防御</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Name" xml:space="preserve"><value>振り速度</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Desc" xml:space="preserve"><value>主力部隊の近接兵の SwingSpeedMultiplier を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Name" xml:space="preserve"><value>突き準備速度</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Desc" xml:space="preserve"><value>近接武器を使う時だけ ThrustOrRangedReadySpeedMultiplier を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Name" xml:space="preserve"><value>武器操作性</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Desc" xml:space="preserve"><value>主力部隊の近接兵の HandlingMultiplier を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Name" xml:space="preserve"><value>副手防御速度</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Desc" xml:space="preserve"><value>近接武器装備中の OffhandWeaponDefendSpeedMultiplier を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Name" xml:space="preserve"><value>盾攻撃のスタン時間</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Desc" xml:space="preserve"><value>主力部隊の近接兵の ShieldBashStunDurationMultiplier を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Name" xml:space="preserve"><value>蹴りのスタン時間</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Desc" xml:space="preserve"><value>主力部隊の近接兵の KickStunDurationMultiplier を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Name" xml:space="preserve"><value>AI 格挡判断</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Desc" xml:space="preserve"><value>主力部隊の AI 近接兵の AIBlockOnDecideAbility を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Name" xml:space="preserve"><value>AI パリィ判断</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>主力部隊の AI 近接兵の AIParryOnDecideAbility を調整します。100% はバニラ値です。</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>AI 盾防御判断</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>主力部隊の AI 近接兵の AiDefendWithShieldDecisionChanceValue を調整します。100% はバニラ値です。</value></data>
 </root>

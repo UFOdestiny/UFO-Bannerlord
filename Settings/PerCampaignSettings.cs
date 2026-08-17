@@ -844,7 +844,29 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
 
 
 
-    [LocalizedSettingPropertyGroup("NavalDLC", GroupOrder = 26)]
+    [LocalizedSettingPropertyGroup("RangedAccuracy", GroupOrder = 26)] [LocalizedSettingPropertyPercent("PlayerPartyRangedInaccuracyPercentage")] public float PlayerPartyRangedInaccuracyPercentage { get; set; } = 100f;
+    [LocalizedSettingPropertyGroup("RangedAccuracy")] [LocalizedSettingPropertyPercent("PlayerPartyRangedMovementPenaltyPercentage")] public float PlayerPartyRangedMovementPenaltyPercentage { get; set; } = 100f;
+    [LocalizedSettingPropertyGroup("RangedAccuracy")] [LocalizedSettingPropertyPercent("PlayerPartyRangedUnsteadyPenaltyPercentage")] public float PlayerPartyRangedUnsteadyPenaltyPercentage { get; set; } = 100f;
+    [LocalizedSettingPropertyGroup("RangedAccuracy")] [LocalizedSettingPropertyPercent("PlayerPartyRangedBestAccuracyWaitPercentage")] public float PlayerPartyRangedBestAccuracyWaitPercentage { get; set; } = 100f;
+    [LocalizedSettingPropertyGroup("RangedAccuracy")] [LocalizedSettingPropertyPercent("PlayerPartyRangedRotationPenaltyPercentage")] public float PlayerPartyRangedRotationPenaltyPercentage { get; set; } = 100f;
+    [LocalizedSettingPropertyGroup("RangedAccuracy")] [LocalizedSettingPropertyPercent("PlayerPartyRangedAccelerationPenaltyPercentage")] public float PlayerPartyRangedAccelerationPenaltyPercentage { get; set; } = 100f;
+    [LocalizedSettingPropertyGroup("RangedAccuracy")] [LocalizedSettingPropertyPercent("PlayerPartyRangedAiShooterErrorPercentage")] public float PlayerPartyRangedAiShooterErrorPercentage { get; set; } = 100f;
+    [LocalizedSettingPropertyGroup("RangedAccuracy")] [LocalizedSettingPropertyPercent("PlayerPartyRangedAiLeadErrorPercentage")] public float PlayerPartyRangedAiLeadErrorPercentage { get; set; } = 100f;
+    [LocalizedSettingPropertyGroup("RangedAccuracy")] [LocalizedSettingPropertyPercent("PlayerPartyRangedAiHorizontalErrorPercentage")] public float PlayerPartyRangedAiHorizontalErrorPercentage { get; set; } = 100f;
+    [LocalizedSettingPropertyGroup("RangedAccuracy")] [LocalizedSettingPropertyPercent("PlayerPartyRangedAiVerticalErrorPercentage")] public float PlayerPartyRangedAiVerticalErrorPercentage { get; set; } = 100f;
+    [LocalizedSettingPropertyGroup("RangedCadence", GroupOrder = 27)] [LocalizedSettingPropertyPercent("PlayerPartyRangedAiShootIntervalPercentage")] public float PlayerPartyRangedAiShootIntervalPercentage { get; set; } = 100f;
+
+    [LocalizedSettingPropertyGroup("MeleeActions", GroupOrder = 28)] [LocalizedSettingPropertyMultiplierPercent("PlayerPartyMeleeSwingSpeedMultiplier")] public float PlayerPartyMeleeSwingSpeedMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("MeleeActions")] [LocalizedSettingPropertyMultiplierPercent("PlayerPartyMeleeThrustReadySpeedMultiplier")] public float PlayerPartyMeleeThrustReadySpeedMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("MeleeActions")] [LocalizedSettingPropertyMultiplierPercent("PlayerPartyMeleeHandlingMultiplier")] public float PlayerPartyMeleeHandlingMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("MeleeActions")] [LocalizedSettingPropertyMultiplierPercent("PlayerPartyMeleeOffhandDefenseSpeedMultiplier")] public float PlayerPartyMeleeOffhandDefenseSpeedMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("MeleeActions")] [LocalizedSettingPropertyMultiplierPercent("PlayerPartyMeleeShieldBashStunMultiplier")] public float PlayerPartyMeleeShieldBashStunMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("MeleeActions")] [LocalizedSettingPropertyMultiplierPercent("PlayerPartyMeleeKickStunMultiplier")] public float PlayerPartyMeleeKickStunMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("MeleeDefense", GroupOrder = 29)] [LocalizedSettingPropertyMultiplierPercent("PlayerPartyMeleeAiBlockDecisionMultiplier")] public float PlayerPartyMeleeAiBlockDecisionMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("MeleeDefense")] [LocalizedSettingPropertyMultiplierPercent("PlayerPartyMeleeAiParryDecisionMultiplier")] public float PlayerPartyMeleeAiParryDecisionMultiplier { get; set; } = 1f;
+    [LocalizedSettingPropertyGroup("MeleeDefense")] [LocalizedSettingPropertyMultiplierPercent("PlayerPartyMeleeAiShieldDefenseMultiplier")] public float PlayerPartyMeleeAiShieldDefenseMultiplier { get; set; } = 1f;
+
+    [LocalizedSettingPropertyGroup("NavalDLC", GroupOrder = 30)]
     [LocalizedSettingPropertyFloatingInteger("NavalCampaignSpeedMultiplier", 0.1f, 10f)] public float NavalCampaignSpeedMultiplier { get; set; } = 1f;
     [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyFloatingInteger("NavalOarForceMultiplier", 0.1f, 10f)] public float NavalOarForceMultiplier { get; set; } = 1f;
     [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyFloatingInteger("NavalSailForceMultiplier", 0.1f, 10f)] public float NavalSailForceMultiplier { get; set; } = 1f;

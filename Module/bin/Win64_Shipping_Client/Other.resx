@@ -1458,4 +1458,48 @@
     <value>Japanese</value>
   </data>
   <data name="NavalDLC_GroupName" xml:space="preserve"><value>Naval DLC</value></data>
+  <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>Ranged - Player Main Party</value></data>
+  <data name="RangedCadence_GroupName" xml:space="preserve"><value>Ranged - Firing Cadence</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Name" xml:space="preserve"><value>Base weapon inaccuracy</value></data>
+  <data name="PlayerPartyRangedInaccuracyPercentage_Desc" xml:space="preserve"><value>100% is vanilla. Lower values make bows and crossbows more accurate.</value></data>
+  <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>Movement accuracy penalty</value></data>
+  <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>Scales WeaponMaxMovementAccuracyPenalty. Lower values reduce inaccuracy while moving.</value></data>
+  <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>Unsteady aim penalty</value></data>
+  <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Desc" xml:space="preserve"><value>Scales WeaponMaxUnsteadyAccuracyPenalty. Lower values reduce the penalty while aim is unsteady.</value></data>
+  <data name="PlayerPartyRangedBestAccuracyWaitPercentage_Name" xml:space="preserve"><value>Best accuracy wait time</value></data>
+  <data name="PlayerPartyRangedBestAccuracyWaitPercentage_Desc" xml:space="preserve"><value>Scales WeaponBestAccuracyWaitTime. Lower values reach full accuracy sooner.</value></data>
+  <data name="PlayerPartyRangedRotationPenaltyPercentage_Name" xml:space="preserve"><value>Turning accuracy penalty</value></data>
+  <data name="PlayerPartyRangedRotationPenaltyPercentage_Desc" xml:space="preserve"><value>Scales WeaponRotationalAccuracyPenaltyInRadians. Lower values reduce the penalty while turning.</value></data>
+  <data name="PlayerPartyRangedAccelerationPenaltyPercentage_Name" xml:space="preserve"><value>Acceleration accuracy penalty</value></data>
+  <data name="PlayerPartyRangedAccelerationPenaltyPercentage_Desc" xml:space="preserve"><value>Scales WeaponExternalAccelerationAccuracyPenalty. Lower values reduce the penalty from external acceleration.</value></data>
+  <data name="PlayerPartyRangedAiShooterErrorPercentage_Name" xml:space="preserve"><value>AI base aiming error</value></data>
+  <data name="PlayerPartyRangedAiShooterErrorPercentage_Desc" xml:space="preserve"><value>Scales AI shooter error for your party's bow and crossbow troops. Lower values are more accurate.</value></data>
+  <data name="PlayerPartyRangedAiLeadErrorPercentage_Name" xml:space="preserve"><value>AI moving-target lead error</value></data>
+  <data name="PlayerPartyRangedAiLeadErrorPercentage_Desc" xml:space="preserve"><value>Scales AI lead error minimum and maximum for moving targets. Lower values predict movement better.</value></data>
+  <data name="PlayerPartyRangedAiHorizontalErrorPercentage_Name" xml:space="preserve"><value>AI horizontal aiming error</value></data>
+  <data name="PlayerPartyRangedAiHorizontalErrorPercentage_Desc" xml:space="preserve"><value>Scales horizontal AI aiming error. Lower values are more accurate.</value></data>
+  <data name="PlayerPartyRangedAiVerticalErrorPercentage_Name" xml:space="preserve"><value>AI vertical aiming error</value></data>
+  <data name="PlayerPartyRangedAiVerticalErrorPercentage_Desc" xml:space="preserve"><value>Scales vertical AI aiming error. Lower values are more accurate.</value></data>
+  <data name="PlayerPartyRangedAiShootIntervalPercentage_Name" xml:space="preserve"><value>AI firing interval</value></data>
+  <data name="PlayerPartyRangedAiShootIntervalPercentage_Desc" xml:space="preserve"><value>Scales AIWaitBeforeShootFactor. Lower values make AI troops shoot more frequently.</value></data>
+  <data name="MeleeActions_GroupName" xml:space="preserve"><value>Melee - Player Main Party</value></data>
+  <data name="MeleeDefense_GroupName" xml:space="preserve"><value>Melee - AI Defense</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Name" xml:space="preserve"><value>Swing speed</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Desc" xml:space="preserve"><value>Scales SwingSpeedMultiplier for your main party's melee troops. 100% is vanilla.</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Name" xml:space="preserve"><value>Thrust ready speed</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Desc" xml:space="preserve"><value>Scales ThrustOrRangedReadySpeedMultiplier only while using a melee weapon. 100% is vanilla.</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Name" xml:space="preserve"><value>Weapon handling</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Desc" xml:space="preserve"><value>Scales HandlingMultiplier for your main party's melee troops. 100% is vanilla.</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Name" xml:space="preserve"><value>Offhand defense speed</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Desc" xml:space="preserve"><value>Scales OffhandWeaponDefendSpeedMultiplier while the troop has a melee weapon equipped. 100% is vanilla.</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Name" xml:space="preserve"><value>Shield-bash stun duration</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Desc" xml:space="preserve"><value>Scales ShieldBashStunDurationMultiplier for your main party's melee troops. 100% is vanilla.</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Name" xml:space="preserve"><value>Kick stun duration</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Desc" xml:space="preserve"><value>Scales KickStunDurationMultiplier for your main party's melee troops. 100% is vanilla.</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Name" xml:space="preserve"><value>AI block decision</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Desc" xml:space="preserve"><value>Scales AIBlockOnDecideAbility for your main party's AI melee troops. 100% is vanilla.</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Name" xml:space="preserve"><value>AI parry decision</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>Scales AIParryOnDecideAbility for your main party's AI melee troops. 100% is vanilla.</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>AI shield defense decision</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Scales AiDefendWithShieldDecisionChanceValue for your main party's AI melee troops. 100% is vanilla.</value></data>
 </root>

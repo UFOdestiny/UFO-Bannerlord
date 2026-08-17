@@ -49,6 +49,14 @@ public static class L10N
         public const string CharactersGroupName = "Characters";
 
         public const string WorkshopsGroupName = "Workshops";
+
+        public const string RangedAccuracyGroupName = "RangedAccuracy";
+
+        public const string RangedCadenceGroupName = "RangedCadence";
+
+        public const string MeleeActionsGroupName = "MeleeActions";
+
+        public const string MeleeDefenseGroupName = "MeleeDefense";
     }
 
     private static readonly Dictionary<string, string> Values = new Dictionary<string, string>(StringComparer.Ordinal);
