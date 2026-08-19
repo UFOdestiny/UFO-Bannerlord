@@ -845,12 +845,41 @@ public class BannerlordCheatsPerCampaignSettings : AttributePerCampaignSettings<
         get => () => NavalDlcCompatibility.GrantShip(NavalShipId);
         set { }
     }
+    [LocalizedSettingPropertyGroup("NavalDLC")]
+    [LocalizedSettingPropertyButton("NavalGrantAllShips", "NavalGrantAllShips_Button")]
+    public Action NavalGrantAllShips
+    {
+        get => NavalDlcCompatibility.GrantAllShips;
+        set { }
+    }
     [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyText("NavalFigureheadId")] public string NavalFigureheadId { get; set; } = string.Empty;
     [LocalizedSettingPropertyGroup("NavalDLC")]
     [LocalizedSettingPropertyButton("NavalUnlockFigurehead", "NavalUnlockFigurehead_Button")]
     public Action NavalUnlockFigurehead
     {
         get => () => NavalDlcCompatibility.UnlockFigurehead(NavalFigureheadId);
+        set { }
+    }
+    [LocalizedSettingPropertyGroup("NavalDLC")]
+    [LocalizedSettingPropertyButton("NavalUnlockAllFigureheads", "NavalUnlockAllFigureheads_Button")]
+    public Action NavalUnlockAllFigureheads
+    {
+        get => NavalDlcCompatibility.UnlockAllFigureheads;
+        set { }
+    }
+    [LocalizedSettingPropertyGroup("NavalDLC")] [LocalizedSettingPropertyText("NavalShipUpgradePieceId")] public string NavalShipUpgradePieceId { get; set; } = string.Empty;
+    [LocalizedSettingPropertyGroup("NavalDLC")]
+    [LocalizedSettingPropertyButton("NavalAddShipUpgradePieces", "NavalAddShipUpgradePieces_Button")]
+    public Action NavalAddShipUpgradePieces
+    {
+        get => () => NavalDlcCompatibility.AddShipUpgradePieces(NavalShipUpgradePieceId);
+        set { }
+    }
+    [LocalizedSettingPropertyGroup("NavalDLC")]
+    [LocalizedSettingPropertyButton("NavalAddAllShipUpgradePieces", "NavalAddAllShipUpgradePieces_Button")]
+    public Action NavalAddAllShipUpgradePieces
+    {
+        get => NavalDlcCompatibility.AddAllShipUpgradePieces;
         set { }
     }
 }

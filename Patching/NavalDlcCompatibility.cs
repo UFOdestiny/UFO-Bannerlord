@@ -1,5 +1,7 @@
 using HarmonyLib;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using TaleWorlds.CampaignSystem;
@@ -60,11 +62,90 @@ internal static class NavalDlcCompatibility
 
     internal static void UnlockFigurehead(string figureheadId) => InvokeCheat("UnlockFigurehead", figureheadId);
 
-    private static void InvokeCheat(string methodName, string id)
+    internal static void GrantAllShips()
     {
-        if (string.IsNullOrWhiteSpace(id))
+        var shipIds = GetCampaignObjects("TaleWorlds.Core.ShipHull")
+            .Select(GetStringId)
+            .Where(IsPlayableShipId)
+            .ToList();
+        InvokeCheat("AddShipToPlayer", shipIds);
+    }
+
+    internal static void UnlockAllFigureheads()
+    {
+        var type = FindLoadedType("TaleWorlds.CampaignSystem.Naval.DefaultFigureheads");
+        var instance = type?.GetProperty("Instance", BindingFlags.Public | BindingFlags.Static)?.GetValue(null);
+        var figureheadIds = type?.GetProperties(BindingFlags.Public | BindingFlags.Instance)
+            .Select(property => GetStringId(instance == null ? null : property.GetValue(instance)))
+            .Where(id => !string.IsNullOrWhiteSpace(id))
+            .ToList() ?? new List<string>();
+        InvokeCheat("UnlockFigurehead", figureheadIds);
+    }
+
+    internal static void AddShipUpgradePieces(string upgradePieceIds) => AddShipUpgradePieces(ParseIdentifiers(upgradePieceIds));
+
+    internal static void AddAllShipUpgradePieces()
+    {
+        var piecesBySlot = GetCampaignObjects("TaleWorlds.Core.ShipUpgradePiece")
+            .Select(piece => new { Piece = piece, Id = GetStringId(piece), Value = GetUpgradePieceValue(piece) })
+            .SelectMany(entry => GetTargetSlotIds(entry.Piece).Select(slotId => new { slotId, entry.Id, entry.Value }))
+            .Where(entry => !string.IsNullOrWhiteSpace(entry.slotId) && !string.IsNullOrWhiteSpace(entry.Id))
+            .GroupBy(entry => entry.slotId)
+            .ToDictionary(group => group.Key, group => group.OrderByDescending(entry => entry.Value).First().Id);
+        AddUpgradePiecesToPlayerShips(piecesBySlot);
+    }
+
+    private static void AddShipUpgradePieces(IEnumerable<string> requestedIds)
+    {
+        var ids = new HashSet<string>(requestedIds, StringComparer.OrdinalIgnoreCase);
+        if (ids.Count == 0)
         {
-            InformationManager.DisplayMessage(new InformationMessage(L10N.GetText("NavalDLCIdentifierRequired"), Colors.Red));
+            DisplayIdentifierRequired();
+            return;
+        }
+
+        var piecesBySlot = GetCampaignObjects("TaleWorlds.Core.ShipUpgradePiece")
+            .Where(piece => ids.Contains(GetStringId(piece)))
+            .SelectMany(piece => GetTargetSlotIds(piece).Select(slotId => new { slotId, id = GetStringId(piece) }))
+            .Where(entry => !string.IsNullOrWhiteSpace(entry.slotId) && !string.IsNullOrWhiteSpace(entry.id))
+            .GroupBy(entry => entry.slotId, StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(group => group.Key, group => group.Last().id, StringComparer.OrdinalIgnoreCase);
+        AddUpgradePiecesToPlayerShips(piecesBySlot);
+    }
+
+    private static void AddUpgradePiecesToPlayerShips(Dictionary<string, string> piecesBySlot)
+    {
+        if (piecesBySlot.Count == 0)
+        {
+            DisplayIdentifierRequired();
+            return;
+        }
+
+        try
+        {
+            var helpers = FindLoadedType("NavalDLC.NavalDLCHelpers");
+            var method = helpers?.GetMethod("AddUpgradePiecesToPartyShips", BindingFlags.Public | BindingFlags.Static);
+            if (method == null || MobileParty.MainParty == null)
+            {
+                DisplayDlcUnavailable();
+                return;
+            }
+            method.Invoke(null, new object[] { MobileParty.MainParty, piecesBySlot, null });
+        }
+        catch (Exception exception)
+        {
+            SubModule.LogError(exception, typeof(NavalDlcCompatibility));
+        }
+    }
+
+    private static void InvokeCheat(string methodName, string id) => InvokeCheat(methodName, ParseIdentifiers(id));
+
+    private static void InvokeCheat(string methodName, IEnumerable<string> ids)
+    {
+        var identifiers = ids.Where(id => !string.IsNullOrWhiteSpace(id)).Distinct(StringComparer.OrdinalIgnoreCase).ToList();
+        if (identifiers.Count == 0)
+        {
+            DisplayIdentifierRequired();
             return;
         }
 
@@ -74,16 +155,66 @@ internal static class NavalDlcCompatibility
             var method = type?.GetMethod(methodName, BindingFlags.Static | BindingFlags.Public);
             if (method == null)
             {
-                InformationManager.DisplayMessage(new InformationMessage(L10N.GetText("NavalDLCNotInstalled"), Colors.Red));
+                DisplayDlcUnavailable();
                 return;
             }
-            method.Invoke(null, new object[] { id.Split(new[] { ' ', ',', ';' }, StringSplitOptions.RemoveEmptyEntries).ToList() });
+            method.Invoke(null, new object[] { identifiers });
         }
         catch (Exception exception)
         {
             SubModule.LogError(exception, typeof(NavalDlcCompatibility));
         }
     }
+
+    private static IEnumerable<object> GetCampaignObjects(string typeName)
+    {
+        try
+        {
+            var objectType = FindLoadedType(typeName);
+            var managerType = FindLoadedType("TaleWorlds.ObjectSystem.MBObjectManager");
+            var manager = managerType?.GetProperty("Instance", BindingFlags.Public | BindingFlags.Static)?.GetValue(null);
+            var method = managerType?.GetMethods(BindingFlags.Public | BindingFlags.Instance)
+                .FirstOrDefault(candidate => candidate.Name == "GetObjectTypeList" && candidate.IsGenericMethodDefinition && candidate.GetParameters().Length == 0);
+            if (objectType == null || manager == null || method == null)
+                return Enumerable.Empty<object>();
+            return ((IEnumerable)method.MakeGenericMethod(objectType).Invoke(manager, null)).Cast<object>();
+        }
+        catch (Exception exception)
+        {
+            SubModule.LogError(exception, typeof(NavalDlcCompatibility));
+            return Enumerable.Empty<object>();
+        }
+    }
+
+    private static IEnumerable<string> GetTargetSlotIds(object piece)
+    {
+        var slots = piece?.GetType().GetProperty("TargetSlots", BindingFlags.Public | BindingFlags.Instance)?.GetValue(piece) as IEnumerable;
+        return slots == null ? Enumerable.Empty<string>() : slots.Cast<object>().Select(GetStringId);
+    }
+
+    private static int GetUpgradePieceValue(object piece)
+    {
+        return new[] { "LightValue", "MediumValue", "HeavyValue" }
+            .Select(name => piece.GetType().GetProperty(name, BindingFlags.Public | BindingFlags.Instance)?.GetValue(piece))
+            .OfType<int>()
+            .Sum();
+    }
+
+    private static string GetStringId(object value) => value?.GetType().GetProperty("StringId", BindingFlags.Public | BindingFlags.Instance)?.GetValue(value) as string;
+
+    private static Type FindLoadedType(string typeName) => AppDomain.CurrentDomain.GetAssemblies().Select(assembly => assembly.GetType(typeName, false)).FirstOrDefault(type => type != null);
+
+    private static bool IsPlayableShipId(string id) => !string.IsNullOrWhiteSpace(id) &&
+        id.IndexOf("storyline", StringComparison.OrdinalIgnoreCase) < 0 &&
+        id.IndexOf("quest", StringComparison.OrdinalIgnoreCase) < 0 &&
+        id.IndexOf("burning", StringComparison.OrdinalIgnoreCase) < 0 &&
+        id.IndexOf("nested", StringComparison.OrdinalIgnoreCase) < 0;
+
+    private static IEnumerable<string> ParseIdentifiers(string identifiers) => (identifiers ?? string.Empty).Split(new[] { ' ', ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+    private static void DisplayIdentifierRequired() => InformationManager.DisplayMessage(new InformationMessage(L10N.GetText("NavalDLCIdentifierRequired"), Colors.Red));
+
+    private static void DisplayDlcUnavailable() => InformationManager.DisplayMessage(new InformationMessage(L10N.GetText("NavalDLCNotInstalled"), Colors.Red));
 
     private static bool IsAvailable() => AppDomain.CurrentDomain.GetAssemblies().Any(a => string.Equals(a.GetName().Name, NavalAssemblyName, StringComparison.OrdinalIgnoreCase));
 

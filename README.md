@@ -29,6 +29,16 @@ dotnet run --project Tools/HarmonyApiAudit/HarmonyApiAudit.csproj -- Module/bin/
 ./Tools/ModuleDataAudit/Validate-ModuleData.ps1 -GameRoot "E:\SteamLibrary\steamapps\common\Mount & Blade II Bannerlord"
 ```
 
+## Naval DLC MCM tools
+
+When Naval DLC is installed and loaded, the local MCM page includes actions to grant ships, unlock figureheads, and add ship upgrade pieces to the player's current ships. The input fields accept multiple IDs separated by spaces, commas, or semicolons.
+
+- Ship IDs are defined by `Modules/NavalDLC/ModuleData/ship_hulls.xml` (`ShipHull id`).
+- Figurehead IDs are defined by `Modules/NavalDLC/AssetPackages/nested_prefabs_packed.xml` (the figurehead prefab/entity name).
+- Normal ship upgrade-piece IDs are defined by `Modules/NavalDLC/ModuleData/ship_upgrade_pieces.xml` (`ShipUpgradePiece id`).
+
+The three all-actions grant all normal playable hulls, unlock the complete built-in figurehead catalogue, and add the highest-value normal upgrade available for each ship slot. Story and quest hulls are excluded from the all-ships action.
+
 My original goal was to learn how to make mods. It just so happened that the 'crush through' feature I wanted stopped working, so I decompiled it and combined it with several well-known mods. I noticed that many people were also sad about some wanted features no longer working, so I decided to release this mod directly. 
 
 # Original Mods
