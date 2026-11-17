@@ -1,110 +1,51 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xsd:string" />
+              <xs:attribute name="type" type="xsd:string" />
+              <xs:attribute name="mimetype" type="xsd:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xsd:string" />
+              <xs:attribute name="name" type="xsd:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xsd:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xsd:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xsd:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
   <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
@@ -117,8 +58,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ModName" xml:space="preserve">
-    <value>Cheats</value>
+
+  <data name="Common_GroupName" xml:space="preserve">
+    <value>Common</value>
   </data>
   <data name="Combat_Player_GroupName" xml:space="preserve">
     <value>Combat - Player</value>
@@ -257,12 +199,6 @@
   </data>
   <data name="BanditHideoutTroopLimit_Desc" xml:space="preserve">
     <value>Additional troops that can join the player in hideout battles. A value of 0 means default troop limit.</value>
-  </data>
-  <data name="AlwaysCrushThroughShields_Name" xml:space="preserve">
-    <value>Always Crush Through Shields</value>
-  </data>
-  <data name="AlwaysCrushThroughShields_Desc" xml:space="preserve">
-    <value>Your strikes always crush through enemy shields.</value>
   </data>
   <data name="ExtraPartyMemberSize_Name" xml:space="preserve">
     <value>Extra Party Member Size</value>
@@ -460,7 +396,7 @@
     <value>Added XP to {0}.</value>
   </data>
   <data name="SetAllAttributesMessage" xml:space="preserve">
-    <value>Set attributes of {0} to 10.</value>
+    <value>Set the attributes of {0} to the configured maximum.</value>
   </data>
   <data name="PerfectRelationships_Desc" xml:space="preserve">
     <value>All relationships between the player and other characters are set to 100.</value>
@@ -573,12 +509,6 @@
   <data name="SellingPriceMultiplier_Name" xml:space="preserve">
     <value>Selling Price Multiplier</value>
   </data>
-  <data name="PartyDamageTakenPercentage_Desc" xml:space="preserve">
-    <value>How much damage player party members take on each hit. 100% means full damage, 50% means half damage, and 0% makes them invincible.</value>
-  </data>
-  <data name="PartyDamageTakenPercentage_Name" xml:space="preserve">
-    <value>Party Damage Taken Percentage</value>
-  </data>
   <data name="DailyFoodBonus_Desc" xml:space="preserve">
     <value>The food stocks in player owned castles and cities grow by the configured value every day.</value>
   </data>
@@ -586,7 +516,7 @@
     <value>Daily Food Bonus</value>
   </data>
   <data name="DailyGarrisonBonus_Desc" xml:space="preserve">
-    <value>The garrison in player owned castles and cities grows by the configured value every day.</value>
+    <value>Adds the configured daily garrison growth in player-owned towns and castles, subject to vanilla capacity and event restrictions.</value>
   </data>
   <data name="DailyGarrisonBonus_Name" xml:space="preserve">
     <value>Daily Garrison Bonus</value>
@@ -693,12 +623,6 @@
   <data name="WorkshopDailyExpensePercentage_Desc" xml:space="preserve">
     <value>Pecentage of daily workshop expense costs. 100% means full expenses, 0% means no expenses.</value>
   </data>
-  <data name="WorkshopUpgradeCostPercentage_Name" xml:space="preserve">
-    <value>Workshop Upgrade Cost Percentage</value>
-  </data>
-  <data name="WorkshopUpgradeCostPercentage_Desc" xml:space="preserve">
-    <value>Pecentage of workshop upgrade costs. 100% means full cost, 0% means free upgrades.</value>
-  </data>
   <data name="WorkshopSellingCostMultiplier_Name" xml:space="preserve">
     <value>Selling Price Multiplier</value>
   </data>
@@ -744,17 +668,17 @@
   <data name="SliceThroughEveryone_Desc" xml:space="preserve">
     <value>Player always cut / slice through enemies.</value>
   </data>
-  <data name="SliceThroughEveryone_AI_Name" xml:space="preserve">
-    <value>AI Cut / Slice Through Everyone</value>
+  <data name="PlayerMomentumDecayMultiplier_Name" xml:space="preserve">
+    <value>Player Momentum Decay Multiplier</value>
   </data>
-  <data name="SliceThroughEveryone_AI_Desc" xml:space="preserve">
-    <value>AI always cut / slice through enemies.</value>
+  <data name="PlayerMomentumDecayMultiplier_Desc" xml:space="preserve">
+    <value>Only applies when the player hits an agent in melee. 1.00 uses the game's default decay; 0.00 keeps momentum after hitting an agent. Wall and scene collisions are unchanged.</value>
   </data>
-  <data name="SliceThroughEveryone_ally_Name" xml:space="preserve">
-    <value>Cut / Slice Through Everyone: Ally</value>
+  <data name="PlayerPartySliceThroughEveryone_Name" xml:space="preserve">
+    <value>Attack penetration: own heroes and troops</value>
   </data>
-  <data name="SliceThroughEveryone_ally_Desc" xml:space="preserve">
-    <value>Ally always cut / slice through enemies.</value>
+  <data name="PlayerPartySliceThroughEveryone_Desc" xml:space="preserve">
+    <value>Applies only to the player and heroes/troops from the player's main party on the player's battle team. Every valid attack attempts to penetrate; participating allies are excluded.</value>
   </data>
   <data name="SliceThroughEveryone_enemy_Name" xml:space="preserve">
     <value>Cut / Slice Through Everyone: Enemy</value>
@@ -803,12 +727,6 @@
   </data>
   <data name="NoBribeToEnterKeep_Desc" xml:space="preserve">
     <value>If enabled, no bribe is required to enter a keep.</value>
-  </data>
-  <data name="EveryoneBuysWorkshops_Name" xml:space="preserve">
-    <value>Everyone Buys Workshops</value>
-  </data>
-  <data name="EveryoneBuysWorkshops_Desc" xml:space="preserve">
-    <value>If enabled, you will always find a buyer for your workshop, even if you have adjusted the workshop selling price cheat.</value>
   </data>
   <data name="PerfectAttraction_Name" xml:space="preserve">
     <value>Perfect Attraction</value>
@@ -907,30 +825,7 @@
   <data name="TransferSettlementConfirm" xml:space="preserve">
     <value>Transfer!</value>
   </data>
-  <data name="ChangePlayerMessageTitle" xml:space="preserve">
-    <value>Change to {0}?</value>
-  </data>
-  <data name="ChangePlayerMessage" xml:space="preserve">
-    <value>Play as this character from now on? This might have unexpected consequences! Use at your own risk and save your game before you do this!</value>
-  </data>
-  <data name="ChangePlayerConfirm" xml:space="preserve">
-    <value>Change!</value>
-  </data>
-  <data name="IUnderstand_Name" xml:space="preserve">
-    <value>Load a campaign to see cheats!</value>
-  </data>
-  <data name="IUnderstand_Desc" xml:space="preserve">
-    <value>Cheats are saved per character! They only show up when you are in a campaign. Press ESC, then go to Options → Mod Options → Cheats while in a campaign.</value>
-  </data>
-  <data name="Understood" xml:space="preserve">
-    <value>Understood!</value>
-  </data>
-  <data name="ThanksForReadingMessage" xml:space="preserve">
-    <value>Thanks for reading and understanding!</value>
-  </data>
-  <data name="Global" xml:space="preserve">
-    <value>Global</value>
-  </data>
+
   <data name="Enum_KnockoutOrKilled_Default" xml:space="preserve">
     <value>Default</value>
   </data>
@@ -1056,12 +951,6 @@
   </data>
   <data name="VigorArmorAdd_Desc" xml:space="preserve">
     <value>The armor value increase per point of Vigor.</value>
-  </data>
-  <data name="VigorMountArmorAdd_Name" xml:space="preserve">
-    <value>Vigor Mount Armor Value</value>
-  </data>
-  <data name="VigorMountArmorAdd_Desc" xml:space="preserve">
-    <value>The mount armor value increase per point of Vigor.</value>
   </data>
   <data name="VigorShieldEndurancePercent_Name" xml:space="preserve">
     <value>Vigor Shield Reinforcement</value>
@@ -1309,12 +1198,6 @@
   <data name="IntelligenceWorkshopProductionPercent_Desc" xml:space="preserve">
     <value>The percentage increase in workshop production per point of Intelligence (Owner).</value>
   </data>
-  <data name="EnableDailyGainXp_Name" xml:space="preserve">
-    <value>Enable Heroes to Gain Daily Character Experience</value>
-  </data>
-  <data name="EnableDailyGainXp_Desc" xml:space="preserve">
-    <value>Specifically, Level x Intelligence x Intelligence x 2</value>
-  </data>
   <data name="CombatAttributeRatePlayer_Name" xml:space="preserve">
     <value>Combat Enhancement Coefficient - Player</value>
   </data>
@@ -1363,17 +1246,11 @@
   <data name="PlayerAlwaysCrush_Desc" xml:space="preserve">
     <value>Player can always crush through</value>
   </data>
-  <data name="AICrush_Name" xml:space="preserve">
-    <value>AI Always Crush Through</value>
+  <data name="PlayerPartyCrush_Name" xml:space="preserve">
+    <value>Always crush through: own heroes and troops</value>
   </data>
-  <data name="AICrush_Desc" xml:space="preserve">
-    <value>AI can always crush through</value>
-  </data>
-  <data name="AllyCrush_Name" xml:space="preserve">
-    <value>Crush Through: Ally</value>
-  </data>
-  <data name="AllyCrush_Desc" xml:space="preserve">
-    <value>Ally can always crush through</value>
+  <data name="PlayerPartyCrush_Desc" xml:space="preserve">
+    <value>Applies only to the player and heroes/troops from the player's main party on the player's battle team. Does not affect participating allies.</value>
   </data>
   <data name="EnemyCrush_Name" xml:space="preserve">
     <value>Crush Through: Enemy</value>
@@ -1387,12 +1264,6 @@
   <data name="UnblockableThrust_player_Desc" xml:space="preserve">
     <value>Player's thrusts cannot be blocked unless using a shield (spear, sword thrusts).</value>
   </data>
-  <data name="UnblockableThrust_AI_Name" xml:space="preserve">
-    <value>Unblockable Thrust: AI</value>
-  </data>
-  <data name="UnblockableThrust_AI_Desc" xml:space="preserve">
-    <value>AI's thrusts cannot be blocked unless using a shield (spear, sword thrusts)</value>
-  </data>
   <data name="UnblockableThrust_ally_Name" xml:space="preserve">
     <value>Unblockable Thrust: Ally</value>
   </data>
@@ -1404,12 +1275,6 @@
   </data>
   <data name="UnblockableThrust_enemy_Desc" xml:space="preserve">
     <value>Enemy's thrusts cannot be blocked unless using a shield (spear, sword thrusts)</value>
-  </data>
-  <data name="InfiniteMomentum_Name" xml:space="preserve">
-    <value>Player Infinite Momentum</value>
-  </data>
-  <data name="InfiniteMomentum_Desc" xml:space="preserve">
-    <value>Player has infinite momentum</value>
   </data>
   <data name="KeepDaughter_Name" xml:space="preserve">
     <value>Female Marriage Stay in Clan</value>
@@ -1439,7 +1304,7 @@
     <value>Max Attribute Limit</value>
   </data>
   <data name="MaxAttr_Desc" xml:space="preserve">
-    <value>Max Attribute Limit (Default: 10)</value>
+    <value>Maximum value of the six basic character attributes. Default: 10.</value>
   </data>
   <data name="Enum_Setting_Language_English" xml:space="preserve">
     <value>English</value>
@@ -1504,4 +1369,93 @@
   <data name="Enum_Setting_Language_Portuguese" xml:space="preserve">
     <value>Portuguese</value>
   </data>
+
+  <data name="Enum_Setting_Language_Spanish" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="Enum_Setting_Language_Japanese" xml:space="preserve">
+    <value>Japanese</value>
+  </data>
+  <data name="NavalDLC_GroupName" xml:space="preserve"><value>Naval DLC</value></data>
+  <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>Ranged - Player Main Party</value></data>
+  <data name="RangedCadence_GroupName" xml:space="preserve"><value>Ranged - Firing Cadence</value></data>
+  <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>Movement accuracy penalty</value></data>
+  <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>Scales WeaponMaxMovementAccuracyPenalty. Lower values reduce inaccuracy while moving.</value></data>
+  <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>Unsteady aim penalty</value></data>
+  <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Desc" xml:space="preserve"><value>Scales WeaponMaxUnsteadyAccuracyPenalty. Lower values reduce the penalty while aim is unsteady.</value></data>
+  <data name="PlayerPartyRangedBestAccuracyWaitPercentage_Name" xml:space="preserve"><value>Best accuracy wait time</value></data>
+  <data name="PlayerPartyRangedBestAccuracyWaitPercentage_Desc" xml:space="preserve"><value>Scales WeaponBestAccuracyWaitTime. Lower values reach full accuracy sooner.</value></data>
+  <data name="PlayerPartyRangedRotationPenaltyPercentage_Name" xml:space="preserve"><value>Turning accuracy penalty</value></data>
+  <data name="PlayerPartyRangedRotationPenaltyPercentage_Desc" xml:space="preserve"><value>Scales WeaponRotationalAccuracyPenaltyInRadians. Lower values reduce the penalty while turning.</value></data>
+  <data name="PlayerPartyRangedAccelerationPenaltyPercentage_Name" xml:space="preserve"><value>Acceleration accuracy penalty</value></data>
+  <data name="PlayerPartyRangedAccelerationPenaltyPercentage_Desc" xml:space="preserve"><value>Scales WeaponExternalAccelerationAccuracyPenalty. Lower values reduce the penalty from external acceleration.</value></data>
+  <data name="PlayerPartyRangedAiShooterErrorPercentage_Name" xml:space="preserve"><value>AI base aiming error</value></data>
+  <data name="PlayerPartyRangedAiShooterErrorPercentage_Desc" xml:space="preserve"><value>Scales AI shooter error for your party's bow and crossbow troops. Lower values are more accurate.</value></data>
+  <data name="PlayerPartyRangedAiLeadErrorPercentage_Name" xml:space="preserve"><value>AI moving-target lead error</value></data>
+  <data name="PlayerPartyRangedAiLeadErrorPercentage_Desc" xml:space="preserve"><value>Scales AI lead error minimum and maximum for moving targets. Lower values predict movement better.</value></data>
+  <data name="PlayerPartyRangedAiHorizontalErrorPercentage_Name" xml:space="preserve"><value>AI horizontal aiming error</value></data>
+  <data name="PlayerPartyRangedAiHorizontalErrorPercentage_Desc" xml:space="preserve"><value>Scales horizontal AI aiming error. Lower values are more accurate.</value></data>
+  <data name="PlayerPartyRangedAiVerticalErrorPercentage_Name" xml:space="preserve"><value>AI vertical aiming error</value></data>
+  <data name="PlayerPartyRangedAiVerticalErrorPercentage_Desc" xml:space="preserve"><value>Scales vertical AI aiming error. Lower values are more accurate.</value></data>
+  <data name="PlayerPartyRangedAiShootIntervalPercentage_Name" xml:space="preserve"><value>AI firing interval</value></data>
+  <data name="PlayerPartyRangedAiShootIntervalPercentage_Desc" xml:space="preserve"><value>Scales AIWaitBeforeShootFactor. Lower values make AI troops shoot more frequently.</value></data>
+  <data name="MeleeActions_GroupName" xml:space="preserve"><value>Melee - Player Main Party</value></data>
+  <data name="MeleeDefense_GroupName" xml:space="preserve"><value>Melee - AI Defense</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Name" xml:space="preserve"><value>Swing speed</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Desc" xml:space="preserve"><value>Scales SwingSpeedMultiplier for your main party's melee troops. 1.000 is vanilla.</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Name" xml:space="preserve"><value>Thrust ready speed</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Desc" xml:space="preserve"><value>Scales ThrustOrRangedReadySpeedMultiplier only while using a melee weapon. 1.000 is vanilla.</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Name" xml:space="preserve"><value>Weapon handling</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Desc" xml:space="preserve"><value>Scales HandlingMultiplier for your main party's melee troops. 1.000 is vanilla.</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Name" xml:space="preserve"><value>Offhand defense speed</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Desc" xml:space="preserve"><value>Scales OffhandWeaponDefendSpeedMultiplier while the troop has a melee weapon equipped. 1.000 is vanilla.</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Name" xml:space="preserve"><value>Shield-bash stun duration</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Desc" xml:space="preserve"><value>Scales ShieldBashStunDurationMultiplier for your main party's melee troops. 1.000 is vanilla.</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Name" xml:space="preserve"><value>Kick stun duration</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Desc" xml:space="preserve"><value>Scales KickStunDurationMultiplier for your main party's melee troops. 1.000 is vanilla.</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Name" xml:space="preserve"><value>AI block decision</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Desc" xml:space="preserve"><value>Scales AIBlockOnDecideAbility for your main party's AI melee troops. 1.000 is vanilla.</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Name" xml:space="preserve"><value>AI parry decision</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>Scales AIParryOnDecideAbility for your main party's AI melee troops. 1.000 is vanilla.</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>AI shield defense decision</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>Scales AiDefendWithShieldDecisionChanceValue for your main party's AI melee troops. 1.000 is vanilla.</value></data>
+  <data name="RecruitExileClans_Name" xml:space="preserve"><value>Recruit exiled clans</value></data>
+  <data name="RecruitExileClans_Desc" xml:space="preserve"><value>Allow inviting unaffiliated, non-mercenary clan leaders to join the player's kingdom in conversation. Enabled by default.</value></data>
+  <data name="NavalCampaignSpeedMultiplier_Name" xml:space="preserve"><value>Campaign Sailing Speed Multiplier</value></data><data name="NavalCampaignSpeedMultiplier_Desc" xml:space="preserve"><value>Multiplies the campaign sailing-speed bonus of player-owned ships.</value></data>
+  <data name="NavalOarForceMultiplier_Name" xml:space="preserve"><value>Player Ship Oar Force Multiplier</value></data><data name="NavalOarForceMultiplier_Desc" xml:space="preserve"><value>Multiplies rowing force of player-owned ships.</value></data>
+  <data name="NavalSailForceMultiplier_Name" xml:space="preserve"><value>Player Ship Sail Force Multiplier</value></data><data name="NavalSailForceMultiplier_Desc" xml:space="preserve"><value>Multiplies sail force of player-owned ships.</value></data>
+  <data name="NavalCrewCapacityMultiplier_Name" xml:space="preserve"><value>Player Ship Crew Capacity Multiplier</value></data><data name="NavalCrewCapacityMultiplier_Desc" xml:space="preserve"><value>Multiplies crew-capacity bonuses of player-owned ships.</value></data>
+  <data name="NavalShipCombatFactorMultiplier_Name" xml:space="preserve"><value>Ship Combat Factor Multiplier</value></data><data name="NavalShipCombatFactorMultiplier_Desc" xml:space="preserve"><value>Multiplies the Naval DLC ship combat factor for all sides.</value></data>
+  <data name="NavalAdditionalAmmo_Name" xml:space="preserve"><value>Player Ship Extra Ammunition</value></data><data name="NavalAdditionalAmmo_Desc" xml:space="preserve"><value>Extra ammunition granted by player-owned ships.</value></data>
+  <data name="NavalSeaAttritionPercentage_Name" xml:space="preserve"><value>Player Ship Sea Attrition</value></data><data name="NavalSeaAttritionPercentage_Desc" xml:space="preserve"><value>Hourly open-sea ship damage. 0% disables it.</value></data>
+  <data name="NavalBattleShipDamagePercentage_Name" xml:space="preserve"><value>Player Ship Battle Damage</value></data><data name="NavalBattleShipDamagePercentage_Desc" xml:space="preserve"><value>Damage received by player-owned ships in naval battles. 0% disables it.</value></data>
+  <data name="NavalStormDamagePercentage_Name" xml:space="preserve"><value>Player Ship Storm Damage</value></data><data name="NavalStormDamagePercentage_Desc" xml:space="preserve"><value>Storm damage received by player-owned ships. 0% grants storm immunity.</value></data>
+  <data name="NavalStormFrequencyMultiplier_Name" xml:space="preserve"><value>Storm Frequency Multiplier</value></data><data name="NavalStormFrequencyMultiplier_Desc" xml:space="preserve"><value>Multiplies storm-spawn chance across the campaign map. 0 disables new storms.</value></data>
+  <data name="NavalStormStrengthMultiplier_Name" xml:space="preserve"><value>Storm Strength Multiplier</value></data><data name="NavalStormStrengthMultiplier_Desc" xml:space="preserve"><value>Multiplies global storm intensity and eye strength.</value></data>
+  <data name="NavalShipPurchaseCostMultiplier_Name" xml:space="preserve"><value>Ship Purchase Cost Multiplier</value></data><data name="NavalShipPurchaseCostMultiplier_Desc" xml:space="preserve"><value>Multiplies ship purchase cost when the buyer is the player.</value></data>
+  <data name="NavalShipRepairCostMultiplier_Name" xml:space="preserve"><value>Ship Repair Cost Multiplier</value></data><data name="NavalShipRepairCostMultiplier_Desc" xml:space="preserve"><value>Multiplies repair cost for player-owned ships.</value></data>
+  <data name="NavalShipUpgradeCostMultiplier_Name" xml:space="preserve"><value>Ship Upgrade Cost Multiplier</value></data><data name="NavalShipUpgradeCostMultiplier_Desc" xml:space="preserve"><value>Multiplies upgrade-piece cost for player-owned ships.</value></data>
+  <data name="NavalDeploymentLimitMultiplier_Name" xml:space="preserve"><value>Player Naval Deployment Limit Multiplier</value></data><data name="NavalDeploymentLimitMultiplier_Desc" xml:space="preserve"><value>Multiplies the number of player ships deployable in a naval battle.</value></data>
+  <data name="NavalBattleRewardMultiplier_Name" xml:space="preserve"><value>Naval Battle Reward Multiplier</value></data><data name="NavalBattleRewardMultiplier_Desc" xml:space="preserve"><value>Multiplies player renown and influence from naval battles on top of the general reward settings. Land battles are unaffected.</value></data>
+  <data name="NavalFleetMinimumTroopPercentage_Name" xml:space="preserve"><value>Fleet Dispatch Minimum Troops</value></data><data name="NavalFleetMinimumTroopPercentage_Desc" xml:space="preserve"><value>Minimum troops required to dispatch ships. 0% removes the requirement.</value></data>
+  <data name="NavalShipId_Name" xml:space="preserve"><value>Ship Identifier</value></data><data name="NavalShipId_Desc" xml:space="preserve"><value>ID file: Mount &amp; Blade II Bannerlord/Modules/NavalDLC/ModuleData/ship_hulls.xml (ShipHull id). Separate multiple IDs with spaces, commas, or semicolons.</value></data>
+  <data name="NavalGrantShip_Name" xml:space="preserve"><value>Grant Ship</value></data><data name="NavalGrantShip_Desc" xml:space="preserve"><value>Adds the entered ship identifiers to the player fleet.</value></data><data name="NavalGrantShip_Button" xml:space="preserve"><value>Grant ship</value></data>
+  <data name="NavalGrantAllShips_Name" xml:space="preserve"><value>Grant All Ships</value></data><data name="NavalGrantAllShips_Desc" xml:space="preserve"><value>Adds all normal playable hulls. Story and quest ships are excluded.</value></data><data name="NavalGrantAllShips_Button" xml:space="preserve"><value>Grant all ships</value></data>
+  <data name="NavalFigureheadId_Name" xml:space="preserve"><value>Figurehead Identifier</value></data><data name="NavalFigureheadId_Desc" xml:space="preserve"><value>ID file: Mount &amp; Blade II Bannerlord/Modules/NavalDLC/AssetPackages/nested_prefabs_packed.xml (figurehead entity name). Separate multiple IDs with spaces, commas, or semicolons.</value></data>
+  <data name="NavalUnlockFigurehead_Name" xml:space="preserve"><value>Unlock Figurehead</value></data><data name="NavalUnlockFigurehead_Desc" xml:space="preserve"><value>Unlocks the entered figurehead identifiers.</value></data><data name="NavalUnlockFigurehead_Button" xml:space="preserve"><value>Unlock figurehead</value></data>
+  <data name="NavalUnlockAllFigureheads_Name" xml:space="preserve"><value>Unlock All Figureheads</value></data><data name="NavalUnlockAllFigureheads_Desc" xml:space="preserve"><value>Unlocks every built-in Naval DLC figurehead.</value></data><data name="NavalUnlockAllFigureheads_Button" xml:space="preserve"><value>Unlock all figureheads</value></data>
+  <data name="NavalShipUpgradePieceId_Name" xml:space="preserve"><value>Ship Upgrade Piece Identifier</value></data><data name="NavalShipUpgradePieceId_Desc" xml:space="preserve"><value>ID file: Mount &amp; Blade II Bannerlord/Modules/NavalDLC/ModuleData/ship_upgrade_pieces.xml (ShipUpgradePiece id). They are equipped in matching slots on all current player ships.</value></data>
+  <data name="NavalAddShipUpgradePieces_Name" xml:space="preserve"><value>Add Ship Upgrade Pieces</value></data><data name="NavalAddShipUpgradePieces_Desc" xml:space="preserve"><value>Adds entered upgrade pieces to all current player ships. One piece is kept per slot.</value></data><data name="NavalAddShipUpgradePieces_Button" xml:space="preserve"><value>Add upgrade pieces</value></data>
+  <data name="NavalAddAllShipUpgradePieces_Name" xml:space="preserve"><value>Add All Ship Upgrade Pieces</value></data><data name="NavalAddAllShipUpgradePieces_Desc" xml:space="preserve"><value>Adds the highest-value normal piece available for every upgrade slot.</value></data><data name="NavalAddAllShipUpgradePieces_Button" xml:space="preserve"><value>Add all upgrade pieces</value></data>
+  <data name="NavalDLCIdentifierRequired" xml:space="preserve"><value>Enter at least one Naval DLC identifier first.</value></data><data name="NavalDLCNotInstalled" xml:space="preserve"><value>Naval DLC is not installed or not loaded.</value></data>
+  <data name="ModLoaded" xml:space="preserve"><value>UFO mod loaded.</value></data>
+  <data name="CombatCritStrike" xml:space="preserve"><value>Critical hit!</value></data>
+  <data name="CombatDamageExempted" xml:space="preserve"><value>Damage avoided!</value></data>
+  <data name="CombatHitByCrit" xml:space="preserve"><value>You received a critical hit!</value></data>
+  <data name="CombatEnemyExempted" xml:space="preserve"><value>The opponent avoided your damage!</value></data>
+  <data name="HotkeyTipsEncyclopedia" xml:space="preserve"><value>Encyclopedia: CTRL+H adds 1 troop; CTRL+SHIFT+H adds 10. On hero pages, CTRL+X kills the selected hero after confirmation. On town/castle pages, CTRL+H transfers the settlement after confirmation.</value></data>
+  <data name="HotkeyTipsInventory" xml:space="preserve"><value>Inventory: CTRL+X adds 1,000 gold; CTRL+SHIFT+X adds 100,000. CTRL+H adds 1 selected item; CTRL+SHIFT+H adds 100.</value></data>
+  <data name="HotkeyTipsClan" xml:space="preserve"><value>Clan: CTRL+X adds 1,000 influence.</value></data>
+  <data name="HotkeyTipsParty" xml:space="preserve"><value>Party: CTRL+H adds 1 selected troop or prisoner; CTRL+SHIFT+H adds 10. CTRL+X adds experience to the selected upgradable troop.</value></data>
+  <data name="HotkeyTipsCharacter" xml:space="preserve"><value>Character: CTRL+A sets all attributes to the configured maximum; CTRL+1–6 adds one point to the corresponding attribute. CTRL+F adds one unspent focus point; CTRL+G adds one unspent attribute point.</value></data>
 </root>

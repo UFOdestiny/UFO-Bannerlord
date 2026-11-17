@@ -6,12 +6,6 @@ namespace UFO.Localization
     {
         public int SelectedIndex { get; }
 
-        public LocalizedSettingPropertyDropdown(string settingName, int defaultIndex)
-            : base(settingName)
-        {
-            SelectedIndex = defaultIndex;
-        }
-
         public LocalizedSettingPropertyDropdown(string settingName, object defaultIndex)
             : base(settingName)
         {

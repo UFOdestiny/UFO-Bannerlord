@@ -1,0 +1,180 @@
+using HarmonyLib;
+using TaleWorlds.CampaignSystem;
+using TaleWorlds.CampaignSystem.CharacterDevelopment;
+using TaleWorlds.Core;
+using TaleWorlds.MountAndBlade;
+using UFO.Setting;
+
+namespace UFO.Extension
+{
+    public static class HeroEnhanceExtensions
+    {
+
+        public static int AgeScale(this Hero hero)
+        {
+            if (Game.Current.PlayerTroop == null)
+            {
+                return -1;
+            }
+            if (SettingsManager.EnableEverYoung.Value && hero == Hero.MainHero)
+            {
+                return -1;
+            }
+            if (hero.Clan != Clan.PlayerClan)
+            {
+                return 1;
+            }
+            int num = hero.GetSkillValue(DefaultSkills.Athletics) + hero.GetSkillValue(DefaultSkills.Charm);
+            int num2 = 2;
+            if (num >= SettingsManager.EverYoungSkillNeed.Value)
+            {
+                return -1;
+            }
+            if (!hero.IsWanderer)
+            {
+                num2++;
+            }
+            return num2;
+        }
+
+        public static bool CombatEnhanceDisable()
+        {
+            return SettingsManager.CombatAttributeRatePlayer.Value == 0f && SettingsManager.CombatAttributeRateClanMember.Value == 0f && SettingsManager.CombatAttributeRateOther.Value == 0f;
+        }
+
+        public static bool StrategyEnhanceDisable()
+        {
+            return SettingsManager.StrategyAttributeRatePlayer.Value == 0f && SettingsManager.StrategyAttributeRateClanMember.Value == 0f && SettingsManager.StrategyAttributeRateOther.Value == 0f;
+        }
+
+        public static float CombatEnhanceRate(this CharacterObject character)
+        {
+            if (character == null)
+            {
+                return 0f;
+            }
+            Hero heroObject = character.HeroObject;
+            return heroObject.CombatEnhanceRate();
+        }
+
+        public static float CombatEnhanceRate(this Agent agent)
+        {
+            if (agent == null)
+            {
+                return 0f;
+            }
+            CharacterObject character = agent.Character as CharacterObject;
+            return character.CombatEnhanceRate();
+        }
+
+        public static float CombatEnhanceRate(this Hero hero)
+        {
+            if (hero == null || Campaign.Current == null)
+            {
+                return 0f;
+            }
+
+            // Story Mode registers hero objects before Hero.MainHero and Clan.PlayerClan exist.
+            // Do not access those static properties until the player party has been created.
+            if (hero.CharacterObject?.IsPlayerCharacter == true)
+            {
+                return SettingsManager.CombatAttributeRatePlayer.Value;
+            }
+
+            Clan playerClan = Campaign.Current.MainParty?.ActualClan;
+            if (playerClan == null)
+            {
+                return 0f;
+            }
+
+            if (hero.Clan == playerClan)
+            {
+                return SettingsManager.CombatAttributeRateClanMember.Value;
+            }
+            return SettingsManager.CombatAttributeRateOther.Value;
+        }
+
+        public static float StrategyEnhanceRate(this Hero hero)
+        {
+            if (hero == null || Campaign.Current == null)
+            {
+                return 0f;
+            }
+            if (hero.CharacterObject?.IsPlayerCharacter == true)
+            {
+                return SettingsManager.StrategyAttributeRatePlayer.Value;
+            }
+
+            Clan playerClan = Campaign.Current.MainParty?.ActualClan;
+            if (playerClan == null)
+            {
+                return 0f;
+            }
+
+            if (hero.Clan == playerClan)
+            {
+                return SettingsManager.StrategyAttributeRateClanMember.Value;
+            }
+            return SettingsManager.StrategyAttributeRateOther.Value;
+        }
+
+        public static int EnhanceType(this Hero hero)
+        {
+            if (hero == null)
+            {
+                return -1;
+            }
+            if (hero == Hero.MainHero)
+            {
+                return 1;
+            }
+            if (hero.Clan == Clan.PlayerClan)
+            {
+                return 0;
+            }
+            return 2;
+        }
+
+        public static void AddBothBranchPerks(this Hero hero)
+        {
+            if (!hero.IsAlive)
+            {
+                return;
+            }
+
+            if ((int)SettingsManager.AutoChoosePerk.Value != hero.EnhanceType())
+            {
+                if (hero.EnhanceType() == 1 && (int)SettingsManager.AutoChoosePerk.Value == 0)
+                {
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            foreach (PerkObject item in PerkObject.All)
+            {
+                SkillObject skill = item.Skill;
+                if (hero.GetSkillValue(skill) >= item.RequiredSkillValue && !hero.GetPerkValue(item))
+                {
+                    hero.HeroDeveloper.AddPerk(item);
+                }
+            }
+        }
+
+        public static float TrueAge(this Hero hero)
+        {
+            if (CampaignOptions.IsLifeDeathCycleDisabled)
+            {
+                return Traverse.Create(hero).Field("_defaultAge").GetValue<float>();
+            }
+            CampaignTime value = Traverse.Create(hero).Field("_birthDay").GetValue<CampaignTime>();
+            if (hero.IsAlive)
+            {
+                return value.ElapsedYearsUntilNow;
+            }
+            return (float)(hero.DeathDay - value).ToYears;
+        }
+    }
+}

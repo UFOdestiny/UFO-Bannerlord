@@ -1,0 +1,27 @@
+using TaleWorlds.CampaignSystem;
+using TaleWorlds.Library;
+using UFO.Setting;
+
+namespace UFO.Behavior;
+
+public class AddMoney : CampaignBehaviorBase
+{
+    public override void RegisterEvents()
+    {
+        CampaignEvents.DailyTickEvent.AddNonSerializedListener(this, DailyTick);
+    }
+
+    private void DailyTick()
+    {
+        if (Hero.MainHero.Gold < SettingsManager.AddMoneyThreshhold.Value)
+        {
+            Hero.MainHero.ChangeHeroGold(SettingsManager.AddMoney_count.Value);
+            InformationManager.DisplayMessage(new InformationMessage(
+                L10N.GetTextFormat("AddGoldMessage", SettingsManager.AddMoney_count.Value), Colors.White));
+        }
+    }
+
+    public override void SyncData(IDataStore dataStore)
+    {
+    }
+}

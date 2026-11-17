@@ -1,110 +1,51 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xsd:string" />
+              <xs:attribute name="type" type="xsd:string" />
+              <xs:attribute name="mimetype" type="xsd:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xsd:string" />
+              <xs:attribute name="name" type="xsd:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xsd:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xsd:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xsd:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
   <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
@@ -117,8 +58,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ModName" xml:space="preserve">
-    <value>UFO's Mod</value>
+
+  <data name="Common_GroupName" xml:space="preserve">
+    <value>常用功能</value>
   </data>
   <data name="Combat_Player_GroupName" xml:space="preserve">
     <value>战斗 - 玩家</value>
@@ -168,9 +110,7 @@
   <data name="Army_GroupName" xml:space="preserve">
     <value>军队</value>
   </data>
-  <data name="UFOs_GroupName" xml:space="preserve">
-    <value>UFO's 通用设置</value>
-  </data>
+
   <data name="Invincible_Name" xml:space="preserve">
     <value>无敌</value>
   </data>
@@ -260,12 +200,6 @@
   </data>
   <data name="BanditHideoutTroopLimit_Desc" xml:space="preserve">
     <value>进攻藏身处是，可加入玩家进攻的额外部队。值0表示默认部队限制。</value>
-  </data>
-  <data name="AlwaysCrushThroughShields_Name" xml:space="preserve">
-    <value>始终粉碎盾牌</value>
-  </data>
-  <data name="AlwaysCrushThroughShields_Desc" xml:space="preserve">
-    <value>你的攻击总是能粉碎敌人的盾牌。</value>
   </data>
   <data name="ExtraPartyMemberSize_Name" xml:space="preserve">
     <value>额外部队人数</value>
@@ -463,7 +397,7 @@
     <value>{0}获得经验值。</value>
   </data>
   <data name="SetAllAttributesMessage" xml:space="preserve">
-    <value>{0}的属性调整到10。</value>
+    <value>已将 {0} 的属性设为配置的上限。</value>
   </data>
   <data name="PerfectRelationships_Desc" xml:space="preserve">
     <value>玩家和所有角色的关系都设置为100。</value>
@@ -505,7 +439,7 @@
     <value>NPC部队速度</value>
   </data>
   <data name="PartyInvisibleOnMap_Desc" xml:space="preserve">
-    <value>地方不会在地图上追踪或攻击玩家部队。</value>
+    <value>敌方不会在地图上追踪或攻击玩家部队。</value>
   </data>
   <data name="PartyInvisibleOnMap_Name" xml:space="preserve">
     <value>隐形部队</value>
@@ -576,12 +510,6 @@
   <data name="SellingPriceMultiplier_Name" xml:space="preserve">
     <value>销售价格倍数</value>
   </data>
-  <data name="PartyDamageTakenPercentage_Desc" xml:space="preserve">
-    <value>玩家部队每次受到的攻击会造成多少伤害。100％表示完整伤害，50％表示一半伤害，0％表示玩家部队无敌。</value>
-  </data>
-  <data name="PartyDamageTakenPercentage_Name" xml:space="preserve">
-    <value>部队受伤百分比</value>
-  </data>
   <data name="DailyFoodBonus_Desc" xml:space="preserve">
     <value>玩家城堡和城镇的食物库存每日按照一定数值增长。</value>
   </data>
@@ -589,7 +517,7 @@
     <value>每日食物奖励</value>
   </data>
   <data name="DailyGarrisonBonus_Desc" xml:space="preserve">
-    <value>玩家城堡和城镇的驻军每日按照一定数值增长。</value>
+    <value>玩家城镇和城堡的每日驻军增长增加指定数值，仍受原版容量与事件条件限制。</value>
   </data>
   <data name="DailyGarrisonBonus_Name" xml:space="preserve">
     <value>每日驻军奖励</value>
@@ -696,12 +624,6 @@
   <data name="WorkshopDailyExpensePercentage_Desc" xml:space="preserve">
     <value>工坊每日开支的百分比。100％表示完整费用，0％表示没有费用。</value>
   </data>
-  <data name="WorkshopUpgradeCostPercentage_Name" xml:space="preserve">
-    <value>升级费用百分比</value>
-  </data>
-  <data name="WorkshopUpgradeCostPercentage_Desc" xml:space="preserve">
-    <value>工坊升级费用的百分比。100％表示完整费用，0％表示免费升级。</value>
-  </data>
   <data name="WorkshopSellingCostMultiplier_Name" xml:space="preserve">
     <value>售价倍数</value>
   </data>
@@ -736,10 +658,10 @@
     <value>同伴经验获取的倍数。倍数1表示默认经验。</value>
   </data>
   <data name="CompanionLearningRateMultiplier_Name" xml:space="preserve">
-    <value>同伴学习上限倍数</value>
+    <value>同伴学习效率倍数</value>
   </data>
   <data name="CompanionLearningRateMultiplier_Desc" xml:space="preserve">
-    <value>玩家同伴所有技能学习上限的倍数。倍数1表示默认学习上限。</value>
+    <value>玩家同伴技能学习效率的倍数，1 表示默认效率。</value>
   </data>
   <data name="SliceThroughEveryone_Name" xml:space="preserve">
     <value>攻击穿透: 玩家</value>
@@ -747,17 +669,17 @@
   <data name="SliceThroughEveryone_Desc" xml:space="preserve">
     <value>玩家每次攻击时都能穿透敌人。</value>
   </data>
-  <data name="SliceThroughEveryone_AI_Name" xml:space="preserve">
-    <value>AI攻击穿透</value>
+  <data name="PlayerMomentumDecayMultiplier_Name" xml:space="preserve">
+    <value>玩家动量衰减倍率</value>
   </data>
-  <data name="SliceThroughEveryone_AI_Desc" xml:space="preserve">
-    <value>AI每次攻击时都能穿透敌人。</value>
+  <data name="PlayerMomentumDecayMultiplier_Desc" xml:space="preserve">
+    <value>仅在玩家近战命中单位时生效。1.00 为游戏默认衰减；0.00 为命中单位后不衰减。不会改变墙体或场景碰撞。</value>
   </data>
-  <data name="SliceThroughEveryone_ally_Name" xml:space="preserve">
-    <value>攻击穿透: 友军</value>
+  <data name="PlayerPartySliceThroughEveryone_Name" xml:space="preserve">
+    <value>攻击穿透: 己方英雄与士兵</value>
   </data>
-  <data name="SliceThroughEveryone_ally_Desc" xml:space="preserve">
-    <value>友军每次攻击时都能穿透敌人。</value>
+  <data name="PlayerPartySliceThroughEveryone_Desc" xml:space="preserve">
+    <value>仅作用于玩家本人及玩家主队中、与玩家同一战斗阵营的英雄和士兵；所有有效攻击都会尝试穿透，不影响参战友军。</value>
   </data>
   <data name="SliceThroughEveryone_enemy_Name" xml:space="preserve">
     <value>攻击穿透: 敌人</value>
@@ -793,7 +715,7 @@
     <value>作弊商城</value>
   </data>
   <data name="NativeItemSpawning_Desc" xml:space="preserve">
-    <value>启用作弊商城，打开物品栏以查看兵获取游戏中的所有物品。</value>
+    <value>启用作弊商城，打开物品栏以查看并获取游戏中的物品。</value>
   </data>
   <data name="ConstructionPowerMultiplier_Name" xml:space="preserve">
     <value>建造速度倍数</value>
@@ -806,12 +728,6 @@
   </data>
   <data name="NoBribeToEnterKeep_Desc" xml:space="preserve">
     <value>如果启用，则无需贿赂即可进入城堡内庭。</value>
-  </data>
-  <data name="EveryoneBuysWorkshops_Name" xml:space="preserve">
-    <value>工坊不愁买家</value>
-  </data>
-  <data name="EveryoneBuysWorkshops_Desc" xml:space="preserve">
-    <value>如果启用，你始终都能为你的工坊找到买家。</value>
   </data>
   <data name="PerfectAttraction_Name" xml:space="preserve">
     <value>魅力非凡</value>
@@ -912,30 +828,7 @@
   <data name="TransferSettlementConfirm" xml:space="preserve">
     <value>拿来吧你！</value>
   </data>
-  <data name="ChangePlayerMessageTitle" xml:space="preserve">
-    <value>扮演{0}？</value>
-  </data>
-  <data name="ChangePlayerMessage" xml:space="preserve">
-    <value>从现在开始扮演这个角色？这可能会产生意想不到的后果！使用之前最好保存游戏，并自行承担后果。</value>
-  </data>
-  <data name="ChangePlayerConfirm" xml:space="preserve">
-    <value>扮演！</value>
-  </data>
-  <data name="IUnderstand_Name" xml:space="preserve">
-    <value>加载战役（进大地图）以启用Cheats内置修改器！</value>
-  </data>
-  <data name="IUnderstand_Desc" xml:space="preserve">
-    <value>内置修改器设置仅适用于一个角色。只有当你在战役中（大地图上），才可设置内置修改器。按 ESC ，选择：设置 → Mod Options → 内置修改器</value>
-  </data>
-  <data name="Understood" xml:space="preserve">
-    <value>明白了！</value>
-  </data>
-  <data name="ThanksForReadingMessage" xml:space="preserve">
-    <value>感谢阅读和理解！</value>
-  </data>
-  <data name="Global" xml:space="preserve">
-    <value>全局</value>
-  </data>
+
   <data name="Enum_KnockoutOrKilled_Default" xml:space="preserve">
     <value>默认</value>
   </data>
@@ -1061,12 +954,6 @@
   </data>
   <data name="VigorArmorAdd_Desc" xml:space="preserve">
     <value>每点活力增加的护甲值</value>
-  </data>
-  <data name="VigorMountArmorAdd_Name" xml:space="preserve">
-    <value>活力坐骑护甲值</value>
-  </data>
-  <data name="VigorMountArmorAdd_Desc" xml:space="preserve">
-    <value>每点活力增加的坐骑护甲值</value>
   </data>
   <data name="VigorShieldEndurancePercent_Name" xml:space="preserve">
     <value>活力盾牌强化</value>
@@ -1314,12 +1201,6 @@
   <data name="IntelligenceWorkshopProductionPercent_Desc" xml:space="preserve">
     <value>每点智力增加的工坊产量百分比(拥有者)</value>
   </data>
-  <data name="EnableDailyGainXp_Name" xml:space="preserve">
-    <value>开启英雄每天获得角色经验</value>
-  </data>
-  <data name="EnableDailyGainXp_Desc" xml:space="preserve">
-    <value>具体为等级x智力x智力x2</value>
-  </data>
   <data name="CombatAttributeRatePlayer_Name" xml:space="preserve">
     <value>战斗增强系数-玩家</value>
   </data>
@@ -1368,17 +1249,11 @@
   <data name="PlayerAlwaysCrush_Desc" xml:space="preserve">
     <value>玩家永远破格挡</value>
   </data>
-  <data name="AICrush_Name" xml:space="preserve">
-    <value>AI永远破格挡</value>
+  <data name="PlayerPartyCrush_Name" xml:space="preserve">
+    <value>永远破格挡: 己方英雄与士兵</value>
   </data>
-  <data name="AICrush_Desc" xml:space="preserve">
-    <value>AI永远破格挡</value>
-  </data>
-  <data name="AllyCrush_Name" xml:space="preserve">
-    <value>永远破格挡: 友军</value>
-  </data>
-  <data name="AllyCrush_Desc" xml:space="preserve">
-    <value>友军永远破格挡</value>
+  <data name="PlayerPartyCrush_Desc" xml:space="preserve">
+    <value>仅作用于玩家本人及玩家主队中、与玩家同一战斗阵营的英雄和士兵；不影响参战友军。</value>
   </data>
   <data name="EnemyCrush_Name" xml:space="preserve">
     <value>永远破格挡: 敌人</value>
@@ -1392,12 +1267,6 @@
   <data name="UnblockableThrust_player_Desc" xml:space="preserve">
     <value>玩家刺击无法格挡，除非使用盾防御（矛，剑的刺击）</value>
   </data>
-  <data name="UnblockableThrust_AI_Name" xml:space="preserve">
-    <value>AI刺击无法格挡</value>
-  </data>
-  <data name="UnblockableThrust_AI_Desc" xml:space="preserve">
-    <value>AI刺击无法格挡，除非使用盾防御（矛，剑的刺击）</value>
-  </data>
   <data name="UnblockableThrust_ally_Name" xml:space="preserve">
     <value>刺击无法格挡: 友军</value>
   </data>
@@ -1409,12 +1278,6 @@
   </data>
   <data name="UnblockableThrust_enemy_Desc" xml:space="preserve">
     <value>敌人刺击无法格挡，除非使用盾防御（矛，剑的刺击）</value>
-  </data>
-  <data name="InfiniteMomentum_Name" xml:space="preserve">
-    <value>玩家无限动量</value>
-  </data>
-  <data name="InfiniteMomentum_Desc" xml:space="preserve">
-    <value>玩家无限动量</value>
   </data>
   <data name="KeepDaughter_Name" xml:space="preserve">
     <value>女性结婚留在家族</value>
@@ -1441,10 +1304,10 @@
     <value>选择设置的语言</value>
   </data>
   <data name="MaxAttr_Name" xml:space="preserve">
-    <value>技能上限</value>
+    <value>属性点上限</value>
   </data>
   <data name="MaxAttr_Desc" xml:space="preserve">
-    <value>技能上限（默认是10）</value>
+    <value>六项基础属性点的上限，默认 10。</value>
   </data>
   <data name="Enum_Setting_Language_English" xml:space="preserve">
     <value>English</value>
@@ -1509,4 +1372,92 @@
   <data name="Enum_Setting_Language_Portuguese" xml:space="preserve">
     <value>Portuguese</value>
   </data>
+  <data name="Enum_Setting_Language_Spanish" xml:space="preserve">
+    <value>西班牙语</value>
+  </data>
+  <data name="Enum_Setting_Language_Japanese" xml:space="preserve">
+    <value>日语</value>
+  </data>
+  <data name="NavalDLC_GroupName" xml:space="preserve"><value>海战 DLC</value></data>
+  <data name="NavalCampaignSpeedMultiplier_Name" xml:space="preserve"><value>战役航行速度倍数</value></data><data name="NavalCampaignSpeedMultiplier_Desc" xml:space="preserve"><value>调整玩家所属船只提供的战役航行速度加成。</value></data>
+  <data name="NavalOarForceMultiplier_Name" xml:space="preserve"><value>玩家船只划桨力倍数</value></data><data name="NavalOarForceMultiplier_Desc" xml:space="preserve"><value>调整玩家所属船只的划桨推力。</value></data>
+  <data name="NavalSailForceMultiplier_Name" xml:space="preserve"><value>玩家船只帆力倍数</value></data><data name="NavalSailForceMultiplier_Desc" xml:space="preserve"><value>调整玩家所属船只的帆力。</value></data>
+  <data name="NavalCrewCapacityMultiplier_Name" xml:space="preserve"><value>玩家船只船员容量倍数</value></data><data name="NavalCrewCapacityMultiplier_Desc" xml:space="preserve"><value>调整玩家所属船只的船员容量加成。</value></data>
+  <data name="NavalShipCombatFactorMultiplier_Name" xml:space="preserve"><value>船只战斗系数倍数</value></data><data name="NavalShipCombatFactorMultiplier_Desc" xml:space="preserve"><value>调整所有阵营的 Naval DLC 船只战斗系数。</value></data>
+  <data name="NavalAdditionalAmmo_Name" xml:space="preserve"><value>玩家船只额外弹药</value></data><data name="NavalAdditionalAmmo_Desc" xml:space="preserve"><value>为玩家所属船只增加额外弹药。</value></data>
+  <data name="NavalSeaAttritionPercentage_Name" xml:space="preserve"><value>玩家船只海上损耗</value></data><data name="NavalSeaAttritionPercentage_Desc" xml:space="preserve"><value>航行时每小时受到的船只损伤；0% 为无损耗。</value></data>
+  <data name="NavalBattleShipDamagePercentage_Name" xml:space="preserve"><value>玩家船只海战伤害</value></data><data name="NavalBattleShipDamagePercentage_Desc" xml:space="preserve"><value>玩家所属船只在海战中受到的伤害；0% 为免疫。</value></data>
+  <data name="NavalStormDamagePercentage_Name" xml:space="preserve"><value>玩家船只风暴伤害</value></data><data name="NavalStormDamagePercentage_Desc" xml:space="preserve"><value>玩家所属船只受到的风暴伤害；0% 为风暴免疫。</value></data>
+  <data name="NavalStormFrequencyMultiplier_Name" xml:space="preserve"><value>风暴出现频率倍数</value></data><data name="NavalStormFrequencyMultiplier_Desc" xml:space="preserve"><value>调整战役地图中的风暴生成概率；0 为不再生成新风暴。</value></data>
+  <data name="NavalStormStrengthMultiplier_Name" xml:space="preserve"><value>风暴强度倍数</value></data><data name="NavalStormStrengthMultiplier_Desc" xml:space="preserve"><value>调整全局风暴强度与风眼强度。</value></data>
+  <data name="NavalShipPurchaseCostMultiplier_Name" xml:space="preserve"><value>船只购买价格倍数</value></data><data name="NavalShipPurchaseCostMultiplier_Desc" xml:space="preserve"><value>调整玩家购买船只时的价格。</value></data>
+  <data name="NavalShipRepairCostMultiplier_Name" xml:space="preserve"><value>船只维修费用倍数</value></data><data name="NavalShipRepairCostMultiplier_Desc" xml:space="preserve"><value>调整玩家所属船只的维修费用。</value></data>
+  <data name="NavalShipUpgradeCostMultiplier_Name" xml:space="preserve"><value>船只升级费用倍数</value></data><data name="NavalShipUpgradeCostMultiplier_Desc" xml:space="preserve"><value>调整玩家所属船只的升级部件费用。</value></data>
+  <data name="NavalDeploymentLimitMultiplier_Name" xml:space="preserve"><value>玩家海战部署上限倍数</value></data><data name="NavalDeploymentLimitMultiplier_Desc" xml:space="preserve"><value>调整玩家在海战中可部署的船只数量。</value></data>
+  <data name="NavalBattleRewardMultiplier_Name" xml:space="preserve"><value>海战奖励倍数</value></data><data name="NavalBattleRewardMultiplier_Desc" xml:space="preserve"><value>在通用奖励倍率之外，额外调整玩家海战获得的声望与影响力；不影响陆战。</value></data>
+  <data name="NavalFleetMinimumTroopPercentage_Name" xml:space="preserve"><value>舰队派遣最低兵力</value></data><data name="NavalFleetMinimumTroopPercentage_Desc" xml:space="preserve"><value>调整派遣船只所需的最低兵力；0% 为无要求。</value></data>
+  <data name="NavalShipId_Name" xml:space="preserve"><value>船只标识符</value></data><data name="NavalShipId_Desc" xml:space="preserve"><value>ID 定义文件：Mount &amp; Blade II Bannerlord/Modules/NavalDLC/ModuleData/ship_hulls.xml（ShipHull id）。多个 ID 可用空格、逗号或分号分隔。</value></data>
+  <data name="NavalGrantShip_Name" xml:space="preserve"><value>给予船只</value></data><data name="NavalGrantShip_Desc" xml:space="preserve"><value>将输入的船只标识符对应船只加入玩家舰队。</value></data><data name="NavalGrantShip_Button" xml:space="preserve"><value>给予船只</value></data>
+  <data name="NavalGrantAllShips_Name" xml:space="preserve"><value>给予全部船只</value></data><data name="NavalGrantAllShips_Desc" xml:space="preserve"><value>给予所有正常可用船体；剧情和任务船只不会加入。</value></data><data name="NavalGrantAllShips_Button" xml:space="preserve"><value>给予全部船只</value></data>
+  <data name="NavalFigureheadId_Name" xml:space="preserve"><value>船首像标识符</value></data><data name="NavalFigureheadId_Desc" xml:space="preserve"><value>ID 定义文件：Mount &amp; Blade II Bannerlord/Modules/NavalDLC/AssetPackages/nested_prefabs_packed.xml（船首像实体名）。多个 ID 可用空格、逗号或分号分隔。</value></data>
+  <data name="NavalUnlockFigurehead_Name" xml:space="preserve"><value>解锁船首像</value></data><data name="NavalUnlockFigurehead_Desc" xml:space="preserve"><value>解锁输入的船首像标识符。</value></data><data name="NavalUnlockFigurehead_Button" xml:space="preserve"><value>解锁船首像</value></data>
+  <data name="NavalUnlockAllFigureheads_Name" xml:space="preserve"><value>解锁全部船首像</value></data><data name="NavalUnlockAllFigureheads_Desc" xml:space="preserve"><value>解锁 Naval DLC 内置的全部船首像。</value></data><data name="NavalUnlockAllFigureheads_Button" xml:space="preserve"><value>解锁全部船首像</value></data>
+  <data name="NavalShipUpgradePieceId_Name" xml:space="preserve"><value>船只升级部件标识符</value></data><data name="NavalShipUpgradePieceId_Desc" xml:space="preserve"><value>ID 定义文件：Mount &amp; Blade II Bannerlord/Modules/NavalDLC/ModuleData/ship_upgrade_pieces.xml（ShipUpgradePiece id）。会装备至玩家当前所有船只的对应槽位。</value></data>
+  <data name="NavalAddShipUpgradePieces_Name" xml:space="preserve"><value>添加船只升级部件</value></data><data name="NavalAddShipUpgradePieces_Desc" xml:space="preserve"><value>为玩家当前全部船只添加输入的升级部件；同一槽位仅保留一个部件。</value></data><data name="NavalAddShipUpgradePieces_Button" xml:space="preserve"><value>添加升级部件</value></data>
+  <data name="NavalAddAllShipUpgradePieces_Name" xml:space="preserve"><value>添加全部船只升级部件</value></data><data name="NavalAddAllShipUpgradePieces_Desc" xml:space="preserve"><value>为每个升级槽添加可用价值最高的普通部件。</value></data><data name="NavalAddAllShipUpgradePieces_Button" xml:space="preserve"><value>添加全部升级部件</value></data>
+  <data name="NavalDLCIdentifierRequired" xml:space="preserve"><value>请先输入至少一个 Naval DLC 标识符。</value></data><data name="NavalDLCNotInstalled" xml:space="preserve"><value>未安装或未加载 Naval DLC。</value></data>
+  <data name="RangedAccuracy_GroupName" xml:space="preserve"><value>弓弩 - 玩家主队</value></data>
+  <data name="RangedCadence_GroupName" xml:space="preserve"><value>弓弩 - 射击节奏</value></data>
+  <data name="PlayerPartyRangedMovementPenaltyPercentage_Name" xml:space="preserve"><value>移动精度惩罚</value></data>
+  <data name="PlayerPartyRangedMovementPenaltyPercentage_Desc" xml:space="preserve"><value>调整 WeaponMaxMovementAccuracyPenalty。数值越低，移动时的散布惩罚越小。</value></data>
+  <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Name" xml:space="preserve"><value>瞄准不稳惩罚</value></data>
+  <data name="PlayerPartyRangedUnsteadyPenaltyPercentage_Desc" xml:space="preserve"><value>调整 WeaponMaxUnsteadyAccuracyPenalty。数值越低，瞄准不稳时的惩罚越小。</value></data>
+  <data name="PlayerPartyRangedBestAccuracyWaitPercentage_Name" xml:space="preserve"><value>最佳精度等待时间</value></data>
+  <data name="PlayerPartyRangedBestAccuracyWaitPercentage_Desc" xml:space="preserve"><value>调整 WeaponBestAccuracyWaitTime。数值越低，越快达到最高精度。</value></data>
+  <data name="PlayerPartyRangedRotationPenaltyPercentage_Name" xml:space="preserve"><value>转向精度惩罚</value></data>
+  <data name="PlayerPartyRangedRotationPenaltyPercentage_Desc" xml:space="preserve"><value>调整 WeaponRotationalAccuracyPenaltyInRadians。数值越低，转向时的惩罚越小。</value></data>
+  <data name="PlayerPartyRangedAccelerationPenaltyPercentage_Name" xml:space="preserve"><value>加速度精度惩罚</value></data>
+  <data name="PlayerPartyRangedAccelerationPenaltyPercentage_Desc" xml:space="preserve"><value>调整 WeaponExternalAccelerationAccuracyPenalty。数值越低，受外部加速度的惩罚越小。</value></data>
+  <data name="PlayerPartyRangedAiShooterErrorPercentage_Name" xml:space="preserve"><value>AI 基础瞄准误差</value></data>
+  <data name="PlayerPartyRangedAiShooterErrorPercentage_Desc" xml:space="preserve"><value>调整主队弓弩兵的 AI 基础射击误差。数值越低，射击越精准。</value></data>
+  <data name="PlayerPartyRangedAiLeadErrorPercentage_Name" xml:space="preserve"><value>AI 运动目标提前量误差</value></data>
+  <data name="PlayerPartyRangedAiLeadErrorPercentage_Desc" xml:space="preserve"><value>调整 AI 对移动目标的提前量最小与最大误差。数值越低，对移动预判越准确。</value></data>
+  <data name="PlayerPartyRangedAiHorizontalErrorPercentage_Name" xml:space="preserve"><value>AI 水平瞄准误差</value></data>
+  <data name="PlayerPartyRangedAiHorizontalErrorPercentage_Desc" xml:space="preserve"><value>调整 AI 水平方向的瞄准误差。数值越低，射击越精准。</value></data>
+  <data name="PlayerPartyRangedAiVerticalErrorPercentage_Name" xml:space="preserve"><value>AI 垂直瞄准误差</value></data>
+  <data name="PlayerPartyRangedAiVerticalErrorPercentage_Desc" xml:space="preserve"><value>调整 AI 垂直方向的瞄准误差。数值越低，射击越精准。</value></data>
+  <data name="PlayerPartyRangedAiShootIntervalPercentage_Name" xml:space="preserve"><value>AI 射击间隔</value></data>
+  <data name="PlayerPartyRangedAiShootIntervalPercentage_Desc" xml:space="preserve"><value>调整 AIWaitBeforeShootFactor。数值越低，AI 士兵射击越频繁。</value></data>
+  <data name="MeleeActions_GroupName" xml:space="preserve"><value>近战 - 玩家主队</value></data>
+  <data name="MeleeDefense_GroupName" xml:space="preserve"><value>近战 - AI 防御</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Name" xml:space="preserve"><value>挥砍速度</value></data>
+  <data name="PlayerPartyMeleeSwingSpeedMultiplier_Desc" xml:space="preserve"><value>调整主队近战兵的 SwingSpeedMultiplier。1.000 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Name" xml:space="preserve"><value>刺击准备速度</value></data>
+  <data name="PlayerPartyMeleeThrustReadySpeedMultiplier_Desc" xml:space="preserve"><value>仅在使用近战武器时调整 ThrustOrRangedReadySpeedMultiplier。1.000 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Name" xml:space="preserve"><value>武器操控</value></data>
+  <data name="PlayerPartyMeleeHandlingMultiplier_Desc" xml:space="preserve"><value>调整主队近战兵的 HandlingMultiplier。1.000 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Name" xml:space="preserve"><value>副手防御速度</value></data>
+  <data name="PlayerPartyMeleeOffhandDefenseSpeedMultiplier_Desc" xml:space="preserve"><value>近战武器装备时调整 OffhandWeaponDefendSpeedMultiplier。1.000 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Name" xml:space="preserve"><value>盾击眩晕时长</value></data>
+  <data name="PlayerPartyMeleeShieldBashStunMultiplier_Desc" xml:space="preserve"><value>调整主队近战兵的 ShieldBashStunDurationMultiplier。1.000 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Name" xml:space="preserve"><value>踢击眩晕时长</value></data>
+  <data name="PlayerPartyMeleeKickStunMultiplier_Desc" xml:space="preserve"><value>调整主队近战兵的 KickStunDurationMultiplier。1.000 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Name" xml:space="preserve"><value>AI 格挡判断</value></data>
+  <data name="PlayerPartyMeleeAiBlockDecisionMultiplier_Desc" xml:space="preserve"><value>调整主队 AI 近战兵的 AIBlockOnDecideAbility。1.000 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Name" xml:space="preserve"><value>AI 招架判断</value></data>
+  <data name="PlayerPartyMeleeAiParryDecisionMultiplier_Desc" xml:space="preserve"><value>调整主队 AI 近战兵的 AIParryOnDecideAbility。1.000 为原版数值。</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Name" xml:space="preserve"><value>AI 盾牌防御判断</value></data>
+  <data name="PlayerPartyMeleeAiShieldDefenseMultiplier_Desc" xml:space="preserve"><value>调整主队 AI 近战兵的 AiDefendWithShieldDecisionChanceValue。1.000 为原版数值。</value></data>
+  <data name="RecruitExileClans_Name" xml:space="preserve"><value>招募流亡家族</value></data>
+  <data name="RecruitExileClans_Desc" xml:space="preserve"><value>允许在对话中邀请未加入王国、非雇佣兵的家族领袖加入玩家所属王国。默认开启。</value></data>
+  <data name="ModLoaded" xml:space="preserve"><value>UFO 修改器已加载。</value></data>
+  <data name="CombatCritStrike" xml:space="preserve"><value>暴击！</value></data>
+  <data name="CombatDamageExempted" xml:space="preserve"><value>伤害豁免！</value></data>
+  <data name="CombatHitByCrit" xml:space="preserve"><value>遭到暴击！</value></data>
+  <data name="CombatEnemyExempted" xml:space="preserve"><value>对方豁免了你的伤害！</value></data>
+  <data name="HotkeyTipsEncyclopedia" xml:space="preserve"><value>百科：CTRL+H 添加 1 名士兵，CTRL+SHIFT+H 添加 10 名。英雄页面按 CTRL+X 可在确认后击杀该英雄；城镇／城堡页面按 CTRL+H 可在确认后转移其所有权。</value></data>
+  <data name="HotkeyTipsInventory" xml:space="preserve"><value>背包：CTRL+X 添加 1,000 金币，CTRL+SHIFT+X 添加 100,000 金币。CTRL+H 添加 1 件所选物品，CTRL+SHIFT+H 添加 100 件。</value></data>
+  <data name="HotkeyTipsClan" xml:space="preserve"><value>家族：CTRL+X 添加 1,000 影响力。</value></data>
+  <data name="HotkeyTipsParty" xml:space="preserve"><value>部队：CTRL+H 添加 1 名所选士兵或俘虏，CTRL+SHIFT+H 添加 10 名。CTRL+X 为所选可升级士兵添加经验。</value></data>
+  <data name="HotkeyTipsCharacter" xml:space="preserve"><value>角色：CTRL+A 将全部属性设为配置的上限；CTRL+1–6 为对应属性增加 1 点。CTRL+F 增加 1 点未分配专精，CTRL+G 增加 1 点未分配属性点。</value></data>
 </root>
